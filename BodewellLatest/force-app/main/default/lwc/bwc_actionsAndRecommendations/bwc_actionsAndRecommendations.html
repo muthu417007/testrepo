@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-right_small slds-p-left_small container">
+            <h3 slot="title">
+                <lightning-icon icon-name="standard:action_list_component" size="small" class="slds-m-right_small"></lightning-icon>
+                <b>Actions & Recommendations</b>
+                <div class="menuButton">
+                    <lightning-button-menu alternative-text="show options" class="buttonMenu" size="small">
+                        <lightning-menu-item value="AddAction" label="Add Action" size="small"></lightning-menu-item> 
+                    </lightning-button-menu>
+                </div>
+            </h3>
+            <lightning-tabset>
+                <lightning-tab label="Actions">
+                    <lightning-button label="Add" variant="brand" onclick={handleAddClick} stretch></lightning-button>
+                    <div class="slds-m-top_small slds-p-bottom_small slds-p-top_small order">
+                        <a href="" class="slds-border link">Order On Behalf of</a>
+                        <div class="innerButton">
+                            <lightning-button-menu alternative-text="show options" size="small">
+                                <lightning-menu-item value="PlaceOrder" label="Place Order" size="small"></lightning-menu-item> 
+                            </lightning-button-menu>
+                        </div>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="History">
+                    Under Construction!!
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+    </lightning-card>
+</template>

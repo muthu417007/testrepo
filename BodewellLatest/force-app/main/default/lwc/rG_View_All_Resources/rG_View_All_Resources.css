@@ -1,0 +1,33 @@
+.resourceindex-box,.resourceindex_head_text,.resourceindex_sub_text{
+    text-align:center;
+}
+.resourceindex_head_text {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 15px auto;
+}
+.resourceindex_sub_text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px auto;
+}
+.resourceindex-box {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+}
+.resourceindex-appliances-text a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #1a63a2;
+}

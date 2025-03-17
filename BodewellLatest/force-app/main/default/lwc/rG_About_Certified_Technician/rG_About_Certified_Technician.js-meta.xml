@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG About Certified Technician</masterLabel>
+    <description>About Us Certified Technician</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="contentHeading" type="String" label="Content Heading" default="Content Heading"/>
+            <property name="content" type="String" label="Content" default="Content"/>
+            <property type="ContentReference" name="technicianimageid" label="Technician Image" filter="cms_image"/>
+            <property name="content2" type="String" label="Content2" default="Put your appliance in expert hands: book a repair with your local GE Appliance technician today."/>
+            <property name="buttonlabel" type="String" label="Button Label" default="View service Areas"/>
+            <property name="navigationtype" label="Navigation type" type="String" description="Navigation Type" datasource="External Link,Site Page" default="Site Page"/>
+            <property name="redirectionlink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="componentArea" label="Component Area" type="String" description="Component Area" datasource="head,body,footer" default="body"/>
+            <property name="sectionId" type="String" label="Section ID" default="sectionId"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

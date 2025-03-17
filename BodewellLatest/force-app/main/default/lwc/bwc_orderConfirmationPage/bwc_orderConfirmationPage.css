@@ -1,0 +1,124 @@
+.dummy{
+	color : black;
+}
+
+.Seperator {
+	display: block;
+    width: 15rem;
+    height: 0.1rem;
+    background: gray;
+    margin-left: 1.5rem;
+}
+
+.inHome {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    }
+}
+.pickupProducts {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    }
+}
+
+
+
+
+.productView-services {
+ 
+    /* padding-top: 16px; */
+    font-size: .875rem;
+
+    text-align: left;
+
+letter-spacing: 0.48px;
+color: #12212E;
+opacity: 1;
+   
+}
+.justify-content-spaceBetween {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.align-items-top {
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.d-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+   
+}
+
+.productView-services-title {
+    margin-top: 0;
+  
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.productView-services-title span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.productView-services-text {
+    margin-bottom: 24px;
+    padding-left: 22px;
+}
+.iconDelivery svg{
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    }
+
+
+
+}
+.header-address
+{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.header-para
+{
+    font-weight: bold;
+    font-size: 19px;
+    color: #12212E;
+}
+.proText{
+    padding-right: 5rem;
+}

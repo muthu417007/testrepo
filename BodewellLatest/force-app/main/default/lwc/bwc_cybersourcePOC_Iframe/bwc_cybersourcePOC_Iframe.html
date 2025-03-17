@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <h1>LWC Component that hosts Visualforce Page in IFRAME</h1>
+    <ul>
+      <li>Works but VF Page requires button to be clicked</li>
+      <li>Requires having set CSP for https://geapp--bwcommoob--c.sandbox.vf.force.com </li>
+      <li>LWC: bwc_cybersourcePOC_Iframe</li>
+      <li>VF PAGE: https://geapp--bwcommoob--c.sandbox.vf.force.com/apex/bwc_CyberSourceSign</li>
+    </ul>
+    <iframe src={vfPageUrl} width="800px" height="600px"></iframe>
+  </div>
+</template>

@@ -1,0 +1,92 @@
+<template>
+    <lightning-card class = 'referralCodeBase '>
+        <div class="slds-grid slds-var-p-around_medium">
+            <div class="slds-size_3-of-5 slds-col">
+                <lightning-input label="Referral Code" onchange={handleInputValue} 
+                    placeholder="Enter Referral Code" value={referalCode} class="inputName" 
+                    disabled = {inputDisabled}>
+                </lightning-input>
+            </div>
+            <template lwc:if={showApplyButton}>
+                <div class="slds-size_2-of-5 slds-col slds-var-p-top_large slds-var-p-left_medium slds-p-right_xx-large">
+                    <lightning-button  variant="brand" label="Apply" 
+                        onclick={handleReferalClick}>                
+                    </lightning-button> 
+                </div>  
+            </template>
+            
+            <template lwc:if={startSpinner}>
+                <div class="slds-col slds-size_1-of-5 spinnerClass"> 
+                    <lightning-spinner alternative-text="Validating Ref Code" 
+                        variant = "brand" size="small">
+                    </lightning-spinner> 
+                </div> 
+                <div class="slds-col slds-size_1-of-5"> 
+                    Validating Referral Code
+                </div> 
+            </template>
+        </div>
+        <div class="message">
+            <template lwc:if={result}>
+                <template lwc:if ={referralCodeisValid}>
+                        <div class = "box">
+                            <lightning-icon icon-name="action:approval" size = "xx-small"></lightning-icon>
+                            <div class="smsg">
+                                Referral Applied!
+                            </div>
+                        </div>
+                </template>
+                <template lwc:else>                    
+                        <div class = "box">
+                            <lightning-icon icon-name="action:close" size = "xx-small"></lightning-icon>
+                            <div class="smsg">
+                                Invalid Referral Code.
+                            </div>
+                        </div>    
+                                             
+                </template>
+                <div class="slds-p-top_medium">
+                    <lightning-button  variant="base" label="Remove" onclick={handleRemoveRefCode}>
+                    </lightning-button>   
+                </div>
+            </template>
+        </div>
+        <div class="slds-var-p-around_small">
+            <template lwc:if={showApplyButton}>
+                {generalInfo}
+            </template>
+            <template lwc:else>
+                {oneReferralCodeMsg}
+            </template>
+            
+        </div>     
+
+
+
+
+
+        <!--  
+        <template if:true={startSpinner}>
+                <div class=" container slds-p-around_x-large"> 
+                    <b>Validating Referral Code</b>
+                    <lightning-spinner alternative-text="Validating Ref Code" 
+                        variant = "brand" size="small">
+                    </lightning-spinner> 
+                </div> 
+            </template>
+        
+        <template if:true={result}>        
+            <div class="container slds-p-around_small"> 
+                <template if:true={referralCodeisValid}>
+                    <lightning-icon icon-name="action:approval" size = "small"></lightning-icon>
+                     Referral Code Applied.
+                </template>
+                <template if:false={referralCodeisValid}>
+                    <lightning-icon icon-name="action:close" size = "small"></lightning-icon>
+                     Invalid Referral Code.
+                </template>  
+            </div>    
+        </template>    
+        -->   
+    </lightning-card>
+</template>

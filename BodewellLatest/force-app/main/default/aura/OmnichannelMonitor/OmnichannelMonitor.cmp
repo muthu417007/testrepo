@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <lightning:utilityBarAPI aura:id="utilityBarAPI" />
+    <aura:attribute type="String" 
+                    name="source" 
+                    default="NF Utility Omni-channel Monitor" />
+    <lightning:messageChannel type="nfscv__c" 
+                              aura:id="lmsDemohannel" 
+                              onMessage="{!c.handleReceiveMessage}" />
+    <aura:handler event="lightning:omniChannelStatusChanged" 
+                  action="{! c.onStatusChanged }" />
+    <aura:handler event="lightning:omniChannelLoginSuccess" 
+                  action="{! c.onLoginSuccess }" />
+    <aura:handler event="lightning:omniChannelLogout" 
+                  action="{! c.onLogout }" />
+    <aura:attribute name="log" type="Object[]" />
+    <div aura:id="log" id="log" class="log">
+        <aura:iteration items="{!v.log}" var="e">
+            <div class="log-entry">
+                <span class="log-entry-icon">
+                <aura:if isTrue="{!e.type == 'sync-success'}">
+                    <lightning:icon iconName="utility:success" variant="success" alternativeText="Success" title="Success" size="x-small" />
+                    <aura:set attribute="else">
+	                    <lightning:icon iconName="utility:warning" variant="warning" alternativeText="Failure" title="Failure" size="x-small" />
+                    </aura:set>
+				</aura:if>
+                </span>
+                <span class="log-entry-text">Status change to {!e.statusName}</span>
+                <span class="log-entry-time">
+                    <lightning:formattedDateTime value="{!e.time}" year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" second="2-digit" hour12="false" />
+                </span>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

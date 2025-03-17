@@ -1,0 +1,146 @@
+.details{
+	display: flex;
+	padding-right: 0px !important;
+}
+
+.highLightedText{
+	color: #12212E;
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.carosolImages{
+	background-color: #12212E;
+	height: 20 rem;
+	font-weight: bold;
+}
+
+.carosolText{
+	color: white;
+	font-size: 33px;
+}
+
+@media only screen and (max-width:480px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 8rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+@media only screen and (min-width:481px) and (max-width:768px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 13rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+@media only screen and (min-device-width: 640px) and (max-device-width: 1023px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 10rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width:1366px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 12rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+@media only screen and (min-device-width: 1367px) and (max-device-width:1600px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 13.5rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+@media only screen and (min-device-width: 1601px) and (max-device-width:1920px){
+	.singleImage{
+		height: 5 rem;
+		background-color: white !important;
+		min-height: 17.8rem !important;
+		min-width: 15rem !important;
+		object-fit: contain;
+		aspect-ratio: 1/1.4;
+	}
+}
+
+.imageText{
+	color: white !important;
+	text-align: center !important;
+}
+
+.imageContainer{
+	display: flex;
+	gap: 1rem;
+}
+
+.productName{
+	font-weight: bold;
+	font-size: large;
+}
+
+.boldFont{
+	font-weight: bold;
+}
+
+.hoverPointer:hover{
+	cursor: pointer;
+}
+
+.imageText{
+	color: white;
+}
+
+.imageTextContainer{
+	background-color: #12212E;
+}
+
+.imageInFoucs{
+	border: 3px solid #FFC01F !important;
+}
+
+.image{
+	border: 1px solid #DED1B1;
+	background-color: white;
+	padding: 12px !important;
+}
+
+.experiment{
+	display: grid;
+}
+
+.imageLargerPreview{
+	display: flex;
+	gap: 0.5rem;
+}
+
+.flexEnd{
+	align-self: flex-end;
+	color: white;
+}
+
+.icon{
+	--slds-c-icon-color-foreground: white !important;
+}

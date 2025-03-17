@@ -1,0 +1,38 @@
+<template>
+    <lightning-layout class="mob-view-set" >
+        <lightning-layout-item flexibility="auto" size="9" class="orderItems" >
+            <template if:true={bodewellOrderListItems}>
+                <template for:each={bodewellOrderListItems} for:item="Item">
+                    <div key={Item.Id}>
+                        <div if:true={Item.Id}>
+                            <lightning-layout vertical-align="stretch" multiple-rows="true"
+                                class="ImageDescription mob-head">
+                                <lightning-layout-item flexibility="auto" size="4">
+                                    <div if:true={Item.Product2.BWC_Main_Image__c}>
+                                        <img class="ProductImage" src={Item.Product2.BWC_Main_Image__c}>
+                                    </div>
+                                    <div if:false={Item.Product2.BWC_Main_Image__c}>
+                                        <div if:false={Item.StandInstallFlag}>
+                                            <img class="ProductImage" src={noImage}>
+                                        </div>
+                                        <div if:true={Item.StandInstallFlag}>
+                                            <img class="ProductImage" src={image}>
+                                        </div>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item flexibility="auto" size="4">
+                                    <div class="product-title">
+                                       <span class="product-model-number">{Item.Product2.BWC_Product_Marketing_Description__c}</span>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+                </template>
+                
+            </template>
+        </lightning-layout-item>
+              
+    </lightning-layout>
+   
+</template>

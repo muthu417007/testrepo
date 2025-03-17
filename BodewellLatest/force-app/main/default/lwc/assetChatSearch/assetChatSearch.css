@@ -1,0 +1,13 @@
+.slds-modal {
+    background: rgb(228,226,226);
+}
+
+.slds-modal__container {
+    max-width: 80rem !important;
+    width: 60% !important;
+    height: 90% !important;
+}
+
+.slds-var-p-around_medium, .slds-p-around--large {
+    padding-bottom: 25%;
+}

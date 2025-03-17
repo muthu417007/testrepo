@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Image With Text Card</masterLabel>
+    <description>RG Image With Text Card</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="ContentReference" name="imageiconid" label="Icon Image" filter="cms_image"/>
+            <property type="String" name="heading" label="Heading"/>
+            <property type="String" name="content" label="Content" description="If any phone number you need to add. Please add * instaed of phone number and select checkbox and add phone number below."/>
+            <property type="Boolean" name="isPhoneNumber" label="Phone Number Enabled"/>
+            <property type="String" name="phone" label="Phone Number"/>
+            <property name="buttonlabel" label="ButtonLabel" type="String"  description="Button Label"/>
+            <property name="buttoncolor" label="Button Color" type="Color"/>
+            <property name="buttontextcolor" label="Button Text Color" type="Color"/>
+            <property name="buttoncolorhover" label="Button Color On Hover" type="Color"/>
+            <property name="showicon" label="Show Icon" type="boolean"/>
+            <property name="buttonalign" label="Button Align" type="String" default="Center" description="Button Align"  datasource="Left,Right,Center"/>
+            <property name="navigationtype" label="Navigation type" type="String" description="Navigation Type" datasource="External Link,Site Page"/>
+            <property name="redirectionlink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="buttonArea" label="Button Area" type="String" description="Button Area" default="body" datasource="header,body,footer"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

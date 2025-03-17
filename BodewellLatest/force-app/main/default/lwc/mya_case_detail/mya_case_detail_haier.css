@@ -1,0 +1,47 @@
+.cr-case-details{
+    display:inline-flex;
+    width:100%;
+    text-align:left;
+    margin-bottom:20px;
+}
+.mya-case-icon{
+    padding:2px;
+}
+.mya-case-number{
+    margin-left: 12px;
+}
+.case-info{
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.case-info li {
+    display: inline-block;
+    padding: 20px;
+    font-size:1rem;
+    font-weight: 500;
+}
+.Cr-details{
+    width:100%;
+    margin-bottom: 15px;
+}
+.crcases-details-section{
+    width:100%;
+    background:#fff;
+}
+.case-label{
+   font-weight:800;
+}
+.item-section{
+    margin-bottom:20px;
+}
+th,td{
+    padding:15px;
+}
+table{
+    border: 1px solid lightgrey;
+}
+.case-data{
+    font-size: 1rem;
+}

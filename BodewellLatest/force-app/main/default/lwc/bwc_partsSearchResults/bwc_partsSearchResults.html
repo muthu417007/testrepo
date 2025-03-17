@@ -1,0 +1,47 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters container" style={backgroundCss}>
+        <div class="slds-col slds-size_12-of-12 slds-m-top_x-large supportingText">
+            <div class="slds-text-align_left" if:false={hideSearchResultHelper}>
+                <h4 class="highlightedText mainText">You searched: {searchKey}</h4>
+                <h2 class="slds-p-bottom_small slds-p-top_small highlightedText"><strong>For parts that fit your specific appliance, select your appliance model number below.</strong></h2>
+                <p>Your model has a unique manufacturing code which identifies the time it was made and specific parts associated with it. Your full model number can be found on your appliance.</p>
+                <a class="slds-m-top_large" target="_blank" href="https://www.geappliances.com/ge/find-model-serial-number/">Where Is The Model Number Located On My Appliance?</a>
+            </div>
+            <div class="slds-grid slds-wrap slds-gutters slds-p-left_medium slds-p-right_medium slds-p-bottom_large slds-p-top_large slds-m-top_small searchResults" style={backgroundCss}>
+                <template for:each={productsToDisplay} for:item="product">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12 slds-m-top_medium slds-m-bottom_medium tileDiv" key={product.Name} if:true={product.show}>
+                            <div class="flexClass">
+                                <div class="slds-grid slds-grid_align-center image">
+                                    <img class="slds-m-top_large img" if:true={product.image} src={product.BWC_Main_Image__c}/>
+                                    <img class="slds-m-top_large img" if:false={product.image} src={imageNotAvailable}/>
+                                </div>
+                                <div class="slds-m-top_medium textDetails">
+                                    <p class="description-length">{product.BWC_Product_Marketing_Description__c}</p>
+                                    <b>{product.StockKeepingUnit}</b>
+                                    <div class="slds-m-top_large links">
+                                        <template for:each={product.mfgSkus} for:item="mfgSku">
+                                            <p class="slds-m-bottom_medium hyperlink" data-item={mfgSku} data-id={product.Id} onclick={handleMfgSkuClick} key={mfgSku}>{mfgSku}</p>
+                                        </template>
+                                        <template for:each={product.remainingLength} for:item="item">
+                                            <p class="slds-m-bottom_medium hidden-hyperlink" style="color:white;" data-item={item} data-id={product.Id} key={item}>{item}</p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-m-top_large slds-m-botom_x-large miscText">
+                <div if:false={hideSearchResultHelper}>
+                <h4 class="slds-p-top_small highlightedText">{label.searchResultHelper}</h4>
+                </div>      
+                <h5 class="slds-p-top_small slds-p-bottom_small">Viewing {fromRange}-{lastIndex} of {totalRecords}</h5>
+                <lightning-button variant="brand" disabled={isDisabled} label="LOAD MORE" title="" onclick={handleLoadMore}></lightning-button>
+                <div class="loadMore">
+                    <h6 onclick={handleOnTop} class="slds-p-top_small">Back to the top</h6>
+                    <lightning-icon icon-name='utility:chevronup' alternative-text='chevronup' size='small' title='' class="slds-p-top_small topIcon"></lightning-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

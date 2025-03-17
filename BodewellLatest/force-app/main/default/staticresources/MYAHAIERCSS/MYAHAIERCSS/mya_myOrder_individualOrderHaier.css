@@ -1,0 +1,329 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    letter-spacing: 0.25px;
+}
+
+body .siteforceStarterBody .cCenterPanel {
+    outline: none;
+    max-width: 1440px;
+    background-color: #eff0f0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    outline: none;
+    max-width: 1440px;
+    background-color: #eff0f0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cCenterPanel {
+    outline: none;
+    max-width: 1440px;
+    background-color: #eff0f0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-set {
+    background-color: #eff0f0;
+}
+
+.back-color {
+    background-color: white;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.SMOL {
+    text-align: center;
+    color: #151515;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 16px;
+}
+
+.SMOL:hover {
+    color: #32beff;
+    text-decoration: underline;
+}
+
+.subheading {
+    text-align: center;
+    color: #555555;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    line-height: 1.18751rem;
+    font-size: xx-large;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ImageDescription {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product-title {
+    color: #555;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5rem;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.product-model-number {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.product-link {
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    /* font-size: 1rem; */
+    margin-left: 5px;
+    color: #005aaa;
+    font-size: 0.875rem;
+    line-height: 1.8rem;
+}
+
+.delivery-info:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.return-an-item:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.track-my-order:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.reschedule:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.view-order-details:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.view-order-details {
+    color: #6e6e6e;
+    background-color: transparent;
+    border: transparent;
+}
+
+.text-content-main {
+    color: #151515;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 2rem;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3rem;
+}
+
+.orderDetail {
+    background-color: #efefef;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.4287;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: black;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.order-data {
+    font-weight: 100;
+    font-size: 15px;
+    color: #555;
+}
+
+.OrdInd {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.track-text {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 3rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    width: 90%;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    /* margin: 1rem 0; */
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .fielditem h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.fielditem>h3 {
+    color: white;
+    font-weight: 600;
+}
+
+@media screen and (max-width:39.9375rem) {
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        text-align: center;
+        width: 100%;
+        /* padding-left: 10rem; */
+        /* padding-right: 10rem; */
+    }
+    .ProductImage {
+        display: none;
+    }
+    .product-title {
+        width: 100%;
+        text-align: left;
+    }
+    .mob-view-set {
+        display: flex;
+        flex-direction: column;
+    }
+    .product-link {
+        text-align: left;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        padding: 0.5rem;
+        width: 20rem;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    .view-order-details {
+        color: #005AAA;
+        background-color: transparent;
+        border: transparent;
+        padding: 0rem;
+    }
+    .mob-head {
+        width: 20rem;
+        display: block;
+        padding: 0.5rem 10px;
+    }
+    .orderDetail {
+        background-color: #efefef;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        line-height: 1.4287;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        color: black;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        display: flex;
+        padding-bottom: 15px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .test {
+        width: 18rem;
+        float: left;
+        display: inline-flex;
+        writing-mode: horizontal-tb;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        text-align: left;
+        padding: 0.5rem 0rem;
+    }
+    .order-data {
+        font-weight: 100;
+        font-size: 15px;
+        color: #555;
+        margin-left: auto;
+        width: 50%;
+    }
+    .back-color {
+        background-color: white;
+        width: 100%;
+        margin: 0px auto;
+    }
+    .mid-align {
+        width: 50%;
+    }
+}

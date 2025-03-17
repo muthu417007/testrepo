@@ -1,0 +1,10 @@
+<apex:page standardController="Contact" extensions="Contact_ext" lightningStylesheets="true">
+    <apex:slds />
+    <apex:includeLightning />
+
+    <div class="slds-scope">
+        <apex:form >
+            <apex:commandButton action="{!contactDashboard}" value="Contact Dashboard" styleclass="slds-button slds-button_brand" />
+        </apex:form>
+    </div>
+</apex:page>

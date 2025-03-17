@@ -1,0 +1,65 @@
+<template> 
+    <lightning-layout-item size="12">
+        <lightning-layout-item size="12">
+            <h2 class="subheading">Wish List</h2>
+        </lightning-layout-item>
+    </lightning-layout-item>
+        <lightning-layout>
+        <div class="spinner">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-layout>
+    <template if:true={isEmpty}>
+        <div class="slds-scoped-notification slds-media slds-media_center slds-theme_info" role="status">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-utility-info" title="info">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                  <use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+                </svg>
+                <span class="slds-assistive-text">info</span>
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <p>  Your Wish List is empty. When you add items to your Wish List they will appear here.
+              </p>
+            </div>
+          </div>
+    
+       
+    </template>
+    <div class="slds-grid slds-gutters slds-align_absolute-center">
+        <template iterator:it={wishListItems}>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12 slds-box slds-m-right_x-small wishlist-cards"
+                key={it.value.Product2Id} style="text-align: center;">
+               
+                <img src={it.value.Product2.BWC_Main_Image__c}>
+                <div class="close-button">
+                    <button data-id={it.value.Id} class="close-icon" title="Close" onclick={handleRemove}>
+                    </button>  
+                </div>
+                <a data-productid={it.value.Product2Id} onclick={navigateToProductDetail}
+                    class="slds-line-clamp_x-small wishlist-desc desc">{it.value.Product2.BWC_Product_Marketing_Description__c}
+                 </a>
+            <div>
+                    <span><c-bwc_-wish-list-pricing product-id={it.value.Product2Id}></c-bwc_-wish-list-pricing> </span>
+    </div>
+            <div class="slds-col wishlist-btns">
+                    <button data-productid={it.value.Product2Id}
+                        class="lwc-76nnmqsstjk  c-bwc_commonButton_bwc_commonButton 
+                        slds-button slds-button_brand slds-button_stretch slds-m-left_x-small addtocart desc"
+                        onclick={addToCart}>Add To Cart</button>
+
+                       
+             <!---      <button data-id={it.value.Id}
+                        class="lwc-2np0psmn6g2 slds-button slds-button_stretch slds-m-horizontal_none slds-m-top_x-small"
+                        onclick={handleRemove}>Remove</button>    -->
+               
+                </div>
+            </div>
+        </template>
+    </div>
+
+    
+</template>

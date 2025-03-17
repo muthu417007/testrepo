@@ -1,0 +1,29 @@
+<template>
+    <div if:true={contact} class="slds-m-horizontal_medium">
+        <article class="slds-tile slds-hint-parent">
+            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                <div class="slds-col slds-size_6-of-8">
+                    <h3 class="slds-tile__title slds-truncate" title={contact.Name}>
+                        <a href="#" onclick={handleContactClick} data-id={contact.Id} data-disabled={disableLinkClick}>{contact.FirstName} {contact.LastName}</a>
+                        <span if:true={isExternalContact} class="slds-m-left_small">(External)</span>
+                    </h3>
+                    
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt if:true={contact.Email} class="slds-item_label slds-text-color_weak slds-truncate" title="Email">Email:</dt>
+                            <dd if:true={contact.Email} class="slds-item_detail slds-truncate">{contact.Email}</dd>
+                            
+                            <dt if:true={contact.Phone} class="slds-item_label slds-text-color_weak slds-truncate" title="Phone">Phone:</dt>
+                            <dd if:true={contact.Phone} class="slds-item_detail slds-truncate">{contact.Phone}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_2-of-8 slds-align_absolute-center">
+                    <button class="slds-button slds-button_neutral" onclick={handleMatchClick}>Select</button>
+                </div>
+            </div>
+            <hr class="solid">
+        </article>
+        
+    </div>
+</template>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Sitemap Url List</masterLabel>
+    <description>URL List of Service Area/Location for Sitemap Page</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+     <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+            name="menuName" 
+            type="String" 
+            datasource="apex://RG_NavigationLinkPickList" 
+            label="Resource Navigation List"
+            description="The name of resource list  menu from navigation"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

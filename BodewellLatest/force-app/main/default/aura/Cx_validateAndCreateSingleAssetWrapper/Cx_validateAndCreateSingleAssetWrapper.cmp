@@ -1,0 +1,3 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <c:cx_validateAndCreateSingleAsset  recordId="{!v.recordId}" ></c:cx_validateAndCreateSingleAsset>
+</aura:component>

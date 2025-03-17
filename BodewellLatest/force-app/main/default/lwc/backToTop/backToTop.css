@@ -1,0 +1,7 @@
+.backToTopBtn{
+    cursor:pointer;
+    float:right;
+}
+.chevUp{
+    --sds-c-icon-color-foreground-default: white;
+}

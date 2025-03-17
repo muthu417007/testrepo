@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout multiple-rows class="slds-m-top_medium">
+            <template if:true={loaded} iterator:obj={messageSessions}>
+                <lightning-layout-item key={obj.value.messagingSessionId} size="12">
+                    <li class="no-bullets slds-list__item slds-m-around_x-small slds-box">
+                        <p class="bold">Session: {obj.value.name}</p>
+                        <p>Messages:</p>
+                        <template iterator:en={obj.value.conversationEntries} class="slds-m-around_xx-small">
+                            <li key={en.value.entryId} class="slds-list__item slds slds-p-around_xxx-small elem-word-wrap">
+                                {en.value.actorName} : {en.value.message}
+                            </li>
+                        </template>
+                    </li>
+                </lightning-layout-item>
+            </template>
+    </lightning-layout>
+</template>

@@ -1,0 +1,41 @@
+.navbar {
+    padding-bottom: 10px;
+    background-color: var(--lwc-cardBackgroundColor);
+}
+
+nav {
+    min-height: 35px;
+}
+
+.custom-nav{
+    background-color: #dee8f1;
+    padding: 0.3em;
+    height: 3rem;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.custom-li {
+    padding-right: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+    .custom-nav{
+        height: 9rem;
+        width: 110%;
+        margin: -40px 0px -50px -10px;
+       
+    }
+    .slds-list_horizontal,.slds-has-block-links_space{
+        /*display: block;*/
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .custom-li{
+        float: left;
+        width: 50%;
+        padding: -1px 0px 0px 0px;
+
+    }
+}

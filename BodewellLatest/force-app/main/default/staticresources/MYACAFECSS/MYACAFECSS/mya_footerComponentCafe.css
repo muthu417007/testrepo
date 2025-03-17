@@ -1,0 +1,61 @@
+.footer {
+    background-color: rgba(244, 244, 243, 1);
+    width: 100%;
+    height:auto;
+    display: inline-flex;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    color: #151515;
+    font-size: 0.875rem;
+    font-family: "Proxima Nova W05 Regular", "Helvetica Neue", "Arial", sans-serif;
+    border-top: 1px black;
+    align-items: center;
+}
+ul{
+    margin-top: 0.5rem !important;
+    line-height: 2;
+    margin-bottom: 1em;
+    text-align: center;
+}
+li{
+    display:inline-block;
+}
+.col1 {
+    text-align: left;
+    margin-left: 0rem;
+    padding-left: 2rem;
+}
+
+.col2 {
+    text-align: right;
+    margin-right: 0rem;
+    padding-right: 2rem;
+}
+
+a {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px){
+    .deleteLink{
+        margin: 15px 0px 12px 0px;
+    }
+    .footer{
+        height:auto;
+        display:inline-block;
+    }
+    li{
+        display:block;
+        margin-top: 0.5rem !important;
+        line-height: 2;
+        padding-bottom: 0.5rem !important;
+    }
+    .col2{
+        text-align:center;
+        padding-right:0;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+
+    }
+}

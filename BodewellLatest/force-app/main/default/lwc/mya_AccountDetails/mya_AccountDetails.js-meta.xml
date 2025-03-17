@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe,Bodewell" description="Brand"/>
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="Account Details" description="Form Title"/>
+            <property name="loginProfile" label="Login Profile" type="String" default="Login Profile" description="Login Title"/>
+            <property name="fullNameLabel" label="Full Name Label" type="String" default="Full Name" description="Full Name"/>
+            <property name="firstNameLabel" label="First Name Label" type="String" default="First Name" description="First Name"/>
+            <property name="lastNameLabel" label="Last Name Label" type="String" default="Last Name" description="Last Name"/>
+            <property name="editNameSuccessLabel" label="Edit Name Success Label" type="String" default="Your account name has been updated." description="Edit Name Success"/>
+            <property name="emailAddressLabel" label="Email Address Label" type="String" default="Email Address" description="Email Address"/>
+            <property name="emailAddressEditLabel" label="Email Address Edit Label" type="String" default="Email" description="Email Address Edit"/>
+            <property name="editEmailSuccessLabel" label="Edit Email Success Label" type="String" default="Your email address has been updated." description="Email Edit Success"/>
+            <property name="passwordLabel" label="Password Label" type="String" default="Password" description="Password"/>
+            <property name="primaryPhoneNumberLabel" label="Primary Phone Label" type="String" default="Primary Phone" description="Primary Phone"/>
+            <property name="primaryPhoneNumberEditLabel" label="Primary Phone Edit Label" type="String" default="Primary Phone" description="Primary Phone Edit"/>
+            <property name="editPrimaryPhoneSuccessLabel" label="Edit Primary Phone Success Label" type="String" default="Your primary phone number has been updated." description="Edit Primary Phone Success"/>
+            <property name="additionalPhoneNumberLabel" label="Additional Phone Label" type="String" default="Additional Phone" description="Additional Phone"/>
+            <property name="additionalPhoneNumberEditLabel" label="Additional Phone Edit Label" type="String" default="Additional Phone" description="Additional Phone Edit"/>
+            <property name="editPhoneSuccessLabel" label="Edit Phone Success Label" type="String" default="Your phone number has been updated." description="Edit Phone Success"/>
+            <property name="editPhoneValidationLabel" label="Edit Phone Validation Message" type="String" default="Phone number already exist." description="Edit Phone Validation Message"/>
+            <property name="addPhoneNumberLabel" label="Add Phone Label" type="String" default="Add Phone" description="Add Phone Edit"/>
+            <property name="addPhoneNumberEditLabel" label="Add Phone Edit Label" type="String" default="Add Phone" description="Add Phone Edit"/>
+            <property name="addPhoneSuccessLabel" label="Add Phone Success Label" type="String" default="Your phone number has been added." description="Add Phone Success"/>
+            <property name="editOptionLabel" label="Edit Option Label" type="String" default="Edit" description="Edit"/>
+            <property name="removeOptionLabel" label="Remove Option Label" type="String" default="Remove" description="Remove"/>
+            <property name="removePhoneModalHeader" label="Remove Phone Modal Header" type="String" default="Remove Phone Number" description="Remove phone"/>
+            <property name="removePhoneModalBody" label="Remove Phone Modal Body" type="String" default="Removing this phone number will delete it permanently from your account." description="Remove phone modal body"/>
+            <property name="removePhoneModalSubmitLabel" label="Remove Modal Submit Label" type="String" default="Ok" description="Ok"/>
+            <property name="removePhoneModalCancelLabel" label="Remove Modal Cancel Label" type="String" default="Cancel" description="Cancel"/>
+            <property name="phoneNumberConsentMessage" label="Phone Number Consent Message" type="String" default="You expressly consent to GE Appliances contacting you at this number." description="Phone number consent"/>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe" description="Brand"/>
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="Account Details" description="Form Title"/>
+            <property name="fullNameLabel" label="Full Name Label" type="String" default="Full Name" description="Full Name"/>
+            <property name="firstNameLabel" label="First Name Label" type="String" default="First ame" description="First Name"/>
+            <property name="lastNameLabel" label="Last Name Label" type="String" default="Last Name" description="Last Name"/>
+            <property name="editNameSuccessLabel" label="Edit Name Success Label" type="String" default="Your account name has been updated." description="Edit Name Success"/>
+            <property name="emailAddressLabel" label="Email Address Label" type="String" default="Email Address" description="Email Address"/>
+            <property name="emailAddressEditLabel" label="Email Address Edit Label" type="String" default="Email" description="Email Address Edit"/>
+            <property name="editEmailSuccessLabel" label="Edit Email Success Label" type="String" default="Your email address has been updated." description="Email Edit Success"/>
+            <property name="passwordLabel" label="Password Label" type="String" default="Password" description="Password"/>
+            <property name="primaryPhoneNumberLabel" label="Primary Phone Label" type="String" default="Primary Phone" description="Primary Phone"/>
+            <property name="primaryPhoneNumberEditLabel" label="Primary Phone Edit Label" type="String" default="Primary Phone" description="Primary Phone Edit"/>
+            <property name="editPrimaryPhoneSuccessLabel" label="Edit Primary Phone Success Label" type="String" default="Your primary phone number has been updated." description="Edit Primary Phone Success"/>
+            <property name="additionalPhoneNumberLabel" label="Additional Phone Label" type="String" default="Additional Phone" description="Additional Phone"/>
+            <property name="additionalPhoneNumberEditLabel" label="Additional Phone Edit Label" type="String" default="Additional Phone" description="Additional Phone Edit"/>
+            <property name="editPhoneSuccessLabel" label="Edit Phone Success Label" type="String" default="Your phone number has been updated." description="Edit Phone Success"/>
+            <property name="editPhoneValidationLabel" label="Edit Phone Validation Message" type="String" default="Phone number already exist." description="Edit Phone Validation Message"/>
+            <property name="addPhoneNumberLabel" label="Add Phone Label" type="String" default="Add Phone" description="Add Phone Edit"/>
+            <property name="addPhoneNumberEditLabel" label="Add Phone Edit Label" type="String" default="Add Phone" description="Add Phone Edit"/>
+            <property name="addPhoneSuccessLabel" label="Add Phone Success Label" type="String" default="Your phone number has been added." description="Add Phone Success"/>
+            <property name="editOptionLabel" label="Edit Option Label" type="String" default="Edit" description="Edit"/>
+            <property name="removeOptionLabel" label="Remove Option Label" type="String" default="Remove" description="Remove"/>
+            <property name="removePhoneModalHeader" label="Remove Phone Modal Header" type="String" default="Remove Phone Number" description="Remove phone"/>
+            <property name="removePhoneModalBody" label="Remove Phone Modal Body" type="String" default="Removing this phone number will delete it permanently from your account." description="Remove phone modal body"/>
+            <property name="removePhoneModalSubmitLabel" label="Remove Modal Submit Label" type="String" default="Ok" description="Ok"/>
+            <property name="removePhoneModalCancelLabel" label="Remove Modal Cancel Label" type="String" default="Cancel" description="Cancel"/>
+            <property name="phoneNumberConsentMessage" label="Phone Number Consent Message" type="String" default="You expressly consent to GE Appliances contacting you at this number." description="Phone number consent"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

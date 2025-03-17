@@ -1,0 +1,31 @@
+<template>
+    <div class="resourceindex-inner-wrapper">
+        <div class="">
+            <div class="resourceindex_head_text">{sectionheading}</div>
+            <div class="resourceindex_sub_text">{subheading}</div>
+            <div class="resourceindex_schedule_main_inner">
+                <div class="resourceindex-main-inner_container">
+                    <div class="slds-grid slds-wrap view-all-res-mob">
+                        <template iterator:it={resourceList}>
+                            <div key={it.value.Id}
+                                class="resourceindex-box slds-medium-size_6-of-12 slds-large-size_4-of-12">
+                                <div class="resourceindex-box__copy">
+                                    <div class="resourceindex-appliances-img">
+                                        <a href={it.value.redirectURL} data-value={it.value.redirectURL}
+                                            onclick={handleRedirection}>
+                                            <img src={it.value.imageurl} class="img-fluid" alt={it.value.name}>
+                                        </a>
+                                    </div>
+                                    <div class="resourceindex-appliances-text">
+                                        <a href={it.value.redirectURL} data-value={it.value.redirectURL}
+                                            onclick={handleRedirection}>{it.value.name}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

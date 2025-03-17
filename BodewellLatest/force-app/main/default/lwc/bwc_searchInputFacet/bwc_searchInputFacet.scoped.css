@@ -1,0 +1,5 @@
+.show-more {
+    text-decoration: underline;
+    text-decoration-color: var(--dxp-g-brand);
+    padding: 0px !important;
+}

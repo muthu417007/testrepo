@@ -1,0 +1,14 @@
+<apex:page > 
+<script type='text/javascript' src='https://c.la4-c1cs-dfw.salesforceliveagent.com/content/g/js/48.0/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.init('https://d.la4-c1cs-dfw.salesforceliveagent.com/chat', '5724P000000kVba', '00Dm00000003UF6');
+</script>
+ 
+<a id="liveagent_button_online_573m00000004DOp" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573m00000004DOp')"><!-- Online Chat Content --></a><div id="liveagent_button_offline_573m00000004DOp" style="display: none;"><!-- Offline Chat Content --></div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573m00000004DOp', document.getElementById('liveagent_button_online_573m00000004DOp'));
+liveagent.showWhenOffline('573m00000004DOp', document.getElementById('liveagent_button_offline_573m00000004DOp'));
+});</script>
+
+
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>Bodewell Subscription</masterLabel>
+	<description>Bodewell Subscription Component</description>
+	<targets>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+		<target>lightning__RecordPage</target>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="paymentHistoryLink" type="String" default="/mya-payment-history" label="Payment history URL" description="Payment history URL"></property>
+        </targetConfig>
+		<targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Id of the Record"></property>
+            <property name="isCancelButton" type="Boolean" label="Cancel Membership Button"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

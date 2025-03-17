@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icon-verified</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GE-D-8.1-Service-Area-Result-B" transform="translate(-830.000000, -267.000000)" fill="#092C74" stroke="#092C74">
+            <g id="icon-verified" transform="translate(831.000000, 268.000000)">
+                <path d="M11,0 C4.93286316,0 0,4.93286316 0,11 C0,17.0671368 4.93286316,22 11,22 C17.0671368,22 22,17.0671368 22,11 C22,4.93286316 17.0671368,0 11,0 Z M11,20.6566098 C5.67368421,20.6566098 1.34338924,16.3263158 1.34338924,11 C1.34338924,5.67368189 5.67368421,1.34338716 11,1.34338716 C16.3263158,1.34338716 20.6566105,5.67368189 20.6566105,11 C20.6566105,16.3263158 16.3263158,20.6566098 11,20.6566098 Z" id="Fill-1"></path>
+                <polygon id="Fill-2" points="9.42581136 12.6034997 6.16303972 9.24300403 5 10.4417946 9.42565165 15 17 7.19879062 15.8138031 6"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

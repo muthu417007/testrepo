@@ -1,0 +1,111 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="owner" type="String" />
+    <aura:attribute name="recordtype" type="String" />
+    <aura:attribute name="priority" type="String" />
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="cs1049reject" type="String" />
+    <aura:attribute name="cs1049trigger" type="String" />
+     <aura:attribute name="cs1049create" type="String" />
+    <aura:attribute name="casenum" type="String" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>   
+    
+    
+    
+  <div class="slds-page-header__row">
+    
+      <div class="slds-media">
+          
+        <div class="slds-media__body">
+          <div class="slds-page-header__name">
+            <div class="slds-page-header__name-title">
+              <h1>
+                  
+                <span class="slds-page-header__title slds-truncate slds-text-heading_small" border="none" title="Case">Case</span>
+              </h1>
+            </div>
+          </div>
+          <p class="slds-text-heading_large slds-text-title_bold">{!v.casenum}</p>
+        </div>
+      </div>
+   
+  </div>
+
+    <br /> 
+    <div class="c-container">
+        <lightning:layout horizontalAlign="spread">
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Case Owner</p>
+                    <p>{!v.owner}</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Case Record Type</p>
+                    <p>{!v.recordtype}</p>
+                </div>
+            </lightning:layoutItem>
+           <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Priority</p>
+                    <p>{!v.priority}</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Status</p>
+                    <p>{!v.status}</p>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">CS1049 Created</p>
+                    <div class="slds-form-element">
+                      <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                          <input type="checkbox" name="options" id="checkbox-unique-id-79" value="checkbox-unique-id-79" disabled="" checked="{!v.cs1049create}" />
+                          <label class="slds-checkbox__label" for="checkbox-unique-id-79">
+                            <span class="slds-checkbox_faux"></span></label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">CS1049 Trigger</p>
+                    <div class="slds-form-element">
+                      <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                          <input type="checkbox" name="options" id="checkbox-unique-id-79" value="checkbox-unique-id-79" disabled="" checked="{!v.cs1049trigger}" />
+                          <label class="slds-checkbox__label" for="checkbox-unique-id-79">
+                            <span class="slds-checkbox_faux"></span></label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">CS1049 Rejected</p>
+                    <div class="slds-form-element">
+                      <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                          <input type="checkbox" name="options" id="checkbox-unique-id-79" value="checkbox-unique-id-79" disabled="" checked="{!v.cs1049reject}" />
+                          <label class="slds-checkbox__label" for="checkbox-unique-id-79">
+                            <span class="slds-checkbox_faux"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+
+   
+</aura:component>

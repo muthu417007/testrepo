@@ -1,0 +1,61 @@
+<template>
+    <div class="payment-details-section" if:true={paymentInfo}>
+        <div class="payment-title">
+            <span>Payments</span>
+        </div>
+        <div class="payment-details">
+            <div class="payment-card-info">
+                <div class="payment-card-info-details">
+                    <div class="payment-card-number">
+                        <span>{paymentInfo.cardDetails.cardType} Card ending in ****{paymentInfo.cardDetails.lastFourDgt}</span>
+                    </div>
+                    <div class="payment-card-expiry">
+                        <span>Exp. {paymentInfo.cardDetails.expMonth}/{paymentInfo.cardDetails.expYear}</span>
+                    </div>
+                </div>
+                <div class="payment-card-info-action">
+                    <div>
+                        <!-- Card details remove option is not enabled for MYA -->
+                        <!-- <a class="payment-remove-link" onclick={handleDelete}>Remove</a> -->
+                        <a class="payment-edit-link" onclick={editPayment}>Edit</a>
+                        <form id="partsBillingForm1" action={editPaymentUrl} method="post" target="view-target" onsubmit={handleEditPaymentSubmit}>
+                            <input type="hidden" name="UID" value={UID}/>
+                            <input type="hidden" name="emailAddress" value={currentUserEmailId} />
+                        </form>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="payment-address-details">
+                <div class="payment-address-info">
+                    <span>{paymentInfo.billingDetails.billAdrs1}</span>
+                    <span>{paymentInfo.billingDetails.billAdrs2}</span>
+                    <span>{paymentInfo.billingDetails.billCity}, {paymentInfo.billingDetails.billState} {paymentInfo.billingDetails.billZipCd}</span>
+                    <span>United States</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <a class="payment-remove-link" onclick={handleDelete}>Remove</a> -->
+    <template if:true={isDeleteModalOpen}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+               
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p class="delete-descr"><b>Are you sure you want to delete this Card? Deleting this card will cancel the Smart Order subscription you have.
+                    </b></p>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer " style="font-family: inherit">
+                    <button class="slds-button slds-button_neutral" onclick={closeDeleteModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={confirmDelete} title="Confirm">Confirm</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+       
+    </template>
+</template>

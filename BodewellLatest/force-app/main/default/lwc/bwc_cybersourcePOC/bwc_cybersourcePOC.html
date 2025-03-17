@@ -1,0 +1,17 @@
+<template>
+  <h1>LWC Component that posts directly to Cybersource</h1>
+  <ul>
+    <li>LWC: bwc_cybersourcePOC</li>
+    <li>Apex Controller: BWC_CybersourcePOCController</li>
+  </ul>
+  <form action="https://testsecureacceptance.cybersource.com/pay" method="post" name="form1" target="_cybersourcePayment">
+    <template for:each={_parametersValues} for:item="param">
+      <div key={param.key}>
+        <input type="hidden" id={param.key} value={param.value} name={param.key}>
+      </div>
+    </template>
+    <button onclick={submitForm} type="button">Proceed to Pay</button>
+  </form>
+  <h1>Cybersource Payment Info</h1>
+  <textarea rows="20" cols="80">{_cybersourceData}</textarea>
+</template>

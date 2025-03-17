@@ -1,0 +1,45 @@
+<template>
+    <template if:true={isDisplayOrderDetail}>
+
+        <lightning-tabset variant="scoped">
+            <lightning-tab label="Order Summary">
+                <div style="height: 180px;">
+                    <lightning-datatable data={ordersummary} columns={ordercolumns} key-field="id" hide-checkbox-column
+                        column-widths-mode="auto"></lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Delivery">
+                <div style="height: 180px;">
+                    <lightning-datatable data={deliverydata} columns={deliverycolumns} key-field="id"
+                        hide-checkbox-column column-widths-mode="auto" min-column-width="80" max-column-width="200">
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Shipping Data">
+                <div style="height: 180px;">
+                    <lightning-datatable data={ordersummary} columns={shippingcolumns} key-field="id"
+                        hide-checkbox-column column-widths-mode="auto" min-column-width="80"></lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Track/Trace">
+                <template if:true={homedelivery}>
+                    <template for:each={HDurls} for:item="HDurl">
+                        <div class="slds-p-around_small" key={HDurl}>
+                            <p>
+                                <lightning-formatted-url value={HDurl} target="_blank"></lightning-formatted-url>
+                            </p>
+                        </div>
+                    </template>
+                </template>
+                <template if:true={hastrackingno}>
+                    <div style="height: 170px;">
+                        <lightning-datatable data={ordersummary} columns={tracktracecolumns} key-field="id"
+                            hide-checkbox-column column-widths-mode="auto" min-column-width="80"></lightning-datatable>
+                    </div>
+                </template>
+            </lightning-tab>
+
+        </lightning-tabset>
+
+    </template>
+</template>

@@ -1,0 +1,16 @@
+.product-compare-link {
+    text-decoration: underline;
+    color: #245B83;
+}
+.product-compare-text {
+    color: #245B83 !important;
+    margin-top: 20px;
+}
+.product-compare-checkbox {
+    border: 1px solid #6F6D6A;
+    opacity: 1;
+    margin-top: 25px;
+}
+.m-t-20 {
+    margin-top: 20px;
+}

@@ -1,0 +1,48 @@
+<template>
+    <div class="article-faq-box">
+        <div class="faq-head-section_dsk">
+            <h2 class="resource-title">{relatedResource}</h2>
+        </div>
+        <div>
+            <template iterator:it={knowledgeArticleListFAQ}>
+                <ul class="main-content-sub-text" key={it.value.Id}>
+                    <li>
+                        <a onclick={handleArticle} data-value={it.value.UrlName}>{it.value.Title}
+                        </a>
+                    </li>
+                </ul>
+            </template>
+</div>
+</div>
+<div class="faq-accordian">
+    <template if:true={isExpand}>
+        <div class="faq-section-bar">    
+        <span class="faq-head-section slds-grid slds-wrap">
+                <h2 class="faq_appliance_head slds-small-size_6-of-12">{relatedResource}</h2>
+                    <lightning-icon class="down-icon slds-small-size_6-of-12 slds-text-align_right" icon-name="utility:down" onclick={showAll} alternative-text="Down"
+                        title="Down"></lightning-icon>
+        </span>
+        </div>
+        </template>
+</div>
+<div class="faq-accordian">
+    <template if:false={isExpand}>
+        <div class="faq-section-bar">    
+            <span class="faq-head-section slds-grid slds-wrap">
+                    <h2 class="faq_appliance_head slds-small-size_6-of-12">{relatedResource}</h2>
+                    <lightning-icon class="up-icon slds-small-size_6-of-12 slds-text-align_right" icon-name="utility:up" onclick={showAll} alternative-text="Up"
+                        title="Up"></lightning-icon>
+            </span>
+        </div>
+                    <template iterator:it={knowledgeArticleListFAQ}>
+                        <ul class="main-content-sub-text" key={it.value.Id}>
+                            <li>
+                                <a onclick={handleArticle} data-value={it.value.UrlName}>{it.value.Title}
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+
+    </template>
+</div>
+</template>

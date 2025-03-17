@@ -1,0 +1,164 @@
+/* CSS */
+:host {
+    --input-bg-color: #FFFFFF;
+    --border-radius: 0px;
+    --offer-button-border-radius: 25px;
+    --offer-button-width: 100%;
+    --offer-button-height: 44px;
+    --offer-button-letter-spacing: 0.75px;
+    --offer-button-font-size: 15px;
+    --offer-modal-button-font-size: 15px;
+    --offer-confirm--heading-font-size: 22px;
+    --offer-confirm--body-font-size: 19px;
+    --offer-confirm--info-font-size: 16px;
+    --store-close-flag-color: red;
+    --store-open-flag-color: #4B8227;
+    --sds-c-input-color-background: #FFFFFF;
+    --sds-c-input-radius-border: 0px;
+    --sds-c-input-color-background-focus: #FFFFFF;
+    --sds-c-checkbox-radius-border: 0px;
+    --sds-c-checkbox-color-background: #FFFFFF;
+    --sds-c-modal-content-color-background: #FFFFFF;
+}
+
+.store-offer-white-bg {
+    background-color: var(--input-bg-color) !important;
+}
+
+.store-icon {
+    margin: auto;
+}
+
+.store-offer-promo-button {
+    border-radius: var(--offer-button-border-radius) !important;
+    width: var(--offer-button-width) !important;
+    height: var(--offer-button-height) !important;
+    letter-spacing: var(--offer-button-letter-spacing) !important;
+    font-size: var(--offer-button-font-size) !important;
+}
+
+.store-offer-custom-input {
+    background-color: var(--input-bg-color) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.store-offer-confirm-msg-body {
+    font-size: var(--offer-confirm--heading-font-size) !important;
+}
+
+.store-offer-confirm-msg-body {
+    font-size: var(--offer-confirm--body-font-size) !important;
+}
+
+.store-offer-confirm-msg-info {
+    font-size: var(--offer-confirm--body-font-size) !important;
+}
+
+.store-close {
+    color: var(--store-close-flag-color);
+}
+
+.store-open {
+    color: var(--store-open-flag-color);
+}
+
+.store-custom-slds-select {
+    background-color: #FFFFFF;
+    border-radius: 0px;
+}
+
+.store-custom-slds-input-number {
+    padding-right: 0px;
+}
+
+
+@media (min-width:320px) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 10px;
+    }
+
+    .store-offer-promo-button {
+        padding: 0px;
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+}
+
+@media (min-width:481px) {
+
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    .store-offer-promo-button {
+        padding: 0px;
+        width: 100% !important;
+        font-size: 10px !important;
+    }
+
+}
+
+@media (min-width:641px) {
+
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    .store-offer-modal {
+        width: 100%;
+        max-width: 490px;
+        min-width: 490px;
+    }
+
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 22px;
+    }
+}
+
+@media (min-width:961px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .store-offer-modal {
+        width: 100%;
+        max-width: 490px;
+        min-width: 490px;
+    }
+
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 22px;
+    }
+}
+
+@media (min-width:1025px) {
+
+    /* big landscape tablets, laptops, and desktops */
+    .store-offer-modal {
+        width: 100%;
+        max-width: 490px;
+        min-width: 490px;
+    }
+
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 22px;
+    }
+}
+
+@media (min-width:1281px) {
+
+    /* hi-res laptops and desktops */
+    .store-offer-modal {
+        width: 100%;
+        max-width: 490px;
+        min-width: 490px;
+    }
+
+    .store-modal-header {
+        color: #FFFFFF;
+        font-size: 22px;
+    }
+}

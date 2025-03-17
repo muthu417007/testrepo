@@ -1,0 +1,19 @@
+<template>
+    <div class="image-with-text">
+        <div class="support-block" if:true={isVisibleIcon}>
+            <div class="concierge-container">
+                <img src={imageicon} class="img-cnt" alt="Responsive image">
+            </div>
+            <div class="support-info">
+                <div class="content-body" lwc:dom="manual"></div>
+            </div>
+        </div>
+        <div class="slds-grid" if:false={isVisibleIcon}>        
+            <div class="slds-col slds-size_12-of-12 support-info">
+                <div class="calltextcontentblock"></div>
+                <div class="content-body" lwc:dom="manual">
+                </div>
+            </div>
+        </div>
+    </div>    
+</template>

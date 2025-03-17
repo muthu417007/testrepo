@@ -1,0 +1,192 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="DisplayCaseController">
+    
+    <lightning:navigation aura:id="navServices"/>
+    <aura:attribute name="pageReferences" type="Object"/>
+    
+    <ul class="slds-button-group-row">
+        <li class="slds-button-group-item">
+            <button class="slds-button slds-button_neutral" onclick="{! c.getfscallhistory }">FS Call History</button>
+        </li>
+        <li class="slds-button-group-item">
+            <button class="slds-button slds-button_neutral" onclick="{! c.getcccallhistory }">CC Call History</button>
+        </li>
+    </ul>
+    <br/><br />
+    
+    <div class="slds-text-heading_medium">Consumer Details</div><br/>
+    <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="mydatanext" type="Object"/>
+    <aura:attribute name="mycolumnsnext" type="List"/>
+    <aura:attribute name="boolean" type="boolean" />
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    
+    <aura:attribute name="rec" type="Object" />
+    <div class="white">
+        <ul> 
+            <aura:iteration items="{!v.rec}" var="curr">
+                <div class="slds-box">
+                    <div class="c-container">
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Reference Number" style="color:CornflowerBlue;">ReferenceNumber</p>
+                                    <p >{!curr.ref_no}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="FirstName" style="color:CornflowerBlue;">FirstName</p>
+                                    <p >{!curr.first_name}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="LastName" style="color:CornflowerBlue;">LastName</p>
+                                    <p >{!curr.last_name}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="PhoneNumber" style="color:CornflowerBlue;">PhoneNumber</p>
+                                    <p >{!curr.ph_home}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Status" style="color:CornflowerBlue;">Status</p>
+                                    <p >{!curr.status_id}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Street" style="color:CornflowerBlue;">Street</p>
+                                    <p >{!curr.street}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                        </lightning:layout>
+                        <lightning:layout multipleRows="true">
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="City" style="color:CornflowerBlue;">City</p>
+                                <p >{!curr.city}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="State" style="color:CornflowerBlue;">State</p>
+                                <p >{!curr.provinces}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="Zipcode" style="color:CornflowerBlue;">Zipcode</p>
+                                <p >{!curr.postal_code}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="BrandCode" style="color:CornflowerBlue;">BrandCode</p>
+                                <p >{!curr.brand}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="ProductLine" style="color:CornflowerBlue;">ProductLine</p>
+                                <p >{!curr.product_line}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="ModelNumber" style="color:CornflowerBlue;">ModelNumber</p>
+                                <p >{!curr.model_number}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="SerialNumber" style="color:CornflowerBlue;">SerialNumber</p>
+                                <p >{!curr.serial_number}</p>
+                            </div>
+                        </lightning:layoutItem><br />
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="InstallDate" style="color:CornflowerBlue;">InstallDate</p>
+                                <p >{!curr.installDate}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="Warranty" style="color:CornflowerBlue;">Warranty</p>
+                                <p >{!curr.c_waranty}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="Contract#" style="color:CornflowerBlue;">Contract#</p>
+                                <p >{!curr.c_id}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="OpenedOn" style="color:CornflowerBlue;">OpenedOn</p>
+                                <p >{!curr.created}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="CreatedBy" style="color:CornflowerBlue;">CreatedBy</p>
+                                <p >{!curr.created_by}</p>
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2" padding="around-small">
+                            <div class="header-column">
+                                <p class="field-title" title="cs1049 Submitted" style="color:CornflowerBlue;">cs1049-Submitted</p>
+                                <p >{!curr.c_cs1049_status}</p>
+                            </div>
+                        </lightning:layoutItem><br />
+                        </lightning:layout>
+                    </div>
+                </div> 
+                
+            </aura:iteration>
+        </ul> 
+    </div>
+    
+    <br /> <br />
+    <br /> <br />
+    <aura:attribute name="load" type="Boolean" default="false" />
+    <div class="slds-text-heading_medium">Consumer Activities</div>
+    <br /> <br />
+    <div class="slds-box">
+        <div class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <lightning:datatable data="{! v.mydata }"
+                                 columns="{! v.mycolumns }"
+                                 keyField="date_created" 
+                                 hideCheckboxColumn="true"/>
+        </div>
+    </div>
+    
+    <br /> <br />
+    <div class="slds-text-heading_medium">Case Activities</div>
+    <br /> <br />
+    <div class="slds-box">
+        <div class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <lightning:datatable data="{! v.mydatanext }"
+                                 columns="{! v.mycolumnsnext }"
+                                 keyField="date_created" 
+                                 hideCheckboxColumn="true"/>
+        </div> 
+    </div>
+    
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+</aura:component>

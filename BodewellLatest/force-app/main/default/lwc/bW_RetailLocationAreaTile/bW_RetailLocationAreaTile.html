@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-grid slds-wrap location-tile-area">
+        <template for:each={retailAreaLocations} for:item="area">
+            <div key={area.index}
+                class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+                <div class="location-flex-adjust">
+                    <div class="details-loc">
+                        <div class="icon-section">
+                            <img class="locationpin-image" src={locationpinsvg} alt="location-pin">
+                        </div>
+                        <div class="location-section">
+                            <div class="location">
+                                <a href={area.url}>{area.location}, {area.state}</a>
+                            </div>
+                            <div class="call-local">
+                                <span class="test-call-local">Call Local</span>
+                                <div class="location-phone-number">
+                                    <span class="call-page-link phone">{area.localPhone}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

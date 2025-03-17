@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Troubleshoot Article Card</masterLabel>
+    <description>Troubleshooting Articles Card for Resource Page</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="cardTitle" 
+                        label="Card Title" 
+                        type="String" 
+                        default="Card Title" 
+                        description="Card Title"/>
+            <property name="cardDescription" 
+                        label="Card Description" 
+                        type="String" 
+                        default="Card Description" 
+                        description="Card Description"/>
+            <property name="buttonLabel" 
+                        label="Button Label" 
+                        type="String" 
+                        default="Button Label" 
+                        description="Button Label"/>
+            <property name="articleURL" 
+                        label="Article URL" 
+                        type="String" 
+                        default="Article URL" 
+                        description="Article URL"/>
+            <property name="tileImageId" 
+                        type="ContentReference"
+                        label="Tile Image" 
+                        filter=""/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

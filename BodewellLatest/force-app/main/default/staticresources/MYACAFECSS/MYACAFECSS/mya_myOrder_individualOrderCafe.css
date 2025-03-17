@@ -1,0 +1,223 @@
+body {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.SMOL {
+    text-align: center;
+    color: rgba(108, 97, 88, .8);
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 1rem;
+    display: block;
+    padding-top: 1rem;
+}
+
+.SMOL:hover {
+    color: #46645a;
+}
+
+
+/* .SMOL::before {
+    display: inline-block;
+    font-family: "SS BlackTie-Regular";
+    content: '&#xe895';
+    margin-right: 0.333333em;
+    line-height: 1;
+    vertical-align: -12.5%;
+} */
+
+.subheading {
+    text-align: center;
+    color: #004b3d;
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    line-height: 1.18751rem;
+    font-size: 1.625rem;
+    border-bottom: 1px solid #004b3d;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ImageDescription {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product-title {
+    color: #555;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5rem;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.product-model-number {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.product-link {
+    text-align: center;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-size: 1rem; */
+    margin-left: 1rem;
+    font-size: 0.875rem;
+    line-height: 2;
+    font-weight: 400;
+}
+
+.delivery-info:hover {
+    text-decoration: underline;
+    color: #46645a;
+}
+
+.return-an-item:hover {
+    text-decoration: underline;
+    color: #46645a;
+}
+
+.track-my-order:hover {
+    text-decoration: underline;
+    color: #46645a;
+}
+
+.reschedule:hover {
+    text-decoration: underline;
+    color: #46645a;
+}
+
+.view-order-details:hover {
+    text-decoration: underline;
+    color: #46645a;
+}
+
+.view-order-details {
+    color: #004b3d;
+    background-color: transparent;
+    border: transparent;
+}
+
+.text-content-main {
+    color: #6c6158;
+    font-size: 1rem;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.orderDetail {
+    background-color: #efefef;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.4287;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.order-data {
+    font-weight: 100;
+    font-size: 15px;
+    color: #555;
+}
+
+.OrdInd {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.track-text {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 3rem;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+}
+
+@media screen and (max-width:39.9375rem) {
+    .ProductImage {
+        display: none;
+    }
+    .product-title {
+        width: 100%;
+        text-align: left;
+    }
+    .mob-view-set {
+        display: flex;
+        flex-direction: column;
+    }
+    .product-link {
+        text-align: left;
+        font-size: 0.875rem;
+        line-height: 1.8rem;
+        font-weight: 400;
+        padding: 0.5rem;
+        width: 20rem;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    .view-order-details {
+        color: #004b3d;
+        background-color: transparent;
+        border: transparent;
+        padding: 0rem;
+    }
+    .mob-head {
+        width: 20rem;
+        display: block;
+        padding: 0.5rem 10px;
+    }
+    .orderDetail {
+        background-color: #efefef;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        line-height: 1.4287;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: black;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        display: flex;
+        padding-bottom: 15px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .test {
+        width: 20rem;
+        float: left;
+        display: inline-flex;
+        writing-mode: horizontal-tb;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        text-align: left;
+        padding: 0.5rem 0.5rem;
+    }
+    .order-data {
+        font-weight: 100;
+        font-size: 15px;
+        color: #555;
+        margin-left: auto;
+        width: 50%;
+    }
+}

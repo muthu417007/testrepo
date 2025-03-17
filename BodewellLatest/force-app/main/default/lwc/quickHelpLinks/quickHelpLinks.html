@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Quick Helplinks" icon-name="custom:custom33">
+
+        <ul class="slds-list_dotted">
+            <template for:each={records} for:item="record">
+
+                <div class="slds-p-around_small" style="display: inline-block;" key={record.Id}>
+                    <li><u><b>
+                                <!--<a   target="_blank" href={record.Quick_Link__c} aria-current="page" role="option" class="slds-split-view__list-item-action slds-grow slds-has-flexi-truncate">
+                {record.Name__c}</a>-->
+
+                                <a target="_blank" href={record.Quick_Link__c}>{record.Name__c}</a>
+                            </b></u>
+                    </li>
+                </div>
+
+            </template>
+        </ul>
+    </lightning-card>
+</template>

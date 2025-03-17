@@ -1,0 +1,16 @@
+.container{
+    height: 100%;
+    display: block !important;
+}
+
+.card{
+    height: 80%;
+}
+
+.slds-card{
+    height: 80% !important;
+}
+
+.lightning-card{
+    height: 80% !important;
+}

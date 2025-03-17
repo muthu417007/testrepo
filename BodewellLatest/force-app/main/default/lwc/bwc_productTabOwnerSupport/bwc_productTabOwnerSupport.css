@@ -1,0 +1,78 @@
+/* for owner support*/
+.card-container {
+    display: flex;
+    border-top: 2px solid #DED1B1;
+    border-bottom: 2px solid #DED1B1;
+}
+
+.card {
+    flex: 1;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.card:not(:last-child) {
+    border-right: 2px solid #DED1B1;
+
+}
+
+.card img {
+    width: 100px;
+    max-width: 200px;
+    height: auto;
+}
+.card p{
+text-align: center;
+}
+.card h2 {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 32px;
+    /* font-family: Neue Haas Grotesk Display Pro; */
+    text-align: center;
+ 
+    letter-spacing: 0.8px;
+    color: #12212E;
+    opacity: 1;
+}
+
+.links {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.links a {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+    /* font-family: Neue Haas Grotesk Display Pro; */
+    font-size: 16px;
+letter-spacing: 0.32px;
+color: #245B83;
+text-transform: capitalize;
+opacity: 1;
+}
+.icon-owner {
+    width: 112px;
+    height: 147px;
+    margin: 5px;
+  
+}
+@media(max-width:768px) {
+    .card {
+
+        max-width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card:not(:last-child) {
+        border-right: none;
+    }
+}

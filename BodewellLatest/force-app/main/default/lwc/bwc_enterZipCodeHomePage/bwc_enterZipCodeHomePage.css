@@ -1,0 +1,70 @@
+.slds-modal__container {
+    margin: 0 auto;
+    width: 40%;
+    max-width: 30rem;
+    min-width: 20rem;
+}
+.header-flex{
+    display: flex;
+
+    justify-content: space-between;
+}
+:host {
+    --slds-c-modal-content-color-background: white;
+
+    --slds-c-modal-header-color-background: white;
+}
+.zip-container
+{
+    display:flex;
+    justify-content: space-between;
+}
+.zip-container button{
+    width: 209px;
+    height: 44px;
+    /* UI Properties */
+    background: var(---245b83-action-blue) 0% 0% no-repeat padding-box;
+    background: #245B83 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+    /* UI Properties */
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 15px/15.97px var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+color: var(---f7f1e7-warm-white);
+text-align: center;
+font: normal normal medium 15px/16px Neue Haas Grotesk Display Pro;
+letter-spacing: 0.75px;
+color: #F7F1E7;
+text-transform: uppercase;
+opacity: 1;
+margin-left: 15px;
+}
+.zip-container input{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+letter-spacing: var(--unnamed-character-spacing-0-42);
+color: var(---707070);
+text-align: left;
+font: normal normal normal 14px/20px Neue Haas Grotesk Display Pro;
+letter-spacing: 0.42px;
+color: #707070;
+opacity: 1;
+width: 266px;
+height: 44px;
+}
+.zip-text
+{
+ 
+text-align: left;
+/*font: normal normal normal 16px/24px Neue Haas Grotesk Display Pro;*/
+letter-spacing: 0.48px;
+color: #12212E;
+opacity: 1;
+margin-bottom: 20px;
+}
+.slds-modal__title{
+    text-align: left;
+    font: normal normal medium 22px/28px Neue Haas Grotesk Display Pro;
+    letter-spacing: 0.66px;
+    color: #12212E;
+    opacity: 1;
+    font-weight: bold;
+}

@@ -1,0 +1,33 @@
+<template lwc:render-mode="light">
+    <ul
+        class={layoutContainerClass}
+        role="listbox"
+        aria-label={ariaLabelForSearchResults}
+        onkeydown={handleKeyDown}
+        oncompare={handleCompareEvent}
+        onuncompare={handleUnCompareEvent}
+        oncomparenow={handleCompareNowEvent}>
+        <template iterator:it={normalizedDisplayData}>
+            <li
+                key={it.value.id}
+                class="grid-item slds-border_bottom"
+                style={layoutCustomStyles}
+                role="option">
+                <section class={layoutSpacingClasses}>
+                    <c-bwc_search-product-card
+                        class="slds-grid card-item"
+                        data-id={it.value.id}
+                        configuration={cardConfiguration}
+                        display-data={it.value}
+                        sale-banner-color={saleBannerColor}
+                        clearance-banner-color={clearanceBannerColor}
+                        is-compared={it.value.isCompared}
+                        onshowproduct={handleNavigateToProductPage}
+                        onaddproducttocart={handleAddToCart}
+                        onproductchanged={handleProductChanged}
+                        ></c-bwc_search-product-card>
+                </section>
+            </li>
+        </template>
+    </ul>
+</template>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe" description="Brand"/>
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="CHECK ORDER STATUS" description="Page Title"/>
+            <property name="findOrderButtonLabel" label="Find Order Button Label" type="String" default="FIND ORDER" description="FIND ORDER"/>
+            <property name="referenceNoLabel" label="Reference No Label" type="String" default="Reference number" description="Reference number"/>
+            <property name="emailAddressLabel" label="Email Address Label" type="String" default="Email Address" description="Email Address"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

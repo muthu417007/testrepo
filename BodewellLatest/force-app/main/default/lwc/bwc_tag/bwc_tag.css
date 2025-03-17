@@ -1,0 +1,16 @@
+.saletag,
+.clearancetag {
+    color: var(--tag-color, var(---ffffff-white, #ffffff));
+    padding: var(--tag-padding);
+    text-align: var(--tag-text-align);
+    position: var(--tag-position, static);
+    top: var(--tag-top);
+    left: var(--tag-left);
+    z-index: var(--tag-z-index);
+    width: var(--tag-width, auto);
+    height: var(--tag-height, auto);
+    display: var(--tag-display, inline-block);
+    text-transform: uppercase;
+    letter-spacing: var(--unnamed-character-spacing-0-42);
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+}

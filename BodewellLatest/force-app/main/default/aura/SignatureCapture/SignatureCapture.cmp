@@ -1,0 +1,50 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickAction" controller="SignatureCaptureController">
+
+    <aura:attribute name="caseRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="ownerConsent" type="Boolean" default="false"/>
+    <aura:attribute name="isDesktop" type="Boolean" default="false"/>
+    <aura:attribute name="showSignatureCaptureComponent" type="Boolean" default="true"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="BGSIGCAP:SignatureCapturedEvt" action="{!c.handleCaptured}"/>
+
+    <force:recordData aura:id="recordLoader"
+        recordId="{!v.recordId}"
+        fields="Owner_Consent__c"
+        targetFields="{!v.caseRecord}"
+        targetError="{!v.recordLoadError}"
+    />
+
+    <aura:if isTrue="{!!v.caseRecord.Owner_Consent__c}">
+        <lightning:layout multipleRows="true"  class="slds-m-top_medium">
+            <lightning:layoutItem size="12" class="slds-align_absolute-center">
+                <lightning:input type="checkbox" checked="{!v.ownerConsent}"/>
+                <span class="slds-m-around_medium">
+                    {!$Label.c.Owner_Consent}
+                </span>
+            </lightning:layoutItem>
+
+            <lightning:layoutItem size="12" class="slds-align_absolute-center">
+                <aura:if isTrue="{!v.ownerConsent}">
+                    <BGSIGCAP:SignatureCapture
+                        recordId="{!v.recordId}"
+                        skipToCapture="true"/>
+                </aura:if> 
+            </lightning:layoutItem>
+        </lightning:layout>
+        <aura:set attribute="else">
+            <lightning:layout class="slds-m-top_medium">
+                <lightning:layoutItem size="12" class="slds-align_absolute-center">
+                    Owner Consent has been captured
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:set>
+    </aura:if>
+    <aura:if isTrue="{!!v.isDesktop}">
+        <lightning:layout class="slds-m-top_medium">
+            <lightning:layoutItem size="12" class="slds-align_absolute-center">
+                <lightning:button label="Go Back" title="Go Back" onclick="{! c.goBack }"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,41 @@
+<template>
+
+    <lightning-card  title={header}>
+
+        
+        <template if:false={isSending}>
+            <lightning-button 
+                slot="actions"
+                variant="brand"
+                label="Send" title="Send SMS Message to Contact" 
+                onclick={sendSMS} 
+                class="slds-m-left_x-small">
+            </lightning-button>
+        </template>
+        
+        <template if:true={isSending}>
+            <lightning-spinner alternative-text="Sending Text.." size="medium"></lightning-spinner>
+        </template>
+
+
+        <p class="slds-p-horizontal_small">
+
+
+            <lightning-input 
+                label="Phone" 
+                type="tel" 
+                value={phone_outbound} 
+                onchange={change_phone}>
+
+            </lightning-input>
+
+            <!-- max max 918 -->
+            <lightning-textarea 
+                maxlength="160"
+                label="Message" 
+                placeholder="SMS text message here...">
+            </lightning-textarea>
+
+        </p>
+    </lightning-card>
+</template>

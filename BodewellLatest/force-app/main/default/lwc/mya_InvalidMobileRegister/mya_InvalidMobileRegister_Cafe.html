@@ -1,0 +1,39 @@
+<template>
+    <div if:true={reference}>
+
+    <div class="main-width">
+        <img class="status-image3" src={logoImg2} alt="logoImg">
+        <div class="text1">
+            The appliance code you scanned is not working. Please use the links below for assistance with your appliance.
+        </div>
+        <div class="link-text">
+            <span class="span-text">
+                <span class="style-text">Model:</span>
+                <span class="span-value">{M}123455</span> 
+                    <span class="style-text">Serial:</span>
+                    <span class="span-value">{S}123455</span>
+            </span>
+        </div>
+        <div class="im">
+            <img src={flagcanada} alt="Canada"> Canadian Residents? 
+            <a class="a2" target="_blank" href="https://service.geappliances.ca/">&nbsp;Visit GE Appliance Canada</a>
+        </div>
+    </div>  
+    <div class="footer">
+        <div class="padd-set">
+                <div class="left-text">
+                    <p class="copy-right-text">Copyright 2022 GE Appliances, a Haier company <br> 
+                        GE is a trademark of General Electric Company. Manufactured under trademark license.</p>
+                </div>
+                <div class="right-text">
+                    <ul class="list-inlineBlock list-vertical-brd-dark-grey">
+                        <li><a href="javascript:void(0);" onclick={handleFeedCafe}>Feedback</a></li>
+                        <li><a href="https://www.geappliances.com/plcy/tandc2.htm" target="_blank">Terms</a></li>
+                        <li><a href="https://www.geappliances.com/privacy/privacy_policy.htm" target="_blank">Privacy</a></li>
+                    </ul>
+                </div>
+        </div>
+
+    </div>  
+    </div>
+</template>

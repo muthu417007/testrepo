@@ -1,0 +1,52 @@
+<aura:component controller="CybersourceIntegrationController" implements="lightning:isUrlAddressable" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="con" type="Contact" />
+    <aura:attribute name="contactId" type="String" />
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="lastName" type="String" />
+    <aura:attribute name="street" type="String" />
+    <aura:attribute name="city" type="String" />
+    <aura:attribute name="state" type="String" />
+    <aura:attribute name="zipcode" type="String" />
+    <aura:attribute name="paymentAmount" type="Integer" />
+    
+	<!--<div class="slds-box slds-theme_default">
+        <form action="https://secureacceptance.cybersource.com/pay" method="post">
+
+            
+            <lightning:input name="bill_to_forename" label="First Name" value="{!v.firstName}" />
+            <lightning:input name="bill_to_surname" label="Last Name" value="{!v.lastName}" />
+            
+            <lightning:input name="bill_to_address_line1" label="Street" value="{!v.street}" />
+            <lightning:input name="bill_to_address_city" label="City" value="{!v.city}" />
+            <lightning:input name="bill_to_address_state" label="State" value="{!v.state}" />
+            <lightning:input name="bill_to_address_postal_code" label="Zipcode" value="{!v.zipcode}" />
+            
+            <lightning:input type="number" name="amount" label="Payment Amount" value="{!v.paymentAmount}" />
+            
+            <input name="access_key" value="5fbd0821869a3384982a47c45c1ce8a3" hidden="true" />
+            <input name="profile_id" value="1691B5CA-B0A1-4C96-AD77-457F4B7F5F05" hidden="true" />
+            <input name="bill_to_address_country" value="US" hidden="true" />
+            <input name="locale" value="en" hidden="true" />
+            <input name="transaction_type" value="sale,create_payment_token" hidden="true" />
+			<input name="signed_field_names" value="merchant_defined_data1%2coverride_custom_receipt_page%2cmerchant_defined_data2%2cmerchant_defined_data3%2ctax_amount%2camount%2ctransaction_uuid%2cunsigned_field_names%2csigned_field_names%2csigned_date_time%2ctransaction_type%2clocale%2ccurrency%2creference_number%2caccess_key%2cprofile_id%2cmerchant_defined_data4%2cbill_to_address_country%2cbill_to_address_line1%2cbill_to_forename%2cbill_to_address_postal_code%2cbill_to_address_state%2cbill_to_surname%2cbill_to_address_city%2cbill_to_email" hidden="true" />
+            
+            <input type="submit" value="Submit" />
+        </form>
+    </div>-->
+    
+    <div class="slds-box slds-theme_default">
+    <lightning:input name="firstNameInput" label="First Name" value="{!v.firstName}" />
+            <lightning:input name="lastNameInput" label="Last Name" value="{!v.lastName}" />
+            
+            <lightning:input name="streetInput" label="Street" value="{!v.street}" />
+            <lightning:input name="cityInput" label="City" value="{!v.city}" />
+            <lightning:input name="stateInput" label="State" value="{!v.state}" />
+            <lightning:input name="zipcodeInput" label="Zipcode" value="{!v.zipcode}" />
+            
+            <lightning:input type="number" name="paymentAmountInput" label="Payment Amount" value="{!v.paymentAmount}" />
+            
+           	<lightning:button label="Submit" onclick="{!c.handlesubmitClick}"/>
+       </div>
+</aura:component>

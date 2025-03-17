@@ -1,0 +1,37 @@
+/* start RG about Us Schedule service Card Css */
+
+.addition_text_main{
+    background-color: #eee;
+    padding: 20px 24px;
+}
+.addition_text_main .main-content-sub-text_inner {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+.right-about-content{
+    text-align: -webkit-right;
+}
+.addition_text_main .side-cta {
+    text-align: left;
+    padding: 0 0 0 45px;
+    top: 0;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background: rgb(255,191,0);
+}
+.addition_text_main .side-cta:hover {
+    background:rgb(247,241,231);
+}
+/* END RG about Us Schedule service Card Css  */

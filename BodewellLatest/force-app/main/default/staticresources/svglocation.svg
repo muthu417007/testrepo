@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="43px" viewBox="0 0 32 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>4B98754F-BE24-4857-A6B8-245BE67F77BC</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.070588 0 0 0 0 0.129412 0 0 0 0 0.180392 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Pattern-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="map-marker-alt-solid" transform="translate(-100.000000, -5165.000000)" filter="url(#filter-1)">
+            <g transform="translate(100.000000, 5165.000000)">
+                <path d="M14.3556667,42.1324311 C2.2475,24.4420507 0,22.6264769 0,16.1249961 C0,7.2193791 7.16341667,0 16,0 C24.8365833,0 32,7.2193791 32,16.1249961 C32,22.6264769 29.7525,24.4420507 17.6443333,42.1324311 C16.84975,43.2892316 15.1501667,43.2891476 14.3556667,42.1324311 Z M16,22.8437444 C19.6819167,22.8437444 22.6666667,19.8356768 22.6666667,16.1249961 C22.6666667,12.4143153 19.6819167,9.4062477 16,9.4062477 C12.3180833,9.4062477 9.33333333,12.4143153 9.33333333,16.1249961 C9.33333333,19.8356768 12.3180833,22.8437444 16,22.8437444 Z" id="Shape" fill="#12212E" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

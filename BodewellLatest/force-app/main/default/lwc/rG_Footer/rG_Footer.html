@@ -1,0 +1,68 @@
+<template>
+    <h2 class="overview-nav-section slds-p-top_none"></h2>
+    <div class="footer">
+        <div class="slds-grid slds-wrap footer-padding slds-m-top_x-large slds-m-bottom_small footer-container">
+            <div class="slds-col slds-small-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                <span>
+                    <ul
+                        class="slds-list_horizontal slds-small-size_12-of-12  slds-has-block-links_space slds-m-bottom_xxx-small">
+                        <li>
+                            <a href={termLink} target="_self" onclick={handleNavigation} data-value={label.RG_Terms}
+                                class="footer-link-elements">{label.RG_Terms}</a>
+                        </li>
+                        <li>
+                            <a href={privacyLink} target="_self" data-value={label.RG_Privacy} onclick={handleNavigation} class="footer-link-elements">{label.RG_Privacy}</a>
+                        </li>
+                        <li>
+                            <a href={privacyNoticeLink} target="_self" onclick={handleNavigation} data-value={label.RG_California_Privacy_Notice}
+                                class="footer-link-elements">{label.RG_California_Privacy_Notice}</a>
+                        </li>
+                        <li>
+                            <a onclick={handleNavigation} target="_self" href={sitemapLink} data-value={label.RG_Sitemap} class="footer-link-elements">{label.RG_Sitemap}</a>
+                        </li>
+                    </ul>
+                    <ul
+                        class="slds-list_horizontal slds-small-size_12-of-12 slds-has-block-links_space slds-m-bottom_xxx-small">
+                        <li>
+                            <a href={consentLink} target="_self" onclick={handleNavigation} data-value={label.RG_Do_Not_Sell_or_Share_My_Personal_Information}
+                                class="footer-link-elements">{label.RG_Do_Not_Sell_or_Share_My_Personal_Information}</a>
+                        </li>
+                        <li>
+                            <a class="footer-link-elements" target="_self" onclick={handleCookies} data-value={label.RG_Cookie_Settings}>{label.RG_Cookie_Settings}</a>
+                        </li>
+                        <li>
+                            <a href={accessibilityLink} target="_self" onclick={handleNavigation} data-value={label.RG_Accessibility} class="footer-link-elements">{label.RG_Accessibility}</a>
+                        </li>
+                        <li>
+                            <a onclick={handleNavigation} target="_self" href={faqLink} data-value={label.RG_FAQ} class="footer-link-elements">{label.RG_FAQ}</a>
+                        </li>
+                    </ul>
+                    <!-- <ul
+                        class="slds-list_horizontal slds-small-size_12-of-12  slds-has-block-links_space slds-m-bottom_xxx-small">
+                        <template iterator:it={menuListItems}>
+                            <li key={it.value.id} if:false={it.value.isCookieSettings}>
+                                <c-r-g_-navigation-link link={it.value.menuItemTarget} label={it.value.menuItemName}
+                                    is-service-area={it.value.isServiceArea} is-external-link={it.value.isExternalLink}>
+                                </c-r-g_-navigation-link>
+                            </li>
+                            <li key={it.value.id} if:true={it.value.isCookieSettings}>
+                                
+                                <a class="footer-link-elements" onclick={handleCookies}
+                                    data-value={it.value.menuItemName}>{it.value.menuItemName}</a>
+                            </li>
+                        </template>
+                    </ul> -->
+                </span>
+            </div>
+            <div class="slds-col slds-small-size_1-of-1  slds-medium-size_6-of-12 slds-large-size_4-of-12">
+                <span>
+                    <p class="footer-note">{copyRightLabel} <a class="ge-link" data-value={label.RG_aboutGe}
+                            onclick={handleNavigation} href={aboutGeLink}>{label.RG_aboutGe}</a>
+                    </p>
+                    <p class="footer-note">{tradeMark}</p>
+                    <p class="footer-note">{lic}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</template>

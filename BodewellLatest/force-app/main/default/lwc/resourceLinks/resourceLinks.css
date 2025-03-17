@@ -1,0 +1,47 @@
+.colorBar{
+    background: linear-gradient(90deg, #1250B9 0%, #871E86 53.93%, #E600BE 105.66%);
+    height: .3em;
+}
+
+.resourceLink{
+    color:#ffffff !important;
+    cursor:pointer;
+}
+.resourceLink:hover{
+    text-decoration:underline;
+}
+
+.modal {
+    position: fixed; 
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin-left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 3em;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.frame{
+    border:none;
+}

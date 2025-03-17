@@ -1,0 +1,444 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" variant="brand" size="small">
+            </lightning-spinner>
+        </div>
+    </template>
+
+    <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+        <template if:false={openEditAddress}>
+
+            <div class="header-container">
+                <div class="header-container">
+                    <span class="icon slds-icon slds-icon_x-small">
+                        <svg viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                            <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Desktop-Home" transform="translate(-671.000000, -1141.000000)" fill="#3E5769"
+                                    fill-rule="nonzero">
+                                    <g id="check-circle-solid-copy-2" transform="translate(671.000000, 1141.000000)">
+                                        <path
+                                            d="M163,81.5 C163,126.511333 126.511333,163 81.5,163 C36.4886673,163 0,126.511333 0,81.5 C0,36.4886673 36.4886673,0 81.5,0 C126.511333,0 163,36.4886673 163,81.5 Z M72.0729476,124.653593 L132.54069,64.1858508 C134.593964,62.1325766 134.593964,58.8032359 132.54069,56.7499617 L125.1048,49.3140726 C123.051526,47.2604698 119.722185,47.2604698 117.668583,49.3140726 L68.3548387,98.6274879 L45.3314173,75.6040665 C43.2781431,73.5507923 39.9488024,73.5507923 37.8951996,75.6040665 L30.4593105,83.0399556 C28.4060363,85.0932298 28.4060363,88.4225706 30.4593105,90.4758448 L64.6367298,124.653264 C66.6903327,126.706867 70.0193448,126.706867 72.0729476,124.653593 L72.0729476,124.653593 Z"
+                                            id="Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg> </span>
+                    <h5 class="headerAddress">
+                        Customer</h5><br>
+                    <p class="slds-text-body_medium email-class">{userEmail}
+                    </p>
+                </div>
+
+                <button onclick={editAddress} class="slds-button slds-button_outline-brand buttonEdit">EDIT</button>
+
+            </div>
+
+            <!-- <div class="addContainer">
+                <p>{finalShippingAddress}
+                </p>
+            </div> -->
+        </template>
+        <template if:true={openEditAddress}>
+            <div class="header-container-clone">
+                <span class="icon slds-icon slds-icon_x-small">
+                    <img src={Step_1} />
+                </span>
+                <h5 class="headerAddress">
+                    Customer</h5>
+            </div>
+
+            <p class="headerAddress-clone">
+                Shipping Address</p>
+            <template if:true={multipleAddress}>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <!-- <label class="slds-form-element__label" for="input-01">Shipping Address</label> -->
+                                <div class="slds-form-element__control">
+                                    <select onchange={handelSelectedAddress} name="address" data-name="address"
+                                        title="Address" class="slds-input inputPadding">
+                                        <!-- <template if:true={selectedAddress}>
+                                        <option value={selectedAddress.value}>{selectedAddress.label}</option>
+                                    </template> -->
+                                        <template if:true={addressOptions}>
+                                            <template for:each={addressOptions} for:item="address">
+                                                <option key={address.value} value={address.label}>{address.label}
+                                                </option>
+
+                                            </template>
+                                        </template>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template if:true={isOneAddress}>
+
+                <div class="addContainer">
+                    <p>{oneAddress.label}
+                    </p>
+                </div>
+
+            </template>
+            <template if:true={shipAdddressFlag}>
+                <template if:false={noAddress}>
+                    <div class="addContainer">
+
+                        <span class="iconAdd slds-icon slds-icon_xx-small"><svg xmlns="http://www.w3.org/2000/svg"
+                                height="1em" viewBox="0 0 512 512">
+                                <path
+                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                            </svg>
+                        </span>
+                        <a onclick={addNewAddress} class=" addAddress">Ship To A Different
+                            Address</a>
+
+                    </div>
+                </template>
+                <template if:true={noAddress}>
+                    <div class="addContainer">
+
+                        <span class="iconAdd slds-icon slds-icon_xx-small">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                <path
+                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
+                            </svg>
+                        </span>
+                        <a onclick={addNewAddressClose} class=" addAddress">Ship To A Different
+                            Address</a>
+
+                    </div>
+
+                </template>
+            </template>
+            <template if:true={noAddress}>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">First Name*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleFirstNameChange} type="text" data-name="First Name"
+                                        id="input-01" class="slds-input inputPadding" value={FirstName}
+                                        placeholder="Enter Your First Name…" aria-describedby="error-message-id-51" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-51">{showFirstNameError}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-02">Last Name*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleLastNameChange} data-name="Last Name" type="text"
+                                        id="input-02" class="slds-input inputPadding" value={LastName}
+                                        placeholder="Enter Your Last Name…" aria-describedby="error-message-id-52" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-52">{showLastNameError}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">Address*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleAddressChange} data-name="Address" type="text" id="input-03"
+                                        class="slds-input inputPadding" placeholder="Enter Your Address…"
+                                        aria-describedby="error-message-id-53" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-53">{showAddressError}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">Address Line 2</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleAddressLine2Change} data-name="Address2" type="text"
+                                        id="input-04" class="slds-input inputPadding" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">City*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleCityChange} data-name="City" type="text" id="input-05"
+                                        class="slds-input inputPadding" placeholder="Enter Your City..."
+                                        aria-describedby="error-message-id-54" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-54">{showCityError}
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">State*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleStateChange} data-name="State" type="text" id="input-06"
+                                        class="slds-input inputPadding" placeholder="Enter Your State..."
+                                        aria-describedby="error-message-id-55" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-55">{showStateError}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_2-of-2">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label inputLabel" for="input-01">Zip*</label>
+                                <div class="slds-form-element__control">
+                                    <input onchange={handleZipChange} data-name="Zip" type="text" id="input-07"
+                                        class="slds-input inputPadding" placeholder="Enter Your Zip..."
+                                        aria-describedby="error-message-id-56" />
+                                </div>
+                                <div class="slds-form-element__help error" id="error-message-id-56">{showZipError}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </template>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__row">
+                    <div class="slds-size_2-of-2">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+
+
+                                <input onclick={sendAddressToBilling} class="inputPadding" data-name="Billing Checkbox"
+                                    type="checkbox" id="checkbox-unique-id-34" value="checkbox-unique-id-34" />
+                                <label class="checkbox__label" for="checkbox-unique-id-34">
+
+                                    <span class="slds-form-element__label">My billing address is the same as my shipping
+                                        address</span>
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-size_2-of-2">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label inputLabel" for="input-01">Phone Number*</label>
+                            <div class="slds-form-element__control">
+                                <input onchange={handlePhoneChange} type="text" id="input-08" data-name="Phone"
+                                    value={PhoneNumber} class=" inputPadding slds-input"
+                                    placeholder="Enter phone number…" aria-describedby="error-message-id-57" />
+                            </div>
+                            <div class="slds-form-element__help error" id="error-message-id-57">{showPhoneError}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-size_2-of-2">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+
+
+                                <input onclick={handleTextMeChange} type="checkbox" data-name="Textme"
+                                    value="checkbox-unique-id-34" class="inputPadding" />
+                                <label class="checkbox__label" for="checkbox-unique-id-34">
+
+                                    <span class="slds-form-element__label">Text Me Order Confirmation</span>
+                                </label>
+                                <p>You expressly consent to GE Appliances contacting you at this number by voice or
+                                    text.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="button-container">
+                <button class=" slds-button slds-button_brand continueButton" onclick={handleContinue}> CONTINUE
+                </button>
+
+            </div>
+        </template>
+    </fieldset>
+    <template if:true={isOpenModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless"
+                    id="modal-content-id-1">
+
+                    <h2 class="headerAddress-modal">
+                        Please Confirm Your Address</h2>
+                    <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+                        <template if:true={isValid}>
+                            <div class="slds-form-element__help error">{showAddressValidError}</div>
+                        </template>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__row">
+                                <template if:false={isValid}>
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label inputLabel" for="input-01">Use This
+                                                Address</label>
+
+                                            <span class="  slds-radio sldsradio">
+                                                <input type="radio" id="radio-61" value={updatedAddress} name="default"
+                                                    data-name="addressCheck" checked="" />
+                                                <label class="slds-radio__label" for="radio-61">
+                                                    <span class="slds-radio_faux "></span>
+                                                    <span class="slds-form-element__label">{updatedAddress}</span>
+                                                </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label inputLabel" for="input-01">Keep What I
+                                            Entered</label>
+
+                                        <span class="slds-radio sldsradio">
+                                            <input type="radio" id="radio-62" value={userAddress} name="default"
+                                                data-name="addressCheck" />
+                                            <label class="slds-radio__label" for="radio-62">
+                                                <span class="slds-radio_faux "></span>
+                                                <span class="slds-form-element__label">{userAddress}</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="confirm-button">
+                        <template if:true={isValid}>
+                            <button onclick={updateAddress} type="button" class="slds-button slds-button_brand ">UPDATE
+                                ADDRESS</button>
+                        </template>
+                        <button onclick={saveAddress} type="button" class="slds-button slds-button_brand ">CONFIRM MY
+                            ADDRESS</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+
+    <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+
+
+        <div class="header-container">
+            <div class="header-container">
+                <template if:false={section2OpenEditAddressHeader}>
+                    <span class="icon slds-icon slds-icon_x-small">
+                        <svg viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g transform="translate(-671.000000, -1141.000000)" fill="#3E5769" fill-rule="nonzero">
+                                    <g transform="translate(671.000000, 1141.000000)">
+                                        <path
+                                            d="M163,81.5 C163,126.511333 126.511333,163 81.5,163 C36.4886673,163 0,126.511333 0,81.5 C0,36.4886673 36.4886673,0 81.5,0 C126.511333,0 163,36.4886673 163,81.5 Z M72.0729476,124.653593 L132.54069,64.1858508 C134.593964,62.1325766 134.593964,58.8032359 132.54069,56.7499617 L125.1048,49.3140726 C123.051526,47.2604698 119.722185,47.2604698 117.668583,49.3140726 L68.3548387,98.6274879 L45.3314173,75.6040665 C43.2781431,73.5507923 39.9488024,73.5507923 37.8951996,75.6040665 L30.4593105,83.0399556 C28.4060363,85.0932298 28.4060363,88.4225706 30.4593105,90.4758448 L64.6367298,124.653264 C66.6903327,126.706867 70.0193448,126.706867 72.0729476,124.653593 L72.0729476,124.653593 Z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg> </span>
+                </template>
+                <template if:true={section2OpenEditAddressHeader}>
+                    <span class="icon slds-icon slds-icon_x-small">
+
+                        <img src={Step_2} />
+                    </span></template>
+
+                <h5 class="headerAddress">
+                    Shipping Address</h5>
+
+            </div>
+
+            <template if:false={section2OpenEditAddressHeader}>
+                <button onclick={editShippingAddress}
+                    class="slds-button slds-button_outline-brand buttonEdit">EDIT</button>
+            </template>
+        </div>
+        <template if:false={section2OpenEditAddressHeader}>
+            <div class="addContainer">
+                <p>{finalShippingAddress}
+                </p>
+            </div>
+        </template>
+        <template if:true={section2OpenEditAddress}>
+
+            <c-bwc_checkout-products zip-code={zipCode}></c-bwc_checkout-products>
+            <!-- <div class="button-container">
+                <button class=" slds-button slds-button_brand continueButton" onclick={handleShippingContinue}> CONTINUE
+                </button>
+            </div> -->
+        </template>
+
+    </fieldset>
+    <template if:false={shippingContinue}>
+        <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+
+
+            <div class="header-container-clone">
+
+
+
+                <span class="icon slds-icon slds-icon_x-small">
+
+                    <img src={Step_3} />
+                </span>
+                <h5 class="headerAddress">
+                    Billing Address</h5>
+            </div>
+
+
+
+        </fieldset>
+        <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+     
+            <div class="header-container-clone">
+                <span class="icon slds-icon slds-icon_x-small">
+                   <img src={Step_4}/>
+                </span>
+                <h5 class="headerAddress">
+                    Payment</h5>
+            </div></fieldset>
+    </template>
+    <template if:true={shippingContinue}>
+        <c-bwc_billing-address-checkout account-id={accountId}
+            is-same-shipping={isShippingSameAsBilling}></c-bwc_billing-address-checkout>
+    </template>
+    <template if:true={isValidZipCode}>
+        <c-bwc_-delivery-zip-code-validation zip-code-instance={zip}></c-bwc_-delivery-zip-code-validation>
+    </template>
+</template>

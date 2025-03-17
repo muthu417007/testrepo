@@ -1,0 +1,580 @@
+ .address-information-section {
+     background-color: #F4F3EF;
+     font-family: sans-serif;
+     margin-top: 60px;
+     padding-top: 3rem;
+     padding-bottom: 3rem;
+     margin-bottom: 8rem;
+     -webkit-text-size-adjust: 100%;
+ }
+ 
+ .left {
+     text-align: left;
+ }
+ 
+ .select-box {
+     font-weight: 500;
+     color: rgba(108, 97, 88, 1);
+     margin: -1.5rem 0rem 0rem 0rem;
+ }
+ 
+ .add-address-card {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ 
+ .ss-plus {
+     display: inline-block;
+     font-family: FontAwesome;
+     margin-right: 0.333333em;
+     line-height: 1;
+     vertical-align: -12.5%;
+     font-size: large;
+     color: #092c74;
+     font-weight: 600;
+ }
+ 
+ a:hover {
+     text-decoration: underline;
+     color: rgba(108, 97, 88, 1);
+ }
+ 
+ .add-address-card:hover {
+     padding-bottom: calc(1.5rem - 4px);
+ }
+ 
+ .address-card:hover {
+     box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 30%);
+     padding-bottom: calc(1.5rem - 5px);
+     color: #092c74;
+     border-bottom: 5px solid #092c74;
+ }
+ 
+ .other-h3-c {
+     letter-spacing: .25px;
+     color: rgba(108, 97, 88, 1);
+     font-weight: 100;
+     font-family: 'Gotham-Medium';
+     font-size: 22px;
+     text-transform: uppercase;
+     overflow: hidden;
+     box-sizing: border-box;
+ }
+ 
+ strong {
+     color: rgba(108, 97, 88, 1);
+ }
+ 
+ .add-address-border {
+     border: 1px black dashed;
+ }
+ 
+ .other-h3 {
+     letter-spacing: .25px;
+     color: #092c74;
+     font-weight: 100;
+     font-family: 'Gotham-Medium';
+     font-size: 22px;
+     text-transform: uppercase;
+     overflow: hidden;
+     box-sizing: border-box;
+ }
+ 
+ h3 {
+     display: block;
+     margin-block-start: 1em;
+     margin-block-end: 1em;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+ }
+ 
+ h2 {
+     letter-spacing: .25px;
+     font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+     line-height: 1.18571em;
+     text-rendering: optimizeLegibility;
+     display: block;
+     margin-block-start: 0.83em;
+     margin-block-end: 0.83em;
+     margin-inline-start: 0px;
+     margin-inline-end: 0px;
+     font-weight: bold;
+ }
+ 
+ p {
+     line-height: 1.3;
+     text-rendering: optimizeLegibility;
+     font-size: 14px;
+     font-family: 'Gotham-Book';
+ }
+ 
+ a {
+     background-color: transparent;
+     color: #1a63a2;
+     text-decoration: none;
+     cursor: pointer;
+     font-family: 'Gotham-Book';
+ }
+ 
+ .font-size-17 {
+     font-size: 1.0625rem;
+ }
+ 
+ .account-information-page .address-card {
+     margin-bottom: 1.875rem;
+ }
+ 
+ .ss-icon {
+     display: inline-block;
+ }
+ 
+ .no-underline {
+     text-decoration: none;
+ }
+ 
+ .address-card {
+     background-color: white;
+     text-align: center;
+     padding: 2.5rem 1.0rem;
+     padding-top: 2.5rem;
+     padding-right: 1.0rem;
+     padding-bottom: 2.5rem;
+     padding-left: 1.0rem;
+     margin-bottom: 1.875rem;
+ }
+ 
+ .medium-offset-0 {
+     margin-left: 0%;
+ }
+ 
+ .grid-x>.medium-12 {
+     width: 100%;
+ }
+ 
+ .grid-margin-x {
+     margin-left: 0rem;
+     margin-right: -0.9375rem;
+ }
+ 
+ .grid-margin-x.medium-up-2>.cell {
+     width: calc(50% - 1.875rem);
+ }
+ 
+ .grid-margin-x>.cell {
+     margin-left: 0.9375rem;
+     margin-right: 0.9375rem;
+     height: 16rem;
+     width: 14rem;
+ }
+ 
+ .cell {
+     margin-left: 0.9375rem;
+     margin-right: 0.9375rem;
+     height: 16rem;
+     width: 14rem;
+ }
+ 
+ .grid-container {
+     box-sizing: border-box;
+     display: block;
+     padding-right: 0.9375rem;
+     padding-left: 0.9375rem;
+ }
+ 
+ .grid-x {
+     display: flex;
+     -webkit-box-orient: horizontal;
+     -webkit-box-direction: normal;
+     flex-flow: row wrap;
+ }
+ 
+ .infoHeader {
+     padding-bottom: 0.5%;
+     margin-top: 0rem;
+     font-size: 24px;
+     font-weight: 200;
+     text-transform: uppercase;
+     color: #555;
+ }
+ 
+ .text-center {
+     text-align: center;
+ }
+ 
+ .payment-title {
+     margin: 15px 0px 15px 0px;
+     letter-spacing: 0.5px;
+     font-size: 24px;
+     font-family: 'Gotham-Book';
+     text-align: center;
+     padding-bottom: 25px;
+     color: #555;
+ }
+ 
+ .margin-btm-1em {
+     margin-bottom: 1em;
+ }
+ 
+ .modal-header {
+     font-size: 22px;
+     color: #092c74;
+     font-weight: 800;
+     margin-bottom: 0em;
+     letter-spacing: 0.25px;
+     margin-top: 0rem;
+     text-transform: capitalize;
+     background: transparent;
+     border-bottom: none;
+ }
+ 
+ .add-address-model {
+     font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+ }
+ 
+ .close-button {
+     font-size: 1em;
+     color: #1a63a2;
+     top: 10px;
+     font-family: 'Gotham-Book';
+     right: 5px;
+     line-height: 0;
+     position: absolute;
+     cursor: pointer;
+ }
+ 
+ .close-button:hover {
+     background-color: transparent;
+     border-style: none;
+ }
+ 
+ .fa {
+     cursor: pointer;
+     text-decoration: none;
+     display: inline-block;
+     font-family: 'Gotham-Medium';
+     line-height: 1;
+     font-size: larger;
+     color: #092c74;
+     font-weight: 600;
+ }
+ 
+ .add-address-form {
+     font-family: sans-serif;
+     position: relative;
+     margin: 0;
+     padding: 0;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: normal;
+     color: #333;
+     cursor: auto;
+ }
+ 
+ .reveal.add-address-modal {
+     top: 40px;
+     margin-bottom: 20px;
+ }
+ 
+ .reveal {
+     overflow: visible;
+     border: 4px solid #1a63a2;
+     margin-bottom: 1em;
+     padding: 1rem 2rem;
+     width: 600px;
+     max-width: 75rem;
+     z-index: 1006;
+     backface-visibility: hidden;
+     border-radius: 0;
+     background-color: #fefefe;
+     position: relative;
+     top: 100px;
+     margin-right: auto;
+     margin-left: auto;
+     overflow-y: auto;
+ }
+ 
+ .reveal-overlay {
+     position: fixed;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     z-index: 1005;
+     background-color: rgba(10, 10, 10, 0.45);
+     overflow-y: auto;
+ }
+ 
+ .reveal {
+     right: auto;
+     left: auto;
+     margin: 0 auto;
+ }
+ 
+ label,
+ .mock-label {
+     font-size: 0.9411764705882353rem;
+     display: block;
+     position: relative;
+     margin: 0em 0 1em;
+     width: 100%;
+     font-family: 'Gotham-Book';
+     font-weight: bold;
+     color: rgba(108, 97, 88, 1);
+     line-height: 1.8;
+     text-align: left;
+ }
+ 
+ .validate {
+     font-weight: 500;
+     color: rgba(108, 97, 88, 1);
+ }
+ 
+ .form-input,
+ body {
+     -webkit-font-smoothing: antialiased;
+ }
+ 
+ .input-field-class {
+     border: 1px solid #bdb9b2;
+     padding: 0.2rem 1.5rem 0rem 0.5rem;
+     height: 2.7375rem;
+     box-sizing: border-box;
+     width: 100%;
+     margin: 0 0 1rem;
+     border-radius: 0;
+     background-color: #fefefe;
+     box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+     font-size: 1rem;
+     font-weight: normal;
+     vertical-align: baseline;
+     line-height: 1.5;
+     color: #0a0a0a;
+     overflow: visible;
+     transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+     writing-mode: horizontal-tb;
+     cursor: text;
+ }
+ 
+ .address-button {
+     width: 100%;
+     background-color: #1A63A2;
+     color: white;
+     padding: 10px 20px;
+     margin: 8px 0;
+     border: none;
+     font-family: 'Gotham-Book';
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ .checkbox-section>p {
+     margin-bottom: 0;
+     padding-left: 10px;
+     margin-top: 0px;
+     text-rendering: optimizeLegibility;
+ }
+ 
+ .checkbox-section {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .small-text {
+     font-family: "Proxima Nova W05 Regular", "Helvetica Neue", "Arial", sans-serif;
+     font-weight: normal;
+     font-style: normal;
+     font-size: 0.875rem;
+     line-height: calc(19/ 14);
+     letter-spacing: 0.020em;
+ }
+ 
+ .inline {
+     display: inline;
+ }
+ 
+ .address-button:hover {
+     text-decoration: none;
+     background-color: #092c74;
+     color: #fff;
+ }
+ 
+ .required {
+     content: "*";
+     color: #c54b25;
+     padding-left: 3px;
+     top: 0;
+     position: initial;
+ }
+ 
+ .ss-edit {
+     content: '\f044';
+     display: inline-block;
+     font-family: FontAwesome;
+     margin-right: 0.333333em;
+     line-height: 1;
+     vertical-align: -12.5%;
+     font-size: large;
+     color: #092c74;
+     font-weight: 600;
+ }
+ 
+ .check {
+     color: white;
+ }
+ 
+ .disclaimer-block {
+     margin-top: 2rem;
+ }
+ 
+ .text-center {
+     text-align: center;
+ }
+ 
+ .disclaimer {
+     font-size: 0.875rem;
+     line-height: calc(19/ 14);
+     font-style: normal;
+     margin-bottom: 1.5rem;
+     text-rendering: optimizeLegibility;
+ }
+ 
+ .remove-address {
+     position: absolute;
+     left: 0;
+     width: 100%;
+     bottom: 1.5rem;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .capitalize {
+     text-transform: capitalize;
+ }
+ 
+ .additional-address-card {
+     position: relative;
+     padding: 1rem 0.5rem;
+     padding-bottom: 5px;
+ }
+ 
+ .additional-address-card>.edit-additional-address-link {
+     padding: 1.5rem 0rem 0rem 0rem;
+     padding-bottom: 3rem;
+ }
+ 
+ .display-block {
+     display: block;
+ }
+ 
+ .pSize {
+     margin-top: 1rem;
+     margin-bottom: 1.5rem;
+ }
+ 
+ .linkbutton {
+     background: none;
+     border: none;
+     font-family: 'Gotham-Book';
+     color: #1a63a2;
+     text-decoration: none;
+     cursor: pointer;
+     font-weight: 600;
+     font-size: 0.875rem;
+     padding-bottom: 1rem;
+ }
+ 
+ .linkbutton:hover {
+     color: #092c74;
+     text-decoration: underline;
+ }
+ 
+ @media only screen and (max-width:480px) {
+     * {
+         font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif !important;
+     }
+     .modal-header {
+         padding: 10px 10px 10px 10px;
+         width: 100%;
+         margin: 14px 0px 14px 0px;
+     }
+     .grid-x {
+         display: flex;
+         -webkit-box-orient: horizontal;
+         -webkit-box-direction: normal;
+         flex-flow: row wrap;
+         flex-direction: row;
+         width: 100%;
+         justify-content: center;
+     }
+     .add-address-model {
+         margin: 25px;
+     }
+     .add-address-form {
+         font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+         position: relative;
+         margin: 0px 0px 0px 0px;
+         padding: 0px 0px 0px 0px;
+         font-size: 1rem;
+         width: 100%;
+         font-weight: 400;
+         line-height: normal;
+         color: #333;
+         cursor: auto;
+     }
+     .pSize {
+         text-align: left;
+     }
+     .address-button {
+         width: 100%;
+         display: block;
+         text-align: center;
+     }
+     .disclaimer-block {
+         width: 100%;
+     }
+     .reveal.add-address-modal {
+         top: 15%;
+         margin-bottom: 20px;
+     }
+     .reveal {
+         overflow: visible;
+         border: 4px solid #1a63a2;
+         margin-bottom: 1em;
+         padding: 1rem 1rem;
+         width: 95%;
+         max-width: 75rem;
+         z-index: 1006;
+         backface-visibility: hidden;
+         border-radius: 0;
+         background-color: #fefefe;
+         position: relative;
+         top: 5%;
+         margin-right: auto;
+         margin-left: auto;
+         overflow-y: auto;
+     }
+ }
+ 
+ @media only screen and (min-width:481px) and (max-width:768px) {
+     .reveal {
+         overflow: visible;
+         border: 4px solid #1a63a2;
+         margin-bottom: 1em;
+         padding: 1rem 2rem;
+         width: 80%;
+         max-width: 75rem;
+         z-index: 1006;
+         backface-visibility: hidden;
+         border-radius: 0;
+         background-color: #fefefe;
+         position: relative;
+         top: 100px;
+         margin-right: auto;
+         margin-left: auto;
+         overflow-y: auto;
+     }
+     .reveal.add-address-modal {
+         top: 15%;
+         margin-bottom: 20px;
+     }
+ }

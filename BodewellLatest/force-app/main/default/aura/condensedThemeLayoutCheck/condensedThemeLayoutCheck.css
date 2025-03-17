@@ -1,0 +1,28 @@
+.THIS.container {
+ }
+@media only screen and (max-width:1000px) {
+    .THIS .navigation{
+    	display:block;
+    	height:79px !important;
+		}
+ }
+ .THIS .navigation{
+    display:block;
+    height:100px;
+}
+ /* Spacing between sections change the first value to change vertical spacing */
+ .THIS .section {
+     margin: 0rem 0;
+ }
+ 
+ .THIS .section-title {
+     margin: 0rem;
+ }
+ 
+ /* Comment and uncomment to remove border below titles */
+ /* Padding bottom should match the margins of the section-title*/
+ .THIS .slds-col {
+     border-bottom: 0px solid #ccc;
+     padding-bottom: 0rem;
+     margin-bottom: 0rem;
+ }

@@ -1,0 +1,111 @@
+/* Promo Banner */
+.banner {
+    background-color: var(--sunshine-yellow);
+    padding: 1px 15px;
+}
+
+
+.modal-border {
+    border-radius: 0;
+}
+
+.slds-modal__header,
+.slds-modal__footer {
+    border: 0;
+    border-radius: 0;
+    padding: 15px 30px;
+}
+
+.slds-modal__content {
+    padding: 0 30px;
+}
+
+.title-join {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 7px;
+}
+
+.member-icon,
+.member-icon svg {
+    width: 82px;
+    height: 64px;
+}
+
+.member-icon svg {
+    fill: var(--sunshine-yellow);
+}
+
+.svg-icon-membership {
+    width: 35px;
+    height: 35px;
+    margin: 0px 20px;
+    fill: black;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+}
+
+.offer-list {
+    padding-left: 25px;
+}
+
+.offer-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.bullet {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--sunshine-yellow);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerButton2 {
+    color: #000;
+    background: var(--sunshine-yellow);
+    font-weight: var(--font-weight-bold);
+    border: 1px solid #FFC01F;
+}
+
+.footerButton2:hover,
+.footerButton2:active {
+    color: #245B83;
+    background: #fff;
+    border: 1px solid #245B83;
+}
+
+.footerlink {
+    text-align: center;
+    padding: 30px;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Modal */
+
+@media (min-width: 48em) {
+    .slds-modal__container {
+        padding: 0;
+
+    }
+}

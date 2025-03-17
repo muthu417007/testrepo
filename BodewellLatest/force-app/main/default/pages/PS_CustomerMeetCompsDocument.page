@@ -1,0 +1,64 @@
+<apex:page standardController="Account" extensions="PS_MeetCompPdfGenerator_ctrl" renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+            <style >
+                body {font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+                table {border-collapse:collapse;
+                      border: .02em solid black;}
+                td, th {border: .02em solid black; padding-left: 3px; padding-right: 3px; font-size:10px;}
+            </style>
+        </head>
+		<apex:image url="{!$Resource.PS_GeaPdfLogo}" style="width:25%; height:25%" />
+        <div style="font-size:12px;">
+            <p style="text-align:right;">Account Number: {!ac.Oracle_Account_Number__c}</p>
+            <p style="text-align:left;">
+                {!ac.Doing_Business_As_DBA__c}<br/>
+                {!ac.BillingStreet}<br/>
+                {!ac.BillingCity}, {!ac.BillingState} {!ac.BillingPostalCode}<br/>
+                Customer Phone: {!ac.Phone}<br/>
+                Customer Fax: {!ac.Fax}
+            </p>
+            <p style="text-align:right;">Date: 
+                <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                    <apex:param value="{!TODAY()}" /> 
+                </apex:outputText>
+            </p><br/>
+            <p style="text-align:center;font-size:16px; font-weight:bold;">GE Appliances ("GEA") Meeting Competition Price Communication</p>
+            <hr style="width:100%;height:1px;text-align:left;margin-left:0;background-color:black;border-width:0;"/>
+        </div>
+
+        <p><b>GE Appliances (&#34;GEA&#34;) is offering special pricing shown below to the customer to respond in good faith to the prices from GEA's
+                competitor(s). GEA is also offering these prices based on the customer's representation that it will purchase the expected volumes shown.
+                GEA reserves the right to increase its prices at any time without any notice and for any reason including, but not limited to, increases in
+                the pricing of its competitor(s) or customer's failure to purchase the expected volumes.</b></p><br/>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!meetComps}" var="mc" id="Mc">
+                    <apex:column headerValue="GEA Product">{!mc.SKU__c}</apex:column>
+                    <apex:column headerValue="Invoice Price">{!mc.GEA_Meet_Comp_Price__c}</apex:column>
+                    <apex:column headerValue="PIF/Volume Allowance %">{!mc.GEA_Volume_Rebate_PIF__c}</apex:column>
+                    <apex:column headerValue="IIA/Cash/Terms %">{!mc.GEA_Inventory_Financing__c}</apex:column>
+                    <apex:column headerValue="Other Discounts i.e. PA's $">{!mc.GEA_Other_Backside_curnc__c}</apex:column>
+                    <apex:column headerValue="Net Price">{!mc.GEA_Net_Price__c}</apex:column>
+                    <apex:column headerValue="Expected GEA Volume (units)">{!mc.Quantity__c}</apex:column>
+                    <apex:column headerValue="Pricing Effective Date">
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{!mc.Effective_Date__c}" /> 
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Pricing Expiration Date">
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{!mc.Termination_Date__c}" /> 
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.MC_Type__c.Label}">{!mc.MC_Type__c}</apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+        <br/>
+        *PIF's, allowances, and other discounts are <br/>
+        estimates. Actual amounts may vary based on <br/>
+        program terms communicated separately.
+    </html>
+</apex:page>

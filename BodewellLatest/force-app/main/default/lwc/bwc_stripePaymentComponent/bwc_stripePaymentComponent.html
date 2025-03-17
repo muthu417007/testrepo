@@ -1,0 +1,97 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    <template if:true={orderInProgress}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"
+                class="slds-m-top_large"></lightning-spinner>
+        </div>
+    </template>
+    <fieldset class="slds-form-element slds-form-element_compound slds-p-around_small">
+
+        <div class="header-container-clone">
+            <span class="icon slds-icon slds-icon_x-small">
+                <img src={Step_4} />
+            </span>
+            <h5 class="headerAddress">
+                Payment</h5>
+        </div>
+        <template if:true={isPaymentIntent}>
+            <template if:true={paymentIntentMethodMap}>
+                <template for:each={paymentIntentMethodMap} for:item="item">
+                    <template if:false={item.affirm}>
+                        <p key={item.type}>${item.amount} will be charged to {item.type} ****{item.last} </p>
+                    </template>
+                    <template if:true={item.affirm}>
+                        <p key={item.type}>${item.amount} will be charged to {item.type} </p>
+                    </template>
+                </template>
+
+            </template>
+            <p >Your remaining balance is <strong>  <lightning-formatted-number                   
+                value= {remainingAmount} 
+                maximum-fraction-digits="2"
+                currency-code={currencyCode}
+                format-style="currency">
+        </lightning-formatted-number></strong> </p>
+
+            <template if:false={orderInProgress}>
+                <form id="payment-form" class="slds-m-top_small">
+
+
+
+                    <div data-id='paymentElement-0' class="payment-element">
+                        <!--Stripe.js injects the Payment Element-->
+                    </div>
+
+                    <!-- <div id="affirm-message" data-id={item.affirmId}></div> -->
+
+                    <span>Charge the total amount of 
+                        <lightning-formatted-number                   
+                    value= {remainingAmount} 
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency">
+            </lightning-formatted-number>
+                        to this card?</span>
+                    <div class="radio-group">
+                        <template for:each={options} for:item="option">
+
+                            <input key={option.value} type="radio" name="test" value={option.value}
+                                oninput={inputHandler} onchange={handleChange} data-name="split" >
+                            <label key={option.value} class="slds-m-right_x-small"> {option.label}
+                            </label>
+                        </template>
+                        <input name="amountSplit" class=" inputPadding slds-m-left_x-small" data-id={remainingAmount}
+                            value={_amount} placeholder="Enter amount" onchange={handleAmountChange}></input>
+                        <div class="slds-form-element__help error">{showAmountError}
+                        </div>
+                    </div>
+<template if:true={isNo}>
+                    <button id="submit" onclick={handleSubmit} data-id="submit" disabled={isDisabled}
+                        class="slds-m-top_small">
+                        <div class="spinner hidden" id="spinner" data-id="spinner"></div>
+                        <span id="button-text" data-id="button-text">CONTINUE</span>
+                    </button>
+                </template>
+                <template if:false={isNo}>
+                    <button id="submit2" onclick={handleSubmit} data-id="submit" disabled={isDisabled}
+                        class="slds-m-top_small">
+                        <div class="spinner hidden" id="spinner1" data-id="spinner"></div>
+                        <span id="button-text1" data-id="button-text">PLACE ORDER</span>
+                    </button>
+                </template>
+                    <div id="payment-message" class="hidden payment-message"></div>
+
+
+
+                </form>
+            </template>
+        </template>
+    </fieldset>
+
+
+</template>

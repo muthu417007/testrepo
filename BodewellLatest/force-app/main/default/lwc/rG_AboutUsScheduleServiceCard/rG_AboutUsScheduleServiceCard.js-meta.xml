@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG About Us Schedule Service Card</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="content" type="String" label="Content" default="Content"/>
+            <property name="buttonlabel" type="String" label="Button Label" default="View service Areas"/>
+            <property name="navigationtype" label="Navigation type" type="String" description="Navigation Type" datasource="External Link,Site Page"/>
+            <property name="redirectionLink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="buttonArea" label="Button Area" type="String" description="Button Area" default="header" datasource="header,body,footer"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

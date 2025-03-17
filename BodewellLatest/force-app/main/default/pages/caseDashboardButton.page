@@ -1,0 +1,10 @@
+<apex:page standardController="Case" extensions="Case_ext" lightningStylesheets="true">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <div class="slds-scope">
+        <apex:form >
+            <apex:commandLink action="{!caseDashboard}" value="Case Dashboard" styleclass="slds-button slds-button_brand" target="_blank" />
+        </apex:form>
+    </div>
+</apex:page>

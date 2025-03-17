@@ -1,0 +1,82 @@
+.case-label {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.caseDetailheading {
+    background: white;
+    color: black;
+    padding: 20px;
+}
+
+.c-container {
+    margin: 2rem auto;
+    width: 1161px;
+}
+
+.cr-label-line {
+    margin: 0;
+}
+
+.caseDetail {
+    padding: 14px;
+    background: #fff;
+}
+.no-casedata{
+    text-align:center;
+}
+.cr-details {
+    margin: 2px;
+}
+
+.view-case-details {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-size: 0.875rem;
+    color: #333;
+    letter-spacing: .7px;
+    color: blue;
+}
+
+.case-data {
+    font-size: 0.875rem;
+    color: #333;
+    letter-spacing: .7px;
+}
+
+.formatted-date {
+    font-size: 0.875rem;
+    color: #333;
+    letter-spacing: .7px;
+}
+
+.mobile-cr-cases {
+    display: none;
+}
+
+@media (max-width:767px) {
+    .mobile-cr-cases {
+        display: block;
+    }
+    .desktop-cr-cases {
+        display: none;
+    }
+    .cell-cases-list {
+        margin-bottom: 20px;
+        background: #fff;
+    }
+    td,
+    th {
+        padding: 6px;
+    }
+    th,
+    td {
+        width: 50%;
+    }
+    .c-container {
+        margin: 2rem auto;
+        width: 95%;
+    }
+}

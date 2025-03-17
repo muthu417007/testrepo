@@ -1,0 +1,82 @@
+<template>
+  
+ <div class="details slds-grid slds-grid_vertical slds-card">  
+   <span>{orderSummaryLabel}</span>
+    <template iterator:it={orderPaymentDetails}>
+  
+      <div key={it.value.OrderSummary.OrderNumber}>
+              
+        <div class="slds-grid slds-wrap">
+             <div class="slds-col slds-size_1-of-2">
+                <p class="itemTitle">Subtotal:  </p>
+              </div>
+             <div class="slds-col slds-size_1-of-2">
+                <p class="itemValue"> <lightning-formatted-number                   
+                  value= {subtotalFinal} 
+                  maximum-fraction-digits="2"
+                  currency-code={currencyCode}
+                  format-style="currency">
+          </lightning-formatted-number> </p>
+             </div>
+       <template if:true={homeDeliveryItem}>
+              <div class="slds-col slds-size_1-of-2">
+                     <p class="itemTitle">In-Home Delivery: </p>
+                 </div>
+                 <div class="slds-col slds-size_1-of-2">
+                      <!-- <p class="itemValue">${hdFee} </p> -->
+                      <template if:true={free}>
+                            <div class="itemTitleFree">
+                            <p class="itemValue">{free}</p>
+                            <p class="memberTotalvalue">${hdFee}</p></div>
+                        </template>
+                        <template if:false={free}>
+                            <p class="itemValue">${hdFee}</p>
+                        </template>
+
+                 </div>
+       </template>
+       <template if:true={shipToHome}>
+             <div class="slds-col slds-size_1-of-2" >
+                   <p class="itemTitle">FedEx Package Shipment:  </p>
+               </div>
+             <div class="slds-col slds-size_1-of-2">
+                  
+
+                    <template if:true={partShipppingFlag}>
+                     <p class="itemValue">{partShipppingFlag}</p>
+                     <p class="memberTotalvalue">${partsFee}</p>
+                 </template>
+                 <template if:false={partShipppingFlag}>
+                     <p class="itemValue">${partsFee}</p>
+                 </template>
+             </div>
+       </template>
+             <div class="slds-col slds-size_1-of-2">
+              <p class="itemTitle">Coupon:  </p>
+       </div>
+       <div class="slds-col slds-size_1-of-2">
+             <p class="itemValue">${it.value.OrderSummary.TotalAdjDistAmount} </p>
+      </div>
+
+             <div class="slds-col slds-size_1-of-2">
+                    <p class="itemTitle">Tax:  </p>
+             </div>
+             <div class="slds-col slds-size_1-of-2">
+                   <p class="itemValue">${it.value.OrderSummary.TotalTaxAmount} </p>
+            </div>
+             <div class="slds-col slds-size_1-of-2">
+                   <p class="itemTitle" style="font-weight: bold;">Total: </p>
+              </div>
+             <div class="slds-col slds-size_1-of-2">
+                   <p class="itemValue"> <lightning-formatted-number                   
+                        value= {totalFinal} 
+                        maximum-fraction-digits="2"
+                        currency-code={currencyCode}
+                        format-style="currency">
+                </lightning-formatted-number></p>
+             </div>
+        </div>
+   </div>
+ </template>
+</div>
+</template>

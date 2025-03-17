@@ -1,0 +1,31 @@
+<template>
+    <lightning-card class="promo">
+        <div class="promotions">
+            <lightning-input class="input" type="text" label="Promotions" onchange={handleCouponCodeChange}
+                value={couponCode} placeholder="Coupon Code"></lightning-input>
+                 <!-- <lightning-icon icon-name="action:close" size="x-small" onclick={deleteCoupon} ></lightning-icon>  -->
+            <div class="couponButton">
+                <button class="applyCoupon slds-button slds-button_brand" onclick={publishCoupon}>
+                    APPLY
+                </button>
+            </div>
+        </div>
+        <div class="message">
+            <template if:true={successMessage}>
+                <div class="box">               
+                    <lightning-icon class="successIcon" icon-name="action:approval" size="x-small" ></lightning-icon>
+                    <div class="smsg">
+                        {successMessage}
+                    </div>
+                    <lightning-icon class="closeIcon" icon-name="action:close" size="xx-small" onclick={handleRemoval}></lightning-icon>
+ 
+                </div>               
+                 
+            </template>
+            <template if:true={errorMessage}>
+                <div class="emsg"> {errorMessage} </div>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

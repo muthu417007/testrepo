@@ -1,0 +1,9 @@
+.container{
+    background-color: white;
+    gap: 12px;
+    display: flex;
+}
+
+.progressBar{
+    width: -webkit-fill-available !important;
+}

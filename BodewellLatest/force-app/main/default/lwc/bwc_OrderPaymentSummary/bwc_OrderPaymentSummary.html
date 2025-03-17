@@ -1,0 +1,28 @@
+<template>
+  
+    <!-- <template iterator:it= {orderPaymentDetails}>
+        <div key={it.value.Id}>
+         <lightning-layout class="bg-color">
+          <lightning-layout-item>
+            <div>
+                <p> {it.value.Method}  </p>
+          </div>
+          </lightning-layout-item>
+          </lightning-layout>
+          </div>
+          </template> -->
+            
+    <template iterator:it= {orderPaymentDetails}>
+        <div key={it.value.Id}>
+         <lightning-layout class="bg-color">
+          <lightning-layout-item>
+            <div>
+                <p> {it.value.ATTRIBUTE4__c}-{it.value.ATTRIBUTE5__c} </p>
+          </div>
+          </lightning-layout-item>
+          </lightning-layout>
+          </div>
+          </template>
+
+          
+</template>

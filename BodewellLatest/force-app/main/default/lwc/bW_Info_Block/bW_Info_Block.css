@@ -1,0 +1,192 @@
+/* .basic-info-block {
+    margin-top: 1.5rem!important;
+}
+
+.cta-link-container {
+    padding: 6em 52px;
+    border-right: 2px solid #dfd0b0;
+}
+
+.basic-info-block a span {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.generic-button.tertiary-transparent:hover,
+.generic-button.tertiary-transparent :active {
+    background-color: #0E2D44;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+.cta-text-block a:hover {
+    text-decoration: none !important;
+}
+
+.generic-button {
+    border-radius: 25px;
+    font-size: 15px;
+    letter-spacing: .45px;
+    line-height: 16px;
+    text-align: center;
+    padding: 14px 25px 14px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.generic-button:focus {
+    outline-offset: 4px;
+    outline-color: #0073a8;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.cta-text-block {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.generic-button.tertiary-transparent {
+    background-color: transparent;
+    color: #0E2D44;
+    border: 2px solid #0E2D44;
+}
+
+.basic-info-block .cta-link-block {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-icon-block h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.basic-info-block .cta-link-block p {
+    color: #0e2d44;
+    line-height: 26px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0px;
+    margin: 0;
+    word-spacing: 2px;
+} */
+
+/* @media (min-width: 992px) {
+    .basic-info-block {
+        text-align: center;
+        border-top: 2px solid #dfd0b0;
+        border-bottom: 2px solid #dfd0b0;
+    }
+    .basic-info-block .cta-link-block img {
+        margin-bottom: 40px;
+    }
+    .cta-link {
+        margin-top: 30px;
+    }
+    .mobile-basic-block {
+        display: none;
+    }
+    .mobile-basic-heading-block {
+        display: none;
+    }
+} */
+
+/* @media(max-width:991px) {
+    .desktop-basic-block {
+        display: none;
+    }
+    .basic-info-block {
+        text-align: center;
+    }
+    .basic-info-block h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .cta-text-block {
+        color: #0e2d44;
+        line-height: 30px;
+        font-size: 16px;
+        word-spacing: 3px;
+        margin: 0 0 25px 0;
+    }
+    .cta-link-container {
+        display: flex;
+        padding: 30px 20px;
+        border-right: none;
+    }
+    .mob-btn {
+        font-size: 15px;
+        font-weight: 600;
+        word-spacing: 4px;
+        line-height: 16px;
+        text-align: center;
+        padding: 14px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: transparent;
+        color: #0E2D44;
+        border: 2px solid #0E2D44;
+        width: 100%;
+        border-radius: 25px;
+    }
+    .mob-btn:hover,
+    .mob-btn:active {
+        background-color: #0E2D44;
+        color: #fff;
+    }
+    .cta-text-block {
+        padding: 0;
+        padding-left: 10px;
+    }
+    .mobile-basic-block,
+    .mobile-basic-heading-block {
+        padding-left: 0;
+        border-top: 2px solid #dfd0b0;
+        margin: 0;
+    }
+    .cta-text-block p {
+        margin: 0 0 25px 0;
+        font-size: 14px;
+    }
+    .basic-info-block .cta-link-block p {
+        padding: 0 12px;
+        margin: 0 0 35px 0;
+        color: #0e2d44;
+        line-height: 22px;
+        font-size: 14px;
+        font-weight: 300;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .basic-info-block .cta-link-block {
+        height: auto;
+    }
+    .basic-img {
+        padding-right: 10px;
+        width: 95%;
+        max-height: 163px;
+    }
+}
+@media(max-width:475px){
+    .mob-btn {
+        font-size:12px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1330px) {
+    .inner-content {
+        padding: 0px !important;
+    }
+    .cta-icon-block h3 {
+        font-size: 26px;
+    }
+} */

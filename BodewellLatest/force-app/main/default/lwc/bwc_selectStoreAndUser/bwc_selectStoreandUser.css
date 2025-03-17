@@ -1,0 +1,13 @@
+.store{
+    width: 13rem;
+}
+
+.user{
+    width: 13rem;
+}
+
+.container{
+    width: 20rem !important;
+    display: block !important;
+    height: 100%;
+}

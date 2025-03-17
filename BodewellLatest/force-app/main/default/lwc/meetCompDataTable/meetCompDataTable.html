@@ -1,0 +1,44 @@
+<template>
+    <lightning-card variant="Narrow"
+        title="Mass pull in Termination Date"
+        icon-name="utility:cancel_file_request">
+        <div slot="actions" onclick={navigateToListView}>
+            <lightning-button-icon
+                icon-name="action:close"
+            ></lightning-button-icon>
+        </div>
+        <div class="slds-m-around_small">
+            <template if:true={errors}>
+                <c-errorhandling errormessage={errors} onerrorclosed={navigateToListView}></c-errorhandling>
+            </template>
+            <template if:true={allRecordsUpdated}>
+                <c-successhandling successmessage={successmessage} onsuccessclosed={navigateToListView}></c-successhandling>
+            </template>
+            <template if:true={partialUpdate}>
+                <c-warninghandling infomessage={infomessage} onwarningclosed={navigateToListView}></c-warninghandling>
+            </template>
+        </div>
+        <div class="slds-m-around_small">
+            <template if:false={allRecordsUpdated}>
+                <template if:false={errors}>
+                    <template if:true={records}>
+                        <!--<div class="slds-size_1-of-2">
+                        <lightning-input label="Termination Date" type="date" onchange={dateChange}></lightning-input>
+                        </div>-->
+                        <c-do-pagination
+                            records={records}
+                            show-table="true"
+                            columns={columns}
+                            recordsperpage="50"
+                            onactions={handleRowActions}
+                            onpagination={handlePagination}
+                            onrecordsupdated={RecordsUpdated}
+                            onpartialupdated={handlePartialUpdate}>
+                        </c-do-pagination>
+                    </template>
+                </template>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

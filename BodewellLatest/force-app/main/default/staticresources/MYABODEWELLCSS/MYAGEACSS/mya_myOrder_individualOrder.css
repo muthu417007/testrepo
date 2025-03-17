@@ -1,0 +1,213 @@
+body {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.SMOL {
+    text-align: center;
+    color: #1a63a2;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    font-size: 0.8235294117647059rem;
+}
+
+.SMOL:hover {
+    color: #003B71;
+}
+
+.subheading {
+    text-align: center;
+    color: #555555;
+    font-family: 'Gotham-Book';
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    line-height: 1.18751rem;
+    font-size: xx-large;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ImageDescription {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product-title {
+    color: #151515;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    font-weight: 700;
+    line-height: 1.3rem;
+    font-family: 'Gotham-Book';
+}
+
+.product-model-number {
+    color: #555;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.product-link {
+    text-align: center;
+    font-family: 'Gotham-Book';
+    /* font-size: 1rem; */
+    margin-left: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.delivery-info:hover {
+    text-decoration: underline;
+}
+
+.return-an-item:hover {
+    text-decoration: underline;
+}
+
+.track-my-order:hover {
+    text-decoration: underline;
+}
+
+.reschedule:hover {
+    text-decoration: underline;
+}
+
+.view-order-details:hover {
+    text-decoration: underline;
+    color: #003B71;
+}
+
+.view-order-details {
+    color: #1a63a2;
+    background-color: transparent;
+    border: transparent;
+}
+
+.text-content-main {
+    color: #333;
+    font-size: 14px;
+    font-family: 'Gotham-Book';
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.3rem;
+}
+
+.orderDetail {
+    background-color: #efefef;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.4287;
+    font-family: 'Gotham-Book';
+    color: black;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.order-data {
+    font-weight: 100;
+    font-size: 15px;
+    color: #555;
+}
+
+.OrdInd {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.track-text {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 5px;
+    font-family: 'Gotham-Book';
+    padding-bottom: 3rem;
+    display: block;
+}
+
+
+/* .spinner-div {
+    position: relative;
+    display: inline-block;
+    margin: 4px 18px;
+} */
+
+@media screen and (max-width:39.9375rem) {
+    .ProductImage {
+        display: none;
+    }
+    .product-title {
+        width: 100%;
+        text-align: left;
+    }
+    .mob-view-set {
+        display: flex;
+        flex-direction: column;
+    }
+    .product-link {
+        text-align: left;
+        font-family: 'Gotham-Book';
+        font-size: 0.875rem;
+        line-height: 1.8rem;
+        font-weight: 400;
+        padding: 0.5rem;
+        width: 20rem;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    .view-order-details {
+        color: #1a63a2;
+        background-color: transparent;
+        border: transparent;
+        padding: 0rem;
+    }
+    .mob-head {
+        width: 20rem;
+        display: block;
+        padding: 0.5rem 10px;
+    }
+    .orderDetail {
+        background-color: #efefef;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        line-height: 1.4287;
+        font-family: 'Gotham-Book';
+        color: black;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+        display: flex;
+        padding-bottom: 15px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .test {
+        width: 20rem;
+        float: left;
+        display: inline-flex;
+        writing-mode: horizontal-tb;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: left;
+        align-items: baseline;
+        padding: 0.5rem 0.5rem;
+    }
+    .order-data {
+        font-weight: 100;
+        font-size: 15px;
+        color: #555;
+        margin-left: auto;
+        width: 50%;
+    }
+}

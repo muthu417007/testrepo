@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Knowledge Article List Card</masterLabel>
+    <description>List of Knowledge Articles for a Resource</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="relatedResource" label="Resource Name" type="String" default="Refrigerator" description="Name of Resource"/>
+            <property name="pageName" label="Page Name" type="String" default="RESOURCE" datasource="RESOURCE,FAQ"/>
+            <property name="sectionId" type="String" label="Section ID for FAQ Page"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

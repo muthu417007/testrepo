@@ -1,0 +1,65 @@
+.main-header {
+    font-size: 42px;
+    font-weight: 300;
+    padding-top: 45px;
+    margin-top: 0.1rem;
+    text-align: center;
+    display: block;
+    text-transform: capitalize;
+    color: #004b3d;
+    letter-spacing: .25px;
+    margin-bottom: 1rem;
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+}
+
+.main {
+    width: 95%;
+    margin: 0px auto;
+}
+
+.sub-header {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: .8px;
+    color: #6c6158;
+    cursor: auto;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.sign-in-link {
+    text-decoration: underline;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    padding-bottom: 2rem;
+    line-height: inherit;
+    color: #1a4b3d;
+    text-transform: lowercase;
+}
+
+.sign-in-link:hover {
+    text-decoration: underline;
+    color: #46645a;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 95%;
+        margin: 0px auto;
+        padding: 0.1rem;
+    }
+}

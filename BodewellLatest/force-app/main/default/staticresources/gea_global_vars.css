@@ -1,0 +1,132 @@
+:root {
+    /* BODY */
+    --idp-font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, sans-serif;
+    --idp-font-size: 1.625rem;
+    --idp-body-text-align: center;
+    --idp-color: #6C6158;
+    --idp-required-input-color: #ea001e;
+    --idp-validation-error-color: #ea001e;
+    --idp-validation-error-font-size: 0.75rem;
+
+    /* Form */
+    --idp-form-background-color: white;
+    --idp-form-text-align: left;
+
+    /* Page Title */
+    --idp-page-title-font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, sans-serif;
+    --idp-page-title-font-weight: 300;
+    --idp-page-title-font-size: 1.875rem;
+    --idp-page-title-transform: uppercase;
+    --idp-page-title-letter-spacing: 1.5px;
+    --idp-page-title-color: #333;
+
+    /* Page Sub Title */
+    --idp-page-sub-title-font-size: 1.5rem;
+    --idp-page-sub-title-font-weight: 300;
+    --idp-page-sub-title-transform: uppercase;
+
+    /* Page Text */
+    --idp-page-text-font-size: 0.875rem;
+    --idp-page-text-font-weight: 400;
+    --idp-page-text-color: #333;
+
+    /* Link */
+    --idp-link-font-size: 0.875rem;
+    --idp-link-font-weight: 400;
+    --idp-link-font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, sans-serif;
+    --idp-link-text-decoration: none;
+    --idp-link-color: #1a63a2;
+
+    /* Link Hover */
+    /*--idp-link-hover-opacity: 1%;*/
+    --idp-link-hover-color: #092c74;
+    --idp-link-hover-text-decoration: underline;
+
+    /* Link Inline */
+    --idp-link-inline-color: #1a63a2;
+
+    /* Label */
+    --idp-label-color: #333;
+    --idp-label-font-weight: 700;
+    --idp-label-font-size: 0.875rem;
+    --idp-label-font-style: normal;
+    --idp-label-letter-spacing: 0.5px;
+    --idp-label-text-transform: capitalize;
+    --idp-label-margin-bottom: 0.5rem;
+    --idp-label-vertical-align: top;
+    --idp-label-padding-bottom: 0px;
+
+    /* Text Input */
+    --idp-text-input-width: 100%;
+    --idp-text-input-font-weight: normal;
+    --idp-text-input-border-radius: 0;
+    --idp-text-input-border: 1px solid #d6dce5;
+    --idp-text-input-background-color: #FFFFFF;
+    --idp-text-input-box-sizing: border-box;
+    --idp-text-input-height: 43px;
+    --idp-text-input-text-indent: 5px;
+    --idp-text-input-color: #4e515e;
+    --idp-text-input-text-align: left;
+    --idp-text-input-letter-spacing: 0.4px;
+    --idp-text-input-margin-bottom: 9px;
+
+    /* Primary Button */
+    --idp-primary-button-border-radius: 0;
+    --idp-primary-button-border: none;
+    --idp-primary-button-height: 65px;
+    --idp-primary-button-font-size: 0.9375rem;
+    --idp-primary-button-font-weight: 500;
+    --idp-primary-button-font-style: normal;
+    --idp-primary-button-background-color: #1779ba;
+    --idp-primary-button-color: #fff;
+    --idp-primary-button-width: 100%;
+    --idp-primary-button-text-align: center;
+    --idp-primary-button-max-width: 100%;
+    --idp-primary-button-text-decoration: none;
+    --idp-primary-button-cursor: pointer;
+    --idp-primary-button-text-transform: uppercase;
+    --idp-primary-button-align-content: center;
+    --idp-primary-button-letter-spacing: 0.8px;
+
+    /* Primary Button Hover */
+    --idp-primary-button-hover-color: #fff;
+    --idp-primary-button-hover-border: none;
+    --idp-primary-button-hover-background-color: #092c74;
+    /*--idp-primary-button-hover-border-color: #004B3D;*/
+
+    /* Secondary Button */
+    --idp-secondary-button-border-radius: 0;
+    --idp-secondary-button-height: 65px;
+    --idp-secondary-button-font-size: 0.9375rem;
+    --idp-secondary-button-font-weight: 500;
+    --idp-secondary-button-font-style: normal;
+    --idp-secondary-button-background-color: white;
+    --idp-secondary-button-color: #1779ba;
+    --idp-secondary-button-width: 100%;
+    --idp-secondary-button-text-align: center;
+    --idp-secondary-button-max-width: 100%;
+    --idp-secondary-button-text-decoration: none;
+    --idp-secondary-button-cursor: pointer;
+    --idp-secondary-button-text-transform: uppercase;
+    --idp-secondary-button-align-content: center;
+    --idp-secondary-button-letter-spacing: 0.8px;
+    --idp-secondary-button-border: 2px;
+    --idp-secondary-button-border-color: #1779ba;
+    --idp-secondary-button-border-style: solid;
+
+    /* Secondary Button Hover */
+    --idp-secondary-button-hover-color: #092C74;
+    --idp-secondary-button-hover-border: 2px solid;
+    --idp-secondary-button-hover-border-color: #092C74;
+    --idp-secondary-button-hover-background-color: white;
+
+    /* Separator */
+    --idp-separator-border-bottom: 1px solid #000;
+
+    /* General Error */
+    --general-error-color: crimson;
+
+    /* SF Social Login */
+    --idp-register-sfid-social-text-align: center;
+    --idp-register-sfid-social-margin: 15px 0;
+}

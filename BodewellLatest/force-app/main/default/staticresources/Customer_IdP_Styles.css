@@ -1,0 +1,234 @@
+/* IdP Global Styles BEGIN */
+body {
+    font-family: var(--idp-font-family) !important;
+    color: var(--idp-font-size);
+    text-align: var(--idp-body-text-align);
+}
+
+.idp-validation-error {
+    font-size: var(--idp-validation-error-font-size);
+    color: var(--idp-validation-error-color);
+}
+
+.idp-form {
+    background-color: var(--idp-form-background-color);
+    padding: var(--idp-form-padding);
+    text-align: var(--idp-form-text-align);
+}
+
+.idp-page-title {
+    font-family: var(--idp-page-title-font-family) !important;
+    font-weight: var(--idp-page-title-font-weight) !important;
+    font-size: var(--idp-page-title-font-size) !important;
+    letter-spacing: var(--idp-page-title-letter-spacing) !important;
+    color: var(--idp-page-title-color) !important;
+    text-transform: var(--idp-page-title-transform);
+}
+
+.idp-page-title.idp-page-sub-title {
+    font-size: var(--idp-page-sub-title-font-size) !important;
+    font-weight: var(--idp-page-sub-title-font-weight) !important;
+    text-transform: var(--idp-page-sub-title-transform);
+}
+
+.idp-page-text {
+    font-size: var(--idp-page-text-font-size);
+    font-weight: var(--idp-page-text-font-weight);
+    color: var(--idp-page-text-color);
+}
+
+.idp-link {
+    font-size: var(--idp-link-font-size) !important;
+    font-weight: var(--idp-link-font-weight) !important;
+    font-family: var(--idp-link-font-family) !important;
+    text-decoration: var(--idp-link-text-decoration) !important;
+    color: var(--idp-link-color);
+}
+
+.idp-link.ipd-link-inline {
+    color: var(--idp-link-inline-color);
+}
+
+.idp-link:hover {
+    color: var(--idp-link-hover-color) !important;
+    text-decoration: var(--idp-link-hover-text-decoration) !important;
+    opacity: var(--idp-link-hover-opacity) !important;
+}
+
+.idp-label {
+    color: var(--idp-label-color) !important;
+    font-weight: var(--idp-label-font-weight) !important;
+    font-size: var(--idp-label-font-size) !important;
+    font-style: var(--idp-label-font-style) !important;
+    font-family: var(--idp-label-font-family) !important;
+    letter-spacing: var(--idp-label-letter-spacing) !important;
+    text-transform: var(--idp-label-text-transform) !important;
+    margin-bottom: var(--idp-label-margin-bottom) !important;
+    vertical-align: var(--idp-label-vertical-align) !important;
+    padding-bottom: var(--idp-label-padding-bottom) !important;
+}
+
+.idp-text-input {
+    width: var(--idp-text-input-width);
+    font-weight: var(--idp-text-input-font-weight);
+    border-radius: var(--idp-text-input-border-radius);
+    border: var(--idp-text-input-border);
+    background-color: var(--idp-text-input-background-color);
+    box-sizing: var(--idp-text-input-box-sizing);
+    height: var(--idp-text-input-height);
+    text-indent: var(--idp-text-input-text-indent);
+    color: var(--idp-text-input-color);
+    text-align: var(--idp-text-input-text-align);
+    letter-spacing: var(--idp-text-input-letter-spacing);
+    margin-bottom: var(--idp-text-input-margin-bottom);
+}
+
+.idp-primary-button {
+    border-radius: var(--idp-primary-button-border-radius);
+    border: var(--idp-primary-button-border);
+    height: var(--idp-primary-button-height);
+    font-family: var(--idp-primary-button-font-family);
+    font-size: var(--idp-primary-button-font-size);
+    font-weight: var(--idp-primary-button-font-weight);
+    font-style: var(--idp-primary-button-font-style);
+    background-color: var(--idp-primary-button-background-color);
+    color: var(--idp-primary-button-color);
+    width: var(--idp-primary-button-width);
+    text-align: var(--idp-primary-button-text-align);
+    max-width: var(--idp-primary-button-max-width);
+    text-decoration: var(--idp-primary-button-text-decoration);
+    cursor: var(--idp-primary-button-cursor);
+    text-transform: var(--idp-primary-button-text-transform);
+    align-content: var(--idp-primary-button-align-content);
+    letter-spacing: var(--idp-primary-button-letter-spacing);
+}
+
+.idp-primary-button:hover {
+    color: var(--idp-primary-button-hover-color);
+    border: var(--idp-primary-button-hover-border);
+    background-color: var(--idp-primary-button-hover-background-color);
+}
+
+.idp-secondary-button {
+    border-radius: var(--idp-secondary-button-border-radius);
+    height: var(--idp-secondary-button-height);
+    font-family: var(--idp-secondary-button-font-family);
+    font-size: var(--idp-secondary-button-font-size);
+    font-weight: var(--idp-secondary-button-font-weight);
+    font-style: var(--idp-secondary-button-font-style);
+    background-color: var(--idp-secondary-button-background-color);
+    color: var(--idp-secondary-button-color);
+    width: var(--idp-secondary-button-width);
+    text-align: var(--idp-secondary-button-text-align);
+    max-width: var(--idp-secondary-button-max-width);
+    text-decoration: var(--idp-secondary-button-text-decoration);
+    cursor: var(--idp-secondary-button-cursor);
+    text-transform: var(--idp-secondary-button-text-transform);
+    align-content: var(--idp-secondary-button-align-content);
+    letter-spacing: var(--idp-secondary-button-letter-spacing);
+    border: var(--idp-secondary-button-border) var(--idp-secondary-button-border-style) var(--idp-secondary-button-border-color);
+}
+
+.idp-secondary-button:hover {
+    color: var(--idp-secondary-button-hover-color);
+    border: var(--idp-secondary-button-hover-border);
+    border-color: var(--idp-secondary-button-hover-border-color);
+    background-color: var(--idp-secondary-button-hover-background-color);
+}
+
+.idp-separator::before,
+.idp-separator::after {
+    border-bottom: var(--idp-separator-border-bottom);
+}
+
+/* IdP Global Styles END */
+
+.salesforceIdentitySocialLogin2 .socialOptionsContainer,
+.salesforceIdentitySocialLogin2 .or {
+    text-align: var(--idp-register-sfid-social-text-align) !important;
+    margin: var(--idp-register-sfid-social-margin) !important;
+}
+
+.salesforceIdentitySocialLogin2 .or {
+    color: var(--idp-label-color) !important;
+    font-weight: var(--idp-label-font-weight) !important;
+    font-size: var(--idp-label-font-size) !important;
+    font-style: var(--idp-label-font-style) !important;
+    font-family: var(--idp-label-font-family) !important;
+    letter-spacing: var(--idp-label-letter-spacing) !important;
+    text-transform: var(--idp-label-text-transform) !important;
+    margin-bottom: var(--idp-label-margin-bottom) !important;
+    vertical-align: var(--idp-label-vertical-align) !important;
+    padding-bottom: var(--idp-label-padding-bottom) !important;
+}
+
+.salesforceIdentitySocialLogin2 .or:before,
+.salesforceIdentitySocialLogin2 .or:after {
+    width: 0 !important;
+}
+
+.salesforceIdentitySocialLogin2 {
+    margin-bottom: 2rem;
+}
+
+.pageTitleClass {
+    padding-bottom: 1vh;
+}
+
+.generalErrorClass {
+    padding-top: var(--general-error-padding-top);
+    font-size: var(--general-error-font-size);
+    color: var(--general-error-color);
+}
+
+.cagButtonClass {
+    font-size: var(--cag-button-font-size);
+    font-family: var(--cag-button-font-family);
+    font-weight: var(--cag-button-font-weight);
+    color: red !important; /*var(--cag-button-color);*/
+    background-color: var(--cag-button-background-color);
+    border-color: var(--cag-button-border-color);
+    border-radius: var(--cag-button-border-radius);
+}
+
+.cagButtonClass:hover {
+    color: var(--cag-button-hover-color);
+    background-color: var(--cag-button-hover-background-color);
+}
+
+/** RESET PASSWORD FORM BEGIN **/
+.reset-password-input-section {
+    margin-bottom: 1em;
+}
+
+.reset-password-form {
+    margin: 3rem auto;
+    width: 70%;
+    /*text-align: left !important;*/
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .reset-password-form {
+        width: 35%;
+        margin: 3rem auto;
+    }
+}
+
+.reset-password-form .idp-page-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reset-password-form .idp-page-title.idp-page-sub-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.password-strength {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    font-size: 0.70em;
+}
+
+/** RESET PASSWORD FORM END **/

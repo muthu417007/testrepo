@@ -1,0 +1,17 @@
+button {
+    background-color: rgb(35 90 129);
+    color: white;
+    WIDTH: 30%;
+    BORDER-RADIUS: 34PX;
+    HEIGHT: 35PX;
+    BORDER-COLOR: rgb(35 90 129);
+    TEXT-TRANSFORM: UPPERCASE;
+    FONT-WEIGHT: 600;
+    WORD-SPACING: 2PX;
+    LETTER-SPACING: 1PX;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

@@ -1,0 +1,31 @@
+<template>
+    <div if:false={isStateArea}>
+        <div class="hero-container-index desk-only rgbanner">
+            <div class="heroborder">
+                <div class="containers hero-content">
+                    <div class="hero-copy">
+                        <h1 class="hero-head">
+                            {bannerheading}
+                        </h1>
+                        <div class="hero-text">
+                            {bannertext}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile View RG Banner -->
+        <div class="hero-container-mob  mob-only">
+            <div class="heroborder">
+                <img src={mobilebanner} alt="GE Refrigerator in home kitchen">
+            </div>
+            <div class="hero-copy">
+                <div class="hero-head">{bannerheading}</div>
+                <span class="hero-text">{bannertext}</span>
+            </div>
+        </div>
+        <div if:true={showStrip}>
+            <c-r-G-_-Find-Service-Area-Location isbannerstrip={showStrip}></c-r-G-_-Find-Service-Area-Location>
+        </div>
+    </div>
+</template>

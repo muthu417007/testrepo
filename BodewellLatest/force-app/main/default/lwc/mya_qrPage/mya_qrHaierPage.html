@@ -1,0 +1,118 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner style="height: 100%;" alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>
+        </template>
+</div>
+
+<template if:true={brandedUrl}>
+
+        <img class="status-image2" src={logoImg3} alt="logoImg">
+        <div class="c-container product-register" if:false={isLoading}>
+
+            <div class="center">
+                <p class="header">{description}</p>
+                <div class="slds-grid slds-gutters class1">
+                    <div class="slds-col slds-size_1-of-3 class2">
+                        <img class="status-image" src={images}>
+                    </div>
+                    <div class="slds-col slds-size_2-of-3 secDiv">
+                        <template if:true={modelNo}>
+                            <h3>Model :<span class="value-test"> {modelNo} </span></h3>
+                        </template>
+<template if:false={modelNo}>
+                            <h3>Model : <span class="value-test">{marketingModelNo} </span> </h3>
+                        </template>
+<h3>Serial : <span class="value-test">{serial}</span></h3>
+<div class="review-content">
+    <img src={rateReview} class="review-image" />
+    <span class="write-a-review"><a href={reviewUrl}>Write a review</a></span>
+</div>
+<template if:true={showInvalidView}>
+                            <div class="slds-grid slds-gutters url">
+                                <div class="slds-col slds-size_3-of-6 size26">
+                                    <a target="_blank" href={prodReghref}>
+                                        <img src={regappliance} alt="Canada">
+                                        Register Appliance
+                                    </a>
+                                </div>
+                                <template if:true={showScheduleUrl}>
+                                    <div class="slds-col slds-size_3-of-6 size46">
+                                        <a target="_blank" href={ScheduleServiceLink}>
+                                            <img src={schServices} alt="Canada">
+                                            Schedule Service
+                                        </a>
+                                    </div>
+                                </template>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_2-of-6 size26">
+        <a if:true={showOwnerUrl} target="_blank" href={ownerUrl}> <img src={owSupport} alt="Canada"> Owner Support
+        </a>
+    </div>
+
+</div>
+</template>
+<template if:false={showInvalidView}>
+                            <div class="slds-grid slds-gutters url">
+                                <div class="slds-col slds-size_3-of-6 size26">
+                                    <a target="_blank" href={prodReghref}>
+                                        <img src={regappliance} alt="Canada">
+                                        Register Appliance
+                                    </a>
+                                </div>
+                                <template if:true={showScheduleUrl}>
+                                    <div class="slds-col slds-size_3-of-6 size46">
+                                        <a target="_blank" href={ScheduleServiceLink}>
+                                            <img src={schServices} alt="Canada">
+                                            Schedule Service
+                                        </a>
+                                    </div>
+                                </template>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_3-of-6 size26">
+        <a if:true={showOwnerUrl} target="_blank" href={ownerUrl}><img src={owSupport} alt="Canada"> Owner Support
+        </a>
+    </div>
+    <div class="slds-col slds-size_3-of-6 size46">
+        <a target="_blank" href={ProdSpecs}> <img src={proSpecs} alt="Canada"> Product Specs
+        </a>
+    </div>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_3-of-6 size26">
+        <a target="_blank" href={Partslink}><img src={partsAcc} alt="Canada"> Parts and Accessories
+        </a>
+    </div>
+    <div class="slds-col slds-size_3-of-6 size46">
+        <a target="_blank" href={ownerManualUrl}> <img src={ownermanual} alt="Canada"> Owner's Manual</a>
+    </div>
+</div>
+
+</template>
+</div>
+</div>
+</div>
+
+<template if:true={kInvalidWifi}>
+                    <div class="wifiSec">
+                        <div class="GEASec">
+                            <img src={wifiLogo} alt="wifi" class="wifiSection">
+                            This product can connect to WiFi
+                        </div>
+
+                        <h6>Unlock features that give you real time feedback,optimized performance, alerts and more.
+                        </h6>
+                        <div class="btn"><a class="a1" target="_blank"
+                                href="https://www.geappliances.com/ge/connected-appliances/ranges-ovens-cooking.htm">Learn
+                                more & get the App</a></div>
+                    </div>
+                </template>
+<div class="im"><img src={flagcanada} alt="Canada"> Canadian Residents? <a class="a2" target="_blank" href="https://service.geappliances.ca/">Visit GE Appliance Canada</a></div>
+
+
+</div>
+</template>
+</template>

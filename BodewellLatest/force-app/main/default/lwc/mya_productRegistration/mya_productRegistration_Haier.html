@@ -1,0 +1,696 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner style="height: 100%; color:inherit;" alternative-text="Loading" variant="brand"
+                size="large"></lightning-spinner>
+        </template>
+    </div>
+
+
+
+    <div class="c-container">
+        <div class="center">
+            <!-- Start  Product Register -->
+            <template if:true={showproductform}>
+                <h2 class="header">Register Your Appliance</h2>
+                <div class="progress-bar">
+                    <img class="status-image" src={prodInfo}>
+                </div>
+                <h3 class="sub-header">Enter Your Appliance Information</h3>
+                <em><abbr title="required" class="slds-required">*</abbr> Indicates Required Information</em>
+                <!--<h5>* Indicates required information</h5>-->
+                <div class="slds-form slds-p-around_xx-small">
+                    <!--canadian-residents-ductless-->
+                    <div class="canadian-residents-ductless">
+                        <div style="display: flex;
+                        align-items: center;
+                        justify-content: center;">
+                            <img src={flagcanada} alt="Canada">
+                            <p>
+                                Canadian Residents Registration? Visit &nbsp;
+                                <a class="canada-haier" href="https://haiercanada.ca/">Haier Canada</a>
+                                &nbsp;to register online or call <br> 1-877-470-9174 for help registering your product.
+                            </p>
+                        </div>
+                    </div>
+                    <!--END canadian-residents-ductless-->
+                    <div if:true={productList}>
+                        <template for:each={productList} for:item="item">
+                            <div key={item.key}>
+                                <template if:true={item.isRemovable}>
+                                    <div style="margin-bottom:5px;border-top:1px dashed" class="slds-grid">
+                                        <div class="slds-size_10-of-12"></div>
+                                        <div class="slds-size_2-of-12">
+                                            <div class="del-icon" if:true={item.isRemovable}>
+                                                <a data-id={item.key}
+                                                    onclick={handleRemoveAnotherProduct}><span>X</span>Remove</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div class="slds-form-element slds-form-element_horizontal search-input"
+                                    style="margin: 0 0 0px">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">{modelno}
+                                        <abbr title="required" class="slds-required">*</abbr></label>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-combobox_container">
+                                                    <div class={txtclassname} onblur={handleModelnumberBlur}
+                                                        data-id="resultBox" aria-expanded="false"
+                                                        aria-haspopup="listbox" role="combobox">
+                                                        <div class="slds-form-element__control" role="none">
+                                                            <lightning-input data-id={item.key} type="text"
+                                                                label="Model Number" class="validate"
+                                                                pattern="^[a-zA-Z0-9]*$" maxlength="24"
+                                                                variant="label-hidden" value={item.modelNumber}
+                                                                name="modelno" onchange={handleProductListChange}
+                                                                disabled={item.isQRProductModelNumber} required
+                                                                message-when-value-missing={modelNumberPatternValidationMessage}
+                                                                message-when-pattern-mismatch={modelNumberPatternValidationMessage}>
+                                                            </lightning-input>
+                                                        </div>
+                                                        <!-- Second part display result -->
+                                                        <div if:true={item.showTypeAhead}
+                                                            class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid"
+                                                            role="listbox">
+                                                            <ul class="slds-listbox slds-listbox_vertical"
+                                                                role="presentation">
+                                                                <template for:each={item.searchRecords}
+                                                                    for:item="serecord">
+                                                                    <li role="presentation" class="slds-listbox__item"
+                                                                        key={serecord.Id}>
+
+                                                                        <div data-id={item.key}
+                                                                            data-name={serecord.MN__c}
+                                                                            onclick={setSelectedRecord}
+                                                                            class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                                                            role="option">
+                                                                            <span class="slds-media__body">
+                                                                                <span
+                                                                                    class="slds-listbox__option-text slds-listbox__option-text_entity">{serecord.MN__c}</span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </li>
+                                                                </template>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href={whereIsMyModelNumberLink} class="model-number" target="_blank"> Need
+                                            help finding your model number?
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-form-element_horizontal" style="margin: 0 0 35px">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-02">{serialno}
+                                        <abbr title="required" class="slds-required">*</abbr></label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input type="text" data-id={item.key}
+                                            onchange={handleProductListChange} value={item.serialNumber}
+                                            label="Searial No" class="validate" variant="label-hidden" required
+                                            pattern={serialNumberPattern}
+                                            message-when-pattern-mismatch={serialNumberPatternValidationMessage}
+                                            name="serialno" max-length="20" disabled={item.isQRProductSerialNumber}
+                                            message-when-value-missing={serialNumberPatternValidationMessage}>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-form-element_horizontal" style="margin: 0 0 45px">
+                                    <label class="slds-form-element__label"
+                                        for="horizontal-input-id-02">{installationdate}<abbr title="required"
+                                            class="slds-required ">*</abbr></label>
+                                    <div class="slds-form-element__control">
+                                        <input type="date" data-id={item.key} placeholder="Select installation date"
+                                            onchange={handleProductListChange} required value={item.installDate}
+                                            name="installationdate" class="date-validate slds-input">
+                                        <!-- <lightning-input class="date-validate" type="date" data-id={item.key} placeholder="mm/dd/yyyy" onchange={handleProductListChange}
+                value={item.installDate} name="installationdate"></lightning-input> -->
+
+                                        <div class="date-validation-message slds-form-element__help"
+                                            if:true={dateValidation} data-help-message="" role="alert">
+                                            { dateValidationMessage }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-align_absolute-center" if:true={item.isAlreadyExist}>
+                                    <p class="validation-message">
+                                        Appliance already registered.
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <h5 class="validation-message">{ getMaximumCountReachMessage }</h5>
+
+                    <div class="button-action">
+                        <div class="appliance-btn">
+                            <button class="addProduct idp-primary-button" name="Add Another Product"
+                                onclick={handleAddAnotherProduct}>ADD ANOTHER
+                                PRODUCT</button>
+                        </div>
+                        <div class="appliance-btn">
+                            <button class="continuebtn idp-primary-button" name="Continue"
+                                onclick={handleContinue}>CONTINUE</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="sweep-add">
+                    <p class="sweep-message">When you register your appliance, you're <br> automatically entered for a
+                        chance to <b>win $2500!</b></p>
+                    <a class="sweep-rules" href="https://www.geappliances.com/product-registration-sweepstakes-rules"
+                        target="_blank" sandbox="allow-popups allow-popups-to-escape-sandbox">See Official Rules for
+                        details.
+                        <!--Changed Here-->
+                    </a>
+                </div>
+                <p class="imp-note">
+                    Important: Failure to complete and submit this form does not diminish your warranty rights.
+                    <!--chnaged here-->
+                </p>
+            </template>
+            <!-- END Product Register -->
+            <!---Start Contact Information Page-->
+            <template if:true={showaddressform}>
+                <div class="slds-form slds-p-around_large">
+                    <h2 class="header">Appliance Product Registration</h2>
+                    <div class="progress-bar">
+                        <img class="status-image" src={contactInfo}>
+                    </div>
+                    <template if:false={isGuestUser}>
+                        <h3 class="sub-header">Verify Your Contact Information</h3>
+                        <h5 class="address-info">Address</h5>
+                        <p class="select-address">Select an address where the appliance will be located</p>
+                        <lightning-combobox placeholder="Enter New Address Below" name="addressOption" value={value}
+                            options={addressOptionList} class="slds-form-element" onchange={handleAddressValueChange}>
+                        </lightning-combobox>
+                        <h3 class="or-div">OR</h3>
+                        <h4 class="select-address">Add an address where the appliance will be located</h4>
+                    </template>
+                    <template if:true={isGuestUser}>
+                        <h3 class="sub-header">Enter Your Contact Information</h3>
+                    </template>
+                    <em><abbr title="required" class="slds-required">*</abbr> Indicates Required Information</em>
+                    <div if:true={isGuestUser} class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">First Name <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="First Name" required class="validate" variant="label-hidden"
+                                onchange={handleContactInputChange} name="firstName" value={firstName} type="text">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div if:true={isGuestUser} class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Last Name <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="Last Name" required class="validate" variant="label-hidden"
+                                value={lastName} type="text" name="lastName" onchange={handleContactInputChange}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Street Address <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" label="Address" class="addres-input validate "
+                                required={isAddressRequired} value={address1} maxlength="40"
+                                pattern={addressFieldPattern}
+                                message-when-pattern-mismatch={addressPatternValidationMessage} variant="label-hidden"
+                                name="address1" disabled={disableAddress}
+                                onchange={handleContactInputChange}></lightning-input>
+                        </div>
+                    </div>
+
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">City <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" label="City" maxlength="25" required={isAddressRequired}
+                                variant="label-hidden" value={city} name="city" disabled={disableAddress}
+                                onchange={handleContactInputChange} class="city-input validate "></lightning-input>
+                        </div>
+                    </div>
+
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">State <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_2-of-6">
+                                    <select class="slds-select state-input validateState" name="state" id="state"
+                                        required={isAddressRequired} disabled={disableAddress}
+                                        onchange={handleContactInputChange}>
+                                        <option value="">Select State</option>
+                                        <template for:each={states} for:item="item">
+                                            <option key={item.value} value={item.value}>{item.label}</option>
+                                        </template>
+                                    </select>
+                                    <div class="slds-form-element__help" if:true={stateValidation} data-help-message=""
+                                        role="alert">
+                                        Complete this field.
+                                    </div>
+                                </div>
+                                <div if:true={isGuestUser} class="slds-col slds-size_1-of-6">
+                                    <img src={flagcanada} alt="Canada">
+                                </div>
+                                <div if:true={isGuestUser} class="slds-col slds-size_3-of-6">
+                                    <p><b>Canadian Residents? Visit <a href={canadaURL} onclick={appliancesHandler}>
+                                                Haier Canda</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Zip Code <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="zipcode" required={isAddressRequired} variant="label-hidden"
+                                value={zipcode} type="text" name="zipcode" disabled={disableAddress}
+                                onchange={handleContactInputChange} pattern={zipCodePattern}
+                                message-when-pattern-mismatch={zipCodePatternValidationMessage}
+                                class="zip-input validate "></lightning-input>
+                        </div>
+                    </div>
+                    <template if:true={isGuestUser}>
+                        <div class="slds-form-element slds-form-element_horizontal">
+                            <label class="slds-form-element__label">
+                                Primary Phone
+                                <sup>*</sup>
+                                <lightning-helptext class="help-tip"
+                                    content="We use your phone number to help identify your specific product information if you should need assistance in the future.">
+                                </lightning-helptext>
+                            </label>
+                            <div class="slds-form-element__control">
+                                <lightning-input label="Primary Phone" variant="label-hidden" value={primaryPhone}
+                                    type="text" name="primaryPhone" pattern={phonePattern} max-length="10" required
+                                    message-when-pattern-mismatch={phonePatternValidationMessage}
+                                    onchange={handleContactInputChange} class="phone-validate"></lightning-input>
+                            </div>
+                            <br />
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label">Email Address <abbr title="required"
+                                        class="slds-required">*</abbr></label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input label="email" required variant="label-hidden" value={email}
+                                        type="text" pattern={emailPattern}
+                                        message-when-pattern-mismatch={emailPatternValidationMessage} name="email"
+                                        onchange={handleContactInputChange} class="validate"></lightning-input>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label">Confirm Email Address <abbr title="required"
+                                        class="slds-required">*</abbr></label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input label="Confirm Email" variant="label-hidden" required
+                                        value={confirmEmail} pattern={emailPattern}
+                                        message-when-pattern-mismatch={emailPatternValidationMessage} type="text"
+                                        name="confirmEmail" onchange={handleContactInputChange} class="validate">
+                                    </lightning-input>
+                                    <div if:true={emailMismatch}>
+                                        <span class="update-message">Email mismatch found.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </template>
+                    <template if:false={isGuestUser}>
+                        <h3 class="phone-info">Phone Number</h3>
+                        <p class="select-address">Select A Phone Number Associated With This Appliance</p>
+                        <div style="text-align:center;width:60%;" class="slds-align_absolute-center">
+                            <lightning-combobox name="phoneOption" placeholder="Enter New Phone Below" value={value}
+                                options={phoneOptionList} onchange={handlePhoneValueChange}></lightning-combobox>
+                        </div>
+                        <h3 class="or-div">OR</h3>
+                        <p class="select-address">Add a phone number associated with this appliance.</p>
+                        <em>You expressly consent to GE Appliances contacting you at this
+                            number
+                        </em>
+                        <div style="text-align:center;width:60%;" class="slds-align_absolute-center">
+                            <lightning-input label="Phone" disabled={disablePhone} variant="label-hidden" value={phone}
+                                max-length="10" type="text" name="phone" onchange={handleContactInputChange}
+                                pattern={phonePattern} message-when-pattern-mismatch={phonePatternValidationMessage}
+                                class="phone-validate" required={isPhoneRequired}></lightning-input>
+                        </div>
+                        <div if:true={phoneAlreadyExist}>
+                            <span class="update-message">Phone number already exist.</span>
+                        </div>
+                    </template>
+                    <!-- Login User -->
+                    <div if:false={isGuestUser} class="consent-section">
+                        <div class="consent-input">
+                            <div class="slds-form-element" style="margin-right: 4.5rem; white-space:nowrap">
+                                <label class="slds-form-element__label">Terms and Privacy <abbr title="required"
+                                        class="slds-required">*</abbr></label>
+                            </div>
+                            <div class="consent-checkbox check">
+                                <lightning-input type="checkbox" class="consent-check consent slds-checkbox_faux"
+                                    variant="label-hidden" onchange={handleConsentOnChange}></lightning-input>
+                                <!-- <input type="checkbox" class="slds-checkbox slds-checkbox_faux consent-check " onchange={handleConsentOnChange}></input> -->
+                                <div class="consent-message">
+                                    <span class="consent-label">By checking this box, I agree to the&nbsp;<a
+                                            href={trmUrl} class="privacy-links" target="_blank">Terms of
+                                            Use</a>&nbsp;and have read the&nbsp;<a href={prvacyUrl}
+                                            class="privacy-links" target="_blank">Privacy Statement.</a></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Guest User -->
+                    <div if:true={isGuestUser} class="consent-section">
+                        <div class="consent-input">
+                            <div class="slds-form-element" style="margin-right: 4.5rem; white-space:nowrap">
+                                <label class="slds-form-element__label">Terms and Privacy <abbr title="required"
+                                        class="slds-required">*</abbr></label>
+                            </div>
+                            <div class="consent-checkbox">
+                                <lightning-input type="checkbox" class="consent-check slds-checkbox_faux"
+                                    variant="label-hidden" onchange={handleConsentOnChange}></lightning-input>
+                                <div class="consent-message">
+                                    <span class="consent-label">By checking this box, I agree to the&nbsp;<a
+                                            href={trmUrl} class="privacy-links" target="_blank">Terms of
+                                            Use</a>&nbsp;and have read the&nbsp;<a href={prvacyUrl}
+                                            class="privacy-links" target="_blank">Privacy Statement.</a></span>
+                                </div>
+                            </div>
+                            <!-- <div class="consent-checkbox">
+            <lightning-input type="checkbox" class="consent-check" variant="label-hidden" onchange={handleConsentOnChange} style="margin-left: 1px;"></lightning-input>
+            <div class="consent-message">
+                <span class="consent-label">By checking this box, I agree to the&nbsp;<a
+                                            href={trmUrl} class="privacy-links"
+                                            target="_blank">Terms of Use</a>&nbsp;and have read the&nbsp;<a
+                                            href={prvacyUrl}
+                                            class="privacy-links" target="_blank">Privacy Statement.</a></span>
+            </div>
+        </div> -->
+
+                        </div>
+                    </div>
+                    <div class="consent-validation" if:true={consentValidation}>
+                        <div class="consent-validation-message">
+                            <span class="form-validation-message">{checkboxValueMissingmessage}</span>
+                        </div>
+                    </div>
+                    <div class="button-action">
+                        <div class="appliance-btn">
+                            <button class="submitbtn idp-primary-button" name="Continue"
+                                onclick={handleSuccess}>CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <!--    End Contact Information  -->
+            <!-- Start Display Product Information Along with Contact Info -->
+            <template if:true={showproductdetail}>
+                <h2 class="header">Appliance Product Registration</h2>
+                <div class="progress-bar">
+                    <img class="status-image" src={contactInfo}>
+                </div>
+                <h3 class="slds-m-vertical_small sub-header">REVIEW YOUR INFORMATION</h3>
+                <h3 class="slds-m-top_x-large owner-info">Owner Information</h3>
+                <hr />
+                <div class="owner-content">
+                    {productContactInfo.name}<br />
+                    {productContactInfo.street}</br>
+                    <p>{productContactInfo.city},&nbsp;{productContactInfo.state}&nbsp;{productContactInfo.zipCode}</p>
+                    <br /><br />
+                    <p>
+                        <lightning-formatted-phone value={productContactInfo.phone} disabled>
+                        </lightning-formatted-phone>
+                    </p>
+                    <p style="padding-bottom:0.6rem">
+                        <span class="email-label">{productContactInfo.email}
+                        </span>
+                    </p>
+                    <h3 class="slds-m-top_x-small product-info">Product Information</h3>
+                    <hr />
+                    <template for:each={productList} for:item="item">
+                        <div key={item.key}>
+                            <table class="desktop-pro-info-section" width="100%;text-align:center;">
+                                <tr>
+                                    <td style="width:40%;text-align:center;" rowspan="3">
+                                        <img src={item.imageUrl} style="width:100px" />
+                                    </td>
+                                    <th style="width:15%;">MODEL #</th>
+                                    <td style="width:36%;">{item.modelNumber}</td>
+                                </tr>
+                                <tr>
+                                    <th>Serial #</th>
+                                    <td>{item.serialNumber}</td>
+                                </tr>
+                                <tr>
+                                    <th>APPLIANCE</th>
+                                    <td>{item.description}</td>
+                                </tr>
+                                <!--write review-->
+                                <tr>
+                                    <td style="width:40%;text-align:center;">
+                                        <img src={ratereview} style="width:150px" />
+                                    </td>
+                                    <th>Installation Date</th>
+                                    <td>{item.installDate}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span><a href={item.bvurl} class="writereview" target="_blank">write a
+                                                review</a></span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <!--end write review-->
+                            </table>
+                            <!--mobile view -->
+                            <div class="mobile-pro-info-section">
+                                <div class="mob-pro-image">
+                                    <div>
+                                        <img src={item.imageUrl} style="width:100px" />
+                                    </div>
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <th>MODEL #</th>
+                                        <td>{item.modelNumber}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Serial #</th>
+                                        <td>{item.serialNumber}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>APPLIANCE</th>
+                                        <td>{item.description}</td>
+                                    </tr>
+                                    <!--write review-->
+                                    <tr>
+                                        <th>Installation Date</th>
+                                        <td>{item.installDate}</td>
+                                    </tr>
+                                    <!--end write review-->
+                                </table>
+                            </div>
+                            <div class="slds-align_absolute-center" if:true={item.isAlreadyExist}>
+                                <p class="validation-message">
+                                    Already registered.
+                                </p>
+                            </div>
+                            <br />
+                        </div>
+                    </template>
+                    <div class="consent-validation" if:true={itemsAlreayExistValidation}>
+                        <div class="consent-validation-message">
+                            <span class="form-validation-message">{itemsAlreayExistValidationMessage}</span>
+                        </div>
+                    </div>
+                    <div class="button-action">
+                        <div class="appliance-btn">
+                            <button class="submitbtn idp-primary-button" onclick={handleSubmit}>Submit
+                                Registration</button>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_x-small">
+                        <lightning-button variant="base" label="Edit Registration" onclick={handleEditRegistration}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+            <!-- END Display Product Information Along with Contact Info-->
+            <!-- View Registered Product -->
+            <template if:true={showregisteredproduct}>
+                <!-- Pop-up to show offer for Refrigators and Icemaker -->
+                <template if:true={showapromoform}>
+                    <div class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                <lightning-icon class="modal-icon" icon-name="utility:close" onclick={closemodal}
+                                    size="small" alternative-text="Indicates close"></lightning-icon>
+                                <h2 class="modal-heading slds-text-heading_medium"><b>One-Time Water Filter Subscription
+                                        Offer</b></h2>
+                            </header>
+                            <div class=" slds-p-around_medium">
+                                <lightning-layout>
+                                    <lightning-layout-item size="3" class="promo-image">
+                                        <img src={waterFilterImage}>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <span class="promo-text-1">The {eligibleAppliance} you registered is eligible
+                                            for water filter subscription at <b>{promoCodeDiscount}% OFF.</b></span>
+                                        <P class="promo-text-2">Sign-up for Subscription and never be without filtered
+                                            water!</P>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <span></span>
+
+                            </div>
+                            <div class="slds-modal__footer slds-grid slds-wrap">
+                                <button class="sign-up-button" onclick={handleWaterFilterRedirect}>SIGN UP FOR MY
+                                    DISCOUNTED SUBSCRIPTION</button>
+                                <button class="cancel-button" onclick={closemodal}>NO THANKS, I'LL PASS</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+                <h2>Appliance Product Registration</h2>
+                <div class="progress-bar">
+                    <img class="status-image" src={complete}>
+                </div>
+                <p class="slds-m-vertical_small thanks-message"><b>Thank You For Registering Your
+                        Appliance.</b></p>
+                <h3 class="slds-m-top_x-small owner-info">Owner Information</h3>
+                <hr />
+                <div class="owner-content">
+                    {productContactInfo.name}<br />
+                    {productContactInfo.street}</br>
+                    <p>{productContactInfo.city},&nbsp;{productContactInfo.state}&nbsp;{productContactInfo.zipCode}</p>
+                    <br /><br />
+                    <p>
+                        <lightning-formatted-phone value={productContactInfo.phone} disabled>
+                        </lightning-formatted-phone>
+                    </p>
+                    <p style="padding-bottom:0.6rem">
+                        <span class="email-label">{productContactInfo.email}
+                        </span>
+                    </p>
+                    <h3 class="slds-m-top_x-small product-info">Product Information</h3>
+                    <hr />
+                    <template for:each={productList} for:item="item">
+                        <div key={item.key}>
+
+                            <table class="desktop-pro-info-section" width="100%;text-align:center;">
+                                <tr>
+                                    <td style="width:40%;text-align:center;" rowspan="3">
+                                        <img src={item.imageUrl} style="width:100px" />
+                                    </td>
+                                    <th style="width:15%;">MODEL #</th>
+                                    <td style="width:36%;">{item.modelNumber}</td>
+                                </tr>
+                                <tr>
+                                    <th>Serial #</th>
+                                    <td>{item.serialNumber}</td>
+                                </tr>
+                                <tr>
+                                    <th>APPLIANCE</th>
+                                    <td>{item.description}</td>
+                                </tr>
+                                <!--write review-->
+                                <tr>
+                                    <td style="width:40%;text-align:center;">
+                                        <img src={ratereview} style="width:150px" />
+                                    </td>
+                                    <th>Installation Date</th>
+                                    <td>{item.installDate}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span><a href={item.bvurl} class="writereview" target="_blank">write a
+                                                review</a></span>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <!--end write review-->
+                            </table>
+                            <!--mobile view -->
+                            <div class="mobile-pro-info-section">
+                                <div class="mob-pro-image">
+                                    <div>
+                                        <img src={item.imageUrl} style="width:100px" />
+                                    </div>
+                                    <div>
+                                        <img src={ratereview} style="width:150px" />
+                                        <span><a href={item.bvurl} class="writereview" target="_blank">write a
+                                                review</a></span>
+                                    </div>
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <th>MODEL #</th>
+                                        <td>{item.modelNumber}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Serial #</th>
+                                        <td>{item.serialNumber}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>APPLIANCE</th>
+                                        <td>{item.description}</td>
+                                    </tr>
+                                    <!--write review-->
+                                    <tr>
+                                        <th>Installation Date</th>
+                                        <td>{item.installDate}</td>
+                                    </tr>
+                                    <!--end write review-->
+                                </table>
+                            </div>
+                            <br />
+                        </div>
+                    </template>
+                    <div class="slds-grid slds-gutters slds-m-top_x-large">
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col" if:false={isGuestUser}>
+                            <span>
+                                <button class="continuebtn" onclick={viewMyAccount}>View Your Account
+                                </button>
+                            </span>
+                        </div>
+                        <div class="slds-col">
+                            <span>
+                                <button class="continuebtn" onclick={handleRegisterAnotherProduct}>Register Another
+                                    Product</button>
+                            </span>
+                        </div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                        <div class="slds-col"></div>
+                    </div>
+                    <div if:true={isPromoEligibleState}>
+                        <div if:true={assurantServiceLinkVisible}>
+                            <c-mya_-assurant-service-contract brand={brand} see-my-price-link={assurantServiceLink}>
+                            </c-mya_-assurant-service-contract>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <!--   END Registered Product-->
+        </div>
+    </div>
+</template>

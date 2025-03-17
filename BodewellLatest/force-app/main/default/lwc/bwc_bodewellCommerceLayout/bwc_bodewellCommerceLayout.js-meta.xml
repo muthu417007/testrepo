@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Commerce Layout</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Theme_Layout</target>
+    </targets>
+    <targetConfigs>
+      <targetConfig targets="lightningCommunity__Default">
+        <property
+            name="showFooter"
+            label="Show Footer"
+            type="Boolean"
+            default="true"
+            description="Show or hide the footer."
+        />
+        <property
+            name="isSticky"
+            label="Is Sticky"
+            type="Boolean"
+            default="true"
+            description="Make the header stick to the top of the page when scrolling."
+            />
+        <property
+            name="layout"
+            label="Layout"
+            type="String"
+            default="desktop"
+            datasource="mobile, tablet, desktop"
+            description="Change Layout for the header."
+        />
+      </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,449 @@
+<template>
+
+    <div onclick={show}>
+        <a>{text}</a>
+    </div>
+
+    <template if:false={loading}>
+
+        <template if:true={active}>
+        
+
+            <section
+                role="dialog"
+                tabindex="-1"
+                aria-modal="true"
+                class="slds-modal slds-fade-in-open slds-modal_large">
+
+                <div class="slds-modal__container">
+
+                    <header class="slds-modal__header">
+                        <lightning-button-icon
+                            class="slds-modal__close"
+                            title="Close"
+                            icon-name="utility:close"
+                            icon-class="slds-button_icon-inverse"
+                            onclick={close}
+                        ></lightning-button-icon>
+
+                        <h2 class="slds-text-heading_medium slds-hyphenate header-string">
+                            
+                            <template if:true={isOrders}>
+                                <h1>Order Number: {header}</h1>
+                            </template>
+                            
+                            <template if:true={isClosedCalls}>
+                                <h1>{header}</h1>
+                            </template>
+                        </h2>
+                    </header>
+
+                    <div class="slds-modal__content slds-p-around_medium">
+                    
+                        <template if:true={isOrders}>
+            
+                            <b>Details</b>
+                            <table class="slds-table">
+                                <thead>
+                                    <th>Freight Code</th>
+                                    <th>Summary Status</th>
+                                    <th>Tracking #</th>
+                                    <th>Carrier Code</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{data.ORDER_HEADER.FREIGHT_CODE}</td>
+                                        <td>{data.ORDER_HEADER.ORDER_HDR_SUMMARY_STATUS}</td>
+                                        <td>{data.ORDER_HEADER.TRACKING_NO}</td>
+                                        <td>{data.ORDER_HEADER.TYPE_ORDER}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            
+                            <br />
+            
+                            <b>Order Lines</b>
+                            <table class="slds-table">
+                                <thead>
+                                    <th>Invoice Line</th>
+                                    <th>Part #</th>
+                                    <th>Part Desc</th>
+                                    <th>Manufacturer Cost</th>
+                                    <th>Discount %</th>
+                                    <th>Job Code</th>
+                                    <th>Job Code Desc</th>
+                                    <th>Net Line Value</th>
+                                    <th>Ship Date</th>
+                                </thead>
+                                <tbody>
+                                    <template for:each={data.ORDER_LINES} for:item="line" >
+                                        <tr key={line.ITEM_ID}>
+                                            <td>{line.ORDER_LINE}</td>
+                                            <td>{line.ITEM_ID}</td>
+                                            <td>{line.ITEM_DESCRIPTION}</td>
+                                            <td>{line.COST}</td>
+                                            <td>{line.DISC_PC}</td>
+                                            <td>{line.CSN_JOB_CODE}</td>
+                                            <td>{line.JOB_CODE_DESCRIPTION}</td>
+                                            <td>{line.LINE_PRICE}</td>
+                                            <td>{line.SHIP_DATE}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+            
+                        </template>
+            
+            
+                        <template if:true={isClosedCalls}>
+            
+                            <table class="slds-table">
+                                
+                                <thead>
+                                    
+                                    <th>Model Number</th>
+                                    <th>Serial Number</th>
+                                    <th>Bill to Name</th>
+                                    <th>Street</th>
+                                    <th>Zip</th>
+                                    <th>Bill to Phone</th>
+                                    <th>Installation Date</th>
+                                </thead>
+            
+                                <tbody>
+            
+                                    <tr>
+                                        <td>{data.MODEL}</td>
+                                        <td>{data.SERIAL_NO}</td>
+                                        <td>{data.BILL_TO_NAME}</td>
+                                        <td>{data.BILL_TO_ADDRESS}</td>
+                                        <td>{data.SVC_ZIP}</td>
+                                        <td>{data.CALL_NO}</td>
+                                        <td>{data.INSTALLATION_DATE}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <br /><br />
+
+                            <table class="slds-table">
+                                
+                                <thead>
+            
+                                    <th>Consumer Complaint</th>
+                                    <th>Problem Description</th>
+                                    <th>Work Performed</th>
+                                    <th>Repeat Call Indicator</th>
+                                    <th>Labor Charge</th>
+                                    <th>Parts Charge</th>
+                                    <th>Home Call Fee</th>
+                                </thead>
+            
+                                <tbody>
+            
+                                    <tr>
+
+                                        <td>{data.PROBLEM_DESCRIPTION}</td>                                        
+                                        <td>{data.SERVICE_DATE}</td>
+                                        <td><b>NOT FOUND</b></td>
+                                        <td>{data.INV_CALL_CLASS}</td>
+                                        <td>{data.LABOR_CHARGE}</td>
+                                        <td>{data.PARTS_CHARGE}</td>
+                                        <td><b>NOT FOUND</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <br /><br />
+
+                            <table class="slds-table">
+                                
+                                <thead>
+        
+                                    <th>Home Call Fee</th>
+                                    <th>Tax Code</th>
+                                    <th>Invoice Total</th>
+                                    <th>Terms</th>
+                                    <th>Total Amount</th>
+                                    <th>Reimbursed Labor Amount</th>
+                                </thead>
+            
+                                <tbody>
+            
+                                    <tr>
+
+                                        <td><b>NOT FOUND</b></td>
+                                        <td>{data.TAX_CODE}</td>
+                                        <td><b>NOT FOUND</b></td>
+                                        <td>{data.TERMS_CODE}</td>
+                                        <td><b>NOT FOUND</b></td>
+                                        <td><b>NOT FOUND</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            
+                        </template>
+        
+                    </div>
+
+                    <footer class="slds-modal__footer modal-hidden">
+
+                        <lightning-button 
+                            label="Close"
+                            onclick={close}
+                        ></lightning-button>
+                    </footer>
+                </div>
+            </section>
+
+             <div class="slds-backdrop slds-backdrop_open"></div>
+
+        </template>
+    </template>
+
+  
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+</template>
+
+<!-- ORDER DETAIL RETURN
+    {
+  "ORDER_HEADER": {
+    "FREIGHT_CODE": "H3",
+    "ORDER_HDR_SUMMARY_STATUS": "CLOSED",
+    "TYPE_ORDER": "R",
+    "BILLTO_ADDR1": "25 NEHOIDEN RD",
+    "NET_ORDER_VALUE": 118,
+    "ORDER_NO": "8832209",
+    "BILLTO_ZIPCODE": "02468",
+    "BILLTO_CITY": "WABAN",
+    "REQ_DATE": "20130409",
+    "ORHDR_CRE_DATE_TIME": "20130409",
+    "SHIPTO_ZIPCODE": "02468",
+    "SHIPTO_CITY": "WABAN",
+    "ORDER_UNIQUE_KEY": 13099,
+    "ORHDR_WHSE_STATUS": "",
+    "TRACKING_NO": "02976417273246295774",
+    "ORDER_HDR_STATUS_DESC": "INVOICED",
+    "ORHDR_STNDRD_HNDLNG_CHRG": 0,
+    "BILLTO_NAME": "JOSE PORTUONDO",
+    "SHIPTO_ADDR1": "25 NEHOIDEN RD",
+    "ORHDR_TAX_AMT": 7.38,
+    "SHIPTO_STATE": "MA",
+    "CUST_CLASS_CODE": "RF",
+    "GROSS_ORDER_VALUE": 118,
+    "INVOICE_NO": "",
+    "FIRST_ORDER_DATE": "20130409",
+    "CARRIER_CODE": "BM",
+    "ORHDR_CRE_USERID": "L076984",
+    "SHIPTO_NAME": "JOSE PORTUONDO",
+    "ORDER_HDR_STATUS": "I"
+  },
+  "ORDER_LINES": [
+    {
+      "ORLNE_TAX_AMT": 7.38,
+      "ORDER_LINE_SUMMARY_STATUS": "CLOSED",
+      "ORLNE_QTY_ORDERED": 1,
+      "ITEM_INV_PRICE": 118,
+      "ORDER_LINE_STATUS": "I",
+      "ITEM_ID": "MWF3PK",
+      "ORDER_NO": "8832209",
+      "ITEM_DESCRIPTION": "3 MWF REF WATER FILTERS",
+      "COST": 18.6,
+      "ORDER_LINE_STATUS_DESC": "INVOICED",
+      "DISC_PC": 0,
+      "NET_LINE_VALUE": 118,
+      "CSN_JOB_CODE": "",
+      "ORDER_UNIQUE_KEY": 13099,
+      "SHIP_DATE": "20130410",
+      "JOB_CODE_DESCRIPTION": "N/A",
+      "ORDER_LINE": 1000000,
+      "LINE_PRICE": 118
+    }
+  ]
+}
+
+ -->
+
+    
+<!-- 
+    <template if:false={loading}>
+
+        <template if:true={active}>
+            <div class="tooltip">
+                <div class="top">
+                    
+                    <lightning-icon 
+                        onclick={close}
+                        class="close"
+                        icon-name="utility:close"
+                        alternative-text="Close"
+                        size="small"
+                    ></lightning-icon>
+
+
+
+                    <template if:true={isOrders}>
+
+
+                        <h1>Order Number: {header}</h1>
+                        
+                        <br />
+
+                        <b>Details</b>
+                        <table class="slds-table">
+                            <thead>
+                                <th>Freight Code</th>
+                                <th>Summary Status</th>
+                                <th>Tracking #</th>
+                                <th>Carrier Code</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{data.ORDER_HEADER.FREIGHT_CODE}</td>
+                                    <td>{data.ORDER_HEADER.ORDER_HDR_SUMMARY_STATUS}</td>
+                                    <td>{data.ORDER_HEADER.TRACKING_NO}</td>
+                                    <td>{data.ORDER_HEADER.TYPE_ORDER}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br />
+
+                        <b>Order Lines</b>
+                        <table class="slds-table">
+                            <thead>
+                                <th>Invoice Line</th>
+                                <th>Part #</th>
+                                <th>Part Desc</th>
+                                <th>Manufacturer Cost</th>
+                                <th>Discount %</th>
+                                <th>Job Code</th>
+                                <th>Job Code Desc</th>
+                                <th>Net Line Value</th>
+                                <th>Ship Date</th>
+                            </thead>
+                            <tbody>
+                                <template for:each={data.ORDER_LINES} for:item="line" >
+                                    <tr key={line.ITEM_ID}>
+                                        <td>{line.ORDER_LINE}</td>
+                                        <td>{line.ITEM_ID}</td>
+                                        <td>{line.ITEM_DESCRIPTION}</td>
+                                        <td>{line.COST}</td>
+                                        <td>{line.DISC_PC}</td>
+                                        <td>{line.CSN_JOB_CODE}</td>
+                                        <td>{line.JOB_CODE_DESCRIPTION}</td>
+                                        <td>{line.LINE_PRICE}</td>
+                                        <td>{line.SHIP_DATE}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+
+
+                    </template>
+
+
+                    <template if:true={isClosedCalls}>
+
+                        <h1>{header}</h1>
+                    
+                        <br />
+
+                        <table class="slds-table">
+                            
+                            <thead>
+                                
+                                <th>Model Number</th>
+                                <th>Serial Number</th>
+                                <th>Bill to Name</th>
+                                <th>Street</th>
+                                <th>Zip</th>
+                                <th>Bill to Phone</th>
+                                <th>Installation Date</th>
+                                <th>Consumer Complaint</th>
+                                <th>Problem Description</th>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>{data.MODEL}</td>
+                                    <td>{data.SERIAL_NO}</td>
+                                    <td>{data.BILL_TO_NAME}</td>
+                                    <td>{data.BILL_TO_ADDRESS}</td>
+                                    <td>{data.SVC_ZIP}</td>
+                                    <td>{data.CALL_NO}</td>
+                                    <td>{data.INSTALLATION_DATE}</td>
+                                    <td>{data.PROBLEM_DESCRIPTION}</td>
+                                </tr>
+                                <th>Model Number</th>
+                                <th>Serial Number</th>
+                                <th>Bill to Name</th>
+                                <th>Street</th>
+                                <th>Zip</th>
+                                <th>Bill to Phone</th>
+                                <th>Installation Date</th>
+                                <th>Consumer Complaint</th>
+                                <th>Problem Description</th>
+                            </tbody>
+                        </table>
+
+
+
+                        <table class="slds-table">
+                            
+                            <thead>
+
+                                <th>Work Performed</th>
+                                <th>Repeat Call Indicator</th>
+                                <th>Labor Charge</th>
+                                <th>Parts Charge</th>
+                                <th>Home Call Fee</th>
+                                <th>Tax Code</th>
+                                <th>Invoice Total</th>
+                                <th>Terms</th>
+                                <th>Total Amount</th>
+                                <th>Reimbursed Labor Amount</th>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    
+                                    <td>{data.SERVICE_DATE}</td>
+                                    <td><b>NOT FOUND</b></td>
+                                    <td>{data.INV_CALL_CLASS}</td>
+                                    <td>{data.LABOR_CHARGE}</td>
+                                    <td>{data.PARTS_CHARGE}</td>
+                                    <td><b>NOT FOUND</b></td>
+                                    <td>{data.TAX_CODE}</td>
+                                    <td><b>NOT FOUND</b></td>
+                                    <td>{data.TERMS_CODE}</td>
+                                    <td><b>NOT FOUND</b></td>
+                                    <td><b>NOT FOUND</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </template>
+
+                    <hr></hr>
+                    
+                    <lightning-button 
+                        label="Close"
+                        onclick={close}
+                    ></lightning-button>
+
+                    <i></i>
+                </div>
+            </div>
+        </template>
+        
+
+        <div onclick={show}>
+            <a>{text}</a>
+        </div>
+    </template>
+ -->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="urn:metadata.tooling.soap.sforce.com" fqn="LWC_NAME">
+    <apiVersion>45.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Twilio Text</masterLabel>
+    <description>Send SMS Text messages via a Twilio Nodejs proxy.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="header" type="String"/>
+            <property name="proxy" type="String"/>
+            <property name="phone" type="String"/>
+        </targetConfig>
+        <targetConfig targets="lightning__AppPage">
+            <property name="header" type="String"/>
+            <property name="proxy" type="String"/>
+            <property name="phone" type="String"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="header" type="String"/>
+            <property name="proxy" type="String"/>
+            <property name="phone" type="String"/>
+            <property name="recordId" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

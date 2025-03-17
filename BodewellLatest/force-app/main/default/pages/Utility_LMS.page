@@ -1,0 +1,199 @@
+<apex:page >
+    <body>
+        <!-- Load custom ccp panel here -->
+        <div id="log"></div>            
+        <div id="containerDiv" style="display:none"></div>
+        <a id="downloadLink" href="#">Download Log</a>
+    </body>
+    <!-- Load custom ccp panel js file and other functions here -->
+    <apex:includeScript value="{! $Resource.acs }"/>
+    <script type="text/javascript">
+        const source = "NF Utility Contact Center Panel";
+        var lmsDemoChannel = "{!$MessageChannel.nfscv__c}";
+        var subscriptionToMC;
+        function publishMessage(message) {
+            const payload = {
+                source,
+                messageBody: message
+            };
+            sforce.one.publish(lmsDemoChannel, payload);
+        }
+        function subscribeMC() {
+            if (!subscriptionToMC) {
+                subscriptionToMC = sforce.one.subscribe(lmsDemoChannel, onMCPublished);
+            }
+        }
+        function unsubscribeMC() {
+            if (subscriptionToMC) {
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;
+            }
+        }
+        function onMCPublished(message) {
+            if (message.source !== source) {
+                _log('[MESSAGE RECEIVED] : Message from ' + message.source);
+                const {type, payload} = message.messageBody;
+                if (window.syncTimer != null) window.clearTimeout(window.syncTimer);
+                window.syncTimer = window.setTimeout(function () {
+                    syncDataToAmazonConnect(type, payload);
+                }, 2000);
+            }
+        }
+        function _log(data) {
+            console.log(data);
+            var $l = document.getElementById('log');
+            var $e = document.createElement('div');
+            $e.classList.add('log-entry');
+            $l.appendChild($e);
+            var $d = document.createElement('span');
+            $d.classList.add('log-entry-data');
+            $e.appendChild($d);
+            if (typeof data === 'object' && data !== null) {
+                $d.innerHTML = JSON.stringify(data, null, 2);
+            }
+            else {
+                $d.innerHTML = data;
+            }
+            var $t = document.createElement('span');
+            $t.classList.add('log-entry-time');
+            $t.innerHTML = (new Date()).toLocaleString();
+            $e.appendChild($t);
+        }
+        subscribeMC();
+        window.myCPP = window.myCPP || {};
+        //Global variable to store agent information
+        window.ContactCenterAgent;
+        //replace with the CCP URL for your Amazon Connect instance
+        const ccpUrl = "https://us-east-1.console.aws.amazon.com/connect/federate/b50fdddb-90c8-4d5b-8362-44ac2f538ce7?destination=%2Fconnect%2Fccp-v2";
+        const loginUrl = "https://geapp.my.salesforce.com/idp/login?app=0sp4P000000Gn6P";
+        //const ccpUrl = "https://us-east-1.console.aws.amazon.com/connect/federate/5123d3d9-0c3c-463c-9649-694ef53f77f3?destination=%2Fconnect%2Fccp-v2";
+        //const loginUrl = "https://geapp--cxforce.my.salesforce.com/idp/login?app=0sp4P000000Gn6P";
+        _log('[ACTION] initCCP');
+        connect.core.initCCP(containerDiv, {
+            ccpUrl: ccpUrl,
+            loginPopup: false,
+            loginUrl: loginUrl,
+            softphone: {
+                ringtoneUrl: '',
+                allowFramedSoftphone: false
+            }
+        });
+        if(connect){
+            connect.agent((res) => {
+                _log('[ACTION] Connected');
+                window.ContactCenterAgent = res;
+            });
+        }
+        downloadLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            connect.getLog().download();
+        });
+        function syncDataToAmazonConnect(eventType, eventPayload){
+            _log('[ACTION] : Initiating data sync to Amazon Connect ' + eventType);
+            _log('[PAYLOAD] : EventPayload ' + eventPayload);
+            switch(eventType){
+                case 'login':
+                    //sync login activity
+                    setAgentStatus(window.ContactCenterAgent, 'Available');
+                    break;
+                case 'logout':
+                    //sync logout activity
+                    setAgentStatus(window.ContactCenterAgent, 'Offline');
+                    break;
+                case 'statuschange':
+                    //sync statuschange activity
+                    setAgentStatus(window.ContactCenterAgent, eventPayload);
+                    break;
+                default: //do nothing
+                    break;
+            }
+        }
+        /*function getStatusByName(agent, statusName){
+            let result;
+            if(agent && statusName){
+                const allStates = agent.getAgentStates() || [];
+                _log('[MESSAGE] : Retrieved Agent States');
+                console.table(allStates);
+                if(allStates.length > 0){
+                    _log('[FILTER] : Filtering allStates to:' + statusName);
+                    let requiredStates = allStates.filter((x) => x.name.toUpperCase() === statusName.toUpperCase());
+                    if(requiredStates.length > 0){
+                        result = requiredStates[0];
+                    } else {
+                        _log('[FILTER] : Failed to filter allStates to:' + statusName);
+                    }
+                }
+            }
+            return result;
+        }*/
+        function getStatusByName(agent, statusName){
+            let result;
+            if(agent != null) {
+                let allStates = agent.getAgentStates() || [];
+                if(statusName == 'Available - phone') statusName = 'Available';
+                _log('[FILTER] : Filtering allStates to:' + statusName);
+                let requiredStates = allStates.filter((x) => x.name.toUpperCase() === statusName.toUpperCase());
+                if(requiredStates.length > 0){
+                    result = requiredStates[0];
+                } else {
+                    _log('[FILTER] : Failed to filter allStates to:' + statusName);
+                    //_log(allStates);
+                }
+            }
+            return result;
+        }
+        function setAgentStatus(agent, statusName){
+            let state = getStatusByName(agent, statusName);
+            let payload = {
+                type: 'sync-failure',
+                statusName: statusName
+            };
+            if( !window.ContactCenterAgent ) {
+                _log('[RESULT] : Syncing data to Amazon Connect failed.');
+                publishMessage(payload);
+            }
+            else if(state == null) {
+                _log('[RESULT] : Status not found, sync failure.');
+                publishMessage(payload);
+            }
+            else if(state.name.toUpperCase() == 'AVAILABLE' || state.name.toUpperCase() == 'OFFLINE') {
+                _log('[INFO] : Ignoring Change to ' + state.name);
+                payload.type = 'sync-success';
+                publishMessage(payload);
+            }
+            else{
+                _log('[MESSAGE] : Setting Agent State to ' + statusName);
+                agent.setState(state, {
+                    success: function() {
+                        _log('[MESSAGE] : Sucessfully Updated Agent State to ' + statusName);
+                        payload.type = 'sync-success';
+                        publishMessage(payload);
+                    },
+                    failure: function(err) { 
+                        _log('[MESSAGE] : Error Setting Agent State to ' + statusName);
+                        _log(err);
+                        publishMessage(payload);
+                    }
+                });
+            }
+        }
+    </script>
+    <style>
+        #log {
+            display: block;
+            height: 100%;
+            border: solid 1px #efefef;
+            overflow-y: auto;
+            height: 250px;
+        }
+        .log-entry {
+            display: table-row;
+        }
+        .log-entry-time,
+        .log-entry-data {
+            white-space: pre;
+            display: table-cell;
+            padding: 5px;
+        }
+    </style>
+</apex:page>

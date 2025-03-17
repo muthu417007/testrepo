@@ -1,0 +1,21 @@
+<template>
+    <div class="m-b-20">
+    <div class="trouble-shoot-img">
+        <a href={redirectUrl} onclick={handleButtonClick}>
+            <img src={tileImageRef} class="slds-p-bottom_medium" width=100%>
+        </a>
+    </div>
+    <div class="trouble-shoot-heading">
+        <h2 class="slds-p-top_medium"><a href={redirectUrl} onclick={handleButtonClick}>{cardTitle}</a></h2>
+    </div>
+    <div class="trouble-shoot-summary">
+        {cardDescription}
+    </div>
+    <a href={redirectUrl} onclick={handleButtonClick} >
+        <button class="custom-button-cmp addAlign btnColor m-b-20"
+        style="background-color: rgb(0, 59, 113); color: rgb(255, 255, 255);">
+        {buttonLabel}
+    </button>
+    </a>
+</div>
+</template>

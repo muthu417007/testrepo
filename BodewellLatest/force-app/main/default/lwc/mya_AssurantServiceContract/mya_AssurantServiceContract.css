@@ -1,0 +1,165 @@
+.banner {
+    background-color:  #F7F1E7; /*#F3F7FB;*/
+    /*font-family: 'Open Sans';*/
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    padding: 0.5rem 4rem 3rem 4rem;
+    margin: 3rem -3rem;
+    width: 57rem;
+    text-transform: none;
+}
+
+.main-text-header {
+    /*font-family: 'Open Sans';*/
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    color: #0E2D44;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 27px;
+}
+
+.m-text-header {
+    /*font-family: 'Open Sans';*/
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    color: #0E2D44;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+
+}
+/* .see-my-price {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    border: 3px solid;
+} */
+
+.see-my-price-gea {
+    background-color: #FFC01F; /* #F3F7FB;*/
+    border-color: #FFC01F;
+    color: #0E2D44;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-weight: bold;
+    height: 40px;
+    width: 210px;
+    /*border: 3px solid #1a63a2;*/
+}
+
+.see-my-price-cafe {
+    background-color: #FFC01F; /* #F3F7FB;*/
+    border-color: #FFC01F;
+    color: #0E2D44;
+    font-family: 'proxima-nova';
+    font-weight: bold;
+    height: 40px;
+    width: 210px;
+    /*border: 3px solid #1a4b32;*/
+}
+
+.see-my-price-haier {
+    background-color: #FFC01F; /* #F3F7FB;*/
+    border-color: #FFC01F;
+    color: #0E2D44;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 40px;
+    width: 210px;
+    /*border: 3px solid;*/
+}
+
+.margin-set {
+    margin: 16px 0px;
+}
+
+.bold-sent {
+    font-weight: 700;
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    color: #0E2D44;
+    font-size: 16px;
+    line-height: 28px;
+    /*margin: 1rem 10px;*/
+    text-transform: none;
+}
+
+.normal-sent {
+    margin: 1rem 10px;
+    text-transform: none;
+    color: #0E2D44;
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-left {
+    text-align: center;
+    align-items: center;
+}
+
+.tick-mark {
+    width: 17px;
+    color: #145B95;
+    margin: 5px 10px;
+}
+
+.text-center {
+    text-align: center;
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+}
+
+
+h4 {
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+}
+.list {
+    font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    color: #0E2D44;
+    padding: 5px;
+}
+
+@media only screen and (max-width:425px) {
+    .media {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .lst-hr {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .list {
+        font-family: var(--lwc-fontFamily,neue-haas-grotesk-display);
+        text-align: left;
+        font-weight: 400;
+        font-size: 14px;
+        color: #0E2D44;
+        padding: 5px;
+    }
+    .tick-mark {
+        width: 10px;
+        color: #145B95;
+        margin: 5px 10px;
+    }
+    .mob-flex {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .bold-sent {
+        margin: 0rem;
+        text-align: center;
+    }
+    .normal-sent {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .banner {
+        width: 100%;
+        margin: 0rem;
+    }
+}

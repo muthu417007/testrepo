@@ -1,0 +1,64 @@
+/*accordions*/
+
+.content-box[c-bw_hideAndShow_bw_hideAndShow] {
+    border: 1px solid #728a9c !important;
+    padding-right: 0px !important;
+    margin-left: 65px;
+}
+
+div[c-bw_hideandshow_bw_hideandshow] {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+a.showsall {
+    color: #12212e !important;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+lightning-layout-item.slds-size_11-of-12 {
+    line-height: 35px;
+}
+
+a.showsall:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.imagecheck {
+    width: 40px;
+    height: 45px;
+    position: absolute;
+    padding-right: 15px;
+    left: 27px;
+}
+
+.check {
+    display: flex;
+}
+
+/* .content-box:before {
+    background-size: cover;
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-image: url(@salesforce/resourceUrl/check);
+    top: 40%;
+    left: -15px;
+} */
+@media screen and (max-width:448px) {
+    .imagecheck {
+        width: 36px;
+    }
+    a.showsall {
+        padding: 0px;
+    }
+}
+
+/*end*/

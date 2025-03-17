@@ -1,0 +1,126 @@
+/* for owner support*/
+.card-container {
+    display: flex;
+    font-family: Neue Haas Grotesk Display Pro;
+    border-top:2px solid #DED1B1;
+    border-bottom: 2px solid #DED1B1;
+}
+
+.card {
+    flex: 1;
+    padding: 16px;
+
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.icon-owner-chat {
+    width: 112px;
+    height: 147px;
+    margin: 5px;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #ffc01f
+    }
+
+}
+
+.icon-owner-call {
+    width: 112px;
+    height: 147px;
+    margin: 5px;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #ffc01f;
+    }
+
+}
+.icon-owner-service {
+    width: 112px;
+    height: 147px;
+    margin: 5px;
+    .d{fill:none;}.e{fill:#ffc01f;}
+ 
+}
+
+
+.button-text {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.button-text button {
+    width: 259px;
+    height: 44px;
+    background: var(---3e5769-slate) 0% 0% no-repeat padding-box;
+    background: lightgray 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 15px/15.97px var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    color: var(---ffffff-white);
+    text-align: center;
+  
+    letter-spacing: 0.75px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.button-text p{
+    font-size: small;
+}
+.card:not(:last-child) {
+    border-right: 2px solid #DED1B1;
+
+}
+
+.card img {
+    width: 100px;
+    max-width: 200px;
+    height: auto;
+}
+
+.card h2 {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.links {
+    margin-top: 16px;
+}
+
+.links p {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+@media(max-width:768px) {
+    .card {
+
+        max-width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card:not(:last-child) {
+        border-right: none;
+    }
+}

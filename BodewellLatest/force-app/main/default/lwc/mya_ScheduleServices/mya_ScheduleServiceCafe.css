@@ -1,0 +1,857 @@
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+body {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.padd {
+    padding: 0rem;
+}
+
+.header {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    border-bottom: 1px solid rgba(24, 63, 50, 1);
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: #004b3d;
+    font-weight: 300;
+    position: relative;
+    background: none;
+}
+
+.header2 {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    /* border-bottom: 1px solid rgba(24, 63, 50, 1); */
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: #004b3d;
+    font-weight: 300;
+    position: relative;
+    background: none;
+    border: none;
+}
+
+.sub-head {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.005em;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3px;
+    color: #004b3d;
+    padding-bottom: 0rem;
+}
+
+.sub-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.head-text {
+    margin: 3px auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.para {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.cell {
+    margin: 0rem;
+}
+
+.footer {
+    margin-top: 10px;
+    border: none;
+    background: none;
+    line-height: 1.8rem;
+}
+
+.body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+    font-family: 'sans-serif';
+    -webkit-text-size-adjust: 100%;
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.add {
+    line-height: inherit;
+    transition: color .15s ease;
+    background-color: transparent;
+    color: #004b3d;
+    text-decoration: none;
+    font-size: 0.8235294117647059rem;
+    font-weight: 500;
+}
+
+.container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.appliance-list>.cell {
+    margin-bottom: 2rem;
+    color: #004b3d;
+}
+
+.appliance-list {
+    border-bottom: 1px solid rgba(24, 63, 50, 1);
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    color: #004b3d;
+    font-size: 1.625rem;
+    border-bottom: 1px solid rgba(24, 63, 50, 1);
+    margin: 3rem auto;
+    font-weight: normal;
+    letter-spacing: .25px;
+    margin-bottom: 2rem;
+}
+
+.medium-up-2>.cell {
+    width: 50%;
+}
+
+.appliance-item {
+    text-align: center;
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    height: auto;
+    min-height: 29rem;
+    margin: 1em;
+    width: 345px;
+}
+
+.medium-offset-3 {
+    margin-left: 25%;
+}
+
+p.product-title,
+p.details-link {
+    color: #004b3d;
+    padding: 0 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+p a {
+    font-size: 0.875rem;
+}
+
+a {
+    color: rgba(108, 97, 88, 1);
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #004b3d;
+    color: #004b3d;
+    border-bottom-width: 5px;
+    padding-bottom: calc(1rem - 4px);
+}
+
+.appliance-item-myProducts:hover input {
+    color: #004b3d;
+}
+
+.appliance-item-myProducts:hover .close-icon {
+    color: #004b3d;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.container:not(.full)>.grid-padding-x {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+}
+
+.appliance-item p {
+    text-align: center;
+    background-color: #fff;
+    color: rgba(108, 97, 88, .8);
+    padding: 2rem 2rem 1rem 2rem;
+    font-size: 0.875rem;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.appliance-item p:hover {
+    color: #46645a;
+    text-decoration: none;
+}
+
+.grid-x {
+    /* display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+    justify-items: stretch;
+    align-content: space-between; */
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #004b3d;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.text-center {
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+.mainContent {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.address-list-section {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: .25px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+}
+
+.infoheader {
+    color: #004b3d;
+    line-height: 1.18571em;
+    text-transform: capitalize;
+    font-weight: 200;
+    margin-bottom: 0.2em;
+    margin-top: 0rem;
+}
+
+.info {
+    color: #004b3d;
+    margin-bottom: 0.2em;
+    margin-top: 0rem;
+}
+
+.account-greeting-section {
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    display: none;
+    color: #004b3d;
+    letter-spacing: 0.005em;
+}
+
+.add-an-appliance-section {
+    margin-bottom: 8rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.add-an-appliance>.grid-container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 71.5rem;
+}
+
+.add-an-appliance-inner {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.padding-top-3 {
+    padding-top: 3rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.addAppliancesTitle {
+    padding-bottom: 2%;
+}
+
+h2 {
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin-bottom: 5px;
+    line-height: 1.3;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    display: block;
+}
+
+.para a:hover {
+    text-decoration: underline;
+    color: #004b3d;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.add-an-appliance-links p {
+    margin-bottom: 0.5rem;
+}
+
+.close-icon {
+    color: transparent;
+    border: none;
+    display: none;
+    /*remove this if close icon is required */
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'proxima-nova';
+    background: transparent;
+    text-align: right;
+}
+
+.closeIcon {
+    color: #004b3d;
+    border: none;
+    display: none;
+    /* remove this if close icon is required */
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'proxima-nova';
+    background: transparent;
+    text-align: right;
+}
+
+.product-desc {
+    font-family: 'ProximaNova-Regular';
+    font-size: 0.875rem;
+}
+
+.appliance-item {
+    text-align: right;
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #004b3d;
+    right: 0.5rem;
+    top: 0.5rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.closeButton {
+    font-size: 1em;
+    color: #004b3d;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 24px;
+    color: #004b3d;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    letter-spacing: 0.25px;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.reveal.add-address-modal {
+    top: 10%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 3px solid #004b3d;
+    margin-bottom: 1em;
+    padding: 1rem 1rem;
+    width: 500px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.button-action {
+    display: inline-block;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.okButton {
+    width: 90%;
+    background-color: #004b3d;
+    color: white;
+    padding: 10px 20px;
+    border: solid 1px #004b3d;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'ProximaNova-Regular';
+    margin-left: 8px;
+    height: 2.5rem;
+}
+
+.okButton:hover {
+    background-color: #004b3d;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 90%;
+    padding: 10px 20px;
+}
+
+.cancelButton {
+    background-color: white;
+    border: 1px solid #004b3d;
+    cursor: pointer;
+    font-weight: 800;
+    width: 90%;
+    height: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'ProximaNova-Regular';
+    padding: 10px 20px;
+}
+
+.cancelButton:hover {
+    background-color: #004b3d;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 90%;
+    padding: 10px 20px;
+}
+
+.reveal-overlay .modal-header {
+    padding-bottom: 0;
+    margin: 0 px !important;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.delete-message .removeproduct {
+    text-align: center;
+    letter-spacing: 0.25px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-action {
+    width: 100%;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.address-heading {
+    color: black;
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0px;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    font-weight: 300;
+}
+
+.linkbutton {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'ProximaNova-Regular';
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: #004b3d;
+}
+
+.slds-table {
+    margin-top: 25px;
+    background-color: #cfb8b8;
+}
+
+.tables1 {
+    background-color: #cfb8b8;
+}
+
+.status-image {
+    text-align: center;
+    margin-left: 20%;
+    width: 50%;
+    height: auto;
+}
+
+h5 {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+lightning-button.button {
+    --sds-c-button-brand-color-background: #004B3D;
+    --sds-c-button-text-color: white;
+}
+
+.p1 {
+    font-weight: 100;
+    font-size: 22px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.twoComponent {
+    margin-top: 50px;
+}
+
+.para a {
+    color: rgba(108, 97, 88, 1);
+    margin: 5px auto;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width:39.9375rem) {
+    .header {
+        font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+        font-size: 1.625rem;
+        line-height: 2rem;
+        letter-spacing: 0.005em;
+        border-bottom: 1px solid rgba(24, 63, 50, 1);
+        text-align: center;
+        margin-top: 0rem;
+        position: relative;
+        margin-bottom: 1rem;
+        background: none;
+        color: #004b3d;
+        font-weight: 300;
+    }
+    .para a {
+        color: rgba(108, 97, 88, 1);
+        margin: 5px auto;
+        text-decoration: underline;
+    }
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 14rem;
+        margin: 0em 1em 2em;
+        width: auto;
+    }
+    .reveal {
+        overflow: visible;
+        border: 1px solid silver;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 95%;
+        max-width: 75rem;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #004b3d;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #004b3d;
+        display: none;
+        /*Uncomment this to remove close icon*/
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+    .product-desc {
+        font-family: 'ProximaNova-Regular';
+        font-size: 0.875rem;
+        text-decoration: underline;
+    }
+}
+
+.service_Box {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.p3 {
+    margin-top: 16px;
+}
+
+.p2 {
+    margin: 16px auto;
+}
+
+.track-link {
+    font-size: 0.875rem;
+}
+
+.track-link:hover {
+    font-size: 0.875rem;
+    text-decoration: underline;
+    color: #004b3d;
+}
+
+@media only screen and (min-width:39.9375rem) and (max-width:768px) {
+    .header {
+        font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+        font-size: 1.625rem;
+        line-height: 2rem;
+        letter-spacing: 0.005em;
+        border-bottom: 1px solid rgba(24, 63, 50, 1);
+        text-align: center;
+        margin-top: 0rem;
+        position: relative;
+        margin-bottom: 1rem;
+        background: none;
+        color: #004b3d;
+        font-weight: 300;
+    }
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 19rem;
+        margin: 0em 1em 2em;
+        width: 19rem;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #004b3d;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #004b3d;
+        display: none;
+        /*Uncomment this to remove close icon */
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+    .product-desc {
+        font-family: 'ProximaNova-Regular';
+        font-size: 0.875rem;
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 10rem;
+        margin: 0em 1em 2em;
+        width: 70%;
+    }
+}

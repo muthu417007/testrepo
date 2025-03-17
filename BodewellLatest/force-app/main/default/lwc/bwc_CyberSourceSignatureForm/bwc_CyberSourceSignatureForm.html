@@ -1,0 +1,26 @@
+<template>
+  <h1>Original LWC from Mohammad</h1>
+  <ul>
+  <li>Does not work due to missing "type" attribute in form input elements and</li>
+  <li>due to making 2 Apex calls to get parameters and signature when 1 call should be made to get both at the same time</li>
+  <li>LWC: bwc_CyberSourceSignatureForm</li>
+  <li>Apex Controller: BWC_CyberSourceSignatureConfigController</li>
+  </ul>
+  <form action="https://testsecureacceptance.cybersource.com/pay" method="post" name="form1" target="blank">
+     
+    <span id="formdata">
+      <template for:each={parametersValues} for:item="param">
+
+        <div  key={param.key} >
+          <input id={param.key} value={param.value} name={param.key}>
+        </div>
+
+      </template>
+
+      <span> <input type="hidden" id="signature" name="signature" value={signature}></span>
+
+      <!-- <input type="submit" name="Proceed to Pay" value="Proceed to Pay" onclick={submitForm}>-->
+      <button onclick={submitForm} type="button">Proceed to Pay1</button>
+    </span>
+  </form>
+</template>

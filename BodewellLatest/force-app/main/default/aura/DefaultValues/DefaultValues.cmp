@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,lightning:actionOverride,lightning:hasPageReference" access="global" >
+	<aura:handler name="init" action="{!c.onInit}" value="{!this}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.doInit}"/>
+    <aura:attribute name="visitId" type="string"/>
+</aura:component>

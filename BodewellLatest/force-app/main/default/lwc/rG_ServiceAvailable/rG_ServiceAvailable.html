@@ -1,0 +1,19 @@
+<template>
+<div class="wrapper">
+  <h2 class="service-available-heading">
+        {Head}
+  </h2>
+    <div class="service-avaliable-content">
+        <template iterator:it={pageList}>
+            <div key={it.value.pageLabel}>
+                <span>
+                    <a class="service-available-url" 
+                    href={it.value.pageUrl}
+                    onclick={handleNavigation}
+                    data-value={it.value.pageUrl}>{it.value.pageLabel}</a>
+                </span>
+            </div>
+        </template>
+</div>
+</div>
+</template>

@@ -1,0 +1,27 @@
+<aura:component controller="OnePartsController" implements="forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:appHostable,lightning:actionOverride,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="iframeUrl" type="String" default="https://www.ordergeapplianceparts.com/search?q="/> <!--added default as query link-->
+    <aura:attribute name="width" type="String" />
+    <aura:attribute name="height" type="String" />
+    <aura:attribute name="scrolling" type="String" />
+    <aura:attribute name="frameBorder" type="String" />
+    <aura:attribute name="style" type="String" />
+    <aura:attribute name="sandbox" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<!--<lightning:card title="Display, Create, or Edit Records with recordForm">
+           <lightning:recordForm recordId="{!v.recordId}" 
+                              objectApiName="GEA_Asset__c"
+                              fields="Model_Number__c" />
+    </lightning:card>-->
+
+    <iframe src="{!v.iframeUrl}"
+            width="{!v.width}"
+            height="{!v.height}"
+            style="{!v.style}"
+            frameBorder="{!v.frameBorder}"
+            sandbox="{!v.sandbox}"
+            scrolling="{!v.scrolling}"/>
+
+</aura:component>

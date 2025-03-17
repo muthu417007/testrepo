@@ -1,0 +1,40 @@
+:host {
+   margin-bottom: 0;
+}
+.global-header--sticky {
+    background-color: var(--denim-blue);
+    color: white;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: -100px;
+    opacity: 0;
+    padding: 0.5rem 4rem .5rem 0;
+    visibility: hidden;
+    -webkit-transition: top cubic-bezier(0.8, 0, 1, 1) 400ms,opacity cubic-bezier(0, 0, 0.2, 1) 400ms,visibility 0ms 400ms;
+    -o-transition: top cubic-bezier(0.8, 0, 1, 1) 400ms,opacity cubic-bezier(0, 0, 0.2, 1) 400ms,visibility 0ms 400ms;
+    transition: top cubic-bezier(0.8, 0, 1, 1) 400ms,opacity cubic-bezier(0, 0, 0.2, 1) 400ms,visibility 0ms 400ms;
+    z-index: 500;
+}
+
+.global-header--sticky.is-active{
+    height: auto;
+    text-align: center;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    -webkit-transition: top cubic-bezier(0, 0, 0.2, 1) 400ms,opacity cubic-bezier(0.8, 0, 1, 1) 400ms,visibility 0ms 0ms;
+    -o-transition: top cubic-bezier(0, 0, 0.2, 1) 400ms,opacity cubic-bezier(0.8, 0, 1, 1) 400ms,visibility 0ms 0ms;
+    transition: top cubic-bezier(0, 0, 0.2, 1) 400ms,opacity cubic-bezier(0.8, 0, 1, 1) 400ms,visibility 0ms 0ms;
+}
+.global-header-emblem__logo {
+    width: 3rem;
+}
+.header-navigation--sticky {
+    padding: 0 0 0 4rem;
+}
+.header-profile {
+    margin-right: 10px;
+}

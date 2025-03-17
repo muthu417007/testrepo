@@ -1,0 +1,221 @@
+.slds-form-element {
+    background-color: white;
+}
+
+.inputPadding {
+    background-color: white;
+    padding: 10px;
+}
+
+.red-border {
+    border: 2px solid #CB1640;
+
+
+}
+
+.error {
+    color: #CB1640;
+    font-size: inherit;
+}
+
+.checkbox__label {
+    margin-left: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.headerAddress {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.headerAddress-clone {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.addAddress {
+    text-align: left;
+    letter-spacing: 0.32px;
+    color: #245B83;
+    text-transform: capitalize;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.addContainer {
+    padding: 15px 0px 15px 0px;
+    display: flex;
+}
+
+.inputLabel {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-19)/var(--unnamed-line-spacing-28) var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    letter-spacing: var(--unnamed-character-spacing-0-57);
+    color: var(---12212e-deep-blue);
+    text-align: left;
+    letter-spacing: 0.57px;
+    color: #12212E;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.iconAdd svg {
+    margin: 4.5px;
+    display: inline-block;
+    fill: #245B83;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-container-clone {
+    display: flex;
+}
+
+.buttonEdit {
+    background-color: white;
+    border: 2px solid var(---245b83-action-blue);
+    border: 2px solid #245B83;
+    border-radius: 25px;
+    opacity: 1;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) 15px/var(--unnamed-line-spacing-26) var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    color: var(---245b83-action-blue);
+    text-align: center;
+    font: normal normal medium 15px/26px Neue Haas Grotesk Display Pro;
+    letter-spacing: 0.75px;
+    color: #245B83;
+    text-transform: uppercase;
+    opacity: 1;
+
+    font-weight: bold;
+}
+
+.continueButton {
+    background: #245B83 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    opacity: 1;
+    width: 163px;
+    text-align: center;
+    letter-spacing: 0.75px;
+    color: #F7F1E7;
+    text-transform: uppercase;
+}
+
+.successIcon {
+
+
+
+    --slds-c-icon-color-background: #3E5769;
+
+    /* padding-left: 20px; */
+
+    padding: 15px;
+
+
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: top;
+    fill: none;
+    isolation: isolate;
+    width: 33px;
+    height: 33px;
+
+    .g {
+        fill: #ffc01f;
+    }
+
+    .h {
+        fill: #12212e;
+    }
+
+
+}
+
+.iconRight {
+    margin-top: 6px;
+    display: inline-block;
+
+
+    vertical-align: top;
+
+    fill: none;
+    isolation: isolate;
+    width: 33px;
+    height: 33px;
+}
+
+:host {
+    --slds-c-modal-content-color-background: white;
+    --slds-c-modal-footer-color-background: white;
+    --slds-c-modal-header-color-background: white;
+    --slds-c-radio-color-background: white;
+}
+
+.confirm-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.confirm-button button {
+
+    border-radius: 25px;
+    opacity: 1;
+    width: 209px;
+    height: 44px;
+    background: var(---245b83-action-blue) 0% 0% no-repeat padding-box;
+    background: #245B83 0% 0% no-repeat padding-box;
+
+
+}
+
+.sldsradio .slds-radio_faux {
+    background-color: white;
+}
+
+.headerAddress-modal {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.spinner {
+
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    backdrop-filter: blur(2px);
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+    /* Ensure the spinner is on top of other content */
+    backdrop-filter: blur(2px);
+}
+
+.email-class {
+    padding-top: 15px;
+    padding-left: 10px;
+}

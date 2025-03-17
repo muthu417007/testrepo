@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="c:contactview component">
+    <aura:attribute name="name" type="String" />
+    <aura:attribute name="mobile" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="address" type="String" />
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    
+    <lightning:layout horizontalAlign="left">
+        <lightning:button variant="brand" label="Service/Order History" onclick="{! c.getdetails }"/>
+                       
+    
+	</lightning:layout> 
+	<lightning:card title="Contact Details" iconName="standard:contact">
+        <p>Name:</p>
+        {!v.name}
+        <div class="slds-p-top_xx-small"></div>
+        <div class="slds-border_top">Mobile:</div>
+        {!v.mobile}
+        <div class="slds-p-top_xx-small"></div>
+        <div class="slds-border_top">Phone:</div>
+        {!v.phone}
+        <div class="slds-p-top_xx-small"></div>
+       <div class="slds-border_top" >Email:</div>
+        {!v.email}
+        <div class="slds-p-top_xx-small"></div>
+        <div class="slds-border_top" >Address:</div>
+        {!v.address}
+        </lightning:card>
+</aura:component>

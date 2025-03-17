@@ -1,0 +1,4 @@
+.icon {
+    --sds-c-icon-color-foreground-default: rgb(236, 14, 226);
+    cursor: pointer;
+}

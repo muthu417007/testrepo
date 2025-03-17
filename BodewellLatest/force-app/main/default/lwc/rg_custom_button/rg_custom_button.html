@@ -1,0 +1,39 @@
+<template>
+    <div class="RG-button-cls">
+        <a class="RG_button-link" href={redirectURL}>
+            <template if:true={showIcon}>
+                <!-- <lightning-button
+                        label={buttonLabel}
+                        variant="brand"
+                        title={buttonLabel}
+                        onclick={handleClick}
+                        icon-name="utility:retail_execution"
+                        class="slds-icon slds-icon_large addAlign btnColor"
+                        size="large">
+                </lightning-button> -->
+                <button class="custom-button-cmp addAlign btnColor side-cta" 
+                    onmouseover={handleOverColor}                    
+                    onmouseleave={handleOutColor} 
+                    onclick={handleClick}>
+                    <i class="fa fa-calendar-check-o"></i>&nbsp;{buttonLabel}
+                </button>
+            </template>
+            <template if:false={showIcon}>
+                <!-- <lightning-button
+                    label={buttonLabel}
+                    variant="brand"
+                    title={buttonLabel}
+                    onclick={handleClick}
+                    class="addAlign btnColor"
+                    size="large">
+                </lightning-button> -->
+                <button class="custom-button-cmp addAlign btnColor" 
+                    onmouseover={handleOverColor}                    
+                    onmouseleave={handleOutColor} 
+                    onclick={handleClick}>
+                    {buttonLabel}
+                </button>
+            </template>
+        </a>
+    </div>
+</template>

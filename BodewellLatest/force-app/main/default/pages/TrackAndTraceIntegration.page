@@ -1,0 +1,16 @@
+<apex:page >
+    
+    <script> 
+        var previousOnload = window.onload; window.onload = function() { if (previousOnload) { previousOnload(); } 
+                                                                        var url = 'https://dms-erp-prd-pp.geappliances.com/dms/'
+                                                                        if({!$CurrentPage.parameters.trackingnumber}!=null && {!$CurrentPage.parameters.trackingnumber}!='')    
+                                                                        {
+                                                                            url = 'https://dms-erp-prd-pp.geappliances.com/dms/tracktrace/orderDetails?htrackingNumber='+{!$CurrentPage.parameters.trackingnumber}   
+                                                                        }
+                                                                        
+                                                                        document.getElementById("TrackAndTrace").src = url;
+                                                                       } 
+    </script>
+    
+    <apex:iframe src="" scrolling="true" id="TrackAndTrace" />
+</apex:page>

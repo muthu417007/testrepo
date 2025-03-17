@@ -1,0 +1,135 @@
+<template>
+    <!-- Skip to main content -->
+    <div role="navigation" aria-label="Skip to main content" class="skip-to-main-content">
+        <a class="link--skipToMain" href="#main-content" onclick={handleNavigate} onfocus={handlefocus}
+            onblur={handleblur}>
+            <span class="generic-button primary-blue m-3">
+                SKIP TO MAIN CONTENT
+            </span>
+        </a>
+    </div>
+    <!-- END -->
+    <div class="desktop-nav-bar">
+        <div class="navbar-full" id="navbar-1">
+            <div class="nav-items-flex">
+                <div class="nav-bar-adjust">
+                    <!-- <a class="navbar" href="/bodewell/s/" data-value="HomePage">
+                        <img class="logo-image" src={logolightsvg} alt="Bodewell logo">
+                    </a> -->
+                    <a class="navbar" onclick={handleHome} data-value="HomePage">
+                        <img class="logo-image" src={logolightsvg} alt="Bodewell logo">
+                    </a>
+                </div>
+                <div class="nav-bar-adjust" style="float: right;">
+                    <template iterator:it={menuItems}>
+                        <div key={it.value.Id} class="nav-list-check">
+                            <div class="nav-list">
+                                <ul>
+                                    <li if:false={it.value.isMenu} class="nav-list-i">
+                                        <a class="nav-link" href={redirectURL} data-value={it.value.menuItemTarget}
+                                            onclick={handleNavigation}>
+                                            <span class="nav-comp">{it.value.menuItemName}</span>
+                                            <!-- <img class="nav-icon i-location" src={locationsvg} alt="location-icon"> -->
+                                        </a>
+                                    </li>
+                                    <li if:true={it.value.isMenu} class="nav-list-i">
+                                        <a class="nav-link pointer-event-set" href="/">
+                                            <span class="nav-comp">{it.value.menuItemName}</span>
+                                            <!-- <img class="nav-icon i-arrow-bottom" src={arrowbottomsvg} alt="dropdown arrow"> -->
+                                        </a>
+                                        <ul class="dropdown-menu show" aria-labelledby="resourcesDropdown">
+                                            <div class="test-sample">
+                                                <template for:each={it.value.subMenuItemList} for:item="item">
+                                                    <div key={item.subMenuItemId}>
+                                                        <li>
+                                                            <a class="dropdown-item" href={redirectURL}
+                                                                data-value={item.subMenuItemTarget}
+                                                                onclick={handleNavigation}>
+                                                                <span class="nav-comp">{item.subMenuItemName}</span>
+                                                            </a>
+                                                        </li>
+                                                    </div>
+                                                </template>
+</div>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</template>
+<div class="nav-list-check">
+    <div class="nav-list">
+        <ul>
+            <li class="nav-list-i">
+                <a class="nav-link desktop-only" onclick={callMe}>
+                    <!-- <span class="nav-comp">Call {displayNumber}</span> -->
+                    <span class="nav-comp1">Call 855-950-6306</span>
+                    <img class="nav-icon i-concierge" src={conciergesvg} alt="Call icon">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="below-desktop">
+    <div class="navbar-full">
+        <div class="container-fluid">
+            <button id="navbarToggler" class="navbar-toggler collapsed tablet-only" type="button" data-toggle="collapse" data-target="#myLinks" aria-controls="myLinks" aria-expanded="false" aria-label="Toggle navigation">
+                    <a href="javascript:void(0);" class="icon" onclick={myFunctionopen}>
+                        <img class="i-menu navbar-toggler-icon first" id="hamimg" src={menusvg} alt="Open Menu">
+                    </a>
+                    <img class="i-close navbar-toggler-icon second" id="clsimg" onclick={myFunctionClose} src={closesvg}
+                        alt="Close Menu">
+                </button>
+            <ul class="test-ul third" id="myLinks">
+                <div class="navbar-list-mobile">
+                    <template iterator:it={menuItems}>
+                            <div key={it.value.Id} class="navbar-mobile-mrg">
+                                <li if:false={it.value.isMenu} class="nav-list-i border-set">
+                                    <a class="nav-link" href={redirectURL} data-value={it.value.menuItemTarget}
+                                        onclick={handleNavigation}>
+                                        <span class="nav-comp">{it.value.menuItemName}</span>
+                                    </a>
+                                </li>
+                                <li if:true={it.value.isMenu} class="nav-list-i border-set">
+                                    <a class="nav-link pointer-event-set" href="/">
+                                        <span class="nav-comp">{it.value.menuItemName}</span>
+                                    </a>
+                                    <template for:each={it.value.subMenuItemList} for:item="item">
+                                        <div key={item.subMenuItemId} class="sub-list">
+                                            <li>
+                                                <a class="dropdown-item" href={redirectURL} data-value={item.subMenuItemTarget}
+                                                    onclick={handleNavigation}>
+                                                    <span class="nav-comp">{item.subMenuItemName}</span>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </template>
+                    </li>
+                </div>
+                </template>
+                <li class="border-set" style="padding-bottom: 8px;padding-top:8px;">
+                    <a class="nav-link desktop-only" onclick={callMe}>
+                        <!-- <span class="nav-comp">Call {displayNumber}</span> -->
+                        <span class="nav-comp1">Call 855-950-6306</span>
+                    </a>
+                </li>
+        </div>
+
+        </ul>
+        <!-- <a class="navbar" href="/bodewell/s/" data-value="HomePage">
+            <img class="logo-image" src={logolightsvg} alt="Bodewell logo">
+        </a> -->
+        <a class="navbar" onclick={handleHome} data-value="HomePage">
+            <img class="logo-image" src={logolightsvg} alt="Bodewell logo">
+        </a>
+        <a class="navbar-toggler tablet-only phone-number-icon" onclick={callMe}>
+            <img class="nav-icon i-concierge" src={conciergesvg} alt="Call icon">
+        </a>
+    </div>
+</div>
+</div>
+</template>

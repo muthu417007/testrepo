@@ -1,0 +1,272 @@
+<template>
+  <div class="address-information-section">
+    <div class="grid-container">
+      <div class=".medium-12 medium-offset-0">
+        <div class="field-wrapper callout-title-container Haier-Monogram-only">
+          <div class="title-bar-circles-left"></div>
+          <div class="fielditems callout-title-inner-container">
+            <div class="fielditem">
+              <h3>Address Information</h3>
+            </div>
+          </div>
+          <div class="title-bar-circles-right"></div>
+        </div>
+        <div class="grid-x grid-margin-x" style="justify-content:center">
+          <a onclick={modalHandler} class="cell address-card add-address-card no-underline">
+            <h3 class="icon-place">+</h3>
+            <h3 class="other-h3">Add address</h3>
+          </a>
+          <template if:true={isModalOpen}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+              aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+              <div class="reveal-overlay">
+                <div class="reveal add-address-modal" id="modal-content-id-1">
+                  <header class="slds-modal-header">
+                    <button class="close-button" onclick={closeModal} aria-modal="false">
+                      <span class="fa">x</span>
+                    </button>
+                    <h3 class="text-center modal-header">Add Address</h3>
+                  </header>
+                  <label>
+                    <span>{address}</span>
+                    <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                    maxlength="40" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}  
+                    onchange={AddressChangedHandler}></lightning-input>
+                  </label>
+                  <label>
+                    <span>{city}</span>
+                    <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                    maxlength="25" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}  
+                    onchange={CityChangedHandler}></lightning-input>
+                  </label>
+                  <label>
+                    <span>{state}</span>
+                    <select class="slds-select state-input validateState" name="state" id="state" required disabled={disableAddress} onchange={StateChangedHandler}>
+                      <option value="">Select State</option>
+                      <template for:each={stateOptions} for:item="item">
+                          <option key={item.value} value={item.value}>{item.label}</option>
+                      </template>
+                    </select>
+                    <div class="slds-form-element__help" if:true={stateValidation} data-help-message="" role="alert">
+                        Complete this field.
+                    </div>
+                    <!-- <lightning-combobox variant="label-hidden" onchange={StateChangedHandler} options={stateOptions}
+                      required="required" class="validate"></lightning-combobox> -->
+                  </label>
+                  <label>
+                    <span>{postalCode}</span>
+                    <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                      onchange={CodeChangedHandler} maxlength="5"  pattern={zipCodePattern} message-when-pattern-mismatch={zipCodePatternValidationMessage}></lightning-input>
+                  </label>
+                  <label>
+                    <span>{add_Nickname}</span>
+                    <lightning-input type="text" variant="label-hidden" class="validate" onchange={nameChangedHandler}>
+                    </lightning-input>
+                  </label>
+                  <div class="checkbox-section">
+                    <input type="checkbox" name="primary address" value="true" onchange={primaryAddressHandler} />
+                    <p class="small-text ">Make this my primary address.</p>
+                  </div>
+                  <br>
+                  <footer>
+                    <input type="button" class="address-button" name="add address" onclick={createAcc} title="OK"
+                      value="Add Address" />
+                    <div class="disclaimer-block" if:true={PrivacyUrl.Privacy_Policy_Url__c}>
+                      <p class="disclaimer text-center">
+                        <!-- We take your privacy seriously. All information you provide shall be held in strict accordance with the GE Appliances&nbsp;<a target="_blank" href={PrivacyUrl.Privacy_Policy_Url__c}>
+                            privacy</a>&nbsp;policy. -->
+                        <a target="_blank" href={PrivacyUrl.Privacy_Policy_Url__c}>
+                          Privacy</a>
+                      </p>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </section>
+          </template>
+<template if:true={AddressList.data}>
+            <template for:each={AddressList.data} for:item="item">
+              <div key={item.Id}>
+                <div>
+                  <template if:true={item.MYAISPrimary__c}>
+                    <div class="cell address-card add-address-card no-underline">
+                      <div class="slds-text-align_right primary-address-label">Primary Address</div>
+                      <div if:false={item.Nick_Name__c}>
+                        <h3 class="other-h3-c">primary Address</h3>
+                      </div>
+                      <div if:true={item.Nick_Name__c}>
+                        <h3 class="other-h3-c">{item.Nick_Name__c}</h3>
+                      </div>
+                      <p><strong>
+                          {item.Account__r.BillingStreet}
+                          <br>
+                          {item.Account__r.BillingCity},&nbsp;{item.Account__r.BillingState}&nbsp;{item.Account__r.BillingPostalCode}
+                        </strong>
+                      </p>
+                      <a data-value={item.Id} class="linkbutton" onclick={editPrimaryAddressNickname}>Edit Nickname</a>
+                    </div>
+                  </template>
+</div>
+</div>
+</template>
+</template>
+<template if:true={AddressList1.data}>
+            <template for:each={AddressList1.data} for:item="item">
+              <div key={item.Id}>
+                <div>
+                  <template if:false={item.MYAISPrimary__c}>
+                    <div class="cell address-card add-address-card no-underline">
+                      <div if:false={item.Nick_Name__c}>
+                        <h3 class="other-h3-c">Additional Address</h3>
+                      </div>
+                      <div if:true={item.Nick_Name__c}>
+                        <h3 class="other-h3-c">{item.Nick_Name__c}</h3>
+                      </div>
+                      <p><strong>
+                          {item.Account__r.BillingStreet}
+                          <br>
+                          {item.Account__r.BillingCity},&nbsp;{item.Account__r.BillingState}&nbsp;{item.Account__r.BillingPostalCode}
+                        </strong>
+                      </p>
+                      <a data-value={item.Id} class="linkbutton" onclick={modalHandler1}>Edit Nickname</a>
+                      <a type="url" class="linkbutton" data-value={item.Id} value="Remove Address"
+                        onclick={DelmodalOpen} title="Remove">Remove Address</a>
+                      <a data-value={item.Id} class="linkbutton" onclick={setPrimaryAddress}>Set as Primary</a>
+                    </div>
+                  </template>
+</div>
+</div>
+</template>
+</template>
+<!-- nickname edit -->
+<template if:true={isModalOpen1}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-describedby="modal-content">
+              <div class="reveal-overlay">
+                <div class="reveal add-address-modal">
+                  <header class="slds-modal-header">
+                    <button class="close-button" onclick={closeModal1} aria-modal="false">
+                      <span class="fa">x</span>
+                    </button>
+                    <h3 class="text-center modal-header">Edit Details</h3>
+                  </header>
+                  <label>
+                    <span>{Add_Nickname}</span>
+                    <lightning-input type="text" variant="label-hidden" onchange={NameUpdateHandler}></lightning-input>
+                  </label>
+                  <br>
+                  <footer>
+                    <button class="address-button" name="update address" value={ContLocId} onclick={UpdateAddress}
+                      title="OK">Update</button>
+                  </footer>
+                </div>
+              </div>
+            </section>
+          </template>
+<!--delete window -->
+<template if:true={DeleteModal}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-describedby="modal-content">
+              <div class="reveal-overlay">
+                <div class="reveal add-address-modal">
+                  <header class="slds-modal-header">
+                    <button class="close-button" onclick={DeleteModalClose} aria-modal="false">
+                      <span class="fa">x</span>
+                    </button>
+                    <h3 class="text-center modal-header">Delete Address</h3>
+                  </header>
+                  <p>Remove Address will delete them permanently from your account</p>
+                  <footer>
+                    <button class="address-button" name="update address" value={ContId}
+                      onclick={DelAccAsset}>Delete</button>
+                  </footer>
+                </div>
+              </div>
+            </section>
+          </template>
+<!-- manage model section -->
+<template if:true={isDelModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby={ContId} aria-modal="true"
+              aria-describedby="modal-content">
+              <div class="reveal-overlay">
+                <div class="reveal add-address-modal" id={ContId}>
+                  <header class="slds-modal-header">
+                    <button class="close-button" onclick={DelmodalClose} aria-modal="false">
+                      <span class="fa">x</span>
+                    </button>
+                    <h3 class="text-center modal-header">Remove Address</h3>
+                  </header>
+                  <p class="pSize">You have products tied to this address.</p>
+                  <button class="address-button" name="update address" value={ContId} onclick={DelAccAsset}
+                    title="OK">Remove Address And Products</button>
+                  <h3 class="text-center modal-header">OR</h3>
+                  <fieldset class="fieldset-border">
+                    <p class="pSize">Choose a saved address or add a new one to keep these appliances in your account.
+                    </p>
+                    <label>
+                      <span>Select Address</span>
+                      <lightning-combobox class="select-box" name="Address"
+                        placeholder="Select address or enter new one below" onchange={addressHandler}
+                        options={selectOptions}></lightning-combobox>
+                    </label>
+                    <label>
+                      <span>{Address}</span>
+                      <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                      maxlength="40" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}  
+                      disabled={disableAddress} onchange={AddressChangedHandler}></lightning-input>
+                    </label>
+                    <label>
+                      <span>{City}</span>
+                      <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                      maxlength="25" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}  
+                      disabled={disableAddress} onchange={CityChangedHandler}></lightning-input>
+                    </label>
+                    <label>
+                      <span>{State}</span>
+                      <select class="slds-select state-input validateState" name="state" id="modal-state" required disabled={disableAddress} onchange={StateChangedHandler}>
+                        <option value="">Select State</option>
+                        <template for:each={stateOptions} for:item="item">
+                            <option key={item.value} value={item.value}>{item.label}</option>
+                        </template>
+                      </select>
+                      <div class="slds-form-element__help" if:true={stateValidation} data-help-message="" role="alert">
+                          Complete this field.
+                      </div>
+                      <!-- <lightning-combobox variant="label-hidden" onchange={StateChangedHandler} options={stateOptions}
+                        disabled={disableAddress} required="required" class="validate"></lightning-combobox> -->
+                    </label>
+                    <label>
+                      <span>{PostalCode}</span>
+                      <lightning-input type="text" variant="label-hidden" required="required" class="validate"
+                        onchange={CodeChangedHandler} disabled={disableAddress} maxlength="5" pattern={zipCodePattern} message-when-pattern-mismatch={zipCodePatternValidationMessage}></lightning-input>
+                    </label>
+                    <label>
+                      <span>{Add_Nickname}</span>
+                      <lightning-input type="text" variant="label-hidden" class="validate" disabled={disableAddress}
+                        onchange={nameChangedHandler}></lightning-input>
+                    </label>
+                    <br>
+                  </fieldset>
+                  <footer>
+                    <div if:true={isSearching}>
+                      <lightning-spinner></lightning-spinner>
+                  </div>
+                    <button disabled={isSearching} class="address-button" name="update address" value={ContId} onclick={searchAddress}
+                      title="OK">Search With This Address</button>
+                    <div class="disclaimer-block" if:true={PrivacyUrl.Privacy_Policy_Url__c}>
+                      <p class="disclaimer text-center">
+                        <!-- We take your privacy seriously. All information you provide shall be held in strict accordance with the GE Appliances&nbsp;<a target="_blank" href={PrivacyUrl.Privacy_Policy_Url__c}>
+            privacy</a>&nbsp;policy. -->
+                        <a target="_blank" class="test-link" href={PrivacyUrl.Privacy_Policy_Url__c}>
+                          Privacy</a>
+                      </p>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </section>
+          </template>
+<!-- end of remove model section -->
+</div>
+</div>
+</div>
+</div>
+</template>

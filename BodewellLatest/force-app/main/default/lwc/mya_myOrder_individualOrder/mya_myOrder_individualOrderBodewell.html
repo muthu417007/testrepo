@@ -1,0 +1,136 @@
+<template>
+    <lightning-layout-item size="6">
+        <lightning-layout-item size="12">
+            <h1 class="subheading">{pageTitleLabel}</h1>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <div class="text-content-main">
+                {bodewellLabel1}&nbsp;{bodewellLabel2}
+            </div>
+        </lightning-layout-item>
+    </lightning-layout-item>
+    <lightning-layout>
+        <div class="spinner">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <div>
+                <div if:true={showPrevButtonflag}>
+                    <div if:true={Orders}>
+                        <button class="product-link-button-p slds-float_left" onclick={handlePrevOrder}>&lt;
+                            Previous</button>
+                    </div>
+                </div>
+                <div if:true={showNextButtonflag}>
+                    <div if:true={Orders}>
+                        <button class="product-link-button slds-float_right right-btn" onclick={handleNextOrder}>Next
+                            &gt;</button>
+                    </div>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+    <template iterator:it={Orders}>
+        <div key={it.value.OrderNumber}>
+            <lightning-layout vertical-align="stretch" multiple-rows="true" class="orderDetail textcenter">
+                <lightning-layout-item flexibility="auto" size="2">
+                    <span class="test">{orderNoLabel} <br>
+                        <span class="order-data">{it.value.OrderNumber}</span></span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="2">
+                    <span class="test">{orderDateLabel} <br>
+                        <span class="order-data">{it.value.OrderDate}</span></span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="3">
+                    <span class="test">{orderRefNoLabel} <br>
+                        <span class="order-data">{it.value.OrderRefNumber}</span></span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="2">
+                    <div if:true={it.value.ShipZip}>
+                        <span class="test">{orderTotalLabel} <br>
+                            <span class="order-data">${it.value.OrderTotalString}</span></span>
+                    </div>
+                    <div if:false={it.value.ShipZip}>
+                        <span class="test">{orderTotalLabel} <br>
+                            <span class="order-data">{it.value.OrderTotalString}</span></span>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="3">
+                    <span class="test">{orderStatusLabel} <br>
+                        <span class="order-data">{it.value.OrderStatus}</span></span>
+                </lightning-layout-item>
+            </lightning-layout>
+          
+            <lightning-layout class="mob-view-set details">
+                <lightning-layout-item flexibility="auto" size="9">
+                <template if:true={it.value.LineItemList}>
+                        <template for:each={it.value.LineItemList} for:item="Item">
+                            <div key={Item.ItemModelNo}>
+                                <div if:true={Item.ShowLineItemFlag}>
+                                    <lightning-layout vertical-align="stretch" multiple-rows="true"
+                                        class="ImageDescription mob-head">
+                                        <lightning-layout-item flexibility="auto" size="4">
+                                            <div if:true={Item.LineItemURL}>
+                                                <img class="ProductImage" src={Item.LineItemURL}>
+                                            </div>
+                                            <div if:false={Item.LineItemURL}>
+                                                <div if:false={Item.StandInstallFlag}>
+                                                    <img class="ProductImage" src={noImage}>
+                                                </div>
+                                                <div if:true={Item.StandInstallFlag}>
+                                                    <img class="ProductImage" src={image}>
+                                                </div>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item flexibility="auto" size="4">
+                                            <div class="product-title">
+                                                2000                        <b>{Item.ItemModelNo}</b><br>
+                                                <span class="product-model-number">{Item.ProdDescription}</span>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item flexibility="auto" size="4">
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+                   <lightning-layout-item flexibility="auto" size="3">
+                    <div class="product-link textcenter">
+                        <div>
+                            <button onclick={handleOrderDetails} class="view-order-details"
+                                value={it.value.OrderRefNumber}>{bodewellViewOrderLinkLabel}</button>
+                        </div>
+                        <div if:true={it.value.OrderStatusPendFlag}>
+                                <div>
+                                    <div class="track-my-order">
+                                        <lightning-formatted-url label={bodewellTrackMyOrder}
+                                            value={it.value.TrackMyOrderURL}>
+                                        </lightning-formatted-url>
+                                    </div>
+                                    <div class="reschedule">
+                                        <lightning-formatted-url label={bodewellRescheduleLink} value={it.value.RescheduleURL}>
+                                        </lightning-formatted-url>
+                                    </div>
+                                    <div class="delivery-info">
+                                        <lightning-formatted-url label={bodewellDeliveryInformationLink}
+                                            value={it.value.DeliveryInfoURL}>
+                                        </lightning-formatted-url>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+   
+
+</template>

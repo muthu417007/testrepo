@@ -1,0 +1,72 @@
+<template>
+  <div class="serviceAreaFooterBox">
+    <div class="serviceAreaFooterHeading">
+       SERVICE AREAS
+    </div>
+    <div class="serviceAreaFooterHeading1">
+      {textcontent}
+    </div>
+    <!-- <div class="slds-grid slds-wrap">
+      <template iterator:it={serviceAreaList}>
+        <div key={it.value.Id}
+          class="serviceareafootermob-content slds-col slds-small-size_6-of-12 slds-medium-size_3-of-12 slds-large-size_2-of-12">
+          <a class="serviceAreaURL" onclick={handleClick} data-value={it.value.Label}>{it.value.Label}</a>
+        </div>
+      </template>
+      <div class="findlocation-servicearea-section">
+        <c-r-G-_-Find-Service-Area-Location></c-r-G-_-Find-Service-Area-Location>
+    </div>
+  </div> -->
+  <div>
+    <ul class="state-data-list">
+      <template iterator:it={serviceAreaItemList}>
+        <li key={it.value.id}>
+          <a href={it.value.itemTarget} class="serviceAreaURL" onclick={handleClick} data-value={it.value.itemTarget}>{it.value.itemName}</a>
+        </li>
+      </template>
+    </ul>
+    <div class="findlocation-servicearea-section">
+      <c-r-G-_-Find-Service-Area-Location></c-r-G-_-Find-Service-Area-Location>
+  </div>
+  </div>
+
+</div>
+<!---Accordion-->
+<div class="service-area-accordian">
+    <template if:true={isExpand}>
+      <div class="serviceAreaFooterHeading slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_6-of-12">{serviceAreaListLength} SERVICE AREAS</div>
+        <div class="slds-col slds-small-size_1-of-12 service-accrd-icon">
+          <lightning-icon class="down-icon" icon-name="utility:down" onclick={showAll} alternative-text="Down"
+            title="Down"></lightning-icon>
+        </div>
+      </div>
+    </template>
+</div>
+<!-- show content -->
+<div class="service-area-accordian">
+    <template if:false={isExpand}>
+      <div class="serviceAreaFooterHeading slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_6-of-12">{serviceAreaListLength} SERVICE AREAS</div>
+        <div class="slds-col slds-small-size_1-of-12 service-accrd-icon">
+          <lightning-icon class="up-icon" icon-name="utility:up" onclick={showAll} alternative-text="Up"
+            title="Up"></lightning-icon>
+        </div>
+      </div>
+      <div class="slds-grid slds-wrap">
+        <template iterator:it={serviceAreaItemList}>
+          <div key={it.value.id}
+            class="serviceareafootermob-content slds-col slds-size_6_of_12 slds-small-size_6-of-12 slds-medium-size_3-of-12 slds-large-size_2-of-12" style="flex-grow: 0;">
+            <a href={it.value.itemTarget} class="serviceAreaURL" onclick={handleClick} data-value={it.value.itemTarget}>{it.value.itemName}</a>
+          </div>
+        </template>
+</div>
+<div class="findlocation-servicearea-section">
+  <c-r-G-_-Find-Service-Area-Location></c-r-G-_-Find-Service-Area-Location>
+  </div>
+</template>
+<br>
+</div>
+<!---/Accordion-->
+<!-- <c-r-G-_-Looking-For-Parts></c-r-G-_-Looking-For-Parts> -->
+</template>

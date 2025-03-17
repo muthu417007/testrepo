@@ -1,0 +1,77 @@
+/*accordions*/
+
+a.showsall {
+    color: #12212e !important;
+    padding: 12px !important;
+    padding-left: 0px !important;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 2;
+}
+
+.showsall-symbol {
+    line-height: 2;
+}
+
+lightning-layout-item.slds-size_11-of-12 {
+    padding: 0px;
+}
+
+a.showsall:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.content-box {
+    padding: 19.5px;
+    border: 1px solid #728a9c;
+    border-left: 8px solid #728a9c;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+.faq-questions {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+.faq-link {
+    color: #145b95;
+    letter-spacing: 0.5px;
+}
+
+a.faq-link:hover,
+a.faq-link :active {
+    text-decoration: underline;
+    color: #3e5769;
+}
+
+.faq-link:focus,
+.faq-link:active {
+    outline-offset: 4px;
+    outline-color: #0073a8;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.faq-focus:focus {
+    outline-offset: 4px;
+    outline-color: #0073a8;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.faq-accordian-section {
+    padding-top: 0rem;
+}
+
+@media all and (max-width:1000px) {
+    .content-box {
+        width: 80%;
+        margin: 0px auto;
+    }
+}
+
+
+/*end*/

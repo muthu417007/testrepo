@@ -1,0 +1,50 @@
+<apex:page standardController="GEA_Asset__c" extensions="GEA_Asset_ext" lightningStylesheets="true">
+  
+  
+      <apex:pageBlock title="Images">
+
+        <apex:pageBlockTable value="{!productDetailsinfo.images}" var="i">
+
+            <apex:column headerValue="Image Id" value="{!i.imageID}"/>
+            <apex:column headerValue="Image Name" value="{!i.imageName}"/>
+            <apex:column >
+                <!--<apex:image url="http://products.geappliances.com/MarketingObjectRetrieval/Dispatcher?RequestType=Image&Name={!i.imageName}"  style="max-wiidth:100px;max-height:100px;"/>-->
+				<apex:image url="{!i.imagePath}"  style="max-wiidth:100px;max-height:100px;"/>
+            </apex:column>
+            <apex:column >
+                <!--<apex:outputLink value="http://products.geappliances.com/MarketingObjectRetrieval/Dispatcher?RequestType=Image&Name={!i.imageName}" target="_blank" >Image LInk</apex:outputLink>-->
+                <apex:outputLink value="{!i.imagePath}" target="_blank" >Image Link</apex:outputLink>
+            </apex:column>
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+  
+    <apex:pageBlock title="Benefit Copy">
+
+        <apex:pageBlockTable value="{!productDetailsinfo.benefits}" var="bc">
+
+            <apex:column headerValue="Feature Copy" value="{!bc.featureCopy}"/>
+            <apex:column headerValue="Feature" value="{!bc.feature}"/>
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Attributes">
+
+        <apex:pageBlockTable value="{!productDetailsinfo.attributes}" var="a">
+
+            <apex:column headerValue="Attribute Name" value="{!a.attributeName}"/>
+            <apex:column headerValue="Values" value="{!a.testValues}"/>
+            <apex:column headerValue="Display Name" value="{!a.displayName}"/>
+            <apex:column headerValue="Definition " value="{!a.definition }"/>
+            <apex:column headerValue="Priority" value="{!a.priority}"/>
+            
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+    
+    
+</apex:page>

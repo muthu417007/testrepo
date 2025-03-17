@@ -1,0 +1,58 @@
+<apex:page lightningStylesheets="true">
+    
+    <script >
+        function submitClick(){
+            var url = 'https://secureacceptance.cybersource.com/pay?'
+			
+            var urlParams = 'bill_to_forename='+document.getElementById("firstName").value;
+            // TODO: AccessKey and profileId will need to be stored in custom settings or custom metadata
+            urlParams += '&accessKey=5fbd0821869a3384982a47c45c1ce8a3';
+            urlParams += '&profileId=1691B5CA-B0A1-4C96-AD77-457F4B7F5F05';
+            urlParams += '&bill_to_surname='+document.getElementById("lastName").value;
+            // TODO: replace space with +
+            // + in the value indicates space 
+            urlParams += '&bill_to_address_line1='+document.getElementById("street").value;
+            urlParams += '&bill_to_address_city='+document.getElementById("city").value;
+            urlParams += '&bill_to_address_state='+document.getElementById("state").value;
+            urlParams += '&bill_to_address_postal_code='+document.getElementById("zipcode").value;
+            urlParams += '&amount='+document.getElementById("paymentAmount").value;
+            urlParams += '&currency=USD';
+            urlParams += '&locale=en';
+            
+            var urlParamsEncoded = encodeURIComponent(urlParams);
+            
+            url += urlParamsEncoded;
+            
+           window.open(url,'_top');
+        }
+    </script>
+    
+    <apex:form > 
+    <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="firstName"/></td>
+                <td>Last Name </td>
+                <td><input type="text" id="lastName"/></td>
+            </tr>
+            <tr>
+                <td>Street</td>
+                <td><input type="text" id="street"/></td>
+                <td>City</td>
+                <td><input type="text" id="city"/></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type="text" id="state"/></td>
+                <td>Zip</td>
+                <td><input type="text" id="zipcode"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="paymentAmount"/></td>
+                <td></td>
+            </tr>            
+        </table>
+
+    <apex:CommandButton value="Submit" onclick="submitClick()"  onComplete="return null;"/>
+    </apex:form>
+</apex:page>

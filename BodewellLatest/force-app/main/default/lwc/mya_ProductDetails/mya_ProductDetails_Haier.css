@@ -1,0 +1,1594 @@
+.body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    font-family: 'sans-serif';
+    -webkit-text-size-adjust: 100%;
+    background-color: #eff0f0;
+    font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+    border-top: none;
+    width: 1161px;
+    margin: 0px auto;
+}
+
+.mainContent {
+    position: relative;
+    margin: 0 auto;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+lightning-icon {
+    cursor: pointer;
+}
+
+div {
+    display: block;
+}
+
+.grid-container {
+    padding-right: 0rem;
+    padding-left: 0rem;
+    /* max-width: 75rem; */
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+.slds-form-element__help{
+    line-height: 2rem;
+}
+.grid1-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: -webkit-flex;
+    text-align: left;
+}
+
+.grid2-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: -webkit-flex;
+    background-color: white;
+}
+.text-h{
+    margin-bottom: 2rem !important;
+}
+.grid-padding-x1 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-x1 {
+    display: -webkit-flex;
+}
+
+.grid-padding-x2 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-padding-x1 .grid-padding-x2 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.product-spec-page .your-appliance-section {
+    text-align: left;
+}
+
+.product-photo {
+    text-align: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+section {
+    display: block;
+}
+
+.infoheader {
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 42px;
+    letter-spacing: 1.05px;
+    color: #004B3D;
+}
+
+.your-appliance-section h1 {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-margin-x>.medium-offset-0 {
+    margin-left: calc(0% + 0.9375rem);
+}
+
+.grid-margin-x>.medium-6 {
+    width: calc(50% - 1.875rem);
+}
+
+.grid-margin-x>.cell1 {
+    margin-right: 0.9375rem;
+    padding-left: 7rem;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+.margin-top-2 {
+    margin-top: 2rem;
+}
+
+.margin-top {
+    padding-left: 8rem;
+    padding-bottom: 2.5rem;
+    margin-top: 2rem;
+}
+
+.border-top {
+    border-top: solid 1px;
+}
+
+.remove-link {
+    padding-left: 5px;
+    color: #000;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+a {
+    text-transform: capitalize;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 400;
+    transition: color .15s ease;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #32beff;
+    cursor: pointer;
+}
+
+.locdetails {
+    text-transform: capitalize;
+    text-transform: capitalize;
+    height: auto;
+    word-break: break-word;
+    width: max-content;
+}
+
+.model-number {
+    height: 50px;
+}
+
+.large-text-left-custom>h2 {
+    padding-left: 15px;
+}
+
+.space {
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+h2 {
+    font-size: 28px !important;
+    text-transform: capitalize;
+    color: #151515;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+p.product-name {
+    font-weight: normal;
+}
+
+p {
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    color: #151515;
+}
+
+.product-sku {
+    line-height: 1.5;
+    text-transform: capitalize;
+    text-rendering: optimizeLegibility;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    color: #151515;
+}
+
+.large-text-left-custom>p {
+    padding-left: 15px;
+}
+
+.cell1 {
+    height: 55rem;
+    min-height: 45rem;
+}
+
+ul.support-links {
+    text-align: left;
+    list-style-type: none;
+    max-width: 20em;
+    max-height: 25rem;
+    height: 25rem;
+    margin: 0 -1.71429em;
+}
+
+ul {
+    list-style-position: outside;
+    line-height: 1.6;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin-bottom: 1.5rem;
+}
+
+.medium-block-grid-1>li {
+    clear: both;
+}
+
+.support-links>li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: initial;
+    font-weight: bold;
+    margin-right: 1.5rem;
+}
+
+.medium-block-grid-1>li {
+    width: 100%;
+}
+
+li {
+    font-size: inherit;
+    color: #004B3D;
+}
+
+ul.support-links a {
+    display: inline-block;
+    padding-left: 5px;
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+
+.link {
+    color: #004B3D;
+    font-weight: 400;
+    letter-spacing: .8px;
+}
+
+ul {
+    line-height: 1.6;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+ul.support-links a.icon-help {
+    background-image: url(../images/GEA-icons/icon-owner-support.png);
+}
+
+.more-about-your-appliance-section-container {
+    max-width: inherit;
+    padding-top: 2px;
+}
+
+.grid-container:not(.full)>.grid-padding-x {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.background {
+    background-color: white;
+}
+
+.grid1-x>.medium-10 {
+    width: 83.33333%;
+}
+
+.grid2-x>.medium-10 {
+    width: 83.33333%;
+}
+
+.medium-offset-1 {
+    margin-left: 8.33333%;
+    margin-top: 1rem;
+}
+
+.fontcolor {
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+h2.your-appliance-subheading {
+    margin-bottom: 1em;
+    padding-bottom: 2rem;
+}
+
+h2.your-appliance-subheading {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small-9 {
+    width: 75%;
+}
+
+.your-appliance-subheading {
+    font-weight: 100;
+    font-size: x-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+body.product-spec-page .more-about-your-appliance-section .grid1-x {
+    margin-bottom: 3rem;
+}
+
+body.product-spec-page .more-about-your-appliance-section .grid2-x {
+    margin-bottom: 3rem;
+}
+
+.product-spec-page .cell.more-about-subsection {
+    border-right: 1px solid #092c74;
+    margin-top: 15px;
+}
+
+.product-spec-page .more-about-subsection .appliance-model-serial,
+.more-about-subsection.appliance-nickname {
+    padding: 1rem 6rem 0rem 1rem;
+}
+
+.appliance-model-serial {
+    padding: 1rem 6rem 0rem 1rem;
+    border-right: solid 1px;
+}
+
+.product-spec-page .more-about-subsection {
+    color: #555;
+    line-height: 4.18571em;
+    text-align: left;
+}
+
+.grid1-x>.medium-6 {
+    width: 50%;
+}
+
+.grid2-x>.medium-6 {
+    width: 50%;
+}
+
+.other-h3-c {
+    font-weight: bold;
+    font-size: inherit;
+    text-transform: capitalize;
+    color: #151515;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    letter-spacing: 0rem;
+}
+
+.small-offset-3 {
+    margin-left: 25%;
+}
+
+.small-6 {
+    width: 50%;
+    padding-left: 5em;
+}
+
+hr {
+    box-sizing: content-box;
+    border: solid #cfcfcf;
+    border-width: 1px 0 0;
+    height: 0;
+    margin: 2rem 0 1.9375rem;
+    clear: both;
+    max-width: 75rem;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+h3 a {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+.show-for-small-only {
+    display: none;
+}
+
+.margin-top-half {
+    margin-top: 0.5rem;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    border: 1px solid #bdb9b2;
+    padding: 0rem 1.5rem 0rem 0.5rem;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 0;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #0a0a0a;
+    transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
+    appearance: none;
+}
+
+input {
+    vertical-align: baseline;
+    overflow: visible;
+    writing-mode: horizontal-tb;
+    text-rendering: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+.button-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    text-align: center;
+}
+
+.button,
+.button:hover {
+    padding: 0.85em 1em;
+}
+
+.alignright {
+    align-content: right;
+}
+
+.button.secondary {
+    border: 1px solid #000;
+    color: white;
+    padding: 1rem 2rem;
+    background-color: #005aaa;
+}
+
+.edit-serial-number-form>.button-group.expanded>.button {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.button-group.expanded .button {
+    -webkit-box-flex: 1;
+    flex: 1 1 0px;
+}
+
+.button-group .button {
+    margin-right: 1rem;
+    margin-bottom: 1px;
+    font-size: 0.9rem;
+}
+
+.button {
+    line-height: 1rem;
+    transition: all .15s ease;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    outline: 0;
+    vertical-align: middle;
+    border-radius: 30px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.button.primary {
+    background-color: white;
+    color: #000;
+}
+
+.button.primary1 {
+    background-color: #005aaa;
+    color: white;
+    border-color: #000;
+}
+
+button[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    line-height: 1rem;
+    transition: all .15s ease
+}
+
+.more-about-subsection.location-installation {
+    padding: 1rem 1rem 0rem 7rem;
+}
+
+.product-spec-page .more-about-subsection p {
+    margin-bottom: 3rem;
+}
+
+.margin-btm-0 {
+    margin-bottom: 0;
+}
+
+.medium-offset-0 {
+    margin-left: 10%;
+}
+
+.button.expanded {
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-color: #000;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.button.primary:hover,
+.secondary:hover {
+    background-color: #000;
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #32beff;
+    color: white;
+}
+
+.button.secondary:hover {
+    background-color: #32beff;
+    color: white;
+}
+
+.button.cancel-button:hover {
+    background-color: #32beff;
+}
+
+.button1 {
+    border-style: solid white;
+    border-radius: 30px;
+    border-width: 2px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-color: transparent;
+    color: white;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.button.primary1:hover {
+    background-color: #fefefe;
+    color: #004B3D;
+}
+
+.related-parts-and-accessories-section {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+h2.your-appliance-subheading {
+    margin-bottom: 1em;
+    margin: auto;
+}
+
+.your-appliance-subheading {
+    font-weight: 100;
+    font-size: x-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+h2.your-appliance-subheading1 {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small-91 {
+    width: 75%;
+}
+
+.your-appliance-subheading1 {
+    font-weight: 100;
+    font-size: x-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+.infoHeader1 {
+    padding-bottom: 5%;
+    text-transform: uppercase;
+}
+
+.more-about-your-appliance1 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    padding-bottom: 4rem;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.add-address-form {
+    font-family: sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+}
+
+.reveal.add-address-modal {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+label,
+.mock-label {
+    font-size: 0.875rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 0em 0 1em;
+    width: 100%;
+    font-weight: bold;
+    color: #151515;
+    line-height: 2.1;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: white;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+    border: 1px solid #cacaca;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 22px;
+    color: #092c74;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #1a63a2;
+    right: 1rem;
+    top: 0.5rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+    --sds-c-icon-color-foreground-default: #1a63a2;
+}
+
+.close-button1 {
+    font-size: 1em;
+    color: #1a63a2;
+    right: -1rem;
+    top: 0.5rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+    --sds-c-icon-color-foreground-default: #1a63a2;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.input-field-class {
+    border: 1px solid #bdb9b2;
+    padding: 0.2rem 1.5rem 0rem 0.5rem;
+    height: 2.7375rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 1rem;
+    border-radius: 0;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    font-size: 1rem;
+    font-weight: normal;
+    vertical-align: baseline;
+    line-height: 1.5;
+    color: #0a0a0a;
+    overflow: visible;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+    writing-mode: horizontal-tb;
+    cursor: text;
+}
+
+.disclaimer-block {
+    margin-top: 2rem;
+}
+
+.disclaimer {
+    font-size: 0.875rem;
+    line-height: calc(19/ 14);
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    text-rendering: optimizeLegibility;
+}
+
+.delete-message .removeproduct {
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-action {
+    width: 100%;
+    display: inline-block;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+    border-bottom: 0rem;
+}
+
+.cancleButton1 {
+    border: 1px solid #000;
+    border-radius: 30px;
+    color: #000;
+    background-color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.cancleButton1:hover {
+    background-color: #000;
+    color: white;
+}
+
+.okButton:hover {
+    background-color: #32beff;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.okButton {
+    width: 100%;
+    background-color: #005aaa;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    border: 1px solid #000;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.no-border {
+    border-bottom: 0px Solid rgba(24, 63, 50, 0.95);
+    background: transparent;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.reveal1 {
+    overflow: visible;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    border: 1px solid #cacaca;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal1 {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+    border: 1px solid #cacaca;
+}
+
+.reveal1.add-address-modal1 {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+.modal-header1 {
+    margin-top: 1rem;
+    font-size: 22px;
+    color: #004B3D;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.write-a-review {
+    margin-top: 1em;
+    margin-left: 1rem;
+}
+
+a.write-a-review-link {
+    color: #1a63a2;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'gotham-Medium';
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    letter-spacing: 0rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.4;
+}
+
+.padding-top {
+    padding-top: 1rem;
+}
+
+h3.font-primary,
+.h3.font-primary {
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.050em;
+    color: #151515;
+    text-transform: capitalize;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 6px 1rem;
+    text-align: center;
+    width: 100%;
+    margin: 16px auto;
+    padding-right: 13rem;
+    padding-left: 13rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .field-item h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.field-item>h3 {
+    color: white;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 24px;
+    text-transform: capitalize;
+    line-height: 1.4;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.grid-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.grid-x.grid-margin-x {
+    margin-left: 0rem;
+}
+
+.grid-margin-x {
+    margin-right: -0.9375rem;
+}
+
+.product1-photo {
+    margin-right: 2rem;
+}
+
+.imagetext img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 100%;
+    height: 100%;
+}
+
+.imagetext img:hover {
+    opacity: 0.2;
+}
+
+.imagetext a {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: block;
+}
+
+.RelPartButton {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    color: #000;
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: initial;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.text {
+    margin: 5px 5px 5px 5px;
+    height: -webkit-fill-available;
+    padding: 40px 0px;
+}
+
+.go-to-part {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    height: auto;
+    overflow: auto;
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-family: 'Helvetica-Neue-Bold';
+    text-align: center;
+}
+
+.RelPartButton:hover {
+    background-color: #5e5e5e;
+    color: #fefefe;
+    border: 2px solid #5e5e5e;
+}
+
+.icons {
+    border: 1px solid #cecece;
+    border-radius: 50px;
+    width: 50px;
+    padding: 8px;
+    height: 50px;
+}
+
+.new-add-border,
+.select-add-border {
+    border: 1px solid silver;
+    padding: 1rem;
+}
+
+.or-div {
+    margin: 1rem auto;
+}
+
+.validate {
+    font-weight: 100;
+    font-size: 0.875rem;
+}
+
+a.product1-photo {
+    text-decoration: none;
+}
+
+.select-box {
+    font-weight: 100;
+    font-size: 0.875rem;
+}
+
+.remove-link-small {
+    display: none;
+}
+
+.warranty-subHeading{
+    font-weight: bold; 
+    font-size: 1rem;
+    margin-bottom: -1rem;
+    letter-spacing: 0.25px;
+}
+
+.warranty-subHeading-o{
+    font-weight: bold; 
+    font-size: 1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    letter-spacing: 0.25px;
+}
+
+.warranty-subDetails{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.25px;
+    margin-bottom: -0.75rem;
+}
+
+@media only screen and (max-width:425px) {
+    .body {
+        width: 95%;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        width: 91%;
+        text-align: center;
+    }
+    .NickName {
+        text-align: center;
+    }
+    .grid1-x>.medium-6 {
+        width: 100%;
+        height: auto;
+        padding: 1rem 1rem 1rem 1rem
+    }
+    .grid1-x {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        display: -webkit-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .write-a-review {
+        margin-top: 0em;
+        margin-left: 0px;
+        padding-left: 2rem;
+    }
+    ul.support-links {
+        text-align: left;
+        list-style-type: none;
+        max-width: 15em;
+        display: flex;
+        max-height: 25rem;
+        height: 25rem;
+        padding-left: 4rem;
+        margin: 0 -1.71429em;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    li {
+        font-size: inherit;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .cell1 {
+        height: auto;
+        min-height: 35rem;
+    }
+    .margin-top {
+        margin-top: 1rem;
+        padding-left: 0rem;
+        text-align: center;
+    }
+    .large-text-left-custom>h2 {
+        padding-left: 2rem;
+    }
+    .product-photo {
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+        height: auto;
+    }
+    .model-number {
+        margin-bottom: 1rem;
+        letter-spacing: 0.25px;
+    }
+    .serial-number {
+        text-align: center;
+    }
+    .locdetails {
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+        height: auto;
+        width: auto;
+        word-break: break-word;
+        text-align: center;
+    }
+    .show-for-small-only {
+        display: block;
+    }
+    .small-6 {
+        width: 50%;
+        padding-left: 2em;
+    }
+    .small-offset-3 {
+        margin-left: auto;
+    }
+    hr {
+        box-sizing: content-box;
+        border: solid #000;
+        border-width: 1px 0 0;
+        height: 0;
+        margin: 2rem 0 1.9375rem;
+        clear: both;
+        max-width: 75rem;
+        unicode-bidi: isolate;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+    .appliance-model-serial {
+        border: none;
+    }
+    h3.other-h3-c {
+        text-align: center;
+        display: grid;
+        font-size: 14px;
+    }
+    .grid2-x>.medium-6 {
+        width: 80%;
+    }
+    .model-number {
+        margin-bottom: 1rem;
+        text-align: center;
+        letter-spacing: 0.25px;
+    }
+    .serial-number-viewing {
+        display: block;
+        margin-top: 5px;
+    }
+    .install-date {
+        text-align: center;
+    }
+    .nick-name-text {
+        text-align: center;
+    }
+    .medium-offset-0 {
+        margin-left: 1%;
+    }
+    .medium-offset-1 {
+        margin-left: 0.33333%;
+    }
+    .more-about-your-appliance-section {
+        height: max-content;
+    }
+    .grid-container {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+        max-width: inherit;
+        margin: 0 auto;
+    }
+    .warrenty-head {
+        text-align: center;
+    }
+    .reveal1.add-address-modal1 {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .select-box {
+        text-align: left;
+        display: block;
+        margin-top: 0rem;
+    }
+    .grid-x {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        flex-wrap: nowrap;
+    }
+    .slick-slider {
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-right;
+        -webkit-tap-highlight-color: transparent;
+        overflow: auto;
+    }
+    .related-parts-and-accessories-item {
+        opacity: 1;
+        width: 15rem;
+        margin-right: 4rem;
+        margin-left: 2rem;
+        transform: translate3d(0px, 0px, 0px);
+    }
+    .imagetext img:hover {
+        opacity: 1;
+    }
+    .imagetext img {
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 100%;
+        height: 100%;
+    }
+    .imagetext a {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+    }
+    .text {
+        margin: 5px 5px 5px 5px;
+        height: -webkit-fill-available;
+        padding: 5px 0px;
+        display: block;
+    }
+    .product1-photo {
+        margin-right: 1rem;
+    }
+    .imagetext {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .remove-link-large {
+        display: none;
+    }
+    .remove-link-small {
+        display: block;
+    }
+    .grid2-x {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        display: -webkit-flex;
+        background-color: white;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .border-top {
+        border-top: none;
+    }
+    .reveal1 {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 2rem;
+        width: 95%;
+        border: 1px solid #cacaca;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .button-group {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        -ms-flex-align: stretch;
+        text-align: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .button.secondary {
+        border: 1px solid #000;
+        color: white;
+        padding: 1rem 2rem;
+        background-color: #005aaa;
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 95%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: white;
+        position: relative;
+        top: 15%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+        border: 1px solid #cacaca;
+    }
+    .product-sku {
+        line-height: 1.5;
+        text-transform: capitalize;
+        text-rendering: optimizeLegibility;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: 14px !important;
+        color: #151515;
+    }
+    .icons {
+        border: 1px solid #cecece;
+        border-radius: 50px;
+        width: 40px;
+        padding: 3px;
+        height: 40px;
+    }
+    .large-text-left-custom>p {
+        padding-left: 2rem;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .body {
+        width: 95%;
+    }
+    .reveal1.add-address-modal1 {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .nick-name-text {
+        height: auto;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    .grid-margin-x>.cell1 {
+        margin-right: 0.9375rem;
+        padding-left: 1rem;
+    }
+    .margin-top {
+        padding-left: 3rem;
+        padding-bottom: 2.5rem;
+        margin-top: 2rem;
+    }
+    .product-photo {
+        text-align: center;
+        justify-content: center;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+}

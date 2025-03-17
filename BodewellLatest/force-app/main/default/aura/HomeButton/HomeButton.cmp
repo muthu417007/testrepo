@@ -1,0 +1,7 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<div class="slds-clearfix">
+      <div class="slds-float_left">
+        <button class="slds-button slds-button_neutral" onclick="{! c.home }">Home</button>
+      </div>
+    </div>
+</aura:component>

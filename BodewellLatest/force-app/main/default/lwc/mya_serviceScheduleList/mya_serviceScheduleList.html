@@ -1,0 +1,503 @@
+<template>
+  <div if:true={isServiceOpenFlag}>
+
+    <div class="service_Box">
+      <p class="p1"><strong>You have service appointment soon!</strong></p>
+      <p class="p3">Get up-to-date details on your appointment,plus track your service technician on the day of service.</p>
+      <!-- <p class="p2"><a class="track-link" href="https://www.portal.care/geappliances/job/confirmation#/lastname" target="_blank">Track Your Service</a></p>-->
+      <div if:false={ishaier}>
+        <div if:false={iscafe}>
+            <p class="p2"><a class="track-link-gea" href={trackUrl}>Track Your Service</a></p>
+          </div>
+        </div>
+        <div if:false={ishaier}>
+          <div if:true={iscafe}>
+              <p class="p2"><a class="track-link-cafe" href={trackUrl}>Track Your Service</a></p>
+            </div>
+          </div>
+          <div if:true={ishaier}>
+            <div if:false={iscafe}>
+                <p class="p2"><a class="track-link-haier" href={trackUrl}>Track Your Service</a></p>
+              </div>
+            </div>
+        </div>
+
+    <div class="center">
+      <template if:true={ishaier}>
+        <template if:false={iscafe}>
+          <div class="field-wrapper callout-title-container Haier-Monogram-only">
+            <div class="title-bar-circles-left"></div>
+            <div class="fielditems callout-title-inner-container">
+              <div class="fielditem">
+                <h3>Open/Pending Service Call Area</h3>
+              </div>
+            </div>
+            <div class="title-bar-circles-right"></div>
+          </div>
+        </template>
+</template>
+<template if:false={ishaier}>
+        <template if:false={iscafe}>
+          <h1 class="header-ge">Open/Pending Service Call Area</h1>
+        </template>
+</template>
+<template if:true={iscafe}>
+        <template if:false={ishaier}>
+          <h1 class="header-cafe">Open/Pending Service Call Area</h1>
+        </template>
+</template>
+<template for:each={serviceOpenJson} for:item="item1" for:index="index">
+        <div key={item1.service1}>
+          <div class="slds-grid slds-gutters width-set">
+            <div class="slds-col slds-size_1-of-3 image-set">
+              <img class="status-image" src={item1.image1}>
+            </div>
+            <div class="slds-col slds-size_2-of-3 secDiv">
+              <div class="item-desc">{item1.description1}</div>
+              <div class="tables1">
+                <!-- Table for WEB VIEW -->
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered web-table">
+                  <!-- <thead class="header"> -->
+                  <tr class="slds-line-height_reset header">
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="CONFIRMATION">CONFIRMATION</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="SERVICE DATE">SERVICE DATE</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="TIME">TIME</div>
+                    </th>
+                    <th class="" scope="col">
+                      <div class="slds-truncate" title="STATUS">STATUS</div>
+                    </th>
+                  </tr>
+                  <!-- </thead> -->
+                  <!-- <tbody> -->
+
+                  <tr class="slds-hint-parent">
+                    <td data-label="CONFIRMATION" scope="row">
+                      <div class="slds-truncate" title="Cloudhub">{item1.service1}
+                      </div>
+                    </td>
+                    <td data-label="SERVICE DATE">
+                      <div class="slds-truncate" title="Cloudhub">{item1.serviceDate1}</div>
+                    </td>
+                    <td data-label="TIME">
+                      <div class="slds-truncate" title="4/14/2015">{item1.time1}</div>
+                    </td>
+                    <td data-label="STATUS">
+                      <div class="slds-truncate" title="Prospecting">{item1.status1}</div>
+                    </td>
+                  </tr>
+                  <!-- </tbody> -->
+                </table>
+                <!-- Table for MOB VIEW -->
+                <table class="mob-table">
+                  <tr class="aligni">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate table-head" title="CONFIRMATION">CONFIRMATION</div>
+                      </strong>
+                    </th>
+                    <td data-label="CONFIRMATION" scope="row">
+                      <div class="slds-truncate table-data" title="CONFIRMATION">{item1.service1}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="aligni">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate table-head" title="SERVICE DATE">SERVICE DATE</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE DATE" scope="row">
+                      <div class="slds-truncate table-data" title="SERVICE DATE">{item1.serviceDate1}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="aligni">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate table-head" title="TIME">TIME</div>
+                      </strong>
+                    </th>
+                    <td data-label="TIME" scope="row">
+                      <div class="slds-truncate table-data" title="TIME">{item1.time1}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="aligni">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate table-head" title="STATUS">STATUS</div>
+                      </strong>
+                    </th>
+                    <td data-label="STATUS" scope="row">
+                      <div class="slds-truncate table-data" title="STATUS">{item1.status1}
+                      </div>
+                    </td>
+                  </tr>
+                  
+                </table>
+              </div>
+
+              <div if:true={ishaier}>
+                <div if:false={iscafe}>
+                  <div class="test">
+                    <a class="icons-haier" href={item1.scheduleUrl1} target="_blank">View Service Details </a> <br><br>
+                  </div>
+                  <div class="test1">
+                    <a class="icons-haier" href={item1.trackUrl1} target="_blank">Track Your Service Appointment </a>
+                    <br><br>
+                  </div>
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:false={iscafe}>
+                  <div class="test">
+                    <a class="icons-gea" href={item1.scheduleUrl1} target="_blank">View Service Details </a> <br><br>
+                  </div>
+                  <div class="test1">
+                    <a class="icons-gea" href={item1.trackUrl1} target="_blank">Track Your Service Appointment </a>
+                    <br><br>
+                  </div>
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:true={iscafe}>
+                  <div class="test">
+                    <a class="icons-cafe" href={item1.scheduleUrl1} target="_blank">View Service Details </a> <br><br>
+                  </div>
+                  <div class="test1">
+                    <a class="icons-cafe" href={item1.trackUrl1} target="_blank">Track Your Service Appointment </a>
+                    <br><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+</div>
+</div>
+<div if:true={isServiceClosedFlag}>
+    <template if:true={ishaier}>
+      <template if:false={iscafe}>
+        <div class="field-wrapper callout-title-container Haier-Monogram-only">
+          <div class="title-bar-circles-left"></div>
+          <div class="fielditems callout-title-inner-container">
+            <div class="fielditem">
+              <h3>Past Service Call Area</h3>
+            </div>
+          </div>
+          <div class="title-bar-circles-right"></div>
+        </div>
+      </template>
+    </template>
+    <template if:true={iscafe}>
+      <template if:false={ishaier}>
+        <h1 class="header-cafe">Past Service Call Area</h1>
+      </template>
+    </template>
+    <template if:false={ishaier}>
+      <template if:false={iscafe}>
+        <h1 class="header-ge">Past Service Call Area</h1>
+      </template>
+    </template>
+    <template for:each={serviceJson} for:item="item" for:index="index">
+      <div key={item.invoice}>
+        <div class="slds-grid slds-gutters width-set">
+          <div class="slds-col slds-size_1-of-3 image-set">
+            <img class="status-image" src={item.image} onclick={scheduleUrl}>
+          </div>
+          <div class="slds-col slds-size_2-of-3 secDiv">
+            <p class="item-desc"> {item.description} </p>
+            <template if:false={item.isExpand}>
+              <div class="tables1 past-table">
+                <!-- Table for WEB VIEW -->
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered web-table">
+                  <tr class="slds-line-height_reset header">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="INVOICE">INVOICE</div>
+                      </strong>
+                    </th>
+                    <td data-label="INVOICE" scope="row">
+                      <div class="slds-truncate" title="INVOICE">{item.invoice}
+                      </div>
+                    </td>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE DATE">SERVICE DATE</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE DATE" scope="row">
+                      <div class="slds-truncate" title="SERVICE DATE">{item.service}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Table for MOB VIEW -->
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered mob-table2">
+                  <tr class="slds-line-height_reset header">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="INVOICE">INVOICE</div>
+                      </strong>
+                    </th>
+                    <td data-label="INVOICE" scope="row">
+                      <div class="slds-truncate" title="INVOICE">{item.invoice}
+                      </div>
+                    </td>
+                    </tr>
+                    <tr class="slds-line-height_reset header"> 
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE DATE">SERVICE DATE</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE DATE" scope="row">
+                      <div class="slds-truncate" title="SERVICE DATE">{item.service}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div if:true={ishaier}>
+                <div if:false={iscafe}>
+                  <a data-id={index} onclick={showAll} class="showsall-haier">
+                    + Show All
+                  </a>
+                  <br /><br />
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:false={iscafe}>
+                  <a data-id={index}  onclick={showAll} class="showsall-gea">
+                    + Show All
+                  </a>
+                  <br /><br />
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:true={iscafe}>
+                  <a data-id={index}  onclick={showAll} class="showsall-cafe">
+                    + Show All
+                  </a>
+                  <br /><br />
+                </div>
+              </div>
+
+            </template>
+    <template if:true={item.isExpand}>
+              <div class="tables1 past-table">
+                <!-- Table for WEB VIEW -->
+                <table class="slds-table slds-table_cell-buffer web-table">
+                  <tr class="slds-line-height_reset header">
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate " title="INVOICE">INVOICE</div>
+                      </strong>
+                    </th>
+                    <td data-label="INVOICE" scope="row">
+                      <div class="slds-truncate" title="INVOICE">{item.invoice}
+                      </div>
+                    </td>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE DATE">SERVICE DATE</div>
+                      </strong>
+                    </th>
+                    <td data-label="CONFIRMATION" scope="row">
+                      <div class="slds-truncate" title="SERVICE DATE">{item.service}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="MODEL No">MODEL NO</div>
+                      </strong>
+                    </th>
+                    <td data-label="MODEL NO" scope="row">
+                      <div class="slds-truncate" title="MODEL No">{item.model}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERIAL NO">SERIAL NO</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERIAL NO" scope="row">
+                      <div class="slds-truncate" title="SERIAL NO">{item.serial}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="DESCRIPTION">DESCRIPTION</div>
+                      </strong>
+                    </th>
+                    <td data-label="DESCRIPTION" scope="row">
+                      <div class="slds-truncate" title="DESCRIPTION">{item.jobdescription}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE DATE">SERVICE TYPE</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE TYPE" scope="row">
+                      <div class="slds-truncate" title="SERVICE TYPE">{item.serviceType}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE BY">SERVICE BY</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE BY" scope="row">
+                      <div class="slds-truncate" title="SERVICE BY">{item.serviceBy}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE AMOUNT">AMOUNT</div>
+                      </strong>
+                    </th>
+                    <td data-label="Amount" scope="row">
+                      <div class="slds-truncate" title="SERVICE AMOUNT">${item.Amount}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Table for Mobile View -->
+                <table class="slds-table slds-table_cell-buffer mob-table2">
+                  <tr class="">
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="INVOICE">INVOICE</div>
+                      </strong>
+                    </th>
+                    <td data-label="INVOICE" scope="row">
+                      <div class="slds-truncate new-line-set" title="INVOICE">{item.invoice}
+                      </div>
+                    </td>
+                    </tr>
+                    <tr class="slds-line-height_reset header"></tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate " title="SERVICE DATE">SERVICE DATE</div>
+                      </strong>
+                    </th>
+                    <td data-label="CONFIRMATION" scope="row">
+                      <div class="slds-truncate new-line-set" title="SERVICE DATE">{item.service}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="MODEL No">MODEL NO</div>
+                      </strong>
+                    </th>
+                    <td data-label="MODEL NO" scope="row">
+                      <div class="slds-truncate new-line-set" title="MODEL No">{item.model}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERIAL NO">SERIAL NO</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERIAL NO" scope="row">
+                      <div class="slds-truncate new-line-set" title="SERIAL NO">{item.serial}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="DESCRIPTION">DESCRIPTION</div>
+                      </strong>
+                    </th>
+                    <td data-label="DESCRIPTION" scope="row">
+                      <div class="slds-truncate new-line-set" title="DESCRIPTION">{item.jobdescription}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE DATE">SERVICE TYPE</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE TYPE" scope="row">
+                      <div class="slds-truncate new-line-set" title="SERVICE TYPE">{item.serviceType}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE BY">SERVICE BY</div>
+                      </strong>
+                    </th>
+                    <td data-label="SERVICE BY" scope="row">
+                      <div class="slds-truncate new-line-set" title="SERVICE BY">{item.serviceBy}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="pad" scope="col">
+                      <strong>
+                        <div class="slds-truncate" title="SERVICE AMOUNT">AMOUNT</div>
+                      </strong>
+                    </th>
+                    <td data-label="Amount" scope="row">
+                      <div class="slds-truncate new-line-set" title="SERVICE AMOUNT">${item.Amount}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <div if:true={ishaier}>
+                <div if:false={iscafe}>
+                  <a data-id={index} onclick={showSome} class="showsall-haier">- Hide Details </a>
+                  <br /><br />
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:false={iscafe}>
+                  <a data-id={index}  onclick={showSome} class="showsall-gea">- Hide Details </a>
+                  <br /><br />
+                </div>
+              </div>
+              <div if:false={ishaier}>
+                <div if:true={iscafe}>
+                  <a data-id={index}  onclick={showSome} class="showsall-cafe">- Hide Details </a>
+                  <br /><br />
+                </div>
+              </div>
+
+
+            </template>
+</div>
+</div>
+</div>
+</template>
+</div>
+</template>

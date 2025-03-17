@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Footer</masterLabel>
+    <description>Footer Component for REGA</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="String" name="copyRightLabel" label="CopyRight Label" default="Copyright 2023"   />
+            <property type="String" name="termLink" label="Terms" default="https://www.geappliances.com/privacy/terms.htm?_ga=2.42950821.1684362285.1678678532-320402319.1666108983"   />
+            <property type="String" name="privacyLink" label="Privacy" default="https://www.geappliances.com/privacy/privacy_center.htm?_ga=2.54298152.1684362285.1678678532-320402319.1666108983"   />
+            <property type="String" name="privacyNoticeLink" label="California Privacy Notice" default="https://www.geappliances.com/privacy/privacy_policy.htm?_ga=2.54298152.1684362285.1678678532-320402319.1666108983#californiaPrivacyNotice"   />
+            <property type="String" name="consentLink" label="Do Not Sell or Share My Personal Information" default="https://www.geappliances.com/privacy/privacy_policy.htm#OptOutOptIn"   />
+            <property type="String" name="cookie" label="Cookie Settings" default="#"   />
+            <property type="String" name="cookieLink" label="Cookie Settings" default="#"   />
+            <property type="String" name="accessibilityLink" label="Accessibility" default="https://www.geappliances.com/accessibility-statement/"   />
+            <property type="String" name="faqLink" label="FAQ" default="/resources/faq"   />
+            <property type="String" name="sitemapLink" label="Sitemap" default="/sitemap"   />
+            <property type="String" name="aboutGeLink" label="GE Appliances, a Haier company" default="https://www.geappliances.com"   />
+            <property type="String" name="tradeMark" label="Trademark" default="GE is a trademark of the General Electric Company"   />
+            <property type="String" name="lic" label="Liciense" default="Manufactured under trademark license."   />
+            <property name="sectionId" type="String" label="Section ID" default="sectionId"/>
+            <property 
+                name="menuName" 
+                type="String" 
+                datasource="apex://RG_NavigationLinkPickList" 
+                label="Navigation Menu"
+                description="The name of navigation menu on list"/>
+        </targetConfig>
+   </targetConfigs>
+</LightningComponentBundle>

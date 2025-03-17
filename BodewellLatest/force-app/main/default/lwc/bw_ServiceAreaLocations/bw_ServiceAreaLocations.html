@@ -1,0 +1,54 @@
+<template>
+    <div class="location-section">
+        <div class="service-area-location-container">
+            <div class="service-area-location-header">
+                <h1 class="area-location-header">Bodewell Service in {serviceAreaName}</h1>
+            </div>
+            <div class="location-block-flex">                
+                <div class="coloumnset6wdth">
+                        <div class="background-set-location">
+                            <div class="details-loc">
+                                <div class="icon-section">
+                                    <img class="locationCall-image" src={iconphonesvg} alt="iconphonesvg">
+                                </div>
+                                <div class="location-section-background">
+                                    <div class="location">
+                                        <a class="location-title anchor-page-link">
+                                            {serviceAreaName}
+                                        </a>
+
+                                    </div>
+                                    <div class="call-local">
+                                        <span class="test-call-local">Call Local</span>
+                                        <br>
+                                        <div class="phone-number">
+                                            <a onclick={mobileNumber} class="call-page-link phone" data-value={serviceAreaNumber}>
+                                                {serviceAreaNumber}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="call-local-mobile">
+                                        <a onclick={mobileNumber} class="buttonCall buttonmobile" data-value={serviceAreaNumber}>
+                                            {serviceAreaNumber}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+                </div>
+                <div class="coloumnset6wdth">
+                    <div class="location-right-text">
+                        <h2 class="near-you-header">Services near you</h2>
+                        <p class="near-you-text">
+                            Great appliances make life’s chores easier—so you can enjoy your time at home. When household appliances stop working, it’s a relief to know you have expert help nearby. Count on your local Bodewell for expert know-how and quality repair to correct any appliance problem.
+                            Broken appliances don’t need to disrupt your day. Appliance repair is on the way with help from your local Bodewell technicians. 
+                        </p>
+                        <p class="phone-number">
+                            Schedule a service online or call <a onclick={mobileNumberStrip} class="semiBold anchor-page-link" data-value={serviceAreaNumber}>{serviceAreaNumber}</a> today!
+                        </p>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

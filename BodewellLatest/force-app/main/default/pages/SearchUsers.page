@@ -1,0 +1,64 @@
+<apex:page Controller="SearchInVFController"  lightningStylesheets="true"  showHeader="true"  docType="html-5.0">
+    <apex:slds />
+    <apex:includeLightning />
+        <div class="slds-scope">
+        <apex:actionstatus id="spinnerStatus">
+            <apex:facet name="start">
+                <div class="slds-spinner_container">
+                    <div id="mySpinner" role="status" class="slds-spinner slds-spinner_medium">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus> 
+    </div>
+          <!---  <apex:inputText label="Email " value="{!searchKey}" title="Input"/> 
+            <apex:inputText label="First Name " value="{!searchKey1}" title="Input"/>       
+            <apex:inputText label="Last Name " value="{!searchKey2}" title="Input"/>      
+            <apex:inputText label="Name " value="{!searchKey3}" title="Input"/>
+ &nbsp; &nbsp;
+            <apex:commandButton value="Search records" action="{!searchUser}" status="spinnerStatus" reRender="pb,pt" styleclass="slds-button slds-button_brand Search"/>
+            &nbsp; &nbsp;
+           
+            <apex:commandButton action="{!clear}"  value="Clear Search"  status="spinnerStatus" styleclass="slds-button slds-button_brand clearSearch" />-->    
+       
+    <apex:form >    
+            <table>
+                <tr>
+                <td >Email </td>
+                <td><apex:inputText value="{!searchKey}"  /></td>
+               <!--- <td >&nbsp; &nbsp;First Name </td>
+                <td><apex:inputText value="{!searchKey1}" /></td>
+                <td >&nbsp; &nbsp;Last Name </td>
+                <td><apex:inputText value="{!searchKey2}" /></td>--->
+                <td >&nbsp; &nbsp;Name </td>
+                <td><apex:inputText value="{!searchKey4}" /></td>
+                </tr>
+          </table>
+             <apex:actionFunction name="doSearch" action="{!searchUser}" status="spinnerStatus" reRender="pb,pt"   />
+           <br/>
+            <div>
+                &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                <apex:commandButton value="Search records" action="{!searchUser}" status="spinnerStatus"  reRender="pb,pt,pb1,pt1"  styleclass="slds-button slds-button_brand Search"/> 
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                <apex:commandButton action="{!clear}"  value="Clear Search"  status="spinnerStatus"  styleclass="slds-button slds-button_brand clearSearch" />
+            </div>
+            <br/>
+        <div class="slds-scope" >  
+        <apex:pageBlock title="Search Results" id="pb"   >
+           <apex:pageBlockTable value="{!usr}" var="a"  id="pt">
+                <apex:column headerValue="Full Name" value="{!a.name}" />
+                <apex:column headerValue="Email" value="{!a.Email}"/>
+                <apex:column headerValue="Profile" value="{!a.ProfileId}"/>
+                <apex:column headerValue="User License" value="{!a.Profile.UserLicense.Name}"/>
+                <apex:column headerValue="UserID">
+                <apex:outputLink value="/{!a.Id}">{!a.Id}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Active" value="{!a.IsActive}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </div>
+    </apex:form> 
+</apex:page>

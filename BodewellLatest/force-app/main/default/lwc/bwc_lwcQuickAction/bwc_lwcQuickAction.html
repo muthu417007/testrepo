@@ -1,0 +1,11 @@
+<template>
+    <lightning-quick-action-panel header="Edit Fields Action">
+        <lightning-record-edit-form record-id={recordId}
+                                    object-api-name={objectApiName}
+                                    onsuccess={handleSuccess}>
+            <lightning-output-field field-name="Name"></lightning-output-field>
+            <lightning-button variant="neutral" label="Cancel"></lightning-button>
+            <lightning-button variant="brand" class="slds-m-left_x-small" label="Save" type="submit"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-quick-action-panel>
+</template>

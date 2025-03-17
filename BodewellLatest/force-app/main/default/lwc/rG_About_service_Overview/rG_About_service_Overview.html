@@ -1,0 +1,50 @@
+<template>
+  <div class="about-overview-section slds-grid slds-wrap">
+    <div class="wrapper desk-about-section slds-col slds-medium-size_7-of-12 slds-large-size_7-of-12">
+        <span class="about-head-section">
+            <h2 class="main-content-head-text">{contentHeading}</h2>
+        </span>
+        <lightning-formatted-rich-text value={content}></lightning-formatted-rich-text>
+    </div>
+    <!-- Service avaliable component include-->
+    <div class="about-service-avaliable slds-col slds-small-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12">
+      <c-r-G-_-Service-Available></c-r-G-_-Service-Available>
+    </div>
+    </div>
+<!-- Mobile view of about us -->
+<div class="mob-about-section">
+    <template if:true={isExpand}>
+      <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_8-of-12 about-head-section">
+            <h2 class="main-content-head-text">{contentHeading}</h2>
+        </div>
+        <div class="about-accordian-icon slds-col slds-small-size_4-of-12 slds-text-align_right">
+          <lightning-icon class="down-icon" icon-name="utility:down" onclick={showAll} alternative-text="Down"
+            title="Down"></lightning-icon>
+        </div>
+      </div>
+    </template>
+</div>
+<div class="accordian ">
+    <template if:false={isExpand}>
+      <div class="serviceAreaFooterHeading slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_8-of-12 about-head-section">
+            <h2 class="main-content-head-text">{contentHeading}</h2>
+        </div>
+        <div class="about-accordian-icon slds-col slds-small-size_4-of-12 slds-text-align_right">
+          <lightning-icon class="up-icon" icon-name="utility:up" onclick={showAll} alternative-text="Up"
+            title="Up"></lightning-icon>
+        </div>
+      </div>
+      <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12">
+            <lightning-formatted-rich-text value={content}></lightning-formatted-rich-text>
+          </div>
+          <div class="mob-about-service-avaliable slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12">
+            <c-r-G-_-Service-Available></c-r-G-_-Service-Available>
+          </div>
+       </div>
+</template>
+</div>
+<!-- End accordian mobile view -->
+</template>

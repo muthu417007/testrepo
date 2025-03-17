@@ -1,0 +1,15 @@
+.pdp-quick-list
+{
+    text-align: left;
+    letter-spacing: 1.5px;
+    color: #12212E;
+    opacity: 1;
+}
+.pdp-learn-more{
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 0.32px;
+    color: #245B83;
+    text-transform: capitalize;
+    padding-left: 24px;
+}

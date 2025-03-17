@@ -1,0 +1,111 @@
+<apex:page >
+    <head>
+        <title>
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    </head>
+    <style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background: #c54b25;
+            -moz-border-radius: 4px;
+            -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            border: 0px solid #304764;
+            color: #FFF;
+            cursor: pointer;
+            font: bold 14px Helvetica,'Gotham Black','Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+            line-height: normal;
+            margin-right: 6px;
+            padding: 6px 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+            overflow: visible;
+            width: auto;
+            min-width: 12em !important;
+            max-width: 25em  !important;
+        }
+
+        .message {
+            background-color: #c54b25;
+            border-style: none;
+            border-width: 1px;
+            color: inherit;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .embeddedServiceHelpButton .helpButtonDisabled .helpButtonLabel .message {
+            background-color: #CCC !important;
+        }
+
+        .embeddedServiceHelpButton .helpButton .helpButtonDisabled {
+            background-color: #CCC !important;
+        }
+         .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #1a63a2;
+        }
+
+        button {
+            background-color: #c54b25;
+            background:none;
+        }
+
+        .body {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+        embedded_svc.settings.defaultMinimizedText = 'Chat With Us'; //(Defaults to Chat with an Expert)
+        embedded_svc.settings.disabledMinimizedText = 'All Agents Helping Others'; //(Defaults to Agent Offline)
+
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+        embedded_svc.init(
+            'https://geapp--devfull.my.salesforce.com',
+            'https://devfull-geappliancescontactusdtc.cs20.force.com/liveAgentSetupFlow',
+            gslbBaseURL,
+            '00Dm00000003UF6',
+            'SSG_Chat_Group',
+            {
+                baseLiveAgentContentURL: 'https://c.la4-c1cs-dfw.salesforceliveagent.com/content',
+                deploymentId: '572m000000000LK',
+                buttonId: '573m000000001KX',
+                baseLiveAgentURL: 'https://d.la4-c1cs-dfw.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'SSG_Chat_Group',
+                isOfflineSupportEnabled: false
+            }
+        );
+    };
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://geapp--devfull.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+</script>
+</apex:page>

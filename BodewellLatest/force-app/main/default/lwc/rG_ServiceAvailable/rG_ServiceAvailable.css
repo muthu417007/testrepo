@@ -1,0 +1,19 @@
+.service-available-heading {
+    font-size: 19px;
+    text-transform: uppercase !important;
+}
+
+a {
+    text-decoration: none;
+    color: #1a63a2;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #092c74;
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+}

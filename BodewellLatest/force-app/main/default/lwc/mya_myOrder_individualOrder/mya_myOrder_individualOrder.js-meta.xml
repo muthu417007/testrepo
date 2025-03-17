@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__RecordPage">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe,RecordPage,Bodewell" description="Brand"/>
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="My Orders" description="Page Title"/>
+            <property name="smartOrderLinkLabel" label="Smart Order Link Label" type="String" default="Manage Your SmartOrders Subscription" description="Smart Order Link"/>
+            <property name="orderNoLabel" label="Order No Label" type="String" default="ORDER NO." description="ORDER NO."/>
+            <property name="orderDateLabel" label="Order Date Label" type="String" default="ORDER DATE" description="ORDER DATE"/>
+            <property name="orderRefNoLabel" label="Order RefNo Label" type="String" default="REFERENCE NO." description="REFERENCE NO."/>
+            <property name="orderTotalLabel" label="Order Total Label" type="String" default="TOTAL" description="TOTAL"/>
+            <property name="orderStatusLabel" label="Order Status Label" type="String" default="STATUS" description="STATUS"/>
+
+            <property name="T11Label" label="Text T11 Label" type="String" default="For Assistance with pending" description="For Assistance with pending"/>
+            <property name="T12Label" label="Text T12 Label" type="String" default="PARTS" description="PARTS"/>
+            <property name="T13Label" label="Text T13 Label" type="String" default="orders, call 1-877-959-8688, Mon-Fri 8am-8pm,
+            Sat 8:30am-5pm ET." description="orders, call 1-877-959-8688, Mon-Fri 8am-8pm,
+            Sat 8:30am-5pm ET."/>
+
+            <property name="T21Label" label="Text T21 Label" type="String" default="For Assistance with pending" description="For Assistance with pending"/>
+            <property name="T22Label" label="Text T22 Label" type="String" default="APPLIANCE" description="APPLIANCE"/>
+            <property name="T23Label" label="Text T23 Label" type="String" default="orders, call 1-800-430-1757; Mon-Fri
+            8am-8pm ET and Sat 9am-5pm ET." description="orders, call 1-800-430-1757; Mon-Fri
+            8am-8pm ET and Sat 9am-5pm ET."/>
+
+            <property name="T31Label" label="Text T31 Label" type="String" default="Text" description="Text"/>
+            <property name="T32Label" label="Text T32 Label" type="String" default="TRACK" description="TRACK"/>
+            <property name="T33Label" label="Text T33 Label" type="String" default="to 866-985-0294 to receive texts about the delivery of your order." description="to 866-985-0294 to receive texts about the delivery of your order."/>
+
+            <property name="ViewOrderLinkLabel" label="View Order Link Label" type="String" default="View Order Details" description="View Order Details"/>
+            <property name="ReturnItemLink" label="Return Item Link Label" type="String" default="Return an Item" description="Return an Item"/>
+            <property name="TrackMyOrderLink" label="Track My Order Link Label" type="String" default="Track My Order" description="Track My Order"/>
+            <property name="RescheduleLink" label="Reschedule Link Label" type="String" default="Reschedule" description="Reschedule"/>
+            <property name="DeliveryInformationLink" label="Delivery Information Link Label" type="String" default="Delivery Information" description="Delivery Information"/>
+            <property name="bodewellViewOrderLinkLabel" label="View Order Link Label Bodewell" type="String" default="View Order Details" description="View Order Details"/>
+            <property name="bodewellTrackMyOrder" label="Track Order Link Label Bodewell" type="String" default="Track Order Details" description="View Order Details"/>
+            <property name="bodewellRescheduleLink" label="Reschedule Link Label Bodewell" type="String" default="Reschedule" description="View Order Details"/>
+            <property name="bodewellDeliveryInformationLink" label="Delivery Link Label Bodewell" type="String" default="Delivery" description="View Order Details"/>
+            <property name="bodewellLabel1" label="Bodewell label1" type="String" default="For Assistance with" description="For Assistance with pending"/>
+            <property name="bodewellLabel2" label="Bodewell label2" type="String" default="orders, call 1-800-430-1757; Mon-Fri
+            8am-8pm ET and Sat 9am-5pm ET."/>
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

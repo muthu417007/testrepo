@@ -1,0 +1,112 @@
+<template>
+    <lightning-card>
+        <!--<lightning-card title="GEAppliances" icon-name="custom:custom14">-->
+        <div class="searchbar">
+            <template if:true={asset.data}><span>MacAddress: <strong></b>{inputboxval}</strong></span>
+                <!--<lightning-input class="inputbox" type="text" variant="label-hidden" placeholder="macaddress" value={inputboxval}></lightning-input>
+                <lightning-button-icon class="searchbutton" icon-name="utility:search" title="add" onclick={searchItem}></lightning-button-icon>-->
+            </template>
+            <template if:true={case_asset.data}><span>MacAddress: <strong></b>{inputboxval}</strong></span>
+                <!--<lightning-input class="inputbox" type="text" variant="label-hidden" placeholder="macaddress" value={inputboxval}></lightning-input>
+                <lightning-button-icon class="searchbutton" icon-name="utility:search" title="add" onclick={searchItem}></lightning-button-icon>-->
+            </template>
+
+        </div><br><br><br>
+        <!--<template  if:false={isProgressing}>
+            <lightning-progress-ring class="progressring" value={progress} size="large" variant="circular"></lightning-progress-ring>
+        </template>-->
+        <lightning-tabset variant="Scoped">
+            <lightning-tab label="Fault Table">
+                <template if:true={FaultsLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+                <template if:true={faultflag}>
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="brand-outline" class="slds-m-right_x-small" label="Select Columns" value={submit}
+                            onclick={selectedcolumns}></lightning-button>
+                        <lightning-button variant="brand-outline" class="slds-m-right_x-small" label=" All Columns  " value={submit}
+                            onclick={showallcolumns}></lightning-button>
+                        <div class="slds-p-right_xx-small">
+
+                            <lightning-button label="Prev" disabled={isPrev} onclick={previousHandler} variant="brand"
+                                icon-name="utility:back" name="prev"></lightning-button>
+                        </div>
+                        <span class="slds-badge slds-badge_lightest">
+                            {startingRecord}-{endingRecord} of {totalRecountCount} | Page {page} of {totalPage}
+                        </span>
+                        <div class="slds-p-left_xx-small">
+                            <lightning-button label="Next" disabled={isNext} onclick={nextHandler} variant="brand"
+                                icon-name="utility:forward" icon-position="right" name="next"></lightning-button>
+                        </div>
+                    </div>
+                </template>
+                <div id="duallistbox2" if:true={ready}>
+                    <lightning-dual-listbox name="columnsList" label="Select Columns" source-label="Available"
+                      selected-label="Selected" field-level-help="Select your preferred Columns" options={fault_colOptions}
+                      onchange={handleChange}></lightning-dual-listbox>
+                    <div class="slds-box">
+                      <lightning-button variant="brand-outline" label="Display Data" value={submit} onclick={DisplayFaultData}>
+                      </lightning-button>
+                    </div>
+                </div>
+          
+                <div style="height: 360px;">
+                    <lightning-datatable data={faultdata} columns={fault_columns}
+                        default-sort-direction={defaultSortDirection} sorted-direction={sortDirection}
+                        sorted-by={sortedBy} onsort={onHandleSort} key-field="id" hide-checkbox-column
+                        min-column-width="150">
+                    </lightning-datatable>
+
+
+                    <!--<lightning-layout horizontal-align="space">
+                                  <lightning-layout-item flexibility="auto">
+                                      <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+                                      </lightning-button>
+                                  </lightning-layout-item>
+                                  <lightning-layout-item flexibility="auto">
+                                      Page {page} of {totalPage}
+                                  </lightning-layout-item>
+                                  <lightning-layout-item flexibility="auto">
+                                      <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                                          onclick={nextHandler}></lightning-button>
+                                  </lightning-layout-item>
+                              </lightning-layout>-->
+
+                </div>
+            </lightning-tab>
+            <!--<div class="container">      
+            <div class="slds-m-around_medium">-->
+
+            <!-- <lightning-input id="macaddress" label="macAddress" value={macAddress}></lightning-input>-->
+            <lightning-tab label="Cycle History">
+                <template if:true={CycleLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+
+                <lightning-button variant="brand-outline" class="slds-m-right_x-small" label="Select Columns"
+                    value={submit} onclick={selectedcolumns}></lightning-button>
+                <lightning-button variant="brand-outline" class="slds-m-right_x-small" label="Show All Columns"
+                    value={submit} onclick={showallcolumns}></lightning-button>
+
+                <div id="duallistbox" if:true={ready}>
+                    <lightning-dual-listbox name="columnsList" label="Select Columns" source-label="Available"
+                        selected-label="Selected" field-level-help="Select your preferred Columns" options={colOptions}
+                        onchange={handleChange}></lightning-dual-listbox>
+                    <div class="slds-box">
+                        <lightning-button variant="brand-outline" label="Display Data" value={submit}
+                            onclick={DisplayData}></lightning-button>
+                    </div>
+                </div>
+                <div style="height: 360px;">
+                    <lightning-datatable data={cyclehis} columns={columns} default-sort-direction={defaultSortDirection}
+                        sorted-direction={sortDirection} sorted-by={sortedByCycle} onsort={onHandleSortCycle}
+                        key-field="id" hide-checkbox-column min-column-width="120">
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+
+
+
+        </lightning-tabset>
+    </lightning-card>
+</template>

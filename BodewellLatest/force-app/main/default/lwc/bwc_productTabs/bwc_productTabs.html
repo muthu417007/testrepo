@@ -1,0 +1,45 @@
+<template>
+    <div class="product-tab-container">
+        <ul class="product-tab-nav">
+            <template for:each={options} for:item="option">
+                <li key={option.value} data-id={option.value} onclick={handleScroll}>{option.label}</li>
+            </template>
+        </ul>
+        <!-- Sticky PDP Nav -->
+        <div class="product-header--sticky slds-grid slds-grid_align-center">
+            <div class="product-header--sticky__img slds-col slds-size_1-of-6 slds-show_medium">
+                <img class="slds-align_absolute-center" src={_productImage} alt={_productName} title={_productName}>
+            </div>
+            <div class="product-header--sticky__content slds-col slds-large-size_4-of-6 slds-medium-size_5-of-6 slds-small-size_6-of-6">  
+                <div class="d-flex flex-end-item">
+                    <p class="product-header--sticky__title">{_productName}</p>
+                    <!-- Add cart button to go here -->
+                    <button class="slds-button slds-button_brand slds-m-left_large btn-class" onclick={addToCart}>Add to Cart</button>
+                </div>
+                <div class="d-flex-price">
+                    <div class="product-header--sticky__sku">{_productSku}</div>
+                    <template if:true={_negotiatedPrice}>
+                    <div class="product-header--sticky__price"><!-- price to go here --><span><strong>${_negotiatedPrice}</strong></span> 
+                   
+                    </div>
+                </template>
+                </div>
+                <ul class="sticky-product-tab-nav slds-show_medium">
+                    <template for:each={options} for:item="option">
+                        <li key={option.value} data-id={option.value} onclick={handleScroll}>{option.label}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="product-tab-hr">
+
+        <div class="product-tab-section">
+            <div class="product-section_1"><slot name="productSection1"></slot></div>
+            <div class="product-section_2"><slot name="productSection2"></slot></div>
+            <div class="product-section_3"><slot name="productSection3"></slot></div>
+            <div class="product-section_4"><slot name="productSection4"></slot></div>
+            <div class="product-section_5"><slot name="productSection5"></slot></div>
+        </div>
+    </div>
+</template>

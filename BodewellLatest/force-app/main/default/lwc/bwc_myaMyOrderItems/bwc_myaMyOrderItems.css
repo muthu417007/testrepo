@@ -1,0 +1,53 @@
+.orderItems {
+   
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.4287;
+    color: black;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+    .mob-view-set {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-model-number {
+        top: 708px;
+        left: 622px;
+        width: 537px;
+        height: 49px;
+        text-align: left;
+        letter-spacing: 0.57px;
+        color: #12212E;
+        opacity: 1;
+}
+
+.product-link {
+    text-align: left;
+    margin-left: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    top: 715px;
+left: 1363px;
+width: 382px;
+height: 16px;
+padding-left: 950px;
+
+}
+
+.view-order-details {
+    text-align: left;
+    letter-spacing: 0.32px;
+    color: #145B95;
+    opacity: 1;
+    top: 715px;
+    left: 1363px;
+    width: 145px;
+    
+    
+}

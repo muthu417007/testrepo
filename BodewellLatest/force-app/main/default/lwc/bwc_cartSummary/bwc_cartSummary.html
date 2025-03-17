@@ -1,0 +1,205 @@
+<template>
+  <lightning-card class="summary">
+    <h2 slot="title" class="summaryTitle">Order Summary</h2>
+    <div class="summaryCss">
+
+      <!-- Original Total: Products Cost -->
+      <template if:true={receivedObjectData}>
+        <div class="item">
+          <p class="itemTitle">Subtotal</p>
+          <p class="value"> 
+             <lightning-formatted-number                   
+                    value={_fixedcartTot}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number>
+          </p>
+        </div>
+      </template>
+
+      <!-- Promotions Price -->
+      <template if:true={promotionflag}>
+        <div class="item">
+          <p class="itemTitle">Coupon/Offers</p>
+          <p class="value">${_fixedPromo}</p>
+        </div>
+      </template>
+
+      <!-- Delivery Price -->
+      <template if:true={deliveryflag}>
+        <div class="item">
+          <p class="itemTitle">Delivery</p>
+          <div class="itemTitleFree">
+            <template if:true={free}>
+              <p class="memberValue">{free}</p>
+              <p class="memberTotalvalue">${receivedObjectData.delivery}</p>
+            </template>
+            <template if:false={free}>
+              <p class="value">${receivedObjectData.delivery}</p>
+            </template>
+          </div>
+        </div>
+      </template>
+
+      <!-- Installation Price -->
+      <template if:true={installationflag}>
+        <div class="item">
+          <p class="itemTitle">Installation</p>
+          <div class="itemTitleFree">
+            <template lwc:if={memberinstallationflag}>
+              <template lwc:if={isFreeInstallation}>
+                <p class="memberValue">{freeInstallation}</p>
+                <p class="memberTotalvalue">${receivedObjectData.installation}</p>
+              </template>
+
+              <template lwc:else>
+                <template lwc:if={isSameInstallation}>                   
+                  <p class="value">${receivedObjectData.installation}</p>
+                </template>
+                <template lwc:else>
+                  <p class="memberValue">${receivedObjectData.memberInstallation}</p>
+                  <p class="memberTotalvalue">${receivedObjectData.installation}</p>
+                </template>                
+              </template>   
+
+            </template>
+
+            <template lwc:else>
+              <p class="value">${receivedObjectData.installation}</p>
+            </template>
+
+          </div>
+        </div>
+      </template>
+
+         <!-- Protection Plan Price -->
+        <template if:true={protectionPlanFeeflag}>
+          <div class="item">
+            <p class="itemTitle">Protection Plan</p>
+            <div class="itemTitleFree">
+              <template lwc:if={memberinstallationflag}>
+                <template if:false={isFreeProtectionPlan}>
+                  <template if:false={isSameProtectionPlan}>
+                    <p class="memberValue">${receivedObjectData.memberProtectionPlanFee}</p>
+                    <p class="memberTotalvalue">${receivedObjectData.protectionPlanFee}</p>
+                  </template>
+                  <template if:true={isSameProtectionPlan}>                   
+                    <p class="value">${receivedObjectData.protectionPlanFee}</p>
+                  </template>             
+                </template>
+  
+                <template if:true={isFreeProtectionPlan}>
+                  <p class="memberValue">{freeProtectionPlan}</p>
+                  <p class="memberTotalvalue">${receivedObjectData.protectionPlanFee}</p>
+                </template>
+              </template>
+  
+              <template lwc:else>
+                <p class="value">${receivedObjectData.protectionPlanFee}</p>
+              </template>
+            </div>
+          </div>
+        </template> 
+       
+
+      <!-- Parts Ship Fee  -->
+      <template if:true={partsflag}>
+        <div class="item">
+          <p class="itemTitle">Parts Shipping</p>
+          <div class="itemTitleFree">
+            <template if:true={partsShipfree}>
+              <p class="memberValue">{free}</p>
+              <p class="memberTotalvalue">${partsShipFee}</p>
+            </template>
+            <template if:false={partsShipfree}>
+              <p class="value">${partsShipFee}</p>
+            </template>
+          </div>
+        </div>
+      </template>
+
+      <template if:true={partsOptionsflag}>
+
+        <lightning-combobox class="shippingOptions" name="Parts Shipping Options" label="Parts Shipping Options"
+          options={options} value={selectedOption} onchange={handleSelectionChange}></lightning-combobox>
+
+      </template>
+    </div>
+    <template if:true={showTextStandard}>
+      <div class="shippingText">
+        Standard Shipping: Please allow additional shipping time
+        to orders shipped to Hawaii and Alaska.We do not offer
+        shipping to P.O. Boxes, APO's, Canada, or Puerto Rico at
+        this time.
+      </div>
+    </template>
+
+    <template if:true={showTextSecond}>
+      <div class="shippingText">
+        <strong> Order before 2pm Eastern Time, Monday – Friday </strong> <br>
+        Order will be shipped same day, and arrive in two business days.<br>
+        <br>
+        <strong> Order after 2pm Eastern Time, Monday – Friday </strong><br>
+        Order will be shipped the next business day
+      </div>
+
+    </template>
+
+    <template if:true={showTextNext}>
+      <div class="shippingText">
+        <strong> Order before 2pm Eastern Time, Monday – Friday </strong><br>
+        Order will be shipped same day, and arrive the next business day<br>
+        <br>
+        <strong> Order after 2pm Eastern Time, Monday – Friday </strong><br>
+        Order will be shipped the next business day
+
+      </div>
+    </template>
+
+  </lightning-card>
+
+  <lightning-card class="price">
+    <div class="priceCss">
+      <p class="totTitle">Total (USD)</p>      
+      <p class="totPrice"> 
+             <lightning-formatted-number                   
+                    value={_fixedTotal}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number>
+          </p>
+    </div>
+  </lightning-card>
+
+  <lightning-card class="price">
+    <template if:true={receivedObjectData}>
+      <template lwc:if={receivedObjectData.isUserMember}>
+        <div class="savingsText">
+          As a member you are saving <strong> <lightning-formatted-number                   
+                    value={fixedMemSavings}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number>
+           </strong>
+        </div>
+      </template>
+
+      <template lwc:else>
+        <div class="savingsText">
+          <strong>Save <lightning-formatted-number                   
+                    value={fixedMemSavings}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number> today</strong> when you become a <a href="#"
+            onclick={handleBodewellMemberClick}>Bodewell member</a>
+        </div>
+      </template>
+    </template>
+    <div class="checkoutButton">
+      <button class="checkout slds-button slds-button_brand slds-button_stretch" onclick={handleCheckout}
+        disabled={checkoutFlag}>
+        CHECKOUT
+      </button>
+    </div>
+  </lightning-card>
+</template>

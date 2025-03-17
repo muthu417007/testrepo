@@ -1,0 +1,34 @@
+<template>
+    <template if:true={_isThreePack}>
+        <div class="related-product-container">
+            <div class="slds-p-left_x-small slds-p-right_large">
+
+                <div class="product-items">
+
+
+                    <button class="button-container " onclick={onclickHandler}>
+
+                        SAVE ${_saveAmount} ON A 3-PACK
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </template>
+    <template if:true={_isSinglePack}>
+        <div class="related-product-container">
+            <div class="slds-p-left_x-small slds-p-right_large">
+
+                <div class="product-items">
+
+                    <button class="button-container " onclick={onclickHandler}>
+                        SINGLE FILTER ALSO AVAILABLE
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </template>
+</template>

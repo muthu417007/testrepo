@@ -1,0 +1,27 @@
+<template>
+    <template if:false={productSkuPassed}>
+        <c-bwc_parts-search
+            is-user-service-technician
+            current-user={currentUser}  
+            no-result-key={productSku}
+            initial-search={initialSearch}
+            onpartsearchresults={handlePartsSearchResult}
+        ></c-bwc_parts-search>
+    </template>
+    <template if:true={productToDisplay}>
+       <c-bwc_parts-search-results
+            product-to-display-from-parent={productsToDisplay}
+            onpartselected={handleSelectedPartEvent}
+            current-user={currentUser}
+       ></c-bwc_parts-search-results>
+    </template>
+    <template if:true={partsExplorer}>
+        <c-bwc_parts-diagram
+            mfg-sku-received={mfgSkuSelected}
+            product-id-received={productId}
+            current-user={currentUser}
+            onclosepartsfinder={handlePartsFinderClose}
+            is-launched-via-manage-parts={isLaunchedViaManageParts}
+        ></c-bwc_parts-diagram>
+    </template>
+</template>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>57.0</apiVersion>
+  <isExposed>true</isExposed>
+  <masterLabel>Water Filter Product variations</masterLabel>
+  <targets>
+    <target>lightningCommunity__Page</target>
+    <target>lightningCommunity__Default</target>
+
+  </targets>
+
+  <targetConfigs>
+    <targetConfig targets="lightningCommunity__Default">
+      <property label="Product Data Binding" name="product" type="String"
+        default="{!Product.Details}" />
+
+      <property label="Product Pricing data binding" name="pricing" type="String"
+        default="{!Product.Pricing}" />
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

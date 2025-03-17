@@ -1,0 +1,23 @@
+<template>
+    <!-- <div if:false={isOnlyServiceArea}>
+        <div if:false={isLocalArea}> -->
+            <div class="slds-m-bottom_large slds-m-top_xx-large">
+                <c-r-G-_-Find-Service-Area-Location></c-r-G-_-Find-Service-Area-Location>
+            </div>
+            <h3 class="service-area-name slds-m-bottom_large slds-m-top_xx-large">
+                {serviceAreaListLength} SERVICE AREA(S) IN {serviceAreaName}
+            </h3>
+            <p class="city-bind-text slds-m-bottom_large">
+                Select an area to learn more.
+            </p>
+            <div class="slds-grid slds-wrap slds-m-bottom_large">
+                <template iterator:it={serviceAreaItemList}>
+                    <div class="slds-small-size--1-of-2 slds-xx-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-5 slds-m-bottom_x-small state_city_bind_cityname"
+                        key={it.value.id}>
+                        <a href={it.value.itemTarget} onclick={handleClick} data-value={it.value.itemTarget} class="state_city_bind_cityname">{it.value.itemName}</a>
+                    </div>
+                </template>
+            </div>
+        <!-- </div>
+    </div> -->
+</template>

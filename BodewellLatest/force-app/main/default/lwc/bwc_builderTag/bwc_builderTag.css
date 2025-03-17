@@ -1,0 +1,8 @@
+c-bwc_tag {
+    --tag-color: var(---ffffff-white,#ffffff);
+    --tag-padding: 5px 10px;
+    --tag-text-align: center;
+    --tag-width: auto;
+    --tag-height: auto;
+    --tag-display: inline-block;
+}

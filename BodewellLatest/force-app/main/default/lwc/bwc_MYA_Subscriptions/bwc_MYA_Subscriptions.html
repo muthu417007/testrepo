@@ -1,0 +1,105 @@
+<template>
+	<div if:true={isLoading} class="slds-align_absolute-center exampleHolder">
+		<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+	</div>
+		<!-- Agent S -->
+	<div if:true={isBodewellMember} class="slds-p-around_large" style={componentCss}>
+		<!-- Agent E -->
+		<div class="slds-grid slds-gutters" style={containerServiceCss}>
+			<div class="slds-col slds-size_1-of-6" style={bodewellServiceImageCss}>
+				<img style={imageHeight} class="slds-p-horizontal_medium" src={bodewellMembershipSub.Order_Product__r.Product2.BWC_Main_Image__c}></img>
+			</div>
+			<div class="slds-col slds-size_5-of-6" style={containerSizing}>
+				<div><span class="slds-text-heading_medium">Bodewell Membership</span></div>
+				<div><span>Membership includes discounts on products, parts, service and delivery</span></div>
+				<div if:true={enableManageSubscription} class="slds-p-top_large">
+					<a onclick={handleAccordianView}>Manage Subscription</a>
+					<svg if:true={expanded}
+						class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+						aria-hidden="true">
+						<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#chevronright">
+						</use>
+					</svg>
+					<svg if:false={expanded}
+						class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+						aria-hidden="true">
+						<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#chevronleft">
+						</use>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div if:true={expanded}>
+			<div class="slds-grid slds-gutters">
+				<div class="slds-col slds-size_1-of-6"></div>
+				<div class="slds-col slds-size_5-of-6">
+					<div>
+						<hr class="slds-m-vertical_x-small" />
+						<div style="display:flex;justify-content: space-between;" class="">
+							<div class="">Activation Date</div>
+							<div class="">{bodewellMembershipStartDate}</div>
+						</div>
+					</div>
+					<div>
+						<hr class="slds-m-vertical_x-small" />
+						<div style="display:flex;justify-content: space-between;" class="">
+							<div class="">Renewal Date</div>
+							<div class="">{bodewellMembershipExpDate}</div>
+						</div>
+					</div>
+					<div>
+						<hr class="slds-m-vertical_x-small" />
+						<div style="display:flex;justify-content: space-between;" class="">
+							<div class="">Cost</div>
+							<div class="">{bodewellMemebrshipCost}</div>
+						</div>
+					</div>
+					<div>
+						<hr class="slds-m-vertical_x-small" />
+						<div style="display:flex;justify-content: space-between;" class="">
+							<div class="">
+								<div>
+									Last Payment
+								</div>
+								<div>
+									<!-- Agent S -->
+									<a href="#" onclick={paymentHistoryRedirect}>
+										Payment History
+									</a>
+									<!-- Agent E -->
+								</div>
+							</div>
+							<div class="">{bodewellMembershipStartDate}</div>
+						</div>
+
+					</div>
+					<div>
+						<hr class="slds-m-vertical_x-small" />
+						<div style="display:flex;justify-content: space-between;" class="">
+							<div class="">
+								<div>
+									Payment Method
+								</div>
+								<!-- Agent S -->
+								<div if:true={isEnableUrl}>
+									<a href="#">
+										Update payment method
+									</a>
+								</div>
+								<!-- Agent E -->
+							</div>
+							<div class="">{bodewellMembershipPayment.CardType} ending in
+								{bodewellMembershipPayment.DisplayCardNumber}</div>
+						</div>
+					</div>
+					<!-- Agent S -->
+					<div if:true={isEnableUrl}>
+						<hr class="slds-m-vertical_x-small" />
+						<a href="#">Cancel Membership</a>
+					</div>
+					<!-- Agent E -->
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

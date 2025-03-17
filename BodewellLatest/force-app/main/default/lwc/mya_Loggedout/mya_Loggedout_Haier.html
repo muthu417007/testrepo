@@ -1,0 +1,15 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner style="height: 100%; color:inherit;" alternative-text="Loading" variant="brand"
+                size="large"></lightning-spinner>
+        </template>
+    </div>
+    <div class="main" if:false={isLoading}>
+        <div class="main-header">You are signed out.</div>
+        <div class="sub-header"> You have successfully signed out of your account.</div>
+        <div>
+            <a class="sign-in-link" href={href}>Back to sign-in</a>
+        </div>
+    </div>
+</template>

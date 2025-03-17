@@ -1,0 +1,112 @@
+<template>
+    <div class="banner">
+        <div class="slds-p-top_small text-left slds-align_absolute-center">
+            <ul class="slds-list_horizontal mob-flex text-left">
+                <li>
+                    <img src={shieldIcon} alt="" width="60px" height="60px"/>
+                </li>
+                <!-- <li class="bold-make">
+                    <span class="slds-text-heading_small">
+                        SAVE UP TO 20%
+                    </span>
+                </li> -->
+                <li class="slds-p-left_xx-small">
+                    <h4 class="text-left margin-set m-text-header"><span class="main-text-header">Save up to 20% </span> and Continue to Protect Your Investment! </h4>
+                </li>
+            </ul>
+        </div>
+        <div class="slds-m-top_medium">
+            <h2 class="text-left bold-sent">
+                Bodewell Care℠ can help keep your appliance running smoothly.
+            </h2>
+        </div>
+        <div class="slds-m-top_medium">
+            <h4 class="text-left normal-sent">
+                An appliance protection plan provides cost-effective, hassle-free protection that starts the day
+                <br> after your original manufacturer's warranty expires.
+            </h4>
+        </div>
+        <div class="slds-align_absolute-center slds-m-top_medium">
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-m-left_small">
+                    <div class="slds-col slds-size_12-of-12 slds-m-vertical_xx-small">
+                        <div>
+                            <ul class="slds-list_horizontal lst-hr">
+                                <li class="slds-media slds-media_small media">
+                                    <img src={checkIcon} alt="" class="tick-mark" />
+                                </li>
+                                <li>
+                                    <h4 class="list">Repaired or Replace</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-m-vertical_xx-small">
+                        <div>
+                            <ul class="slds-list_horizontal lst-hr">
+                                <li class="slds-media slds-media_small media">
+                                    <img src={checkIcon} alt="" class="tick-mark" />
+                                </li>
+                                <li>
+                                    <h4 class="list">Cancel Anytime</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-m-right_small">
+                    <div class="slds-col slds-size_12-of-12 slds-m-vertical_xx-small">
+                        <div>
+                            <ul class="slds-list_horizontal lst-hr">
+                                <li class="slds-media slds-media_small media">
+                                    <img src={checkIcon} alt="" class="tick-mark" />
+                                </li>
+                                <li>
+                                    <h4 class="list">100% Part and Repair Labor Coverage</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-m-vertical_xx-small">
+                        <div>
+                            <ul class="slds-list_horizontal lst-hr">
+                                <li class="slds-media slds-media_small media">
+                                    <img src={checkIcon} alt="" class="tick-mark" />
+                                </li>
+                                <li>
+                                    <h4 class="list">Up to $300 in Food Loss Coverage and
+                                        much more!</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div if:true={isGEA} class="slds-align_absolute-center slds-m-top_medium slds-p-vertical_xx-small">
+            <a class="slds-button slds-button_brand see-my-price-gea" href={seeMyPriceLink} target="_blank">
+                SEE MY PRICE
+            </a>
+        </div>
+        <div if:true={isCafe} class="slds-align_absolute-center slds-m-top_medium slds-p-vertical_xx-small">
+            <a class="slds-button slds-button_brand see-my-price-cafe" href={seeMyPriceLink} target="_blank">
+                SEE MY PRICE
+            </a>
+        </div>
+        <div if:true={isHaier} class="slds-align_absolute-center slds-m-top_medium slds-p-vertical_xx-small">
+            <a class="slds-button slds-button_brand see-my-price-haier" href={seeMyPriceLink} target="_blank">
+                SEE MY PRICE
+            </a>
+        </div>
+        <div if:true={isBodewell} class="slds-align_absolute-center slds-m-top_medium slds-p-vertical_xx-small">
+            <a class="slds-button slds-button_brand see-my-price-haier" href={seeMyPriceLink} target="_blank">
+                SEE MY PRICE
+            </a>
+        </div>
+    </div>
+
+</template>

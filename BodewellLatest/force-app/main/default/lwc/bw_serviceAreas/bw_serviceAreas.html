@@ -1,0 +1,49 @@
+<template>
+    <div class="servicearea-container">
+        <div class="servicearea-block" style="padding-top: 0px !important;">
+            <div class="service-locations">
+                <div>
+                    <!--Dynamic Location starts here-->
+                    <div class="locations-block">
+                        <div class="locations">
+                            <div class="location-flex">
+                                <template iterator:it={serviceAreaLocations}>
+                                    <div key={it.value.Id} class="location-flex-adjust">
+                                        <div class="details-loc">
+                                            <div class="icon-section">
+                                                <img class="locationpin-image" src={locationpinsvg} alt="location-pin">
+                                            </div>
+                                            <div class="location-section">
+                                                <div class="location">
+                                                    <a onclick={handleServiceLocation}
+                                                        class="location-title anchor-page-link"
+                                                        data-value={it.value.Id}>
+                                                        {it.value.Service_Area_Name__c}
+                                                    </a>
+                                                </div>
+                                                <div class="call-local">
+                                                    <span class="test-call-local">Call Local</span>
+                                                    <br>
+                                                    <div class="phone-number">
+                                                        <a onclick={mobileNumber} class="call-page-link phone" data-value={it.value.Id}>
+                                                            {it.value.Service_Area_Number__c}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="call-local-mobile">
+                                                    <a class="buttonCall buttonmobile" onclick={mobileNumber} data-value={it.value.Id}>
+                                                        {it.value.Service_Area_Number__c}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

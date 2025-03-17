@@ -1,0 +1,21 @@
+.feedback-button {
+     height: 2rem;
+     width: 8rem;
+     line-height: 32px;
+     color: white;
+     transform: rotate(90deg);
+     text-align: center;
+     font-size: 15px;
+     position: fixed;
+     right: -48px;
+     top: 70%;
+     font-weight: 100;
+     z-index: 999;
+     background-color: rgba(24, 63, 50, 1);
+ }
+ 
+ .feedback-button:hover {
+     text-decoration: none;
+     cursor: pointer;
+     color: white;
+ }

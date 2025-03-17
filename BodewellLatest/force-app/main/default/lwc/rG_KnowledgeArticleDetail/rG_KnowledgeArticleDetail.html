@@ -1,0 +1,84 @@
+<template>
+    <div if:false={isLoaded} class="lightningSpinner">
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    <div class="desk-about-section" if:true={isLoaded}>
+        <div class="serviceAreaPageHeaderBox">
+            <h1 class="serviceAreaPageHeader">
+                {content.Question__c}
+            </h1>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_small">
+            <lightning-breadcrumbs class="slds-m-bottom_large slds-m-top_medium">
+                <template for:each={breadcrumbs} for:item="crumbs">
+                    <lightning-breadcrumb if:true={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                        onclick={disableLink}>
+                    </lightning-breadcrumb>
+                    <lightning-breadcrumb if:false={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                        href={crumbs.url}>
+                    </lightning-breadcrumb>
+                </template>
+            </lightning-breadcrumbs>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item size="3">
+                <template if:true={overview}>
+                    <div class="main-anchor-sections">
+                        <c-r-G-_-Overview-_-List heading="Overview"
+                            listitem={content.Overview__c}></c-r-G-_-Overview-_-List>
+                    </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="9" class="slds-p-left_x-large">
+                <lightning-formatted-rich-text value={content.Solution__c}></lightning-formatted-rich-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <!-- Mobile view of Knowledge articles  -->
+    <div class="desktop-below" if:true={isMobileLoaded}>        
+        <div if:true={mobileArticles.hasStartText}>
+            <lightning-formatted-rich-text value={mobileArticles.startText}></lightning-formatted-rich-text>
+        </div>
+        <template for:each={mobileArticles.subItemList} for:item="item" for:index="index">
+        <div key={item.subItemHeading}>
+            <c-r-g_-accordian-view content-heading={item.subItemHeading} content={item.subItemContent}></c-r-g_-accordian-view>
+            <!-- <div class="content-box">
+                <template if:false={item.isOpen}>
+                    <lightning-layout class="accordian-set" >
+                        <lightning-layout-item size="11">
+                            <a onclick={showAll} class="showsall" data-id={index}>
+                                {item.subItemHeading}
+                            </a>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1">
+                            <a onclick={showAll} class="showsall showall-icons" data-id={index}>
+                                +
+                            </a>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+                <template if:true={item.isOpen}>
+                    <lightning-layout>
+                        <lightning-layout-item size="11">
+                            <a onclick={hideAll} class="showsall" data-id={index}>
+                                {item.subItemHeading}
+                            </a>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1">
+                            <a onclick={hideAll} class="showsall showall-icons" data-id={index}>
+                                x
+                            </a>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <div>
+                        <lightning-formatted-rich-text value={item.subItemContent}>
+                        </lightning-formatted-rich-text>
+                    </div>
+                </template>
+            </div> -->
+        </div>
+    </template>
+    <div class="fine-print"><span>*GE Appliances technicians carry an extensive parts inventory on their service trucks. In the event a part is not available on the service truck, a follow-up service call may be required.</span></div>
+    </div>     
+    <!-- <c-r-g_-accordian-view content-heading="" content=""></c-r-g_-accordian-view> -->
+</template>

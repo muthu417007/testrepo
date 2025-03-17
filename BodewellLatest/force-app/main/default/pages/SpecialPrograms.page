@@ -1,0 +1,22 @@
+<apex:page showHeader="false"  standardController="Case" extensions="SpecialProgramsController">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <script>
+        if('{!message}' != ''){
+            alert('{!programType}'  + "\n" + "\n" +       '{!programTitle}'  + "\n" + "\n" +    '{!description}'); 
+        } 
+    </script>
+    
+    <div class="slds-scope">
+    
+    <apex:form >
+    <button onclick="alert('{!programType}'  + '\n' + '\n' +  '{!programTitle}'  + '\n' + '\n' + '{!description}');">Special Programs</button>
+    <!-- <button onclick="alert('{!testString}');">Special Programs</button> -->
+    </apex:form>
+       <!--<apex:outputField value="{!SpecialPrograms[5].description__c}" style="color:red;"/>-->
+         
+       
+    </div>
+
+</apex:page>

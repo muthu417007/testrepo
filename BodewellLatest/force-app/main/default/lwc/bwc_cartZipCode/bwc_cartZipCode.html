@@ -1,0 +1,14 @@
+<template>
+    <template if:true={pickUpFlag}>
+        <lightning-card class="card">
+            <div class="box">
+                <div class="box-content">
+                    <strong> Home Delivery for </strong>
+                    <button class="zip slds-button" onclick={handleZipClick}>
+                        {zip}
+                    </button>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>

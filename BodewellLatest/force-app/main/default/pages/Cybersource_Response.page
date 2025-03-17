@@ -1,0 +1,84 @@
+<apex:page controller="CyberSource_HTTP_POST_Reader" action="{!init}" standardstylesheets="false" showHeader="false">
+<!-- 
+<style>
+    .demo {
+        border:1px solid #C0C0C0;
+        border-collapse:collapse;
+        padding:5px;
+    }
+    .demo th {
+        border:1px solid #C0C0C0;
+        padding:4px;
+        background:#F0F0F0;
+    }
+    .demo td {
+        border:1px solid #C0C0C0;
+        padding:4px;
+    }
+</style>
+<apex:outputPanel rendered="{!reasonCode=='100'}">
+    <h3> Cyber Source Response</h3>
+<table border='1' class="demo">
+    <tr>
+        <th>Case ID</th>
+        <th>Concession ID</th>
+        <th>Payment Token</th>
+    </tr>
+    <tr>
+        <th>{!caseId}</th>
+        <th>{!concessionId}</th>
+        <th>{!paymentToken}</th>
+    </tr>
+
+  <apex:repeat value="{!params}" var="key">
+   <tr>
+          <th> {!key}</th>
+           <apex:repeat value="{!params[key]}" var="value">
+          <th>   {!value}</th>
+         </apex:repeat>
+        <th>  -  </th>
+
+    </tr>
+  </apex:repeat>
+    
+</table>
+    
+    <br/>
+
+     --------------------
+<apex:repeat value="{!params}" var="pos">
+    <apex:outputText value="{!params[pos]}" /><br/>
+</apex:repeat>   
+    
+</apex:outputPanel>
+    
+    <apex:outputLabel rendered="{!reasonCode==null}" style="color:red">General system failure.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='101'}" style="color:red">One or more required fields was left blank.  Please complete and resubmit.</apex:outputLabel> 
+    <apex:outputLabel rendered="{!reasonCode=='102'}" style="color:red">One or more required fields contains invalid data.  Please correct and resubmit.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='150'}" style="color:red">Transaction Unsuccessful.  Please wait a few minutes and resend the request.  If this continues to be an issue, contact your systems department.</apex:outputLabel> 
+    <apex:outputLabel rendered="{!reasonCode=='151' || reasonCode=='152'}" style="color:red">Transaction Failed.  Contact your Developer/Manager to log into the Business Center to perform validations, then resubmit your transaction.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='200'}" style="color:red">Transaction Unsuccessful. Please verify billing address and contact your Developer/Manager to log into the Business Center to perform validations, then resubmit your transaction.  </apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='201'}" style="color:red">Transaction Unsuccessful.  Please validate card information or try another credit card.</apex:outputLabel> 
+    <apex:outputLabel rendered="{!reasonCode=='202'}" style="color:red">Card Expired.  Please validate card information or try another credit card.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='203' || reasonCode=='204' || reasonCode=='205' || reasonCode=='208' || reasonCode=='210' || reasonCode=='211'}" style="color:red">Card Declined.  Please validate card information or try another credit card.</apex:outputLabel> 
+    <apex:outputLabel rendered="{!reasonCode=='207'}" style="color:red">Transaction Unsuccessful.  Please wait a few minutes and resend the request.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='208'}" style="color:red">Card Declined.  Please validate card information or try another credit card.</apex:outputLabel> 
+    <apex:outputLabel rendered="{!reasonCode=='209' || reasonCode=='221' || reasonCode=='234' || reasonCode=='235' || reasonCode=='237' || reasonCode=='238' || reasonCode=='239' || reasonCode=='241' || reasonCode=='242' || reasonCode=='243' || reasonCode=='246' || reasonCode=='247'}" style="color:red">Do not resubmit.  Contact your systems department.</apex:outputLabel>  
+    <apex:outputLabel rendered="{!reasonCode=='230'}" style="color:red">Card Declined.  Please verify CVN information.  Card Verification Number (CVN), which is found on the back of the card, is required for settlement. Contact your Developer/Manager to log into the Business Center to perform validations, then resubmit your transaction.</apex:outputLabel>
+    <apex:outputLabel rendered="{!reasonCode=='231' || reasonCode=='233'}" style="color:red">Declined.  Please validate card information or try another credit card.</apex:outputLabel>
+    <apex:outputLabel rendered="{!reasonCode=='232'}" style="color:red">Card type not accepted.  Payment must be in the form of Visa or MasterCard.  Please validate card information or try another credit card.</apex:outputLabel>
+
+     <apex:outputLabel rendered="{!reasonCode=='240'}" style="color:red">The card type sent is invalid or does not correlate with the credit card number.  MasterCard numbers begin with '5', Visa numbers begin with '4'.</apex:outputLabel>
+    <apex:outputLabel rendered="{!reasonCode=='250'}"  style="color:red">Transaction Failed.  Contact your Developer/Manager to log into the Business Center to perform validations, then resubmit your transaction.</apex:outputLabel>
+-->    
+<script>
+    window.opener.postMessage({
+        reasonCode: '{!reasonCode}',
+        paymentToken: '{!paymentToken}',
+        concessionId: '{!concessionId}',
+        caseId: '{!caseId}',
+        params: '{!params}'
+    }, '*');
+    window.close();
+</script>
+</apex:page>

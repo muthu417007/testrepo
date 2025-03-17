@@ -1,0 +1,225 @@
+<template>
+    <div class="address-information-section">
+      <div class="grid-container">
+        <div class=".medium-12 medium-offset-0">
+          <div class="payment-title">
+            <span>ACCOUNT INFORMATION</span>
+          </div>
+          <div class="grid-x grid-margin-x" style="justify-content:center">
+            <!--<a onclick={modalHandler} class="cell address-card add-address-border add-address-card no-underline">
+              <p>
+                <span class="ss-plus font-size-17">
+                  <strong>
+                    +
+                  </strong>
+                </span>
+              </p>
+              <h3 class="other-h3">Add address</h3>
+            </a>-->
+            <template if:true={hasuserdata}>
+              <!--<template for:each={AddressList.data} for:item="item">-->
+                <div>
+                  <div>
+                    <template if:true={hasuserdata}>
+                      <div class="cell address-card add-address-card no-underline">
+                        <!--<div class="slds-float_left">
+                          <span class="primary-address-label">Account </span>
+                        </div>-->
+                        <div>
+                            <h3 class="other-h3-c">MY ACCOUNT</h3>
+                        </div>
+                        <table>  
+                        <tr if:true={udata.accountName}>
+                          <td><b>Account &nbsp;</b></td>
+
+                            <td> :&nbsp; {udata.accountName}</td>
+                        </tr>
+                        <tr if:true={udata.accountName}>
+                          <td><b>Billing Address &nbsp;</b></td>
+                          <td> :&nbsp; {udata.billingStreet} {udata.billingCity} {udata.billingState} {udata.billingZipcode} {udata.billingCountry}</p>
+                          </td>
+                          </tr>                        
+                        <tr if:true={udata.accountName}>
+                          <td><b>Shipping Address &nbsp;</b></td>
+                           <td> :&nbsp; {udata.shippingStreet} {udata.shippingCity} {udata.shippingState} {udata.shippingZipcode} {udata.shippingCountry} </p>
+                           </td>
+                          </tr>
+                        <tr if:true={udata.dealerName}>
+                          <td><b>Dealer Name &nbsp;</b></td>
+                          <td> :&nbsp; {udata.dealerName}</td>
+                        </tr>
+                        <tr if:true={udata.dealerId}>
+                          <td><b>Dealer Id &nbsp;</b></td>
+                          <td> :&nbsp; {udata.dealerId}</td>
+                        </tr>
+                        <tr if:true={udata.accountDealerStatus}>
+                          <td><b>Dealer Status &nbsp;</b></td>
+                          <td> :&nbsp; {udata.accountDealerStatus}</td>
+                        </tr>
+                        <tr if:true={udata.dealerVolume}>
+                          <td><b>Dealer Volume &nbsp;</b></td>
+                          <td> :&nbsp; {udata.dealerVolume}</td>
+                        </tr>
+                        <tr if:true={udata.brands}>
+                          <td><b>Brands &nbsp;</b></td>
+                          <td> :&nbsp; {udata.brands}</td>
+                        </tr>
+                        <tr if:true={udata.otherBrands}>
+                          <td><b>Other Brands &nbsp;</b></td>
+                          <td> :&nbsp; {udata.otherBrands}</td>
+                        </tr>
+                        <tr if:true={udata.anyBrandsReplace}>
+                          <td><b>Any Brands Replace ? &nbsp;</b></td>
+                          <td> :&nbsp; {udata.anyBrandsReplace}</td>
+                        </tr>
+                        <tr if:true={udata.productsOffered}>
+                          <td><b>Products Offered &nbsp;</b></td>
+                          <td> :&nbsp; {udata.productsOffered}</td>
+                        </tr>
+                        <tr if:true={udata.website}>
+                          <td><b>Website &nbsp;</b></td>
+                          <td> :&nbsp; {udata.website}</td>
+                        </tr>
+                        <tr if:true={udata.employees}>
+                          <td><b>Employees &nbsp;</b></td>
+                          <td> :&nbsp; {udata.employees}</td>
+                        </tr>
+                        <tr if:true={udata.otherDetails}>
+                          <td><b>Other Details &nbsp;</b></td>
+                          <td> :&nbsp; {udata.otherDetails}</td>
+                        </tr>
+                        <tr if:true={udata.partsofProgram}>
+                          <td><b>Parts of Program &nbsp;</b></td>
+                          <td> :&nbsp; {udata.partsofProgram}</td>
+                        </tr>
+                        <tr if:true={udata.companyName}>
+                          <td><b>Company Name &nbsp;</b></td>
+                          <td> :&nbsp; {udata.companyName}</td>
+                        </tr>
+                        <tr if:true={udata.phone}>
+                          <td><b>Phone &nbsp;</b></td>
+                          <td> :&nbsp; {udata.phone}</td>
+                        </tr>
+                        <tr if:true={udata.email}>
+                          <td><b>Email &nbsp;</b></td>
+                          <td> :&nbsp; {udata.email}</td>
+                        </tr>
+                        <tr if:true={udata.areaoffocus}>
+                          <td><b>Area of focus &nbsp;</b></td>
+                          <td> :&nbsp; {udata.areaoffocus}</td>
+                        </tr>
+                        <tr if:true={udata.zipCode}>
+                          <td><b>Zipcode &nbsp;</b></td>
+                          <td> :&nbsp; {udata.zipCode}</td>
+                        </tr>
+                        <tr if:true={udata.Licenses}>
+                          <td><b>Licenses# &nbsp;</b></td>
+                          <td> :&nbsp; {udata.Licenses}</td>
+                        </tr>
+                        <tr if:true={udata.branchLocation}>
+                          <td><b>Branch Location &nbsp;</b></td>
+                          <td> :&nbsp; {udata.branchLocation}</td>
+                        </tr>
+                        <tr if:true={udata.mfReplacement}>
+                          <td><b>MF Replacement(%) &nbsp;</b></td>
+                          <td> :&nbsp; {udata.mfReplacement}</td>
+                        </tr>
+                        <tr if:true={udata.mfNewConstruction}>
+                          <td><b>MF New Construction(%) &nbsp;</b></td>
+                          <td> :&nbsp; {udata.mfNewConstruction}</td>
+                        </tr>
+                        <tr if:true={udata.residentialNewConstruction}>
+                          <td><b>Residential New Construction(%) &nbsp;</b></td>
+                          <td> :&nbsp; {udata.residentialNewConstruction}</td>
+                        </tr>
+                        <tr if:true={udata.residentialReplacement}>
+                          <td><b>Residential Replacement(%) &nbsp;</b></td>
+                          <td> :&nbsp; {udata.residentialReplacement}</td>
+                        </tr>
+                        <tr if:true={udata.commercial}>
+                          <td><b>Commercial(%) &nbsp;</b></td>
+                          <td> :&nbsp; {udata.commercial}</td>
+                        </tr>
+                      </table>  
+                        
+                        <!--<p><strong>
+                            {item.Account__r.BillingStreet}
+                            <br>
+                            {item.Account__r.BillingCity},&nbsp;{item.Account__r.BillingState}&nbsp;{item.Account__r.BillingPostalCode}
+                          </strong>
+                        </p>-->
+                        </div>
+                    </template>
+                  </div>
+                </div>
+              <!--</template>-->
+            </template>
+            <template if:true={hasuserdata}>
+              <!--<template for:each={AddressList1.data} for:item="item">-->
+                <div>
+                  <div>
+                    <!--<template if:false={item.MYAISPrimary__c}>-->
+                      <div class="cell address-card add-address-card no-underline">
+                        <div>
+                            <h3 class="other-h3-c">MY CONTACT</h3>
+                          </div>
+                        
+                          <table>
+                          <!--<div if:true={udata.contactName}>-->
+                            <tr if:true={udata.contactName}>
+                              <td>
+                                <b>Name &nbsp;</b> 
+                              </td>
+                              <td>
+                                : {udata.contactName}
+                              </td>
+                            </tr>
+                            <tr if:true={udata.contactTitle}>
+                              <td>
+                                <b>Title &nbsp;</b>
+                              </td>
+                              <td>
+                                : {udata.contactTitle}
+                              </td>
+                            </tr>
+                            <tr if:true={udata.contactPhone}>
+                              <td>
+                                <b>Phone &nbsp;</b>  
+                              </td>
+                              <td>
+                                : {udata.contactPhone}
+                              </td>
+                            </tr>
+                            <tr if:true={udata.contactEmail}>
+                              <td>
+                                <b>Email &nbsp;</b>
+                              </td>
+                              <td>
+                                : {udata.contactEmail}
+                              </td>
+                            </tr>
+                            
+                          <!--</div>-->
+                          
+                        </table>
+                        <!--<p><strong>
+                            {item.Account__r.BillingStreet}
+                            <br>
+                            {item.Account__r.BillingCity},&nbsp;{item.Account__r.BillingState}&nbsp;{item.Account__r.BillingPostalCode}
+                          </strong>
+                        </p>
+                        <a data-value={item.Id} class="linkbutton" onclick={modalHandler1}>Edit Nickname</a>
+                        <input type="button" class="linkbutton" data-value={item.Id} value="Remove Address"
+                          onclick={DelmodalOpen} title="Remove" />
+                        <a data-value={item.Id} class="linkbutton" onclick={setPrimaryAddress}>Set as Primary</a>-->
+                      </div>
+                    <!--</template>-->
+                  </div>
+                </div>
+              <!--</template>-->
+            </template>
+            </div>
+        </div>
+      </div>
+    </div>
+  </template>

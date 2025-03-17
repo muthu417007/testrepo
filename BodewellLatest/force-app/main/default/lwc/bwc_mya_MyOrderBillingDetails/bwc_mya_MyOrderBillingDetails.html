@@ -1,0 +1,21 @@
+<template>
+  <div style={bgcolor}>
+          <template iterator:it= {orderBillingDetails}>
+            <div key={it.value.Id}>
+                  <template if:true={displayPaymentFlag}>
+                    <span class="details">Billing Details</span>
+                    <p style={itemTitle}>
+                    <c-bwc_-order-payment-summary rid={_rid} ></c-bwc_-order-payment-summary>
+                  </p>
+                  </template> 
+                      <div style={itemTitle}>
+                        <p class="slds-text-body_small"> {it.value.OrderSummary.BWC_Billing_Name__c} </p> 
+                        <p class="slds-text-body_small"> {it.value.OrderSummary.BillingStreet} </p> 
+
+                        <p class="slds-text-body_small"> {it.value.OrderSummary.BillingCity} ,{it.value.OrderSummary.BillingState} </p> 
+                        <p class="slds-text-body_small"> {it.value.OrderSummary.BillingPostalCode} </p>
+                      </div>
+                    </div>
+                  </template> 
+                </div>
+</template>

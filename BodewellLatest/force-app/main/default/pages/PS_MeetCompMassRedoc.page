@@ -1,0 +1,68 @@
+<apex:page standardController="Meet_Comp__c" extensions="PS_MeetCompMassRedoc_ctrl" recordSetVar="MeetComps" lightningStyleSheets="true" docType="html-5.0">
+
+<script>
+        function showToast(msg, type) {
+            var title = type == 'success' ? 'Success!' 
+                : type == 'error' ? 'Error!' 
+                : 'Warning.'; 
+            sforce.one.showToast({
+                "title": title,
+                "message": msg,
+                "type": type
+            });
+            if (type == 'warning') {
+                window.history.back();
+            }
+            
+        }    
+</script>
+    <apex:outputText rendered="{!not meetCompIsEligible}" id="meetCompIsNotValid">
+        <script>
+            sforce.one.showToast({
+                "title": "Error!",
+                "message": "{!$Label.PS_MEET_COMP_IS_NOT_ELIGIBLE}",
+                "type": "error"
+            });
+            window.history.back();
+        </script>
+    </apex:outputText>
+    <apex:form rendered="{!meetCompIsEligible}">
+        <apex:pageBlock title="Meet Comps to redoc">
+            <apex:pageMessages />
+            
+            <apex:pageBlockSection >
+                <apex:inputField label="{!$ObjectType.Meet_Comp__c.fields.Effective_Date__c.Label}" value="{!mcInput.Effective_Date__c}"/>
+                <apex:inputField label="{!$ObjectType.Meet_Comp__c.fields.Termination_Date__c.Label}" value="{!mcInput.Termination_Date__c}" required="true"/>
+                <apex:inputField label="{!$ObjectType.Meet_Comp__c.fields.Date_Competitive_Data_Received__c.Label}" value="{!mcInput.Date_Competitive_Data_Received__c}"/>
+                <apex:inputField label="{!$ObjectType.Meet_Comp__c.fields.Termination_Date_of_Competitive_Data__c.Label}" value="{!mcInput.Termination_Date_of_Competitive_Data__c}" required="true"/>                  
+                <apex:inputField label="{!$ObjectType.Meet_Comp__c.fields.GEA_Individual_who_received_the_data__c.Label}" value="{!mcInput.GEA_Individual_who_received_the_data__c}"/>
+            </apex:pageBlockSection>
+            
+            <p>The values above will be applied to all records selected.</p>
+            <p>If left blank, the redoced Meet Comp will have the same value.</p> 
+            
+            <apex:pageBlockTable value="{!MeetComps}" var="mc" Id="mcTable" rendered="{!containsSelectedRequests}">
+                <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Name.Label}">{!mc.Name}</apex:column>
+                <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.SKU__c.Label}">{!mc.SKU__c}</apex:column>
+                <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.MC_Type__c.Label}">{!mc.MC_Type__c}</apex:column>
+                <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.GEA_Meet_Comp_Price__c.Label}"><apex:inputField value="{!mc.GEA_Meet_Comp_Price__c}" required="true" /></apex:column>
+                <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Competitive_Invoice_Price__c.Label}"><apex:inputField value="{!mc.Competitive_Invoice_Price__c}" required="true"/></apex:column>
+            </apex:pageBlockTable>
+
+            <div align="center" draggable="false" >
+
+            <apex:panelGrid columns="3" id="paginationPanel" rendered="{!containsSelectedRequests}" style="align='center'">
+                <apex:commandLink action="{!Previous}" value="< Previous " rendered="{!HasPrevious}" reRender="mcTable, paginationPanel"/>
+                <apex:commandLink action="{!Next}" value="Next >" rendered="{!HasNext}" reRender="mcTable, paginationPanel"/>
+            </apex:panelGrid>
+            </div>
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" action="{!cancel}" immediate="true" html-formnovalidate="formnovalidate"/> 
+                <apex:commandButton action="{!saveRecords}" value="Confirm" reRender="."  oncomplete="showToast('{!submitResultMsg}', '{!result}');" disabled="{!containsSelectedRequests == false}"/> 
+            </apex:pageBlockButtons>
+  
+      </apex:pageBlock>
+   </apex:form>
+
+</apex:page>

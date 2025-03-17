@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Media Why Choose Us</masterLabel>
+    <description>Media Why Choose Us Component for REGA</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="heading1" label="Heading 1" type="String"  description="First Heading"/>
+            <property name="content1" label="Content 1" type="String"/>
+            <property type="ContentReference" name="icon1" label="Icon 1" filter="cms_image"/>
+            <property name="heading2" label="Heading 2" type="String"  description="Second Heading"/>
+            <property name="content2" label="Content 2" type="String"/>
+            <property type="ContentReference" name="icon2" label="Icon 2" filter="cms_image"/>
+            <property name="heading3" label="Heading 3" type="String"  description="Third Heading"/>
+            <property name="content3" label="Content 3" type="String"/>
+            <property type="ContentReference" name="icon3" label="Icon 3" filter="cms_image"/>
+            <property name="heading4" label="Heading 4" type="String"  description="Fourth Heading"/>
+            <property name="content4" label="Content 4" type="String" />
+            <property type="ContentReference" name="icon4" label="Icon 4" filter="cms_image"/>
+            <property name="heading5" label="Heading 5" type="String"  description="Fifth Heading"/>
+            <property name="content5" label="Content 5" type="String" />
+            <property name="bottommessage" label="Bottom Message" type="String" />
+            <property name="buttonLabel" label="ButtonLabel" type="String"  description="Button Label"/>
+            <property name="redirectionLink" label="Redirection Url" type="String" description="Redirection Link"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

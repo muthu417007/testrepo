@@ -1,0 +1,154 @@
+.product-tab-container {
+    margin: 6rem 0;
+}
+.product-tab-nav {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.flex-end-item {
+    align-items: flex-end !important;
+}
+.d-flex-price {
+    display: flex;
+}
+.product-tab-nav li {
+    cursor: pointer;
+    color: #12212e;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 1.5rem;
+    padding: 0 .5rem;
+    padding: 0 0.5rem 12px;
+    border-bottom: 4px solid;
+    border-color: transparent;
+}
+.product-tab-nav li:hover {
+    border-color: #FFC01F;
+}
+.product-tab-section {
+    width: 75%;
+    margin: 0 auto;
+}
+/* offsets the sticky header when user clicks link for auto scroll */
+[class^="product-section_"] {
+    scroll-margin-top: 100px;
+}
+.product-tab-section div {
+    height: auto;
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+.product-tab-hr {
+    border-top: 2px solid #B7B7B7;
+    margin: 0;
+}
+
+/*************************
+        Sticky Nav 
+**************************/
+.sticky-product-tab-nav {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: left;
+    border-top: 1px solid #707070;
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem 0 0 0;
+}
+.sticky-product-tab-nav li {
+    cursor: pointer;
+    color: #245B83;
+    font-size: .8125rem;
+    line-height: 24px;
+    letter-spacing: .32px;
+    font-weight: bold;
+    border-bottom: 3px solid;
+    border-color: transparent;
+    margin-right: 3rem;
+}
+.sticky-product-tab-nav li:hover {
+    border-color: #245B83;
+}
+.product-header--sticky {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    color: #12212E;
+    position: fixed;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    padding: 0.75rem;
+    -webkit-transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+    -o-transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+    transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+    z-index: 1000;
+}
+.product-header--sticky.is-active{
+    text-align: left;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    -webkit-transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+    -o-transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+    transition: opacity cubic-bezier(0, 0, 0.2, 1) 200ms;
+}
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.product-header--sticky__sku {
+    font-size: 14px;
+    padding-right: 22px;
+}
+.product-header--sticky__price {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@media (max-width: 1200px) {
+    .product-tab-nav li {
+        font-size: 14px;
+    }
+    .product-header--sticky__img img {
+        width: 75px;
+    }
+    .sticky-product-tab-nav li {
+        margin-right: 2em;
+    }
+}
+@media (max-width: 992px) {
+    .product-tab-section {
+        width: 100%;
+    }
+    .product-tab-container {
+        margin: 2rem 0;
+    }
+    .product-tab-nav li {
+      font-size: 12px;
+      margin: 0 14px;
+    }
+}
+@media (max-width: 768px) {
+    .product-tab-nav {
+        /* hiding section instead of display none so sticky pdp header will still work on mobile */
+        visibility: hidden;
+        height: 0;
+        flex-direction: column;
+    }
+}
+@media (max-width: 480px) {
+    .product-header--sticky.is-active{
+        justify-content: left;
+    }
+}

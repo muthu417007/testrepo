@@ -1,0 +1,24 @@
+<template>
+    <lightning-modal-header label={modalLabel}></lightning-modal-header>
+    <lightning-modal-body> 
+        <template for:each={itemsInList} for:item="item">
+            <div class="slds-grid slds-gutters slds-wrap slds-m-top_small productDetail" key={item.key}>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_5-of-12">
+                    <h1>{item.value}</h1>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_4-of-12">
+                    <h1>{item.key}</h1>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_3-of-12">
+                    <lightning-button label="Remove" title="Remove" data-id={item.key} onclick={handleItemDelet} class="deleteBUtton"></lightning-button>
+                </div>
+            </div>
+        </template>
+        <div class="image" key={item.key}>
+            <img src={image} class="imageCss"></img>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+    </lightning-modal-footer>
+</template>

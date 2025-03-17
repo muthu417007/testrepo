@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="caseId" type="String" label="Case Id" description="The case to be related to the contact" role="inputOnly"/>
+            <property name="showNewContactButton" type="Boolean" label="Show the New Contact Button?" description="Show the New Contact Button?" role="inputOnly" default="true"/>
+            <property name="contactId" type="String" label="Contact Id" description="The selected contact Id" role="outputOnly"/>
+            <property name="createNewContact" type="Boolean" label="Should create a new contact?" description="Should create a new contact?" role="outputOnly"/>
+            <property name="newContactData" type="String" label="New Contact Data" description="Input used in the contact search (email or phone)" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

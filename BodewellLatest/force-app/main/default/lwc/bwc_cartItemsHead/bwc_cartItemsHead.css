@@ -1,0 +1,26 @@
+.continueShopping{
+    text-decoration: solid;
+    text-decoration-color:#245B83 ;
+    padding: 5px;   
+    font-size: medium;
+}
+
+.cartTitle {
+    white-space: nowrap;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.cartTitle .cartName {
+    font-size: 30px;
+    padding-right: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.cartTitle .cartQuantity {
+    font-size: 20px;
+    margin-top: 10px;
+    flex-shrink: 0;
+}

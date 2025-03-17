@@ -1,0 +1,61 @@
+.details {
+    --slds-c-card-color-background: white;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.8px;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.order-page {
+    background-color: #DED1B1;
+}
+
+.itemTitle {
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.itemValue {
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+
+}
+
+.price {
+    margin: 15px;
+    --slds-c-card-color-background: white;
+}
+
+.image {
+    max-width: 10%;
+    height: auto;
+}
+
+.content .model {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+}
+
+.content1 {
+    height: 200px;
+    position: relative;
+    float: left;
+}
+
+.memberTotalvalue {
+    text-decoration: line-through;
+    margin-left: 5px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.itemTitleFree {
+    display: flex;
+
+}

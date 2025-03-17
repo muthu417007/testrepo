@@ -1,0 +1,55 @@
+<template>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-rich-text value={val}></lightning-formatted-rich-text>
+		</p>
+	<div if:true={materialStockandBrand}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class"
+				value="This item requires special handling and can only be shipped via ground transportation.">
+			</lightning-formatted-text>
+		</p>
+	</div>
+	<div if:true={SkuName}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class"
+				value="Please contact your local GEAppliances reseller to order."></lightning-formatted-text>
+		</p>
+	</div>
+	<div if:true={partStat}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class" value="No longer Available."></lightning-formatted-text>
+		</p>
+	</div>
+	<div if:true={restriction}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class" value="Not available for Consumer Online Purchase.">
+			</lightning-formatted-text>
+		</p>
+	</div>
+	<div if:true={partStatAndSuperCount}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class" value="Part MWF has been superseded to Part MWFP.">
+			</lightning-formatted-text>
+		</p>
+	</div>
+	<div if:true={isSuperSeded}>
+		<p class="text_class slds-p-top_xx-small">
+			No Longer Available - Item has being replace by part number {supersededPartItem}
+		</p>
+	</div>
+	<div if:true={quantityAndPartstat}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="text_class" value="Temporarily Out of Stock:">{etaDate}
+			</lightning-formatted-text>
+		</p>
+	</div>
+	<!-- <div if:false={isPurchasable}>
+		<div if:false={OOSFlag}>
+		<p class="slds-p-top_xx-small">
+			<lightning-formatted-text class="slds-text-align_center" value="This Model is No Longer Manufactured">
+			</lightning-formatted-text>
+		</p>
+		</div>
+	</div> -->
+
+</template>

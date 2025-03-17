@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG About Service Areas</masterLabel>
+    <description>About Us Service Areas</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="contentHeading" type="String" label="Content Heading" default="Content Heading"/>
+            <property name="content" type="String" label="Content" default="Content"/>
+            <property name="buttonLabel" type="String" label="Button Label" default="View service Areas"/>
+            <property name="navigationtype" label="Navigation type" type="String" description="Navigation Type" datasource="External Link,Site Page"/>
+            <property name="redirectionLink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="sectionId" type="String" label="Section ID" default="Service Area"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

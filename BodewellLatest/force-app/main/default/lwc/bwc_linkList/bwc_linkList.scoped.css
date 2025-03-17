@@ -1,0 +1,46 @@
+li {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: var(--com-c-link-list-anchor-text-color, var(--dxp-s-link-text-color));
+        &:hover {
+            color: var(--com-c-link-list-anchor-text-hover-color, var(--dxp-s-link-text-color-hover));
+        }
+        text-align: var(--com-c-link-list-text-alignment);
+        font-weight: var(--com-c-link-list-font-weight);
+        font-style: var(--com-c-link-list-font-style);
+        text-decoration: var(--com-c-link-list-decoration);
+        font-size: var(--com-c-link-list-font-size); 
+        font-family: var(--com-c-link-list-font-family);
+        a {
+            color: var(--com-c-link-list-anchor-text-color, var(--dxp-s-link-text-color));
+
+            &:hover {
+                color: var(--com-c-link-list-anchor-text-hover-color, var(--dxp-s-link-text-color-hover));
+            }
+        }
+    }
+} 
+.slds-is-nested {
+    margin-left: 0 !important;
+}
+.slds-is-nested li h3.c-bwc_linkList_bwc_linkList a.c-bwc_linkList_bwc_linkList {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    text-transform: capitalize !important;
+}
+h3 a {
+    color: #F7F1E7 !important;
+    text-decoration: none;
+    cursor: default;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+li.is-leaf h3 a {
+    font-size: 16px;
+    cursor: pointer;
+}

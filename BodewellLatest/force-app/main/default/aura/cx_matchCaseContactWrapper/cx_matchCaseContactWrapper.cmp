@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <c:cx_matchCaseContact recordId="{!v.recordId}" onrefreshpage="{! c.handlePageRefresh }"/>
+</aura:component>

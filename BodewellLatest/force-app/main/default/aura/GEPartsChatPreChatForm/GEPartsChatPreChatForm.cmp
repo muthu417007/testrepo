@@ -1,0 +1,187 @@
+<aura:component implements="lightningsnapin:prechatUI">
+	<!-- Pre-chat field components to render -->
+    <aura:attribute name="FirstNameAttr" type="String" description=""/> 
+    <aura:attribute name="LastNameAttr" type="String" description=""/> 
+    <aura:attribute name="EmailAddressAttr" type="String" description=""/> 
+    <aura:attribute name="QuestionAttr" type="String" description=""/>    
+
+	<!-- For Aura performance -->
+    <aura:locator target="startButton" description="Pre-chat form submit button."/>
+
+	<!-- Contains methods for getting pre-chat fields, starting a chat, and validating fields -->
+    <lightningsnapin:prechatAPI aura:id="prechatAPI"/>
+
+	<!-- After this component has rendered, call the controller's onRender function -->
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+
+<ui:scrollerWrapper class="scrollerSize">
+	<div id="rn_Container" class="rn_Container slds-scrollable">
+		<div id="rn_Body" class="slds-scrollable">
+			<div id="rn_MainColumn" role="main">
+				<a name="rn_MainContent" id="rn_MainContent"></a>
+
+				<br />
+				<img src="https://geappliances.custhelp.com/euf/assets/images/GEAppliances.jpg" />
+				<div id="rn_PageTitle" class="rn_LiveHelp">
+					<h1>Live Help</h1>
+				</div>
+
+				<div id="rn_PageContent" class="rn_Live">
+					<div class="rn_Padding">
+						<div id="rn_ChatLaunchFormDiv" class="rn_ChatForm">
+							<form id="rn_ChatLaunchForm" method="post" action="/app/chat/chat_landing" class="rn_ChatLaunchFormOpen">
+								<span class="rn_ChatLaunchFormHeader">Chat with a member of our support team</span>
+								<div id="rn_ErrorLocation"></div>
+								<div id="rn_TextInput_3" class="rn_TextInput rn_Input">
+									<div id="rn_TextInput_3_LabelContainer">
+										<label for="rn_TextInput_3_Contact.Name.First" id="rn_TextInput_3_Label" class="rn_Label">
+											First Name
+											<span class="rn_Required" aria-label="Required">*</span>                                
+										</label>
+									</div>
+									<ui:inputText class="field rn_Text" value="{!v.FirstNameAttr}" maxlength="80" required=""/>
+								</div>
+								<div id="rn_TextInput_5" class="rn_TextInput rn_Input">
+									<div id="rn_TextInput_5_LabelContainer">
+										<label for="rn_TextInput_5_Contact.Name.Last" id="rn_TextInput_5_Label" class="rn_Label">
+											Last Name
+											<span class="rn_Required" aria-label="Required">*</span>
+										</label>
+									</div>
+									
+									<ui:inputText class="field rn_Text" value="{!v.LastNameAttr}" maxlength="80" required=""/>
+								</div>
+								<div id="rn_TextInput_7" class="rn_TextInput rn_Input">
+									<div id="rn_TextInput_7_LabelContainer">
+										<label for="rn_TextInput_7_Contact.Emails.PRIMARY.Address" id="rn_TextInput_7_Label" class="rn_Label">
+											Email Address
+											<span class="rn_Required" aria-label="Required">*</span>
+										</label>
+									</div>
+									
+									<ui:inputEmail class="field rn_Text" value="{!v.EmailAddressAttr}" maxlength="80" required="true"/>
+								</div>
+								<div id="rn_TextInput_9" class="rn_TextInput rn_Input">
+									<div id="rn_TextInput_9_LabelContainer">
+										<label for="rn_TextInput_9_Incident.CustomFields.c.question" id="rn_TextInput_9_Label" class="rn_Label">
+											Question
+											<span class="rn_Required" aria-label="Required">*</span>
+										</label>
+									</div>
+									<ui:inputTextArea aura:id="question" value="{!v.QuestionAttr}" rows="8" resizable="true" cols="27"/>
+								</div>
+								<div id="rn_Store_Type" style="display:none">
+									<div id="rn_TextInput_11" class="rn_TextInput rn_Input">
+										<div id="rn_TextInput_11_LabelContainer">
+											<label for="rn_TextInput_11_Incident.CustomFields.c.store_type" id="rn_TextInput_11_Label" class="rn_Label">
+												Store Type                                
+											</label>
+										</div>
+										<input type="text" id="rn_TextInput_11_Incident.CustomFields.c.store_type" name="Incident.CustomFields.c.store_type" class="rn_Text" maxlength="255" value="http://www.geappliances.com/ge/service-and-support/contact.htm"/>
+									</div>
+								</div>
+								<div class="rn_Hidden" id="yui_3_18_1_3_1571149292260_15">
+									<div id="rn_SelectionInput_13" class="rn_SelectionInput rn_Input" Style="display:none">
+										<div id="rn_SelectionInput_13_LabelContainer">
+											<label for="rn_SelectionInput_13_Incident.CustomFields.c.brand" id="rn_SelectionInput_13_Label" class="rn_Label">Brand</label>
+										</div>
+										<select id="rn_SelectionInput_13_Incident.CustomFields.c.brand" name="Incident.CustomFields.c.brand">
+											<option value="">--</option>
+											<option value="1242">Cafe</option>
+											<option value="1243">Monogram</option>
+											<option value="1244" selected="selected">GE Appliances</option>
+											<option value="1245">Haier</option>
+											<option value="1252">Hotpoint</option>
+										</select>
+									</div>
+									<div id="rn_TextInput_15" class="rn_TextInput rn_Input" Style="display:none">
+										<div id="rn_TextInput_15_LabelContainer">
+											<label for="rn_TextInput_15_Incident.Subject" id="rn_TextInput_15_Label" class="rn_Label">
+												Subject
+												<span class="rn_Required" aria-label="Required">*</span>
+											</label>
+										</div>
+										<input type="text" id="rn_TextInput_15_Incident.Subject" name="Incident.Subject" class="rn_Text" maxlength="240" required="" value="GE Appliances Chat Session"/>
+									</div>
+								</div>
+								<!-- optional fields -->
+								<!-- <rn:widget path="input/CustomAllInput" table="incidents" chat_visible_only="true" /> -->
+								<br />
+								<!--            <p><a href="http://www.geappliances.com/privacy/privacy_policy.htm" target="_blank"> Click here</a> for the GE Appliances Privacy Policy.</p> -->
+
+								<!--<p>GE Appliances takes your privacy seriously. All information <br />you provide shall be held in strict accordance with the <br /><a href="http://www.geappliances.com/privacy/privacy_policy.htm" target="_blank" > GE Appliances Privacy Policy.</a></p>-->
+								<p>
+									We take your privacy seriously. All information <br />you provide shall be held in strict accordance with the <br /> 
+									<a href="http://www.geappliances.com/privacy/privacy_policy.htm" target="_blank" style="color: #c54b25;"> GE Appliances Privacy Policy.</a>
+								</p>
+
+           						<!--rn:widget path="custom/chat/ChatLaunchButton"
+							   open_in_new_window="true" launch_height="550"
+							   error_location="rn_ErrorLocation" /-->
+								<div id="rn_ChatLaunchButton_16" class="rn_ChatLaunchButton rn_FormSubmit">
+									<!--<input  type="button" id="rn_ChatLaunchButton_16_Button" value="Request Chat" /> onclick="c.checkInputs"
+									<input  style="display:block;" type="submit" value="Request Chat" id="prechat_submit"/> -->
+
+										<lightning:button aura:id="startButton" class="startButton" label="{!$Label.LiveAgentPrechat.StartChat}" onclick="{!c.handleStartButtonClick}"/>
+
+	                       			<span class="rn_Hidden">
+	                       				<!-- <input id="rn_ChatLaunchButton_16_Submission" type="checkbox" class="rn_Hidden" Style="display:none"/>-->
+	                       				<label for="rn_ChatLaunchButton_16_Submission" class="rn_Hidden">&nbsp;</label>
+	                       			</span>
+								</div>
+								<br /><br />
+								<input name="referrerUrl" type="hidden" value="https://www.geappliances.com/ge/service-and-support/contact.htm?icid=GEARtopnav-contact"/></form>
+                			</div>
+                			<h2 id="rn_ChatStatus_17" class="rn_ChatStatus rn_ChatHours">
+                			Chat support is available
+                			</h2>
+                			<!--commented this line -->
+                			<div id="rn_ChatHours_18" class="rn_ChatHours">
+	                   			<div id="rn_ChatHours_18_HoursLabel" class="rn_HoursLabel">
+	                   			Chat hours are listed below.    
+	                			</div>
+                   				<div id="rn_ChatHours_18_HoursBlock" class="rn_HoursBlock">
+	                   				<div>
+	                   					<span id="rn_ChatHours_18_HoursPrefix_0" class="rn_HoursPrefix">
+	                   						Monday - Friday:&nbsp;
+	                   					</span>
+	                   					<span id="rn_ChatHours_18_Hours_0" class="rn_Hours">
+	                   						09:00 AM - 05:00 PM EDT                
+	                   					</span>
+	                   				</div>
+	                   				<div>
+	                   					<span id="rn_ChatHours_18_HoursPrefix_1" class="rn_HoursPrefix">
+	                   						Saturday - Sunday:&nbsp;
+	                   					</span>
+	                   					<span id="rn_ChatHours_18_Hours_1" class="rn_Hours">
+	                   						Closed
+	                   					</span>
+	                   				</div>
+	                   			</div>
+                   			<div id="rn_ChatHours_18_CurrentTime" class="rn_CurrentTime">
+                   			It is currently Tuesday, Oct 15, 2019 10:21 AM EDT
+                			</div>
+						</div>
+
+            			<br />
+
+            			<!-- The display happens down here-->
+
+            			You may also contact Customer Service by calling:<strong> 1-800-626-2005</strong><br />
+            			<!--Note: Phone Customer Service available Monday-Friday, 8:00a.m.-10:00p.m. EST and Saturday 8:00a.m.-7:00p.m.-->
+            			Customer Service available Monday - Friday, 8:00 AM - 10:00 PM EST and Saturday, 8:00 AM - 7:00 PM EST<br /><!--added line: and Saturday 8:00a.m.-7:00p.m.-->
+            			Or you may<!-- <a href="http://www.geappliances.com/service_and_support/contact/" title="send a support email" target = "_Blank">-->
+               			<a href="https://geappliances.custhelp.com/app/ask_appliances/session/L3RpbWUvMTU3MTE0OTI5MS9nZW4vMTU3MTE0OTI5MS9zaWQvZlVNQ2hPV2pSbGROYnA4c1paSGl2c2dqVXRxWlU0SEkzaDFfenpIRUxUZlVxUSU3RUlxOURnb3FmeGVlSnRZV0tacCU3RXppMkp0VVdWcFl3TmM0cHJNWEdWc1lxdERnV0tGdGsxUDFONmd6VW13bXRSTlBkRGZ3TyU3RWdRJTIxJTIx" title="send a support email" target="_Blank" style="color: #c54b25;">
+               			click here</a> to send us an Email.<!--()--> <!--Uncomment the "$email" to display the email address-->
+               			<!-- stops here -->
+            			</div>
+					</div>
+				<!-- SiteCatalyst Page Code
+				Copyright 1997-2009 Omniture, Inc. More info available at
+				http://www.omniture.com -->
+				<!-- End SiteCatalyst Page Code -->
+			</div>
+		</div>
+	</div>
+</ui:scrollerWrapper>
+</aura:component>

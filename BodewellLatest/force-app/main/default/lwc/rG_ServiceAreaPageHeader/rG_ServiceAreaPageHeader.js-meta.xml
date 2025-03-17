@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Service Area Page Header</masterLabel>
+    <description>Service Area/Location Page Header</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="stateContentHeading" type="String"
+                label="Service Area State Page Content Heading"
+                default="FAST, RELIABLE APPLIANCE REPAIR" />
+            <property name="cityContentHeading" type="String"
+                label="Service Area City Page Content Heading"
+                default="EXPERT REPAIRS DONE RIGHT" />
+            <property name="stateContentBody" type="String"
+                label="Service Area State Page Content Body"
+                default="Whether it’s a leaky fridge, smoking oven, clogged dishwasher, or noisy dryer, unexpected appliance issues can disrupt your entire household routine. Rest assured, our expert technicians are well-equipped to quickly diagnose and resolve your appliance problem—often in a single visit*. Get back on track sooner: book a repair with GE Appliances Factory Service today." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

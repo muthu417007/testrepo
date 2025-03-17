@@ -1,0 +1,20 @@
+<template>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K342LPW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <template lwc:if={displayStickyHeader}>
+        <c-bwc_global-sticky-header></c-bwc_global-sticky-header>
+    </template>
+    <header data-f6-region class="bwc-header-container">
+        <slot name="bwc_header"></slot>
+    </header>
+    <main data-f6-region>
+        <div class="bwc-main-container">
+            <slot></slot>
+        </div>
+    </main>
+    <footer data-f6-region class="bwc-footer-container">
+        <slot name="bwc_footer"></slot>
+    </footer>
+    <div class="bwc-footer-copyright">
+        <slot name="bwc_copy"></slot>
+    </div>
+</template>

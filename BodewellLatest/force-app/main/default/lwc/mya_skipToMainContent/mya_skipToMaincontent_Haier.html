@@ -1,0 +1,11 @@
+<template>
+    <!--<div role="navigation" class="skipContent" aria-label="Skip to main content">
+       <button class="slds-button slds-button_neutral" onclick={handleClick}>
+        Skip to main content
+       </button>
+    </div>-->
+    <div role="navigation" aria-label="Skip to main content">
+        <!--<a class="link--skipToMain" href={SectionId}>Skip to main content</a>-->
+        <a class="link--skipToMain" href="javascript:void(0)" onclick={handleMainContent} data-target-id={SectionId}>Skip to main content</a>
+    </div>
+</template>

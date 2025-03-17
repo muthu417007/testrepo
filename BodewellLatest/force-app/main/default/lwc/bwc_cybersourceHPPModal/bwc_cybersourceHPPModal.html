@@ -1,0 +1,14 @@
+<template>
+    <lightning-modal-header label={_headerLabel}></lightning-modal-header>
+    <lightning-modal-body>
+        <template if:true={_showSpinner}>
+            <h1>Loading..., please wait.</h1>
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand" class="slds-m-top_large"></lightning-spinner>
+        </template>
+        <div>
+            <div>
+                <iframe src={iframe_url}></iframe>
+            </div>
+        </div>
+    </lightning-modal-body>
+</template>

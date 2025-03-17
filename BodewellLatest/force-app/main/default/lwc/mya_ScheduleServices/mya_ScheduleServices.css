@@ -1,0 +1,760 @@
+body {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+.header {
+    margin: 0 0 1em;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: xx-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 0.25px;
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    border: none;
+}
+
+.header2 {
+    margin: 0 0 10px 0;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: xx-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 0.25px;
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    border: none;
+}
+
+.sub-head {
+    margin: 0 0 1em;
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: xx-large;
+    margin-bottom: 2rem;
+}
+
+.para {
+    line-height: 1.5em;
+    font-size: 14px;
+}
+
+.head-text {
+    line-height: 1.3;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    display: block;
+    margin: 5px 0px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.btn {
+    margin-top: 24px;
+    margin-bottom: 1rem;
+}
+
+.THIS.btn {
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    border: none;
+    letter-spacing: 0.25px;
+    background: none;
+    padding-top: 0.5rem;
+}
+
+.payment-title {
+    margin-bottom: 1rem;
+    color: #555;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 1rem;
+    padding-bottom: 0px;
+    font-weight: 600;
+    font-size: 24px;
+    display: none;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.add {
+    line-height: inherit;
+    transition: color .15s ease;
+    background-color: transparent;
+    color: #004b3d;
+    text-decoration: none;
+    font-size: 0.8235294117647059rem;
+    font-weight: 500;
+}
+
+.container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.appliance-list>.cell {
+    margin-bottom: 2rem;
+    color: #004b3d;
+}
+
+.appliance-list {
+    margin-bottom: 1rem;
+    color: #555;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 0.2rem;
+    padding-bottom: 0px;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.close-icon {
+    color: transparent;
+    border: none;
+    display: none;
+    /*remove this if close icon is required */
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Gotham-Book';
+    background: transparent;
+    text-align: right;
+}
+
+.appliance-item {
+    text-align: right;
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.medium-up-2>.cell {
+    width: 50%;
+}
+
+.appliance-item {
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    height: auto;
+    min-height: 27rem;
+    margin: 1em;
+    width: 345px;
+    margin: 0rem;
+}
+
+.medium-offset-3 {
+    margin-left: 25%;
+}
+
+p.product-title,
+p.details-link {
+    color: #555;
+    padding: 0 1rem;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+}
+
+p.product-title:hover {
+    color: #1a63a2;
+    text-decoration: underline;
+}
+
+.appliance-item p:hover {
+    color: #1a63a2;
+    text-decoration: underline;
+}
+
+p a {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+a {
+    color: #1a63a2;
+}
+
+.padd {
+    padding: 0rem;
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #1a63a2;
+    color: #1a63a2;
+    border-bottom-width: 5px;
+    padding-bottom: calc(1rem - 4px);
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #1a63a2;
+    color: #1a63a2;
+    border-bottom-width: 4px;
+}
+
+.appliance-item-myProducts:hover input {
+    color: #1a63a2;
+}
+
+.appliance-item-myProducts:hover .close-icon {
+    color: #1a63a2;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.container:not(.full)>.grid-padding-x {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+}
+
+.appliance-item p {
+    text-align: center;
+    background-color: #fff;
+    color: #555;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.para a {
+    font-size: 0.8235294117647059rem;
+}
+
+.cell {
+    margin: 1rem;
+}
+
+.grid-x {
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+    justify-items: stretch;
+    align-content: space-between;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #003B71;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+div {
+    display: block;
+}
+
+.mainContent {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.address-list-section {
+    margin-bottom: 2rem;
+}
+
+.add-an-appliance>.grid-container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 71.5rem;
+}
+
+.add-an-appliance-inner {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.padding-top-3 {
+    padding-top: 3rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.add-an-appliance-links p {
+    margin-bottom: 0.5rem;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #1a63a2;
+    right: 0.5rem;
+    top: 0.5rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-Button {
+    font-size: 1em;
+    color: #1a63a2;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.closeIcon {
+    color: #1a63a2;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Gotham-Book';
+    background: transparent;
+    text-align: right;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 24px;
+    color: #1a63a2;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.reveal.add-address-modal {
+    top: 10%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 3px solid #1a63a2;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 500px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.okButton {
+    width: 90%;
+    background-color: #1a63a2;
+    color: white;
+    padding: 10px 20px;
+    border: solid 1px #1a63a2;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.okButton:hover {
+    background-color: #003B71;
+    color: #fff;
+}
+
+.cancelButton {
+    background-color: white;
+    border: 1px solid #1a63a2;
+    cursor: pointer;
+    width: 90%;
+    color: #1a63a2;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.cancelButton:hover {
+    background-color: #1a63a2;
+    color: white;
+    border: 1px solid #1a63a2;
+    cursor: pointer;
+}
+
+.reveal-overlay .modal-header {
+    padding-bottom: 0;
+    margin: 0 px !important;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.product-desc {
+    color: #555;
+    font-size: 14px;
+}
+
+.delete-message .removeproduct {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* footer {
+    text-align: center;
+    margin-top: 30px;
+} */
+
+.button-action {
+    width: 100%;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.address-heading {
+    color: black;
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0px;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    font-weight: 300;
+}
+
+.linkbutton {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.82357rem;
+    padding-bottom: 1rem;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: #003B71;
+}
+
+.slds-table {
+    margin-top: 25px;
+    background-color: #cfb8b8;
+}
+
+.tables1 {
+    background-color: #cfb8b8;
+}
+
+.status-image {
+    text-align: center;
+    margin-left: 20%;
+    width: 50%;
+    height: auto;
+}
+
+h5 {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.p1 {
+    font-weight: 100;
+    font-size: 22px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.twoComponent {
+    margin-top: 50px;
+}
+
+@media only screen and (max-width:39.9375rem) {
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 14rem;
+        margin: 0em 1em 2em;
+        width: auto;
+    }
+    .reveal {
+        overflow: visible;
+        border: 1px solid silver;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 95%;
+        max-width: 75rem;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #1a63a2;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #1a63a2;
+        /* display: none;*/
+        /*Uncomment this to remove close icon*/
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+    .product-desc {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        font-size: 0.875rem;
+        text-decoration: underline;
+    }
+    .para a {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (min-width:39.9375rem) and (max-width:768px) {
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .header {
+        font-size: 26px;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 19rem;
+        margin: 0em 1em 2em;
+        width: 19rem;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #1a63a2;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #1a63a2;
+        /* display: none; Uncomment this to remove close icon */
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+    .product-desc {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        font-size: 0.875rem;
+        text-decoration: underline;
+    }
+    .para a {
+        text-decoration: underline;
+    }
+    .header {
+        font-size: 26px;
+    }
+}
+
+.service_Box {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.p3 {
+    margin-top: 16px;
+}
+
+.p2 {
+    margin: 16px auto;
+}
+
+.track-link {
+    font-size: 1rem;
+}
+
+.track-link:hover {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #003B71;
+}
+
+@media only screen and (max-width:320px) {
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 10rem;
+        margin: 0em 1em 2em;
+        width: 70%;
+    }
+    .header {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,54 @@
+<template lwc:render-mode="light">
+
+    <div class={carouselPositionClasses}>
+        <!-- Product Image ( Desktop Flow ) -->
+        <c-bwc_gallery-image
+            if:false={isMobile}
+            class="slds-p-around_xx-small slds-border_top slds-border_right slds-border_bottom slds-border_left"
+            selectable={expandable}
+            url={url}
+            image-sizes={galleryImageSizes}
+            alternative-text={imageResolvedAlternativeText}
+            onselected={showModal}
+        ></c-bwc_gallery-image>
+
+        <!-- Product Image Carousel ( Desktop Flow ) -->
+        <c-bwc_carousel
+            if:true={showCarouselDesktop}
+            class="slds-p-around_small desktop-featured-image-carousel"
+            images={thumbnailImages}
+            orientation={carouselOrientation}
+            page-size={carouselPageSize}
+            paginate
+            selected-index={selectedImageIndex}
+            onselectionchanged={handleThumbnailImageSelected}
+            oncarouseldisplayed={handleCarouselDisplayed}
+        ></c-bwc_carousel>
+        <!-- Mobile display and dots -->
+        <c-bwc_horizontal-scroller
+            if:true={isMobile}
+            show-next-trigger={hasMultipleImages}
+            show-previous-trigger={hasMultipleImages}
+            onshownext={showNextImage}
+            onshowprevious={showPreviousImage}
+        >
+            <div aria-live="polite" aria-atomic="true">
+                <c-bwc_gallery-image
+                    class="mobile-gallery-image slds-p-around_xx-small slds-border_top slds-border_right slds-border_bottom slds-border_left"
+                    selectable={expandable}
+                    url={url}
+                    image-sizes={horizontalScrollerImageSizes}
+                    alternative-text={imageResolvedAlternativeText}
+                    onselected={handleImageClicked}
+                    loading="lazy"
+                ></c-bwc_gallery-image>
+            </div>
+        </c-bwc_horizontal-scroller>
+        <c-bwc_dot-indicators
+            if:true={showCarouselMobile}
+            count={numberOfImages}
+            selected-index={selectedImageIndex}
+        ></c-bwc_dot-indicators>
+    </div>
+
+</template>

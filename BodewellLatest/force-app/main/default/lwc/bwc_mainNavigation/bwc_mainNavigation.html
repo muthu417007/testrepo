@@ -1,0 +1,71 @@
+<template>
+    <!-- Navbar for desktop only -->
+    <nav class="navbar slds-show_large">
+        <ul class="top-nav-list">
+            <li class="dropdown" data-id="menu-1" onclick={displaySubMenu}>
+                <span class="dropbtn">{menu1Label}</span>
+            </li>
+            <li class="dropdown" data-id="menu-2" onclick={displaySubMenu}>
+                <span class="dropbtn">{menu2Label}</span>
+            </li>
+            <li class="dropdown" data-id="menu-3" onclick={displaySubMenu}>
+                <span class="dropbtn">{menu3Label}</span>
+            </li>
+            <li class="dropdown" data-id="menu-4" onclick={displaySubMenu}>
+                <span class="dropbtn">{menu4Label}</span>
+            </li>
+            <li class="header-search-desktop slds-show_large" >
+                <slot name="navSearch"></slot> 
+                <!-- <div class="search-container">
+                    <div>
+                        <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
+                    </div>
+                    <label class="searchbutton" for="searchright">
+                        <span>Search</span>
+                        <span class="icon">
+                            <svg viewBox="0 0 36 36">
+                                <path d="m35.18,35.18c-1.1,1.1-2.88,1.1-3.98,0l-8.42-8.42c-2.84,1.91-6.39,2.86-10.17,2.35C6.17,28.26.94,22.98.12,16.54-1.09,6.96,6.96-1.09,16.54.12c6.44.82,11.71,6.05,12.58,12.49.51,3.78-.44,7.33-2.35,10.17l8.42,8.42c1.1,1.1,1.1,2.88,0,3.98Zm-20.62-11.56c4.96,0,9-4.04,9-9s-4.04-9-9-9S5.56,9.66,5.56,14.62s4.04,9,9,9Z"/>
+                            </svg>
+                        </span>
+                    </label>
+                </div> -->
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Menu content and Mobile accordion view -->
+    <nav class="top-nav-menu-dropdowns">
+        <button class="accordion slds-hide_large" onclick={displayMobileMenu}>{menu1Label}</button>
+        <div class="panel">
+            <div class={menuOneClasses}> 
+                <div class="slot-container">
+                    <slot name="subMenu1"></slot> 
+                </div>
+            </div>
+        </div>
+        <button class="accordion slds-hide_large" onclick={displayMobileMenu}>{menu2Label}</button>
+        <div class="panel">
+            <div class={menuTwoClasses}> 
+                <div class="slot-container">
+                    <slot name="subMenu2"></slot> 
+                </div>
+            </div>
+        </div>
+        <button class="accordion slds-hide_large" onclick={displayMobileMenu}>{menu3Label}</button>
+        <div class="panel">
+            <div class={menuThreeClasses}> 
+                <div class="slot-container">
+                    <slot name="subMenu3"></slot> 
+                </div>
+            </div>
+        </div>
+        <button class="accordion slds-hide_large" onclick={displayMobileMenu}>{menu4Label}</button>
+        <div class="panel">
+            <div class={menuFourClasses}> 
+                <div class="slot-container">
+                    <slot name="subMenu4"></slot> 
+                </div>
+            </div>
+        </div>
+    </nav>
+</template>

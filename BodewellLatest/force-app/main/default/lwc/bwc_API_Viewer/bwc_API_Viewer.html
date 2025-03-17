@@ -1,0 +1,24 @@
+<template>
+	<lightning-modal-header label="API TESTING"></lightning-modal-header>
+	<lightning-modal-body>
+		<article class="slds-card">
+			<div class="slds-card__body slds-card__body_inner"><Strong>API TESTING</Strong><br><br><br><br>
+				<template for:each={muleList} for:item="mule">
+
+					<div key={mule.Id}>
+						<lightning-button key={mule.Id} variant="brand" label={mule.Name} title="RUN"
+							onclick={handleClick} value={mule.Name}>
+						</lightning-button>
+					</div>
+					<br key={mule.Id}>
+				</template>
+					<div class="slds-box">
+						<pre>{responseDisplay}</pre>
+					</div>
+			</div>
+		</article>	
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<!-- Footer here -->
+	</lightning-modal-footer>
+</template>

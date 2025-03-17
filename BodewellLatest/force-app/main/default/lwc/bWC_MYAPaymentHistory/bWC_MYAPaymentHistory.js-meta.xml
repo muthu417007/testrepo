@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>MYA Payment History</masterLabel>
+	<description>BWC MYA Payment History</description>
+	<targets>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="subscriptionLink" type="String" default="/mya-my-subscriptions" label="Subscription page URL" description="Subscription page URL"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

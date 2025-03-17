@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>58.0</apiVersion>
+  <isExposed>true</isExposed>
+  <masterLabel>Contact Us Form</masterLabel>
+  <targets>
+    <target>lightningCommunity__Page</target>
+    <target>lightningCommunity__Default</target>
+    <target>lightning__HomePage</target>
+
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightningCommunity__Default">
+      <property name="action" label="Action" type="String" description="Post Action Web to case"
+        default="https://geapp--bwcommoob.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" />
+
+      <property name="orgid" label="Organization Id" type="String" description="Id of current org"
+        default="00D8B0000004dYf" />
+      <property name="retURL" label="Redirect URL" type="String"
+        description="page url to navigate after submit of form"
+        default="https://geapp--bwcommoob.sandbox.my.site.com/bodewellCommerce/thankyou" />
+
+        <!-- <property name="ReasonForMessage" label="ReasonForMessage" type="String" default="{Please select....,Appliance Question,Appliance Complaint,Parts Question,Installation Help}" /> -->
+        <property name="reasonForMessageOptions" label="Reason For Message Options" type="String" default="Please select....,Appliance Question,Appliance Complaint,Parts Question,Installation Help" />
+
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

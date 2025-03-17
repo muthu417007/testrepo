@@ -1,0 +1,114 @@
+<template>
+    <div if:false={isbannerstrip}>
+        <div class="">
+            <div class="result_nearest_search_area slds-grid slds-wrap">
+                <div
+                    class="result_nearest-hero-head slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_4-of-12 slds-p-vertical_x-small">
+                    TRY ANOTHER CITY OR ZIP CODE</div>
+                <div
+                    class="result_nearest-inner_content slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_4-of-12 slds-p-vertical_x-small ">
+                    <div class="form-inline justify-content-center form-sumbit">
+                        <div class="form-group slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                            <div class="slds-form-element__control"> <input type="search"
+                                    class="result_nearest-inner_content_textbox form-control-lg" id="pincode_search"
+                                    required="" placeholder="Enter City or ZIP Code" value={searchValue}
+                                    onkeyup={handleChange}>
+                            </div>
+                            <div if:true={hasRecommendations}>
+                                <div class="address-recommendations" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid drp-down-bg"
+                                        role="presentation">
+                                        <template for:each={addressRecommendations} for:item="addressRecommendation">
+                                            <li key={addressRecommendation} role="presentation"
+                                                onclick={handleAddressRecommendationSelect}
+                                                data-value={addressRecommendation.place_id} class="slds-listbox__item">
+                                                <div
+                                                    class="slds-media__body slds-m-left_xx-small slds-m-bottom_xx-small">
+                                                    <div class="slds-grid slds-m-bottom_small">
+                                                        <div
+                                                            class="slds-listbox__option-text slds-listbox__option-text_entity">
+                                                            <b>{addressRecommendation.main_text}</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <input type="text" class="result_nearest-inner_content_textbox form-control-lg"
+                                id="pincode_search" required="" placeholder="Enter City or ZIP Code" autocomplete="off"> -->
+                        </div>
+                        <div class="result_nearest-wrapper-inner_btn_find">
+                            <a onclick={handleFindLocation} class="result_nearest-inner_content_btn_orange">FIND</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="result_nearest-inner_content slds-p-vertical_x-small slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-col slds-large-size_4-of-12">
+                    <div class="form-inline justify-content-center">
+                        <div class="form-group or">
+                            OR
+                        </div>
+                        <div class="result_nearest-wrapper-inner_btn">
+                            <a onclick={handleUseCurrentLocation} class="result_nearest-inner_content_btn_blue">USE MY
+                                CURRENT LOCATION</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div if:true={isbannerstrip}>
+        <div class="current-loc-banner slds-wrap slds-grid">
+            <div class="half-banner slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <div class="search-box-form slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" id="pincode_search_from">
+                    <!-- <div class="search-text-box">
+                        <input id="pincode_search_nav" class="hero-serviceArea-inner_content_textbox" name="address"
+                            type="text" required="" placeholder="  Enter City or ZIP Code" autocomplete="off">
+                    </div> -->
+                    <div class="search-text-box"> 
+                        <input type="search"
+                        class="hero-serviceArea-inner_content_textbox" id="pincode_search_nav"
+                        required="" placeholder="Enter City or ZIP Code" value={searchValue}
+                        onkeyup={handleChange}>
+                </div>
+                <div if:true={hasRecommendations}>
+                    <div class="address-recommendations" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid drp-down-bg"
+                            role="presentation">
+                            <template for:each={addressRecommendations} for:item="addressRecommendation">
+                                <li key={addressRecommendation} role="presentation"
+                                    onclick={handleAddressRecommendationSelect}
+                                    data-value={addressRecommendation.place_id} class="slds-listbox__item">
+                                    <div
+                                        class="slds-media__body slds-m-left_xx-small slds-m-bottom_xx-small">
+                                        <div class="slds-grid slds-m-bottom_small">
+                                            <div
+                                                class="slds-listbox__option-text slds-listbox__option-text_entity">
+                                                <b>{addressRecommendation.main_text}</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="index-inner-wrapper-inner_btn">
+                        <a class="hero-serviceArea-inner_content_btn_orange" id="hero-serviceArea_btn_orange_id"
+                            onclick={handleFindLocation}>FIND</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mob-only slds-small-size_12-of-12">OR</div>
+            <div
+                class="second-half-banner slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-col slds-large-size_6-of-12">
+                <a onclick={handleUseCurrentLocation} id="result_nearest_btn_blue"
+                    class="loc_nearest-wrapper-inner_btn"><span>USE MY
+                        CURRENT LOCATION</span></a>
+            </div>
+        </div>
+    </div>
+
+</template>

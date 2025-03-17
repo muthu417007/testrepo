@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="162px" height="200px" viewBox="0 0 162 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>895ACD8A-FE35-43C3-BFCC-0CC9C3D3DDB7</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="D-3.0-Resources" transform="translate(-1075.000000, -885.000000)">
+            <g id="Dishwasher" transform="translate(1063.000000, 885.000000)">
+                <g id="dishwasher" transform="translate(12.000000, 0.000000)">
+                    <path d="M0,0 L0,199.21 L161.929,199.21 L161.929,0 L0,0 Z M155.964,14.15 C155.814,14.162 103.287,14.15 80.918,14.15 C36.447,14.15 6.486,14.174 6.189,14.15 L5.798,14.118 L5.798,8.942 C6.338,8.963 60.452,8.942 80.918,8.942 C101.384,8.942 155.418,8.963 155.964,8.942 L155.964,14.15 Z" id="Path_76" fill="#12212E" fill-rule="nonzero"></path>
+                    <g id="Ellipse_2" transform="translate(76.500000, 174.722000)">
+                        <ellipse id="Oval" fill="#12212E" fill-rule="nonzero" cx="4" cy="3.5" rx="4" ry="3.5"></ellipse>
+                        <ellipse id="Oval" stroke="#707070" cx="4" cy="3.5" rx="3.5" ry="3"></ellipse>
+                    </g>
+                    <rect id="Rectangle_45" fill="#12212E" fill-rule="nonzero" x="7.5" y="9.722" width="147" height="3"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

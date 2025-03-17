@@ -1,0 +1,34 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+    </div>
+    <div class="deleteLink" if:false={isLoading}>
+        <a variant="brand" style="color:inherit;font-family:inherit;text-decoration:none" label="DELETE ACCOUNT"
+            onclick={handleClick} class="deleteLink">Delete Account
+        </a>
+        <template if:true={callModel}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Are you sure you want to delete Account?
+                            </b></p>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeModal}
+                            title="Cancel">Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={submitDetails}
+                            title="Confirm">Confirm</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </div>
+</template>

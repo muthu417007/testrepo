@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BW Image With Text</masterLabel>
+    <description>BW Image With Text</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">        
+            <property name="showicon" label="Show Icon" type="boolean"/>
+            <property name="imageiconid"  label="Icon Image" filter="cms_image" type="ContentReference"/>
+            <property name="imagewidth" label="Image Width(in rem)" type="Integer" />
+            <property name="calltextcontent" label="Call Text Content" type="String" description="Call Text"/>
+            <property name="content" label="Content" type="String" description="If any link you need to add please add like /linktext/ in the content."/>
+            <property name="redirectionlink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="callLink" label="Call Link" type="boolean"/>
+            <property name="contentSection" label="Class name for the content section for implementing custom css in stylesheet" type="String"/>
+            <property name="contentArea" label="Content Area" type="String" description="Content Area" default="body" datasource="header,body,footer"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

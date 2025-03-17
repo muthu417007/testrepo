@@ -1,0 +1,964 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    letter-spacing: 0.25px;
+    text-rendering: optimizeLegibility;
+}
+
+.siteforceStarterBody .cCenterPanel {
+    outline: none;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eff0f0;
+}
+
+.c-container {
+    background-color: #eff0f0;
+}
+
+.back-col {
+    background-color: #fff;
+    padding: 1rem 1rem 2rem 1rem;
+    width: 1161px;
+    margin: 0px auto;
+}
+
+.header {
+    background-color: transparent;
+    border: none;
+    color: #151515;
+    font-size: 28px;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: .25px;
+    margin-bottom: 3rem;
+    color: #000;
+    line-height: 1.4;
+}
+
+.para p {
+    margin-top: 0px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0rem;
+}
+
+.para>a {
+    text-decoration: underline;
+    color: #1a63a2;
+}
+
+.para>a:hover {
+    color: #32beff;
+}
+
+.payment-title {
+    margin-bottom: 1rem;
+    color: #151515;
+    text-transform: capitalize;
+    color: #151515;
+    text-align: center;
+    margin-top: 2rem;
+    display: none;
+    padding-bottom: 0px;
+    font-weight: 600;
+    border-bottom: none;
+    font-size: 24px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+.padd {
+    padding: 0rem;
+}
+
+.sub-head {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #151515;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0rem auto;
+}
+
+.head-text {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    color: #000;
+    margin: 0rem auto;
+}
+
+.schedule-service-btn {
+    background-color: #005aaa;
+    padding: 0.75em 3em;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 30px;
+    border-color: snow;
+    text-transform: capitalize;
+    line-height: 1rem;
+    transition: all .15s ease;
+    margin: 0 0 1em;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.schedule-service-btn:hover {
+    background-color: #32beff;
+    color: #fff;
+    background-color: #32beff;
+    border: solid 1px transparent;
+}
+
+.para {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 1rem;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #151515;
+    text-align: center;
+    padding: 0rem;
+}
+
+.body {
+    border: none;
+}
+
+
+/* .body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+    font-family: 'sans-serif' !important;
+    -webkit-text-size-adjust: 100%;
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif !important;
+} */
+
+.add {
+    line-height: inherit;
+    transition: color .15s ease;
+    background-color: transparent;
+    color: #004b3d;
+    text-decoration: none;
+    font-size: 0.8235294117647059rem;
+    font-weight: 500;
+}
+
+.container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.appliance-list>.cell {
+    margin-bottom: 2rem;
+    color: #32beff;
+}
+
+.appliance-list {
+    font-size: 24px;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    color: #151515;
+    letter-spacing: .25px;
+    margin-bottom: 3rem;
+}
+
+.medium-up-2>.cell {
+    width: 50%;
+}
+
+.appliance-item {
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    height: auto;
+    min-height: 28rem;
+    margin: 0em 1em 2em;
+    width: 320px;
+}
+
+.medium-offset-3 {
+    margin-left: 25%;
+}
+
+p.product-title,
+p.details-link {
+    color: #151515;
+    padding: 0 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #32beff;
+    color: #32beff;
+    border-bottom-width: 5px;
+    padding-bottom: calc(1rem - 4px);
+}
+
+.appliance-item-myProducts:hover input {
+    color: #32beff;
+}
+
+.appliance-item-myProducts:hover .product-desc {
+    color: #32beff;
+}
+
+.product-desc {
+    color: #151515;
+    text-align: center;
+}
+
+.appliance-item-myProducts:hover p {
+    color: #32beff;
+}
+
+.appliance-item-myProducts:hover .close-icon {
+    color: #32beff;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.container:not(.full)>.grid-padding-x {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+}
+
+.appliance-item p {
+    text-align: center;
+    background-color: #fff;
+    color: #151515;
+    padding: 1rem;
+}
+
+.grid-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-flow: wrap;
+    align-items: center;
+    justify-items: stretch;
+    align-content: space-between;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #32beff;
+}
+
+.capitalize {
+    text-transform: capitalize t;
+}
+
+.text-center {
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+.mainContent {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.address-list-section {
+    margin-bottom: 2rem;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.add-an-appliance-section {
+    margin-bottom: 8rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.add-an-appliance>.grid-container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 71.5rem;
+}
+
+.add-an-appliance-inner {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.padding-top-3 {
+    padding-top: 3rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.addAppliancesTitle {
+    padding-bottom: 2%;
+}
+
+h2 {
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.add-an-appliance-links p {
+    margin-bottom: 0.5rem;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #004b3d;
+    right: 0.5rem;
+    top: 0.5rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.closeButton {
+    font-size: 1em;
+    color: #151515;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-icon {
+    color: transparent;
+    border: none;
+    display: none;
+    /*remove this if close icon is required */
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    background: transparent;
+    text-align: right;
+}
+
+.closeIcon {
+    color: #151515;
+    border: none;
+    display: none;
+    /*remove this if close icon is required */
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    background: transparent;
+    text-align: right;
+}
+
+.appliance-item {
+    text-align: right;
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 24px;
+    color: #151515;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.reveal.add-address-modal {
+    top: 10%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 1px solid silver;
+    margin-bottom: 1em;
+    padding: 1rem 1rem;
+    width: 500px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #004b3d;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.button-action {
+    display: inline-block;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.okButton {
+    width: 90%;
+    background-color: #005aaa;
+    color: white;
+    padding: 10px 20px;
+    border: solid 1px #151515;
+    cursor: pointer;
+    margin-left: 8px;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.okButton:hover {
+    width: 90%;
+    background-color: #32beff;
+    color: white;
+    padding: 10px 20px;
+    border: solid 1px #151515;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.cancelButton {
+    background-color: white;
+    border: 1px solid #151515;
+    cursor: pointer;
+    width: 90%;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.cancelButton:hover {
+    background-color: #151515;
+    color: white;
+    border: 1px solid #151515;
+    cursor: pointer;
+    width: 90%;
+    padding: 10px 20px;
+}
+
+.reveal-overlay .modal-header {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.delete-message .removeproduct {
+    text-align: center;
+    letter-spacing: 0.25px;
+    margin: 0px auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-action {
+    width: 100%;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.address-heading {
+    color: black;
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 0px;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    font-weight: 300;
+}
+
+.linkbutton {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.slds-table {
+    margin-top: 25px;
+    background-color: #cfb8b8;
+}
+
+.tables1 {
+    background-color: #cfb8b8;
+}
+
+.status-image {
+    text-align: center;
+    margin-left: 20%;
+    width: 50%;
+    height: auto;
+}
+
+h5 {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.p1 {
+    font-weight: 100;
+    font-size: 22px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.twoComponent {
+    margin-top: 50px;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 5px 1rem;
+    text-align: center;
+    width: 1161px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    /* margin: 1rem 0; */
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .fielditem h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.fielditem>h3 {
+    color: white;
+    font-weight: 600;
+}
+
+.service_Box {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+    background-color: #fff;
+}
+
+.track-link {
+    font-size: 1rem
+}
+
+.track-link:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.p3 {
+    margin-top: 4px;
+}
+
+.p2 {
+    margin: 16px auto;
+}
+
+@media only screen and (max-width:39.9375rem) {
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        text-align: center;
+        width: 95%;
+        /* padding-left: 10rem; */
+        /* padding-right: 10rem; */
+    }
+    .back-col {
+        background-color: #fff;
+        padding: 1rem 1rem 2rem 1rem;
+        width: 95%;
+        margin: 0px auto;
+    }
+    .header {
+        background-color: transparent;
+        border: none;
+        color: #151515;
+        font-size: 28px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        letter-spacing: .25px;
+        margin: 1rem;
+        color: #000;
+        line-height: 1.4;
+    }
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 14rem;
+        margin: 0em 1em 2em;
+        width: auto;
+    }
+    .reveal {
+        overflow: visible;
+        border: 1px solid silver;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 95%;
+        max-width: 75rem;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        font-family: inherit;
+        color: #32beff;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #32beff;
+        display: none;
+        /*Uncomment this to remove close icon*/
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width:39.9375rem) and (max-width:768px) {
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        padding: 0 1rem;
+        text-align: center;
+        width: 95%;
+        /* padding-left: 10rem; */
+        /* padding-right: 10rem; */
+    }
+    .back-col {
+        background-color: #fff;
+        padding: 1rem 1rem 2rem 1rem;
+        width: 95%;
+        margin: 0px auto;
+    }
+    .header {
+        background-color: transparent;
+        border: none;
+        color: #151515;
+        font-size: 28px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        letter-spacing: .25px;
+        margin: 1rem;
+        color: #000;
+        line-height: 1.4;
+    }
+    .grid-x {
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+        width: 100%;
+        justify-items: stretch;
+        align-content: space-between;
+    }
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 19rem;
+        margin: 0em 1em 2em;
+        width: 19rem;
+    }
+    .container:not(.full)>.grid-padding-x {
+        /* margin-right: 0.9375rem; */
+        /* margin-left: 0.9375rem; */
+        margin: 0rem;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        font-family: inherit;
+        color: #32beff;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding-bottom: 1rem;
+    }
+    .close-icon {
+        color: #32beff;
+        display: none;
+        /*Uncomment this to remove close icon */
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+        background: transparent;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .appliance-item {
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        min-height: 28rem;
+        min-width: 10rem;
+        margin: 0em 1em 2em;
+        width: 70%;
+    }
+}

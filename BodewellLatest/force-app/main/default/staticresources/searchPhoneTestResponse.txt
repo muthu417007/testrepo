@@ -1,0 +1,191 @@
+{
+    "data": {
+        "HouseHoldByPhone": [
+            {
+                "Phone": [
+                    {
+                        "PhoneNumber": "3865854722",
+                        "IsPrimaryPhone": "1",
+                        "PhoneTypeName": "UNKNOWN",
+                        "PhoneUseTypeName": "RESIDENTIAL"
+                    }
+                ],
+                "Details": [
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": "167873493",
+                        "PersonDetailID": "73904084",
+                        "PersonID": "42184305"
+                    }
+                ],
+                "ClientPersonCode": null,
+                "FirstName": "Valued",
+                "Gender": null,
+                "IsDead": false,
+                "LastName": "Valued",
+                "MiddleName": null,
+                "PersonID": "42184305",
+                "Orders": [],
+                "EmailAddresses": [],
+                "plevel": "First",
+                "Salutation": null,
+                "Assets": [
+                    {
+                        "AssetClassName": "Major Appliances",
+                        "AssetID": "53713718",
+                        "AssetScrappedOn": null,
+                        "AssetShippedOn": null,
+                        "BrandName": "GE Profile",
+                        "CleansedModelNumber": "PSS26PSWSS",
+                        "IsProductReturned": "0",
+                        "LocationID": "2976029",
+                        "MACAddress": null,
+                        "OriginalEngineeringModelNumber": null,
+                        "OwnershipStartedOn": "2010-01-19T00:00:00.000Z",
+                        "ProductCategoryName": "Refrigerators",
+                        "ProductDescription": "REFRIGERATOR-SIDE-BY-SIDE",
+                        "ProductLineName": "Refrigeration",
+                        "SerialNumber": "DM432323"
+                    }
+                ],
+                "Locations": [
+                    {
+                        "LocationID": "2976029",
+                        "AddressLine1": "200 Frontier St",
+                        "AddressLine2": null,
+                        "Locality": "Palm Coast",
+                        "Region": "FL",
+                        "PostalCode": "321371442",
+                        "CountryCode": "USA"
+                    }
+                ]
+            },
+            {
+                "Phone": [
+                    {
+                        "PhoneNumber": "3865854722",
+                        "IsPrimaryPhone": "1",
+                        "PhoneTypeName": "UNKNOWN",
+                        "PhoneUseTypeName": "UNKNOWN"
+                    }
+                ],
+                "Details": [
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": "167873493",
+                        "PersonDetailID": "73920472",
+                        "PersonID": "3180362"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "73919493",
+                        "PersonID": "3180362"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": "167873493",
+                        "PersonDetailID": "1104811",
+                        "PersonID": "3180362"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "287259094",
+                        "PersonID": "3180362"
+                    }
+                ],
+                "ClientPersonCode": null,
+                "FirstName": "Sam",
+                "Gender": "M",
+                "IsDead": false,
+                "LastName": "Test",
+                "MiddleName": null,
+                "PersonID": "3180362",
+                "Orders": [],
+                "EmailAddresses": [],
+                "plevel": "First",
+                "Salutation": null,
+                "Assets": [],
+                "Locations": [
+                    {
+                        "LocationID": "2976029",
+                        "AddressLine1": "200 Frontier St",
+                        "AddressLine2": null,
+                        "Locality": "Palm Coast",
+                        "Region": "FL",
+                        "PostalCode": "321371442",
+                        "CountryCode": "USA"
+                    },
+                    {
+                        "LocationID": "75146658",
+                        "AddressLine1": "351 East Ave",
+                        "AddressLine2": null,
+                        "Locality": "Palm Coast",
+                        "Region": "FL",
+                        "PostalCode": "321373399",
+                        "CountryCode": "USA"
+                    }
+                ]
+            },
+            {
+                "Phone": [],
+                "Details": [
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "73823613",
+                        "PersonID": "42164931"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "287263854",
+                        "PersonID": "42164931"
+                    }
+                ],
+                "ClientPersonCode": null,
+                "FirstName": "Valued Customer",
+                "Gender": null,
+                "IsDead": false,
+                "LastName": null,
+                "MiddleName": null,
+                "PersonID": "42164931",
+                "Orders": [],
+                "EmailAddresses": [],
+                "plevel": "HouseHold",
+                "Salutation": null,
+                "Assets": [
+                    {
+                        "AssetClassName": "Major Appliances",
+                        "AssetID": "88593597",
+                        "AssetScrappedOn": null,
+                        "AssetShippedOn": null,
+                        "BrandName": "COMMON BRAND",
+                        "CleansedModelNumber": "TDX9SNSWH",
+                        "IsProductReturned": null,
+                        "LocationID": "2976029",
+                        "MACAddress": null,
+                        "OriginalEngineeringModelNumber": null,
+                        "OwnershipStartedOn": "1994-03-20T00:00:00.000Z",
+                        "ProductCategoryName": "Refrigerators",
+                        "ProductDescription": "REFRIGERATOR",
+                        "ProductLineName": "Refrigeration",
+                        "SerialNumber": "AR072496"
+                    }
+                ],
+                "Locations": [
+                    {
+                        "LocationID": "2976029",
+                        "AddressLine1": "200 Frontier St",
+                        "AddressLine2": null,
+                        "Locality": "Palm Coast",
+                        "Region": "FL",
+                        "PostalCode": "321371442",
+                        "CountryCode": "USA"
+                    }
+                ]
+            }
+        ]
+    }
+}

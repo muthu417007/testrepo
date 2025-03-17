@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Assets" icon-name='utility:fulfillment_order' id="cmpCard">
+        <div class="slds-m-horizontal_medium">
+            
+            <div if:true={showSpinner} class="slds-m-around_large">
+                <div  class="slds-is-relative">
+                    <lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+                </div>
+            </div>
+
+            <template for:each={assetInformation} for:item="iAsset" if:true={renderLines}>
+                <article class="slds-tile slds-hint-parent" key={iAsset.Id}>
+                    <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                        <div class="slds-col slds-size_7-of-8">
+                            <div class="slds-tile__detail">
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Model">Model:</dt>
+                                    <dd class="slds-item_detail slds-truncate">{iAsset.Model_Number__c}</dd>
+                                </dl>
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="SerialNumber">
+                                        SerialNumber:</dt>
+                                    <dd class="slds-item_detail slds-truncate">{iAsset.SerialNumber}</dd>
+                                </dl>
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="InstallDate">Install Date:</dt>
+                                    <dd class="slds-item_detail slds-truncate">{iAsset.InstallDate}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">
+                            <button class="slds-button slds-button_neutral" data-item={iAsset.Id} onclick={handleAddAsset} >Add</button>
+                        </div>
+                    </div>
+                    <hr class="solid">
+                </article>
+            </template>
+            <div if:true={showErrorMessage} class="slds-m-around_large">
+                {errorMessage}
+            </div>
+        </div>
+    </lightning-card>
+</template>

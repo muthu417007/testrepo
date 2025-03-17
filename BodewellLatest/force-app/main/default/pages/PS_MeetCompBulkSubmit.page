@@ -1,0 +1,50 @@
+<apex:page standardController="Meet_Comp__c" extensions="PS_MeetCompBulkSubmit_ctrl" recordSetVar="MeetComps" lightningStyleSheets="true">
+    <script>
+        function showToast(msg, type) {
+            var title = type == 'success' ? 'Success!' 
+                : type == 'error' ? 'Error!' 
+                : 'Warning.'; 
+            sforce.one.showToast({
+                "title": title,
+                "message": msg,
+                "type": type
+            });
+            
+            window.history.back()
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock title="Meet Comp records to be submitted">
+            <apex:pageMessages />
+            
+            <apex:pageBlockTable value="{!MeetComps}" var="mc" Id="mcTable" rendered="{!containsSelectedRequests}">
+                <apex:column value="{!mc.Account__c}"/>
+                <apex:column value="{!mc.Name}"/>
+                <apex:column value="{!mc.Created_by_Redoc__c}"/>
+                <apex:column value="{!mc.SKU__c}"/>
+                <apex:column value="{!mc.Effective_Date__c}"/>
+                <apex:column value="{!mc.Termination_Date__c}"/>
+                <apex:column value="{!mc.GEA_Meet_Comp_Price__c}"/>
+                <apex:column value="{!mc.GEA_Prior_Invoice_Price__c}"/>
+                <apex:column value="{!mc.Quantity__c}"/>
+                <apex:column value="{!mc.Quantity_without_Meet_Comp__c}"/>
+                <apex:column value="{!mc.MC_Type__c}"/>
+                <apex:column value="{!mc.GEA_Model__c}"/>
+                <apex:column value="{!mc.Stage_Name__c}"/>
+            </apex:pageBlockTable>
+            <div align="center" draggable="false" >
+
+            <apex:panelGrid columns="3" id="paginationPanel" rendered="{!containsSelectedRequests}" style="align='center'">
+                <apex:commandLink action="{!Previous}" value="< Previous " rendered="{!HasPrevious}" reRender="mcTable, paginationPanel"/>
+                <apex:commandLink action="{!Next}" value="Next >" rendered="{!HasNext}" reRender="mcTable, paginationPanel"/>
+            </apex:panelGrid>
+            </div>
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Back" reRender="." oncomplete="window.history.back()"/> 
+                <apex:commandButton action="{!submitForApproval}" value="Confirm" reRender="." disabled="{!containsSelectedRequests == false}" oncomplete="showToast('{!submitResultMsg}', '{!result}');"/> 
+            </apex:pageBlockButtons>
+  
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:appHostable,lightning:actionOverride,force:hasRecordId" access="global">
+<aura:attribute name="Account" type="Account"/>
+    <force:recordData aura:id="forceRecord"
+                      recordId="{!v.recordId}"
+                      fields="Id"/>
+    <div class="slds-modal__container" style="width:10%; height:100px;" autofocus="false">
+        <lightning:button class='hiddenButton'/>
+        <lightning:button aura:id='Current_Meet_Comps_Document' label="Current Meet Comps Document" title="Current Meet Comps Document" onclick="{!c.navigate}"/>
+        <lightning:button aura:id='Future_Meet_Comps_Document' label="Future Meet Comps Document" title="Future Meet Comps Document" onclick="{!c.navigate}"/>
+        <lightning:button aura:id='Customer_Meet_Comps_Document' label="Customer Document" title="Customer Document" onclick="{!c.navigate}"/>
+    </div>
+</aura:component>

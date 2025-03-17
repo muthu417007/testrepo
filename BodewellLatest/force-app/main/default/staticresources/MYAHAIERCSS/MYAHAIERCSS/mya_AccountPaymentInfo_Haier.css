@@ -1,0 +1,293 @@
+.back-color {
+    /* background-color: #EFF0F0; */
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    border-bottom: none;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+
+.payment-details-section {
+    max-width: 75%;
+    margin: 0px auto;
+    padding: 35px 0px;
+    color: #555;
+}
+
+.payment-details {
+    border-bottom: 1px Solid #555;
+    /* border-top: 1px Solid #555; */
+    padding: 15px 10px;
+    color: black;
+    background-color: white;
+}
+
+.payment-card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-card-info-details {
+    display: flex;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+    font-size: 1.1875rem;
+    font-weight: 700;
+}
+
+.payment-card-number {
+    padding: 0px 25px 0px 0px;
+}
+
+
+/* .payment-title {
+    letter-spacing: 1.5px;
+    font-size: 24px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-align: center;
+    height: 75px;
+    font-weight: 700;
+    margin: 10px auto;
+    padding: 25px;
+    justify-content: center;
+    background-color: #005AAA;
+    color: #fff;
+} */
+
+.payment-remove-link {
+    color: #005AAA;
+    font-weight: 700;
+    font-size: inherit;
+    margin: 0px 25px 0px 0px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.payment-edit-link {
+    color: #005AAA;
+    font-weight: 700;
+    font-size: inherit;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin: 0px 5px 0px 10px;
+}
+
+.payment-edit-link:hover {
+    text-decoration: none;
+    color: #005AAA;
+}
+
+.payment-remove-link:hover {
+    text-decoration: none;
+    color: #005AAA;
+}
+
+.payment-address-details {
+    margin: 15px 0px 0px 0px;
+}
+
+.payment-address-info {
+    display: grid;
+    line-height: 25px;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.delete-descr {
+    color: #151515;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-align: left;
+}
+
+.button-text {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    text-align: center;
+    /* margin-left: 1.65rem;
+    margin-right: 1.65rem; */
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    /* margin: 1rem 0; */
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .fielditem h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.fielditem>h3 {
+    color: white;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .payment-details-section {
+        max-width: 100%;
+        margin: 60px auto;
+        color: #555;
+        font-family: "Helvetica Neue", Helvetica, 'Roboto', Arial, sans-serif;
+    }
+    .payment-details {
+        border-bottom: 1px Solid #555;
+        border-top: 1px Solid #555;
+        padding: 15px 0px;
+    }
+    .payment-card-info {
+        display: block;
+        width: 100%;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .payment-card-info-details {
+        display: block;
+        padding: 2px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .payment-card-info-action {
+        margin: 1rem auto;
+        width: 100%;
+    }
+    .payment-card-number {
+        padding: 0px 25px 0px 0px;
+        text-align: center;
+        /* white-space: nowrap; */
+        line-height: 1.3;
+    }
+    .payment-title {
+        margin: 1px 0px 0 0px;
+        letter-spacing: 1.5px;
+        font-size: 24px;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        text-align: center;
+        padding-bottom: 5px;
+        color: #ffff;
+    }
+    .payment-remove-link {
+        padding: 0px 25px 0px 0px;
+        color: #005AAA;
+        font-weight: 700;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: inherit;
+        margin: 0px 5px 0px 0px;
+    }
+    .payment-edit-link {
+        color: #005AAA;
+        font-weight: 700;
+        font-size: inherit;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        margin: 0px 5px 0px 0px;
+    }
+    .payment-address-details {
+        margin: 15px 0px 0px 0px;
+        text-align: center;
+        padding: 2px;
+    }
+    .payment-address-info {
+        display: grid;
+        line-height: 25px;
+        text-align: center;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    }
+    .delete-descr {
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        letter-spacing: 0.25px;
+        text-align: center;
+    }
+    .button-text {
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media only screen and (min-width:39.938em) and ( max-width:768px) {
+    .payment-details-section {
+        max-width: 100%;
+        margin: 60px auto;
+        padding: 0px 0px;
+        color: #555;
+    }
+    .payment-card-info {
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0px 0rem;
+        text-align: center;
+    }
+}
+
+@media only screen and ( max-width:375px) {
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0px 0rem;
+        text-align: center;
+    }
+}

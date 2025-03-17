@@ -1,0 +1,277 @@
+<template>
+	<div if:true={offerMode} class="slds-grid slds-wrap slds-p-around_large" style="background-color:#12212E;">
+		<div class="slds-col slds-size_1-of-1 slds-text-align_right">
+			<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleStoreInfoClose}>
+							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+							</svg>
+							<span class="slds-assistive-text">Cancel and close</span>
+						</button>
+		</div>
+		<div class="slds-col slds-size_1-of-2 slds-p-right_large store-icon">
+			<img style="width:100%;object-fit:fill;height: 100%;" src={storeInfo.img} />
+                    </div>
+			<div class="slds-col slds-size_1-of-2 store-modal-header">
+				<lightning-formatted-rich-text value={storeInfo.promoCode}></lightning-formatted-rich-text>
+			</div>
+		</div>
+		<div if:false={offerMode} class="slds-grid slds-wrap">
+			<div class="slds-col slds-size_1-of-1 slds-text-align_right slds-p-horizontal_medium slds-p-top_medium"
+				style="background-color: #FFFFFF;">
+				<button class="slds-button slds-button_icon slds-modal__close" onclick={handleStoreInfoClose}>
+							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+							</svg>
+							<span class="slds-assistive-text">Cancel and close</span>
+						</button>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-align_absolute-center slds-p-bottom_x-large"
+				style="background-color: #FFFFFF;">
+				<img style="width:50%;" src={storeInfo.img} />
+                    </div>
+				<div if:false={showThankYou}
+					class="slds-col slds-size_1-of-1 slds-text-align_center slds-p-around_large"
+					style="background-color:#12212E;color:#FFFFFF;font-size:22px;">
+					Schedule an Appointment in Our Showroom
+				</div>
+			</div>
+			<div>
+				<div if:true={formSubmit}>
+					<div class="slds-spinner_container">
+						<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+							<span class="slds-assistive-text">Loading</span>
+							<div class="slds-spinner__dot-a"></div>
+							<div class="slds-spinner__dot-b"></div>
+						</div>
+					</div>
+				</div>
+				<div if:false={showThankYou} class="slds-grid slds-wrap slds-p-around_large store-offer-white-bg">
+					<div if:false={offerMode} class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Showroom Location</b>
+					</div>
+					<div if:false={offerMode}
+						class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								{storeInfo.address}
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>First Name</b>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small store-form">
+						<lightning-input variant="label-hidden" class="validate" read-only={hasUserInfo} type="text" value={contactFirstName} name="firstName"
+							onchange={handleChange} required></lightning-input>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Last Name</b>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<lightning-input variant="label-hidden" class="validate" read-only={hasUserInfo} value={contactLastName} type="text" name="lastName"
+							onchange={handleChange} required></lightning-input>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Email</b>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<lightning-input variant="label-hidden" class="validate" read-only={hasUserInfo} value={contactEmail} type="email" name="email"
+							onchange={handleChange} required></lightning-input>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Mobile Number</b>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<lightning-input variant="label-hidden" class="validate phone-validate" type="tel" name="phone"
+							onchange={handleChange} required={sendtext}></lightning-input>
+					</div>
+					<div if:false={offerMode} class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Preferred Date</b>
+					</div>
+					<div if:false={offerMode}
+						class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<lightning-input variant="label-hidden" class="validate" type="date" name="date"
+							onchange={handleChange} required></lightning-input>
+					</div>
+					<div if:false={offerMode} class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+						<b>Preferred Time</b>
+					</div>
+					<div if:false={offerMode}
+						class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_x-small">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<lightning-input variant="label-hidden" class="validate" type="time" name="time"
+									onchange={handleChange} required></lightning-input>
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-4">
+					</div>
+					<div if:true={offerMode}
+						class="slds-col slds-size_1-of-1 slds-large-size_3-of-4 slds-p-bottom_small">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<div class="slds-checkbox">
+									<!-- <lightning-input type="checkbox"
+										label="Send my offer via text. SMS charges may apply from your provider."
+										name="sendtext" onchange={handleChange}></lightning-input> -->
+									<div class="slds-grid">
+										<div class="slds-col slds-size_1-of-12">
+											<lightning-input type="checkbox" name="sendtext" onchange={handleChange}>
+											</lightning-input>
+										</div>
+										<div class="slds-col slds-size_11-of-12">
+											<div class="slds-form-element__label " for="horizontal-input-id-02">
+												Send my offer via text. SMS charges may apply from your provider.
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div if:false={offerMode} class="slds-col slds-size_1-of-1 slds-p-bottom_small">
+						<div>
+							Note: This is a tentative appointment request, we will contact you to confirm a fixed date
+							and time.
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-p-bottom_small">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<div class="slds-checkbox">
+									<div class="slds-grid">
+										<div class="slds-col slds-size_1-of-12">
+											<lightning-input type="checkbox" name="termsAgreed" onchange={handleChange}>
+											</lightning-input>
+										</div>
+										<div class="slds-col slds-size_11-of-12">
+											<div class="slds-form-element__label " for="horizontal-input-id-02">
+												I agree to the <a
+													href="https://www.geappliances.com/privacy/terms.htm">Terms of
+													Use</a> and have read the <a
+													href="https://www.geappliances.com/privacy/privacy_policy.htm">
+													Privacy Statement</a>.
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div if:true={termsUnchecked} class="slds-form-element slds-has-error">
+									<div class="slds-form-element__help" id="error-message-id-49">Please agree with
+										Terms of Use if you want to proceed.</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div class="slds-col slds-size_1-of-1 slds-p-bottom_small">
+						<div>
+							By submitting, you consent to us sharing your information with and to receiving emails from our Bodewell preferred partner. You also consent to receiving marketing emails from Bodewell. 
+							<a href="https://privacyportal-cdn.onetrust.com/dsarwebform/fe71a982-e17b-4683-a662-8d58d1aa889c/cc46aaf8-efd3-4e57-bfcb-d0412427a5ae.html"> Opt-out</a> at any time.</div>
+					</div>
+					<div if:false={offerMode} class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+						<div class="slds-align_absolute-center">
+							<button class="slds-button slds-button_brand store-offer-promo-button" disabled={formSubmit} onclick={handleRequest}>
+							REQUEST AN APPOINTMENT AND GET OFFER
+						</button>
+						</div>
+					</div>
+					<div if:true={offerMode} class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+						<div class="slds-align_absolute-center">
+							<button class="slds-button slds-button_brand store-offer-promo-button" disabled={formSubmit} onclick={handleRequest}>
+								<div>GET YOUR PERSONAL OFFER CODE</div>
+						</button>
+						</div>
+					</div>
+					<div if:true={offerMode} class="slds-col slds-size_1-of-1 slds-p-top_medium">
+						<div class="slds-p-bottom_x-small slds-text-body_small"><b>Promotion Terms</b></div>
+						<div>
+							<lightning-formatted-rich-text value={storeInfo.promoTerms}></lightning-formatted-rich-text>
+						</div>
+					</div>
+				</div>
+				<div if:true={showThankYou} class="slds-grid slds-wrap slds-p-around_large store-offer-white-bg">
+					<div
+						class="slds-col slds-size_1-of-1 slds-text-align_center slds-text-heading_large slds-p-bottom_small store-offer-confirm-msg-heading">
+						<b>Thank You!</b>
+					</div>
+					<div if:false={offerMode} 
+						class="slds-col slds-size_1-of-1 slds-text-align_center slds-p-bottom_x-small slds-p-horizontal_xx-large">
+						<div class="store-offer-confirm-msg-body">
+							{successAppointmentMessage}
+						</div>
+					</div>
+					<div
+						class="slds-col slds-size_1-of-1 slds-text-align_center slds-p-bottom_x-small slds-p-horizontal_xx-large">
+						<div class="store-offer-confirm-msg-body">
+							{successMessage}
+						</div>
+					</div>
+					<!-- <div if:false={offerMode}
+						class="slds-col slds-size_1-of-1 slds-text-align_center slds-text-heading_large slds-p-horizontal_xx-large slds-p-top_xx-large slds-p-bottom_small store-offer-confirm-msg-heading">
+						<b>
+							Thank you for your appointment request!
+						</b>
+					</div> -->
+					<!-- <div if:false={offerMode}
+						class="slds-col slds-size_1-of-1 slds-text-align_center slds-p-bottom_x-small slds-p-horizontal_xx-large">
+						<div class="store-offer-confirm-msg-body">
+							We will contact you to confirm a fixed date and time.
+						</div>
+					</div> -->
+					<div class="slds-col slds-size_1-of-1 slds-text-align_center">
+						<div class="slds-p-vertical_xx-small">
+							<div class="slds-p-bottom_xx-small">
+								<div class="store-offer-confirm-msg-info"> {storeInfo.address} </div>
+							</div>
+							<div class="slds-p-top_xx-small">
+								<a class="store-offer-link-section store-offer-confirm-msg-info"
+									href={storeInfo.phoneLink}>{storeInfo.phone}</a>
+							</div>
+						</div>
+						<div class="slds-p-vertical_xx-small">
+							<a class="store-offer-link-section store-offer-confirm-msg-info"
+								href={storeInfo.direction}>Get
+								Directions</a>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-p-vertical_xx-small slds-text-align_center">
+						<div if:true={storeInfo.storeStatus.isOpened}>
+							<div class="store-close store-offer-confirm-msg-info"
+								if:true={storeInfo.storeStatus.isClosing}>
+								<b>Closes soon:</b> {storeInfo.storeStatus.closingTime}.</div>
+						</div>
+						<div if:true={storeInfo.storeStatus.isOpened}>
+							<div class="store-open store-offer-confirm-msg-info"
+								if:true={storeInfo.storeStatus.isClosing}>
+								<b>Opens:</b> {storeInfo.storeStatus.nextDayStarting},
+								{storeInfo.storeStatus.nextDayOfWeek}.</div>
+						</div>
+						<div if:true={storeInfo.storeStatus.isOpened}>
+							<div class="store-open store-offer-confirm-msg-info"
+								if:false={storeInfo.storeStatus.isClosing}>
+								<b>Open:</b> Closes {storeInfo.storeStatus.closingTime}.</div>
+						</div>
+						<div if:false={storeInfo.storeStatus.isOpened}>
+							<div class="store-open store-offer-confirm-msg-info"
+								if:true={storeInfo.storeStatus.isOpening}>
+								<b>Opens soon:</b> {storeInfo.storeStatus.openingTime}.</div>
+						</div>
+						<div if:false={storeInfo.storeStatus.isOpened}>
+							<div class="store-close store-offer-confirm-msg-info"
+								if:false={storeInfo.storeStatus.isOpening}><b>Closed:</b> Opens
+								{storeInfo.storeStatus.nextDayStarting}, {storeInfo.storeStatus.nextDayOfWeek}.</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_1-of-1 slds-p-top_xx-large">
+						<div class="slds-p-vertical_xx-small slds-text-body_small">
+							<b>Promotion Terms</b>
+						</div>
+						<div class="slds-p-vertical_xx-small">
+							<lightning-formatted-rich-text value={storeInfo.promoTerms}></lightning-formatted-rich-text>
+						</div>
+					</div>
+				</div>
+			</div>
+</template>

@@ -1,0 +1,93 @@
+<template>
+	<template if:true={isZipcode}>
+		<div class="zip-text">
+			<p>Check Availability</p>
+		</div>
+		<div class="zip-container">
+			<input name="zipCodeInput"  placeholder="Enter your zip.."></input>
+			<button class="slds-button slds-button_brand" onclick={changeZipCodeHandler}>Check</button>
+
+		</div>
+
+		<p class="error">{error}</p>
+
+	</template>
+	<template if:false={ispickupDate}>
+		<template if:true={isEstimatedDate}>
+			<div class="icon-container">
+				<lightning-icon icon-name="utility:event"></lightning-icon>
+				<div class="productView-deliveryDate">
+					Estimated Delivery Date: <lightning-formatted-date-time value={estimatedDate} month="long"
+						day="2-digit" weekday="short"></lightning-formatted-date-time>
+				</div>
+			</div>
+		</template>
+	</template>
+	<div if:true={isShowShipMessage}>
+	<div if:true={isShowAddToCart}>
+		<p>
+			<lightning-formatted-text value="Ships in 2-7 Business Days">
+			</lightning-formatted-text>
+		</p>
+	</div>
+	</div>
+	<template if:true={ispickupDate}>
+		<!-- BDC-548 change start -->
+		<p>
+			<lightning-formatted-text class="text_class" value="Delivery not available in your area. Pick-up Only.">
+			</lightning-formatted-text>
+		</p>
+		<lightning-icon icon-name="utility:event"></lightning-icon>
+		<!-- BDC-548 change end -->
+		<div class="productView-deliveryDate">
+			Estimated Pickup Date: <lightning-formatted-date-time value={pickupDate} month="long" day="2-digit"
+				weekday="short"></lightning-formatted-date-time>
+		</div>
+	</template>
+	<div if:true={isOutOfStock}>
+		<lightning-formatted-rich-text
+			value="&lt;strong&gt;Temporarily Out of Stock.&lt;/strong&gt; &lt;br&gt;&lt;/br&gt; Earliest Available Date:">
+		</lightning-formatted-rich-text>
+		<lightning-formatted-text value={etaDate}>
+		</lightning-formatted-text>
+	</div>
+	<div if:true={isSuperSeded}>
+		<p class="text_class">
+			No Longer Available - Item has being replace by part number {supersededPartItem}
+		</p>
+	</div>
+	<div if:true={restriction}>
+		<p>
+			<lightning-formatted-text class="text_class" value="Not available for Consumer Online Purchase.">
+			</lightning-formatted-text>
+		</p>
+	</div>
+	<template if:true={isShowAddToCart}>
+		<c-bwc_product-details resolved-effective-account-id={resolvedEffectiveAccountId} record-id={recordId}
+			custom-display-fields={customDisplayFields}></c-bwc_product-details>
+	</template>	 
+
+	<template if:false={isShowAddToCart}>
+		<div if:false={isPurchasable}>		
+			<p>
+				<lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning" class="warning-icn"></lightning-icon>
+				<!-- slds-align_absolute-center slds-text-align_left -->
+				<lightning-formatted-text class="text_class slds-text-align_left" value="This Model is No Longer Manufactured">
+				</lightning-formatted-text>
+			</p>	  
+	    </div>
+		<template if:false={isOutOfStock}>
+			<template if:true={isPurchasable}>
+			<p>
+				<lightning-formatted-text class="text_class"
+					value="We do not offer a local Home Delivery or a Pick up location in your zip code. Please visit a local appliance retailer.">
+				</lightning-formatted-text>
+			</p>
+		</template>
+		</template>
+
+	</template>
+	
+
+
+</template>

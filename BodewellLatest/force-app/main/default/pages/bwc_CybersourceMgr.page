@@ -1,0 +1,12 @@
+<apex:page standardController="Contact" extensions="BWC_CyberSourceSignatureConfig">
+    <h1>Loading payment page...</h1>
+    <form name="form1" method="post" action="https://testsecureacceptance.cybersource.com/pay" >        
+        <apex:outputPanel id="formData">
+            <apex:outputText escape="false" value="{!parametersValues}" style="display:none"/>        
+            <apex:outputText escape="false" value="{!signedData}" style="display:none"/>
+        </apex:outputPanel>
+    </form>
+    <script>
+        document.forms['form1'].submit();
+    </script>
+</apex:page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brandValue" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe,Bodewell" description="Brand"/>
+            <property name="page_header" label="Page header" type="String" default="Page Header details" description="Enter Page Header"/>
+            <property name="more_info" label="More info header" type="String" default="More info header" description="Enter more info Header"/>
+            <property name="model_No_Header" label="ModelNo header" type="String" default="ModelNo header" description="Enter ModelNo Header"/>
+            <property name="serial_No_Header" label="SerialNo header" type="String" default="SerialNo header" description="Enter SerialNo Header"/>
+            <property name="nickName_Header" label="NickName header" type="String" default="Nickname header" description="Enter SerialNo Header"/>
+            <property name="location_Header" label="Location header" type="String" default="Location header" description="Enter location Header"/>
+            <property name="address" label="Address header" type="String" default="Address header" description="Enter Address Header"/>
+            <property name="city" label="City header" type="String" default="City header" description="Enter City Header"/>
+            <property name="state" label="State header" type="String" default="State header" description="Enter State Header"/>
+            <property name="zip_code" label="Zip/Postal header" type="String" default="Zip code" description="Enter zip/postal code Header"/>
+            <property name="nickName" label="Address NickName header" type="String" default="NickName" description="Enter NickName Header"/>
+            <property name="warranty" label="Warranty header" type="String" default="warranty" description="Enter Warranty Header"/>
+            <property name="Parts_Warranty" label="Parts Warranty header" type="String" default="Partswarrantydetails" description="Enter Parts Warranty Header"/>
+            <property name="Labor_Warranty" label="Labor Warranty header" type="String" default="Laborwarrantydetails" description="Enter Labor Warranty Header"/>
+            <property name="Warranty_Notes" label="Warranty Notes header" type="String" default="warrantynotesdetails" description="Enter Warranty Notes Header"/>
+            <property name="install_date" label="InstallationDate header" type="String" default="Installation Date header" description="Enter Installation Date Header"/>
+            <property name="RelatedParts" label="RealtedParts Section header" type="String" default="Related Parts" description="Enter RealtedParts Section Header"/>
+            <property name="bodewellWarrantyHeader" label="Bodewell Warranty Header" type="String" default="Bodewell Warranty Header" description="Enter Bodewell Warranty Header"/>
+            <property name="bodewellLaborWarranty" label="Bodewell Labor Warranty" type="String" default="Bodewell Labor Warranty" description="Enter Bodewell Labor Warranty Header"/>
+            <property name="bodewellPartsWarranty" label="Bodewell Parts Warranty" type="String" default="Bodewell Parts Warranty" description="Enter Bodewell Parts Warranty Header"/>
+            <property name="bodewellWarrantyNotes" label="Bodewell Warranty Notes" type="String" default="Bodewell Warranty Notes" description="Enter Bodewell Warranty Notes"/>
+        </targetConfig>
+    </targetConfigs>
+     
+</LightningComponentBundle>

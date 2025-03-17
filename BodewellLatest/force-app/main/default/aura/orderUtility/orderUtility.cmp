@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <Lightning:card>
+        <div class="slds-box">
+           <c:ordersSearch aura:id="ordersSearch"/> 
+           <lightning:messageChannel type="orderSearch__c"
+         onMessage="{!c.minimizeUtility}"/>
+           <lightning:utilityBarAPI aura:id="utilitybar" />
+        </div>
+    </Lightning:card>
+</aura:component>

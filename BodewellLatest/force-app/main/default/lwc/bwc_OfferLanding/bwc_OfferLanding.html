@@ -1,0 +1,87 @@
+<template>
+	<div class="slds-grid slds-wrap" if:false={isInvalid}>
+		<div class="slds-col slds-size_1-of-1 slds-p-bottom_large slds-align_absolute-center">
+			<img src={storeIcon} style="width: 20rem; object-fit: fill; height: 100%;">
+            </div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_large">
+				<div class="slds-text-align_center offer-message">
+					<lightning-formatted-rich-text value={storePromotionText}></lightning-formatted-rich-text>
+				</div>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_large slds-align_absolute-center">
+				<div class="qrcode2" id="qrcode2" style="height:250px;width:250px"></div>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-align_absolute-center" if:true={couponVisible}>
+				<hr class="slds-m-vertical_small" style="width:250px;margin:5px;"/>
+			</div>
+			<div if:true={couponVisible}
+				class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+				<div class="slds-text-align_center" style="width:150px;">
+					<div class="slds-m-vertical_small" style="font-size:22px;"><b>{couponcode}</b></div>
+				</div>
+				<!-- <button class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_small copy-code-button" style="background-color: transparent;color: rgb(36, 91, 131);" onclick={handleCopy}>
+					<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+						<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#copy"></use>
+					</svg>Copy
+				</button> -->
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-align_absolute-center slds-p-bottom_large" if:true={couponVisible}>
+				<hr class="slds-m-vertical_small" style="width:250px;margin:5px;" />
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_large slds-align_absolute-center">
+				<button class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_small view-code-button" onclick={handleViewCode}>
+					{viewCodeLabel} Coupon Code
+				</button>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_small slds-text-align_center offer-store-info">
+				<!-- 9347 Montgomery Rd, Cincinnati, OH 45242 -->
+				{storeAddress}
+			</div>
+			<div class="slds-col slds-size_1-of-1  slds-p-bottom_small slds-text-align_center offer-store-info">
+				<a href={storeDirection}>Get Directions</a>
+			</div>
+			<div if:true={storeTimimgStatus}
+				class="slds-col slds-size_1-of-1  slds-p-bottom_small slds-text-align_center offer-store-info">
+				<!-- Open: Closes 6 :30 p.m. -->
+				<div if:true={storeTimimgStatus.isOpened}>
+					<span if:true={storeTimimgStatus.isClosing}>Closes soon. </span>
+					<span if:true={storeTimimgStatus.isClosing}>{storeTimimgStatus.closingTime}.</span>
+				</div>
+				<div if:true={storeTimimgStatus.isOpened}>
+					<span if:true={storeTimimgStatus.isClosing}>Opens. </span>
+					<span if:true={storeTimimgStatus.isClosing}>{storeTimimgStatus.nextDayStarting}, {storeTimimgStatus.nextDayOfWeek}.</span>
+				</div>
+				<div if:true={storeTimimgStatus.isOpened}>
+					<span if:false={storeTimimgStatus.isClosing}>Open. </span>
+					<span if:false={storeTimimgStatus.isClosing}>Closes {storeTimimgStatus.closingTime}.</span>
+				</div>
+				<div if:false={storeTimimgStatus.isOpened}>
+					<span if:true={storeTimimgStatus.isOpening}>Opens soon. </span>
+					<span if:true={storeTimimgStatus.isOpening}>{storeTimimgStatus.openingTime}.</span>
+				</div>
+				<div if:false={storeTimimgStatus.isOpened}>
+					<span if:false={storeTimimgStatus.isOpening}>Closed. </span>
+				</div>
+				<div if:false={storeTimimgStatus.isOpened}>
+					<span if:false={storeTimimgStatus.isOpening}>Opens {storeTimimgStatus.nextDayStarting}, {storeTimimgStatus.nextDayOfWeek}.</span>
+				</div>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_xx-large slds-text-align_center offer-store-info">
+				<!-- (513) 942-9663 -->
+				<a href={storePhoneLink}>{storePhone}</a>
+			</div>
+			<div class="slds-col slds-size_1-of-1 slds-p-bottom_xx-small offer-footer">
+				<b>Promotion Terms</b>
+			</div>
+			<div class="slds-col slds-size_1-of-1 offer-footer">
+				<lightning-formatted-rich-text value={storePromotionTerms}></lightning-formatted-rich-text>
+			</div>
+		</div>
+		<div class="slds-grid slds-wrap" if:true={isInvalid}>
+			<div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+				<div class="slds-text-align_center">
+					<div class="slds-m-vertical_small" style="font-size:22px;">Offer not valid.</div>
+				</div>
+			</div>
+		</div>
+</template>

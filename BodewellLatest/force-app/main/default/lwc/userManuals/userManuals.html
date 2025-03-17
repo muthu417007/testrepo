@@ -1,0 +1,21 @@
+<template>
+  <div class="um_gridmargin">
+    <lightning-card title="MANUALS & SERVICE BULLETINS" icon-name="custom:custom33" label="User Manuals And Services" class="lgc-bg">
+        <ul class="slds-list_dotted">
+        <div style="height: 13vh;">
+
+            <div if:true={OwnerManualLink} class="slds-m-around_small">
+                <li>
+                  <a class="link icon-help" href={OwnerManualLink}
+                    target="_blank">
+                    <h3>USER CARE MANUAL - {modelno}</h3>
+                  </a>
+                </li>
+              </div>
+            
+        </div>
+        </ul>
+
+   </lightning-card>
+  </div>
+</template>

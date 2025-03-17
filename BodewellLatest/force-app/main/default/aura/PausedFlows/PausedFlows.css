@@ -1,0 +1,31 @@
+@media(max-width:700px){
+    .THIS .responsiveHide{
+        display : none !important;
+    }
+}
+
+@media(max-width:600px){
+    .THIS .responsiveHideLater{
+        display : none !important;
+    }
+}
+
+@media(max-width:500px){
+    .THIS .responsiveShrink{
+        width: calc(50vw - 30px);
+        white-space: nowrap; 
+        overflow-y: hidden; 
+        overflow-x: scroll; 
+        -webkit-overflow-scrolling: touch; 
+    }
+}
+
+.THIS .modal {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    overflow-y: auto;
+    
+}

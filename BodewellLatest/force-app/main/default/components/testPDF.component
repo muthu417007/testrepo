@@ -1,0 +1,19 @@
+<apex:component layout="none" access="global">
+    <apex:attribute name="concession" description="The concession." type="Concession__c" />
+    <h1 class="concession name">
+    Dear {!concession.Name_f__c}
+    <br/>
+    Your concession {!concession.Name}  ......
+    </h1>
+    <!--
+        SAMPLE EMAIL TEMPLATE:
+        <messaging:emailTemplate subject="test" recipientType="Contact" relatedToType="Concession__c">
+        <messaging:plainTextEmailBody >
+        Test PDF Attached
+        </messaging:plainTextEmailBody>
+        <messaging:attachment renderAs="pdf" filename="concessionLetter.pdf">
+            <c:testPDF concession="{!relatedTo}" />
+        </messaging:attachment>
+        </messaging:emailTemplate>
+    -->
+</apex:component>

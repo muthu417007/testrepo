@@ -1,0 +1,10 @@
+.backBtn{
+    background-color: black;
+    cursor:pointer;
+    position: relative;
+    left: -20px;
+}
+
+.backArrow{
+    --sds-c-icon-color-foreground-default: white;
+}

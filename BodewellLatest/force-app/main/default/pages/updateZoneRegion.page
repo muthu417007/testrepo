@@ -1,0 +1,12 @@
+<apex:page showHeader="false"  standardController="Case" extensions="updateZoneRegionController">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <div class="slds-scope">
+        <apex:form >
+            <apex:pageMessages />
+            <apex:commandButton action="{!updateZoneRegion}" value="Update Location Zone/Region" styleclass="slds-button slds-button_brand"/>
+        </apex:form>
+    </div>
+
+</apex:page>

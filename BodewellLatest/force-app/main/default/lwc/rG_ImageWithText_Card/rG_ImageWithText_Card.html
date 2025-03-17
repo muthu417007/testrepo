@@ -1,0 +1,43 @@
+<template>
+    <div class="index-inner-wrapper">
+        <div class="">
+            <div class="index-service_schedule_main_inner slds-grid">
+                <div class="index-service_schedule-img slds-large-size_2-of-12" style="margin-right:0px !important;">
+                    <img src={imageicon} class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="index-service_schedule_main_inner_content slds-large-size_10-of-12">
+                    <div class="index-service_schedule-head-text">
+                        {heading}
+                    </div>
+                    <div if:false={isPhoneNumber} class="index-service_schedule-content-text">
+                        {content}
+                    </div>
+                    <div if:true={isPhoneNumber} class="index-service_schedule-content-text">
+                        {beforeContent}
+                        <br />
+                        <a data-id="dni-phone" class="dni-phone-class" href={phoneLink}
+                            onclick={handleContact}>{phone}</a>
+                        {afterContent}
+                    </div>
+                </div>
+            </div>
+            <div class="index-service_schedule_main_inner slds-grid">
+                <div class="slds-large-size_2-of-12">
+                </div>
+                <div class="RG-button-cls slds-large-size_10-of-12 m-l-10" if:true={showicon}>
+                    <a class="RG_button-link" href={redirectURL}>
+                        <button class="custom-button-cmp addAlign btnColor side-cta" onmouseover={handleOverColor}
+                            onmouseleave={handleOutColor} onclick={handleClick}><i
+                                class="fa fa-calendar-check-o"></i>&nbsp;{buttonlabel}</button>
+                    </a>
+                </div>
+                <div class="RG-button-cls slds-large-size_10-of-12 m-l-10" if:false={showicon}>
+                    <a class="RG_button-link" href={redirectURL}>
+                        <button class="custom-button-cmp addAlign btnColor side-cta" onmouseover={handleOverColor}
+                            onmouseleave={handleOutColor} onclick={handleClick}>{buttonlabel}</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

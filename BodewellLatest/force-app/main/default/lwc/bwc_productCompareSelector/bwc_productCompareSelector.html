@@ -1,0 +1,20 @@
+<template>
+    <template if:true={isCompared}>
+        <div class="slds-grid">
+            <div class="">
+                <input class="product-compare-checkbox" type="checkbox" name="compare" checked onchange={handleCompare}/>
+            </div><div class="slds-col slds-p-horizontal_xx-small m-t-20">
+                <a onclick={handleCompareNow} class="product-compare-link">{compareText}</a>
+            </div>
+        </div>
+    </template>
+    <template if:false={isCompared}>
+        <div class="slds-grid">
+            <div class="">
+                <input class="product-compare-checkbox" type="checkbox" name="compare" onchange={handleCompare}/>
+            </div><div class="slds-col slds-p-horizontal_xx-small product-compare-text m-t-20">
+                {compareText}
+            </div>
+        </div>
+    </template>
+</template>

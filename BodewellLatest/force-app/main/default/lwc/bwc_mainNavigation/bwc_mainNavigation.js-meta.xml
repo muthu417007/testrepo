@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Main Navigation</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Menu Edit Mode" name="editMode" type="Boolean" description="When checked, this checkbox allows the builder to configure components within the modal regions. It will not have any impact on the published site" />
+            <property name="menu1Label" type="String" label="Menu 1 Label" description="Menu 1 Label" default="Menu 1"/>
+            <property label="Menu 1 Edit Mode" name="editMode1" type="Boolean" description="Edit Menu 1" />
+            <property name="menu2Label" type="String" label="Menu 2 Label" description="Menu 2 Label" default="Menu 2"/>
+            <property label="Menu 2 Edit Mode" name="editMode2" type="Boolean" description="Edit Menu 2" />
+            <property name="menu3Label" type="String" label="Menu 3 Label" description="Menu 3 Label" default="Menu 3"/>
+            <property label="Menu 3 Edit Mode" name="editMode3" type="Boolean" description="Edit Menu 3" />
+            <property name="menu4Label" type="String" label="Menu 4 Label" description="Menu 4 Label" default="Menu 4"/>
+            <property label="Menu 4 Edit Mode" name="editMode4" type="Boolean" description="Edit Menu 4" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

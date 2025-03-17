@@ -1,0 +1,27 @@
+<template>
+    <div class="global-header--sticky slds-clearfix slds-show_large">
+        <div class="header-logo slds-col slds-size_2-of-12">
+            <a title='Bodewell' href={homeUrl}>
+                <div class="global-header-emblem__logo slds-float_right">
+                    <img src={BODEWELL_LOGO}>
+                    <span class="slds-assistive-text">Bodewell</span>
+                </div>
+            </a>
+        </div>
+        <div class="slds-col slds-clearfix slds-size_10-of-12">
+            <div class="header-navigation--sticky slds-float_left">
+                <slot name="stickyNav"></slot> 
+            </div>
+            <div class="header-navigation-icons--sticky slds-float_right">
+                <!-- My Account / User Profile -->
+                <div class="header-profile slds-show_inline-block">
+                    <c-bwc_user-profile-menu></c-bwc_user-profile-menu>
+                </div>
+                <!-- Cart -->
+                <div class="header-cart slds-show_inline-block">
+                    <c-bwc_cart-badge></c-bwc_cart-badge>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

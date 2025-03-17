@@ -1,0 +1,10 @@
+<template lwc:render-mode="light">
+    <c-bwc_product-variant-selector
+        if:true={isDisplayable}
+        class="slds-p-vertical_small"
+        product={product}
+        buyer-group-names={buyerGroupNames}
+        onvariantselected={handleVariantOptionChanged}>
+        <div slot="heading"><slot name="heading"></slot></div>
+    </c-bwc_product-variant-selector>
+</template>

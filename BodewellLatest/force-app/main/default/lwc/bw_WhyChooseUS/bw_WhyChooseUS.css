@@ -1,0 +1,341 @@
+* {
+    font-family: 'canada-type-gibson';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.whychooseus {
+    border-top: 2px solid #dfd0b0;
+}
+
+.whychooseus {
+    max-width: 1920px;
+    margin: 0px auto;
+}
+
+.whychooseus-boxset {
+    display: flex;
+    flex-direction: row;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.whychooseus-container {
+    width: 1140px;
+    margin: 0px auto;
+}
+
+@media (min-width: 1400px) {
+    .whychooseus-container,
+    .service-center-container {
+        max-width: 1320px;
+    }
+}
+
+.coloum4set {
+    flex: 0 0 auto;
+    width: 33.3333%;
+}
+
+.coloum4set {
+    padding: 50px 0px;
+}
+
+.whychooseus-content {
+    text-align: center;
+}
+
+.whychooseus-textheading {
+    font-weight: 500;
+    font-size: 32px;
+    text-transform: none;
+    margin-top: 0;
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.whychooseus-content .fixed-width {
+    margin: auto;
+    width: 14rem;
+    font-size: 16px;
+    text-align: center;
+}
+
+.fixed-width p {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.button-area-wcu {
+    padding-top: 1.5rem;
+}
+
+.button-outline {
+    display: inline-block;
+    padding: 20px 0 20px 0;
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-outline span {
+    display: block;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.generic-button.primary-blue {
+    background-color: #145b95;
+    border: 2px solid #145b95;
+    color: #fff;
+}
+
+.generic-button {
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .45px;
+    line-height: 16px;
+    text-align: center;
+    padding: 14px 25px 14px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+}
+
+.generic-button.primary-blue:hover,
+.generic-button.primary-blue :active {
+    background-color: #0e2d44;
+    border: 2px solid #0e2d44;
+    color: #f7f1e7;
+    text-decoration: none;
+}
+
+.side-margin-set {
+    margin: 0px 1.5rem;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.margintop1 {
+    margin-top: 1rem;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-content img {
+    width: 50px;
+    margin-right: 2.5rem;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+.test-margin-check {
+    margin-right: 0.5rem !important;
+}
+
+.flex-headings {
+    margin-bottom: 0;
+    font-size: 22px;
+    margin-top: 0;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.flex-content div p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.service-center-block {
+    border-top: 2px solid #dfd0b0;
+}
+
+.service-center-block {
+    max-width: 1920px;
+    margin: 0px auto;
+}
+
+.borderright-set {
+    border-right: 2px solid #dfd0b0;
+}
+
+.service-center-container {
+    width: 1140px;
+    margin: 0px auto;
+}
+
+.service-center-container {
+    display: flex;
+}
+
+.call-to-shedule {
+    padding-left: 5rem;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.call-to-shedule .phone {
+    font-size: 22px;
+    color: #12212e;
+    font-weight: 500;
+}
+
+a.anchor-page-link:hover *,
+a.anchor-page-link :active * {
+    text-decoration: underline;
+    color: #3e5769;
+}
+
+a:focus {
+    outline-offset: 4px;
+    outline-color: #0073a8;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.business-hours {
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.business-hours span {
+    font-weight: 300;
+    font-size: 18px;
+    text-align: left;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.desktop-below {
+    display: none;
+}
+
+.margin15set {
+    margin-left: -1.5rem;
+}
+
+@media screen and (max-width:1000px) {
+    .whychooseus-boxset {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .whychooseus-container {
+        width: 95%;
+        margin: 0px auto;
+    }
+    .whychooseus {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .desktop-below {
+        display: block;
+    }
+    .coloum4set {
+        padding: 10px 0px;
+    }
+    .coloum4set {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .whychooseus-textheading {
+        text-align: left;
+        display: block;
+        padding-left: 2rem;
+        margin-bottom: 0rem;
+    }
+    .service-center-container {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    .service-center-block {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+    .call-to-shedule {
+        padding-left: 0rem;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 20px 0px 0px 0px;
+    }
+    .borderright-set {
+        border-right: none;
+    }
+    .business-hours {
+        padding-left: 0rem;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .fixed-width p {
+        font-size: 16px;
+        font-weight: 200;
+        padding: 10px 32px;
+        word-break: break-word;
+        text-align: left;
+    }
+    .button-adjust {
+        padding-top: 0rem;
+        text-align: center;
+    }
+    .phone-below-desktop {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 14px;
+    }
+    .anchor-page-link-for-mobile span {
+        color: #145b95;
+    }
+    .anchor-page-link-for-mobile {
+        border: 2px solid #145b95;
+        border-radius: 25px;
+        padding: 10px 0px;
+    }
+    .margintop21 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .business-hours span {
+        font-weight: 300;
+        font-size: 16px;
+        text-align: left;
+    }
+    .flex-content div p {
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+    .empty-row {
+        border-top: 2px solid #dfd0b0;
+    }
+    .padding-set-empty {
+        padding: 40px 0px;
+    }
+    .margin15set {
+        margin-left: 0rem;
+    }
+}

@@ -1,0 +1,45 @@
+<template>
+    <c-bwc_geolocate-zipcode updated-zipcode={updatedZipcode}></c-bwc_geolocate-zipcode>
+
+   
+    <button class="slds-button " onclick={openModalHandel}>
+       <svg  aria-hidden="true" class="slds-button__icon slds-button__icon_left icon" id="placeIconZipcode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 35.91">
+            <g id="placeIcon"><path class="d" d="m11.83,35.1C8.16,30.59,0,19.65,0,13.5,0,6.04,6.04,0,13.5,0s13.5,6.04,13.5,13.5c0,6.15-8.23,17.09-11.83,21.6-.86,1.08-2.47,1.08-3.33,0Zm1.67-17.1c2.48,0,4.5-2.02,4.5-4.5s-2.02-4.5-4.5-4.5-4.5,2.02-4.5,4.5,2.02,4.5,4.5,4.5Z"/></g></svg>
+        Enter Zip Code</button>
+
+    <template if:true={openModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+               
+                <div class="slds-modal__header">
+                    <div class="header-flex">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">See Availability in Your Area</h1>
+                    <button onclick={closeModal}
+                    class="slds-button slds-button_icon  slds-button_icon-border-filled ">
+                    <svg id="Close" style="color: black" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                            fill="black"></path>
+                    </svg>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+            </div>
+                </div>
+                <div class="slds-modal__content slds-modal_full-content slds-p-around_medium" id="modal-content-id-1">
+            <div class="zip-text">
+                <p>Enter your ZIP Code for the most up-to-date appliance inventory available for delivery in your area.</p>
+            </div>
+                <div class="zip-container">  
+                    <input name="zipCodeInput" value={zipCode}></input>
+                <button onclick={changeZipCodeHandler} >Continue</button>
+               
+                </div>
+                </div>
+             
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>

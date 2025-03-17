@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Product Compare</masterLabel>
+    <description>Provides Product Compare Functionality</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="searchResultsFields" type="String" default="BWC_Product_Marketing_Description__c, StockKeepingUnit, bwc_SwatchConfig__c, BWC_Is_Part__c, Is_Finished_Good__c, Is_Accessory__c, BWC_ProductSpecAndDetails__c, BWC_Main_Image__c" />
+            <property name="gridMaxColumnsDisplayed" type="String" default="4" datasource="1,2,3,4,5,6,7,8" />
+            <property name="gridColumnSpacing" type="String" default="none" datasource="none,small,medium,large" />
+            <property name="gridRowSpacing" type="String" default="small" datasource="none,small,medium,large" />
+            <property name="listRowSpacing" type="String" default="small" datasource="none,small,medium,large" />
+            <property name="cardBackgroundColor" type="Color" />
+            <property name="cardBorderColor" type="Color" />
+            <property label="Sale Banner Color" name="saleBannerColor" type="Color" default="#acc37e" />
+            <property label="Clearance Banner Color" name="clearanceBannerColor" type="Color" default="#12212e"/>
+            <property name="cardBorderRadius" type="String" default="1" datasource="1,2,3,4,5,6,7,8" />
+            <property name="cardAlignment" type="String" default="center" datasource="left,center,right" />
+            <property name="cardDividerColor" type="Color" />
+            <property name="showProductImage" type="Boolean" default="true" />
+            <property name="showNegotiatedPrice" type="Boolean" default="true" />
+            <property name="showOriginalPrice" type="Boolean" default="true" />
+            <property name="negotiatedPriceTextColor" type="Color" />
+            <property name="negotiatedPriceTextSize" type="String" default="medium" datasource="small,medium,large" />
+            <property name="originalPriceTextColor" type="Color" />
+            <property name="originalPriceTextSize" type="String" default="medium" datasource="small,medium,large" />
+
+            <!-- Card Content Mapping-->
+            <property
+                name="cardContentMapping"
+                type="String"
+                default='[{ "name": "BWC_Product_Marketing_Description__c", "showLabel": false, "label": "Product Name", "fontSize": "medium" }, { "name": "StockKeepingUnit", "showLabel": false, "label": "SKU", "fontSize": "medium" }]'
+            />
+
+            <!-- Call to Action Section -->
+            <property name="showCallToActionButton" type="Boolean" default="true" />
+            <property
+                name="addToCartButtonStyle"
+                type="String"
+                default="primary"
+                datasource=",primary,secondary,tertiary"
+            />
+            <property name="addToCartButtonText" type="String" translatable="true" default="Add to cart" />
+            <property name="addToCartButtonProcessingText" type="String" translatable="true" default="Adding..." />
+            <property name="viewOptionsButtonText" type="String" translatable="true" default="View options" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

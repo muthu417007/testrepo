@@ -1,0 +1,67 @@
+<template>
+    <div class="footer-container">
+        <div class="footer-adjust">
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="col-list  site-link-container">
+                        <a onclick={aboutUs} class="site-link anchor-page-link">About</a>
+                    </div>
+                    <div class="col-list  site-link-container">
+                            <a href={termURL}
+                            data-value={termURL}
+                            onclick={handleTerms}
+                            class="site-link anchor-page-link">Terms</a>
+                    </div>
+                    <div class="col-list   site-link-container">
+                        <a onclick={handleSiteMap} class="site-link anchor-page-link">Site Map</a>
+                    </div>
+                    <div class="col-list  site-link-container">
+                         <a href={privacyCenterURL}
+                        data-value={privacyCenterURL}
+                        onclick={handlePrivacy}
+                         class="site-link anchor-page-link">Privacy</a>
+                    </div>
+
+                    <div class="col-list  site-link-container">
+                        <a href={accessibilityStatementURL}
+                        data-value={accessibilityStatementURL}
+                        onclick={handleAccessibility}
+                        class="site-link anchor-page-link">Accessibility</a>
+                    </div>
+
+                    
+                    <div class="col-list  site-link-container">
+                        <a href={californiaPrivacyNoticeURL}
+                        data-value={californiaPrivacyNoticeURL}
+                        onclick={handleCaliforniaPrivacy}
+                        class="site-link anchor-page-link">California Privacy Notice</a>
+                    </div>
+
+                    <div class="col-list  site-link-container">
+                        <a onclick={handleClick} class="ot-sdk-show-settings site-link anchor-page-link">Cookie Settings</a>
+                    </div>
+                    
+                    <div class="col-list  site-link-container">
+                        <a href={doNotSellURL}
+                        data-value={doNotSellURL}
+                        onclick={handleDoNotSell}
+                        class="site-link anchor-page-link">Do Not Sell or Share my Personal Information</a>
+                    </div>    
+                </div>
+                <div class="bodewell-logo-footer">
+                    <div class="logo">
+                        <a class="nav-link--home" href="#">
+                            <img src={logosvg} alt="Bodewell logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copyright-text">
+                <div class="copyright">
+                    Copyright © 2023 GE Appliances, a Haier company.</div>
+            </div>
+        </div>
+    </div>
+</template>

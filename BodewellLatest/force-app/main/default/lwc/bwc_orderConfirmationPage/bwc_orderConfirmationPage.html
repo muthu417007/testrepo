@@ -1,0 +1,322 @@
+<template>
+	<div class="slds-grid slds-gutters">
+
+		<div class="slds-m-right_small slds-col slds-align_absolute_center slds-size_1.5-of-2">
+			<div class="slds-align_absolute_center ">
+
+				<!-- <template if:true={isMemberPresent}>
+					<div style="background-color : #12212e ; color : white; padding : 0"
+						class="slds-box slds-grid slds-gutters">
+						<div class="image-container slds-col slds-size_1-of-3" style="padding-left: 0;">
+							<img src={bannerImage} alt="Banner Image" />
+						</div>
+						<div class="text-container slds-col slds-size_2-of-3">
+							<p class="slds-text-body_large"
+								style="padding-top: 1rem; font-size: 2.3rem; font-weight: 900;">
+								Welcome to Bodewell!!
+							</p>
+							<p style="font-weight: 900;">As a reminder, member's will continue to enjoy savings on all
+								appliances and parts
+								purchanses in
+								addition to other great service benifits!
+							</p>
+						</div>
+					</div>
+				</template> -->
+				<div class="slds-p-top_medium">
+					<h3 class="header-address">Billing Details</h3>
+					<div class="slds-grid slds-gutters slds-wrap">
+						<div class="slds-col slds-size_1-of-3">
+							<p class="slds-text-body_medium header-para">Address</p>
+
+							<c-bwc_mya_-my-order-billing-details rid={rid}></c-bwc_mya_-my-order-billing-details>
+
+						</div>
+						<div class=" slds-col slds-size_1-of-3 slds-text-body_medium">
+
+							<p class="header-para">Payment Method</p>
+							<c-bwc_-order-payment-summary rid={rid}></c-bwc_-order-payment-summary>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="header-address slds-p-top_medium">Delivery Details</h3>
+				<div class="slds-grid slds-gutters">
+					<div class="slds-text-body_medium slds-col slds-size_1-of-3">
+						<p class="header-para">Delivery Address</p>
+						<template iterator:it={orderDeliveryDetails}>
+							<div key={it.value.Id}>
+
+
+								<p style="overflow-wrap: break-word;">
+									{it.value.DeliverToName} </p>
+								<p> {it.value.DeliverToStreet} </p>
+								<p> {it.value.DeliverToCity} ,{DeliverToState} </p>
+								<p>{it.value.DeliverToPostalCode} </p>
+
+								<br>
+							</div>
+						</template>
+					</div>
+
+					<div class="slds-col slds-size_1-of-3">
+						<p class="sslds-text-body_medium header-para">Delivery Date
+						</p>
+						<template if:true={homeDeliveryItem}>
+							<div class="productView-services">
+
+								<div class="d-flex align-items-top justify-content-spaceBetween">
+									<div>
+										<h2 class="productView-services-title">
+											<span class="iconDelivery slds-icon slds-icon_xx-small">
+												<svg id="inhome" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 40.5 36">
+													<g id="inhomec">
+														<g id="inhomed" class="e">
+															<g class="e">
+																<path class="f"
+																	d="m40.49,17.96c0,1.27-1.05,2.26-2.25,2.26h-2.25l.05,11.26c0,.2-.01.38-.04.57v1.14c0,1.55-1.26,2.81-2.81,2.81h-1.12c-.08,0-.15-.06-.23,0-.1-.06-.2,0-.29,0h-3.97c-1.55,0-2.81-1.26-2.81-2.81v-6.19c0-1.24-1.01-2.25-2.25-2.25h-4.5c-1.24,0-2.25,1.01-2.25,2.25v6.19c0,1.55-1.26,2.81-2.81,2.81h-3.93c-.11,0-.21,0-.32-.01-.08,0-.17.01-.25.01h-1.12c-1.55,0-2.81-1.26-2.81-2.81v-7.88c0-.06,0-.13,0-.2v-4.89h-2.25c-1.27,0-2.25-.99-2.25-2.26,0-.63.21-1.2.7-1.69L18.73.56c.49-.49,1.05-.56,1.55-.56s1.05.14,1.48.49l17.95,15.78c.56.49.85,1.05.77,1.69Z" />
+															</g>
+														</g>
+													</g>
+												</svg>
+											</span>
+											<span>IN-HOME
+												DELIVERY</span>
+										</h2>
+										<div class="productView-services-text">
+											<p>Major
+												appliance
+												order
+												ship once all items are available
+
+											</p>
+											<p><strong>Estimated
+													Delivery
+													Date: {deliveryDate}</strong>
+
+
+											</p>
+										</div>
+									</div>
+
+								</div>
+
+
+
+							</div>
+						</template>
+
+
+
+						<template if:true={pickUpItem}>
+							<div class="productView-services">
+
+								<div class="d-flex align-items-top justify-content-spaceBetween">
+									<div>
+										<h2 class="productView-services-title">
+											<span class="iconDelivery slds-icon slds-icon_xx-small">
+												<svg id="pickupb" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 45 35.83">
+
+													<g id="pickupc">
+														<g id="pickupd" class="e">
+															<g class="e">
+																<path class="f"
+																	d="m0,34.14V11.87c0-1.84,1.12-3.5,2.83-4.18L21.66.16c.54-.21,1.14-.21,1.67,0l18.84,7.53c1.71.68,2.83,2.34,2.83,4.18v22.27c0,.94-.75,1.69-1.69,1.69h-3.38c-.94,0-1.69-.75-1.69-1.69V15.51c0-1.18-1.01-2.25-2.25-2.25H9c-1.25,0-2.25,1.07-2.25,2.25v18.63c0,.94-.76,1.69-1.69,1.69H1.69c-.93,0-1.69-.75-1.69-1.69ZM9,15.58h27v5.62H9v-5.62Zm0,7.88h27v4.5H9v-4.5Zm1.69,12.38c-.94,0-1.69-.75-1.69-1.69v-3.94h27v3.94c0,.94-.75,1.69-1.69,1.69H10.69Z" />
+															</g>
+														</g>
+													</g>
+												</svg>
+											</span>
+											<span>ORDER
+												PICKUP</span>
+										</h2>
+										<div class="productView-services-text">
+											<p>You will be notifed when your order
+												has
+												arrived
+												at
+												your location.
+
+											</p>
+											<p style="font-weight : bold;">
+												Estimated
+												Pickup
+												Date: {pickupDate}
+
+											</p>
+											<br>
+											<p style="font-weight : bold;" class="slds-text-body_medium">PICKUP
+												LOCATION
+											</p>
+											<p>{pickupLocation}
+											</p>
+											<p>{pickupPhone}
+											</p>
+											<br>
+											<p style="font-weight : bold;" class="slds-text-body_medium">PICKUP
+												TIME
+											</p>
+
+											<p>Orders are avialable for pickup. Between
+												the hours of 10am-3pm</p>
+											<br>
+											<p style="font-weight : bold;" class="slds-text-body_medium">WHAT TO
+												BRING
+											</p>
+											<p style="white-space: normal;">You
+												must
+												bring
+												CSO
+												Number and proper Id with you when you pick up your order. You must
+												be over the age of 18.
+											</p>
+
+											<br>
+										</div>
+									</div>
+
+								</div>
+
+
+
+							</div>
+						</template>
+
+
+						<template if:true={shipToHome}>
+
+							<div class="productView-services">
+
+								<div class="d-flex align-items-top justify-content-spaceBetween">
+									<div>
+										<h2 class="productView-services-title">
+											<span class="iconDelivery slds-icon slds-icon_xx-small">
+												<svg id="prodShipb" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 31.5 31.5">
+													<g id="prodShipc">
+														<g id="prodShipd" class="e">
+															<g class="e">
+																<path class="f"
+																	d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z" />
+															</g>
+														</g>
+													</g>
+												</svg>
+											</span>
+											<span>SHIPPING TO HOME</span>
+										</h2>
+										<template if:true={partsItem}>
+											<div class="productView-services-text">
+												<p style="font-weight : bold;" class="slds-text-body_medium">
+													{partsMethod}
+												</p>
+												<template for:each={partsList} for:item="cartItem">
+													<p key={cartItem} class="slds-text-body_medium">
+														{cartItem}
+													</p>
+												</template>
+											</div>
+										</template>
+										<template if:true={smallItem}>
+											<div class="productView-services-text">
+												<p style="font-weight : bold;" class="slds-text-body_medium">
+													{spsMethod}
+												</p>
+												<template for:each={spsList} for:item="cartItem">
+													<p key={cartItem} class="slds-text-body_medium">
+														{cartItem}
+													</p>
+												</template>
+											</div>
+										</template>
+
+
+									</div>
+
+								</div>
+
+
+
+							</div>
+						</template>
+
+
+						<template if:true={overSizedItems}>
+
+							<div class="productView-services">
+
+								<div class="d-flex align-items-top justify-content-spaceBetween">
+									<div>
+										<h2 class="productView-services-title">
+											<span class="iconDelivery slds-icon slds-icon_xx-small">
+												<svg id="fright" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 44.44 36">
+													<g id="c">
+														<g id="d" class="e">
+															<g class="e">
+																<path class="f"
+																	d="m44.44,0v28.12c0,4.35-3.52,7.88-7.88,7.88s-7.77-3.42-7.88-7.69l-25.85,7.05c-1.2.32-2.44-.38-2.76-1.58-.33-1.2.38-2.43,1.58-2.76l22.53-6.14V4.5c0-2.49,2.02-4.5,4.5-4.5h15.75ZM1.06,14.6c-.32-1.2.39-2.43,1.59-2.76l3.26-.87,1.46,5.44c.16.6.78.89,1.38.79l2.17-.58c.6-.16.96-.78.79-1.38l-1.46-5.44,3.26-.87c1.2-.32,2.43.39,2.76,1.59l2.91,10.87c.32,1.2-.39,2.43-1.59,2.76l-10.87,2.91c-1.2.32-2.43-.39-2.75-1.59L1.06,14.6Zm35.5,10.15c-1.86,0-3.38,1.51-3.38,3.38s1.51,3.38,3.38,3.38,3.38-1.51,3.38-3.38-1.51-3.38-3.38-3.38Z" />
+															</g>
+														</g>
+													</g>
+												</svg>
+											</span>
+											<span>Oversized Freight</span>
+										</h2>
+
+										<div class="productView-services-text">
+											<p style="font-weight : bold;" class="slds-text-body_medium">
+												Special shipping is required. The estimated shipping time is 10-14
+												business days.
+											</p>
+											<template for:each={sdsListFreight} for:item="cartItem">
+												<p key={cartItem} class="slds-text-body_medium">
+													{cartItem}
+												</p>
+											</template>
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+
+
+							</div>
+						</template>
+
+
+
+
+					</div>
+
+					<div class="slds-col slds-size_1-of-3 slds-text-body_medium">
+						<p class="header-para">Phone Number</p>
+						<p>Primary-{PhoneNumber}</p>
+						<!-- <p>Secondary-{UserPhone}</p> -->
+					</div>
+				</div>
+
+				<h3 class="header-address slds-p-top_medium">Protection Plans</h3>
+
+				<div class="slds-grid slds-gutters">
+					<div class="slds-text-body_medium slds-col slds-size_3-of-3 proText">
+						<p class="slds-text-body_medium">{proPlanText}</p>
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+</template>

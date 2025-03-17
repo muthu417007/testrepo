@@ -1,0 +1,42 @@
+<template>
+    <div class="mainContent">
+        <div class="header">{pageTitleLabel}</div>
+        <div class="linkparts medium-11 large-7">
+            <lightning-icon icon-name="utility:custom_apps" size="small"></lightning-icon>
+            <span class="text">Need help with parts order</span>
+            &nbsp;
+            <lightning-formatted-url label="Visit the Haier Appliances Parts Store" value={PageLinks.PartsStoreURL__c}
+                class="OSL"></lightning-formatted-url>
+        </div>
+        <div class="text1 margin-b-10">Have a Haier Appliances account?</div>
+        <div class="text2">
+            <button class="loggin" onclick={HandleLogin}>Log in</button>
+            &nbsp;
+            To view the status of your order
+        </div>
+        <div class="text1 margin-b-10">Don't have an account?</div>
+        <div class="text2">
+            If you <b>purchased an appliance on this website,</b> enter your reference number <br>
+            (found in your confirmation email from Haier Appliances) and email address <br>
+            below. If you don't have your reference number please call 1-800-430-1757.
+        </div>
+        <div class="large-5 medium-6 small-8">
+            <div>
+                <h5 class="input-field">{referenceNoLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text" type="text" onchange={RefNo} required>
+                </lightning-input>
+            </div>
+            <div>
+                <h5 class="input-field">{emailAddressLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text" type="text" onchange={EmailAdd} required>
+                </lightning-input>
+            </div>
+            <div class="captcha">
+                <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+            </div>
+            <div class="orderButton">
+                <button type="submit" onclick={handleFindOrder}>{findOrderButtonLabel}</button>
+            </div>
+        </div>
+    </div>
+</template>

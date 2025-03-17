@@ -1,0 +1,27 @@
+.order{
+    display: flex;
+    border: 1px solid;
+    gap: 16.6rem;
+}
+
+.menuButton{
+    display: contents;
+}
+
+.buttonMenu{
+    float: inline-end;
+}
+
+/* .innerButton{
+    margin-left: 14.5rem;
+    padding-top: 4px;
+} */
+
+.bold{
+    font-weight: bold;
+}
+
+.link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

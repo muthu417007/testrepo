@@ -1,0 +1,57 @@
+.subheading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.vl {
+    border-left: 5px solid #707070;
+    height: 200px;
+  }
+
+.createButton{
+    background-color: #245B83;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #245B83;
+    width: 90%;
+    border-radius: 50px;
+}
+
+/* :host {
+    --pt-font-size: 54px;
+    --pt-font-family: Helvetica;
+    --pt-font-weight: 800;
+    --pt-color: #151515;
+
+    --element-font-size: 16px;
+    --element-font-family: Helvetica;
+    --element-font-weight: bold;
+    --element-color: #151515;
+
+    --linkLabel-font-size: 16px;
+    --linkLabel-font-family: Helvetica;
+    --linkLabel-font-weight: 200;
+    --linkLabel-color: #151515;
+
+    --link-url-font-size: 16px;
+    --link-url-font-family: Helvetica;
+    --link-url-font-weight: 200;
+    --link-url-color: #6e6e6e;
+
+    --submit-button-font-size: 18px;
+    --submit-button-font-family: Helvetica;
+    --submit-button-font-weight: 200;
+    --submit-button-color: #ffffff;
+    --submit-button-background-color: #005aaa;
+    --submit-button-border-radius: 1.125rem;
+
+    --input-error-color: crimson;
+    --input-error-font-size: 12px;
+    --input-error-font-weight: bold;
+
+    --general-error-padding-top: 10px;
+    --general-error-font-size: 20px;
+    --general-error-color: crimson;
+} */

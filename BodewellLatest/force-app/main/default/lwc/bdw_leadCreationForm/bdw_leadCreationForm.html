@@ -1,0 +1,65 @@
+<template>
+    <div class="slds-p-around_x-small mob-wdth-set">
+        <form>
+            <lightning-input class="label-font label-text width-input-box" label="First Name" value={rec.FirstName} onchange={handlefirstNameChange}></lightning-input><br>
+        <lightning-input class="label-font label-text width-input-box" label="Last Name" value={rec.LastName} onchange={handlelastNameChange} required></lightning-input><br>
+        <lightning-input class="label-font label-text width-input-box" label="Email" value={rec.Email} type="email" onchange={handleemailChange} required></lightning-input><br>
+        <lightning-input class="label-font label-text width-input-box" label="Phone Number" value={rec.Phone} type="tel" onchange={handlephoneChange}></lightning-input><br>
+        <lightning-checkbox-group name="Checkbox Group"
+                              label="I would like to be contacted"
+                              options={options}
+                              value={value}
+                              onchange={handleCheckboxGroupChange}
+                              class="label-font combox-font">
+        </lightning-checkbox-group>
+        <br>
+        <lightning-combobox
+            name="progress"
+            label="Contact Preference"
+            value=""
+            placeholder="Please select"
+            options={optionsPref}
+            onchange={handlePreferenceChange}
+            class="label-font label-text width-input-box">
+        </lightning-combobox>
+        <br>
+        <lightning-input class="label-font label-text width-input-box" label="Comments" value={comment} maxlength="250"
+                        onchange={handleCommentsChange} onfocus={handleFocus} onblur={handleBlur}>
+        </lightning-input>
+         <div if:true={showCountFlag} aria-live="assertive">{counts} characters left.</div>
+        
+        <!-- <br>
+        <div class="slds-form-element slds-form-element_stacked" >
+              <label class="slds-form-element__label label-font label-text" >Comments</label>
+                <div class="slds-form-element__control" >
+                    <textarea maxlength="250"  onchange={handleCommentsChange} class="slds-textarea width-input-box" ></textarea>
+                </div>
+                <div class="slds-form-element__help" id="error-01">{counts} characters left.</div>
+        </div> -->
+                            
+        <br>
+        
+        
+        <div>
+            <span class="checkbox-align">
+                <lightning-input class="label-font label-text slds-m-right_xx-small" variant="label-hidden" type="checkbox" name="input2"></lightning-input>
+                 <div class="i-agree">I agree that I have read and understand the terms of the &nbsp;
+                <lightning-formatted-url value="https://www.geappliances.com/privacy/privacy_policy.htm" label="our Privacy Statement" target="_blank" ></lightning-formatted-url>
+                </div>
+            </span>
+            <br>
+        </div>
+        <div class="captcha">
+            <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+        </div>
+        <small>reCAPTCHA helps prevent automated form spam.</small><br>
+        <small>The submit button will be disabled until you complete the CAPTCHA.</small><br>
+
+
+        <!-- <lightning-button  label="SUBMIT" onclick={handleSubmit}></lightning-button> -->
+        <button id="myBtn" onclick={handleSubmit} class="submit-button">SUBMIT</button>
+        <br><br><br>
+        <small>*Some exclusions apply</small>
+        </form>
+    </div>
+</template>

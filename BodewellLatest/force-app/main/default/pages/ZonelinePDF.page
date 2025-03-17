@@ -1,0 +1,25 @@
+<apex:page controller="ZonelinePDF_Controller">
+  <apex:form >
+  <apex:actionRegion >
+  <apex:pageBlock title="Generate and Send Zoneline PDF" id="GeneratePageBlock">
+    <apex:panelGrid columns="2" width="100%">
+        <apex:panelGroup layout="block">
+            <apex:outputtext value="{!pdfMessage}" escape="false" /><br /><br />
+         <apex:commandButton action="{!Generate_PDF}" title="Generate PDF" alt="Generate PDF" value="Generate PDF" disabled="{!!allowPDF}"/>
+        </apex:panelGroup>
+        <apex:panelGroup layout="block">
+            <apex:outputText value="Email PDF to: (Enter only one email address)" /><br />
+            <apex:inputText value="{!enteredEmail}" size="50" disabled="{!!allowEmail}" /><br /><br />
+            <apex:outputText value="Email Message: " /><br />
+            <apex:inputTextarea value="{!emailNote}" rows="5" cols="62" disabled="{!!allowEmail}" /><br /><br />
+            <apex:outputText value="{!emailStatus}" escape="false" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton action="{!Send_Email}" title="Send Email with Attached PDF" alt="Send Email with Attached PDF" value="Send Email with Attached PDF" disabled="{!!allowEmail}" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton action="{!btnCancel}" title="Cancel" alt="Cancel" value="Cancel" />
+        </apex:panelGroup>
+    </apex:panelGrid>
+  </apex:pageBlock>
+  </apex:actionRegion>
+  </apex:form>
+</apex:page>

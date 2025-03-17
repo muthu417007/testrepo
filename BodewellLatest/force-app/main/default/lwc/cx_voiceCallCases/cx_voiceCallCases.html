@@ -1,0 +1,100 @@
+<template>
+    <lightning-card title="Recent Cases" icon-name="standard:case">
+      <lightning-record-edit-form object-api-name="Case">
+        <lightning-input-field
+          variant="label-stacked"
+          field-name="ContactId"
+          onchange={handleContactChange}
+          value={contactId}
+        >
+        </lightning-input-field>
+      </lightning-record-edit-form>
+      <template if:true={loaded}>
+        <div slot="actions">
+          <lightning-button
+            label="New Case"
+            onclick={newCaseClick}
+            data-voice-call-id={recordId}
+            slot="actions"
+          ></lightning-button>
+        </div>
+      </template>
+      <div class="slds-m-around_medium" style='max-height: 200px; overflow: auto'>
+        <template if:false={loaded}>
+          <lightning-spinner></lightning-spinner>
+        </template>
+        <template if:true={loaded}>
+          <template if:true={cases.length}>
+            <template for:each={cases} for:item="c">
+              <lightning-tile key={c.Id} type="Standard">
+                <div
+                  class="
+                    slds-grid slds-grid_align-spread
+                    slds-has-flexi-truncate
+                  "
+                >
+                  <h3 class="slds-tile__title slds-truncate">
+                    <a
+                      onclick={openCaseSubtab}
+                      data-case-id={c.Id}
+                      target="_blank"
+                    >
+                      {c.CaseNumber}
+                    </a>
+                  </h3>
+                  <div class="slds-shrink-none">
+                    <lightning-button
+                      label="Attach"
+                      onclick={attachCaseClick}
+                      data-voice-call-id={recordId}
+                      data-case-id={c.Id}
+                    ></lightning-button>
+                  </div>
+                </div>
+                <dl class="slds-list_horizontal slds-wrap">
+                  <dt
+                    class="slds-item_label slds-text-color_weak slds-truncate"
+                  >
+                    Subject
+                  </dt>
+                  <dd class="slds-item_detail slds-truncate" title={c.Subject}>
+                    {c.Subject}
+                  </dd>
+                  <dt
+                    class="slds-item_label slds-text-color_weak slds-truncate"
+                  >
+                    Status
+                  </dt>
+                  <dd class="slds-item_detail slds-truncate">{c.Status}</dd>
+                  <dt
+                    class="slds-item_label slds-text-color_weak slds-truncate"
+                  >
+                    Created
+                  </dt>
+                  <dd class="slds-item_detail slds-truncate">
+                    <lightning-formatted-date-time
+                      value={c.CreatedDate}
+                      year="2-digit"
+                      month="numeric"
+                      day="numeric"
+                      hour="2-digit"
+                      minute="2-digit"
+                      time-zone-name="short"
+                      hour12="true"
+                    ></lightning-formatted-date-time>
+                  </dd>
+                  <dt
+                    class="slds-item_label slds-text-color_weak slds-truncate"
+                  >
+                    Owner
+                  </dt>
+                  <dd class="slds-item_detail slds-truncate">{c.Owner.Name}</dd>
+                </dl>
+              </lightning-tile>
+            </template>
+          </template>
+          <template if:false={cases.length}> No recent cases </template>
+        </template>
+      </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="recordId" type="String" access="public" />
+    <lightning:button label="Create/Confirm CS1049 Case" onclick="{! c.openTabWithSubtab }" />
+</aura:component>

@@ -1,0 +1,56 @@
+:host{
+    width: 100%;
+}
+
+.verticalAlign {
+    padding: 0px 5px;
+    font-size: 0.90rem;
+    display: inline;
+    margin-left: 2rem;
+}
+
+.recordListBox{
+    margin-top:0px;
+    overflow-y: scroll;
+}
+
+input, label{
+    display: flex;
+    flex-direction: column;
+}
+
+.checkIcon{
+    margin-left: 0.7rem;
+    position: absolute;
+    padding-bottom: 0.3rem;
+    padding-top: 0.3rem;
+}
+
+.eachItem:hover{
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.slds-textarea{
+    resize: none;
+    border-radius: 0;
+    font-size: 1rem;
+    color:rgb(107, 109, 112);
+    border: none;
+}
+
+.ulClass{
+    font-size: initial;
+}
+
+.slds-listbox li {
+    display: flex;
+}
+
+.eachItem{
+    vertical-align: middle;
+    text-align: left;
+    align-items: center;
+    padding-bottom: 0.3rem;
+    padding-top: 0.3rem;
+}

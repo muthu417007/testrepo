@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Service Area Page Content</masterLabel>
+    <description>Service Area/Location Page Content</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="stateContentHeading" type="String"
+                label="Service Area State Page Content Heading"
+                default="FAST, RELIABLE APPLIANCE REPAIR" />
+            <property name="cityContentHeading" type="String"
+                label="Service Area City Page Content Heading"
+                default="EXPERT REPAIRS DONE RIGHT" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Global Header</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+          <property
+              name="toggleHeader"
+              label="Toggle Header Display"
+              type="Boolean"
+              default="true"
+              description="Show or hide the header to make drag and drop LWC easier or remove for development"
+          />
+          <property
+              name="hasBanner"
+              label="Select to show transparent header with banner behind it. Unselect for no banner or to display banner beneath header"
+              type="Boolean"
+              default="true"
+              description="Select if page has hero image/banner"
+          />
+          <property
+              name="hasPromo"
+              label="Select to show promotion banner"
+              type="Boolean"
+              default="false"
+              description="Select to show promo banner"
+          />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

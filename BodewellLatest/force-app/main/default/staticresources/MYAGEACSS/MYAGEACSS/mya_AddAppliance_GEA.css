@@ -1,0 +1,808 @@
+.container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+.cell {
+    flex: 0 0 auto;
+    min-height: 0px;
+    min-width: 0px;
+    width: 100%;
+}
+
+.add-appliances {
+    background-color: white;
+    padding: 3rem 1rem 1rem 1rem;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 2rem;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    border: none;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.header-title {
+    padding-bottom: 2%;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-family: 'Gotham-Book';
+    text-transform: uppercase;
+    color: #555;
+}
+
+.link-item {
+    margin: 10px 0px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    font-family: 'Gotham-Book';
+}
+
+.link {
+    color: #1a63a2;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #003B71;
+    text-decoration: underline;
+}
+
+
+/* Modal */
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    /* font-size: 1em;
+    color: #1a63a2;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1.25;
+    position: absolute;
+    cursor: pointer; */
+    font-size: 1.5em;
+    color: #1a63a2 !important;
+    right: -1rem;
+    top: -0.5rem;
+    line-height: 1;
+    font-weight: bold;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-icon {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Gotham-Book';
+    color: #1A63A2;
+}
+
+.close-button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-size: 1.375rem;
+    color: #092c74;
+    background-color: #fff;
+    border-bottom: 0px solid #fff;
+    font-weight: 800;
+    letter-spacing: 0.25px;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    text-transform: capitalize;
+    padding-top: 9px;
+    padding-left: 24px;
+    padding-right: 2.75rem;
+    padding-bottom: 9px;
+}
+
+.saved-address {
+    font-family: 'Gotham-Book';
+    text-align: left;
+    font-size: 0.93rem;
+}
+
+.select-message {
+    padding-bottom: 1rem;
+    text-align: left;
+    font-family: 'Gotham-Book';
+}
+
+.search-message {
+    font-family: 'Gotham-Book';
+    font-size: 0.93rem;
+    padding-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    font-size: 0.9411764705882353rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 0.5rem 0rem 0.3rem 0rem;
+    font-family: 'Gotham-Book';
+    width: 100%;
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.address-button {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    font-family: 'Gotham-Book';
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 1rem 0rem 1rem 0rem;
+    border: 2px solid #1a63a2;
+    /* border-radius: 4px; */
+    cursor: pointer;
+}
+
+.address-button1 {
+    width: 60%;
+    background-color: #1A63A2;
+    color: white;
+    font-family: 'Gotham-Book';
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 1rem 6rem 1rem 6rem;
+    border: 2px solid #1a63a2;
+    cursor: pointer;
+}
+
+.address-button:hover {
+    text-decoration: none;
+    background-color: #092c74;
+    color: #fff;
+    border: 1.5px solid #1A63A2;
+}
+
+.address-button1:hover {
+    text-decoration: none;
+    background-color: #092c74;
+    color: #fff;
+    border: 1.5px solid #1A63A2;
+}
+
+.reveal.add-address-modal {
+    top: 30%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 4px solid #1a63a2;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #092c74;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
+    font-family: inherit;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+    font-family: 'Gotham-Book';
+}
+
+.footer-message {
+    text-align: center;
+    font-size: 0.93rem;
+    font-family: 'Gotham-Book';
+    width: 100%;
+    padding: 1rem 0rem;
+    line-height: calc(19/ 14);
+}
+
+@media only screen and (min-width:201px) and (max-width:320px) {
+    .container {
+        background-color: #dde8f1;
+        padding: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    }
+    .cell {
+        flex: 0 0 auto;
+        min-height: 0px;
+        min-width: 0px;
+        width: 100%;
+    }
+    .add-appliances {
+        background-color: white;
+        padding: 1rem 1rem 1rem 1rem;
+        text-align: center;
+    }
+    .header {
+        margin-bottom: 1rem;
+        font-family: 'Gotham-Book';
+        letter-spacing: 0.25px;
+        border: none;
+        position: relative;
+        text-align: center;
+        display: block;
+        font-size: 12px;
+    }
+    .header-title {
+        padding-bottom: 2%;
+        margin-bottom: 1rem;
+        margin-top: 0rem;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 200;
+        display: block;
+        font-family: 'Gotham-Book';
+        text-transform: uppercase;
+        color: #555;
+    }
+    .link-item {
+        margin: 10px 0px;
+        font-size: 0.76rem;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        font-family: 'Gotham-Book';
+    }
+    .link {
+        color: #1a63a2;
+        text-decoration: underline;
+    }
+    .link:hover {
+        color: #003B71;
+        text-decoration: underline;
+    }
+    /* Modal */
+    .no-border {
+        border-bottom: 0px Solid white;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .close-button {
+        font-size: 1.5em;
+        color: #1a63a2 !important;
+        right: -1rem;
+        top: -0.5rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-icon {
+        font-weight: 700;
+        font-size: 1.35rem;
+        font-family: 'Gotham-Book';
+        color: #1A63A2;
+    }
+    .close-button:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .close-icon:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .modal-header {
+        font-size: 15px;
+        color: #092c74;
+        background-color: #fff;
+        border-bottom: 0px solid #fff;
+        font-weight: 800;
+        letter-spacing: 0.25px;
+        text-transform: capitalize;
+        padding-top: 7px;
+        padding-left: 2px;
+        width: 100%;
+        display: block;
+        padding-right: 2px;
+        text-align: center;
+        padding-bottom: 9px;
+    }
+    .saved-address {
+        font-family: 'Gotham-Book';
+        text-align: left;
+        font-size: 0.875rem;
+    }
+    .select-message {
+        padding-bottom: 1rem;
+        text-align: left;
+        font-family: 'Gotham-Book';
+    }
+    .search-message {
+        font-family: 'Gotham-Book';
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        text-align: left;
+    }
+    label {
+        font-size: 0.875rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 0.5rem 0rem 0.3rem 0rem;
+        font-family: 'Gotham-Book';
+        width: 100%;
+        text-align: left;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .address-button {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        font-family: 'Gotham-Book';
+        padding: 14px 20px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        margin: 1rem 0rem 1rem 0rem;
+        border: 2px solid #1a63a2;
+        cursor: pointer;
+    }
+    .address-button1 {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        font-family: 'Gotham-Book';
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin: 1rem 6rem 1rem 6rem;
+        border: 2px solid #1a63a2;
+        cursor: pointer;
+    }
+    .address-button:hover {
+        text-decoration: none;
+        background-color: #092c74;
+        color: #fff;
+        border: 1.5px solid #1A63A2;
+    }
+    .address-button1:hover {
+        text-decoration: none;
+        background-color: #092c74;
+        color: #fff;
+        border: 1.5px solid #1A63A2;
+    }
+    .reveal.add-address-modal {
+        top: 20%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 4px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 100%;
+        max-width: fit-content;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .reveal-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1005;
+        background-color: rgba(10, 10, 10, 0.45);
+        overflow-y: auto;
+    }
+    .reveal {
+        right: auto;
+        left: auto;
+        margin: 0 auto;
+    }
+    .or-div {
+        text-transform: uppercase;
+        color: #092c74;
+        font-size: 15px;
+        font-weight: 800;
+        text-align: center;
+        padding: 1rem 1rem 1rem 1rem;
+        font-family: inherit;
+    }
+    .main-label {
+        font-weight: bold;
+        color: rgba(108, 97, 88, 1);
+        padding: 0px 3px;
+    }
+    .main-opt {
+        font-weight: bold;
+        font-size: 80%;
+        padding: 0px 3px;
+        color: rgba(108, 97, 88, 1);
+    }
+    .main-sub {
+        font-size: 75%;
+        padding: 0px 3px;
+        color: rgba(108, 97, 88, 1);
+    }
+    .in-field {
+        margin: 10px 0px;
+        font-size: 0.875rem;
+        text-align: left;
+        font-family: 'Gotham-Book';
+    }
+    .footer-message {
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: 'Gotham-Book';
+        width: 100%;
+        padding: 1rem 0rem;
+        line-height: calc(19/ 14);
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width:425px) {
+    .container {
+        background-color: #dde8f1;
+        padding: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    }
+    .cell {
+        flex: 0 0 auto;
+        min-height: 0px;
+        min-width: 0px;
+        width: 100%;
+    }
+    .add-appliances {
+        background-color: white;
+        padding: 1rem 1rem 1rem 1rem;
+        text-align: center;
+    }
+    .header {
+        margin-bottom: 1rem;
+        font-family: 'Gotham-Book';
+        letter-spacing: 0.25px;
+        border: none;
+        position: relative;
+        text-align: center;
+        display: block;
+        font-size: 14px;
+    }
+    .header-title {
+        padding-bottom: 2%;
+        margin-bottom: 1rem;
+        margin-top: 0rem;
+        font-size: 1.4rem;
+        text-align: center;
+        font-weight: 200;
+        display: block;
+        font-family: 'Gotham-Book';
+        text-transform: uppercase;
+        color: #555;
+    }
+    .link-item {
+        margin: 10px 0px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        font-family: 'Gotham-Book';
+    }
+    .link {
+        color: #1a63a2;
+        text-decoration: underline;
+    }
+    .link:hover {
+        color: #003B71;
+        text-decoration: underline;
+    }
+    /* Modal */
+    .no-border {
+        border-bottom: 0px Solid white;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .close-button {
+        font-size: 1.5em;
+        color: #1a63a2 !important;
+        right: -1rem;
+        top: -0.5rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-icon {
+        font-weight: 700;
+        font-size: 1.35rem;
+        font-family: 'Gotham-Book';
+        color: #1A63A2;
+    }
+    .close-button:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .close-icon:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .modal-header {
+        font-size: 16px;
+        color: #092c74;
+        background-color: #fff;
+        border-bottom: 0px solid #fff;
+        font-weight: 800;
+        letter-spacing: 0.25px;
+        text-transform: capitalize;
+        padding-top: 7px;
+        padding-left: 2px;
+        width: 100%;
+        display: block;
+        padding-right: 2px;
+        text-align: center;
+        padding-bottom: 9px;
+    }
+    .saved-address {
+        font-family: 'Gotham-Book';
+        text-align: left;
+        font-size: 0.875rem;
+    }
+    .select-message {
+        padding-bottom: 1rem;
+        text-align: left;
+        font-family: 'Gotham-Book';
+    }
+    .search-message {
+        font-family: 'Gotham-Book';
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        text-align: left;
+    }
+    label {
+        font-size: 0.875rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 0.5rem 0rem 0.3rem 0rem;
+        font-family: 'Gotham-Book';
+        width: 100%;
+        text-align: left;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .address-button {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        font-family: 'Gotham-Book';
+        padding: 14px 20px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        margin: 1rem 0rem 1rem 0rem;
+        border: 2px solid #1a63a2;
+        cursor: pointer;
+    }
+    .address-button1 {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        font-family: 'Gotham-Book';
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin: 1rem 6rem 1rem 6rem;
+        border: 2px solid #1a63a2;
+        cursor: pointer;
+    }
+    .address-button:hover {
+        text-decoration: none;
+        background-color: #092c74;
+        color: #fff;
+        border: 1.5px solid #1A63A2;
+    }
+    .address-button1:hover {
+        text-decoration: none;
+        background-color: #092c74;
+        color: #fff;
+        border: 1.5px solid #1A63A2;
+    }
+    .reveal.add-address-modal {
+        top: 20%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 4px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 100%;
+        max-width: fit-content;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .reveal-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1005;
+        background-color: rgba(10, 10, 10, 0.45);
+        overflow-y: auto;
+    }
+    .reveal {
+        right: auto;
+        left: auto;
+        margin: 0 auto;
+    }
+    .or-div {
+        text-transform: uppercase;
+        color: #092c74;
+        font-size: 15px;
+        font-weight: 800;
+        text-align: center;
+        padding: 1rem 1rem 1rem 1rem;
+        font-family: inherit;
+    }
+    .main-label {
+        font-weight: bold;
+        color: rgba(108, 97, 88, 1);
+        padding: 0px 3px;
+    }
+    .main-opt {
+        font-weight: bold;
+        font-size: 80%;
+        padding: 0px 3px;
+        color: rgba(108, 97, 88, 1);
+    }
+    .main-sub {
+        font-size: 75%;
+        padding: 0px 3px;
+        color: rgba(108, 97, 88, 1);
+    }
+    .in-field {
+        margin: 10px 0px;
+        font-size: 0.875rem;
+        text-align: left;
+        font-family: 'Gotham-Book';
+    }
+    .footer-message {
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: 'Gotham-Book';
+        width: 100%;
+        padding: 1rem 0rem;
+        line-height: calc(19/ 14);
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .reveal.add-address-modal {
+        top: 30%;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,146 @@
+<template>
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    <div class="card-container">
+        <div class="card">
+         
+            <svg  class="icon-owner-email" id="chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.05 69.89">
+              
+               <svg id="emailg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.36 57.56">
+               <g id="emaild"><g id="d" class="e"><g class="e"><path class="f" d="m52.77,39.58c-3.2,3.12-7.59,4.96-11.59,4.96s-6.8-1.6-7.6-4.56c0,0-3.2,4.56-8.79,4.56s-11.59-3.6-11.59-13.19,6-17.59,15.59-17.59c5.84,0,8.31,2.64,8.48,2.8l.32-1.6h8l-3.6,17.59c-.48,2.4-.8,5.04,2,5.04s7.2-4.24,7.2-13.03c0-11.19-7.59-18.39-20.79-18.39S7.6,15.35,7.6,28.94s8.79,22.39,22.79,22.39c8,0,12.39-1.6,17.19-3.6l2.4,5.2c-4,2-9.19,4.64-21.19,4.64C12.71,57.56,0,46.13,0,28.94S13.99,0,29.98,0c10.79,0,16.79,3.36,20.79,6.96s7.6,9.59,7.6,16.79-2.4,12.55-5.6,15.83Zm-22.39-19.03c-5.68,0-8.39,4.8-8.39,9.99,0,3.2,1.2,6.64,5.6,6.64s6.08-3.2,6.8-6.64l1.6-8c-.4-.4-2.4-2-5.6-2Z"/></g></g></g></svg>
+        </div>
+        </div>
+    <div class="form-container">
+        <form action={action}
+            method="POST">
+            <input type=hidden name="orgid" value={orgid}>
+          
+            <input type=hidden name="retURL"
+                value={retURL}>
+               
+<input style="display: none;" type='text' value="bodewellCommerce.com"  maxlength="255" name="Web_To_Case_Origin__c" size="20"  >
+         
+
+<!--  ----------------------------------------------------------------------  -->
+            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+            <!--  these lines if you wish to test in debug mode.                          -->
+            <!--  <input type="hidden" name="debug" value=1>                              -->
+            <!--  <input type="hidden" name="debugEmail"                                  -->
+            <!--  value="shubhadaprakash.kurumkar@geappliances.com">                      -->
+            <!--  ----------------------------------------------------------------------  -->
+            <p>Please complete this form. Fields marked with * are required.</p>
+            <div class="input-container">
+              
+                <div class="col25"><label>Reason for Message:</label></div>
+                <div class="col75"><select  name="Reason_for_Message__c"
+                    title="Reason for Message" >
+                    <!-- <option value="">Please select....</option>
+                    <option value="Appliance Question">Appliance Question</option>
+                    <option value="Appliance Complaint">Appliance Complaint</option>
+                    <option value="Parts Question">Parts Question</option>
+                    <option value="Installation Help">Installation Help</option>
+                     -->
+                    <template if:true={_ReasonForMessage}>
+                        <template for:each={_ReasonForMessage} for:item="options">
+                         <option key={options} value={options}>{options}</option>
+                        </template>
+                     </template>
+                </select></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"><label for="email">Email*</label></div>
+               <div class="col75"><input  maxlength="80" name="email" size="20"
+                    type="email" required /></div> 
+            </div>
+            <div class="input-container">
+                <div class="col25"><label>First Name*</label></div>
+                <div class="col75"> <input  maxlength="255" name="First_Name__c" size="20"
+                    type="text"  required /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"> <label> Last Name*</label></div>
+                <div class="col75"><input  maxlength="255" name="Last_Name__c" size="20"
+                    type="text"   required /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25">  <label> Street Address:</label></div>
+                <div class="col75"><input  maxlength="255" name="Street_Address__c"
+                    size="20" type="text" /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25">  <label>City:</label></div>
+                <div class="col75"><input  maxlength="255" name="City__c" size="20"
+                    type="text" /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"> <label>State:</label></div>
+                <div class="col75"><select  name="State__c" title="State">
+                    <option value="">Choose</option>
+                   <template if:true={stateValues}>
+                   <template for:each={stateValues} for:item="options">
+                    <option key={options.label} value={options.value}>{options.label}</option>
+                   </template>
+                </template>
+                </select></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"> <label for="phone">Phone Number</label></div>
+                <div class="col75"><input  maxlength="40" name="Phone_Number__c" size="20"
+                    type="text" /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"><label>Model</label> </div>
+                <div class="col75"><input maxlength="60" name="Model_Number__c" size="20"
+                    type="text" /></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"> <label>Serial</label></div>
+                <div class="col75">
+                <div class="comment-input">
+                <input  maxlength="60" name="Serial_Number__c" size="20"
+                    type="text" />
+                    <p>Providing model and serial number information will assist with a faster resolution.</p>
+                  
+                </div></div>
+            </div>
+          
+            <div class="input-container">
+                <div class="col25"> <label>Comments or Questions*</label></div>
+                <div class="col75"><textarea  name="BWC_Comments_or_Questions__c	" rows="4"
+                    type="text" wrap="soft"  required ></textarea></div>
+            </div>
+
+            <input type="hidden"  name="external" value="1" /><br>
+            <div class="input-container">
+                <div class="col25"> <label></label></div>
+                <div class="col75"><div class="g-recaptcha" data-sitekey={siteKey}></div></div>
+            </div>
+            <div class="input-container">
+                <div class="col25"> <label></label></div>
+                <div class="col75"><div class="button-container">
+                    <!-- <iframe src={navigateTo} name="captchaFrame" onload={captchaLoaded} style="width: -webkit-fill-available;border-style: none;"></iframe> -->
+                    <!-- <div class="g-recaptcha" data-sitekey={siteKey}></div> -->
+                    <template if:false={isSuccess}>
+                        <input class="enabled" type="submit" name="submit" >
+                    </template>
+                   
+                    <template if:true={isSuccess}>
+                    <input class="disabled" type="submit" name="submit" disabled>
+                </template>
+                 
+                </div></div>
+            </div>
+            
+        </form>
+    </div>
+
+</template>

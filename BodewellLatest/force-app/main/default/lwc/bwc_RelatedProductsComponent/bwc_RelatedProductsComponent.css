@@ -1,0 +1,71 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.arrow {
+    position: absolute;
+    top: 98%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow:before {
+    content: '';
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.arrow.left:before {
+    border-width: 5px 8px 5px 0;
+    border-color: transparent rgba(255, 255, 255, 0.9) transparent transparent;
+    right: 37%;
+        top: 50%;
+}
+
+.arrow.right:before {
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+    left: 50%;
+        top: 50%;
+}
+.arrow.right {
+    right: 10%; /* Adjust as needed */
+}
+.arrow.left {
+    left: 10%; /* Adjust as needed */
+}
+
+
+
+.slider-container {
+    overflow: hidden;
+    width: 160%;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    flex: 0 0 20%; /* Adjust this value according to the number of images to display */
+    max-width: 100%; /* Adjust this value according to the number of images to display */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover; /* or contain, adjust based on your preference */
+}

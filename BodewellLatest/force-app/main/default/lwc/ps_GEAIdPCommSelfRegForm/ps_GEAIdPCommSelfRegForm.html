@@ -1,0 +1,215 @@
+<!--
+@description       : 
+  @author            : Luis Ramirez (l.ramirez@polsource.com)
+  @group             : 
+  @last modified on  : 07-15-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                                   Modification
+  1.0   06-16-2021   Luis Ramirez (l.ramirez@polsource.com)   Initial Version
+-->
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+    </div>
+
+    <h2 class="idp-page-title">
+        <label class=""> {pageTitleLabel} </label>
+    </h2>
+
+    <div class="idp-form slds-m-bottom_xx-large">
+        <div class={emailContainerClass}>
+            <label class="slds-form-element__label idp-label" for="email">
+                {emailLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="email"
+                        data-id="email"
+                        onchange={onInputChanged}
+                        name="email"
+                        required=""
+                        aria-describedby="email-error"
+                        class="idp-text-input"
+                        aria-invalid="true"
+                        autocapitalize="off"
+                />
+            </div>
+            <template if:true={emailHasError} class="slds-has-error">
+                <div class="slds-form-element__help">{emailValidationError}</div>
+            </template>
+        </div>
+
+        <div class={firstNameContainerClass}>
+            <label class="slds-form-element__label idp-label" for="firstName">
+                {firstNameLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="text"
+                        data-id="firstName"
+                        onchange={onInputChanged}
+                        name="firstName"
+                        required=""
+                        class="idp-text-input"
+                        aria-invalid="true"
+                />
+            </div>
+            
+            <template if:true={firstNameHasError}>
+                <div class="slds-form-element__help">{firstNameValidationError}</div>
+            </template>
+            <template if:true={firstNameHasErrorr}>
+                <div class="slds-form-element__help slds-text-color_error">{firstNameValidationErrorr}</div>
+            </template>
+        </div>
+    
+    
+    <div class={lastNameContainerClass}>
+            <label class="slds-form-element__label idp-label" for="lastName">
+                {lastNameLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="text"
+                        data-id="lastName"
+                        onchange={onInputChanged}
+                        name="lastName"
+                        required=""
+                        class="idp-text-input"
+                        aria-invalid="true"
+                />
+            </div>
+            <template if:true={lastNameHasError}>
+                <div class="slds-form-element__help">{lastNameValidationError}</div>
+            </template>
+            <template if:true={lastNameHasErrorr}>
+                <div class="slds-form-element__help slds-text-color_error">{lastNameValidationErrorr}</div>
+            </template>
+        </div>
+
+        <div class={phoneContainerClass}>
+            <label class="slds-form-element__label idp-label" for="phone">
+                {phoneLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="tel"
+                        data-id="phone"
+                        onchange={onInputChangedphone}
+                        name="phone"
+                        pattern="^[(]?[+]*[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$"
+                        class="idp-text-input"
+                        aria-invalid="true"
+                />
+            </div>
+            <template if:true={phoneHasError}>
+                <div class="slds-form-element__help">{phoneValidationError}</div>
+            </template>
+        </div>
+
+        <div class={passwordContainerClass}>
+            <div>
+                <label class="slds-form-element__label idp-label" for="password">
+                    {passwordLabel}
+                </label>
+            </div>
+            <span class="slds-form-element__label idp-page-text">{passwordStrengthLabel}</span>
+            <div class="slds-form-element__control">
+                <input
+                        type="password"
+                        data-id="password"
+                        onchange={onPasswordChanged}
+                        name="password"
+                        required=""
+                        class="idp-text-input"
+                        aria-invalid="true"
+                />
+            </div>
+            <template if:true={passwordHasError}>
+                <div class="slds-form-element__help slds-text-color_error">{passwordValidationError}</div>
+            </template>
+            <template if:true={passwordStrengthHasError}>
+                <div class="slds-form-element__help slds-text-color_error">{passwordStrengthValidationError}</div>
+            </template>
+        </div>
+
+        <div class={passwordConfirmationContainerClass}>
+            <label class="slds-form-element__label idp-label" for="passwordConfirmation">
+                {passwordConfirmationLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="password"
+                        data-id="passwordConfirmation"
+                        onchange={onPasswordConfirmationChanged}
+                        name="passwordConfirmation"
+                        required=""
+                        class="idp-text-input"
+                        aria-invalid="true"
+                />
+            </div>
+            <template if:true={passwordConfirmationHasError}>
+                <div class="slds-form-element__help slds-text-color_error">{passwordConfirmationIsRequiredValidationError}</div>
+            </template>
+            <template if:true={passwordsDontMatch}>
+                <div class="slds-form-element__help slds-text-color_error">{passwordsDontMathValidationError}</div>
+            </template>
+        </div>
+
+        <div class={termsAndConditionsClass}>
+            <label>
+            <span>
+                <input
+                        type="checkbox"
+                        name="termsAndConditions"
+                        required
+                        onchange={onTermAndConditionsChanged}
+                        checked={termsAndConditionsChecked}
+                        class="slds-m-right_x-small"
+                />
+                <span>
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={termsAndConditionsLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={termsAndConditionsURL} target="_blank"
+                    >{termsAndConditionsURLLabel}.
+                    </a>
+                </span>
+                <p class="slds-m-top_x-small">
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={privacyPolicyLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={privacyPolicyURL} target="_blank"
+                    >{privacyPolicyURLLabel}.
+                    </a>
+                </p>
+            </span>
+            </label>
+        </div>
+
+        <div>
+            <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+        </div>
+        <template if:true={generalError}>
+            <div class="generalErrorClass slds-m-top_medium">{generalErrorMessage}</div>
+        </template>
+        <div class="slds-align_absolute-center">
+            <button
+                    class="
+                slds-p-around_x-small
+                slds-m-top_large
+                slds-m-bottom_small
+                idp-primary-button
+            "
+                    onclick={register}
+            >
+                {submitButtonLabelInternal}
+            </button>
+        </div>
+    </div>
+</template>

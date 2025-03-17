@@ -1,0 +1,1 @@
+<script src='https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback' async defer></script>

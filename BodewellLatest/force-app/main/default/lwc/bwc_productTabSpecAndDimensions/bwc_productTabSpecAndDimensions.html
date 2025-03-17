@@ -1,0 +1,55 @@
+<template>
+    <template if:true={_specDetails}>
+        <h2 class="pdpTabs-tabHeader">Spec & Details</h2>
+
+        <div style={getContentStyle} class="expandControl">
+            <template if:true={_specDetails}>
+                <template if:true={_specDetails.ProductDimensions}>
+                    <p class="pdpTabs-sectionsubHeading">Dimensions: {_specDetails.ProductDimensions}</p>
+                </template>
+            </template>
+            <div>
+                <template if:true={_specAndDimensions}>
+                    <template for:each={_specAndDimensions} for:item="spec">
+                        <div key={spec.key} class="pdpTabs-specs--table">
+                            <h3 class="pdpTabs-specsTable--heading">{spec.key}</h3>
+
+                            <table>
+                                <tbody>
+                                    <template for:each={spec.value} for:item="specvalue">
+                                        <tr key={specvalue.key}>
+                                            <td class="specName">{specvalue.key}</td>
+                                            <td class="specValues">{specvalue.value}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </template>
+                </template>
+            </div>
+            <div>
+
+
+
+            </div>
+
+
+
+        </div>
+        <div>
+
+        </div>
+        <template if:true={ShowSpecifications}>
+        <div style={getLinkStyle}>
+            <p onclick={toggleSection} class="linkclass">{toggleLabel}<i class="arrow down"></i></p>
+        </div>
+    </template>
+    <template if:false={ShowSpecifications}>
+        <div style={getLinkStyle}>
+            <p onclick={toggleSection} class="linkclass">{toggleLabel}<i class="arrow up"></i></p>
+        </div>
+    </template>
+    </template>
+</template>

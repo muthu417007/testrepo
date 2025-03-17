@@ -1,0 +1,15 @@
+/* .title-join {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+} */
+
+.bold-text {
+    font-weight: bold;
+}
+
+.banner {
+    background-color: var(--sunshine-yellow);
+    padding: 5px 15px;
+}

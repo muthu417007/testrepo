@@ -1,0 +1,34 @@
+.related-product-container
+{
+    display: flex;
+flex-direction: column;
+}
+.product-item
+{
+    display: flex;
+    flex-direction: row;
+}
+.image-container{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.picture-picture {
+    max-height: inherit;
+    width: inherit;
+}
+.button-container {
+    padding: var(--dxp-g-spacing-none);
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+font: normal normal medium 16px/24px Neue Haas Grotesk Text Pro;
+letter-spacing: 0.32px;
+color: #245B83;
+text-transform: capitalize;
+opacity: 1;
+font-weight: bold;
+}
+button:hover{
+    text-decoration:underline;
+}

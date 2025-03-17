@@ -1,0 +1,82 @@
+.summary {
+  --slds-c-card-color-background: white;
+}
+
+.summaryTitle {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+
+}
+
+.price {
+  margin: 15px;
+  --slds-c-card-color-background: white;
+}
+
+.totTitle {
+  font-size: 15px;
+
+}
+
+.totPrice {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.shippingText {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+}
+
+.checkoutButton {
+  padding: 15px;
+}
+
+.priceCss {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px 10px;
+}
+
+.summaryCss {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px;
+}
+
+.itemTitleFree {
+  display: flex;
+
+}
+
+.memberValue {
+  font-weight: bold
+}
+
+.memberTotalvalue {
+  text-decoration: line-through;
+  margin-left: 5px;
+}
+
+.savingsText {
+  padding: 0px 15px 0px 15px;
+  letter-spacing: 0.48px;
+}
+
+.slds-combobox_container {
+  color: #000000 !important;
+}
+.slds-input_faux {
+border-radius: --sds-c-input-radius-border,0rem !important;
+background-color: --slds-g-color-neutral-base-100,#fff !important;
+}

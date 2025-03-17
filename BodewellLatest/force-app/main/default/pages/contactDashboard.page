@@ -1,0 +1,252 @@
+<apex:page controller="ContactDashboardController" lightningStylesheets="true" title="{!contactRec.Name} - Dashboard" action="{!redirectSearch}"
+           sidebar="true" showHeader="true" docType="html-5.0">
+    
+    <apex:slds />
+    <apex:includeLightning />
+    <div class="slds-scope">
+        <apex:actionstatus id="spinnerStatus">
+            <apex:facet name="start">
+                <div class="slds-spinner_container" style="position:fixed">
+                    <div id="mySpinner" role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+  
+
+    <apex:outputPanel rendered="{!!displayMulti}">
+        <apex:form id="apexform" >
+      <apex:pageBlock title="Contact"  >
+          <apex:pageBlockTable value="{!contactRec}" var="c">
+              <apex:column headerValue="Name">
+                 <apex:outputLink value="/{!c.Id}">{!c.Name}</apex:outputLink>
+             </apex:column>
+             <apex:column headerValue="Phone">
+                <apex:outputText value="{!c.Phone}"/>
+             </apex:column>
+             <apex:column headerValue="Email">
+                <apex:outputText value="{!c.Email}"/>
+             </apex:column>
+             
+               
+            
+          </apex:pageBlockTable>
+          <apex:commandButton action="{!searchContact}" value="Search Contact" styleclass="slds-button slds-button_brand"/>
+      </apex:pageBlock>
+        
+            
+            <apex:pageBlock title="Cases"  >
+                <apex:pageBlockTable value="{!caseList}" var="case">
+                     <apex:column headerValue="Case Number" style="width:75px">
+                         <apex:outputLink value="/{!case.c.Id}">{!case.c.CaseNumber}</apex:outputLink>
+                        <!--<apex:outputText value="{!case.c.CaseNumber}"/>-->
+                     </apex:column>
+                    <apex:column headerValue="Subject">
+                        <apex:outputText value="{!case.c.Subject}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Contact">
+                        <apex:outputText value="{!case.c.contact.name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Model Number">
+                        <apex:outputText value="{!case.modelNumbers}"/>
+                    </apex:column>
+                    <apex:column headerValue="Serial Number">
+                        <apex:outputText value="{!case.serialNumbers}"/>
+                    </apex:column>
+                    
+                     <apex:column headerValue="Created Date" style="width:150px">
+                        <apex:outputText value=" {!case.c.createdDate}"/>
+                      <!--   <apex:outputText value=" {0, date, MMMM d','  yyyy hh:MM a }">
+                            <apex:param value=" {!c.createdDate}"/>
+                        </apex:outputText>-->
+                        
+                     </apex:column>
+                     <apex:column headerValue="Closed Date" style="width:150px">
+                        <apex:outputText value=" {!case.c.closedDate}"/>
+                     </apex:column>
+                     <apex:column headerValue="Case Owner">
+                        <apex:outputText value="{!case.c.owner.name}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Service Location">
+                        <apex:outputText value="{!case.c.Consumer_Full_Address__c}"/>
+                    </apex:column>
+                    
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+
+          
+          <apex:pageBlock title="Service Locations" id="serviceLocations" >
+                <apex:pageMessages rendered="{!locationError}"/>
+                <apex:pageBlockTable value="{!locationsList}" var="loc">
+                    <apex:column headerValue="" style="width:50px">
+                        <apex:inputCheckbox value="{!loc.selected}" style="border: 1px solid rgb(83, 83, 153);"/>
+                    </apex:column>
+                    <apex:column headerValue="Location">
+                        <apex:outputText value="{!loc.locationDesc}"/>
+                    </apex:column>
+       
+             </apex:pageBlockTable>   
+            <apex:outputLabel rendered="{!!renderAddLocation}">
+                <apex:commandButton action="{!addLocation}" value="Add Location" reRender="serviceLocations,apexform" status="spinnerStatus" styleclass="slds-button slds-button_brand" />
+                <apex:commandButton action="{!removeLocation}" value="Remove Location" reRender="serviceLocations,apexform" status="spinnerStatus" styleclass="slds-button slds-button_brand" />
+            </apex:outputLabel>
+            
+            <apex:outputPanel rendered="{!renderAddLocation}">
+                Street <apex:inputText value="{!streetName}"/> 
+                Zip  <apex:inputText value="{!zipCode}"/>
+                <apex:commandButton action="{!verifyServiceLocation}" value="Verify Address" reRender="apexform" status="spinnerStatus" styleclass="slds-button slds-button_brand" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!cancelAddLocation}" value="Cancel" reRender="apexform"  styleclass="slds-button slds-button_brand"/>
+            </apex:outputPanel>
+           
+            </apex:pageBlock> 
+          
+          <apex:pageBlock title="Assets"  >
+               
+                <apex:pageBlockTable value="{!assetsList}" var="a">
+                    <apex:column headerValue="" style="width:50px">
+                        <apex:inputCheckbox value="{!a.selected}" style="border: 1px solid rgb(83, 83, 153);"/>
+                    </apex:column>
+                       
+                      <apex:column headerValue="Model" style="width:150px">
+                          <apex:outputLink value="/{!a.asset.Id}">{!a.asset.Model_Number__c}</apex:outputLink>
+                        <!--<apex:outputField value="{!a.asset.Model_Number__c}"/>-->
+                    </apex:column> 
+                    <apex:column headerValue="Serial Number" style="width:200px">
+                        <apex:outputField value="{!a.asset.SerialNumber}"/>
+                    </apex:column> 
+                    <apex:column headerValue="Ownership Started" style="width:200px">
+                        <apex:outputField value="{!a.asset.InstallDate}"/>
+                    </apex:column>
+                    <apex:column headerValue="Brand" style="width:150px">
+                        <apex:outputField value="{!a.asset.BrandName__c}"/> 
+                    </apex:column>
+                    <apex:column headerValue="Product Brand" style="width:150px">
+                        <apex:outputField value="{!a.asset.Product_Brand__c}"/> 
+                    </apex:column>
+                    <apex:column headerValue="Type" style="width:150px">
+                        <apex:outputField value="{!a.asset.Product_Type__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Line" style="width:150px">
+                        <apex:outputField value="{!a.asset.Product_Line__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Location" style="width:250px">
+                        <apex:outputText value="{!a.locationDesc}"/>
+                    </apex:column>
+                    <apex:column headerValue="In Warranty?" style="width:150px">
+                        <apex:outputField value="{!a.asset.In_Warranty__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageMessages rendered="{!assetError}"/>
+                <apex:outputLabel rendered="{!!renderAddAsset&&!renderRelocationAsset}">
+                <apex:commandButton action="{!addAsset}" value="Add Asset" reRender="apexform" styleclass="slds-button slds-button_brand"/>
+                <apex:commandButton action="{!relocateAssetButton}" value="Relocate Asset" reRender="apexform" styleclass="slds-button slds-button_brand" />
+                <apex:commandButton action="{!removeAsset}" value="Remove Asset" onclick="if(!confirm('Are you sure you want to remove asset?')){return false};" reRender="apexform" styleclass="slds-button slds-button_brand" />
+            </apex:outputLabel>
+            <apex:outputPanel rendered="{!renderAddAsset}">
+                Model Number:<apex:inputText value="{!modelNumber}"/> 
+                Serial Number:<apex:inputText value="{!serialNumber}"/>
+                Install Date:<apex:input value="{!installDate}" 
+                    html-placeholder="Install Date" 
+                    type="date" />
+                <apex:selectList label="Fields" value="{!selectedLocationId}" multiselect="false" size="1" >
+                     <apex:selectOptions value="{!LocationSelections}" />
+                </apex:selectList>
+                In Warranty?<apex:selectList id="WarrantyStatusId" value="{!WarrantyStatus}" size="1">
+                    <apex:selectOption itemValue="true" itemLabel="Yes"/>
+                    <apex:selectOption itemValue="false" itemLabel="No"/>
+                </apex:selectList> 
+                <apex:commandButton action="{!verifyAsset}" value="Verify Asset" reRender="apexform" status="spinnerStatus" styleclass="slds-button slds-button_brand" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!cancelAddAsset}" value="Cancel" reRender="apexform" status="spinnerStatus" styleclass="slds-button slds-button_brand"/>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!renderRelocationAsset}">
+                
+                <apex:selectList label="Fields" value="{!selectedLocationId}" multiselect="false" size="1" >
+                     <apex:selectOptions value="{!LocationSelections}" />
+                </apex:selectList>
+                <apex:commandButton action="{!relocateAsset}" value="Relocate Asset" styleclass="slds-button slds-button_brand"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:commandButton action="{!cancelAddAsset}" value="Cancel" reRender="apexform" styleclass="slds-button slds-button_brand" />
+            </apex:outputPanel>
+              
+            </apex:pageBlock>
+            
+    
+            <apex:pageBlock title="Create Case"  >
+                    <apex:pageMessages rendered="{!caseError}" />
+                <table>
+                    <tr>
+                        <td>Case Subject</td>
+                        <td><apex:inputText value="{!caseSubject}"/></td>
+                        <td>Case Reason</td>
+                        <td><apex:inputField value="{!newCase.Reason}"/></td>
+                        <td>Case Description</td>
+                        <td><apex:inputTextArea value="{!caseNotes}" style="width:300px"/></td>
+                        <td></td>
+                    </tr>
+                </table>
+            <br/>
+           
+            
+            <apex:commandButton action="{!createCase}" value="Create New Case"  status="spinnerStatus" reRender="apexform" styleclass="slds-button slds-button_brand"/>
+            </apex:pageBlock>
+            
+         <apex:pageBlock title="Marketing Emails" >
+                <apex:pageBlockTable value="{!emails}" var="em" >
+                   <!--  <apex:column headerValue="Date" >
+                        <apex:outputText value="{!em.SentEventDate__c}"/>
+                     </apex:column> -->
+                    <apex:column headerValue="Date" >
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy hh:mm:ss}">
+                                <apex:param value="{!em.SentEventDate__c}" /> 
+                            </apex:outputText>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Subject">
+                        <apex:outputText value="{!em.Subject__c}"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="View Email">
+                        <apex:outputLink value="{!em.PreviewURL__c}">{!em.PreviewURL__c}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="From">
+                        <apex:outputText value="{!em.FromName__c}"/>
+                    </apex:column>
+                  <!--  <apex:column headerValue="Email Type">
+                        <apex:outputText value="{!em.FromEmail__c}"/>
+                    </apex:column> -->
+                    
+                     <apex:column headerValue="Status" >
+                        <apex:outputText value=" {!em.status__c }"/>
+                     </apex:column>
+                     <apex:column headerValue="Bounce Reason" >
+                        <apex:outputText value=" {!em.BounceReason__c}"/>
+                     </apex:column>
+                    
+                     <apex:column headerValue="Click Date" >
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!em.ClickEventDate__c}" /> 
+                            </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Open Date" >
+                            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!em.OpenEventDate__c}" /> 
+                            </apex:outputText>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+          
+            
+        </apex:form>
+      </apex:outputPanel>
+    </div>
+        
+</apex:page>

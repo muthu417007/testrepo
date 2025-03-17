@@ -1,0 +1,18 @@
+<template>
+
+ 
+   <template if:true={productPrices}>
+        <lightning-layout-item flexibility="auto" size="4">
+            <Strong>
+                ${productPrices.unitPrice}
+            </Strong>
+            </lightning-layout-item>
+       </template>
+       <template if:false={productPrices}>
+        <lightning-layout-item flexibility="auto" size="4">
+            <Strong>
+               Price Un-available
+            </Strong>
+            </lightning-layout-item>
+       </template>
+</template>

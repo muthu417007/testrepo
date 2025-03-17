@@ -1,0 +1,21 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner style="height: 100%; color:inherit;" alternative-text="Loading" variant="brand"
+                size="large"></lightning-spinner>
+        </template>
+    </div>     
+    <div class="main" if:false={isLoading}>
+        <div class="slds-text-body_regular left-text path-content">
+            <span>
+                <a class="path" href="https://www.geappliances.com/">Home</a>
+                <span class="space">&nbsp;/ Account Sign Out</span>
+            </span>
+        </div>
+            <div class="main-header">You are signed out.</div>
+            <div class="sub-header"> You have successfully signed out of your account.</div>
+            <div>
+                <a class="sign-in-link" href={href}>BACK TO SIGN IN</a>
+            </div>
+    </div>
+</template>

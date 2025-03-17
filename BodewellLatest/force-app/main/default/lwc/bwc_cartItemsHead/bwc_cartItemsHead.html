@@ -1,0 +1,26 @@
+<template>
+    <div class="continueShopping slds-col slds-size_1-of-1">
+        <a href={homeUrl}> &lt; Continue Shopping </a>
+    </div>
+    <template if:true={cartflag}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_5-of-12">
+                <div class="cartTitle">
+                    <p class="cartName">My Cart</p>
+                    <p class="cartQuantity">{cartQuantity} Items</p>
+                </div>
+            </div>
+
+            <!-- <div class="slds-col slds-size_2-of-12">
+                <span> </span>
+            </div>
+
+            <div class="slds-col slds-size_5-of-12">
+                <div class="cartPrice">
+                    <p class="cartTotalTitle">Subtotal:</p>
+                    <p class="cartTotalPrice">${_fixedTotal}</p>
+                </div>
+            </div>  -->
+        </div>
+    </template>
+</template>

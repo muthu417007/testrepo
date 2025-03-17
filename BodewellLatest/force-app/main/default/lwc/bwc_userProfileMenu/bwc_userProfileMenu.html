@@ -1,0 +1,47 @@
+<template>
+    <div class="user-profile-dropdown">
+        <div onclick={handleDropdownClick}>
+            <span class="icon profile-icon">
+                <svg viewBox="0 0 31.5 36">
+                    <path d="m31.5,33.56c0,1.35-1.09,2.44-2.44,2.44H2.44c-1.35,0-2.44-1.09-2.44-2.44,0-6.73,5.46-12.19,12.19-12.19h7.13c6.73,0,12.19,5.46,12.19,12.19ZM6.75,9C6.75,4.03,10.78,0,15.75,0s9,4.03,9,9-4.03,9-9,9S6.75,13.97,6.75,9Z"/>
+                </svg>
+            </span>
+            <div class="text">
+                <span lwc:if={isLoggedIn}>{userName}</span>
+                <span lwc:else >Sign In</span>
+            </div>
+        </div>
+        <div class="dropdown-content">
+            <div class="arrow-up"></div>
+            <div class="dropdown-links">
+                
+                <div lwc:if={isLoggedIn}>
+                
+                    <span onclick={handleGoToOrders}>Orders</span>
+                    <span onclick={handleGoToMYA}>Account Profile</span>
+                    <span onclick={handleGoToAddressBook}>Addresses Book &amp; Payment Methods</span>
+                    <span onclick={handleGoToSubscriptions}>Subscriptions</span>
+                    <span onclick={handleGoToRepairServices}>Repair Services</span>
+                    <span>Return An Item</span>
+                    <span onclick={handleGoToWishlist}>Wishlist</span>
+                    <span><a href={logoutLink}>Sign Out</a></span>
+                </div>
+                <div lwc:else>
+                    <!-- <a> tags required here on Anonymous for SEO purposes -->
+                    <span onclick={handleGoToLogin}><a href="#">Sign In/Create Account</a></span>
+                    <span><a href="#">Wish List</a></span>
+                    <span><a href="#">Check Order Status</a></span>
+                    <span><a href="#">Return An Item</a></span>
+                    <a href="#" class="membership-container">
+                        <div class="member-icon">
+                            <svg viewBox="0 0 421.11 327.53">
+                                <path d="m421.11,35.09v11.7H0v-11.7C0,15.71,15.71,0,35.09,0h350.92c19.37,0,35.09,15.71,35.09,35.09ZM0,70.18h421.11v222.25c0,19.38-15.71,35.09-35.09,35.09H35.09c-19.38,0-35.09-15.72-35.09-35.09V70.18Zm46.79,198.86c0,6.43,5.23,11.7,11.7,11.7h140.37c6.46,0,11.7-5.24,11.7-11.7,0-19.38-15.71-35.09-35.09-35.09h-93.58c-19.38,0-35.09,15.72-35.09,35.09Zm35.09-105.28c0,25.84,20.95,46.79,46.79,46.79s46.79-20.95,46.79-46.79-20.95-46.79-46.79-46.79-46.79,20.95-46.79,46.79Zm175.46-35.09c0,6.43,5.26,11.7,11.7,11.7h93.58c6.43,0,11.7-5.26,11.7-11.7s-5.26-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.26-11.7,11.7Zm0,46.79c0,6.43,5.26,11.7,11.7,11.7h93.58c6.43,0,11.7-5.26,11.7-11.7s-5.26-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.26-11.7,11.7Zm0,46.79c0,6.46,5.24,11.7,11.7,11.7h93.58c6.43,0,11.7-5.24,11.7-11.7s-5.24-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.24-11.7,11.7Z" />
+                            </svg>
+                        </div>
+                        <p class="slds-text-align_left slds-m-left_small">Learn about the benefits of <b>Bodewell Membership</b></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

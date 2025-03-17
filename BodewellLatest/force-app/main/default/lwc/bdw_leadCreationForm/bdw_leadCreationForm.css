@@ -1,0 +1,135 @@
+.captcha {
+    margin: 35px 0px 25px 0px;
+    height: 74px;
+    width: 70px;
+    display: block;
+}
+
+.checkbox-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.submit-button {
+    margin-top: 1.6em;
+    color: #fff;
+    -webkit-appearance: none;
+    border-radius: 25px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: .45px !important;
+    line-height: 16px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    padding: 1rem 5rem !important;
+    background-color: #145b95 !important;
+}
+
+.submit-button:hover {
+    background-color: #0056ad;
+    color: #fff;
+}
+
+.submit-button:hover,
+.submit-button:active {
+    background-color: #3e5769 !important;
+}
+
+.slds-form-element__label {
+    font-weight: 600;
+    font-family: neue-haas-grotesk-display;
+    letter-spacing: 0.0625em;
+    color: #12212e;
+    font-size: 20px;
+}
+
+.slds-input {
+    border: 1px solid #d8dde6;
+    border-radius: 2px;
+}
+
+.slds-checkbox .slds-checkbox__label .slds-form-element__label {
+    color: #12212e;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    margin-bottom: 10px;
+    margin: 0 12px 0 4px;
+    letter-spacing: 0.0625em;
+}
+
+.slds-checkbox .slds-checkbox_faux, .slds-checkbox .slds-checkbox--faux {
+    border: 1px solid #515e59;
+    color: #515e59!important;
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.slds-input_faux:not(.slds-combobox__input-value) {
+    padding: .25em .5rem;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.0625em;
+}
+
+.slds-listbox_vertical .slds-listbox__option_plain {
+    padding: .25em .5rem;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.0625em;
+}
+
+.slds-form-element__control .slds-checkbox {
+    margin-bottom: 5px;
+}
+
+small {
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 1;
+    margin-top: 0;
+    padding: 0;
+    color: #12212e;
+}
+
+@media all and (min-width:992px) {
+    .width-input-box {
+        max-width: 38%;
+    }
+}
+
+@media all and (max-width:992px) {
+    .width-input-box {
+        max-width: 90%;
+    }
+    .mob-wdth-set {
+        max-width: 80%;
+        margin: 0px auto;
+    }
+}
+
+:host .label-font {
+    --lwc-formLabelFontSize: 1.25rem;
+    --lwc-colorTextLabel: #12212e;
+    --lwc-spacingXxxSmall: 0.125rem;
+}
+
+.i-agree {
+    font-weight: 600;
+    font-size: 20px;
+    color: #12212e;
+    white-space: normal;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}
+
+.label-text {
+    font-weight: 600;
+}
+
+:host .combox-font {
+    --lwc-formLabelFontSize: 1.25rem !important;
+    --lwc-spacingXxxSmall: 0.125rem;
+}

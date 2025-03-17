@@ -1,0 +1,106 @@
+<template>
+
+    <template if:true={ownerconsent}>
+        <lightning-layout multiple-rows class="slds-m-top_medium">
+            <lightning-layout-item size="12" class="slds-align_absolute-center">
+                <lightning-button-group>
+                    <lightning-button variant="neutral" label="Barcode Scan" title="Barcode Scan" type="text" onclick={handleBarcodeScan}></lightning-button>
+                </lightning-button-group>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" class="slds-align_absolute-center">
+                <lightning-file-upload accept={acceptedFormats} onuploadfinished={handleOCRScan}></lightning-file-upload>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <template if:true={isBarcodeScan}>
+            <lightning-layout multiple-rows class="slds-align_absolute-center">
+                <lightning-layout-item size="12" class="slds-align_absolute-center slds-m-top_medium">
+                    Scanned barcode value is:
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="slds-align_absolute-center slds-m-around_medium">
+                    <button class="slds-button slds-m-right_small" onclick={handleClearBarcode}><lightning-icon icon-name="utility:delete" size="small" alternative-text="Clear" title="Clear"></lightning-icon></button>
+                    <span class="elem-word-wrap">
+                        {scannedBarcode}
+                    </span>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+
+        <template if:true={isCapturePicture}>
+            <template for:each={uploadedFiles} for:item="item">
+                <li key={item.documentId} class="no-bullets slds-list__item slds-p-around_xxx-small d-flex">
+                    <lightning-button-icon size="large" data-item={item.documentId} variant="bare" icon-name="utility:delete" alternative-text="Delete" title="Delete" onclick={handleDeleteFile}>
+                    </lightning-button-icon>
+                    <span class="elem-word-wrap icontext-padding">{item.name}</span>
+                </li>
+            </template>
+        </template>
+
+        <template if:true={isScan}>
+            <div class="slds-p-around_medium">
+                <lightning-combobox label="Model Number" value={scannedModel} placeholder="Select Model Number" options={ocrOptions} onchange={handleModelChange} ></lightning-combobox>
+                <lightning-combobox label="Serial Number" value={scannedSerialNumber} placeholder="Select Serial Number" options={ocrOptions} onchange={handleSerialNumberChange} ></lightning-combobox>
+            </div>
+        </template>
+
+        <lightning-record-edit-form class="slds-m-around_medium" object-api-name="Asset" onsubmit={handleSubmit} onsuccess={handleSuccess} onerror={handleError}>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12">
+                    <lightning-input-field field-name="Model_Number__c" value={scannedModel} required></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <lightning-input-field field-name="SerialNumber" value={scannedSerialNumber} required></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <lightning-combobox class="brand"
+                                        id="customBrandInput"
+                                        label="Brand Name"
+                                        value={value}
+                                        placeholder="Select Brand"
+                                        options={brandsList}
+                                        onchange={handleBrandChange} 
+                                        required="true"
+                                        variant="label-inline"></lightning-combobox>
+                </lightning-layout-item>
+                <template if:true={showOtherBrandInput}>
+                    <lightning-layout-item size="12">
+                        <lightning-input type="text" 
+                                         class="otherBrand" 
+                                         label="Other Brand" 
+                                         onchange={handleOtherBrandChange} 
+                                         required="true"
+                                         variant="label-inline"></lightning-input>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="12">
+                    <lightning-input-field field-name="InstallDate" ></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <lightning-input-field field-name="Scanned_Barcode_Value__c" value={scannedBarcode}></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <div class="slds-m-top_large slds-grid slds-grid_align-center">
+                        <lightning-button variant="brand"
+                            label="Save Asset"
+                            title="Save Asset"
+                            type="submit">
+                        </lightning-button>
+                    </div>
+                    </lightning-layout-item>
+            </lightning-layout>
+        </lightning-record-edit-form>
+
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+    </template>
+
+    <template if:false={ownerconsent}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" class="slds-align_absolute-center slds-m-around_medium">
+                You need Owner Consent to be able to create Assets.
+            </lightning-layout-item>
+        </lightning-layout>
+    </template>
+
+</template>

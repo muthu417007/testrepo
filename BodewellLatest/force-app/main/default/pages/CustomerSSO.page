@@ -1,0 +1,3 @@
+<apex:page id="CustomerSSO" controller="PS_SSOInitiationController" action="{!SSOInitialRedirection}">
+    <apex:pageMessages id="error"/>
+</apex:page>

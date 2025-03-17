@@ -1,0 +1,10 @@
+<apex:page standardController="Asset" extensions="ConnectedAppliance_ext" lightningStylesheets="true">
+  <apex:form >
+      <apex:commandButton value="Get Connection Status" action="{!checkStatus}"/>
+      <br/>
+     <apex:pageMessages ></apex:pageMessages>
+      <apex:outputText >Appliance Id : {!connectedStatus.applianceId}</apex:outputText>
+      <br/>
+      <apex:outputText >Presence : {!connectedStatus.presence}</apex:outputText>
+  </apex:form>
+</apex:page>

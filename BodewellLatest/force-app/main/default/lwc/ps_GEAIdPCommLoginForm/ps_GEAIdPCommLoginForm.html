@@ -1,0 +1,95 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+    </div>
+
+    <h2 class="idp-page-title">
+        <label class=""> {pageTitleLabel} </label>
+    </h2>
+
+
+
+    <div class="idp-form slds-m-bottom_xx-large">
+        <div class="slds-m-bottom_medium username_container">
+            <label class="slds-form-element__label idp-label">
+                {userNameLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="text"
+                        data-id="userName_id"
+                        name="email"
+                        class="idp-text-input"
+                        onchange={onInputChanged}
+                        required=""
+                        onkeyup={keyPressed}
+                        autocapitalize="off"
+                />
+            </div>
+            <template if:true={usernameHasError} class="slds-has-error">
+                <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{usernameValidationError}
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-m-bottom_medium password_container">
+            <label class="slds-form-element__label idp-label">
+                {passWordLabel}
+            </label>
+            <div class="slds-form-element__control">
+                <input
+                        type="password"
+                        data-id="password_id"
+                        name="password"
+                        class="idp-text-input"
+                        onchange={onInputChanged}
+                        required=""
+                        onkeyup={keyPressed}
+                />
+            </div>
+            <template if:true={passwordHasError}>
+                <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{passwordValidationError}
+                </div>
+            </template>
+        </div>
+
+        <div id="forgot_password" class="slds-form-element slds-grid">
+            <a class="idp-link" href={forgotPasswordLink} target="_self"> {forgotPasswordLabel} </a>
+        </div>
+
+        <div if:false={airWatersite} id="passwordless_login" class="slds-form-element slds-grid slds-m-top_medium slds-m-bottom_small">
+            <a class="idp-link" href={passwordlessLoginLink} target="_self"> {passwordlessLabel} </a>
+        </div>
+
+        <template if:true={generalError}>
+            <div class="generalErrorClass">{generalErrorMessage}</div>
+        </template>
+
+        <button
+                class="
+            slds-p-around_x-small
+            slds-m-top_small
+            slds-m-bottom_small
+            idp-primary-button
+        "
+                onclick={handleLogin}
+        >
+            {loginButtonLabel}
+        </button>
+        <template if:false={airWatersite}>
+        <button
+                class="
+            slds-p-around_x-small
+            slds-m-top_small
+            slds-m-bottom_small
+            idp-secondary-button
+        "
+                onclick={handleCreateAccount}
+        >
+            {createAccountLabel}
+        </button>
+    </template>
+    </div>
+</template>

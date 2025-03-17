@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG Custom Button</masterLabel>
+    <description>Custom Button Component for REGA</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="buttonLabel" label="ButtonLabel" type="String"  description="Button Label"/>
+            <property name="buttoncolor" label="Button Color" type="Color"/>
+            <property name="buttontextcolor" label="Button Text Color" type="Color"/>
+            <property name="buttoncolorhover" label="Button Color On Hover" type="Color"/>
+            <property name="showIcon" label="Show Icon" type="Boolean" description="Show Button Icon"/>
+            <property name="buttonWidth" label="Button Width" type="String" description="Button Width(use value with px or rem)" default="0"/>
+            <property name="borderRadious" label="Border Radious" type="String" description="Border Radious" default="0"/>
+            <property name="buttonAlign" label="Button Align" type="String" default="Center" description="Button Align"  datasource="Left,Right,Center"/>
+            <property name="navigationtype" label="Navigation type" type="String" description="Navigation Type" datasource="External Link,Site Page"/>
+            <property name="redirectionLink" label="Redirection Link" type="String" description="Redirection Link"/>
+            <property name="buttonArea" label="Button Area" type="String" description="Button Area" default="body" datasource="header,body,footer"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

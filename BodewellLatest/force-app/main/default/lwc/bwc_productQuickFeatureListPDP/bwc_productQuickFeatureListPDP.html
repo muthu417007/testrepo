@@ -1,0 +1,17 @@
+<template>
+
+    <ul class="slds-list_dotted">
+        <template if:true={firstThreeItemsFeature}>
+            <template for:each={firstThreeItemsFeature.BenefitCopy} for:item="feature" for:index="index">
+               
+        <li class="pdp-quick-list" key={feature.Feature}>{feature.Feature}</li>
+        </template>
+        </template>
+        <template if:true={height}>
+            <li class="pdp-quick-list">Dimensions:{height} H &#x2715; {width} W &#x2715; {depth} D</li>
+        </template>
+      </ul>
+      <template if:true={firstThreeItemsFeature}>
+      <a class="pdp-learn-more" onclick={scrollHandler}>Learn more ></a>
+      </template>
+</template>

@@ -1,0 +1,200 @@
+<template>
+	<div class="slds-grid slds-wrap">
+		<div
+			class="slds-col slds-p-horizontal_small slds-order_2 slds-large-order_1 slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_4-of-12">
+			<div class="slds-p-vertical_x-small">
+				<div class="slds-text-heading_medium">
+					<h2> Preferred Partner Locations: </h2>
+				</div>
+			</div>
+			<div>
+				<c-b-w-c_-location-search-input zip-location={zipLocation} onitemselect={locationSearchHandler}>
+				</c-b-w-c_-location-search-input>
+			</div>
+			<div if:true={searchingStoreDetails} class="spinner">
+				<lightning-spinner alternative-text="Loading"></lightning-spinner>
+			</div>
+			<div
+				class="desk-hidden slds-col slds-p-top_small slds-order_1 slds-large-order_2 slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12">
+				<div class="mob-map" if:true={mapLoaded}>
+					<button if:true={mobmapview} class="mob-map-buttons slds-p-around_small slds-button slds-button_brand store-offer-promo-button" onclick={handleMobMapView}>
+						<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+							<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#list"></use>
+						</svg>
+						<div>List View</div>
+					</button>
+					<button if:false={mobmapview} class="mob-map-buttons slds-p-around_small slds-button slds-button_brand store-offer-promo-button" onclick={handleMobMapView}>
+						<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+							<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#location"></use>
+						</svg>
+						<div>Map View</div>
+					</button>
+					<lightning-map class="map-max-height" if:true={mobmapview} map-markers={mapMarkers}
+						markers-title={markersTitle} list-view={listView} zoom-level={zoomLevel}>
+					</lightning-map>
+				</div>
+			</div>
+			<div if:false={storeListView} class="slds-scrollable_y list-view-section">
+				<div if:true={hasStore} class="slds-m-top_large" tabindex="0">
+					<template for:each={storePoints} for:item="point" for:index="index">
+						<div style="background-color: #FFFFFF;" class="slds-box slds-box_x-small slds-m-bottom_medium"
+							key={point.id}>
+							<div class="slds-grid slds-wrap">
+								<div class="slds-col slds-size_1-of-12">
+									<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default store-locator-icon"
+										aria-hidden="true">
+										<use
+											xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#checkin">
+										</use>
+									</svg>
+									<!-- <div class="store-locator-pin">{point.ind}</div> -->
+								</div>
+								<div class="slds-col slds-size_5-of-12 slds-text-body_small">
+									<div class="slds-p-vertical_xx-small">
+										<div class="slds-text-heading_x_small">
+											<b> {point.title} </b>
+											<!-- <b> {point.distance} mi </b> -->
+										</div>
+									</div>
+								</div>
+								<div class="slds-col slds-size_6-of-12 slds-text-body_small">
+									<div class="slds-text-align_right slds-p-right_x-small">
+										<b> {point.distance} mi</b>
+									</div>
+								</div>
+							</div>
+							<div class="slds-grid slds-wrap">
+								<!-- <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+									<h2></h2>
+								</div> -->
+								<div
+									class="slds-p-left_x-large slds-col slds-size_11-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 slds-text-body_small">
+									<div class="slds-p-vertical_xx-small">
+										<div if:true={point.storeStatus.isOpened}>
+											<span if:true={point.storeStatus.isClosing}>Closes soon. </span>
+											<span if:true={point.storeStatus.isClosing}>{point.storeStatus.closingTime}.</span>
+										</div>
+										<div if:true={point.storeStatus.isOpened}>
+											<span if:true={point.storeStatus.isClosing}>Opens. </span>
+											<span if:true={point.storeStatus.isClosing}>{point.storeStatus.nextDayStarting}, {point.storeStatus.nextDayOfWeek}.</span>
+										</div>
+										<div if:true={point.storeStatus.isOpened}>
+											<span if:false={point.storeStatus.isClosing}>Open. </span>
+											<span if:false={point.storeStatus.isClosing}>Closes {point.storeStatus.closingTime}.</span>
+										</div>
+										<div if:false={point.storeStatus.isOpened}>
+											<span if:true={point.storeStatus.isOpening}>Opens soon. </span>
+											<span if:true={point.storeStatus.isOpening}>{point.storeStatus.openingTime}.</span>
+										</div>
+										<div if:false={point.storeStatus.isOpened}>
+											<span if:false={point.storeStatus.isOpening}>Closed. </span>
+										</div>
+										<div if:false={point.storeStatus.isOpened}>
+											<span if:false={point.storeStatus.isOpening}>Opens {point.storeStatus.nextDayStarting}, {point.storeStatus.nextDayOfWeek}.</span>
+										</div>
+									</div>
+									<div class="slds-p-vertical_xx-small">
+										<div class="slds-p-bottom_xxx-small">
+											<span class=""> {point.address} </span>
+										</div>
+										<div class="slds-p-top_xxx-small">
+											<a class="" href={point.phoneLink}>{point.phone}</a>
+										</div>
+									</div>
+									<div class=" slds-p-vertical_xx-small">
+										<a class="link-section" href={point.direction}>Get Directions</a>
+									</div>
+									<!-- <div if:false={point.acceptAppointment}
+										class="slds-p-vertical_xx-small slds-align_absolute-center">
+										<a class="slds-button slds-button_brand slds-button_full-width" data-id={point.id} onclick={handleStoreOffer}>Store Special Offer</a>
+										<button data-id={point.id} onclick={handleStoreOffer} disabled={point.disablePromoCode} class="custom-button custom-button-offer slds-button slds-button_brand">
+													GET SPECIAL OFFER CODE
+											</button>
+									</div>
+									<div if:true={point.acceptAppointment}
+										class="slds-p-vertical_xx-small slds-align_absolute-center">
+										<a class="slds-button slds-button_brand slds-button_full-width" data-id={point.id} onclick={handleStoreOffer}>Store Special Offer</a>
+										<button data-id={point.id} onclick={scheduleAppoinment} class="custom-button custom-button-schedule slds-button slds-button_brand">
+													<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#event"></use>
+													</svg>
+													SCHEDULE APPOINTMENT
+											</button>
+									</div> -->
+								</div>
+								<div class="desk-hidden slds-col slds-size_1-of-1">
+									<template for:each={point.storeService} for:item="ser">
+										<span class="slds-text-body_small" key={ser.service}>&#x2022; {ser.service} &nbsp;</span>
+									</template>
+								</div>
+								<div
+									class="mob-hidden slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12 slds-text-body_small">
+									<div class="slds-p-horizontal_large modal-section">
+										<div class="slds-text-heading_xx_small slds-m-bottom_x-small">
+											<b>At this location</b>
+										</div>
+										<div>
+											<ul class="mob-hidden slds-list_dotted">
+												<template for:each={point.storeService} for:item="ser">
+													<li class="slds-m-bottom_xx-small" key={ser.service}>{ser.service}
+													</li>
+												</template>
+											</ul>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="slds-grid slds-wrap">
+								<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12"></div>
+								<div if:true={point.acceptAppointment} class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-p-vertical_xx-small slds-align_absolute-center">
+									<button data-id={point.id} onclick={scheduleAppointment} class="custom-button custom-button-offer slds-button slds-button_brand">
+													<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<use xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#event"></use>
+													</svg>
+													GET SPECIAL OFFER & REQUEST APPOINTMENT
+											</button>
+								</div>
+								<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12"></div>
+							</div>
+							<div class="slds-grid slds-wrap">
+								<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12"></div>
+								<div class="slds-co slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-p-vertical_xx-small slds-align_absolute-center">
+									<button data-id={point.id} onclick={handleStoreOffer} disabled={point.disablePromoCode} class="custom-button custom-button-offer slds-button slds-button_brand">
+													GET SPECIAL OFFER CODE
+											</button>
+								</div>
+								<div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-12 slds-large-size_1-of-12"></div>
+							</div>
+						</div>
+					</template>
+				</div>
+				<div if:false={hasStore} class="slds-m-top_large slds-scrollable_y" tabindex="0">
+					<div class="slds-m-bottom_small">We’re sorry, but there are no preferred partners near you.</div>
+					<div class="slds-m-top_small">We are constantly expanding and adding new partners and home services,
+						so check back again soon.</div>
+				</div>
+			</div>
+
+		</div>
+		<div
+			class="mob-hidden slds-col slds-p-horizontal_small slds-order_1 slds-large-order_2 slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12">
+			<div class="desk-map" if:true={mapLoaded}>
+				<lightning-map class="map-view-section" map-markers={mapMarkers} markers-title={markersTitle}
+					list-view={listView} zoom-level={zoomLevel}>
+				</lightning-map>
+			</div>
+		</div>
+	</div>
+	<div if:true={storeOfferOpened}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_small">
+			<div class="modal-xx-small slds-modal__container store-offer-modal">
+				<div class="slds-modal__content" id="modal-content-id-1">
+					<c-bwc_-store-referal-form store-info={storeInfo} offer-mode={offerMode}
+						onclose={handleStoreOfferModal}></c-bwc_-store-referal-form>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</div>
+</template>

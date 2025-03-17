@@ -1,0 +1,96 @@
+<template>
+    <div class="top-nav nav-mobile nav-mob-margins">
+        <input id="menu-toggle" class="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+            <template iterator:it={menuListItems}>
+                <li key={it.value.id} if:false={it.value.isServiceArea} class="nav-mobile">
+                    <!-- <a if:true={it.value.menuItemTarget} data-value={it.value.menuItemTarget} href={redirectURL}
+                        onclick={handleNavigation}>{it.value.menuItemName}</a> -->
+                        <div if:true={it.value.menuItemTarget}>
+                            <c-r-g_-navigation-link link={it.value.menuItemTarget} label={it.value.menuItemName} is-service-area={it.value.isServiceArea}></c-r-g_-navigation-link>
+
+                        </div>
+                        <div if:true={it.value.isMenu} class="dropdown">
+                            <button class="dropbtn">{it.value.menuItemName}
+                                <lightning-icon icon-name="utility:chevrondown" alternative-text="chevrondown" title="chevrondown" size="x-small" class="nav-icn-clr slds-p-left_x-small"></lightning-icon>
+                            </button>
+                            <div class="dropdown-content">
+                                <template for:each={it.value.subMenuItemList} for:item="item">
+                                    <div key={item.subMenuItemId}>
+                                        <!-- <a href={redirectURL} data-value={item.subMenuItemTarget}
+                                            onclick={handleNavigation}>{item.subMenuItemName}</a> -->
+                                        <c-r-g_-navigation-link link={item.subMenuItemTarget} label={item.subMenuItemName} is-service-area={item.isServiceArea}></c-r-g_-navigation-link>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                </li>
+                <li key={it.value.id} if:true={it.value.isServiceArea} class="nav-mobile">
+                    <!-- <a if:true={it.value.menuItemTarget} data-value={it.value.menuItemTarget} href={redirectURL}
+                        onclick={handleNavigation}><i class="fa fa-map-marker"></i>{it.value.menuItemName}</a> -->
+                    <c-r-g_-navigation-link link={it.value.menuItemTarget} label={it.value.menuItemName} is-service-area={it.value.isServiceArea}></c-r-g_-navigation-link>
+                </li>
+            </template>
+        </ul>
+        <a href={tollfreelink} onclick={handleCall} class="slds-m-right_x-small">
+            <lightning-icon icon-name="utility:call" alternative-text="call!" title="call" size="small"
+            class="mob-sch-service-btn mob-call nav-icn-clr"></lightning-icon>
+        </a>        
+        <a href={redirectionLink} target="_blank" onclick={handleSchedule}>
+            <button class="sch-service-btn mob-sch-service-btn mob-sch">{buttonlabel}</button>
+        </a>
+
+    </div>
+    <div class="top-nav nav-not-mobile">
+        <div style="flex: 1">
+            <ul class="nav-not-mobile">
+                <template iterator:it={menuListItems}>
+                    <li key={it.value.id} if:false={it.value.isServiceArea} class="slds-p-right_xx-large">
+                        <!-- <a if:true={it.value.menuItemTarget} data-value={it.value.menuItemTarget} href={redirectURL}
+                            onclick={handleNavigation}>{it.value.menuItemName}</a> -->
+                            <div if:true={it.value.menuItemTarget}>
+                                <c-r-g_-navigation-link link={it.value.menuItemTarget} label={it.value.menuItemName} is-service-area={it.value.isServiceArea}></c-r-g_-navigation-link>
+                            </div>
+                            <div if:true={it.value.isMenu} class="dropdown">
+                                <button class="dropbtn">{it.value.menuItemName}
+                                    <lightning-icon icon-name="utility:chevrondown" alternative-text="chevrondown" title="chevrondown" size="x-small" class="nav-icn-clr slds-p-left_x-small"></lightning-icon>
+                                </button>
+                                <div class="dropdown-content">
+                                    <template for:each={it.value.subMenuItemList} for:item="item">
+                                        <div key={item.subMenuItemId}>
+                                            <!-- <a href={redirectURL} data-value={item.subMenuItemTarget}
+                                                onclick={handleNavigation}>{item.subMenuItemName}</a> -->
+                                            <c-r-g_-navigation-link link={item.subMenuItemTarget} label={item.subMenuItemName} is-service-area={it.value.isServiceArea}></c-r-g_-navigation-link>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                    </li>
+                    <li key={it.value.id} if:true={it.value.isServiceArea} class="slds-p-right_x-large">
+                        <!-- <a if:true={it.value.menuItemTarget} data-value={it.value.menuItemTarget} href={redirectURL}
+                            onclick={handleNavigation}>
+                            
+                            <lightning-icon icon-name="utility:checkin" alternative-text="Service!" title="Service"
+                            size="x-small" variant="inverse" class="nav-icn-clr"></lightning-icon>&nbsp;{it.value.menuItemName}</a> -->
+                            <div if:true={it.value.menuItemTarget}>
+                                <c-r-g_-navigation-link link={it.value.menuItemTarget} label={it.value.menuItemName} is-service-area={it.value.isServiceArea}></c-r-g_-navigation-link>
+                            </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <div class="slds-float_right">
+            <ul class="nav-not-mobile">
+                <li class="call-txt slds-p-right_small"><a href={tollfreelink} onclick={handleCall}>Call {tollfreenumber}</a> </li>
+                <li class="sch-txt">
+                    <a href={redirectionLink} target="_blank" onclick={handleSchedule}>
+                        <button class="sch-service-btn">{buttonlabel}</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

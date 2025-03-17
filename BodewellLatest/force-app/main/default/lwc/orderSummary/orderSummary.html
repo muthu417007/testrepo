@@ -1,0 +1,108 @@
+<template>
+    <template if:true={isDisplayOrderDetail}>
+
+        <lightning-card title="Orders List" class={flexipageRegionWidth} icon-name="utility:fulfillment_order">
+
+            <!--<div style="height: 180px;">
+                <lightning-datatable data={summarydata} columns={summarycols} key-field="id" hide-checkbox-column
+                column-widths-mode="auto" min-column-width="80"></lightning-datatable>
+            </div>-->
+            <div class="row">
+
+            <div style="width:50%">
+
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                    width="100%" border="0" bordercolor="#ddd" cellpadding="5" cellspacing="0"
+                    style="border-collapse:collapse; font-weight:bold;">
+                    <tbody>
+
+                        <tr>
+                            <td style="background:#eee;">GEA Order No(CSO)</td>
+                            <td style="color:#1a1510;">{orderno}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Account Number</td>
+                            <td style="color:#1a1510;">{accno}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Phone</td>
+                            <td style="color:#1a1510;"> {phone}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Order Status</td>
+                            <td style="color:#1a1510;">{orderstatus}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Store No#</td>
+                            <td style="color:#1a1510;"> {storeno}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Requester </td>
+                            <td style="color:#1a1510;"> {requester}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Ordered Date</td>
+                            <td style="color:#1a1510;"> {orderdate}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Request Date</td>
+                            <td style="color:#1a1510;"> {reqdate}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Created Date</td>
+                            <td style="color:#1a1510;"> {creationdate}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div style="width:50%">
+
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                    width="100%" border="0" bordercolor="#ddd" cellpadding="5" cellspacing="0"
+                    style="border-collapse:collapse; font-weight:bold;">
+                    <tbody>
+
+                        <tr>
+                            <td style="background:#eee;">Customer Name</td>
+                            <td style="color:#1a1510;">{customername}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Account Desc.</td>
+                            <td style="color:#1a1510;">{accountdescription}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">PO NO#</td>
+                            <td style="color:#1a1510;"> {customerpo}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Order Source</td>
+                            <td style="color:#1a1510;">{ordersource}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Reference No#</td>
+                            <td style="color:#1a1510;"> {refno}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Warehouse </td>
+                            <td style="color:#1a1510;"> {warehouse}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Ship-Method</td>
+                            <td style="color:#1a1510;"> {shipmethod}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Order Type</td>
+                            <td style="color:#1a1510;"> {ordertype}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+
+            </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>

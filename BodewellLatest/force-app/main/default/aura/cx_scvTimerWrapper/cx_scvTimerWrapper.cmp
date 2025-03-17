@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="consoleTabId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler event="lightning:tabClosed" action="{! c.onTabClosed }"/>
+
+    <force:serviceCloudVoiceToolkitApi aura:id="voiceToolkitApi" />
+
+    <c:cx_scvTimer recordId="{!v.recordId}" aura:id="scvTimer"/>
+</aura:component>

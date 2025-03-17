@@ -1,0 +1,12 @@
+<aura:component controller="su_vf_console.SUVFConsoleController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="record" type="Case"/>
+    <aura:attribute name="caseSub" type="String"/>
+    <aura:attribute name="caseId" type="String" default="50090000003VVJp"/>
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.doInit}"/>
+   <!-- <p>This is id in aura {!v.recordId}</p>
+    <p>This is case Subject {!v.caseSub}</p>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.record.Subject}" action="{!c.handleClick}"/>
+    
+    <c:sU_SearchClientLWCContainer  recordIddFromUtility="{!v.recordId}" caseSubject_inUtilityBar="{!v.caseSub}"></c:sU_SearchClientLWCContainer>
+</aura:component>

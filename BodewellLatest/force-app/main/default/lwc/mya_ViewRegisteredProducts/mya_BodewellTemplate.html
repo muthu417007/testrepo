@@ -1,0 +1,174 @@
+<template>
+  <div class="body">
+    <div class="main-Content">
+      <div class="middleSection">
+        <div class="grid-x grid-margin-x">
+          <div class="cell">
+            <!-- name section -->
+            <section class="account-greeting-section">
+              <template if:true={name.data}>
+                <template for:each={name.data} for:item="na">
+                  <div key={na.Id}>
+                    <div class="payment-title">
+                      <h1>Hello, {na.Contact.FirstName}</h1>
+                      <a class="add text-center capitalize" href="#add-appliances-section">
+                        + add an appliance
+                      </a>
+                    </div>
+                    <div if:true={na.Account.Bodewell_Member__c} class="payment-title">
+                      <h3>Bodewell Member since </h3>
+                       <lightning-formatted-date-time
+           
+            month="numeric"
+            year="numeric"
+            day="numeric"
+            value={na.Account.Bodewell_Member_Start_Date__c}>
+          </lightning-formatted-date-time>
+                   </div>  
+                 
+                  </div>
+                </template>
+              </template>
+            </section>
+            <!-- end of name section -->
+
+            <!-- products section -->
+            <section class="address-list-section">
+              <div class="address-list">
+                <div class="spinner">
+                  <template if:false={AccDetails}>
+                    <lightning-spinner style="height: 100%; color:inherit;" alternative-text="Loading" variant="brand"
+                      size="large"></lightning-spinner>
+                  </template>
+                </div>
+                <template if:true={AccDetails}>
+                  <template for:each={AccDetails} for:item="add">
+                    <div key={add.AccId}>
+                      <template if:false={add.UserName}>
+                        <template if:true={add.Street}>
+                          <h3 class="appliance-list text-center capitalize font-weight-600">
+                            {add.Street},&nbsp;{add.City},&nbsp;{add.State}&nbsp;{add.Zipcode}
+                          </h3>
+                        </template>
+                      </template>
+                      <template if:true={add.UserName}>
+                        <h3 class="appliance-list text-center capitalize font-weight-600">
+                          {add.UserName}
+                        </h3>
+                        <h3 class="appliance-list text-center capitalize font-weight-600">
+                          {add.Street},&nbsp;{add.City},&nbsp;{add.State}&nbsp;{add.Zipcode}
+                        </h3>
+                      </template>
+                      <div class="container">
+                        <div class="grid-x grid-padding-x medium-up-2">
+                          <template for:each={add.Product} for:item="prod">
+                            <div key={prod.AssetId}>
+                              <div class="cell">
+                                <div class="appliance-item appliance-item-myProducts">
+                                 
+                                  <div class="tooltip wifi-image" if:true={prod.onlineStatus}>
+                                    <span class="tooltiptext">Connected to Wifi</span>
+                                    <p style="padding:0px">
+                                      <img data-value={prod.AssetId} alt="Connected to Wifi" src={wifiConnected} />
+                                    </p>
+                                  </div>
+                                  <div class="tooltip wifi-image" if:true={prod.isconnectable} >
+                                    <span class="tooltiptext">Wifi connectable</span>
+                                    <p style="padding:0px">
+                                      <img data-value={prod.AssetId} alt="Wifi connectable-Get Connected" src={wifiGreyedOut} />
+                                    </p>
+                                  </div>
+                                  <button value={prod.AssetId} data-value={prod.AssetId} class="close-icon"
+                                    onclick={openModal}>
+                                    
+                                  </button>
+                                  <div if:true={prod.IsConsumerReady} class="height1">
+                                    <p class="product-photo">
+                                      <img onclick={prodDescHandler} data-value={prod.AssetId} src={prod.ProductImage} />
+                                    </p>
+                                  </div>
+                                  <div if:false={prod.IsConsumerReady} class="height1">
+                                    <p class="product-photo">
+                                      <img onclick={prodDescHandler} data-value={prod.AssetId} src={productimage} style="width:100px;" />
+                                    </p>
+                                  </div>
+                                  <div class="height2">
+                                    <p class="product-title">
+                                      <template if:true={prod.NickName}>
+                                        <a href="#" class="product-desc" data-value={prod.AssetId}
+                                          onclick={prodDescHandler}>
+                                          {prod.NickName}
+                                        </a>
+                                      </template>
+                                      <template if:false={prod.NickName}>
+                                        <a href="#" class="product-desc" data-value={prod.AssetId}
+                                          onclick={prodDescHandler}>
+                                          {prod.ProductDesc}
+                                        </a>
+                                      </template>
+                                    </p>
+                                  </div>
+                                  <div class="text-center">
+                                    <input type="button" class="linkbutton" data-value={prod.AssetId}
+                                      value="View Product Details" onclick={prodDescHandler}
+                                      title="View Product Details" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+
+                    </div>
+                  </template>
+                </template>
+              </div>
+            </section>
+            <!-- end of products section -->
+            <!--     Model Popup -->
+            <template if:true={showModal}>
+              <section role="dialog" tabindex="-1" aria-labelledby="modal-01" aria-modal="true"
+                aria-describedby="modal-content-id-1">
+                <div class="reveal-overlay">
+                  <div class="reveal add-address-modal" id="modal-01">
+                    <header class="slds-modal__header no-border">
+                      <div class="close-button">
+                        <button class="close-icon" aria-modal="false" title='close' onclick={closeModal}>
+                          
+                        </button>
+                        <!-- <lightning-icon icon-name='utility:close' alternative-text='close' size='x-small'
+                          onclick={closeModal} aria-modal="false" title='close'></lightning-icon> -->
+                      </div>
+                      <h3 class="text-center modal-header">Remove Product</h3>
+                    </header>
+                    <div class="delete-message">
+                      <div class="removeproduct">
+                        <p>
+                          Remove Product will delete them permanently from</p>
+                        <p>your account
+                        </p>
+                      </div>
+                    </div>
+                    <footer>
+                      <div class="button-action">
+                        <div class="modalbtndiv">
+                          <button class="cancelButton" name="Cancel" onclick={closeModal}>Cancel</button>
+                        </div>
+                        <div class="modalbtndiv">
+                          <button class="okButton" value={recordId} name="OK" onclick={handledelete}>OK</button>
+                        </div>
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+              </section>
+            </template>
+            <!--     END Popup -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="add-appliances-section"></section>
+</template><!-- End of file -->

@@ -1,0 +1,350 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes"  controller="ServiceHistory" access="global" >
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <aura:attribute name="contactId" type="String" />
+  <aura:attribute name="result" type="String" default="Loading" />
+  <aura:attribute name="resultOpen" type="String" default="Loading" />
+  <aura:attribute name="activeSections" type="List" default="['','']" />
+  <aura:attribute name="activeSectionsMessage" type="String" default="" />
+  <aura:attribute name="popOpen" type="Boolean" default="false" />
+  <aura:attribute name="popLabel" type="String" default="Show Details" />
+  <!--<lightning:input name="contact" label="Contact ID" value="{!v.contactId}" />-->
+
+  <aura:attribute name="closedCalls" type="ClosedCallsDetailsResponse" />
+  <aura:attribute name="openCalls" type="OpenCallsDetailsResponse" />
+  <aura:attribute name="serviceOrders" type="serviceOrderDetailResponse" />
+  <aura:attribute name="orders" type="SearchIdResponse" />
+
+  <aura:attribute name="numberOrders" type="String" default="Loading" />
+
+  <lightning:card>
+    <lightning:accordion
+      allowMultipleSectionsOpen="true"
+      onsectiontoggle="{! c.handleSectionToggle }"
+      activeSectionName="{! v.activeSections }"
+    >
+      <lightning:accordionSection
+        name="A"
+        label="{!'Orders (' + v.numberOrders + ')'}"
+      >
+        <lightning:card title="Orders">
+          <table>
+            <th>Order Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Order Date</th>
+            <th>Ship To</th>
+            <th>City</th>
+            <th>Zip</th>
+            <th>Order Promo Code</th>
+            <th>Order Placed On</th>
+            <th>Gross Amount</th>
+            <th>Shipment Amount</th>
+            <th>Order Unique Key</th>
+            <aura:iteration
+              items="{!v.orders.data.PersonById.Orders}"
+              var="ord"
+              indexVar="index"
+            >
+              <tr>
+                <td>
+                  <c:serviceOrderDetails
+                    header="{!ord.OrderNumber}"
+                    text="{!ord.OrderNumber}"
+                    value="{!ord}"
+                    variant="orders"
+                  />
+                </td>
+                <td>{!ord.FirstName}</td>
+                <td>{!ord.LastName}</td>
+                <td>{!ord.OrderDate}</td>
+                <td>{!ord.AddressLine1}</td>
+                <td>{!ord.Locality}</td>
+                <td>{!ord.PostalCode}</td>
+                <td>{!ord.OrderPromoCode}</td>
+                <td>{!ord.OrderPlacedOn}</td>
+                <td>{!ord.OrderGrossAmount}</td>
+                <td>{!ord.OrderShipmentAmount}</td>
+                <td>{!ord.OrderUniqueKey}</td>
+              </tr>
+              <br></br>
+            </aura:iteration>
+          </table>
+        </lightning:card>
+      </lightning:accordionSection>
+      <lightning:accordionSection
+        name="B"
+        label="{!'Open Calls FS (' + v.openCalls.fs_pendingcalls_count + ')'}"
+      >
+        <table>
+              <th>Status</th>
+              <th>Call Class</th>
+              <th>Type</th>
+              <th>SMC Call Number(Invoice)</th>
+              <th>Region/Zone</th>
+              <th>Warranty Status</th>
+              <th>Created On</th>
+              <th>Cops Order Number</th>
+              <th>Tech Number</th>
+              <th>More Info</th>
+              <th>Product Code</th>
+              <th>Job Code</th>
+              <th>Order Unique Key</th>
+              <th>Service Date</th>
+            <aura:iteration
+                items="{!v.openCalls.fs_pendingcalls}"
+                var="fs"
+                indexVar="index"
+              >
+                <tr>
+                  <td> Open </td>
+                  <td> {!fs.CALL_CLASS_DESC}</td>
+                  <td> Factory Service </td>
+                  <td> {!fs.CALL_NO} ({!fs.FSINVOICE}) </td>
+                  <td> {!fs.REGION}/{!fs.ZONE} </td>
+                  <td> </td>
+                  <td> {!fs.CALL_TAKEN_DATE} </td>
+                  <td>
+                    <aura:if isTrue="{!fs.COPS_ORDER_NO}">
+                            
+                      <c:serviceOrderDetails
+                        header="{!fs.COPS_ORDER_NO}"
+                        text="{!fs.COPS_ORDER_NO}"
+                        value="{!fs}"
+                        variant="orders_cops"
+                      />
+                      <aura:set attribute="else">
+                        -
+                      </aura:set>
+                    </aura:if> 
+                  </td>
+                  <td> {!fs.TECHNO} </td>
+                  <td>
+                    <c:serviceOrderDetails
+                      header="Open Calls FS Info"
+                      text="More Info"
+                      value="{!fs}"
+                      variant="closedCalls"
+                    />
+                  </td>
+                  <td> {!fs.PRODUCT_LINE_CODE}</td>
+                  <td> {!fs.JOBCODE1}</td>
+                  <td> {!fs.COPS_ORD_UNIQUE_KEY}</td>
+                  <td> {!fs.SERVICE_DATE}</td>-->
+                </tr>
+                <br />
+              </aura:iteration>
+          </table>
+      </lightning:accordionSection>
+      <lightning:accordionSection
+        name="C"
+        label="{!'Open Calls CC (' + v.openCalls.cc_pendingcalls_count + ')'}"
+      >
+        <table>
+              <th>Status</th>
+              <th>Call Class</th>
+              <th>Type</th>
+              <th>SMC Call Number(Invoice)</th>
+              <th>Region/Zone</th>
+              <th>Warranty Status</th>
+              <th>Created On</th>
+              <th>Cops Order Number</th>
+              <th>Tech Number</th>
+              <th>More Info</th>
+              <th>Product Code</th>
+              <th>Job Code</th>
+              <th>Order Unique Key</th>
+              <th>Service Date</th>
+            <aura:iteration
+                items="{!v.openCalls.cc_pendingcalls}"
+                var="cc"
+                indexVar="index"
+              >
+                <tr>
+                  <td> Open </td>
+                  <td> {!cc.CALL_CLASS_DESC}</td>
+                  <td> Factory Service </td>
+                  <td> {!cc.CALL_NO} ({!cc.FSINVOICE}) </td>
+                  <td> - </td>
+                  <td> </td>
+                  <td> {!cc.CREATE_DATE} </td>
+                  <td> 
+                    <aura:if isTrue="{!cc.COPS_ORDER_NO}">
+                            
+                      <c:serviceOrderDetails
+                        header="{!cc.COPS_ORDER_NO}"
+                        text="{!cc.COPS_ORDER_NO}"
+                        value="{!cc}"
+                        variant="orders_cops"
+                      />
+                      <aura:set attribute="else">
+                        -
+                      </aura:set>
+                    </aura:if> 
+                  </td>
+                  <td>  </td>
+                  <td>
+                    <c:serviceOrderDetails
+                      header="Open Calls CC Info"
+                      text="More Info"
+                      value="{!cc}"
+                      variant="closedCalls"
+                    />
+                  </td>
+                  <td> {!cc.PRODUCT_LINE_CODE}</td>
+                  <td> -</td>
+                  <td> ??</td>
+                  <td> {!cc.SERVICE_DATE}</td>
+                </tr>
+                <br />
+              </aura:iteration>
+          </table>
+      </lightning:accordionSection>
+      <lightning:accordionSection
+        name="D"
+        label="{!'Closed Calls FS (' + v.closedCalls.fs_callhistory_count + ')'}"
+      >
+       
+        <aura:set attribute="body">
+          <lightning:card title="Closed Calls">
+            <table>
+              <th>Status</th>
+              <th>Call Class</th>
+              <th>Type</th>
+              <th>SMC Call Number(Invoice)</th>
+              <th>Region/Zone</th>
+              <th>Warranty Status</th>
+              <th>Created On</th>
+              <th>Cops Order Number</th>
+              <th>Tech Number</th>
+              <th>More Info</th>
+              <th>Product Code</th>
+              <th>Job Code</th>
+              <th>Order Unique Key</th>
+              <th>Service Date</th>
+
+              <aura:iteration
+                items="{!v.closedCalls.fs_callhistory}"
+                var="cc"
+                indexVar="index"
+              >
+                
+                <tr>
+                  <td> Closed </td>
+                  <td> {!cc.CALL_CLASS_DESC}</td>
+                  <td> Factory Service </td>
+                  <td> {!cc.FS_CALL_NUMBER} ({!cc.FSINVOICE}) </td>
+                  <td> {!cc.FSREGION}/{!cc.FSZONE} </td>
+                  <td> </td>
+                  <td> {!cc.CALL_TAKEN_DATE} </td>
+                  <td> 
+                    
+                    <aura:if isTrue="{!cc.COPS_ORDER_NO}">
+                          
+                      <c:serviceOrderDetails
+                        header="{!cc.COPS_ORDER_NO}"
+                        text="{!cc.COPS_ORDER_NO}"
+                        value="{!cc}"
+                        variant="orders_cops"
+                      />
+                      <aura:set attribute="else">
+                        -
+                      </aura:set>
+                    </aura:if> 
+                  </td>
+                  <td> {!cc.TECHNO} </td>
+                  <td>
+                    <c:serviceOrderDetails
+                      header="Closed Calls FS Info"
+                      text="More Info"
+                      value="{!cc}"
+                      variant="closedCalls"
+                    />
+                  </td>
+                  <td> {!cc.PRODUCT_LINE_CODE}</td>
+                  <td> {!cc.JOBCODE1}</td>
+                  <td> ??</td>
+                  <td> {!cc.SERVICE_DATE}</td>
+                </tr>
+                
+                <br />
+              </aura:iteration>
+            </table>
+          </lightning:card>
+        </aura:set>
+      </lightning:accordionSection>
+
+      <lightning:accordionSection
+        name="E"
+        label="{!'Closed Calls CC (' + v.closedCalls.cc_callhistory_count + ')'}"
+      >
+        <aura:set attribute="body">
+          <lightning:card title="Closed Calls">
+            <table>
+              <th>Status</th>
+              <th>Call Class</th>
+              <th>Type</th>
+              <th>SMC Call Number(Invoice)</th>
+              <th>Region/Zone</th>
+              <th>Warranty Status</th>
+              <th>Created On</th>
+              <th>Cops Order Number</th>
+              <th>Tech Number</th>
+              <th>More Info</th>
+              <th>Product Code</th>
+              <th>Job Code</th>
+              <th>Order Unique Key</th>
+              <th>Service Date</th>
+
+              <aura:iteration
+                items="{!v.closedCalls.cc_callhistory}"
+                var="cc"
+                indexVar="index"
+              >
+                <tr>
+                  <td> Closed </td>
+                  <td> {!cc.CALL_CLASS_DESC}</td>
+                  <td> Customer Care </td>
+                  <td> {!cc.CALL_NO} </td>
+                  <td> - </td>
+                  <td> -</td>
+                  <td> {!cc.CREATE_DATE} </td>
+                  <td>
+
+                    <aura:if isTrue="{!cc.COPS_ORDER_NO}">
+                        
+                      <c:serviceOrderDetails
+                        header="{!cc.COPS_ORDER_NO}"
+                        text="{!cc.COPS_ORDER_NO}"
+                        value="{!cc}"
+                        variant="orders_cops"
+                      />
+                      <aura:set attribute="else">
+                        -
+                      </aura:set>
+                    </aura:if> 
+                  </td>
+                  <td> - </td>
+                  <td>
+                    <c:serviceOrderDetails
+                      header="Closed Calls CC Info"
+                      text="More Info"
+                      value="{!cc}"
+                      variant="closedCalls"
+                    />
+                  </td>
+                  <td> {!cc.PRODUCT_LINE_CODE}</td>
+                  <td> -</td>
+                  <td> -</td>
+                  <td> {!cc.DATE_SERVICE_COMPLETED}</td>
+                </tr>
+
+                <br />
+              </aura:iteration>
+            </table>
+          </lightning:card>
+        </aura:set>
+      </lightning:accordionSection>
+    </lightning:accordion>
+  </lightning:card>
+</aura:component>

@@ -1,0 +1,43 @@
+.productView-deliveryDate {
+    margin-top: 5px;
+    margin-left: 10px;
+    text-align: left;
+    opacity: 1;
+}
+.text_class{
+	color : var(--error-red);
+	font-size: 14px;
+}
+.icon-container {
+    display: flex; 
+}
+.zip-container {
+    justify-content: space-between;
+}
+.zip-container button {
+    margin-left: 15px;
+}
+.zip-container input{
+    text-align: left;
+    font-size: var(--body-small-font-size);
+    line-height: var(--body-small-line-height);
+    letter-spacing: var(--body-small-letter-spacing);
+    color: #707070;
+    opacity: 1;
+    height: 44px;
+}
+
+.zip-text {
+    text-align: left;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: var(--error-red);
+}
+
+.warning-icn{
+   --sds-c-icon-color-foreground-default: #CB1640; 
+   --sds-c-icon-color-foreground: #CB1640; 
+}

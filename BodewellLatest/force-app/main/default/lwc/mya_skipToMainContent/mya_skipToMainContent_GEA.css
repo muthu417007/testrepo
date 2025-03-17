@@ -1,0 +1,17 @@
+.link--skipToMain {
+    position:absolute;
+    left:-1999px;
+    top:60px;
+    padding:10px;
+    border:1px solid #cfcfcf;
+    background-color:#fff;
+    z-index:200
+}
+.link--skipToMain:focus {
+    left:0;
+}
+@media (min-width:801px) {
+    .link--skipToMain {
+        top:10px;
+    }
+}

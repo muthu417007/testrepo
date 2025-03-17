@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="ContentReference" name="desktopimageId" label="Desktop Image" filter="cms_image"/>
+            <property type="String" name="titleonimage" label="Title Over Image"/>
+            <property type="String" name="subtitle" label="Sub Title Over Image"/>
+            <property type="String" name="textAlign" label="Text Align" default="Right" datasource="Left,Right,Center"  description="Text align"/>
+            <property type="String" name="buttontext" label="Button Text"/>
+            <property name="RedirectionLink" label="Redirection Link" type="String" />
+            <property type="ContentReference" name="mobileimageId" label="Mobile Image" filter="cms_image"/>
+            <property type="Integer" name="imageheight" label="Image Height(350 - 1000)"/>
+        </targetConfig>
+   </targetConfigs>
+</LightningComponentBundle>

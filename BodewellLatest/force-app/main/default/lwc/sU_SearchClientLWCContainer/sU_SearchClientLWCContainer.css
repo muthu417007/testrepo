@@ -1,0 +1,67 @@
+.header-section{
+	background: rgb(238, 236, 236);
+	display: flex;
+}
+.header-sectionA{
+	width: 73%;
+	margin-top: 14px;
+}
+.header-sectionB{
+	display: flex;
+	width: 20%;
+}
+.margin-topAuto{
+	margin-top: auto;
+}
+.main-container{
+	
+	background-color: white;
+	padding: 2% 2%;
+	position: relative;
+	overflow: auto;
+	/* border: 1px solid red; */
+}
+.filterDiv{
+	display:none;
+}
+.margin-right{
+	margin-right: 20px;
+	margin-top:1.3rem ;
+}
+.savedbookmark
+{
+	margin-top:31px;
+	margin-left:1%;
+	margin-right:1%;
+}
+
+.con3
+{
+    display: flex;
+}
+.vcenter
+{
+    align-items: center;
+}
+.bookmark
+{
+    margin-top: 37px;
+    padding-left: 1%;
+}
+.advFilter
+{
+    margin-bottom: 0px;
+}
+.banner
+{
+    width: 100%;
+}
+
+.filterDiv{
+	display:none;
+}
+
+.displayMenus{
+    display: none !important;
+    visibility: hidden !important;
+}

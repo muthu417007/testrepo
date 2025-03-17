@@ -1,0 +1,14 @@
+<template>
+    <c-cx_session-timer 
+                    hide-cmp={hideCmp} 
+                    cmp-header={cmpHeader} 
+                    hide-clock={hideClock} 
+                    allow-manual={allowManual} 
+                    auto-start={autoStart} 
+                    sessions={sessions}
+                    status={currentSessionStatus}
+                    show-total-by-status={showTotalByStatus}
+                    onsessionended={handleSessionEnd}
+                    onpassrecordid={handlePassedRecordId}>
+    </c-cx_session-timer>
+</template>

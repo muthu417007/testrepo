@@ -1,0 +1,114 @@
+<template>
+    <div class={headerStyles} lwc:if={toggleHeader}>
+        <div class="header-container">
+
+            <!-- Promotions -->
+            <div lwc:if={hasPromo} class="slds-show_medium header-promotion">
+                <slot name="promotions"></slot>
+            </div>
+
+            <!-- Layout -->
+            <div class={contentStyles}>
+                <!-- MOBILE Menu Icon  -->
+                <div class="slds-col slds-grid slds-grid_vertical-align-center slds-size_3-of-12 slds-hide_large">
+                    <div class="mobile-nav" onclick={toggleMenu}>
+                        <button class="menu">
+                          <div class="top stripe"></div>
+                          <div class="middle stripe"></div>
+                          <div class="bottom stripe"></div>
+                        </button>
+                      </div>
+                </div>
+                <!-- Left Side Header -->
+                <div class="slds-col slds-grid slds-grid_vertical-align-center slds-size_4-of-12 slds-show_large">
+                    <!-- Call Support -->
+                    <div class="header-contact slds-p-right_small">
+                        <span class="icon">
+                            <svg viewBox="0 0 41.17 36.45">
+                                <path d="m26.04,27.24h-2.47c-2.37,0-4.29,1.92-4.29,4.29,0,2.29,1.79,4.17,4.08,4.28-.87.41-1.81.62-2.77.63-3,0-5.88-2.27-8.08-5.62-2.12-3.17-3.33-6.87-3.51-10.68,0-6.4,5.19-11.59,11.59-11.58,6.4,0,11.58,5.19,11.58,11.58-.08,2.55-.66,5.05-1.72,7.37-.66.2-1.33.35-2.01.45-.71-.48-1.55-.73-2.4-.73Z"/>
+                                <path d="m3.11,30.01h.15c1.72,0,3.11-1.39,3.11-3.1h0v-6.2c0-1.18-.67-2.26-1.73-2.78.49-8.8,8.03-15.54,16.84-15.05,8.12.45,14.59,6.93,15.05,15.05-1.06.52-1.73,1.6-1.73,2.78v6.19c0,.39.07.79.22,1.15-2.22,1.45-4.77,2.3-7.42,2.47-.35-.53-.93-.85-1.56-.85h-2.47c-1.03,0-1.86.83-1.86,1.86s.83,1.86,1.86,1.86h2.47c.69,0,1.33-.39,1.65-1.01,3.06-.16,6.02-1.15,8.56-2.87.5.32,1.08.49,1.67.49h.15c1.72,0,3.11-1.39,3.11-3.1v-6.19c0-1.2-.69-2.28-1.77-2.79C38.89,7.52,30.05-.49,19.66.02,9.99.5,2.25,8.24,1.78,17.91c-1.08.51-1.77,1.6-1.78,2.79v6.19c0,1.72,1.39,3.11,3.11,3.11Z"/>
+                            </svg>
+                        </span>
+                        <span class="text slds-show_large">CALL 833-426-3393</span>
+                    </div>
+                    <!-- Service Areas -->
+                    <div class="header-locations" onclick={handleGoToServiceAreas}>
+                        <span class="icon">
+                            <svg viewBox="0 0 40.5 35.46">
+                                <path d="m10.58,12.64c.2.49.43.96.67,1.45v17.68l-8.94,3.58c-1.11.38-2.31-.37-2.31-1.57V14.74c0-.69.42-1.37,1.06-1.57l8.62-3.45c.17,1,.51,1.99.9,2.92Zm18.11-4.2c0,3.84-5.14,10.68-7.4,13.44-.54.74-1.54.74-2.08,0-2.26-2.76-7.4-9.6-7.4-13.44C11.81,3.78,15.59,0,20.25,0s8.44,3.78,8.44,8.44Zm-5.64,14.84c.98-1.16,2.51-3.15,3.95-5.35v17.53l-13.5-3.86v-13.67c1.44,2.2,2.97,4.19,3.95,5.35,1.44,1.86,4.16,1.86,5.6,0Zm-2.8-12.59c1.55,0,2.81-1.26,2.81-2.81s-1.26-2.81-2.81-2.81-2.81,1.26-2.81,2.81,1.26,2.81,2.81,2.81Zm9.68,1.95c.04-.08.07-.17.11-.26l8.16-3.26c1.11-.44,2.31.37,2.31,1.57v19.04c0,.69-.42,1.31-1.06,1.57l-10.19,4.07V14.09c.25-.49.47-.96.68-1.45Z"/>
+                            </svg>
+                        </span>
+                        <span class="text slds-show_large">Service Areas</span>
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="slds-grid slds-grid_align-center slds-size_6-of-12 slds-large-size_4-of-12">
+                    <div class="slds-col">
+                        <a title='Bodewell' href={homeUrl}>
+                            <div class="global-header__logo">
+                                <img src={BODEWELL_LOGO}>
+                                <span class="slds-assistive-text">Bodewell</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Side Header -->
+                <div class="header-badge-icons slds-col slds-grid slds-grid_vertical-align-center slds-grid_align-end slds-size_3-of-12 slds-large-size_4-of-12">
+                    <!-- Zipcode -->
+                    <div class="header-zipcode slds-text-align_right slds-show_large slds-p-right_x-large">
+                        <c-bwc_enter-zipcodeheader></c-bwc_enter-zipcodeheader>
+                        <!-- <c-b2bgtminclude></c-b2bgtminclude> -->
+                    </div>
+                    <!-- My Account/ User Profile -->
+                    <div class="header-account slds-text-align_right slds-show_large slds-p-right_x-large">
+                        <c-bwc_user-profile-menu></c-bwc_user-profile-menu>
+                    </div>
+                    <!-- MOBILE search -->
+                    <div class="header-search-mobile slds-col slds-text-align_right slds-hide_large slds-p-right_medium">
+                        <span class="icon">
+                            <svg viewBox="0 0 36 36">
+                                <path d="m35.18,35.18c-1.1,1.1-2.88,1.1-3.98,0l-8.42-8.42c-2.84,1.91-6.39,2.86-10.17,2.35C6.17,28.26.94,22.98.12,16.54-1.09,6.96,6.96-1.09,16.54.12c6.44.82,11.71,6.05,12.58,12.49.51,3.78-.44,7.33-2.35,10.17l8.42,8.42c1.1,1.1,1.1,2.88,0,3.98Zm-20.62-11.56c4.96,0,9-4.04,9-9s-4.04-9-9-9S5.56,9.66,5.56,14.62s4.04,9,9,9Z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <!-- Cart -->
+                    <div class="header-cart slds-text-align_right">
+                        <c-bwc_cart-badge></c-bwc_cart-badge>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div class={navigationStyles}>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                    <slot name="multiNav"></slot>
+                    <!-- MOBILE only -->
+                    <div class="mobile-icons slds-hide_large">
+                        <div>
+                             <c-bwc_user-profile-menu></c-bwc_user-profile-menu>
+                        </div>
+                        <div>
+                            <c-bwc_enter-zipcodeheader></c-bwc_enter-zipcodeheader>
+                        </div>
+                        <div>
+                            <span class="icon">
+                                <svg viewBox="0 0 41.17 36.45">
+                                    <path d="m26.04,27.24h-2.47c-2.37,0-4.29,1.92-4.29,4.29,0,2.29,1.79,4.17,4.08,4.28-.87.41-1.81.62-2.77.63-3,0-5.88-2.27-8.08-5.62-2.12-3.17-3.33-6.87-3.51-10.68,0-6.4,5.19-11.59,11.59-11.58,6.4,0,11.58,5.19,11.58,11.58-.08,2.55-.66,5.05-1.72,7.37-.66.2-1.33.35-2.01.45-.71-.48-1.55-.73-2.4-.73Z"/>
+                                    <path d="m3.11,30.01h.15c1.72,0,3.11-1.39,3.11-3.1h0v-6.2c0-1.18-.67-2.26-1.73-2.78.49-8.8,8.03-15.54,16.84-15.05,8.12.45,14.59,6.93,15.05,15.05-1.06.52-1.73,1.6-1.73,2.78v6.19c0,.39.07.79.22,1.15-2.22,1.45-4.77,2.3-7.42,2.47-.35-.53-.93-.85-1.56-.85h-2.47c-1.03,0-1.86.83-1.86,1.86s.83,1.86,1.86,1.86h2.47c.69,0,1.33-.39,1.65-1.01,3.06-.16,6.02-1.15,8.56-2.87.5.32,1.08.49,1.67.49h.15c1.72,0,3.11-1.39,3.11-3.1v-6.19c0-1.2-.69-2.28-1.77-2.79C38.89,7.52,30.05-.49,19.66.02,9.99.5,2.25,8.24,1.78,17.91c-1.08.51-1.77,1.6-1.78,2.79v6.19c0,1.72,1.39,3.11,3.11,3.11Z"/>
+                                </svg>
+                            </span>
+                            <span class="text">CALL 833-4BODEWELL</span>
+                        </div>
+                        <div>
+                            <span class="icon">
+                                <svg viewBox="0 0 40.5 35.46">
+                                    <path d="m10.58,12.64c.2.49.43.96.67,1.45v17.68l-8.94,3.58c-1.11.38-2.31-.37-2.31-1.57V14.74c0-.69.42-1.37,1.06-1.57l8.62-3.45c.17,1,.51,1.99.9,2.92Zm18.11-4.2c0,3.84-5.14,10.68-7.4,13.44-.54.74-1.54.74-2.08,0-2.26-2.76-7.4-9.6-7.4-13.44C11.81,3.78,15.59,0,20.25,0s8.44,3.78,8.44,8.44Zm-5.64,14.84c.98-1.16,2.51-3.15,3.95-5.35v17.53l-13.5-3.86v-13.67c1.44,2.2,2.97,4.19,3.95,5.35,1.44,1.86,4.16,1.86,5.6,0Zm-2.8-12.59c1.55,0,2.81-1.26,2.81-2.81s-1.26-2.81-2.81-2.81-2.81,1.26-2.81,2.81,1.26,2.81,2.81,2.81Zm9.68,1.95c.04-.08.07-.17.11-.26l8.16-3.26c1.11-.44,2.31.37,2.31,1.57v19.04c0,.69-.42,1.31-1.06,1.57l-10.19,4.07V14.09c.25-.49.47-.96.68-1.45Z"/>
+                                </svg>
+                            </span>
+                            <span class="text">Service Areas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

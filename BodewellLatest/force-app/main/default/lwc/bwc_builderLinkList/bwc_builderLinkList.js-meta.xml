@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Link List</masterLabel>
+    <description>Displays a list of links</description>
+
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="menuEditor"
+                type="String"
+                datasource="apex://BWC_NavigationLinkSetPickList"
+                label="Default Menu"
+                description="The name of the Navigation Menu Linkset, which can be configured in Settings > Navigation" />
+            <property type="String" name="targetCategory" label="Target Level2 Category" description="The name of the level 2 category" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

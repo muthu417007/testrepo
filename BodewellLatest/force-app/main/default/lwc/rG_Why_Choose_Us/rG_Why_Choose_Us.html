@@ -1,0 +1,83 @@
+<template>
+    <div if:false={isOnlyServiceArea} class="why-choose-container">
+        <div class="row  slds-p-vertical_medium slds-grid slds-wrap">
+            <div class="slds-col slds-medium-size_12-of-12 slds-large-size_3-of-12 why-choose-wrapper-section">
+                <div class="row">
+                    <div class="index-inner-wrapper-choose-us_header">
+                        {heading1}
+                    </div>
+                </div>
+                <div class="row index-inner-wrapper-choose-us-parent">
+                    <div class="index-inner-wrapper-choose-us_content">
+                      {content1}
+                    </div>
+                </div>
+                <div class="row index-inner-wrapper-choose-us-parent">
+                    <div class="index-inner-wrapper-choose-us_learn_btn">
+                        <a href={redirectURL}>
+                            <button class="trouble-shoot-btn" onclick={handleClick}>{buttonLabel}</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-medium-size_12-of-12 slds-large-size_9-of-12 why-choose-sub-section">
+                <div class="slds-p-vertical_medium slds-grid slds-wrap">
+                    <div class="slds-col slds-medium-size_12-of-12 slds-large-size_6-of-12 why-choose-sub-section-details ">
+                        <div class="slds-size_2-of-12 index-inner-wrapper_inner-img_bar">
+                            <img src={icon1Id} class="img-fluid" alt="icon1">
+                        </div>
+                        <div class="slds-size_9-of-12 index-inner-wrapper_inner_inner_content_bar">
+                            <div class="index-inner-wrapper_inner_header_bar">
+                              {heading2}
+                            </div>
+                            <div class="index-inner-wrapper_inner_content_bar">
+                                {content2}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-medium-size_12-of-12 slds-large-size_6-of-12 why-choose-sub-section-details">
+                        <div class="slds-size_2-of-12 index-inner-wrapper_inner-img_bar">
+                            <img src={icon2Id} class="img-fluid" alt="icon2">
+                        </div>
+                        <div class="slds-size_9-of-12 index-inner-wrapper_inner_inner_content_bar">
+                            <div class="index-inner-wrapper_inner_header_bar">
+                              {heading3}
+                            </div>
+                            <div class="index-inner-wrapper_inner_content_bar">
+                              {content3}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-p-vertical_medium slds-grid slds-wrap">
+                    <div class="slds-col slds-medium-size_12-of-12 slds-large-size_6-of-12 why-choose-sub-section-details">
+                        <div class="slds-size_2-of-12 index-inner-wrapper_inner-img_bar">
+                            <img src={icon3Id} class="img-fluid" alt="icon3">
+                        </div>
+                        <div class="slds-size_9-of-12 index-inner-wrapper_inner_inner_content_bar">
+                            <div class="index-inner-wrapper_inner_header_bar">
+                              {heading4}
+                            </div>
+                            <div class="index-inner-wrapper_inner_content_bar">
+                              {content4}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-medium-size_12-of-12 slds-large-size_6-of-12 why-choose-sub-section-details">
+                        <div class="slds-size_2-of-12 index-inner-wrapper_inner-img_bar">
+                            <img src={icon4Id} class="img-fluid" alt="icon4">
+                        </div>
+                        <div class="slds-size_9-of-12 index-inner-wrapper_inner_inner_content_bar">
+                            <div class="index-inner-wrapper_inner_header_bar">
+                             {heading5}
+                            </div>
+                            <div class="index-inner-wrapper_inner_content_bar">
+                              {content5}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

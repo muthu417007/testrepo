@@ -1,0 +1,121 @@
+/* .media-header-right-sec-mob {
+    display: none;
+}
+
+.txt-a-R {
+    text-align: right;
+}
+
+.media-header-call-sec {
+    border-left: 29px solid transparent;
+    border-top: 29px solid #f4f3ef;
+    text-align: center;
+}
+
+.media-header-right-icon {
+    top: -29px;
+    position: relative;
+}
+
+.media-header-right-txt {
+    position: relative;
+    top: -29px;
+    font-weight: 600;
+    font-family: 'Gotham-Bold';
+    color: #333333 !important;
+    font-size: 15px;
+}
+
+.media-sch-service-btn {
+    padding: 14px 51px;
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.sch-service-btn-mob-media {
+    padding: 14px 51px;
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.call-icn-white{
+    --sds-c-icon-color-foreground-default: #ffffff;
+    --sds-c-icon-color-foreground: #ffffff;
+ }
+@media (max-width: 1024px) {
+    .media-HOB-img {
+        width: 100%;
+    }
+
+    .media-header-right-sec {
+        display: none;
+        ;
+    }
+
+    .media-header-right-sec-mob {
+        display: inline-flex;
+        background-color: #092c74;
+        height: 75px;
+    }
+
+    .media-nav-call-mob {
+        border: 2px solid #ffffff;
+        padding: 14px 22px;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+        margin: 11px 37px 11px 37px;
+    }
+
+    .calling-num-mob {
+        font-weight: 600;
+        font-family: 'Gotham-Bold';
+        color: #ffffff !important;
+        font-size: 15px;
+    }
+
+    .media-sch-btn-mob {
+        text-align: left;
+        margin: 10px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .media-nav-call-mob {
+        margin: 28px 32px 11px 8px;
+        padding: 10px 14px;
+        text-align: center;
+    }
+    .media-header-right-sec-mob{
+        height:109px;
+    }
+    .media-sch-btn-mob{
+        margin: 25px 10px 10px 10px;
+    }
+    .sch-service-btn-mob-media {
+        font-size: 13px;
+    }
+    .calling-num-mob {
+        font-size: 13px;
+    }
+} */

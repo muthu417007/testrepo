@@ -1,0 +1,2 @@
+<apex:page controller="BDWPagedirections" action="{!urlRedirection}">
+</apex:page>

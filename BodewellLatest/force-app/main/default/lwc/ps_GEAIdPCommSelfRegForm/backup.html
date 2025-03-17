@@ -1,0 +1,192 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"> </lightning-spinner>
+        </template>
+    </div>
+
+    <h2 class="pageTitleClass">
+        <label class="pageTitleLabelClass"> {pageTitleLabel} </label>
+    </h2>
+
+    <div class={emailContainerClass}>
+        <label class="slds-form-element__label elementLabelClass" for="email">
+            {emailLabel} <abbr class="slds-required" title="required">* </abbr>
+        </label>
+        <div class="slds-form-element__control">
+            <input
+                type="email"
+                data-id="email"
+                onchange={onInputChanged}
+                name="email"
+                required=""
+                aria-describedby="email-error"
+                class="slds-input"
+                aria-invalid="true"
+            />
+        </div>
+        <template if:true={emailHasError}>
+            <div class="slds-form-element__help">{emailValidationError}</div>
+        </template>
+    </div>
+
+    <div class={firstNameContainerClass}>
+        <label class="slds-form-element__label elementLabelClass" for="firstName">
+            {firstNameLabel} <abbr class="slds-required" title="required">* </abbr>
+        </label>
+        <div class="slds-form-element__control">
+            <input
+                type="text"
+                data-id="firstName"
+                onchange={onInputChanged}
+                name="firstName"
+                required=""
+                class="slds-input"
+                aria-invalid="true"
+            />
+        </div>
+        <template if:true={firstNameHasError}>
+            <div class="slds-form-element__help">{firstNameValidationError}</div>
+        </template>
+    </div>
+
+    <div class={lastNameContainerClass}>
+        <label class="slds-form-element__label elementLabelClass" for="lastName">
+            {lastNameLabel} <abbr class="slds-required" title="required">* </abbr>
+        </label>
+        <div class="slds-form-element__control">
+            <input
+                type="text"
+                data-id="lastName"
+                onchange={onInputChanged}
+                name="lastName"
+                required=""
+                class="slds-input"
+                aria-invalid="true"
+            />
+        </div>
+        <template if:true={lastNameHasError}>
+            <div class="slds-form-element__help">{lastNameValidationError}</div>
+        </template>
+    </div>
+
+    <div class={passwordContainerClass}>
+        <label class="slds-form-element__label elementLabelClass" for="password">
+            {passwordLabel} <abbr class="slds-required" title="required">* </abbr>
+        </label>
+        <div class="slds-form-element__control">
+            <input
+                type="password"
+                data-id="password"
+                onchange={onPasswordChanged}
+                name="password"
+                required=""
+                class="slds-input"
+                aria-invalid="true"
+            />
+        </div>
+        <span class="slds-form-element__label slds-m-vertical_xxx-small">{passwordStrengthLabel}</span>
+        <template if:true={passwordHasError}>
+            <div class="slds-form-element__help">{passwordValidationError}</div>
+        </template>
+        <template if:true={passwordStrengthHasError}>
+            <div class="slds-form-element__help">{passwordStrengthValidationError}</div>
+        </template>
+    </div>
+
+    <div class={passwordConfirmationContainerClass}>
+        <label class="slds-form-element__label elementLabelClass" for="passwordConfirmation">
+            {passwordConfirmationLabel} <abbr class="slds-required" title="required">* </abbr>
+        </label>
+        <div class="slds-form-element__control">
+            <input
+                type="password"
+                data-id="passwordConfirmation"
+                onchange={onPasswordConfirmationChanged}
+                name="passwordConfirmation"
+                required=""
+                class="slds-input"
+                aria-invalid="true"
+            />
+        </div>
+        <template if:true={passwordConfirmationHasError}>
+            <div class="slds-form-element__help">{passwordConfirmationIsRequiredValidationError}</div>
+        </template>
+        <template if:true={passwordsDontMatch}>
+            <div class="slds-form-element__help slds-text-color_error">{passwordsDontMathValidationError}</div>
+        </template>
+    </div>
+
+    <div class={termsAndConditionsClass}>
+        <label>
+            <span>
+                <input
+                    type="checkbox"
+                    name="termsAndConditions"
+                    required
+                    onchange={onTermAndConditionsChanged}
+                    checked={termsAndConditionsChecked}
+                    class="slds-m-right_x-small"
+                />
+                <span>
+                    <lightning-formatted-rich-text
+                        class="linkLabelClass"
+                        value={termsAndConditionsLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="linkURLClass" href={termsAndConditionsURL} target="_blank"
+                        >{termsAndConditionsURLLabel}
+                    </a>
+                </span>
+                <p class="slds-m-top_x-small">
+                    <lightning-formatted-rich-text
+                        class="privacyPolicyClass"
+                        value={privacyPolicyLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="privacyPolicyLinkClass" href={privacyPolicyURL} target="_blank"
+                        >{privacyPolicyURLLabel}
+                    </a>
+                </p>
+            </span>
+        </label>
+    </div>
+    <!-- THIS ONE IS PLACEHOLDER
+    <button
+        class="
+            submit-action
+            slds-button slds-button_brand slds-button_stretch
+            slds-p-around_x-small
+            slds-m-top_small
+            slds-m-bottom_small
+            submitButtonClass
+        "
+        onclick={register}
+    >
+        {submitButtonLabelInternal}
+    </button>-->
+
+    <div>
+        <c-recaptcha-v2 onverified={onVerified} ></c-recaptcha-v2>
+    </div>
+    <template if:true={generalError}>
+        <div class="generalErrorClass">{generalErrorMessage}</div>
+    </template>
+    <div class="slds-align_absolute-center">
+        <button
+            class="
+                submit-action
+                slds-button slds-button_brand slds-button_stretch
+                slds-p-around_x-small
+                slds-m-top_small
+                slds-m-bottom_small
+                submitButtonClass
+            "
+            onclick={register}
+        >
+            {submitButtonLabelInternal}
+        </button>
+    </div>
+    <h3 class="slds-m-top_large slds-m-bottom_large linkLabelClass">
+        <lightning-formatted-rich-text value={signInText}></lightning-formatted-rich-text>
+        <a class="linkURLClass" href={signInLink} target="_blank">{signInLabel} </a>
+    </h3>
+</template>

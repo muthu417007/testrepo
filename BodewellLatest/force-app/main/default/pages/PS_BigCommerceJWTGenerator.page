@@ -1,0 +1,3 @@
+<apex:page id="PS_BigCommerceJWTGenerator" controller="PS_BigCommerceJWTGeneratorCtrl"
+           action="{!redirect}">
+</apex:page>

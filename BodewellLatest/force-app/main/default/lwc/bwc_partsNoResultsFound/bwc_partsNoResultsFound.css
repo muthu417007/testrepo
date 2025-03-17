@@ -1,0 +1,31 @@
+.noresultContainer{
+	background-color: #F7F1E7;
+}
+
+.heading{
+	color: #12212E;
+	font-size: 32px;
+	font-weight: bold;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+.highlightedText{
+	color: #12212E;
+	font-weight: bold;
+}
+
+.paddingAlignner{
+	padding-left: 0 !important;
+}
+
+
+.helperImage{
+	display: flex;
+	align-items: flex-end;
+}
+
+.imageBackground{
+	background-color: #DED1B1;
+	margin-top: 9rem;
+}

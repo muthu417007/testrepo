@@ -1,0 +1,89 @@
+<template lwc:render-mode="light">
+    <slot name="heading"></slot>
+    <template iterator:item={normalizedVariants}>
+        <template lwc:if={item.value.isSwatchAttribute}>
+            <div key={item.value.id}>
+                <label
+                        class="slds-form-element__label"
+                        for={item.value.id}>
+                        <abbr
+                            class="slds-required"
+                            title={requiredPicklistLabel}>
+                        </abbr>
+                        <span class="color-swatch-label">{item.value.label}: {selectedColorValue}</span>
+                </label>
+                <c-bwc_swatch-selector
+                    items={item.value.options}
+                    onchange={handleChange}
+                    is-centered={isCentered}
+                    num-swatches={numSwatches}
+                    id="colorSwatch"
+                >
+                </c-bwc_swatch-selector>
+                <template lwc:if={hasCustomHardware}>
+                    <h1 class="custom-hardware-label">{customHardwareLabel}</h1>
+                    <c-bwc_swatch-selector
+                        items={customHardwareOptions}
+                        onchange={handleCustomHardwareChange}
+                        is-centered={isCentered}
+                        num-swatches={numSwatches}
+                        id="customHardwareSwatch"
+                    >
+                    </c-bwc_swatch-selector>
+                </template>
+            </div>
+        </template>
+        <template lwc:else>
+            <div
+                class="slds-form-element"
+                key={item.value.id}>
+                <label
+                    class="slds-form-element__label"
+                    for={item.value.id}>
+                    <abbr
+                        class="slds-required"
+                        title={requiredPicklistLabel}>
+                        *
+                    </abbr>
+                    {item.value.label}
+                </label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                            <select
+                                data-index={item.index}
+                                class="slds-select"
+                                id={item.value.id}
+                                onchange={handleChange}
+                                onfocus={handleFocus}
+                                required>
+                                <option
+                                    selected
+                                    value>
+                                    {placeholderLabel}
+                                </option>
+                                <template
+                                    for:each={item.value.options}
+                                    for:item="option">
+                                    <option
+                                        if:true={option.disabled}
+                                        key={option.value}
+                                        value={option.value}
+                                        selected={option.selected}
+                                        disabled>
+                                        {option.label}
+                                    </option>
+                                    <option
+                                        if:false={option.disabled}
+                                        key={option.value}
+                                        value={option.value}
+                                        selected={option.selected}>
+                                        {option.label}
+                                    </option>
+                                </template>
+                            </select>
+                        </div>
+                    </div>
+            </div>
+        </template>
+    </template>
+</template>

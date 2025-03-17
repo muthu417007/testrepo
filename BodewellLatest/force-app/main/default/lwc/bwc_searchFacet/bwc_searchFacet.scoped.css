@@ -1,0 +1,20 @@
+.facet-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    letter-spacing: 1px;
+}
+.facet-name {
+    display: inline-block;
+    align-self: flex-start;
+    letter-spacing: 1px;
+}
+.expand-button {
+    align-self: flex-end;
+}
+@media only screen and (max-width: 48em) {
+    .facet-header,
+    .facet-body {
+        padding: 0 1.5rem;
+    }
+}

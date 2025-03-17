@@ -1,0 +1,6 @@
+.resize_wrapper {
+    position: relative;
+    height: 18vh;
+    
+    box-sizing: border-box;
+}

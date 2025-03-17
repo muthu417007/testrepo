@@ -1,0 +1,42 @@
+<template>
+    <div style={styling} class="tile">
+        <div class="dxp-text-heading-medium header slds-m-left_x-large slds-p-right_medium">
+            <h1>
+                {title}
+            </h1>
+        </div>
+        <div class="button-container slds-m-left_x-large">
+            <template if:true={isPhonePDF}>
+                <a href={resourceURL} target="_blank">
+                    <span class="button resourceLink slds-p-horizontal_large slds-p-vertical_small">
+                        VIEW PDF
+                    </span>
+                </a>
+            </template>
+            <template if:false={isPhonePDF}>
+                <span class="button slds-p-horizontal_large slds-p-vertical_small" onclick={openModal}>
+                    <template if:true={isPDF}>
+                        VIEW PDF
+                    </template>
+                    <template if:false={isPDF}>
+                        PLAY VIDEO
+                    </template>
+                </span>
+            </template>
+        </div>
+        <template if:true={isModalOpen}>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick={closeModal}>&times;</span>
+                    <template if:true={isPDF}>
+                        <iframe src={resourceURL} height="100%" width="100%" class="frame"></iframe>
+                    </template>
+                    <template if:false={isPDF}>
+                        <video src={resourceURL} autoplay="autoplay" class="video" controls controlslist="nodownload"></video>
+                    </template>
+                  </div>
+            </div>
+        </template>
+    </div>
+    
+</template>

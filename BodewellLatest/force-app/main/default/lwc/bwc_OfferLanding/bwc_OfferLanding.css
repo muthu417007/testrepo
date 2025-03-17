@@ -1,0 +1,33 @@
+/* CSS */
+:host {
+   --offer-message-fontsize: 20px;
+   --offer-store-info-fontsize: 18px;
+   --offer-footer-fontsize: 10px;
+   --offer-view-code-button-border-radius: 25px;
+   --offer-copy-code-button-border-radius: 30px;
+   --offer-view-code-button-bg: rgb(36, 91, 131);
+}
+
+.view-code-button {
+   border-radius: var(--offer-view-code-button-border-radius);
+}
+
+.view-code-button:focus {
+   background-color: var(--offer-view-code-button-bg);
+}
+
+.copy-code-button {
+   border-radius: var(--offer-copy-code-button-border-radius);
+}
+
+.offer-message {
+	font-size: var(--offer-message-fontsize);
+}
+
+.offer-store-info {
+	font-size: var(--offer-store-info-fontsize);
+}
+
+.offer-footer {
+	font-size: var(--offer-footer-fontsize);
+}

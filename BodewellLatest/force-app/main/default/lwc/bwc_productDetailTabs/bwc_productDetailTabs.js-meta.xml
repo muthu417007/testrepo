@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>58.0</apiVersion>
+  <isExposed>true</isExposed>
+  <masterLabel>Product Details Tabs</masterLabel>
+  <targets>
+    <target>lightningCommunity__Page</target>
+    <target>lightningCommunity__Default</target>
+
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightningCommunity__Default">
+      <property label="Product Data Binding" name="product" type="String" default="{!Product.Details}" />
+      <property name="tab1Title" label="Tab1 Title" type="String" description="Title of the tab1"
+        default="Tab1" />
+    
+    
+      <property name="tab2Title" label="Tab2 Title" type="String" description="Title of the tab2"
+        default="Tab2" />
+  
+      <property name="tab3Title" label="Tab3 Title" type="String" description="Title of the tab3"
+        default="Tab3" />
+    
+      <property name="tab4Title" label="Tab4 Title" type="String" description="Title of the tab4"
+        default="Tab4" />
+ 
+      <property name="tab5Title" label="Tab5 Title" type="String" description="Title of the tab5"
+        default="Tab5" />
+
+      
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>

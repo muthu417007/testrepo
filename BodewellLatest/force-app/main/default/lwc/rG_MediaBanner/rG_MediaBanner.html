@@ -1,0 +1,48 @@
+<template>
+    <div if:true={validPage} class="hero-container-index desk-only rgbanner">
+        <div class="heroborder">
+            <div class="containers hero-content">
+                <div class="hero-copy">
+                    <h1 if:false={cityflag} class="hero-head">{bannerheading}</h1>
+                    <div if:true={cityflag} class="hero-head">{certifiedbannerheading}</div>
+                    <div class="hero-sub-head">{bannersubheading}</div>
+                    <div class="hero-city-head">{bannercityheading}</div>
+                    <div if:false={cityflag} class="hero-tollfree-title">
+                        <div class="media-call-text">Call us toll-free at <a href={tollfreenumberlink} onclick={handleCallTollFree}>{tollfreenumber}.</a></div>
+                        <div class="media-banner-button">
+                            <a target="_blank" href={scheduleservicelink} onclick={handleSchedule}>Schedule Service Online</a>
+                        </div>
+                    </div>
+                    <div if:true={cityflag} class="hero-tollfree-title">
+                        <div class="media-part-accessaries">Looking for a part?<a href={partslink}>Visit Parts & Accessories Store.</a></div>
+                        <div class="media-banner-call-button"><a target="_blank" href={tollfreenumberlink} onclick={handleCallTollFree}>CALL {tollfreenumber}</a></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile View RG Banner -->
+    <div if:true={validPage} class="media-hero-banner hero-container-mob  mob-only">
+        <div class="heroborder">
+            <img src={mobilebanner} alt="GE Refrigerator in home kitchen">
+        </div>
+        <div class="hero-copy">
+            <div if:false={cityflag} class="hero-head">{bannerheading}</div>
+            <div if:true={cityflag} class="hero-head">{certifiedbannerheading}</div>
+            <div class="hero-sub-head">{bannersubheading}</div>
+            <div class="hero-city-head">{bannercityheading}</div>
+            <div if:false={cityflag} class="hero-tollfree-title">
+                <div class="media-mob-calltext">Call us toll-free at <a href={tollfreenumberlink} onclick={handleCallTollFree}>{tollfreenumber}.</a></div>
+                <div class="media-banner-button"><a target="_blank" href={scheduleservicelink} onclick={handleSchedule}>Schedule Service Online</a></button></div>
+            </div>
+            <div if:true={cityflag} class="hero-tollfree-title">
+                <div class="media-mob-part-accessaries"><a href={partslink}>Visit Parts & Accessories Store.</a></div>
+                <div class="media-banner-call-button"><a target="_blank" href={tollfreenumberlink} onclick={handleCallTollFree}>CALL {tollfreenumber}</a></button></div>
+            </div>
+        </div>
+    </div>
+    <div if:false={validPage}>
+        <div if:true={notfound} class="index-inner-wrapper_inner_header_bar slds-m-around_x-large">PAGE 404. SORRY, PAGE NOT FOUND</div>
+        <div if:false={notfound} class="index-inner-wrapper_inner_header_bar slds-m-around_x-large">PAGE 500. SOMETHING IS WRONG</div>
+    </div>
+</template>

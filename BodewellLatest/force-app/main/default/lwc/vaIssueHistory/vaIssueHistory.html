@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title="ISSUE HISTORY" icon-name="standard:call_history" label="Issue History" class="lgc-bg">
+
+            <div style="height: 27vh;">
+            <lightning-tabset variant="scoped">
+                <lightning-tab label={serial}>
+                    <div style="height: 18vh;">
+                        <lightning-datatable
+                                key-field="id"
+                                data={serialNumberData}
+                                columns={serialColumns}
+                                min-column-width="80"
+                                hide-checkbox-column
+                                >
+                        </lightning-datatable>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label={model}>
+                    <div style="height: 18vh;">
+                        <lightning-datatable
+                                key-field="id"
+                                data={modelNumberData}
+                                columns={modelColumns}
+                                min-column-width="80"
+                                hide-checkbox-column
+                                >
+                        </lightning-datatable>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="Interaction History (Today - 30 days)">
+                    <div if:true={viewAuditRecord} class="resize_wrapper slds-scrollable_y">
+                            
+                                <lightning-datatable
+                                        key-field="id"
+                                        data={historyData}
+                                        columns={historyColumns}
+                                        onrowaction={navigatetoCase}
+                                        min-column-width="80"
+                                        hide-checkbox-column
+                                        >
+                                </lightning-datatable>
+                            
+                        
+                    </div>
+                    <div if:false={viewAuditRecord} style="height: 18vh;">
+                        <span><b>PROBLEM : </b>{selectedProblem}</span>
+                        <lightning-button variant="brand" label="Back" title="Back" onclick={handleBack} class="slds-float_right"></lightning-button>
+                        <div class="slds-m-top_medium">
+                            <lightning-datatable
+                                            key-field="id"
+                                            data={partsRecords}
+                                            columns={partsColumns}
+                                            min-column-width="80"
+                                            onrowaction={navigatetoCase}
+                                            hide-checkbox-column
+                                            >
+                            </lightning-datatable>
+                            <template if:true= {nopartsRecords}>
+                                <div class="slds-align_absolute-center">
+                                --No Parts Found--
+                            </div>
+                            </template>
+                        </div>        
+                    </div>
+                </lightning-tab>
+            </lightning-tabset>    
+        </div>
+
+   </lightning-card>
+    
+</template>

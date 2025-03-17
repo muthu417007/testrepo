@@ -1,0 +1,15 @@
+<template>
+    <h1>LWC Component that uses Lightning-Modal component to host VF page in IFRAME</h1>
+    <pre>
+        Works partially but some issues: <br>
+            1. Requires CSP, and <br>
+            2. You login to org as Admin on Chrome, <br>
+            3. Does not work on FF or Safari <br>
+            4. Data from the bwc_CybersourcePOC_Modal does not get to bwc_CybersourcePOC_Button_Calls_Modal<br>
+               I think the modal requires someone to close it for data to be sent back<br>
+
+        LWC: bwc_CybersourcePOC_Button_Calls_Modal and<br>
+             bwc_CybersourcePOC_Modal (for the modal)
+    </pre>
+    <lightning-button label="Launch Cybersource Page" onclick={handleClick}></lightning-button>
+</template>

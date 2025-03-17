@@ -1,0 +1,93 @@
+<template lwc:render-mode="light">
+    <div
+        if:true={isPriceAvailable}
+        class={layoutClass}>
+        <span
+            if:true={displayNegotiatedPriceWithoutHardware}
+            aria-live="assertive"
+            aria-atomic="true"
+            class="price-col slds-p-right_x-small">
+            <!-- <span
+                if:true={hasNegotiatedPriceLabel}
+                class="price-col-section slds-text-heading_small slds-p-right_x-small">
+                {negotiatedPriceLabel}:
+            </span> -->
+            <span class="price-col-section">
+                <lightning-formatted-number
+                    class="negotiated-price price-label"
+                    value={negotiatedPrice}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number>
+            </span>           
+        </span>
+        <span
+            if:true={displayNegotiatedPriceWithHardware}
+            aria-live="assertive"
+            aria-atomic="true"
+            class="price-col slds-col slds-p-right_x-small">
+            <span
+                if:true={hasNegotiatedPriceLabel}
+                class="price-col-section slds-text-heading_small slds-p-right_small d-flex">
+                {negotiatedHardwarePriceLabel}
+            </span>
+            <div>
+                <lightning-formatted-number
+                    class="negotiated-price price-label"
+                    value={negotiatedPrice}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency"></lightning-formatted-number> {hardwareInfo}
+            </div>
+        </span>
+        <span
+            if:true={displayOriginalPrice}
+            aria-live="assertive"
+            aria-atomic="true"
+            class="price-col slds-col slds-p-right_x-small">
+            <span
+                if:true={hasOriginalPriceLabel}
+                class="price-col-section slds-text-heading_small slds-p-right_x-small d-flex">
+                <!-- {originalPriceLabel}: -->
+            </span>
+            <span class="member-price">
+                <img class="memberSKU" src={MEMBER_SKU}>
+                <span class="price-col-section">
+                    <span
+                        if:true={displayAssistiveText}
+                        class="slds-assistive-text">
+                        {strikethroughAssistiveText}
+                    </span>
+                    <lightning-formatted-number
+                        class="original-price price-label"
+                        value={originalPrice}
+                        maximum-fraction-digits="2"
+                        currency-code={currencyCode}
+                        format-style="currency">
+                    </lightning-formatted-number>
+                    
+                  <br/> 
+                  
+                    <span class="slds-p-right_x-small"> Savings:
+                        <lightning-formatted-number                   
+                            value={_memberSavings}
+                            maximum-fraction-digits="2"
+                            currency-code={currencyCode}
+                            format-style="currency">
+                        </lightning-formatted-number>
+                    </span>
+                </span>
+            </span>
+        </span>
+    </div>
+    <div
+        class="tax-container"
+        if:true={taxInfoVisible}>
+        <p class="tax-info-label">{taxIncludedLabel}</p>
+    </div>
+    <div
+        if:false={isPriceAvailable}
+        class="price-unavailable">
+        {unavailablePriceLabel}
+    </div>
+</template>

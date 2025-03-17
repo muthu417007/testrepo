@@ -1,0 +1,77 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="DisplayCaseController" >
+     
+    <lightning:navigation aura:id="navServicephcase"/>
+    <aura:attribute name="pageReferencephcase" type="Object"/>
+    
+    <aura:attribute name="loaded" type="Boolean" default="false" />
+    <aura:attribute name="loadedsfdc" type="Boolean" default="false" />
+	<div class="slds-text-heading_medium">Case List</div>
+     <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mydata2" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+  
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+  <thead>
+    <tr class="slds-line-height_reset">
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Case Number">Case Number</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Opened On">Opened On</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="Status">Status</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="FirstName">FirstName</div>
+      </th>
+      <th class="" scope="col">
+        <div class="slds-truncate" title="LastName">LastName</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <aura:if isTrue="{! v.loaded }">
+      <aura:iteration items="{!v.mydata}" var="curr">
+    <tr class="slds-hint-parent">
+       
+              <th data-label="Case Number" scope="row">
+                <div class="slds-truncate" >
+                  <a href="#" onclick="{!c.handleRowAction}" id="{!curr.ref_no}">{!curr.ref_no}</a>       
+                </div>
+              </th>
+              <td data-label="Opened On">
+                <div class="slds-truncate" title="Cloudhub">
+                    <a href="#" onclick="{!c.handleRowAction}" value="{!curr.created}">{!curr.created}</a>
+                </div>                  
+              </td>
+              <td data-label="Status">
+                <div class="slds-truncate" title="Cloudhub">
+                    <a href="#" onclick="{!c.handleRowAction}" value="{!curr.status_id}">{!curr.status_id}</a>
+                </div> 
+              </td>
+              <td data-label="FirstName">
+                <div class="slds-truncate" title="Cloudhub">
+                    <a href="#" onclick="{!c.handleRowAction}" value="{!curr.first_name}">{!curr.first_name}</a>
+                </div> 
+              </td>
+              <td data-label="LastName">
+                <div class="slds-truncate" title="Cloudhub">
+                    <a href="#" onclick="{!c.handleRowAction}" value="{!curr.first_name}">{!curr.first_name}</a>
+                </div> 
+              </td>
+            </tr> 
+		 </aura:iteration>
+          </aura:if>
+      
+    
+
+        
+        
+  </tbody>
+</table>
+
+</aura:component>

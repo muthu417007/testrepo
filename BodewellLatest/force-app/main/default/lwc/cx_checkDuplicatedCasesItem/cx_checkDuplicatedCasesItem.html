@@ -1,0 +1,20 @@
+<template>
+    <div if:true={caseRecord} class="slds-m-horizontal_medium">
+        <article class="slds-tile slds-hint-parent">
+            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                <div class="slds-col slds-size_1-of-1">
+                    <h3 class="slds-tile__title slds-truncate" title={caseRecord.CaseNumber}>
+                        <a href="#" onclick={handleCaseClick} data-id={caseRecord.Id}>{caseRecord.CaseNumber}</a>
+                    </h3>
+                    
+                    <div class="slds-tile__detail break-line" if:true={caseRecord.Subject}>
+                        <span class="slds-text-color_weak slds-m-right_small">Subject: </span>
+                        <span>{caseRecord.Subject}</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="solid">
+        </article>
+        
+    </div>
+</template>

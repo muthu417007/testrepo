@@ -1,0 +1,35 @@
+.header-container-clone {
+    display: flex;
+    align-items: center;
+}
+.headerAddress {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.slds-form-element
+{
+    background-color: white;
+}
+.icon {
+    margin-top: 6px;
+    display: inline-block;
+
+
+    vertical-align: top;
+
+    fill: none;
+    isolation: isolate;
+    width: 33px;
+    height: 33px;
+
+    /* .g {
+        fill: #ffc01f;
+    }
+
+    .h {
+        fill: #12212e;
+    } */
+
+
+}

@@ -1,0 +1,25 @@
+<template>
+    <template if:true={waitingForOrder}>
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand" class="slds-m-top_large"></lightning-spinner>
+    </template>
+    <template if:false={waitingForOrder}>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-12"><lightning-icon
+            icon-name="action:approval"
+            class="order-confirmation-icon"
+            ></lightning-icon></div>
+            <div class="slds-col slds-size_10-of-12">
+                <h3
+                class="slds-p-bottom_small header-text"
+            >
+                {orderMessageText}
+            </h3>
+            </div>
+            
+            
+        </div>
+        <p class="order-confirmation-email">
+                {emailMessageText}
+            </p>
+    </template>
+</template>

@@ -1,0 +1,65 @@
+<template>
+    <!-- Share to slack channel button -->
+    <!-- window that displays o click of share to slack button -->
+    <template if:true={showSlackChannels}>
+        <div class="su__scroll-screen" style={scrollChannelsCss}>
+            <div class="slds-grid slds-grid_align-spread slack-block">
+            <!-- back button returns to Top Experts window in Agent Helper component  -->
+                <div class="slds-col ">
+                    <button onclick={showCaseExperts} class="share-slack-button buttonSlack" disabled={noSlackChannelsExist}>Back</button>
+                <!-- <lightning-button-icon icon-name="utility:back" variant="base" onclick={showCaseExperts} alternative-text="Settings" -->
+                        <!-- title="Settings" class="slack-buttons">Back</lightning-button-icon> -->
+                </div>
+                <!-- Button that commits to slack channel  -->
+                <div class="slds-col expert-filter-section" style="text-align: right;">
+                    <!-- <lightning-button type="button" variant="brand" name="shareSlack" onclick={shareToSlack}
+                    label="Share on Slack">
+                    </lightning-button> -->
+                    <button onclick={shareToSlack} class="share-slack-button buttonSlack" disabled={noSlackChannelsExist}>
+                        Share
+                        <!-- <svg id="Group_15310" class="slack-svg" data-name="Group 15310" width="14" height="14" viewBox="0 0 19 19" style="vertical-align: text-bottom; margin: 0px 2px;">
+                            <defs>
+                            <clipPath id="clip-path">
+                                <rect id="Rectangle_5213" data-name="Rectangle 5213" width="19" height="19" fill="none"/>
+                            </clipPath>
+                            </defs>
+                            <g id="Group_15309" data-name="Group 15309" clip-path="url(#clip-path)">
+                            <path id="Path_11709" data-name="Path 11709" d="M6.966,0a1.9,1.9,0,1,0,0,3.8h1.9V1.9A1.9,1.9,0,0,0,6.966,0h0m0,5.067H1.9a1.9,1.9,0,0,0,0,3.8H6.966a1.9,1.9,0,1,0,0-3.8Z" transform="translate(0)" fill="#36c5f0"/>
+                            <path id="Path_11710" data-name="Path 11710" d="M1314.266,6.966a1.9,1.9,0,0,0-3.8,0v1.9h1.9a1.9,1.9,0,0,0,1.9-1.9m-5.067,0V1.9a1.9,1.9,0,0,0-3.8,0V6.966a1.9,1.9,0,1,0,3.8,0" transform="translate(-1295.266)" fill="#2eb67d"/>
+                            <path id="Path_11711" data-name="Path 11711" d="M1307.2,1316.768a1.9,1.9,0,1,0,0-3.8h-1.9v1.9a1.9,1.9,0,0,0,1.9,1.9m0-5.067h5.067a1.9,1.9,0,0,0,0-3.8H1307.2a1.9,1.9,0,0,0,0,3.8Z" transform="translate(-1295.167 -1297.768)" fill="#ecb22e"/>
+                            <path id="Path_11712" data-name="Path 11712" d="M0,1309.9a1.9,1.9,0,0,0,3.8,0V1308H1.9a1.9,1.9,0,0,0-1.9,1.9m5.067,0v5.067a1.9,1.9,0,1,0,3.8,0V1309.9a1.9,1.9,0,0,0-3.8,0h0" transform="translate(0 -1297.867)" fill="#e01e5a"/>
+                            </g>
+                        </svg> -->
+                    </button>
+                </div>
+            </div>
+            <!-- List of Slack Channels -->
+            <!-- <div class="slack_channel_heading">Slack channels</div> -->
+            <div class="slackChannels radioButtons share-slack-button">
+                <!-- <template for:each={slackOptions} for:item="item">
+                    <div class="slds-p-horizontal_small radioDiv channel_list_div" key={item.id}>
+                        <label for={item.label} class="radioLabel" >#{item.label}</label>
+                        <input type="radio" id={item.label} class="radioButton" name={item.label} value={item.value} onchange={updateChannelValue} >
+                    </div>
+                </template> -->
+                <!-- <lightning-radio-group name="radioGroup" 
+                            options={slackOptions}
+                            value={selectedChannelValue}
+                            type="radio" onchange={updateChannelValue}></lightning-radio-group> -->
+                             
+                <lightning-checkbox-group name="radio" 
+                            options={slackOptions}
+                            value={selectedChannelValue}
+                            onchange={updateChannelValue}>
+                </lightning-checkbox-group>
+                             
+                <template if:true={noSlackChannelsExist}>
+                    <div class="noChannelMessage">
+                        <span>'No Slack channel found! Please create a new one on Slack'</span>
+                    </div>
+                </template>
+                            
+            </div>
+        </div>
+    </template>
+</template>

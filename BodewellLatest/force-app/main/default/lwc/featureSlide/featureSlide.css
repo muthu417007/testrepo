@@ -1,0 +1,54 @@
+.container {
+    position: relative;
+    cursor:pointer;
+    width: 100%;
+}
+.centered {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-right {
+    right: 1em;
+}
+
+.video{
+    max-width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.frontTile{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.close {
+    z-index: 3;
+    position: absolute;
+    right: 0px;
+    top:-40px;
+}
+  
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.backsideTile{
+    background: linear-gradient(360deg, #393A37 0%, #000000 100%);
+    height:522px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.videoTile{
+    height:522px;
+}

@@ -1,0 +1,84 @@
+<template>
+    <div if:false={invokedByOrderSummary}>
+        <lightning-card title={utilityTitle} label="Order Search" icon-name="custom:custom63">
+        
+        
+            <!--<template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                <lightning-icon icon-name="utility:close"
+                                    alternative-text="close"
+                                    variant="inverse"
+                                    size="small" ></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal/PopUp Box header LWC</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <p><b>Modals/Popup Box are used to display content in a layer above the app.
+                            </b></p>
+                            <p><b>This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.
+                            </b></p>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>slds-p-horizontal_small-->
+        
+        
+            <div class="slds-p-around_medium lgc-bg">
+                <template if:true={OrdersLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+            
+                <div class="row">
+                    <div class="col-50">
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="phonenumber" onkeypress={handleEnter}
+                            label="Phone Number" variant="scoped" placeholder="Phone Number"></lightning-input>
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="ordernumber" onkeypress={handleEnter}
+                            label="Order Number" variant="scoped" placeholder="Order Number"></lightning-input>
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="ponumber" label="PO Number" onkeypress={handleEnter}
+                            variant="scoped" placeholder="PO Number"></lightning-input>
+                        <!--<lightning-input class="inputbox" type="text" data-id="reset" data-name="firstname" label="First Name" variant="scoped" placeholder="First Name"></lightning-input>
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="lastname" label="Last Name" variant="scoped" placeholder="Last Name"></lightning-input>
+                        -->
+                    </div>
+                    <div class="col-50">
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="trackingumber" onkeypress={handleEnter}
+                            label="Tracking Number" variant="scoped" placeholder="Tracking Number"></lightning-input>
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="referencenumber" onkeypress={handleEnter}
+                            label="Reference Number" variant="scoped" placeholder="Reference Number"></lightning-input>
+                        <lightning-input class="inputbox" type="text" data-id="reset" data-name="email" label="Email" onkeypress={handleEnter}
+                            variant="scoped" placeholder="Email"></lightning-input>
+                        <!--<lightning-input class="inputbox" type="text" data-id="reset" data-name="zipcode" label="Zipcode" variant="scoped" placeholder="Zipcode"></lightning-input>
+                        -->
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="search-msg">Please input the search criteria into only <b>1 field</b> before clicking search.</p>
+                    <p class="search-msg">Data in <b>REFERENCE</b>, <b>TRACKING </b> and <b>EMAIL</b> fields will be converted to uppercase. <b>PO is case sensitive.</b></p>
+                
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <lightning-button variant="brand" label="Search" title="Search Orders" icon-name="utility:search"
+                            icon-position="right" onclick={getOrdersData} class="lbutton"></lightning-button>
+                    </div>
+                    <!--slds-align_absolute-center<lightning-button variant="brand" label="Search" title="Search" onclick={getOrdersData} class="slds-m-left_x-small"></lightning-button>-->
+                    <div class="col-50">
+                    
+                        <lightning-button variant="brand" label="Reset" title="Reset" icon-name="utility:reset"
+                            onclick={resetInputs} class="lbutton"></lightning-button>
+                    
+                    </div>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

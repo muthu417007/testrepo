@@ -1,0 +1,74 @@
+<aura:component controller="SearchController" implements="flexipage:availableForAllPageTypes" access="global">
+    <ltng:require styles="{!$Resource.multilineToastCSS}" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:utilityBarAPI aura:id="utilitybar" />
+
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="lastName" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="street" type="String" />
+    <aura:attribute name="zip" type="String" />
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="modelNumber" type="String" />
+    <aura:attribute name="archivedContacts" type="DA_Contact__b[]" />
+    <aura:attribute name="createCase" type="Boolean" default="false" />
+    
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="columnsArchive" type="List"/>
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:attribute name="sortedBy" type="String" />
+	<aura:attribute name="sortedDirection" type="Boolean" default="true" />
+   
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+  	
+    
+    <div class="row">
+        <h2 class="header">Search Input</h2>
+        <table>
+            <tr>
+            	<td><lightning:input name="firstName" value="{!v.firstName }" label="First Name" style="width:250px" /></td>
+                <td><lightning:input name="lastName" value="{!v.lastName }" label="Last Name" style="width:250px" /></td>
+                <!--<td><lightning:input name="modelNumber" value="{!v.modelNumber}" label="Model Number" style="width:250px" /></td>-->
+            </tr>
+            <tr>
+                <td><lightning:input name="email" value="{!v.email }" label="Email" style="width:250px" /></td>
+                <td><lightning:input name="phone" value="{!v.phone }" label="Phone" style="width:250px" /></td>
+            </tr>
+            <tr>
+                <td><lightning:input name="street" value="{!v.street}" label="Street" style="width:250px" /></td>
+                <td><lightning:input name="zip" value="{!v.zip }" label="Zip Code" style="width:250px" /></td>
+            </tr>
+        </table>
+    </div>
+    
+    <lightning:button label="Search" onclick="{!c.search}"/> &nbsp;&nbsp;&nbsp;&nbsp;
+    <lightning:button label="Clear Search" onclick="{!c.clearSearch}"/>
+    <br/>
+    Standard Contacts
+    <div style="height: 125px">
+        <lightning:datatable
+            columns="{!v.columns}"
+            data="{!v.contactList}"
+            keyField="id"
+            onrowaction="{!c.handleRowAction}"
+            hideCheckboxColumn="true"
+             />
+    </div>
+    Archived Contacts (First and Last Name Required to Search Archive)
+    <div style="height: 125px">
+     	<lightning:datatable
+            columns="{!v.columnsArchive}"
+            data="{!v.archivedContacts}"
+            keyField="id"
+            onrowaction="{!c.handleRowAction}"
+            sortedBy="{!v.sortedBy}"
+            hideCheckboxColumn="true"
+            sortedDirection="{!v.sortedDirection}" />
+    </div>
+    
+    <lightning:button label="Create Contact" onclick="{!c.createContacts}"/>
+    <!--<lightning:input type="checkbox" label="Create Case" checked="{!v.createCase}"/>-->
+</aura:component>

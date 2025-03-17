@@ -1,0 +1,750 @@
+.body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+    font-family: 'sans-serif';
+    -webkit-text-size-adjust: 100%;
+    background-color: #eff0f0;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    border-top: none;
+}
+
+.siteforceStarterBody {
+    background-color: #eff0f0;
+    outline: none;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add {
+    line-height: inherit;
+    transition: color .15s ease;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.8235294117647059rem;
+    font-weight: 500;
+}
+
+.container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.appliance-list>.cell {
+    margin-bottom: 2rem;
+    color: #000
+}
+
+.medium-up-2>.cell {
+    width: 50%;
+}
+
+.appliance-item {
+    text-align: center;
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    height: 400px;
+    margin: 1em;
+    width: 330px;
+}
+
+.medium-offset-3 {
+    margin-left: 25%;
+}
+
+p.product-title,
+p.details-link {
+    color: #000;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-title {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+}
+
+.product-title:hover {
+    text-decoration: underline;
+    color: #47c5ff;
+}
+
+p a {
+    -webkit-tap-highlight-color: #000;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-size: 0.8235294117647059rem;
+}
+
+a {
+    color: #000;
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #47c5ff;
+    color: #47c5ff;
+    border-bottom-width: 4px;
+}
+
+.appliance-item-myProducts:hover input {
+    color: #47c5ff;
+}
+
+.appliance-item-myProducts:hover .close-icon {
+    color: #47c5ff;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+.container:not(.full)>.grid-padding-x {
+    margin-right: 1.9375rem;
+    margin-left: 1.9375rem;
+}
+
+.appliance-item p {
+    text-align: center;
+    background-color: #fff;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+.appliance-item:hover {
+    color: #47c5ff;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.grid-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 24px;
+    padding-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #47c5ff;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.text-center {
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+.main-Content {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+    background-color: #eff0f0;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.address-list-section {
+    margin-bottom: 2rem;
+    background-color: white;
+    padding-top: 0.15rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+h1 {
+    font-size: 35px;
+    text-rendering: optimizeLegibility;
+    margin-bottom: 8px;
+    margin-top: 0.1rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: none;
+}
+
+.infoheader {
+    color: #000;
+    line-height: 1.18571em;
+    text-transform: capitalize;
+    font-weight: 200;
+    margin-bottom: 0.2em;
+    margin-top: 0rem;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.add-an-appliance-section {
+    margin-bottom: 8rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.add-an-appliance>.grid-container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 71.5rem;
+}
+
+.add-an-appliance-inner {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.padding-top-3 {
+    padding-top: 3rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.addAppliancesTitle {
+    padding-bottom: 2%;
+}
+
+.fontstyle {
+    font-style: 'Gotham SSm A';
+}
+
+.infoHeader {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    font-size: 24px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #000;
+}
+
+h2 {
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin-bottom: 0rem;
+    line-height: 1.3;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.add-an-appliance-links p {
+    margin-bottom: 0.5rem;
+}
+
+.close-icon {
+    color: #ccc;
+    text-align: right;
+}
+
+.close-icon:hover {
+    color: #47c5ff;
+}
+
+.appliance-item {
+    text-align: right;
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-size: 25px;
+    font-family: monospace;
+    text-rendering: auto;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #000;
+    right: -1rem;
+    top: -0.5rem;
+    border: 1px solid transparent;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 28px;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.reveal.add-address-modal {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.button-action {
+    display: inline-block;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.okButton {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: 700;
+    border-radius: 30px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.okButton:hover {
+    background-color: #32beff;
+}
+
+.cancleButton {
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.cancleButton:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.reveal-overlay .modal-header {
+    padding-bottom: 0;
+    margin: 0px;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.delete-message .removeproduct {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-action {
+    width: 100%;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0 18rem;
+    text-align: center;
+    width: 100%;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 2rem;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .field-item h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.field-item>h3 {
+    color: white;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif, Arial, Helvetica, sans-serif;
+    text-transform: none;
+}
+
+.title-bar-circles-right {
+    background-position: right;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 2rem;
+}
+
+.linkbutton {
+    background: none;
+    border: none;
+    color: transparent;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    padding-bottom: 1rem;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: #47c5ff;
+}
+
+.height1 {
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+.height2 {
+    height: 30%;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media only screen and (min-width:200px) and (max-width: 320px) {
+    .reveal.add-address-modal {
+        top: 15%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 3px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    .appliance-item {
+        text-align: center;
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        margin: 5px 0px;
+        width: 100%;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #000;
+        text-decoration: none;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        cursor: pointer;
+        font-size: 16px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width: 425px) {
+    .appliance-item {
+        text-align: right;
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: auto;
+        margin: 5px 0px;
+        width: 100%;
+    }
+    .appliance-item {
+        text-align: right;
+    }
+    .reveal.add-address-modal {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    .reveal {
+        overflow: visible;
+        border: 3px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #000;
+        text-decoration: none;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        cursor: pointer;
+        font-size: 16px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width: 768px) {
+    .reveal.add-address-modal {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 2rem;
+        width: 80%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .grid-x {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-flow: row wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0 5rem;
+        text-align: center;
+        width: 100%;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        color: #000;
+        text-decoration: none;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        cursor: pointer;
+        font-size: 16px;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+}

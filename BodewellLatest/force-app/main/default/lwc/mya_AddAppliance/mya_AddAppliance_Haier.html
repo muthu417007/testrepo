@@ -1,0 +1,178 @@
+<template>
+    <section id="add-appliances-section" class="add-appliances-section" data-id="add-appliances-section">
+        <div class="container">
+            <div class="cell">
+                <div class="add-appliances">
+                    <div class="header">
+                        <h2 class="header-title">Add An Appliance</h2>
+                        <p>
+                            Would you like to add a new appliance, or find appliances you’ve previously registered?
+                        </p>
+                    </div>
+                    <div class="appliance-action-link">
+                        <div class="link-item">
+                            <a class="link" onclick={navigateToProductRegistration}>Register A New Product</a>
+                        </div>
+                        <template if:false={isGuestUser}>
+                            <div class="link-item">
+                                <a class="link" onclick={searchProduct}>Search For Previously Registered Product</a>
+                            </div>
+                        </template>
+</div>
+</div>
+<template if:true={isModalOpen}>
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-01" aria-modal="true"
+                        aria-describedby="modal-content-id-1">
+                        <div class="reveal-overlay">
+                            <div if:true={searchProducts} class="reveal add-address-modal" id="modal-01">
+                                <header class="slds-modal__header no-border">
+                                    <div class="close-button">
+                                        <!-- <a onclick={closeModal} ><span class="close-icon">x</span></a> -->
+                                        <div class="close-button">
+                                            <button onclick={closeModal} title='close-icon'
+                                                class="close-icon"><span>x</span></button>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-center modal-header">Find Products You've Already Registered</h3>
+                                </header>
+                                <div>
+                                    <div class="saved-address">
+                                        <div class="select-message">
+                                            Select an address to help us find other products you may have already
+                                            registered.
+                                        </div>
+                                        <div class="select-box in-field">
+                                            <label for="select-address">
+                                                <span class="main-label">Select Address</span>
+                                            </label>
+                                            <lightning-combobox name="address" id="select-address" value={value}
+                                                placeholder="Select Address" options={addressOptions}
+                                                onchange={handleAddressDropdownChange}>
+                                            </lightning-combobox>
+                                        </div>
+                                    </div>
+                                    <div class="or-div">
+                                        OR
+                                    </div>
+                                    <div class="custom-address">
+                                        <div class="search-message">
+                                            Search for products you have previously registered using a different address
+                                            by
+                                            completing the form below.
+                                        </div>
+                                        <div class="search-fields">
+                                            <div class="in-field">
+                                                <label for="address-one">
+                                                    <span class="main-label">Address 1</span>
+                                                </label>
+                                                <lightning-input type="text" id="address-one" variant="label-hidden"
+                                                    class="validate" required="required" value={address1}
+                                                    maxlength="40" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}
+                                                    disabled={disableAddress} onchange={handleAddress1Change}>
+                                                </lightning-input>
+                                            </div>
+                                            <!-- <div class="in-field">
+                                            <label for="address-two">
+                                                <span class="main-label">Address 2</span>
+                                                <span class="main-opt">(Optional)</span>
+                                                <span class="main-sub">(apartment, building, etc.)</span>
+                                            </label>
+                                            <lightning-input type="text" id="address-two" variant="label-hidden">
+                                            </lightning-input>
+                                        </div> -->
+                                            <div class="in-field">
+                                                <label for="city">
+                                                    <span class="main-label">City</span>
+                                                </label>
+                                                <lightning-input type="text" id="city" variant="label-hidden"
+                                                    value={city} class="validate" required="required"
+                                                    maxlength="25" message-when-pattern-mismatch={addressPatternValidationMessage} pattern={addressFieldPattern}
+                                                    disabled={disableAddress} onchange={handleCityChange}>
+                                                </lightning-input>
+                                            </div>
+                                            <div class="in-field">
+                                                <label for="state">
+                                                    <span class="main-label">State</span>
+                                                </label>
+                                                <select class="slds-select state-input validateState" name="state" id="state" required="required" disabled={disableAddress} onchange={handleStateChange}>
+                                                    <option value="">Select State</option>
+                                                    <template for:each={stateOptions} for:item="item">
+                                                        <option key={item.value} value={item.value}>{item.label}</option>
+                                                    </template>
+                                                  </select>
+                                                  <div class="slds-form-element__help" if:true={stateValidation} data-help-message="" role="alert">
+                                                      Complete this field.
+                                                  </div>
+                                                <!-- <lightning-combobox name="state" id="state" variant="label-hidden"
+                                                    required="required" value={selectedState} placeholder="Select State"
+                                                    class="validate" options={states} onchange={handleStateChange}
+                                                    disabled={disableAddress}>
+                                                </lightning-combobox> -->
+                                            </div>
+                                            <div class="in-field">
+                                                <label for="zip">
+                                                    <span class="main-label">Zip</span>
+                                                </label>
+                                                <lightning-input type="text" id="zip" variant="label-hidden"
+                                                    value={zipCode} class="validate" required="required"
+                                                    disabled={disableAddress} onchange={handleZipCodeChange}>
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                        <div class="nickname-field">
+                                            <label for="address-nickname">
+                                                <span class="main-label">Address Nickname</span>
+                                                <span class="main-opy">(Optional)</span>
+                                                <span class="main-sub">(house, rental property, vacation condo,
+                                                    etc.)</span>
+                                            </label>
+                                            <lightning-input type="text" id="address-nickname" value={nickName}
+                                                onchange={handleNickNameChange} variant="label-hidden"
+                                                disabled={disableAddress}>
+                                            </lightning-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <div if:true={isSearching}>
+                                        <lightning-spinner></lightning-spinner>
+                                    </div>
+                                    <button disabled={isSearching} class="address-button" name="search products"
+                                        onclick={searchProductSubmit}>Search With This Address</button>
+                                </footer>
+                                <div class="footer-message">
+                                    <span>
+                                        <a href="https://www.geappliances.com/privacy/privacy_policy.htm">
+                                            Privacy</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div if:true={noProducts} class="reveal add-address-modal" id="modal-02">
+                                <header class="slds-modal__header no-border">
+                                    <div class="close-button">
+                                        <button onclick={closeModal} title='close-icon'
+                                            class="close-icon"><span>x</span></button>
+                                    </div>
+                                    <h3 class="text-center modal-header uppercase">No products found</h3>
+                                </header>
+                                <div>
+                                    <div class="no-product-message">
+                                        <div class="select-message">
+                                            Based on the address you provided, we did not find any new products,
+                                            service or order history to add to your account.
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <button class="address-button1" name="ok" title="" onclick={closeModal}>
+                                        OK
+                                    </button>
+                                </footer>
+                            </div>
+                        </div>
+                    </section>
+                </template>
+</div>
+</div>
+</section>
+</template>

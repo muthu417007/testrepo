@@ -1,0 +1,10 @@
+.title {
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+/* Promo Banner */
+.banner {
+    background-color: var(--sunshine-yellow);
+    padding: 10px 15px;
+}

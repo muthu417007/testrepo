@@ -1,0 +1,118 @@
+.background-width-set {
+    background-color: #f7f1e7;
+    padding-top: 125px;
+    padding-bottom: 25px;
+}
+
+@media (min-width: 1200px) {
+    .background-width-set {
+        max-width: 1920px;
+        margin: 0px auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-width-set {
+        max-width: 1140px;
+        margin: 0px auto;
+    }
+}
+
+
+/* 
+@media (min-width: 992px) {
+    .background-width-set {
+        max-width: 960px;
+        margin: 0px auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .background-width-set {
+        max-width: 720px;
+        margin: 0px auto;
+    }
+} */
+
+.main-anchor-sections {
+    margin: 50px 10px;
+    width: 80%;
+}
+
+.anchor-sections {
+    border-top: 2px solid #dfd0b0;
+    border-bottom: 2px solid #dfd0b0;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.anchor-sections p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    border-bottom: 1px dashed #dfd0b0;
+    font-size: 18px;
+}
+
+.anchor-sections p a {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #12212e;
+}
+
+.title {
+    padding-top: 20px;
+    border-bottom: 2px solid #dfd0b0;
+}
+
+.knowledge-article {
+    padding-top: 40px;
+    font-weight: 300;
+}
+
+.desktop-below {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .desktop-below {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    .desktop-below {
+        max-width: 560px;
+        margin: 0px auto;
+        padding: 0px 40px 50px 40px;
+    }
+    .showsall {
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        color: #12212e;
+        font-weight: 600;
+        line-height: 45px;
+    }
+    .showall-icons {
+        color: #145b95;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 45px;
+    }
+    .showsall:hover,
+    .showall-icons:hover {
+        text-decoration: none !important;
+    }
+    .accordian-set {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #728a9c;
+        padding: 5px 0px;
+    }
+}

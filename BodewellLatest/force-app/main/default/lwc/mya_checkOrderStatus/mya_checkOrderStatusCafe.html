@@ -1,0 +1,47 @@
+<template>
+    <div class="mainContent">
+        <div class="header">{pageTitleLabel}</div>
+        <div class="text1">Check Status, View Details, And Manage Your Order From CafeAppliances.Com</div>
+        <div class="container">
+            <div class="leftAlign">
+                <div class="account uppercase font-weight-100 margin-b-10">Have an Account?</div>
+                <div class="text2">
+                    <button class="loggin" onclick={HandleLogin}>Sign in to your account</button>
+                    &nbsp;
+                    to view all your orders
+                </div>
+                <div class="account uppercase font-weight-100 margin-b-10">DONT HAVE AN ACCOUNT?</div>
+                <div class="text2">
+                    If you <b>purchased an appliance on this website,</b> enter your reference number
+                    (found in your confirmation email) and email address below.
+                    If you don't have your reference number please call 1-800-430-1757.
+                </div>
+            </div>
+            <div if:true={PageLinks} class="linkparts">
+                <img src={OSLC} />
+                NEED HELP WITH A PARTS ORDER?
+                &nbsp;
+                <lightning-formatted-url label="visit the Parts Store" value={PageLinks.PartsStoreURL__c} class="OSL">
+                </lightning-formatted-url>
+            </div>
+        </div>
+        <div class="inputFields large-5 medium-6 small-8">
+            <div>
+                <h5 class="input-field">{referenceNoLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text" type="text" onchange={RefNo} required>
+                </lightning-input>
+            </div>
+            <div>
+                <h5 class="input-field">{emailAddressLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text" type="email" onchange={EmailAdd} required>
+                </lightning-input>
+            </div>
+            <div class="captcha">
+                <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+            </div>
+            <div class="orderButton">
+                <button type="submit" onclick={handleFindOrder}>{findOrderButtonLabel}</button>
+            </div>
+        </div>
+    </div>
+</template>

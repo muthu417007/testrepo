@@ -1,0 +1,198 @@
+.text1 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    margin: 3.5rem 0rem 1.5rem 0rem;
+    text-rendering: optimizeLegibility;
+    color: #151515;
+    cursor: default;
+    text-align: left;
+    display: block;
+    background: none;
+}
+
+.main-width {
+    width: 70%;
+    margin: 0px auto;
+}
+
+.span-text {
+    text-align: left;
+    display: block;
+}
+
+.style-text {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    line-height: 1.3;
+    margin: 0 0 1em;
+    text-rendering: optimizeLegibility;
+    display: inline-block;
+    padding: 0rem;
+    margin-left: 0rem;
+    margin-right: 0.1rem;
+    font-weight: normal;
+    font-size: 20px;
+    color: #151515;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+.span-value {
+    color: #151515;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0rem 2rem 0rem 0rem;
+    padding: 0rem 2rem 0rem 0rem;
+}
+
+.im {
+    margin-top: 2rem;
+    color: #555;
+    font-family: "Gotham SSm A", "Gotham SSm B", "Gotham Bold", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    cursor: default;
+    font-size: 17px;
+    padding-bottom: 2rem;
+}
+
+.a2:hover {
+    color: #32beff;
+    text-decoration: underline;
+}
+
+.a2 {
+    font-family: "Gotham SSm A", "Gotham SSm B", "Gotham Bold", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #005aaa;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.right-text {
+    float: right;
+}
+
+.left-text {
+    float: left;
+    text-align: left;
+}
+
+.copy-right-text {
+    text-align: left;
+    font-family: Arial, helvetica, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: 0 0 1em;
+    color: #555555;
+    text-rendering: optimizeLegibility;
+}
+
+.list-vertical-brd-dark-grey>li+li:before {
+    content: "|";
+    color: #459fd3;
+    padding-right: 0.5em;
+    font-size: 1.1em;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    font-size: 0.89285714285714285714285714285714em;
+    list-style-position: outside;
+    color: #555555;
+}
+
+li {
+    display: inline-block;
+    font-family: Arial, helvetica, sans-serif;
+    margin-right: 0.5rem;
+    color: #555555;
+}
+
+li>a {
+    color: #555555;
+}
+
+.padd-set {
+    background-color: #e5e5e5;
+    padding: 2rem 5rem 6rem 5rem;
+    line-height: 1rem;
+}
+
+.status-image2 {
+    width: 18%;
+    height: 2%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: block;
+    margin-left: 0rem;
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .main-width {
+        width: 95%;
+        margin: 0px auto;
+    }
+    .text1 {
+        font-size: 18px;
+    }
+    .style-text {
+        font-size: 16px;
+        display: block;
+        margin-bottom: 0rem;
+    }
+    .mob-set {
+        display: flex;
+        margin-bottom: 0.5rem;
+    }
+    .span-value {
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0rem 0rem 0rem 0rem;
+        padding: 0rem 2rem 0rem 0rem;
+    }
+    .span-text {
+        display: block;
+    }
+    .im {
+        text-align: left;
+    }
+    .footer {
+        width: 100%;
+        padding: 0.3rem;
+        background-color: #e5e5e5;
+    }
+    .padd-set {
+        background-color: #e5e5e5;
+        padding: 1rem 0rem 1rem 0rem;
+        line-height: 1rem;
+        height: 10rem;
+        display: flex;
+        flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+    .right-text {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .copy-right-text {
+        text-align: center;
+    }
+}

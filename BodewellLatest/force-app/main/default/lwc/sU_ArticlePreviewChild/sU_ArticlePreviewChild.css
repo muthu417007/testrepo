@@ -1,0 +1,50 @@
+.parentPopUpClass {
+    border:1px solid red;
+}
+.displayNone {
+    display:none;
+}
+.popOver {
+    border:1px solid rgb(148, 147, 147);
+}
+.heading {
+    font-weight: 500;
+    font-size: medium;
+    padding-left: 10px;
+}
+.subHeadingTab{
+ background-color: rgb(247,247,247);
+}
+.divValue {
+    border-bottom:1px solid rgb(240, 235, 235);
+}
+.fieldValue {
+    font-size: smaller;
+}
+.field {
+    font-size: small;
+    font-weight: 400;
+    min-height: 20px;
+}
+.scroll {
+    border:1px solid rgb(214, 211, 211);
+    border-radius: 5px;
+}
+.example-accordion { 
+    --slds-c-accordion-heading-text-color:#3A9BDC;
+    --sds-c-accordion-summary-color-background:#e2e2e2;
+}
+.paddingBottom {
+    padding-bottom: 17px;
+}
+.footer {
+    height:20px;
+}
+.attachments {
+    border:0px;
+   
+}
+.attachments a:visited {
+    color: #0176d3 !important;
+}
+.preview-child .attach{border-bottom: 1px solid #E5E5E5;margin: 2px 6px 10px;}

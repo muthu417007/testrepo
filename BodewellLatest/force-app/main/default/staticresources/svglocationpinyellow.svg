@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>4E3B8F53-76BD-4FDC-9A41-C177B899F87E</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="D-8.0-Location-City-Retail-Option3" transform="translate(-147.000000, -349.000000)">
+            <g id="Location-Pin" transform="translate(147.000000, 349.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="27.5" cy="27.5" r="27.5"></circle>
+                <g id="map-marker-alt-solid" transform="translate(15.000000, 11.000000)" fill="#FFC01F" fill-rule="nonzero">
+                    <path d="M11.2153646,32.3341913 C1.75585938,18.7578528 0,17.3645055 0,12.374997 C0,5.54045373 5.59641927,0 12.5,0 C19.4035807,0 25,5.54045373 25,12.374997 C25,17.3645055 23.2441406,18.7578528 13.7846354,32.3341913 C13.1638672,33.2219685 11.8360677,33.221904 11.2153646,32.3341913 Z M12.5,17.5312457 C15.3764974,17.5312457 17.7083333,15.2227287 17.7083333,12.374997 C17.7083333,9.52726525 15.3764974,7.21874824 12.5,7.21874824 C9.6235026,7.21874824 7.29166667,9.52726525 7.29166667,12.374997 C7.29166667,15.2227287 9.6235026,17.5312457 12.5,17.5312457 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

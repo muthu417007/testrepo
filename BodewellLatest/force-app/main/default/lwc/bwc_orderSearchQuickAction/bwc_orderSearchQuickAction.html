@@ -1,0 +1,36 @@
+<template>
+    <lightning-spinner if:true={isSpinner} class="spinner-bg" alternative-text="Loading" size="medium"></lightning-spinner>
+
+    <lightning-modal-header label={label}></lightning-modal-header>
+    <lightning-modal-body>
+        <c-orders-search
+            ordrnumber={orderNumber}
+            onordereventpublish={handleOrderEventPublish}
+            invoked-by-order-summary
+        ></c-orders-search>
+        <div if:true={orderFetched}>
+            <c-orders-data
+                payload={payload}
+                oneventpublished={handleEventPublished}
+                ordrnumber={orderNumber}
+                invoked-by-order-summary
+            ></c-orders-data>
+        </div>
+        <div if:true={evtPublished} class="slds-m-top_large">
+            <!-- Agent S -->
+            <c-order-detail-tabs
+                orderpayload={orderPayload}
+                record-id={recordId}
+                invoked-by-order-summary
+            ></c-order-detail-tabs>
+            <!-- Agent E -->
+            <div class="slds-m-top_large slds-m-bottom_large">
+                <c-order-summary
+                    orderpayload={orderPayload}
+                    invoked-by-order-summary
+                ></c-order-summary>
+            </div>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer></lightning-modal-footer>
+</template>

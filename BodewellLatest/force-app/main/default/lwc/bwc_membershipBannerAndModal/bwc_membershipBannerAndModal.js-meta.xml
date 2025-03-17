@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Member Banner And Model</masterLabel>
+    <description>Banner for membership.</description>
+    <targets>
+       <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+            name="effectiveAccountId"
+            type="String"
+            label="Effective Account Id"
+            description="The ID of the account under which the user is acting (BETA)"
+            default="{!CurrentUser.effectiveAccountId}"
+        />
+            <property label="ID of the Cart " name="cartId" type="String" default="{!Cart.Details.cartId}" />
+            <property label="Account ID" name="accountId" type="String" default="{!Cart.Details.accountId}" />
+            <property label="Web store Id" name="webstoreid" type="String" default="{!Cart.Details.webstoreid}" />
+     </targetConfig></targetConfigs>    
+</LightningComponentBundle>
+<!--DATA	EXPRESSION	DESCRIPTION
+Store ID	{!Cart.Details.webstoreid}	ID of the cart’s web store.
+Account ID	{!Cart.Details.accountId}	ID of the cart account.
+Cart ID	{!Cart.Details.cartId}	ID of the cart.-->

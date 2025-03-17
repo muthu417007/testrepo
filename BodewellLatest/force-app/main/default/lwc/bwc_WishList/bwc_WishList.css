@@ -1,0 +1,73 @@
+:host {
+    --slds-c-icon-color-foreground: #12212E;  
+ }
+
+.addtocart {
+    border-radius: 50px;
+    background: #245B83;
+    border: none
+}
+
+.wishlist-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 345px;
+    position: relative;
+}
+
+.wishlist-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.wishlist-desc{
+    color: #245b83;
+    font-weight: bold;
+}
+
+.subheading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.spinner-div {
+    position: relative;
+    display: inline-block;
+    margin: 4px 18px;
+}
+
+.desc{
+    margin-top: 20px;
+}
+
+.isempty{
+    background-color: #728A9C;
+    color: #12212E;
+    
+}
+
+.close-icon{
+    color: #245B83;
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.close-icon::after {
+    content: "\2716";
+}
+
+.close-button {
+    font-size: 1em;
+    color: #DED1B1;
+    right: 1rem;
+    line-height: 1;
+    font-weight: 600;
+    position: absolute;
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+:host {
+    --cag-button-font-size: 18px;
+    --cag-button-font-family: Helvetica;
+    --cag-button-font-weight: 800;
+    --cag-button-color: #151515;
+    --cag-button-background-color: transparent;
+    --cag-button-border-color: #151515;
+    --cag-button-border-radius: 3.125rem;
+    --cag-button-hover-background-color: #151515;
+    --cag-button-hover-color: #ffffff;
+}

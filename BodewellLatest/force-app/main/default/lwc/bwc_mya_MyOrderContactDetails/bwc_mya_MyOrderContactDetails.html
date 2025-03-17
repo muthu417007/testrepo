@@ -1,0 +1,15 @@
+<template>
+    <template iterator:it= {orderBillingDetails}>
+       <div key={it.value.Id}>
+        <lightning-layout class="bg-color">
+          <lightning-layout-item>
+           <span class="details">Contact Details</span>
+                 <div class="itemTitle" >
+                   <p> {it.value.DeliverToName} </p> 
+                   <p> {it.value.PhoneNumber} </p> 
+                 </div>
+           </lightning-layout-item>
+        </lightning-layout>
+        </div>
+  </template>
+</template>

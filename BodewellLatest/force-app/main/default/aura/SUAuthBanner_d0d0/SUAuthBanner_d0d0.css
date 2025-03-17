@@ -1,0 +1,119 @@
+.THIS .suBannerCustomSettingErrMsg {
+    font-size: 18px;
+    color: red;
+    text-align: center;
+    padding: 5px 0px;
+    display: block;
+}
+.THIS #su_BannersearchBox{
+    display:block;
+    position: relative;
+}
+
+.THIS #su_BannersearchBox .su-searchBoxContainer {
+    display:flex;
+    width: 100%;
+    max-height: 39px;
+    min-height: 39px;
+}
+.THIS #su_BannersearchBox .su-searchBoxContainer input, .THIS #su_BannersearchBox .su-searchBoxContainer{
+    display:flex;
+}
+.THIS #su_BannersearchBox .su-searchBoxContainer input{
+    padding: 0px 0px 0px 10px;
+    border-radius: 0px;
+    font-size: 16px;
+    width: 100%;
+    height: 38px;
+    background: white;
+    top: 0px;
+    position: relative;
+    padding: 0 45px 0 10px !important;
+    border: none;
+}
+.THIS #su_BannersearchBox .su-searchBtnDIV{
+    border-radius: 0px;
+    position: relative;
+    max-height: unset;
+    background: #fff;
+    display: flex;
+    height: 38px;
+    align-items: center;
+}
+.THIS #su_BannersearchBox .su-searchBoxContainer .su-searchBtn{
+   display: none;
+}
+.THIS #su_BannersearchBox .su-searchIcon{
+	border: 0;
+    display: block;
+    color: #ffffff;
+    padding: 6px 4px;
+}
+.THIS .su-searchIcon .slds-icon{
+	width: 1.5rem;
+    height: 1rem;
+}
+.THIS .suggestedResult{
+    color: #008fd3;
+    font-size: 15px !important;
+    font-weight: bold;
+    pointer-events: none;
+    width: 100%;
+    font-style: italic;
+}
+.THIS .inputBox:focus{
+    border-color: #fff;
+    box-shadow: none;
+}
+.THIS .su__searchinput-close {
+    right: 27px;
+    top: 0;
+    padding: 8px 10px;
+    position: absolute;
+}
+.THIS div[dir="RTL"] .su__searchinput-close { 
+    right: auto;
+    left: 36px;
+}
+
+.THIS form#form-search {
+    width: 100%;
+}
+.THIS .su__align_autosuggest {
+   display: flex;
+}
+.THIS .su-autoSummary-section-child{
+    margin-left: 10px;
+    margin-top: -5px;
+    color: rgba(33, 36, 61, 0.58);
+    font-size:13px;
+    margin-bottom: 4px;
+}
+.THIS .su-metadata{
+    color: rgba(33, 36, 61, 0.58);
+}
+.THIS .su-other-elements-section{
+    margin-left: 0px;
+    color: rgba(33, 36, 61, 0.58);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -5px;
+}
+.THIS .su-autocompleteDiv::-webkit-scrollbar{width:5px;height:0px;background-color:#F5F5F5}
+.THIS .su-autocompleteDiv::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#F5F5F5;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px}
+.THIS .su-autocompleteDiv::-webkit-scrollbar-thumb{border-radius:10px;background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.44,#7a99d9),color-stop(0.72,#497dbd),color-stop(0.86,#1c3a94));-webkit-border-radius:10px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px}
+.THIS .su-autocompleteDiv{scrollbar-width:thin;scrollbar-color:#497dbd transparent}
+.THIS .su-autocompleteDiv {position: absolute;z-index: 99;background: #fff;max-height: 292px;width:100%;box-shadow: 0 2px 5px rgba(0, 0, 0, .25);overflow-y: auto;}
+.THIS .su_autosuggest_icon {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding: 2px 10px;}
+.THIS .su_autosuggest_icon:hover {background: #f0f0f0;}
+.THIS .su-autoSuggest-element {padding: 4px 10px;}
+.THIS .su-autoSuggest-element:hover {background: #f0f0f0;}
+.THIS .selected{background: #f0f0f0;}
+.THIS .su_SearchImage{margin-left: 7px;margin-right: 10px;}
+.THIS .su_AutosuggestResultImage {margin-right: 8px;width: 25px;}
+.THIS .su-autosuggest-title {font-size: 14px; cursor: pointer;overflow: hidden;}
+.THIS .su-autosuggest-title a {overflow: hidden;text-overflow: ellipsis; white-space: nowrap;width: auto;display: block;text-decoration: none;color: #555;}
+.THIS .su-autoSuggest-element a {font-size: 14px;}
+.THIS .su-autosuggest-content{align-items: center;padding: 0px 10px;}
+.THIS .su-autosuggest-content:hover{background: #f0f0f0;}
+.THIS .su__cursor{cursor:pointer;outline:none}

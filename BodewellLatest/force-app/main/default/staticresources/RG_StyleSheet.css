@@ -1,0 +1,2762 @@
+body {
+    font-family: Gotham;
+    line-height: 1.5;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1060px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.slds-button {
+    color: #fff;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    border-radius: 0px;
+    width: fit-content;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    box-shadow: none !important;
+    border: none;
+    background-color: #003b71 !important;
+}
+
+.slds-button:hover {
+    background-color: #10426E !important;
+    color: #fff;
+}
+
+.fa-calendar-check-o {
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.sch-service-btn {
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.sch-service-btn:hover {
+    background-color: #F7F1E7;
+}
+
+.flx-grow-0 {
+    flex-grow: 0 !important;
+}
+
+.community_byo-scoped-header-and-footer__header-content {
+    background-color: #ffffff;
+}
+
+[data-f6-region]:focus-within {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none !important;
+    color: #092c74 !important;
+}
+
+.align-stretch {
+    align-items: stretch !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #333333;
+    font-family: Gotham;
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 600;
+    font-family: Gotham;
+}
+
+h3 {
+    color: #003b71;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+p {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.lightningSpinner {
+    position: center;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+/* Navbar CSS Start */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.nav-icn-clr {
+    --sds-c-icon-color-foreground-default: #333333;
+    --sds-c-icon-color-foreground: #333333;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #333333;
+    padding: 0px 16px 0px 0px;
+    background-color: inherit;
+    font-family: Gotham-Bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #333333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header-container {
+    margin-top: 30px;
+}
+
+.sch-service-btn {
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+.sch-service-btn:hover {
+    background-color: #F7F1E7;
+}
+
+.top-nav {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    color: #333333 !important;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.top-nav li a {
+    font-weight: 600;
+    font-family: 'Gotham-Bold';
+    color: #333333 !important;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+.menu-button-container {
+    display: none;
+    flex: 1;
+    height: 100%;
+    width: 48px;
+    cursor: pointer;
+    align-items: inherit;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #333333;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+.menu-button-container {
+    display: none;
+    flex: 1;
+    height: 100%;
+    width: 48px;
+    cursor: pointer;
+    align-items: inherit;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+.menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px
+}
+
+.menu-toggle:checked+.menu-button-container .menu-button {
+    background: #333;
+    transform: rotate(405deg);
+}
+
+.menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-455deg);
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.nav-not-mobile {
+    display: flex;
+}
+
+.nav-not-mobile>li {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mob-sch-service-btn {
+    display: none;
+}
+
+.mob-call {
+    display: none;
+}
+
+.mob-sch {
+    display: none;
+}
+
+/* End */
+/* Brands Logo */
+.brands-header {
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* End Brand Logo */
+
+/* Service/Local Service Area Header CSS - Start */
+.serviceAreaPageHeaderBox {
+    width: 100%;
+    border-bottom: 1px solid #092c74;
+}
+
+.serviceAreaPageHeader {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 39px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.state-main_big_content_left_content {
+    background-color: #dde8f1;
+    margin-right: 25px;
+}
+
+.state-box {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    display: flex;
+    margin: 0px !important;
+    padding-top: 5%;
+}
+
+.state-box__left {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 5%;
+}
+
+.state-box__right {
+    width: 100%;
+    font-size: 15px;
+}
+
+.state-box__right .state-box__right__title {
+    color: #333;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    border-bottom: 1px dashed #979797;
+    padding-bottom: 10px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.state-box_title_service_avail {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    border-bottom: 1px dashed #979797;
+    padding: 37px 0 15px;
+}
+
+.state-box__right__call_text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.state-box__right .state-box__right__set_location {
+    margin-top: 17px;
+    display: flex;
+}
+
+.state-service-schedule-btn {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #003b71;
+    padding: 11.5px 20px;
+}
+
+.state-service-phone-text a {
+    color: #092c74 !important;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.state-service_name_inner_main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.state_service_name {
+    width: 33.33%;
+    display: flex;
+}
+
+.state_service_name a {
+    text-transform: uppercase;
+    color: #1a63a2 !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 38px;
+    text-align: left;
+}
+
+.state-right-content h3 {
+    color: #003b71 !important;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-top: 0px;
+}
+
+/* End */
+
+/* Service Area Footer CSS - Start */
+.state-data-list {
+    -moz-column-count: 6;
+    -webkit-column-count: 6;
+    column-count: 6;
+}
+
+.serviceAreaFooterHeading {
+    text-transform: uppercase;
+    color: #333333;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: left;
+    padding: 10px 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.serviceareafootermob-content {
+    flex-grow: 0;
+}
+
+.serviceAreaFooterHeading1 {
+    color: #333333;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.serviceAreaFooterBox {
+    background-color: #ededed !important;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.serviceAreaURL {
+    display: block;
+    color: #333333 !important;
+    font-family: Gotham;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+}
+
+.serviceAreaURL:hover {
+    color: #1a63a2 !important;
+}
+
+.service-area-accordian {
+    display: none;
+}
+
+.findlocation-servicearea-section {
+    margin: 20px 0;
+}
+
+/* End */
+
+/* Service Schedule and Resource Hub section Start */
+.index-inner-wrapper {
+    padding: 20px 0 0 0;
+}
+
+.index-service_schedule_main_inner {
+    width: 100%;
+    text-align: left;
+    padding: 0 60px;
+}
+
+.index-service_schedule-img {
+    height: auto;
+    margin-right: 15px;
+    float: left;
+    display: inline-block;
+}
+
+.index-service_schedule_main_inner_content {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    float: left;
+    width: 80%;
+}
+
+.index-service_schedule-head-text {
+    color: #333333;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.index-service_schedule-content-text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* End */
+
+/* Custom Button CSS Start */
+.slds-button_brand {
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.RG_button-link {
+    text-decoration-line: none;
+    background: transparent !important;
+}
+
+.RG_button-link:hover {
+    text-decoration: none !important;
+}
+
+.RG-button-cls {
+    margin-bottom: 30px;
+}
+
+.custom-button-cmp {
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* End */
+
+/* Why Choose Us Section Start*/
+.why-choose-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: unset;
+    box-sizing: border-box;
+    padding: 25px 15px 15px;
+    border-bottom: 1px dashed #979797;
+    border-top: 1px dashed #979797;
+    padding: 30px;
+}
+
+.media-why-container {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1060px;
+}
+
+.why-choose-container-media {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 25px 15px 15px;
+    border-bottom: 1px dashed #979797;
+    border-top: 1px dashed #979797;
+    padding: 30px 0px;
+}
+
+.why-choose-container .row {
+    padding: 10px 0;
+    display: flex;
+}
+
+.why-choose-container .why-choose-wrapper-section {
+    padding: 18px 0;
+}
+
+.why-choose-container .index-inner-wrapper-choose-us_header {
+    color: #333;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.why-choose-container-media .row {
+    padding: 10px 0;
+    display: flex;
+}
+
+.why-choose-container-media .why-choose-wrapper-section {
+    padding: 18px 0;
+}
+
+.why-choose-container-media .index-inner-wrapper-choose-us_header {
+    color: #333;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.choose-us_learn_btn {
+    background-color: #003b71 !important;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+    padding: 14.17px 22px;
+}
+
+.why-choose-container .index-inner-wrapper-choose-us_content {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+    margin-right: 20px;
+    text-align: left;
+    font-family: Gotham !important;
+}
+
+.why-choose-container-media .index-inner-wrapper-choose-us_content {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+    margin-right: 20px;
+    text-align: left;
+    font-family: Gotham !important;
+}
+
+.why-choose-container a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.why-choose-container-media a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.why-choose-container .why-choose-sub-section-details {
+    display: flex;
+    padding-left: 0px;
+}
+
+.why-choose-container-media .why-choose-sub-section-details {
+    display: flex;
+    padding-left: 0px;
+}
+
+.index-inner-wrapper_inner-img_bar {
+    margin-right: 5px;
+    float: left;
+    position: relative;
+    top: 12px;
+}
+
+.index-inner-wrapper_inner-img_bar img {
+    max-width: unset;
+    position: relative;
+}
+
+.index-inner-wrapper_inner_inner_content_bar {
+    margin-bottom: 15px;
+    float: left;
+}
+
+.index-inner-wrapper_inner_header_bar {
+    color: #003b71 !important;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: left;
+    font-family: Gotham;
+    text-transform: Capitalize !important;
+}
+
+.choose-us_learn_btn {
+    text-transform: uppercase;
+}
+
+.choose-us_learn_btn:hover {
+    text-decoration: none !important;
+}
+
+.index-inner-wrapper_inner_content_bar {
+    width: 249px;
+}
+
+/* End*/
+
+/* Footer CSS Start*/
+.footer-link-elements {
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 14px;
+    font-weight: 800px !important;
+    padding-left: 0px !important;
+}
+
+.footer li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px 0 0;
+}
+
+.footer-note {
+    text-align: right;
+    font-family: Gotham;
+    font-size: 13px;
+    color: #fff;
+    line-height: 20px;
+    font-weight: 200px;
+}
+
+.ge-link {
+    color: #fff !important;
+    font-size: 13px;
+}
+
+.footer {
+    background-color: #092c74;
+}
+
+.footer-container {
+    width: 84%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.footer-padding {
+    padding: 15px;
+}
+
+/* End*/
+
+/* SiteMap CSS Start*/
+.sitemap-heading {
+    padding: 20px 0;
+    color: #092c74;
+    font-family: Gotham;
+    font-weight: 700;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+a.sitemap-service-area-url {
+    display: block;
+    color: #092c74;
+    font-size: 19px;
+    padding: 5px 15px;
+}
+
+a.sitemap-local-area-url {
+    color: #778899;
+    font-size: 16px;
+}
+
+a.sitemap-local-area-url:hover {
+    color: #092c74;
+    font-size: 16px;
+}
+
+.area-list-section {
+    padding: 15px 10px;
+}
+
+.area-list-head {
+    padding: 0.5rem 1rem;
+}
+
+/* End*/
+
+/* Carousel CSS Start*/
+.inner-wrapper-steps {
+    padding: 0 20px;
+}
+
+.inner-wrapper-steps h3 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: #333333;
+    font-family: Gotham;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.prev,
+.next {
+    position: relative;
+    top: 50%;
+    width: auto;
+}
+
+.fine-print {
+    color: #333;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 16px;
+    margin: 20px 0;
+}
+
+.dot {
+    cursor: pointer;
+    display: inline-block !important;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border: 1px solid #092c74;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #003b71;
+    border: 1px solid #003b71;
+}
+
+.carouselMainHeading {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: center;
+}
+
+.carouselHeading1 {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.carouselHeading2 {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-transform: capitalize !important;
+    text-align: left;
+}
+
+.carouselDescription {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 11px 0;
+    text-align: left;
+    width: 84%;
+}
+
+.rg_Mobile_Carousal {
+    display: none;
+}
+
+/* End*/
+
+/* Schedule Service CSS Start */
+.footer_first_head {
+    background-color: #F7F7F7;
+    height: 111px;
+}
+
+.inside_call_weekends {
+    padding: 3px;
+    color: #333;
+    line-height: 21px;
+    text-align: left;
+}
+
+.inside_call_weekdays {
+    padding: 3 px;
+    color: #333;
+    line-height: 50px;
+    text-align: left;
+}
+
+.inside_call_free_schedule {
+    padding: 3px;
+    color: #333;
+    font-family: Gotham !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: left;
+}
+
+.inside_scheduling {
+    padding-right: 0px;
+    border-right: dotted 1px #000;
+    margin-right: 10px;
+    font-family: Gotham !important;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.inside_call_free {
+    width: auto;
+    text-align: left;
+    margin-right: auto;
+}
+
+.inside_call_free_number {
+    padding: 3px;
+    color: #092c74 !important;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+}
+
+/* End */
+
+/* Knowledge Article CSS Start*/
+.faq-questions h1 {
+    color: #333333;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.faq-questions h2 {
+    color: #333333;
+    font-size: 23px !important;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.resource-title {
+    scroll-margin-top: 13rem;
+}
+
+.view-txt {
+    color: #003b71 !important;
+    font-size: 15px !important;
+    font-weight: 500;
+    text-transform: capitalize !important;
+    float: right;
+}
+
+.view-txt:hover {
+    color: #10426e !important;
+}
+
+.read-more-txt {
+    color: #003b71 !important;
+    font-size: 15px !important;
+    font-weight: 500;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 10px;
+}
+
+.faq-questions h3 a {
+    color: #003b71 !important;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 22px;
+    height: 10%;
+}
+
+.faq-questions h3 a:hover {
+    color: #10426e;
+}
+
+.faq-questions h3 {
+    height: 10%;
+}
+
+.faq-ans-text {
+    display: block;
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 25px 0;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    text-overflow: clip;
+}
+
+.faq-questions .slds-card {
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 10px 20px;
+    background-color: #f6f6f6;
+    height: 100%;
+    margin-bottom: 5px;
+}
+
+/* End */
+
+/*Find Service Area CSS Start*/
+.find-location-inner-wrapper {
+    background-color: #eee;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: inline !important;
+}
+
+.result_nearest-wrapper-inner_btn {
+    padding: 0px !important;
+}
+
+.slide-section {
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.slide-icon-image {
+    text-align: left;
+}
+
+.loaction_search_area {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.location-hero-head {
+    color: #333;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    width: 20%;
+    margin-right: 20px;
+}
+
+.location-inner_content_textbox {
+    border: 0;
+    font-size: 17px;
+    background-color: #fff;
+    font-size: 15px;
+    height: 45px;
+    border-radius: 0;
+}
+
+.location-wrapper-inner_btn.find-button {
+    background-color: #003b71;
+    border-radius: 0;
+    color: #fff;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 22px;
+    height: 45px;
+    margin-left: 8px;
+}
+
+.find-button-galaxy a {
+    color: #fff !important;
+}
+
+.current-loc {
+    background-color: #1a63a2;
+    margin-left: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 22px;
+    height: 45px;
+}
+
+/* Find Service Location Area CSS Start */
+
+.current-loc-banner {
+    margin-top: -11px !important;
+    margin: auto;
+    color: #fff;
+    height: 55px;
+    position: relative;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    background-color: #003b71 !important;
+}
+
+.current-loc-banner span {
+    color: #fff;
+    display: block;
+}
+
+.second-half-banner {
+    float: left;
+}
+
+.half-banner {
+    float: left;
+    width: 50%;
+}
+
+.current-loc-banner {
+    background-color: rgb(0, 59, 113);
+    width: auto;
+    vertical-align: middle;
+    margin-top: 10px;
+    padding: 0px 7px;
+}
+
+.loc_nearest-wrapper-inner_btn {
+    background-color: rgb(0, 59, 113) !important;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    margin-top: 10px;
+    padding: 3px 11px 4px 11px;
+}
+
+.search-box-form {
+    width: 288px;
+    padding-top: 10px;
+    display: inline-flex;
+    margin: auto;
+}
+
+.search-text-box {
+    float: left;
+}
+
+.hero-serviceArea-inner_content_textbox {
+    width: 220px;
+    height: 35px;
+    color: #333;
+}
+
+.hero-serviceArea-inner_content_btn_orange {
+    background-color: rgb(0, 59, 113) !important;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    display: block;
+    text-align: center;
+    padding: 10px 10px 7px 10px;
+    transition: background-color .5s ease-in-out;
+    margin-left: 20px;
+}
+
+.result_nearest_search_area {
+    background-color: #eee;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10 px;
+    margin-top: 20 px !important;
+}
+
+.result_nearest-inner_content {
+    margin-left: 16px;
+}
+
+.or {
+    margin-right: 12px !important;
+    color: #333;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 8 px;
+}
+
+.result_nearest-inner_content_btn_blue {
+    background-color: rgb(0, 59, 113) !important;
+    border-radius: 0;
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 22px;
+    display: block;
+    height: 45px;
+}
+
+.result_nearest-wrapper-inner_btn {
+    background-color: rgb(0, 59, 113);
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.result_nearest-wrapper-inner_btn_find {
+    background-color: rgb(0, 59, 113);
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.result_nearest-wrapper-inner_btn {
+    display: flex;
+    margin-left: 8px;
+}
+
+.result_nearest-hero-head {
+    color: #333;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    width: 20%;
+    margin-right: 20px;
+}
+
+.result_nearest-inner_content .form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.result_nearest-inner_content_btn_orange {
+    background-color: rgb(0, 59, 113) !important;
+    border-radius: 0;
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 13px 22px;
+    height: 45px;
+}
+
+.result_nearest-inner_content_textbox {
+    border: 0;
+    font-size: 17px;
+    background-color: #fff;
+    height: 45px;
+    border-radius: 0;
+}
+
+.drp-down-bg {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.form-control-lg {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.current-loc-banner .hero-serviceArea-inner_content_btn_orange {
+    border: 1px solid white;
+    text-align: center;
+    padding: 8px 10px 8px 10px;
+}
+
+.current-loc-banner .loc_nearest-wrapper-inner_btn {
+    border: 1px solid white;
+}
+
+/* End */
+
+/*Troubleshoot Article CSS Start*/
+.trouble-shoot-img {
+    display: block;
+    max-width: 100%;
+    float: left;
+    width: 100%;
+
+}
+
+.troubleshoot-section-heading h2 {
+    font-size: 23px;
+    color: #333333;
+    font-weight: 400;
+}
+
+.trouble-shoot-heading h2 {
+    text-align: left;
+    padding: 10px 0;
+    text-transform: capitalize;
+    font-size: 19px;
+}
+
+.trouble-shoot-heading h2 a {
+    color: #003b71;
+    font-weight: 600;
+    line-height: 27px;
+    text-transform: capitalize;
+    font-size: 19px;
+}
+
+.trouble-shoot-heading h2 a:hover {
+    color: #10426e;
+}
+
+.trouble-shoot-summary {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    padding: 15px 0;
+    display: block;
+    height: 90px;
+}
+
+.trouble-shoot-btn {
+    width: fit-content;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 11.5px 12px !important;
+    margin-left: 0px;
+    display: block;
+    background: #003b71 !important;
+    border: none;
+}
+
+/* End */
+
+/* Visit Part & Accessories Start */
+.parts-section {
+    padding: 28px 0 28px;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.parts-section .parts-sub-section {
+    padding: 20px 25px;
+    background-color: #eee;
+
+    margin: 0 auto;
+}
+
+.parts-section .parts-sub-section .blue-text {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.parts-sub-section .middle-text {
+    padding: 10px 20px;
+}
+
+.parts-section .parts-sub-section .parts-section-button {
+    background-color: #003b71 !important;
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+    padding: 10px 20px;
+    margin-left: 0px;
+    text-transform: uppercase;
+}
+
+/* End */
+
+/* View All Faq CSS Start */
+.resourceindex-inner_right_inner_content {
+    margin-top: 2.7cm !important;
+}
+
+.resourceindex_faq-head-text {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-left: 5%;
+    padding: 10px 0;
+}
+
+.resourceindex_faq_main-content-text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: auto;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.resourceindex-faq_main-btn {
+    width: auto !important;
+    text-align: left !important;
+    margin-left: 5% !important;
+    padding: 10px 0 !important;
+    margin-top: 10px !important;
+}
+
+.inside_call_button {
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #1a63a2 !important;
+    padding: 15px;
+}
+
+/* End */
+
+/* Breadcrumb CSS Start*/
+.slds-breadcrumb .slds-breadcrumb__item:before,
+.slds-breadcrumb .slds-list__item:before {
+    content: "/";
+}
+
+lightning-breadcrumbs {
+    margin-bottom: 30px;
+}
+
+lightning-breadcrumb.slds-breadcrumb__item:last-child>a {
+    color: #333333 !important;
+    cursor: default;
+}
+
+.slds-breadcrumb .slds-breadcrumb__item>a {
+    font-size: 13px !important;
+}
+
+/* End*/
+
+/* Banner CSS Start */
+.hero-container-index.desk-only {
+    height: 190px;
+    margin: 0 auto;
+    background-size: cover !important;
+    color: #fff;
+    max-width: unset !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-container-index.desk-only .heroborder .containers {
+    padding: 30px 50px;
+}
+
+.heroborder {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 190px;
+}
+
+.hero-container-index.desk-only .heroborder .containers {
+    padding: 30px 50px;
+}
+
+.hero-copy {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.hero-container-index.desk-only .heroborder .containers .hero-head {
+    width: 410px;
+    line-height: 40px;
+    font-size: 30px;
+    color: #fff;
+    font-family: Gotham-bold;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.hero-container-index.desk-only .heroborder .containers .hero-text {
+    color: #fff;
+    font-family: Gotham-Medium;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 28px;
+    width: 366px;
+    text-align: left;
+}
+
+.mob-only {
+    display: none;
+}
+
+/* End */
+
+/*Location Area CSS Start*/
+.service-area-name {
+    font-size: 19px;
+    font-weight: 600;
+    color: #003b71;
+}
+
+.city-bind-text {
+    color: #333333;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.state_city_bind_cityname {
+    color: #333333;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+}
+
+.state_city_bind_cityname:hover {
+    color: #10426e;
+}
+
+/* End */
+
+/* About Us CSS Start */
+.desk-about-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center !important;
+}
+
+.about-accordian-icon {
+    padding: 10px 0;
+}
+
+.about-overview-section {
+    justify-content: space-between;
+}
+
+.main-content-sub-text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 95%;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.warranty-list {
+    padding: 0 35px;
+}
+
+.faq-accordian {
+    display: none;
+}
+
+.faq-head-section_dsk h2,
+.faq-accordian h2 {
+    color: #333;
+    font-size: 23px;
+    font-weight: 700;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.about-us-service-avaliable {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mob-about-section {
+    display: none;
+}
+
+.service-avaliable-content {
+    position: relative;
+    left: 50px;
+}
+
+.service-available-heading {
+    font-size: 19px;
+    text-transform: uppercase !important;
+    text-align: right;
+}
+
+.about-head-section h2 {
+    color: #092c74;
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.main-content-head-text {
+    color: #092c74;
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.desk-about-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center !important;
+}
+
+.about-accordian-icon {
+    padding: 10px 0;
+}
+
+.main-content-sub-text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 95%;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.mob-about-section {
+    display: none;
+}
+
+.service-available-url {
+    text-decoration: none;
+    color: #1a63a2;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.parts-section-button {
+    background-color: #003b71 !important;
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+    padding: 20px 25px;
+    margin-left: 0px;
+    text-transform: uppercase;
+}
+
+/* End */
+
+/* Sticky Header CSS Start */
+header {
+    position: sticky;
+    z-index: 99999 !important;
+    top: 0 !important;
+    background: #fff;
+}
+
+community_byo-scoped-header-and-footer {
+    overflow-y: auto !important;
+    height: 100vh !important;
+    display: block !important;
+}
+
+*[data-component-id="rG_MediaPageLayout-0658"] {
+    overflow-y: auto !important;
+}
+
+/* End */
+
+/* Overview List section CSS Start */
+.about-vertical-menu.fixed-left-content {
+    /* position: sticky;
+    top: 95px; */
+    color: #333;
+    font-family: Gotham;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: left;
+    text-decoration: none;
+    border-bottom: 2px solid #092c74;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.about-vertical-menu .menu-sub-header {
+    color: #092c74;
+    font-size: 19px;
+    font-weight: 700;
+    padding: 10px 0;
+    border-bottom: 2px solid #092c74;
+}
+
+.about-vertical-menu .side-panel {
+    padding: 20px 10px;
+    border-bottom: 1px dashed #d9d9d9;
+}
+
+/* End */
+
+/* About Us Schedule service Card CSS Start */
+.addition_text_main {
+    background-color: #eee;
+    padding: 20px 24px;
+}
+
+.addition_text_main .main-content-sub-text_inner {
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.right-about-content {
+    text-align: -webkit-right;
+}
+
+.addition_text_main .side-cta:hover {
+    background-color: #F7F1E7 !important
+}
+
+.addition_text_main .side-cta {
+    text-align: left;
+    padding: 0 0 0 45px;
+    top: 0;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #ffc01f !important;
+}
+
+.addition_text_main .side-cta:hover {
+    background: rgb(247, 241, 231);
+}
+
+/* END */
+
+/* View All Resources CSS start*/
+.resourceindex-box,
+.resourceindex_head_text,
+.resourceindex_sub_text {
+    text-align: center;
+}
+
+.resourceindex_head_text {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 15px auto;
+}
+
+.resourceindex_sub_text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px auto;
+}
+
+.resourceindex-box {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.resourceindex-appliances-text a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #1a63a2;
+}
+
+/* End */
+
+/* Media Header CSS Start */
+.media-header-right-sec-mob {
+    display: none;
+}
+
+.txt-a-R {
+    text-align: right;
+}
+
+.media-header-call-sec {
+    border-left: 29px solid transparent;
+    border-top: 29px solid #f4f3ef;
+    text-align: center;
+}
+
+.media-header-right-icon {
+    top: -29px;
+    position: relative;
+}
+
+.media-header-right-txt {
+    position: relative;
+    top: -29px;
+    font-weight: 600;
+    font-family: 'Gotham-Bold';
+    color: #333333 !important;
+    font-size: 15px;
+}
+
+.media-sch-service-btn {
+    padding: 14px 51px;
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.sch-service-btn-mob-media {
+    padding: 14px 51px;
+    background-color: #ffc01f;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.call-icn-white {
+    --sds-c-icon-color-foreground-default: #ffffff;
+    --sds-c-icon-color-foreground: #ffffff;
+}
+
+.bg-light-grey {
+    background-color: #F7F7F7;
+}
+
+.bg-dark-grey {
+    background-color: #ededed;
+}
+
+.desktop-below {
+    display: none;
+}
+
+/* End */
+
+/* Service Area Search Result CSS Start */
+.service-area-subTlt {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: left;
+    padding: 37px 0px 15px;
+    text-transform: uppercase;
+}
+
+.result-main-header {
+    background-color: #dde8f1;
+    margin-right: 0px;
+    width: 76%;
+}
+
+.result-main-header_content {
+    width: 70%;
+    padding-bottom: 5px;
+    display: flex;
+    padding-top: 5px;
+    margin: 5px;
+}
+
+.result-main-header_content-left {
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 0%;
+    justify-content: space-around;
+}
+
+.result-main-header_content-right_text {
+    color: #333333;
+    font-family: Gotham;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 0px;
+    margin-left: 5px;
+}
+
+.search-result-map-icn {
+    width: 8%;
+    align-items: flex-start;
+}
+
+.area-search-result-name {
+    width: 35%;
+}
+
+/* End */
+
+/* Media Banner CSS Start */
+.hero-tollfree-title a {
+    color: #fff !important;
+}
+
+.media-banner-button {
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgb(255, 192, 31);
+    color: rgb(51, 51, 51);
+}
+
+.media-banner-button a {
+    color: #333 !important;
+}
+
+.media-call-text,
+.media-part-accessaries,
+.media-mob-part-accessaries {
+    line-height: 3;
+}
+
+.media-part-accessaries a,
+.media-mob-part-accessaries a {
+    text-decoration: underline !important;
+}
+
+.hero-sub-head,
+.hero-city-head {
+    font-size: 23px;
+}
+
+.media-mob-calltext {
+    display: none;
+
+}
+
+.media-banner-call-button {
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: Gotham;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgb(0, 59, 113);
+    color: rgb(255, 255, 255);
+}
+
+/* End */
+
+/* View All Faq CSS Start */
+.resourceindex-inner_right_inner_content {
+    margin-top: 2.7cm !important;
+}
+
+.resourceindex_faq-head-text {
+    color: #092c74;
+    font-family: Gotham;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-left: 5%;
+    padding: 10px 0;
+}
+
+.resourceindex_faq_main-content-text {
+    color: #333;
+    font-family: Gotham;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    width: auto;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.resourceindex-faq_main-btn {
+    width: auto !important;
+    text-align: left !important;
+    margin-left: 5% !important;
+    padding: 10px 0 !important;
+    margin-top: 10px !important;
+}
+
+.inside_call_button {
+    color: #fff !important;
+    font-family: Gotham;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #1a63a2 !important;
+    padding: 15px;
+}
+
+/* End */
+
+@media only screen and (max-width: 1024px) {
+    .faq-questions .slds-card {
+        margin-bottom: 15px;
+    }
+
+    .state-data-list {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+
+    .media-HOB-img {
+        width: 100%;
+    }
+
+    .media-header-right-sec {
+        display: none;
+        ;
+    }
+
+    .media-header-right-sec-mob {
+        display: inline-flex;
+        background-color: #092c74;
+        height: 75px;
+    }
+
+    .media-nav-call-mob {
+        border: 2px solid #ffffff;
+        padding: 14px 22px;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+        margin: 11px 37px 11px 37px;
+    }
+
+    .calling-num-mob {
+        font-weight: 600;
+        font-family: 'Gotham-Bold';
+        color: #ffffff !important;
+        font-size: 15px;
+    }
+
+    .media-sch-btn-mob {
+        text-align: left;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .result_nearest-hero-head {
+        text-align: center;
+        width: 100%;
+    }
+
+    .result_nearest-inner_content .form-inline {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .result_nearest-wrapper-inner_btn_find {
+        margin-left: 20px;
+    }
+
+    .result_nearest-wrapper-inner_btn {
+        margin-left: 70px;
+    }
+
+    .index-inner-wrapper_inner_content_bar {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .index-service_schedule_main_inner {
+        padding: 0px;
+    }
+
+    .nav-not-mobile>li {
+        padding-right: 10px;
+    }
+
+    .state_service_name {
+        margin-right: 10px;
+    }
+
+    .state_city_bind_cityname {
+        padding-right: 15px;
+    }
+
+    .service-avaliable-content {
+        position: unset;
+    }
+
+    .desktop-below {
+        display: block;
+    }
+
+    .rg_Mobile_Carousal {
+        display: block;
+    }
+
+    .rg_Mobile_Carousal .slds-show {
+        padding-top: 50px;
+    }
+
+    .faq-section-bar {
+        padding: 15px 0;
+        border-bottom: 1px dashed #d9d9d9;
+    }
+
+    .faq-accordian {
+        display: block;
+    }
+
+    .article-faq-box {
+        display: none;
+    }
+
+    .service-available-heading {
+        text-align: left
+    }
+
+    .carouselDescription {
+        text-align: center;
+        width: 100%;
+        margin: 0 20px;
+        padding: 30px 0;
+        font-size: 19px;
+    }
+
+    .index-inner-wrapper_inner_content_bar {
+        width: 100% !important;
+    }
+
+    .index-inner-wrapper_inner_inner_content_bar {
+        padding: 15px 0 15px 20px;
+        margin-bottom: 0;
+    }
+
+    .hero-container-index.desk-only {
+        display: none;
+    }
+
+    .mob-only {
+        display: block;
+    }
+
+    .hero-container-mob img {
+        width: 100%;
+    }
+
+    .hero-container-mob .hero-copy {
+        padding: 20px;
+        position: relative;
+        color: #fff;
+        bottom: 21px;
+        background-color: #092c74;
+        margin-top: 3px;
+    }
+
+    .hero-container-mob .hero-copy .hero-head {
+        display: block;
+        font-weight: 700;
+        font-size: 28px;
+        width: 100%;
+        text-transform: uppercase;
+    }
+
+    .hero-container-mob .hero-copy .hero-text {
+        font-size: 18px;
+        font-family: Gotham;
+        font-weight: 400;
+    }
+
+    .heroborder {
+        height: 140px;
+    }
+
+    .slds-grid.footer.slds-wrap.slds-p-around_large.slds-m-top_x-large ul {
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 18px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .service-available-section {
+        display: none;
+    }
+
+    .about-vertical-menu {
+        display: none !important;
+    }
+
+    .desk-about-section {
+        display: none;
+    }
+
+    .mob-about-section {
+        display: block;
+        border-bottom: 2px dashed #d9d9d9;
+    }
+
+    .about-vertical-menu {
+        display: none;
+    }
+
+    .about-service-avaliable {
+        display: none;
+    }
+
+    .index-inner-wrapper .container .index-service_schedule_main_inner {
+        padding: 0 10px !important;
+    }
+
+    .index-inner-wrapper .index-service_schedule-img {
+        margin-right: 0px !important;
+    }
+
+    .index-service_schedule-head-text,
+    .index-service_schedule-content-text {
+        margin-left: 12px;
+    }
+
+    .inside_call_free_schedule {
+        text-align: center;
+    }
+
+    .inside_call_free {
+        width: 100% !important;
+        text-align: left;
+        margin-right: auto;
+    }
+
+    .inside_call_weekdays {
+        text-align: center;
+    }
+
+    .inside_call_weekends {
+        text-align: center;
+    }
+
+    .inside_call_free_number {
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #003b71 !important;
+    }
+
+    .inside_call_free_number a {
+        color: #fff !important;
+    }
+
+    .inside_scheduling {
+        border-right: none;
+        border-bottom: dotted 1px #000;
+    }
+
+    .RG-button-cls {
+        text-align: center !important;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .inner-wrapper-steps h3 {
+        padding: 0;
+    }
+
+    .carouselDescription {
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 15px 0;
+        font-size: 17px;
+    }
+
+    .view-txt {
+        display: block;
+        float: none;
+    }
+
+    .footer-note {
+        text-align: center !important;
+    }
+
+    .footer-link-elements {
+        line-height: 16px !important;
+    }
+
+    .top-nav {
+        flex-direction: row;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .call-txt {
+        display: none;
+    }
+
+    .sch-txt {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+    }
+
+    .nav-mob-margins {
+        margin-top: 15px !important;
+        height: 0px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .mob-sch-service-btn {
+        display: block;
+    }
+
+    .nav-not-mobile {
+        display: none;
+    }
+
+
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 15px;
+        z-index: 2;
+        margin-top: 50px;
+        left: 0px;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu-toggle:checked~.menu li {
+        border-bottom: 1px solid #d5e2e2;
+        height: 3.5em;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        font-family: Gotham;
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: #333333;
+        background-color: #fff;
+    }
+
+    /* .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    } */
+
+    .sch-service-btn {
+        white-space: nowrap;
+    }
+
+    .mob-call {
+        position: relative;
+        right: 5%;
+        background-color: #ffc01f;
+        border: none;
+        color: #333;
+        padding: 13px 13px;
+        border-radius: 0px;
+
+    }
+
+    .sch-service-btn {
+        margin: 0px;
+        padding: 14px 10px;
+    }
+
+    .current-loc-banner {
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        align-items: stretch;
+        flex-wrap: nowrap;
+    }
+
+    .result_nearest-hero-head {
+        text-align: center;
+        width: 100%;
+    }
+
+    .result_nearest-inner_content .form-inline {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .current-loc-banner .half-banner {
+        width: unset !important;
+        height: unset !important;
+    }
+
+    .current-loc-banner .hero-serviceArea-inner_content_btn_orange {
+        border: 1px solid white;
+        text-align: center;
+        padding: 8px 10px 8px 10px;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .current-loc-banner .loc_nearest-wrapper-inner_btn {
+        border: 1px solid white;
+    }
+
+    .search-box-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .media-mob-part-accessaries a {
+        text-decoration: none !important;
+        font-size: 14px;
+    }
+
+    .media-mob-part-accessaries {
+        border: 2px solid #fff;
+
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 43px;
+        text-align: center;
+        margin: 12px 0;
+    }
+
+    .media-hero-banner {
+        top: -85px;
+        position: relative;
+    }
+
+    .media-banner-call-button {
+        border: 2px solid #fff;
+    }
+
+    .serviceAreaFooterBox {
+        display: none;
+    }
+
+    .service-area-accordian {
+        display: block;
+    }
+
+    .state-box__left {
+        padding-left: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .view-all-res-mob {
+        justify-content: space-evenly !important;
+    }
+
+    .footer-container {
+        width: 95%;
+    }
+
+    .breadcrumb-mob-space {
+        margin-bottom: 0px;
+        margin-top: -20px;
+    }
+
+    .resource-hub-btn-mob {
+        margin-bottom: 0px;
+    }
+
+    .index-inner-wrapper {
+        padding: 0px 0 0 0;
+    }
+
+    .footer-note {
+        text-align: center !important;
+    }
+
+    .parts-section .parts-sub-section .blue-text {
+        text-align: center !important;
+    }
+
+    .inside_call_weekdays,
+    .inside_call_weekends {
+        font-size: 11px;
+        line-height: 2;
+    }
+
+    .inside_call_free_number {
+        width: 100%;
+        padding: 11.5px 12px;
+    }
+
+    .media-nav-call-mob {
+        margin: 28px 32px 11px 8px;
+        padding: 10px 14px;
+        text-align: center;
+    }
+
+    .media-header-right-sec-mob {
+        height: 109px;
+    }
+
+    .media-sch-btn-mob {
+        margin: 25px 10px 10px 10px;
+    }
+
+    .sch-service-btn-mob-media {
+        font-size: 13px;
+    }
+
+    .calling-num-mob {
+        font-size: 13px;
+    }
+
+    .result_nearest-hero-head {
+        font-size: 17px;
+        margin-right: 0;
+    }
+
+    .result_nearest-inner_content .form-inline {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .result_nearest-wrapper-inner_btn_find {
+        margin-top: 12px;
+        margin-left: 0;
+    }
+
+    .result_nearest-inner_content_btn_orange {
+        line-height: 40px;
+        margin-left: 0px !important;
+    }
+
+    .or {
+        line-height: 25px;
+    }
+
+    .result_nearest-wrapper-inner_btn {
+        margin-left: 0px;
+    }
+
+    .serviceareafootermob-content {
+        width: 40%;
+    }
+
+    .service-accrd-icon {
+        text-align: right;
+    }
+}

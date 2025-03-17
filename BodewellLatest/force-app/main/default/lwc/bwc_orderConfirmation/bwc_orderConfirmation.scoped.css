@@ -1,0 +1,10 @@
+.header-text {
+
+}
+
+.order-confirmation-icon {
+    --slds-c-icon-color-background: var(--com-c-checkout-order-confirmation-icon-color, #FFC01F);
+}
+
+.order-confirmation-email {
+}

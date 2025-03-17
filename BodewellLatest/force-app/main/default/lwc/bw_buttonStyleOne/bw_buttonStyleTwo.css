@@ -1,0 +1,58 @@
+* {
+    font-family: 'neue-haas-grotesk-display';
+}
+
+div a:hover {
+    text-decoration: none !important;
+}
+.button-cls{
+    margin-left:2rem;
+    margin-right:2rem;
+}
+.icon-button2 {
+    background-color: #12212E;
+    border: 2px solid #12212E;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    text-align: center;
+    padding: 14px 25px 14px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.dni-number {
+    display: none;
+}
+
+.icon-button2:hover,
+.icon-button2:active {
+    background-color: #12212E;
+    border: 2px solid #12212E;
+    color: #f7f1e7;
+    text-decoration: none !important;
+}
+
+.icon-button2:focus {
+    color: #fff;
+    background-color: #12212E;
+}
+@media (max-width:1023px){
+    .button-cls{
+        text-align:center !important;
+        margin-left:0px !important;
+        margin-right:0px !important;
+    }
+    .icon-button2{
+        word-spacing:3px;
+        letter-spacing:0;
+    }
+    .icon-button2{
+        width:90% !important;
+    }
+
+}

@@ -1,0 +1,39 @@
+<template>
+    <lightning-card class="card">
+        <div class="slds-m-left_large slds-m-right_large container">
+            <h3 slot="title">
+                <b onclick={handleOrderClick}>Order on Behalf of Flow</b>
+            </h3>
+        
+            <div if:true={showUserStoreSelector}>
+                <c-bwc_select-store-and-user
+                    onstoreuserselected={handleOrderStoreNextClick}>
+                </c-bwc_select-store-and-user>
+            </div>
+
+            <div if:true={showProductSelector}>
+                <c-bwc_search-and-add-product
+                    selected-store-id={selectedStoreId}
+                    selected-user-account-id={selectedUserAccountId}
+                    onaddproductnextclick={handleProductNextClick}>
+                </c-bwc_search-and-add-product>
+            </div>
+
+            <div if:true={showAddressSelector}>
+                <c-bwc_select-delivery-address
+                account-id={selectedUserAccountId}>
+                </c-bwc_select-delivery-address>
+            </div>
+
+            <lightning-progress-indicator current-step={currentStep} type="base" variant="base" class="slds-m-top_x-large slds-m-bottom_x-large">
+                <lightning-progress-step label="Step 1" value="1"></lightning-progress-step>
+                <lightning-progress-step label="Step 2" value="2"></lightning-progress-step>
+                <lightning-progress-step label="Step 3" value="3"></lightning-progress-step>
+                <lightning-progress-step label="Step 4" value="4"></lightning-progress-step>
+                <lightning-progress-step label="Step 5" value="5"></lightning-progress-step>
+                <lightning-progress-step label="Step 6" value="6"></lightning-progress-step>
+                <lightning-progress-step label="Step 7" value="7"></lightning-progress-step>
+            </lightning-progress-indicator>
+        </div>
+    </lightning-card>
+</template>

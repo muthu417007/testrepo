@@ -1,0 +1,120 @@
+:root {
+    /* BODY */
+    --idp-font-family: 'Poppins', Helvetica, sans-serif;
+    --idp-font-size: 16px;
+    --idp-color: #fff;
+    --idp-required-input-color: #ea001e;
+    --idp-validation-error-color: #ea001e;
+    --idp-validation-error-font-size: 0.75rem;
+
+    /* Form */
+    --idp-form-background-color: transparent;
+
+    /* Page Title */
+    --idp-page-title-font-family: 'Poppins', Helvetica;
+    --idp-page-title-font-weight: 700;
+    --idp-page-title-font-size: 22px;
+    --idp-page-title-letter-spacing: 0.05rem;
+    --idp-page-title-color: #fff;
+
+    /* Page Sub Title */
+    --idp-page-sub-title-font-size: 1.5rem;
+    --idp-page-sub-title-font-weight: 700;
+    --idp-page-sub-title-transform: none;
+
+    /* Page Text */
+    --idp-page-text-font-size: 1rem;
+
+    /* Link */
+    --idp-link-font-size: 1rem;
+    --idp-link-font-family: 'Helvetica Neue', Helvetica;
+    --idp-link-font-weight: 400;
+    --idp-link-text-decoration: underline;
+    --idp-link-color: #b2b2b2;
+
+    /* Link Hover */
+    --idp-link-hover-color: #fff;
+    --idp-link-hover-text-decoration: underline;
+
+    /* Label */
+    --idp-label-color: #b2b2b2;
+    --idp-label-font-weight: 700;
+    --idp-label-font-family: 'Poppins', Helvetica;
+    --idp-label-font-size: 1rem;
+    --idp-label-font-style: normal;
+    --idp-label-letter-spacing: 0.05rem;
+    --idp-label-text-transform: capitalize;
+    --idp-label-margin-bottom: 0.5rem;
+    --idp-label-vertical-align: top;
+    --idp-label-padding-bottom: 0px;
+
+    /* Text Input */
+    --idp-text-input-width: 100%;
+    --idp-text-input-font-weight: normal;
+    --idp-text-input-border-radius: 0;
+    --idp-text-input-border: 1px solid #d6dce5;
+    --idp-text-input-background-color: #FFFFFF;
+    --idp-text-input-box-sizing: border-box;
+    --idp-text-input-height: 43px;
+    --idp-text-input-text-indent: 5px;
+    --idp-text-input-color: #4e515e;
+    --idp-text-input-text-align: left;
+    --idp-text-input-letter-spacing: 0.4px;
+    --idp-text-input-margin-bottom: 9px;
+
+    /* Primary Button */
+    --idp-primary-button-border-radius: 30px;
+    --idp-primary-button-border: none;
+    --idp-primary-button-height: 50px;
+    --idp-primary-button-font-size: 16px;
+    --idp-primary-button-font-weight: 700;
+    --idp-primary-button-font-style: normal;
+    --idp-primary-button-background-color: #A11F7F;
+    --idp-primary-button-color: #fff;
+    --idp-primary-button-width: 100%;
+    --idp-primary-button-text-align: center;
+    --idp-primary-button-max-width: 100%;
+    --idp-primary-button-text-decoration: none;
+    --idp-primary-button-cursor: pointer;
+    --idp-primary-button-text-transform: none;
+    --idp-primary-button-align-content: center;
+    --idp-primary-button-letter-spacing: 0.05em;
+
+    /* Primary Button Hover */
+    --idp-primary-button-hover-color: #fff;
+    --idp-primary-button-hover-border: 2px solid #DB3EB1;
+    --idp-primary-button-hover-background-color: #DB3EB1;
+    /*--idp-primary-button-hover-border-color: #DB3EB1;*/
+
+    /* Secondary Button */
+    --idp-secondary-button-border-radius: 30px;
+    --idp-secondary-button-height: 50px;
+    --idp-secondary-button-font-size: 16px;
+    --idp-secondary-button-font-weight: 700;
+    --idp-secondary-button-font-style: normal;
+    --idp-secondary-button-background-color: white;
+    --idp-secondary-button-color: #DB3EB1;
+    --idp-secondary-button-width: 100%;
+    --idp-secondary-button-text-align: center;
+    --idp-secondary-button-max-width: 100%;
+    --idp-secondary-button-text-decoration: none;
+    --idp-secondary-button-cursor: pointer;
+    --idp-secondary-button-text-transform: none;
+    --idp-secondary-button-align-content: center;
+    --idp-secondary-button-letter-spacing: 0.8px;
+    --idp-secondary-button-border: 2px;
+    --idp-secondary-button-border-color: #DB3EB1;
+    --idp-secondary-button-border-style: solid;
+
+    /* Secondary Button Hover */
+    --idp-secondary-button-hover-color: white;
+    --idp-secondary-button-hover-border: 2px solid;
+    --idp-secondary-button-hover-border-color: white;
+    --idp-secondary-button-hover-background-color: #DB3EB1;
+
+    /* Separator */
+    --idp-separator-border-bottom: 1px solid #fff;
+
+    /* General Error */
+    --general-error-color: crimson;
+}

@@ -1,0 +1,115 @@
+<template>
+	<div if:true={isLoading} class="slds-align_absolute-center exampleHolder">
+		<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+	</div>
+	<br/>
+	<p><b><a href="#" onclick={cancelMembership}>Cancel Membership</a></b></p>
+	<br/>
+	<div if:true={hasProtectionPlans} class="slds-p-around_large"
+		style="background-color:white;width:50rem;margin:auto;">
+		<div class="slds-grid slds-gutters slds-p-bottom_xx-large">
+			<div class="slds-col slds-size_1-of-6">
+				<img class="slds-p-horizontal_medium" src="https://products-salsify.geappliances.com/image/upload/s--q3Ppq3sI--/kjqp8vtngqlkzliobswm.svg"></img>
+			</div>
+			<div class="slds-col slds-size_5-of-6">
+				<div><span class="slds-text-heading_medium">Bodewell Care+ Monthly Protection Plans</span></div>
+				<div><a>Monthly Plan Detailed Benefits</a></div>
+			</div>
+		</div>
+		<template for:each={protectionPlans} for:item="plan" for:index="index">
+			<div class="slds-p-bottom_xx-large" key={plan.id}>
+				<div class="slds-grid slds-gutters">
+					<div class="slds-col slds-size_1-of-6">
+						<img class="slds-p-horizontal_medium" src={plan.image}></img>
+					</div>
+					<div class="slds-col slds-size_5-of-6">
+						<div><span class="slds-text-heading_medium">{plan.title}</span></div>
+						<div><span>{plan.product}</span></div>
+						<div class="slds-p-top_large">
+							<a data-id={plan.id} onclick={handleAccordianView}>Manage Subscription</a>
+							<svg if:true={plan.expanded}
+								class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+								aria-hidden="true">
+								<use
+									xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#chevronright">
+								</use>
+							</svg>
+							<svg if:false={plan.expanded}
+								class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left"
+								aria-hidden="true">
+								<use
+									xlink:href="/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#chevronleft">
+								</use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div if:true={plan.expanded}>
+					<div class="slds-grid slds-gutters">
+						<div class="slds-col slds-size_1-of-6"></div>
+						<div class="slds-col slds-size_5-of-6">
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<div style="display:flex;justify-content: space-between;" class="">
+									<div class="">Activation Date</div>
+									<div class="">{plan.activationDate}</div>
+								</div>
+							</div>
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<div style="display:flex;justify-content: space-between;" class="">
+									<div class="">Renewal Date</div>
+									<div class="">{plan.renewalDate}</div>
+								</div>
+							</div>
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<div style="display:flex;justify-content: space-between;" class="">
+									<div class="">Cost</div>
+									<div class="">{plan.cost}</div>
+								</div>
+							</div>
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<div style="display:flex;justify-content: space-between;" class="">
+									<div class="">
+										<div>
+											Last Payment
+										</div>
+										<div>
+											<a href={paymentHistoryLinkURL}>
+												Payment History
+											</a>
+										</div>
+									</div>
+									<div class="">{plan.lastPayment}</div>
+								</div>
+
+							</div>
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<div style="display:flex;justify-content: space-between;" class="">
+									<div class="">
+										<div>
+											Payamnet Method
+										</div>
+										<div>
+											<a href="#">
+												Update payment method
+											</a>
+										</div>
+									</div>
+									<div class="">{plan.paymentMethod}</div>
+								</div>
+							</div>
+							<div>
+								<hr class="slds-m-vertical_x-small" />
+								<a href="#">Cancel Membership</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</template>

@@ -1,0 +1,21 @@
+<template>
+
+    <c-cx_location-and-assets
+        contact-id={contactId}
+        onlocationselected={handleLocationSelected}
+        onassetselected={handleAssetSelected}>
+    </c-cx_location-and-assets>
+
+    <p style="margin-top: 10px; margin-left: 10px">
+        <lightning-record-edit-form object-api-name='Case'>
+            <lightning-input-field field-name="Subject" value={caseSubject} onchange={handleSubjectChange} ></lightning-input-field>
+            <lightning-input-field field-name="Type" value={caseType} onchange={handleTypeChange} ></lightning-input-field>
+            <lightning-button variant="brand" onclick={handleSubmit} label="Create Case"></lightning-button>
+        </lightning-record-edit-form>
+    </p>
+
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    
+</template>

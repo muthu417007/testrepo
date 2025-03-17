@@ -1,0 +1,15 @@
+<template>
+
+  <form action="https://testsecureacceptance.cybersource.com/pay" method="post" name="form1" target="_cybersourcePayment">
+    <template for:each={parametersValues} for:item="param">
+      <div key={param.key}>
+        <input type="hidden" id={param.key} value={param.value} name={param.key}>
+      </div>
+    </template>
+    <button onclick={submitForm} type="button">Proceed to Pay</button>
+  </form>
+  <h1>Salesforce Checkout Details</h1>
+  <textarea rows="10" cols="80">{checkoutDetails}</textarea>
+  <h1>Cybersource Payment Info</h1>
+  <textarea rows="10" cols="80">{paymentInfo}</textarea>
+</template>

@@ -1,0 +1,9 @@
+<template>
+	start
+	<c-bwc_common-button if:true={isCTAButtonAddToCart} assistive-text={addToCartButtonAriaLabel}
+		disabled={addToCartButtonDisabled} data-product-id={displayData}
+		variant={actionButtonVariant} onclick={handleAddToCart}>
+		{addToCartButtonText}
+	</c-bwc_common-button>
+	end
+</template>

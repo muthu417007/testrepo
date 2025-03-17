@@ -1,0 +1,48 @@
+<apex:page standardController="Contact" extensions="BWC_CyberSourceSignatureConfig">   
+    <script>
+        function beforeSubmit(){
+            renderForm();
+            
+        }
+        function afterRender(){
+            document.forms['form1'].submit();
+            }
+    </script>
+    <apex:outputPanel rendered="{!hasRequiredData}">
+  <!--  <apex:form >
+        Delivery Installation Charges:<br/>
+        <apex:inputText value="{!deliveryInstallationCharges}">
+            
+        </apex:inputText><br/>
+        Tax:<br/>
+        <apex:inputText value="{!tax}">
+            
+        </apex:inputText><br/>
+        Total Amount:<br/>
+        <apex:inputText value="{!totalAmount}">
+            
+        </apex:inputText><br/>
+        <apex:actionFunction name="renderForm" action="{!setVisible}" rerender="formData" oncomplete="afterRender()"></apex:actionFunction>
+    </apex:form>-->
+    
+    <form name="form1" method="post" action="https://testsecureacceptance.cybersource.com/pay" >        
+        <apex:outputPanel id="formData">
+            <!--<apex:outputPanel rendered="{!displayParam}">-->
+                <apex:outputText escape="false" value="{!parametersValues}" style="display:none"/>        
+                <apex:outputText escape="false" value="{!signedData}" style="display:none"/>
+           <!-- </apex:outputPanel>-->
+        </apex:outputPanel>    
+        <br/>
+        <button type="button" onclick="afterRender()">Proceed to Pay</button>
+        <!-- <button type="button" onclick="beforeSubmit()">Proceed to Pay</button>-->
+    </form>
+    </apex:outputPanel>
+     <apex:outputPanel rendered="{!not(hasRequiredData)}">
+         Please ensure you have all the required data: 
+         <ul>
+         	<li>Contact: First, Last Name and Email</li>    
+            <li>Concession Location: Billing Street, City, State, Postal Code</li>
+         </ul>
+         
+    </apex:outputPanel>
+</apex:page>

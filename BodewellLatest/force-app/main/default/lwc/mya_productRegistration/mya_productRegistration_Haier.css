@@ -1,0 +1,891 @@
+.header {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    display: block;
+    font-size: 35px;
+}
+
+.date-validation-message {
+    margin-left: 33% !important;
+}
+.THIS input[type=checkbox]:checked.check{
+    border-color: rgb(0, 178, 0); /*Choose your color*/
+    box-shadow: 0 0 3px #006A00; /*Choose a darker color for the shadow*/
+    background-color: rgb(0, 178, 0);
+}
+.privacy-links {
+    text-decoration: underline;
+    color: #151515;
+}
+
+.privacy-links:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.mobile-pro-info-section {
+    display: none;
+}
+
+.email-label {
+    text-transform: lowercase;
+}
+
+.sub-header {
+    margin-bottom: 0.025em;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.75rem;
+    display: block;
+    color: #151515;
+}
+
+.canada-haier {
+    text-decoration: underline;
+    color: #151515;
+}
+
+.canada-haier:hover {
+    text-decoration: underline;
+    color: #151515;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: end;
+    color: #151515;
+    display: block;
+    letter-spacing: 0.25px;
+    position: relative;
+    width: 100%;
+}
+
+.imp-note {
+    text-align: center;
+    width: max-content;
+    margin: 60px auto;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 8rem;
+}
+
+.appliance-btn {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    width: 100%;
+}
+
+.addProduct {
+    color: #151515;
+    border: 1px solid #151515;
+    width: 90%;
+    font-size: 1rem;
+    height: 3rem;
+    border-radius: 25px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0.85em 1em;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin: 0px 1rem;
+    background-color: white;
+}
+
+.addProduct:hover {
+    background-color: #151515;
+    color: white;
+}
+
+.continuebtn {
+    border: 1px solid #005aaa;
+    width: 90%;
+    background-color: #005aaa;
+    color: white;
+    font-size: 1rem;
+    border-radius: 25px;
+    height: 3rem;
+    font-weight: 600;
+    padding: 0.85em 1em;
+    line-height: 1;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    cursor: pointer;
+    margin: 0px 1rem;
+}
+
+.continuebtn:hover {
+    background-color: #32beff;
+    border: solid 1px transparent;
+    color: #fff;
+}
+
+.submitbtn {
+    border: 1px solid #005aaa;
+    width: 50%;
+    background-color: #005aaa;
+    color: white;
+    line-height: 1;
+    border-radius: 25px;
+    font-size: 1rem;
+    height: 3rem;
+    font-weight: 600;
+    padding: 0.85em 1em;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    cursor: pointer;
+    margin: 0px 10rem;
+}
+
+.submitbtn:hover {
+    background-color: #32beff;
+    border: solid 1px transparent;
+    color: #fff;
+}
+
+.model-number {
+    text-align: left;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: #565c62;
+    text-decoration: underline;
+    margin: 0.5rem 0rem;
+    font-size: 14px;
+    font-style: italic;
+}
+
+em {
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin-bottom: 0rem;
+    color: #555;
+    display: block;
+    margin-top: 10px;
+}
+
+.sweep-message {
+    max-width: 70%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-align: center;
+    font-size: 1.1875rem;
+    letter-spacing: 0.050em;
+    font-weight: normal;
+    line-height: 1.368421;
+}
+
+.sweep-rules {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-align: center;
+    line-height: 1.368421;
+    letter-spacing: 0.050em;
+    margin: 0 auto;
+    display: block;
+    font-size: 1rem;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.sweep-rules:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.slds-form-element {
+    text-align: left;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.slds-form-element_phone {
+    color: #151515;
+    font-size: 1rem;
+    letter-spacing: 0.25px;
+    vertical-align: middle;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    margin: 0.5rem 0rem;
+    width: 100%;
+    text-align: left;
+}
+
+.slds-form-element__help {
+    text-align: left;
+    display: block;
+    margin-left: 2px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.slds-modal__header{
+    border:none !important;
+    border-radius: 0px;
+}
+.slds-p-around_medium{
+    background-color: white;
+}
+.slds-modal__footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none !important;
+    border-radius: 0px;
+}
+.sign-up-button{
+    width: 23rem;
+    height: 3rem;
+    margin-bottom: 12px;
+    background-color: #005aaa;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px !important;
+    outline: 1px solid #005aaa;
+  
+}
+.sign-up-button:hover{
+    background:  #32beff;
+    color: #ffffff;
+    outline: 1px solid #32beff;
+}
+.cancel-button{
+    width: 23rem;
+    height: 3rem;
+    font-size: 16px !important;
+    background: transparent;
+    outline: 2px solid #151515;
+    border-radius: 30px;
+    color: #151515;
+    border-color: transparent;
+}
+.cancel-button:hover{
+    background-color: #32beff;
+    color:  #ffffff;
+    border-color:transparent;
+    outline: transparent;
+
+}
+.slds-modal__container{
+    width: 29rem !important;
+}
+
+.modal-heading{
+    font-size: 19px !important;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+.modal-icon{
+    float: right;
+    transform: translate(0px, -13px);
+}
+
+
+.or-div {
+    color: #151515;
+    text-transform: uppercase;
+    max-width: none;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin: 1rem 0rem;
+}
+
+.address-info {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    text-transform: capitalize;
+    font-weight: 100;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.phone-info {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #151515;
+    margin-top: 60px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
+.consent-input {
+    margin: 1rem 0rem;
+    display: inline-flex;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    
+}
+
+.consent-check{
+    transform: scale(2);
+    line-height: 2.5rem;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.slds-has-error .slds-input, .slds-has-error{
+    border: transparent;
+    --slds-c-input-color-border: transparent;
+}
+.slds-input {
+    --slds-c-input-color-border:#c8c9ca ;
+    box-shadow: red;
+}
+.consent-checkbox {
+    margin: 5px 0rem;
+    display: inline-flex !important;
+
+}
+.consent-validation-message {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: red;
+}
+.fname{
+ border: 1px solid black;
+}
+lightning-input{
+    --slds-c-input-color-border:#c8c9ca;
+}
+lightning-combobox{
+    --slds-c-input-color-border:#c8c9ca;
+}
+lightning-input{
+    --slds-c-input-color-border:#c8c9ca;
+}
+lightning-combobox{
+    --slds-c-input-color-border:#c8c9ca;
+}
+lightning-input{
+    --slds-c-input-color-border:#c8c9ca;
+}
+lightning-combobox{
+    --slds-c-input-color-border:#c8c9ca;
+}
+
+.consent-message {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    text-align: initial;
+}
+
+
+.select-address {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: -10px;
+    letter-spacing: .25px;
+}
+
+.owner-info {
+    font-weight: bold;
+    color: #151515;
+    text-transform: capitalize;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1.411764705882353rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.product-info {
+    font-weight: bold;
+    color: #151515;
+    text-transform: capitalize;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1.411764705882353rem;
+    padding-bottom: 1rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.thanks-message {
+    text-align: center;
+    font-size: 1.875rem;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.writereview {
+    display: block;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.writereview:hover {
+    display: block;
+    text-decoration: underline;
+    color: #32beff;
+    text-align: center;
+}
+
+.owner-content {
+    font-size: 1rem;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.center {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.progress-bar {
+    display: block;
+    margin: 3rem 0rem;
+    text-align: center;
+}
+
+.del-icon {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 0.5rem;
+    text-align: right;
+}
+
+.del-icon span {
+    font-size: 11px;
+    font-weight: bold;
+    color: red;
+    padding: 4px;
+}
+
+.appliance-info-form {
+    padding: 20px;
+    border-bottom: 1px dashed #b1b1b1;
+    padding-top: 2em;
+    padding-top: 10px;
+    margin-top: 0.8em;
+}
+
+.appliance-form-info {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.appliance-form-info p {
+    text-align: center;
+}
+
+.productinfo {
+    width: 40%;
+    margin: 20px;
+    height: 100px;
+    margin-bottom: 150px;
+}
+
+.canadian-residents-ductless {
+    display: block;
+    margin: 1.5rem 0rem;
+    text-align: left;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.canadian-residents-ductless img {
+    width: 40px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.canadian-residents {
+    margin-top: 5px;
+}
+
+.canadian-residents-ductless p {
+    display: inline;
+    font-size: 16px;
+    padding: 10px;
+}
+.checkbox-section{
+    --slds-c-color-border: 1px solid #c8c9ca;
+}
+
+.canadian-residents a {
+    text-decoration: none;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-size: 0.8235294117647059rem;
+    color: #1a63a2;
+}
+.slds-checkbox_faux{
+    --slds-c-checkbox-color-border:#c8c9ca;
+    --sds-c-checkbox-color-border-checked: #c8c9ca;
+}
+
+.contact-info h5,
+.contact-info h3 {
+    margin: 20px;
+}
+
+.contact-info h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.contact-info span {
+    margin: 10px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.411764705882353rem;
+    color: #555555;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    color: #555555;
+    font-weight: 100;
+    text-align: center;
+}
+
+h5 {
+    display: block;
+    text-align: center;
+}
+
+.slds-select {
+    width: 100px;
+    border: 1px solid #c8c9ca;
+}
+.select{
+    border: 1px solid #c8c9ca;
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.info-heading {
+    font-size: 1.411764705882353rem;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 100;
+}
+
+.viewaccount,
+.registermore {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.85em 1em;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    line-height: 1;
+}
+
+table th,
+table td {
+    font-size: 0.875rem;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+    text-transform: uppercase;
+}
+
+.productlist-address {
+    margin-bottom: 40px;
+}
+
+.owner-info-section {
+    text-align: center;
+}
+
+.owner-info-section p {
+    margin-bottom: 0;
+}
+
+.button-divider {
+    margin: 0px 10px;
+}
+
+.button-action {
+    margin: 45px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.slds-form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.lowercase.first-letter-uppercase.margin-btm-05 {
+    text-align: center;
+    font-weight: 100;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-size: 1.176470588235294rem;
+    margin: 2em;
+    margin-bottom: 0.5em;
+    text-transform: lowercase;
+}
+
+.canadian-residents-link a {
+    color: blue;
+}
+
+.update-message {
+    margin-left: 0.2rem;
+    color: red;
+    line-height: 2.3;
+}
+
+.lowercase.first-letter-uppercase.margin-btm-05 span {
+    font-size: 1.176470588235294rem;
+}
+
+.appliance-phone-info h2 {
+    margin: 30px;
+    text-align: center;
+}
+
+.appliance-phone-input .slds-input {
+    width: 50%;
+}
+
+.contactinfo-btn {
+    text-align: center;
+    margin: 35px;
+    width: 100%;
+}
+
+.contactinfo-btn .contact-continuebtn {
+    background-color: #1A63A2;
+    color: white;
+    padding: 7px;
+    border: none;
+    width: 50%;
+}
+
+.appliance-phone-input input {
+    margin-top: 10px;
+    width: 50%;
+}
+
+.product-register h5 {
+    text-transform: none;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.product-register h1 {
+    margin-bottom: 0.5em;
+}
+.promo-text-1{
+    margin-left: 0.5rem;
+    text-align: left;
+    display: block;
+    margin-right: 46px;
+}
+.promo-text-2{
+    margin-left: 0.5rem;
+    text-align: left;
+    display: block;
+    margin-top: 1rem;
+    margin-right: 10%;
+}
+
+.product-register h2 {
+    line-height: 0.2;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    color: #555;
+    text-align: center;
+    font-size: 1.411764705882353rem;
+}
+
+.product-register p {
+    font-size: 14px;
+    margin: 0 0 1em;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.product-register label {
+    color: rgba(108, 97, 88, 1);
+    font-size: 0.9411764705882353rem;
+    font-weight: bold;
+}
+
+.confirm-info {
+    text-transform: capitalize;
+}
+
+button[disabled] {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.help-tip {
+    position: absolute;
+}
+
+.validation-message {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: red;
+}
+
+@media only screen and (max-width:639px) {
+    .desktop-pro-info-section {
+        display: none;
+    }
+    .mobile-pro-info-section {
+        display: block;
+    }
+    .mob-pro-image {
+        margin-bottom: 2rem;
+    }
+    .mobile-pro-info-section td {
+        text-align: left;
+    }
+    .mobile-pro-info-section th {
+        text-align: center;
+    }
+    .mobile-pro-info-section table {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: block;
+        text-align: left;
+        color: #151515;
+        letter-spacing: 0.25px;
+        position: relative;
+        width: 100%;
+    }
+    .update-message {
+        margin-left: 0.3rem;
+        color: red;
+        text-align: center;
+        line-height: 2.3;
+    }
+    .slds-modal__container{
+        width: 21.5rem !important;
+
+    }
+    .modal-heading{
+        font-size: 15px !important;
+        margin-left: 4px;
+    }
+    .modal-icon{
+        float: right;
+        transform: translate(0px, -13px) !important;
+    }
+    .sign-up-button{
+        width: 19rem;
+    }
+    .cancel-button{
+        width: 19rem;
+    }
+    .promo-text-1{
+        margin-right: 20px !important;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .imp-note {
+        width: auto;
+    }
+    .center {
+        width: auto;
+    }
+    .slds-form {
+        width: 100%;
+    }
+    .slds-p-around_large {
+        padding: 0;
+    }
+    .button-action {
+        display: block;
+    }
+    .consent-input{
+        flex-direction: column !important;
+    }
+    .addProduct {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+    .continuebtn {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .sweep-message {
+        max-width: 100%;
+    }
+    .submitbtn {
+        width: 100%;
+        margin: 0;
+    }
+    .slds-align_absolute-center {
+        display: inline;
+    }
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: block;
+        text-align: left;
+        color: #151515;
+        letter-spacing: 0.25px;
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+/* iPad */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .product-register .center {
+        width: auto;
+    }
+    .header {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 1.411764705882353rem;
+    }
+    .appliance-form-info {
+        width: auto;
+    }
+    .context {
+        line-height: 1.5;
+    }
+    .mobile-pro-info-section {
+        display: none;
+    }
+}

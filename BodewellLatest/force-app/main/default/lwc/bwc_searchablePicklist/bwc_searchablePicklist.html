@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+        <div class="slds-combobox_container">
+            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                    <lightning-input 
+                        class="slds-form-element slds-m-top_x-small slds-m-bottom_none"
+                        type="search" 
+                        variant="standard" 
+                        name="enter-search" 
+                        label={label}
+                        data-id="picklistDiv"
+                        onclick={handleClick}
+                        onchange={handleSearchChange}
+                        value={selectedValue}
+                    ></lightning-input>
+                <template if:true={dropdownOpen}>
+                    <div class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid picklistDropdown" data-id="dropDown">
+                        <ul class="slds-listbpx slds-listbox_vertical ulClass" id="ul" role="presentation">
+                            <template for:each={picklistOptionsClone} for:item="picklist">
+                                <div key={picklist.label} class="eachItem">
+                                    <li data-id={picklist.value} onclick={selectPicklistOption} class={picklist.css}>
+                                        <template if:true={picklist.selected}>
+                                            <lightning-icon icon-name="utility:check" class="checkIcon" size="x-small"></lightning-icon>
+                                        </template>
+                                        <span data-id={picklist.label} class="slds-media slds-listbox__option_entity verticalAlign slds-truncate">{picklist.label}</span>
+                                    </li>
+                                </div>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,11 @@
+<design:component>
+    <design:attribute name="GlobalAction" label="Enter the global action name" description="Enter the global action name. Eg: NewCase"/>
+    <design:attribute name="Title" label="Enter the case create page title" description="Enter the title of your case page"/>
+    <design:attribute name="Subtitle" label="Enter the case create page subtitle" description="Enter the subtitle of your case page."/>
+    <design:attribute name="DefaultAggregation" label="Data Sources" description="Enter the default data sources."/>
+    <design:attribute name="resultModal" label="Open suggestions on same page" description="Open suggestions in popup on same page"/>
+    <design:attribute name="AttachFiles" label="Attach files" description="Attach files"/>
+    <design:attribute name="AttachFilesLabel" label="Attach files Label" description="Attach files Label"/>
+    <design:attribute name="ConfirmationTitle" label="Confirmation Title" description="Confirmation Title"/>
+    <design:attribute name="ConfirmationSubtitle" label="Confirmation Subtitle" description="Enter the subtitle of your case page."/>
+</design:component>

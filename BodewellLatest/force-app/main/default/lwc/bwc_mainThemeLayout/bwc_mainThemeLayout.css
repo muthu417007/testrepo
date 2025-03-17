@@ -1,0 +1,22 @@
+:host {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+}
+.bwc-footer-container {
+    margin-top: 5rem;
+    border-top: 2px solid var(--tan);
+    border-bottom: 2px solid var(--tan);
+    padding: 45px;
+}
+.bwc-footer-copyright {
+    padding: 0 45px;
+    margin: 2rem 0;
+}
+
+@media (max-width: 1024px) {
+    main {
+        margin-top: 4rem;
+    }
+}

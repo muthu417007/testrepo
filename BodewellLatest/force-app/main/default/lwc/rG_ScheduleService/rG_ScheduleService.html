@@ -1,0 +1,20 @@
+<template>
+    <div class="footer_first_head slds-p-around_large">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col inside_call_free slds-col slds-small-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+            <span>
+            <div class="inside_call_free_schedule">{call}</div>
+            <div class="inside_call_free_number"><a href={tollfreenumberlink} onclick={handleCall}>{tollfreenumber}</a></div>
+            </span>
+            </div>
+            <div class="slds-col inside_scheduling slds-col slds-small-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <div class="inside_call_weekdays">
+                {weekDay}
+                </div>
+                <!-- <div class="inside_call_weekends">
+                {weekEnd}
+                </div> -->
+            </div>
+            </div>
+    </div>
+</template>

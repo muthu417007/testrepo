@@ -1,0 +1,149 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="PS_AssignPriorityActionCtrl">
+    <aura:html tag="style">
+       .slds-modal__container{
+        width: 70% !important;
+        max-width: 70% !important;
+       }
+       .modal-body{
+         height : 60vh !important;
+         max-height: 60vh !important;
+       }
+       .slds-modal__footer{
+         display: inline !important;
+       }
+	</aura:html>
+
+    <aura:attribute name="customerClassesSelected" type="List" default="[]"/>
+    <aura:attribute name="buyingGroupsSelected" type="List" default="[]"/>
+    <aura:attribute name="nationalStoreTypesSelected" type="List" default="[]"/>
+    <aura:attribute name="marketAreaRegionSelected" type="List" default="[]"/>
+    <aura:attribute name="locationTypesSelected" type="List" default="[]"/>
+    <aura:attribute name="commercialConsolidation" type="String"/>
+    <aura:attribute name="relationshipName" type="String"/>
+    <aura:attribute name="relationshipRole" type="String"/>
+    <aura:attribute name="relationshipType" type="String"/>
+    <aura:attribute name="OracleAccountNumber" type="String"/>
+    <aura:attribute name="onlyDs" type="Boolean" default="false" />
+
+    <aura:attribute name="dualListboxOptions" type="Object"/>
+
+    <force:recordData aura:id="forceRecord" recordId="{!v.recordId}" fields="Id"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:spinner variant="brand" size="large" aura:id="Id_spinner" class="slds-hide" />
+
+    <lightning:card title="Assign Priority And Action">
+        <div class="slds-grid slds-p-top_medium">
+            <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+                <lightning:dualListbox
+                    aura:id="locationTypeDualListbox"
+                    name="dualListbox"
+                    label= "Location Type"
+                    sourceLabel="Available"
+                    selectedLabel="Selected"
+                    options="{!v.dualListboxOptions.LocationType}"
+                    value="{!v.locationTypesSelected}"
+                />
+            </div>
+            <div class="slds-size_6-of-12 slds-p-left_xx-small slds-p-horizontal_x-large">
+				<lightning:helptext iconName="utility:info" content="Multiple comma separated Oracle Account Numbers can be entered" />
+                <lightning:input
+                    value="{!v.OracleAccountNumber}"
+                    placeholder="For ex: 67833767,76567800"
+                    aura:id="OracleAccountNumbers"
+                    label="Oracle Account Number"
+                /><br/>
+            </div>
+        </div>
+        <div class="slds-grid slds-p-top_medium">
+            <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+                <lightning:dualListbox
+                    aura:id="customerClassDualListbox"
+                    name="dualListbox"
+                    label= "Customer Class"
+                    sourceLabel="Available"
+                    selectedLabel="Selected"
+                    options="{!v.dualListboxOptions.CustomerClass}"
+                    value="{!v.customerClassesSelected}"
+                />
+            </div>
+            <div class="slds-size_6-of-12 slds-p-left_xx-small slds-p-horizontal_x-large">
+				<lightning:input
+                    value="{!v.commercialConsolidation}"
+                    placeholder="Commercial Consolidation Relationship"
+                    aura:id="commercialConsolidationRelationship"
+                    label="Commercial Consolidation Relationship"
+                /><br/>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-p-top_medium">
+            <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+				<lightning:input value="{!v.relationshipName}" aura:id="relationshipName" label="Relationship Name"/><br/>
+            </div>
+            <div class="slds-size_6-of-12 slds-p-left_xx-small slds-p-horizontal_x-large">
+				<lightning:input value="{!v.relationshipRole}" aura:id="relationshipRole" label="Relationship Role"/><br/>
+            </div>
+        </div>
+        
+        <div class="slds-grid slds-p-top_medium">
+            <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+                <lightning:input value="{!v.relationshipType}" aura:id="relationshipType" label="Relationship Type"/><br/>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-p-top_x-small">
+            <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+                <lightning:dualListbox
+                    aura:id="buyingGroupDualListbox"
+                    name="dualListbox"
+                    label= "Buying Group"
+                    sourceLabel="Available"
+                    selectedLabel="Selected"
+                    options="{!v.dualListboxOptions.BuyingGroup}"
+                    value="{!v.buyingGroupsSelected}"
+                />
+            </div>
+            <div class="slds-size_6-of-12 slds-p-left_xx-small slds-p-horizontal_x-large">
+                <lightning:dualListbox
+                    aura:id="marketAreaRegionDualListbox"
+                    name="dualListbox"
+                    label= "Market Area - Region"
+                    sourceLabel="Available"
+                    selectedLabel="Selected"
+                    options="{!v.dualListboxOptions.MarketAreaRegion}"
+                    value="{!v.marketAreaRegionSelected}"
+                />
+            </div>
+        </div>
+
+        <div class="slds-grid slds-p-top_medium">
+            <div class="slds-size_6-of-12 slds-p-left_xx-small slds-p-horizontal_x-large">
+                <lightning:input
+                    type="checkbox"
+                    name="onlyDsCheckbox"
+                    label="Only DS Rep Accounts"
+                    checked="{!v.onlyDs}"
+                />
+            </div>
+        </div>
+        
+       <div class="slds-grid slds-p-top_medium">
+             <div class="slds-size_6-of-12 slds-p-left_xx-large slds-p-horizontal_x-large">
+                <lightning:dualListbox
+                    aura:id="nationalStoretTypesDualListbox"
+                    name="dualListbox"
+                    label= "National Store Type"
+                    sourceLabel="Available"
+                    selectedLabel="Selected"
+                    options="{!v.dualListboxOptions.nationalStoreTypes}"
+                    value="{!v.nationalStoreTypesSelected}"
+                />
+            </div>
+            </div>        
+    </lightning:card>
+
+	<div class="slds-align_absolute-center" style="height:4rem">
+		<lightning:button onclick="{!c.Search}" variant="brand" label="Assign Priority And Action"/>
+   </div>
+</aura:component>

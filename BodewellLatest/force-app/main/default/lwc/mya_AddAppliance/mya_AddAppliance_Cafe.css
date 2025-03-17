@@ -1,0 +1,1071 @@
+.container {
+    background-color: #f4f4f3;
+    padding: 2rem 8rem;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: "proxima-nova";
+}
+
+.cell {
+    flex: 0 0 auto;
+    min-height: 0px;
+    min-width: 0px;
+    width: 1161px;
+    margin: 0px auto;
+}
+
+.add-appliances {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.policy-link {
+    color: #ffffff;
+}
+
+.header {
+    margin-bottom: 2rem;
+    position: relative;
+    border: none;
+    text-align: center;
+    background: none;
+}
+
+.header-title {
+    padding-bottom: 2%;
+    margin-bottom: 0rem;
+    margin-top: 1.5rem;
+    font-family: 'AdobeGaramondProRegular';
+    font-size: 1.625rem;
+    line-height: 2rem t;
+    letter-spacing: 0.005em;
+    text-transform: capitalize;
+    color: #004b3d;
+    font-family: 'AdobeGaramondProRegular';
+}
+
+.add-appliances-message {
+    letter-spacing: .8px;
+    color: #6c6158;
+    font-family: 'ProximaNova-Regular';
+    cursor: auto;
+}
+
+.link-item {
+    margin: 10px 0px;
+    font-family: 'ProximaNova-Regular';
+}
+
+.link-item:hover {
+    color: #46645a;
+}
+
+.link {
+    text-decoration: underline;
+    color: #6c6158;
+    cursor: pointer;
+}
+
+.no-border {
+    border-bottom: 0px solid white;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    font-size: 1.5em;
+    color: #fefefe;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    font-weight: bold;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-button1 {
+    font-size: 1.5em;
+    color: rgba(24, 63, 50, 0.95);
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    font-weight: bold;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-icon1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'ProximaNova-Regular';
+    color: rgba(24, 63, 50, 0.95);
+}
+
+.close-icon {
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'ProximaNova-Regular';
+    color: #fefefe;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 22px;
+    color: #004b3d;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.address-button {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reveal.add-address-modal {
+    top: 30%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+    color: #ffffff;
+    font-family: 'ProximaNova-Regular';
+    line-height: 1.5rem;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.select-message {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.100em;
+    text-align: left;
+}
+
+.search-message {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.100em;
+    text-align: left;
+}
+
+.margin-bottom-16-px {
+    margin-bottom: 16px;
+}
+
+.or-div {
+    letter-spacing: 0.100em;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: white;
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: #ffffff;
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: #ffffff;
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+a.footer-message {
+    text-decoration: underline;
+}
+
+.footer-message {
+    text-align: center;
+    color: white;
+    font-size: 0.875rem;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    line-height: calc(19/ 14);
+    font-family: 'ProximaNova-Regular';
+}
+
+.form-section {
+    color: #ffffff;
+    margin: 30px 0px 0px 0px;
+}
+
+.form-title-section {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 1.1875rem;
+    line-height: 1.368421;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.100em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.policy-link {
+    text-decoration: underline;
+}
+
+label {
+    font-size: 0.9411764705882353rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 0.5rem 0rem 0.3rem 0rem;
+    font-family: 'ProximaNova-Regular';
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-element__control {
+    color: black;
+    text-align: left;
+}
+
+.add-action-button {
+    width: 600px;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 14px 5px;
+    font-size: 0.9rem;
+    letter-spacing: 2.1px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #ffffff;
+}
+
+.add-action-button:hover {
+    background-color: #ffffff;
+    color: #004B3D;
+    border: 1px solid #004B3D;
+}
+
+.slds-input {
+    font-size: 1rem;
+}
+
+.progress-bar {
+    width: 480px;
+    margin: 50px auto;
+}
+
+.status-image {
+    width: 480px;
+}
+
+.cafe-popup-label {
+    color: #ffffff;
+}
+
+.no-products {
+    background-color: white;
+    font-family: 'ProximaNova-Regular';
+    text-align: center;
+    margin-top: 5%;
+}
+
+.no-products-header {
+    font-family: 'AdobeGaramondProRegular';
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #004b3d;
+    font-size: 26px !important;
+    background-color: white;
+    margin: 0px;
+}
+
+.no-product-close {
+    margin: 10px;
+}
+
+.no-product-message {
+    color: #6c6158;
+    font-family: 'ProximaNova-Regular';
+}
+
+.no-products-ok-button {
+    width: 40%;
+    background-color: white;
+    color: rgba(24, 63, 50, 0.95);
+    text-transform: uppercase;
+    margin: 20px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px Solid rgba(24, 63, 50, 0.95);
+    border-radius: 0px;
+    height: 40px;
+}
+
+.no-products-ok-button:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.95);
+}
+
+.header-font {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.content-font {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width:201px) and (max-width:320px) {
+    .container {
+        background-color: #f4f4f3;
+        padding: 1rem 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        font-family: "proxima-nova";
+    }
+    .cell {
+        flex: 0 0 auto;
+        min-height: 0px;
+        min-width: 0px;
+        width: 100%;
+    }
+    .add-appliances {
+        background-color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+    .policy-link {
+        color: #ffffff;
+    }
+    .header {
+        margin-bottom: 2rem;
+        position: relative;
+        border: none;
+        text-align: center;
+        background: none;
+    }
+    .header-title {
+        padding-bottom: 2%;
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        font-size: 1.625rem;
+        line-height: 2rem;
+        letter-spacing: 0.005em;
+        text-transform: capitalize;
+        color: #004b3d;
+        font-family: 'AdobeGaramondProRegular';
+    }
+    .add-appliances-message {
+        letter-spacing: .8px;
+        color: #6c6158;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: 'ProximaNova-Regular';
+        cursor: auto;
+    }
+    .link-item {
+        margin: 10px 0px;
+        font-size: 0.9rem;
+        text-align: center;
+        font-family: 'ProximaNova-Regular';
+        display: block;
+    }
+    .link-item:hover {
+        color: #46645a;
+    }
+    .link {
+        text-decoration: underline;
+        color: #6c6158;
+        cursor: pointer;
+    }
+    .no-border {
+        border-bottom: 0px solid white;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .close-button {
+        font-size: 1.3em;
+        color: #fefefe;
+        right: 5px;
+        top: 0rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-button1 {
+        font-size: 1.3em;
+        color: #fefefe;
+        right: 5px;
+        top: 0rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-icon1 {
+        font-weight: 700;
+        font-size: 1.3rem;
+        font-family: 'ProximaNova-Regular';
+        color: rgba(24, 63, 50, 0.95);
+    }
+    .close-icon {
+        font-weight: 700;
+        font-size: 1.3rem;
+        font-family: 'ProximaNova-Regular';
+        color: #fefefe;
+    }
+    .modal-header {
+        margin-top: 1rem;
+        font-size: 22px;
+        color: #004b3d;
+        font-weight: 800;
+        margin-bottom: 1em;
+        margin-top: 1rem;
+        text-transform: capitalize;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .address-button {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .reveal.add-address-modal {
+        top: 25%;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 12px;
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: max-content;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+        color: #ffffff;
+        font-family: 'ProximaNova-Regular';
+        line-height: 1.5rem;
+    }
+    .reveal-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1005;
+        background-color: rgba(24, 63, 50, 0.95);
+        overflow-y: auto;
+    }
+    .reveal {
+        right: auto;
+        left: auto;
+        margin: 0 auto;
+    }
+    .select-message {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        display: block;
+        letter-spacing: 0.100em;
+    }
+    .margin-bottom-16-px {
+        margin-bottom: 16px;
+    }
+    .or-div {
+        letter-spacing: 0.100em;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .search-message {
+        display: block;
+        text-align: left;
+        font-size: 0.95rem;
+    }
+    .main-label {
+        font-weight: bold;
+        color: white;
+        padding: 0px 3px;
+    }
+    .main-opt {
+        font-weight: bold;
+        font-size: 80%;
+        padding: 0px 3px;
+        color: #ffffff;
+    }
+    .main-sub {
+        font-size: 75%;
+        padding: 0px 3px;
+        color: #ffffff;
+    }
+    .in-field {
+        margin: 10px 0px;
+    }
+    a.footer-message {
+        text-decoration: underline;
+    }
+    .footer-message {
+        text-align: center;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        padding: 1rem 0rem;
+        line-height: calc(19/ 14);
+        font-family: 'ProximaNova-Regular';
+    }
+    .form-section {
+        color: #ffffff;
+        margin: 30px 0px 0px 0px;
+    }
+    .form-title-section {
+        width: 100%;
+        margin: 0px auto;
+        font-size: 1.1875rem;
+        line-height: 1.368421;
+        margin-top: 0rem;
+        display: inline;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: 0.100em;
+        font-weight: 600;
+        text-align: center;
+    }
+    .policy-link {
+        text-decoration: underline;
+    }
+    label {
+        font-size: 0.875rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 0.5rem 0rem 0.3rem 0rem;
+        font-family: 'ProximaNova-Regular';
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+    }
+    .form-element__control {
+        color: black;
+        font-size: 0.875rem;
+        text-align: left;
+    }
+    .add-action-button {
+        width: 100%;
+        background-color: #004B3D;
+        color: #ffffff;
+        padding: 14px 5px;
+        font-size: 0.9rem;
+        letter-spacing: 2.1px;
+        margin: 10px 0;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 1px solid #ffffff;
+    }
+    .add-action-button:hover {
+        background-color: #ffffff;
+        color: #004B3D;
+        border: 1px solid #004B3D;
+    }
+    .slds-input {
+        font-size: 1rem;
+    }
+    .progress-bar {
+        width: 480px;
+        margin: 50px auto;
+    }
+    .status-image {
+        width: 480px;
+    }
+    .cafe-popup-label {
+        color: #ffffff;
+    }
+    .no-products {
+        background-color: white;
+        font-family: 'ProximaNova-Regular';
+        text-align: center;
+        margin-top: 5%;
+    }
+    .no-products-header {
+        font-family: 'AdobeGaramondProRegular';
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: #004b3d;
+        font-size: 26px !important;
+        background-color: white;
+        margin: 0px;
+    }
+    .no-product-close {
+        margin: 10px;
+    }
+    .no-product-message {
+        color: #6c6158;
+        font-family: 'ProximaNova-Regular';
+    }
+    .no-products-ok-button {
+        width: 100%;
+        background-color: white;
+        color: rgba(24, 63, 50, 0.95);
+        text-transform: uppercase;
+        margin: 20px auto;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        border: 2px Solid rgba(24, 63, 50, 0.95);
+        border-radius: 0px;
+        height: 40px;
+    }
+    .no-products-ok-button:hover {
+        color: #ffffff;
+        background-color: rgba(24, 63, 50, 0.95);
+    }
+    .header-font {
+        font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    }
+    .content-font {
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width:425px) {
+    .container {
+        background-color: #f4f4f3;
+        padding: 1rem 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        font-family: "proxima-nova";
+    }
+    .cell {
+        flex: 0 0 auto;
+        min-height: 0px;
+        min-width: 0px;
+        width: 100%;
+    }
+    .add-appliances {
+        background-color: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .policy-link {
+        color: #ffffff;
+    }
+    .header {
+        margin-bottom: 2rem;
+        position: relative;
+        border: none;
+        text-align: center;
+        background: none;
+    }
+    .header-title {
+        padding-bottom: 2%;
+        margin-bottom: 0rem;
+        margin-top: 0rem;
+        font-size: 1.625rem;
+        line-height: 2rem;
+        letter-spacing: 0.005em;
+        text-transform: capitalize;
+        color: #004b3d;
+        font-family: 'AdobeGaramondProRegular';
+    }
+    .add-appliances-message {
+        letter-spacing: .8px;
+        color: #6c6158;
+        text-align: center;
+        font-size: 0.92rem;
+        margin-top: 1rem;
+        font-family: 'ProximaNova-Regular';
+        cursor: auto;
+    }
+    .link-item {
+        margin: 10px 0px;
+        font-size: 0.9rem;
+        text-align: center;
+        font-family: 'ProximaNova-Regular';
+        display: block;
+    }
+    .link-item:hover {
+        color: #46645a;
+    }
+    .link {
+        text-decoration: underline;
+        color: #6c6158;
+        cursor: pointer;
+    }
+    .no-border {
+        border-bottom: 0px solid white;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .close-button {
+        font-size: 1.3em;
+        color: #fefefe;
+        right: 5px;
+        top: 0rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-button1 {
+        font-size: 1.3em;
+        color: #fefefe;
+        right: 5px;
+        top: 0rem;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        cursor: pointer;
+    }
+    .close-icon1 {
+        font-weight: 700;
+        font-size: 1.3rem;
+        font-family: 'ProximaNova-Regular';
+        color: rgba(24, 63, 50, 0.95);
+    }
+    .close-icon {
+        font-weight: 700;
+        font-size: 1.3rem;
+        font-family: 'ProximaNova-Regular';
+        color: #fefefe;
+    }
+    .modal-header {
+        margin-top: 1rem;
+        font-size: 22px;
+        color: #004b3d;
+        font-weight: 800;
+        margin-bottom: 1em;
+        margin-top: 1rem;
+        text-transform: capitalize;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .address-button {
+        width: 100%;
+        background-color: #1A63A2;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .reveal.add-address-modal {
+        top: 25%;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 12px;
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: max-content;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+        color: #ffffff;
+        font-family: 'ProximaNova-Regular';
+        line-height: 1.5rem;
+    }
+    .reveal-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        z-index: 1005;
+        background-color: rgba(24, 63, 50, 0.95);
+        overflow-y: auto;
+    }
+    .reveal {
+        right: auto;
+        left: auto;
+        margin: 0 auto;
+    }
+    .select-message {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        display: block;
+        letter-spacing: 0.100em;
+    }
+    .margin-bottom-16-px {
+        margin-bottom: 16px;
+    }
+    .or-div {
+        letter-spacing: 0.100em;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .search-message {
+        display: block;
+        text-align: left;
+        font-size: 0.95rem;
+    }
+    .main-label {
+        font-weight: bold;
+        color: white;
+        padding: 0px 3px;
+    }
+    .main-opt {
+        font-weight: bold;
+        font-size: 80%;
+        padding: 0px 3px;
+        color: #ffffff;
+    }
+    .main-sub {
+        font-size: 75%;
+        padding: 0px 3px;
+        color: #ffffff;
+    }
+    .in-field {
+        margin: 10px 0px;
+    }
+    a.footer-message {
+        text-decoration: underline;
+    }
+    .footer-message {
+        text-align: center;
+        color: white;
+        font-size: 0.875rem;
+        width: 100%;
+        padding: 0.5rem 0rem;
+        line-height: calc(19/ 14);
+        font-family: 'ProximaNova-Regular';
+    }
+    .form-section {
+        color: #ffffff;
+        margin: 30px 0px 0px 0px;
+    }
+    .form-title-section {
+        width: 100%;
+        margin: 0px auto;
+        font-size: 1.1875rem;
+        line-height: 1.368421;
+        margin-top: 0rem;
+        display: inline;
+        text-align: center;
+        margin-bottom: 1rem;
+        letter-spacing: 0.100em;
+        font-weight: 600;
+        text-align: center;
+    }
+    .policy-link {
+        text-decoration: underline;
+    }
+    label {
+        font-size: 0.92rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 0.5rem 0rem 0.3rem 0rem;
+        font-family: 'ProximaNova-Regular';
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+    }
+    .form-element__control {
+        color: black;
+        font-size: 0.875rem;
+        text-align: left;
+    }
+    .add-action-button {
+        width: 100%;
+        background-color: #004B3D;
+        color: #ffffff;
+        padding: 10px 5px;
+        font-size: 0.9rem;
+        letter-spacing: 2.1px;
+        margin: 10px 0;
+        cursor: pointer;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 1px solid #ffffff;
+    }
+    .add-action-button:hover {
+        background-color: #ffffff;
+        color: #004B3D;
+        border: 1px solid #004B3D;
+    }
+    .slds-input {
+        font-size: 1rem;
+    }
+    .progress-bar {
+        width: 480px;
+        margin: 50px auto;
+    }
+    .status-image {
+        width: 480px;
+    }
+    .cafe-popup-label {
+        color: #ffffff;
+    }
+    .no-products {
+        background-color: white;
+        font-family: 'ProximaNova-Regular';
+        text-align: center;
+        margin-top: 5%;
+    }
+    .no-products-header {
+        font-family: 'AdobeGaramondProRegular';
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: #004b3d;
+        font-size: 26px !important;
+        background-color: white;
+        margin: 0px;
+    }
+    .no-product-close {
+        margin: 10px;
+    }
+    .no-product-message {
+        color: #6c6158;
+        font-family: 'ProximaNova-Regular';
+    }
+    .no-products-ok-button {
+        width: 100%;
+        background-color: white;
+        color: rgba(24, 63, 50, 0.95);
+        text-transform: uppercase;
+        margin: 20px auto;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        border: 2px Solid rgba(24, 63, 50, 0.95);
+        border-radius: 0px;
+        height: 40px;
+    }
+    .no-products-ok-button:hover {
+        color: #ffffff;
+        background-color: rgba(24, 63, 50, 0.95);
+    }
+    .header-font {
+        font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    }
+    .content-font {
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .reveal.add-address-modal {
+        top: 30%;
+        margin-bottom: 20px;
+    }
+    .header {
+        margin-bottom: 2rem;
+        position: relative;
+        border: none;
+        background: none;
+    }
+}

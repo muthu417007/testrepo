@@ -1,0 +1,346 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+</div>
+<div class="account-profile">
+    <div class="mainContent">
+        <div class="middleSection">
+            <section class="profile-information-section">
+                <div class="container">
+                    <h1 class="title">{pageTitleLabel}</h1>
+                </div>
+            </section>
+        </div>
+        <div class="cont-body" if:true={contact}>
+            <div class="field-item">
+                <div class="item space-between">
+                    <div>
+                        <div>
+                            <div class="item-details">
+                                <div class="field-label">
+                                    <span>{fullNameLabel}</span>
+                                </div>
+                                <div class="field-value">
+                                    <span>{contactName}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edit-div" if:true={isNameEditOpen}>
+                            <div>
+                                <button class="close-Button" data-value="name" onclick={handleCloseEdit} aria-modal="false">
+                                    <span class="close-icon">x</span>
+                                </button>
+                            </div>
+                            <div class="in-field">
+                                <label class="custom-label" for="firstName">
+                                        <span class="main-label">{firstNameLabel}</span>
+                                    </label>
+                                <lightning-input type="text" id="firstName" class="validate" value={firstName} onchange={handleFirstNameChange} variant="label-hidden" required>
+                                </lightning-input>
+                            </div>
+                            <div class="in-field">
+                                <label class="custom-label" for="lastName">
+                                        <span class="main-label">{lastNameLabel}</span>
+                                    </label>
+                                <lightning-input type="text" id="lastName" class="validate" value={lastName} onchange={handleLastNameChange} variant="label-hidden" required>
+                                </lightning-input>
+                            </div>
+                            <div class="in-field">
+                                <button class="update-button" data-id={contact.Id} onclick={handleNameEditSubmit} name="update address" title="">UPDATE NAME</button>
+                            </div>
+                        </div>
+                        <div if:true={isNameUpdated}>
+                            <span class="update-message">{editNameSuccessLabel}</span>
+                        </div>
+                    </div>
+                    <div class="account-details-action-link">
+                        <div>
+                            <a if:false={isNameEditOpen} class="edit-link" onclick={handleNameEdit}>Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field-item">
+                <div class="item space-between">
+                    <div>
+                        <div>
+                            <div class="item-details">
+                                <div class="field-label">
+                                    <span>{emailAddressLabel}</span>
+                                </div>
+                                <div class="field-value">
+                                    <span>{contactEmail}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-div" if:true={isEmailEditOpen}>
+                            <button class="close-Button" data-value="email" onclick={handleCloseEdit} aria-modal="false">
+                                <span class="close-icon">x</span>
+                            </button>
+                            <div class="in-field">
+                                <label class="custom-label" for="email">
+                                        <span class="main-label">{emailAddressEditLabel}</span>
+                                    </label>
+                                <lightning-input type="text" id="email" class="validate" pattern={emailPattern} onchange={handleEmailChange} message-when-pattern-mismatch={emailPatternValidationMessage} value={contact.Email} variant="label-hidden" required></lightning-input>
+                            </div>
+                            <div class="in-field">
+                                <button class="update-button" data-id={contact.Id} onclick={handleEmailEditSubmit} name="update address" title="">UPDATE EMAIL</button>
+                            </div>
+                        </div>
+                        <div if:true={isEmailUpdated}>
+                            <span class="update-message">{editEmailSuccessLabel}</span>
+                        </div>
+                        <div if:false={isEmailVerified}>
+                            <span if:false={emailVerificationSent} class="update-message-email">Your email is not verified. Please&nbsp;<a class="email-verify" onclick={sendVerificationEmail}>verify your email.</a></span>
+                            <div if:true={emailVerificationSent}>
+                                <span class="update-message-email">
+                                    A verification email has been sent to you with a link to verify your account. 
+                                </span>
+                                <br>
+                                <span class="update-message-email">
+                                    Not seeing the email we sent? Don't worry, we can send it again.
+                                </span>
+                                <div>
+                                    <span class="update-message-email">
+                                    <a class="resend-link"
+                                    onclick={sendVerificationEmail}>resend verification email.</a>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div if:true={isEmailUpdatedExist}>
+                            <span class="already-exist-message">{editEmailExistLabel}</span>
+                        </div>
+                    </div>
+                    <div class="account-details-action-link">
+                        <div>
+                            <span if:false={isEmailEditOpen} class="delete-link">
+                                <c-mya_delete-account></c-mya_delete-account>
+                            
+                                <a if:false={isEmailEditOpen} class="edit-link" onclick={handleEmailEdit}>{editOptionLabel}</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field-item">
+                <div class="item space-between">
+                    <div>
+                        <div>
+                            <div class="item-details">
+                                <div class="field-label">
+                                    <span>{passwordLabel}</span>
+                                </div>
+                                <div class="field-value">
+                                    <span>********</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-div" if:true={isPasswordEditOpen}>
+                            <button class="closeButton" onclick={handleCloseEdit} aria-modal="false">
+                                <span class="close-icon">x</span>
+                            </button>
+                            <div class="in-field">
+                                <label class="custom-label" for="newpassword">
+                                        <span class="main-label">New Password</span>
+                                    </label>
+                                <lightning-input type="text" id="newpassword" class="validate" value="" variant="label-hidden" required="required"></lightning-input>
+                            </div>
+                            <div class="in-field">
+                                <label class="custom-label" for="reenterpassword">
+                                        <span class="main-label">Reenter New Password</span>
+                                    </label>
+                                <lightning-input type="text" id="reenterpassword" class="validate" value="" variant="label-hidden" required="required"></lightning-input>
+                            </div>
+                            <div class="in-field">
+                                <button class="update-button" data-id={contact.Id} onclick={handlePasswordEditSubmit} name="update address" title="">UPDATE
+                                        PASSWORD</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-details-action-link">
+                        <a if:false={isPasswordEditOpen} class="edit-link" onclick={navigateToPasswordReset}>{editOptionLabel}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="phone-section">
+        <div class="field-item" if:true={primaryPhone}>
+            <div class="item space-between">
+                <div>
+                    <div>
+                        <div class="item-details">
+                            <div class="field-label">
+                                <span>{primaryPhoneNumberLabel}</span>
+                            </div>
+                            <div class="field-value">
+                                <lightning-formatted-phone value={primaryPhone} disabled></lightning-formatted-phone>
+                            </div>
+                        </div>
+                    </div>
+                    <div if:true={isPrimaryPhoneEditOpen}>
+                        <div>
+                            <span>
+                                    {phoneNumberConsentMessage}
+                            </span>
+                        </div>
+                        <div class="edit-div">
+                            <button class="closeButton" data-value="primaryPhone" onclick={handleCloseEdit} aria-modal="false">
+                                <span class="close-icon">x</span>
+                            </button>
+                            <div class="in-field">
+                                <label class="custom-label" for="primaryPhone">
+                                        <span class="main-label">{primaryPhoneNumberEditLabel}</span>
+                                    </label>
+                                <lightning-input type="text" id="primaryPhone" class="validate" value={editedPrimaryPhone} pattern={phonePattern} message-when-pattern-mismatch={phonePatternValidationMessage} onchange={handlePrimaryPhoneChange} variant="label-hidden" required>
+                                </lightning-input>
+                            </div>
+                            <div if:false={isValidPrimaryPhoneNumber}>
+                                <span class="update-message">{editPhoneValidationLabel}</span>
+                            </div>
+                            <div class="in-field">
+                                <button class="update-button" data-id={primaryPhoneId} onclick={handlePrimaryPhoneEditSubmit} name="update primary phone" title="">UPDATE PRIMARY PHONE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div if:true={isPrimaryPhoneUpdated}>
+                        <span class="update-message">{editPrimaryPhoneSuccessLabel}</span>
+                    </div>
+                </div>
+                <div class="account-details-action-link">
+                    <div class="account-details-section-link">
+                        <a if:false={isPrimaryPhoneEditOpen} data-id={primaryPhoneId} class="remove-link" onclick={handlePhoneRemove}>{removeOptionLabel}</a>
+                        <a if:false={isPrimaryPhoneEditOpen} class="edit-link" onclick={handlePrimaryPhoneEdit}>{editOptionLabel}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div if:true={additionalPhoneList}>
+            <template for:each={additionalPhoneList} for:item="field">
+                    <div key={field.Id} class="field-item">
+                        <div class="item space-between">
+                            <div>
+                                <div>
+                                    <div class="item-details">
+                                        <div class="field-label">
+                                            <span>{additionalPhoneNumberLabel}</span>
+                                        </div>
+                                        <div class="field-value">
+                                            <lightning-formatted-phone value={field.Phone__c} disabled></lightning-formatted-phone>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-div" if:true={field.IsEdit}>
+                                    <button class="closeButton" data-value="additionalPhone" data-id={field.Id} onclick={handleCloseEdit} aria-modal="false">
+                                        <span class="close-icon">x</span>
+                                    </button>
+                                    <div class="in-field">
+                                        <label class="custom-label" for={field.Phone__c}>
+                                            <span class="main-label">{additionalPhoneNumberEditLabel}</span>
+                                        </label>
+                                        <lightning-input type="text" id={field.Phone__c} data-id={field.Id}
+                                            class="validate" value={field.EditedPhoneNumber} pattern={phonePattern}
+                                            message-when-pattern-mismatch={phonePatternValidationMessage}
+                                            onchange={handleAdditionalPhoneChange} variant="label-hidden" required>
+                                        </lightning-input>
+                                        <div class="margin-15">
+                                            <lightning-input type="checkbox" label="Make this my primary phone number" onchange={handleAdditionalPrimaryCheck}></lightning-input>
+                                        </div>       
+                                    </div>
+                                    <div if:false={field.IsValid}>
+                                        <span class="update-message">{editPhoneValidationLabel}</span>
+                                    </div>
+                                    
+                                    <div class="in-field">
+                                        <button class="update-button" data-id={field.Id}
+                                            onclick={handleAdditionalPhoneEditSubmit} name="update primary phone"
+                                            title="">UPDATE ADDITIONAL PHONE</button>
+                                    </div>
+                                </div>
+                                <div if:true={field.IsUpdated}>
+                                    <span class="update-message">{editPhoneSuccessLabel}</span>
+                                </div>
+                            </div>
+                            <div class="account-details-action-link">
+                                <div class="account-details-section-link">
+                                    <a if:false={field.IsEdit} data-id={field.Id} class="remove-link"
+                                        onclick={handlePhoneRemove}>{removeOptionLabel}</a>
+                                    <a if:false={field.IsEdit} data-id={field.Id} class="edit-link"
+                                        onclick={handleAdditionalPhoneEdit}>{editOptionLabel}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+        </div>
+        <div class="item-details add-phone-details" if:false={addPhone}>
+            <a onclick={handleAddPhone}>
+                <span class="add-text"><b class="add-icon">+</b><b
+                            class="add-label">{addPhoneNumberLabel}</b></span>
+            </a>
+        </div>
+        <div if:true={addPhone} class="item">
+            <div class="add-div">
+                <button class="closeButton" data-value="newPhone" onclick={handleCloseEdit} aria-modal="false">
+                        <span class="close-icon">x</span>
+                </button>
+                <div class="in-field">
+                    <label class="custom-label" for="additionalPhone">
+                            <span class="main-label">{addPhoneNumberEditLabel}</span>
+                        </label>
+
+                    <lightning-input type="text" id="additionalPhone" class="validate" value={additionalPhone} pattern={phonePattern} message-when-pattern-mismatch={phonePatternValidationMessage} onchange={handleAddPhoneChange} variant="label-hidden" required></lightning-input>
+                    <div class="margin-15">
+                        <lightning-input if:true={isVisiblePrimaryCheck} type="checkbox" label="Make it as primary" onchange={handleCheck}></lightning-input>
+                    </div>
+                </div>
+
+                <div if:true={isAlreadyExist}>
+                    <span class="update-message">{editPhoneValidationLabel}</span>
+                </div>
+                <div class="in-field">
+                    <button class="update-button" onclick={handleAddPhoneSubmit} name="add phone number" title="">ADD PHONE NUMBER</button>
+                </div>
+            </div>
+        </div>
+        <template if:true={deleteModalOpen}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1">
+                    <div class="reveal-overlay">
+                        <div class="reveal add-address-modal" id="modal-01">
+                            <header class="slds-modal__header no-border">
+                                <div class="close-button">
+                                    <a onclick={closeDeleteModal}><span class="close-icon">x</span></a>
+                                </div>
+                                <h3 class="text-center modal-header">{removePhoneModalHeader}</h3>
+                            </header>
+                            <div class="delete-message">
+                                <div>
+                                    <span>
+                                        {removePhoneModalBody}
+                                    </span>
+                                </div>
+                            </div>
+                            <footer>
+                                <div class="button-action">
+                                    <div>
+                                        <button class="popup-button" name="cancel delete" onclick={closeDeleteModal}
+                                            title="">{removePhoneModalCancelLabel}</button>
+                                    </div>
+                                    <div>
+                                        <button class="popup-button" name="submit delete" onclick={submitDelete}
+                                            title="">{removePhoneModalSubmitLabel}</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </section>
+            </template>
+    </div>
+</div>
+</template>

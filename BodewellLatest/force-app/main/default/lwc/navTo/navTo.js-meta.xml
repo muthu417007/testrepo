@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Scroll To</masterLabel>
+    <description>Scrolls the page to a specified Scroll To Component</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="String" name="name" label="Name" description="Use this will the Scroll Down Component. The name here should match the value in that component."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

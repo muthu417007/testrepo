@@ -1,0 +1,639 @@
+<template>
+    <div id="orderPrint" class="c-container">
+        <div class="field-wrapper callout-title-container Haier-Monogram-only">
+            <div class="title-bar-circles-left"></div>
+            <div class="fielditems callout-title-inner-container">
+                <div class="fielditem">
+                    <h3>Order Details</h3>
+                </div>
+
+            </div>
+            <div class="title-bar-circles-right"></div>
+        </div>
+
+        <!-- <div>{recordId}</div> -->
+        <template if:true={Details}>
+            <lightning-layout multiple-rows="true">
+                <!-- Heading -->
+                <!-- <lightning-layout-item size="12"> -->
+                <!-- </lightning-layout-item> -->
+                <!-- Navigation and Print -->
+                <lightning-layout-item size="12">
+                    <div>
+                        <button class="product-link slds-float_left" onclick={handleBackOrder}>&lt;back</button>
+                        <button class="product-link right-btn" onclick={handlePrint}>
+                            <lightning-icon style="color:#005aaa;" icon-name='utility:print' alternative-text='print'
+                                size='xx-small' title='print'></lightning-icon>Print Order
+                        </button>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" class="slds-m-right_large"
+                    style="background-color: rgb(211, 209, 209)">
+                    <div class="mob-align">
+                        <!-- <template iterator:it={order}> -->
+                        <!-- <div key={it.value.id} class="slds-grid slds-wrap slds-clearfix slds-p-around_small"> -->
+                        <div
+                            class="slds-float_left slds-col slds-size_8-of-12 slds-p-around_small padd-out mob-width-align">
+                            <lightning-layout vertical-align="stretch" multiple-rows="true">
+                                <lightning-layout-item flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small"
+                                    style="background-color: white;margin-bottom: 2rem;">
+                                    <!-- <div class="paddingaround"> -->
+                                    <div class="sub-title capitalise">Order Number: <span>{Details.OrderNumber}</span>
+                                    </div>
+                                    <div class="sub-title capitalise">Reference Number: <span>{Details.OrderRefNumber}</span></div>
+                                    <div class="sub-title capitalise">Order Date: <span>{Details.OrderDate}</span></div>
+                                    <!-- </div> -->
+                                </lightning-layout-item>
+
+                                <lightning-layout-item if:false={Details.MixedShipFlag} flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small padd-internal">
+                                    <div>
+                                        <!-- delivery method section -->
+                                        <div if:true={Delivery}>
+                                            <div class="sub-title uppercase">DELIVER TO</div>
+                                            <div class="test">
+                                                <p class="details-text slds-float_left">
+                                                    <b>{Details.CustName}</b>, {Details.ShipAddLine1}, {Details.ShipAddLine2}
+                                                </p>
+                                            </div>
+                                            <div if:false={Details.BackOrderFlag}>
+                                                <!-- <div if:true={Details.OrderStatusPendFlag}>
+                                                    <div class="orderStatus">Scheduled Delivery Date:</div>                                               
+                                                </div> -->
+                                                <div if:true={Details.OrderStatusCompFlag}>
+                                                    <div class="orderStatus">Delivered</div>
+                                                </div>
+                                                <div if:true={Details.OrderStatusCancelFlag}>
+                                                    <div class="orderStatus">Cancelled</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- shipping -->
+                                        <div if:true={Ship}>
+                                            <div class="sub-title uppercase">SHIP TO</div>
+                                            <p class="slds-float_left"><b>{Details.CustName}</b>, {Details.ShipAddLine1}, {Details.ShipAddLine2}</p>
+                                            <div if:false={Details.BackOrderFlag}>
+                                                <div if:true={Details.OrderStatusPendFlag}>
+                                                    <div if:false={Details.IsOrderAwaitingShippingFlag}>
+                                                        <div class="orderStatus">Shipped {Details.OrderShipDate}</div>
+                                                        <p class="slds-float_left">(FedEx Ground Usually Ships In 2-7
+                                                        Business Days)</p>
+                                                    </div>
+                                                    <div if:true={Details.IsOrderAwaitingShippingFlag} class="orderStatus">Awaiting Shipping</div>
+                                                </div>
+                                                <div if:true={Details.OrderStatusCompFlag}>
+                                                    <div class="orderStatus">Shipped {Details.OrderShipDate}</div>
+                                                </div>
+                                                <div if:true={Details.OrderStatusCancelFlag}>
+                                                    <div class="orderStatus">Cancelled</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- pickup -->
+                                        <div class="slds-float_left" if:true={PickUp}>
+                                            <div class="sub-title uppercase">PICK UP LOCATION</div>
+                                            <div if:true={Agent}>
+                                                <p><b>{Agent.name}</b>, {Agent.address}, {Agent.city}, {Agent.state}&nbsp;{Agent.zipcode}
+                                                </p>
+                                                <p>{Agent.phone}</p>
+                                            </div>
+                                            <div if:true={Details.OrderStatusPendFlag}>
+                                                <div if:false={Details.IsOrderAwaitingReturnFlag} class="orderStatus">Will Call Items</div>
+                                                <div if:true={Details.IsOrderAwaitingReturnFlag} class="orderStatus">Awaiting Return</div>
+                                            </div>
+                                            <div if:true={Details.OrderStatusCompFlag}>
+                                                <div class="orderStatus">Items Ready For PickUp</div>
+                                            </div>
+                                            <div if:true={Details.OrderStatusCancelFlag}>
+                                                <div class="orderStatus">Cancelled</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <!-- backorder -->
+                                            <div if:true={Details.BackOrderFlag}>
+                                                <div class="backorder">On Backorder</div>
+                                            </div>
+                                        </div>
+                                        <!-- status section ends -->
+                                        <!-- related links section -->
+                                        <div class="product-link">
+                                            <div if:false={Details.OrderStatusCompFlag}>
+                                                <div if:true={Details.ShipMetHomDelFlag}>
+                                                    <div>
+                                                        <div if:true={Details.ShowTrackMyOrder} class="track-my-order">
+                                                            <lightning-icon class="comment-icon" icon-name='utility:truck' alternative-text='info'
+                                                                size='xx-small' title='info'></lightning-icon>
+                                                            <lightning-formatted-url class="slds-m-left_xx-small " label="Track My Order"
+                                                                value={Details.TrackMyOrderURL}>
+                                                            </lightning-formatted-url>
+                                                        </div>
+                                                        <div if:true={Details.ShowReschedule} class="reschedule">
+                                                            <lightning-icon class="comment-icon" icon-name='utility:event' alternative-text='info'
+                                                                size='xx-small' title='info'></lightning-icon>
+                                                            <lightning-formatted-url class="slds-m-left_xx-small " label="Reschedule"
+                                                                value={Details.RescheduleURL}>
+                                                            </lightning-formatted-url>
+                                                        </div>
+                                                        <div class="delivery-info" if:true={Details.TextTrackFlag}>
+                                                            <lightning-icon class="comment-icon" icon-name='utility:info' alternative-text='info'
+                                                                size='xx-small' title='info'></lightning-icon>
+                                                            <lightning-formatted-url class="slds-m-left_xx-small " label="Delivery Information"
+                                                                value={Details.DeliveryInfoURL}>
+                                                            </lightning-formatted-url>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- related link section ends flase open delivery -->
+                                        <!-- <div if:true={DelBackOrder}> -->
+                                        <div if:false={DeliveryPending}>
+                                            <template if:true={Details.LineItemList}>
+                                                <template for:each={Details.LineItemList} for:item="item">
+                                                    <div key={item.ItemModelNo}>
+                                                        <div if:false={item.isServiceFlag}>
+                                                            <hr if:true={item.ShowLineItemFlagDetail}>
+                                                        </div>
+                                                        <!-- products list -->
+                                                        <div if:true={item.ShowLineItemFlagDetail}
+                                                            class="slds-clearfix padding image-inline">
+                                                            <!-- product image -->
+                                                            <div if:true={item.LineItemURL}
+                                                                    class="slds-float_left imagecell">
+                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                            src={item.LineItemURL}></p>
+                                                                </div>
+                                                                <div if:false={item.LineItemURL}
+                                                                    class="slds-float_left imagecell">
+                                                                    <div if:false={item.isServiceFlag}>
+                                                                        <div if:true={item.StandInstallFlag}>
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand" src={image}></p>
+                                                                        </div>
+                                                                        <div if:false={item.StandInstallFlag}>
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand" src={noImage}></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div if:true={item.isServiceFlag}>                                                                        
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand-service" src={serviceImage}></p>                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            <!-- product description -->
+                                                        <div class="slds-float_left desccell text-top-margin">
+                                                            <div class="itemdetails">{item.ProdDescription}
+                                                            </div>
+                                                            <div if:false={item.isServiceFlag} class="itemdetails">{item.ItemModelNo}</div>
+                                                            <div class="itemdetails">Qty: {item.ItemQuantity}
+                                                            </div>
+                                                        </div>
+                                                        <!-- unit price -->
+                                                        <div class="slds-float_right float-left text-top-margin">
+                                                            <div class="itemdetails">
+                                                                <strong>${item.ItemUnitPriceString}</strong>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <!-- end of products list -->
+                                                    </div>
+                                                </template>
+                                            </template>
+                                        </div>
+
+                                        <!-- product details pending delivery true -->
+                                        <div if:true={DeliveryPending}>
+                                            <template if:true={LineIt}>
+                                                <template for:each={LineIt} for:item="item">
+                                                    <div key={item.ScheduleDate}>
+                                                        <div if:true={item.AssetDetail}>
+                                                            <div if:false={Details.BackOrderFlag}>
+                                                                <div class="orderStatus">Scheduled Delivery Date: <span>{item.ScheduleDate}</span></div>
+                                                            </div>
+                                                            <template for:each={item.AssetDetail} for:item="Ast">
+                                                                <div key={Ast.ItemModelNo}>
+                                                                    <div if:false={Ast.isServiceFlag}>
+                                                            <hr if:true={Ast.ShowLineItemFlagDetail}>
+                                                        </div>
+                                                        <!-- products list -->
+                                                                    <div if:true={Ast.ShowLineItemFlagDetail}
+                                                                        class="slds-clearfix padding image-inline">
+                                                                        <!-- product image -->
+                                                                        <div if:true={Ast.LineItemURL}
+                                                                            class="slds-float_left imagecell">
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    src={Ast.LineItemURL}></p>
+                                                                        </div>
+                                                                        <div if:false={Ast.LineItemURL}
+                                                                            class="slds-float_left imagecell">
+                                                                            <div if:false={Ast.isServiceFlag}>
+                                                                                <div if:true={Ast.StandInstallFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand" src={image}>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div if:false={Ast.StandInstallFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand"
+                                                                                            src={noImage}></p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div if:true={Ast.isServiceFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand-service" src={serviceImage}>
+                                                                                    </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- product description -->
+                                                                        <div class="slds-float_left desccell text-top-margin">
+                                                                            <div class="itemdetails">
+                                                                                {Ast.ProdDescription}</div>
+                                                                            <div if:false={Ast.isServiceFlag} class="itemdetails">{Ast.ItemModelNo}
+                                                                            </div>
+                                                                            <div class="itemdetails">
+                                                                                Qty: {Ast.ItemQuantity}</div>
+                                                                        </div>
+                                                                        <!-- unit price -->
+                                                                        <div class="slds-float_right float-left text-top-margin">
+                                                                            <div class="itemdetails">
+                                                                                <strong>${Ast.ItemUnitPriceString}</strong>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end of products list -->
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <!-- end of open delivery section -->
+                                </lightning-layout-item>
+                                <!-- mixed order -->
+                                <lightning-layout-item if:true={Details.MixedShipFlag} flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small" style="background-color:white">
+                                    <!-- delivery method section -->
+
+                                    <div class="sub-title uppercase">DELIVER TO</div>
+                                    <p class="slds-float_left">
+                                        <b>{Details.CustName}</b>, {Details.ShipAddLine1}, {Details.ShipAddLine2}
+                                    </p>
+                                    <div if:false={Details.BackOrderFlag}>
+                                        <!-- <div if:true={Details.OrderStatusPendFlag}>
+                                                        <div class="orderStatus">Scheduled Delivery Date:</div>                                               
+                                                    </div> -->
+                                        <div if:true={Details.OrderStatusCompFlag}>
+                                            <div class="orderStatus">Delivered</div>
+                                        </div>
+                                        <div if:true={Details.OrderStatusCancelFlag}>
+                                            <div class="orderStatus">Cancelled</div>
+                                        </div>
+                                    </div>
+                                    <!-- backorder -->
+                                    <div if:true={Details.BackOrderFlag}>
+                                        <div class="backorder">On Backorder</div>
+                                    </div>
+                                    <!-- status section ends -->
+                                    <!-- related links section -->
+                                    <div class="product-link">
+                                        <div if:false={Details.OrderStatusCompFlag}>
+                                            <div if:true={Details.ShipMetHomDelFlag}>
+                                                <div>
+                                                    <div if:true={Details.ShowTrackMyOrder} class="track-my-order">
+                                                        <lightning-icon class="comment-icon" icon-name='utility:truck' alternative-text='info'
+                                                            size='xx-small' title='info'></lightning-icon>
+                                                        <lightning-formatted-url class="slds-m-left_xx-small " label="Track My Order"
+                                                            value={Details.TrackMyOrderURL}>
+                                                        </lightning-formatted-url>
+                                                    </div>
+                                                    <div if:true={Details.ShowReschedule} class="reschedule">
+                                                        <lightning-icon class="comment-icon" icon-name='utility:event' alternative-text='info'
+                                                            size='xx-small' title='info'></lightning-icon>
+                                                        <lightning-formatted-url class="slds-m-left_xx-small " label="Reschedule"
+                                                            value={Details.RescheduleURL}>
+                                                        </lightning-formatted-url>
+                                                    </div>
+                                                    <div class="delivery-info" if:true={Details.TextTrackFlag}>
+                                                        <lightning-icon class="comment-icon" icon-name='utility:info' alternative-text='info'
+                                                            size='xx-small' title='info'></lightning-icon>
+                                                        <lightning-formatted-url class="slds-m-left_xx-small " label="Delivery Information"
+                                                            value={Details.DeliveryInfoURL}>
+                                                        </lightning-formatted-url>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- related link section ends flase open delivery -->
+                                    <div if:false={DeliveryPending}>
+                                        <template if:true={Details.LineItemList}>
+                                            <template for:each={Details.LineItemList} for:item="item">
+                                                <div key={item.ItemModelNo}>
+                                                    <div if:false={item.isServiceFlag}>
+                                                            <hr if:true={item.ShowLineItemFlagDetail}>
+                                                        </div>
+                                                        <!-- products list -->
+                                                    <div if:true={item.ShipHomDelFlag}>
+                                                        <div if:true={item.ShowLineItemFlagDetail}
+                                                            class="slds-clearfix padding image-inline">
+                                                            <!-- product image -->
+                                                            <div if:true={item.LineItemURL}
+                                                                    class="slds-float_left imagecell">
+                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                            src={item.LineItemURL}></p>
+                                                                </div>
+                                                                <div if:false={item.LineItemURL}
+                                                                    class="slds-float_left imagecell">
+                                                                    <div if:false={item.isServiceFlag}>
+                                                                        <div if:true={item.StandInstallFlag}>
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand" src={image}></p>
+                                                                        </div>
+                                                                        <div if:false={item.StandInstallFlag}>
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand" src={noImage}></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div if:true={item.isServiceFlag}>                                                                        
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    class="free-stand-service" src={serviceImage}></p>                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            <!-- product description -->
+                                                        <div class="slds-float_left desccell text-top-margin">
+                                                            <div class="itemdetails">{item.ProdDescription}
+                                                            </div>
+                                                            <div if:false={item.isServiceFlag} class="itemdetails">{item.ItemModelNo}</div>
+                                                            <div class="itemdetails">Qty: {item.ItemQuantity}
+                                                            </div>
+                                                        </div>
+                                                        <!-- unit price -->
+                                                        <div class="slds-float_right float-left text-top-margin">
+                                                            <div class="itemdetails">
+                                                                <strong>${item.ItemUnitPriceString}</strong>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of products list -->
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <!-- product details pending delivery true -->
+                                    <div if:true={DeliveryPending}>
+                                        <template if:true={LineIt}>
+                                            <template for:each={LineIt} for:item="item">
+                                                <div key={item.ScheduleDate}>
+                                                    <div if:true={item.AssetDetail}>
+                                                        <div if:false={Details.BackOrderFlag}>
+                                                            <div class="orderStatus">Scheduled Delivery Date: <span>{item.ScheduleDate}</span></div>
+                                                        </div>
+                                                        <template for:each={item.AssetDetail} for:item="Ast">
+                                                            <div key={Ast.ItemModelNo}>
+                                                                <div if:false={Ast.isServiceFlag}>
+                                                            <hr if:true={Ast.ShowLineItemFlagDetail}>
+                                                        </div>
+                                                        <!-- products list -->
+                                                                <div if:true={Ast.ShipHomDelFlag}>
+
+                                                                    <div if:true={Ast.ShowLineItemFlagDetail}
+                                                                        class="slds-clearfix padding image-inline">
+                                                                        <!-- product image -->
+                                                                        <div if:true={Ast.LineItemURL}
+                                                                            class="slds-float_left imagecell">
+                                                                            <p class="slds-p-around_medium text-align-center"><img
+                                                                                    src={Ast.LineItemURL}></p>
+                                                                        </div>
+                                                                        <div if:false={Ast.LineItemURL}
+                                                                            class="slds-float_left imagecell">
+                                                                            <div if:false={Ast.isServiceFlag}>
+                                                                                <div if:true={Ast.StandInstallFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand" src={image}>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div if:false={Ast.StandInstallFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand"
+                                                                                            src={noImage}></p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div if:true={Ast.isServiceFlag}>
+                                                                                    <p class="slds-p-around_medium text-align-center"><img
+                                                                                            class="free-stand-service" src={serviceImage}>
+                                                                                    </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- product description -->
+                                                                        <div class="slds-float_left desccell text-top-margin">
+                                                                            <div class="itemdetails">
+                                                                                {Ast.ProdDescription}</div>
+                                                                            <div if:false={Ast.isServiceFlag} class="itemdetails">{Ast.ItemModelNo}
+                                                                            </div>
+                                                                            <div class="itemdetails">
+                                                                                Qty: {Ast.ItemQuantity}</div>
+                                                                        </div>
+                                                                        <!-- unit price -->
+                                                                        <div class="slds-float_right float-left text-top-margin">
+                                                                            <div class="itemdetails">
+                                                                                <strong>${Ast.ItemUnitPriceString}</strong>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of products list -->
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <!-- end of open delivery section -->
+                                </lightning-layout-item>
+
+                                <lightning-layout-item if:true={Details.MixedShipFlag} flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small" style="background-color:white">
+                                    <!-- shipping -->
+                                    <div class="sub-title uppercase">SHIP TO</div>
+                                    <p class="slds-float_left">
+                                        <b>{Details.CustName}</b>, {Details.ShipAddLine1}, {Details.ShipAddLine2}
+                                    </p>
+                                    <div if:false={Details.BackOrderFlag}>
+                                        <div if:true={Details.OrderStatusPendFlag}>
+                                            <div if:false={Details.IsOrderAwaitingShippingFlag}>
+                                                <div class="orderStatus">Shipped {Details.OrderShipDate}</div>
+                                                <p class="slds-float_left">(FedEx Ground Usually Ships In 2-7
+                                                Business Days)</p>
+                                            </div>
+                                            <div if:true={Details.IsOrderAwaitingShippingFlag} class="orderStatus">Awaiting Shipping</div>
+                                        </div>
+                                        <div if:true={Details.OrderStatusCompFlag}>
+                                            <div class="orderStatus">Shipped {Details.OrderShipDate}</div>
+                                        </div>
+                                        <div if:true={Details.OrderStatusCancelFlag}>
+                                            <div class="orderStatus">Cancelled</div>
+                                        </div>
+                                        <!-- backorder -->
+                                        <div if:true={Details.BackOrderFlag}>
+                                            <div class="backorder">On Backorder</div>
+                                        </div>
+                                    </div>
+                                    <template if:true={Details.LineItemList}>
+                                        <template for:each={Details.LineItemList} for:item="item">
+                                            <div key={item.ItemModelNo}>
+                                                <div if:false={item.isServiceFlag}>
+                                                            <hr if:true={item.ShowLineItemFlagDetail}>
+                                                        </div>
+                                                        <!-- products list -->
+                                                <div if:true={item.ShipFedexFlag}>
+                                                    <div if:true={item.ShowLineItemFlagDetail}
+                                                        class="slds-clearfix padding image-inline">
+                                                        <!-- product image -->
+                                                        <div if:true={item.LineItemURL}
+                                                            class="slds-float_left imagecell">
+                                                            <p class="slds-p-around_medium text-align-center"><img src={item.LineItemURL}>
+                                                            </p>
+                                                        </div>
+                                                        <div if:false={item.LineItemURL}
+                                                            class="slds-float_left imagecell">
+                                                            <div if:false={item.isServiceFlag}>
+                                                                <div if:true={item.StandInstallFlag}>
+                                                                    <p class="slds-p-around_medium text-align-center text-align-center"><img
+                                                                            class="free-stand" src={image}></p>
+                                                                </div>
+                                                                <div if:false={item.StandInstallFlag}>
+                                                                    <p class="slds-p-around_medium text-align-center text-align-center"><img
+                                                                            class="free-stand" src={noImage}></p>
+                                                                </div>
+                                                            </div>
+                                                            <div if:true={item.isServiceFlag}>                                                                        
+                                                                            <p class="slds-p-around_medium text-align-center text-align-center"><img
+                                                                                    class="free-stand-service" src={serviceImage}></p>                                                                        
+                                                                    </div>
+                                                        </div>
+                                                        <!-- product description -->
+                                                        <div class="slds-float_left desccell text-top-margin">
+                                                            <div class="itemdetails">{item.ProdDescription}
+                                                            </div>
+                                                            <div if:false={item.isServiceFlag} class="itemdetails">{item.ItemModelNo}</div>
+                                                            <div class="itemdetails">Qty: {item.ItemQuantity}
+                                                            </div>
+                                                        </div>
+                                                        <!-- unit price -->
+                                                        <div class="slds-float_right float-left text-top-margin">
+                                                            <div class="itemdetails">
+                                                                <strong>${item.ItemUnitPriceString}</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end of products list -->
+                                            </div>
+                                        </template>
+                                    </template>
+                                </lightning-layout-item>
+                                <!-- end of mixed order -->
+                            </lightning-layout>
+                        </div>
+                        <div
+                            class="slds-float_right slds-col slds-size_4-of-12 slds-p-around_small padd-out-right mob-width-align">
+                            <lightning-layout vertical-align="stretch" multiple-rows="true"
+                                class="padding-internal-two">
+                                <lightning-layout-item flexibility="auto" size="12" class="slds-p-around_small">
+                                    <div class="sub-title uppercase margin-1">ORDER SUMMARY</div>
+                                    <div class="slds-float_left ">
+                                        <p class="slds-p-left_medium slds-text-heading_medium noMargin ord-left-text">
+                                            Subtotal</p>
+                                        <div if:true={Details.OrdDiscFlag}>
+
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-left-text">
+                                                Discount (-)</p>
+
+                                        </div>
+                                        <div if:true={Ship}>
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-left-text">
+                                                Standard Shipping</p>
+                                        </div>
+                                        <div if:true={Details.OrderDeliveryChargeFlag}>
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-left-text">
+                                                Delivery</p>
+                                        </div>
+                                        <p class="slds-p-left_medium slds-text-heading_medium noMargin ord-left-text">
+                                            Tax</p><br />
+                                        <p class="slds-p-left_medium slds-text-heading_medium font-500 ord-left-text">
+                                            <strong>Total</strong>
+                                        </p>
+                                    </div>
+                                    <div class="slds-float_right">
+                                        <p class="slds-p-right_medium slds-text-heading_medium noMargin ord-right-text">
+                                            ${Details.OrderSubTotalString}</p>
+                                        <div if:true={Details.OrdDiscFlag}>
+
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-right-text">
+                                                ${Details.OrderDiscountString}</p>
+
+                                        </div>
+                                        <div if:true={Ship}>
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-right-text">
+                                                ${Details.OrderShippingCharge}</p>
+                                        </div>
+                                        <div if:true={Details.OrderDeliveryChargeFlag}>
+                                            <p
+                                                class="slds-p-left_medium slds-text-heading_medium noMargin ord-right-text">
+                                                ${Details.OrderDeliveryCharge}</p>
+                                        </div>
+                                        <p class="slds-p-right_medium slds-text-heading_medium noMargin ord-right-text">
+                                            ${Details.OrderTax}</p><br />
+                                        <p class="slds-p-right_medium slds-text-heading_medium font-500 ord-right-text">
+                                            <strong>${Details.OrderTotalString}</strong>
+                                        </p>
+                                    </div>
+                                </lightning-layout-item>
+                                <div>
+                                    <div class="slds-p-around_large slds-float_left"
+                                        style="border-bottom: solid 1px rgb(168, 166, 166);">
+                                        Due to our delivery process, products added to your order 24 hours after it is
+                                        placed may result in additional delivery fees.
+                                    </div>
+                                </div>
+                                <lightning-layout-item flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small"
+                                    style="border-bottom: solid 1px rgb(168, 166, 166);">
+                                    <div class="sub-title uppercase margin-1 ">BILLING DETAILS</div>
+                                    <div class="slds-p-left_large noMargin bill-left-text">{Details.CustName}</div>
+                                    <div class="slds-p-left_large noMargin bill-left-text">{Details.BillAddLine1}</div>
+                                    <div class="slds-p-left_large bill-left-text">{Details.BillAddLine2}</div>
+
+                                </lightning-layout-item>
+                                <lightning-layout-item flexibility="auto" size="12"
+                                    class="slds-m-bottom_medium slds-p-around_small">
+                                    <div class="sub-title uppercase margin-1">CONTACT DETAILS</div>
+                                    <div class="slds-p-left_large noMargin cont-left-text">{Details.CustName}</div>
+                                    <div class="slds-p-left_large noMargin cont-left-text">{Details.CustPhone}</div>
+                                    <div class="slds-p-left_large noMargin cont-left-text-nocap">{Details.CustEmail}
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <!-- </div> -->
+                        <!-- </template> -->
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <div if:true={showMsg} class="slds-text-heading_small">
+            ORDER DETAILS NOT FOUND
+        </div>
+    </div>
+</template>

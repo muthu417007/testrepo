@@ -1,0 +1,225 @@
+:root {
+
+    /* Colors: */
+    ---245b83-action-blue: #245B83;
+    ---000000-black: #000000;
+    ---6f6d6a-dark-gray: #6F6D6A;
+    ---b7b7b7-medium-gray: #B7B7B7;
+    ---f7f7f7-light-gray: #F7F7F7;
+    --unnamed-color-707070: #707070;
+    ---ffffff-white: #FFFFFF;
+    ---f7f1e7-warm-white: #F7F1E7;
+    ---12212e-deep-blue: #12212E;
+    ---ffc01f-sunshine-yellow: #FFC01F;
+    ---0e2d44-denim-blue: #0E2D44;
+    ---ded1b1-tan: #DED1B1;
+    ---f3e5c1-beige: #F3E5C1;
+    ---3e5769-slate: #3E5769;
+    ---728a9c-dusty-blue: #728A9C;
+
+    /* Font/text values */
+    --unnamed-font-family-neue-haas-grotesk-display-pro: Neue Haas Grotesk Display Pro;
+    --unnamed-font-family-neue-haas-grotesk-text-pro: Neue Haas Grotesk Text Pro;
+    --unnamed-font-family-font-awesome-5-free: Font Awesome 5 Free;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-300: 300px;
+    --unnamed-font-weight-medium: medium;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-weight-bold: bold;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-16: 16px;
+    --unnamed-font-size-18: 18px;
+    --unnamed-font-size-19: 19px;
+    --unnamed-font-size-20: 20px;
+    --unnamed-font-size-22: 22px;
+    --unnamed-font-size-32: 32px;
+    --unnamed-font-size-42: 42px;
+    --unnamed-font-size-52: 52px;
+    --unnamed-font-size-60: 60px;
+    --unnamed-font-size-200: 200px;
+    --unnamed-font-size-29-998600006103516: 29.998600006103516px;
+    --unnamed-character-spacing-1-8: 1.8px;
+    --unnamed-character-spacing-0-66: 0.66px;
+    --unnamed-character-spacing-0-8: 0.8px;
+    --unnamed-character-spacing-1-05: 1.05px;
+    --unnamed-character-spacing-1-3: 1.3px;
+    --unnamed-character-spacing-0-42: 0.42px;
+    --unnamed-character-spacing-0-48: 0.48px;
+    --unnamed-character-spacing-0-57: 0.57px;
+    --unnamed-character-spacing-1-5: 1.5px;
+    --unnamed-character-spacing-0-32: 0.32px;
+    --unnamed-character-spacing-0-15: 0.15px;
+    --unnamed-character-spacing--0-4: -0.4px;
+    --unnamed-character-spacing--4: -4px;
+    --unnamed-line-spacing-20: 20px;
+    --unnamed-line-spacing-22: 22px;
+    --unnamed-line-spacing-23: 23px;
+    --unnamed-line-spacing-24: 24px;
+    --unnamed-line-spacing-26: 26px;
+    --unnamed-line-spacing-28: 28px;
+    --unnamed-line-spacing-30: 30px;
+    --unnamed-line-spacing-35: 35px;
+    --unnamed-line-spacing-40: 40px;
+    --unnamed-line-spacing-50: 50px;
+    --unnamed-line-spacing-60: 60px;
+    --unnamed-line-spacing-70: 70px;
+    --unnamed-text-transform-uppercase: uppercase;
+    --unnamed-text-transform-titlecase: titlecase;
+    --unnamed-decoration-underline: underline;
+}
+
+/* Character Styles */
+.footer-link-neue-haas-grotesk-display-pro-—-15pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-300);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-22);
+    letter-spacing: var(--unnamed-character-spacing-0-48);
+    color: var(---245b83-action-blue);
+}
+
+.icon-done-right-guarantee-fontawesome-—-200pt {
+    font-family: var(--unnamed-font-family-font-awesome-5-free);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-200);
+    line-height: var(--unnamed-line-spacing-35);
+    letter-spacing: var(--unnamed-character-spacing--4);
+    color: var(---ffc01f-sunshine-yellow);
+}
+
+.icon-warranties-fontawesome-—-20pt {
+    font-family: var(--unnamed-font-family-font-awesome-5-free);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-20);
+    line-height: var(--unnamed-line-spacing-35);
+    letter-spacing: var(--unnamed-character-spacing--0-4);
+    color: var(---ffc01f-sunshine-yellow);
+}
+
+.hero-neue-haas-grotesk—-60pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-60);
+    line-height: var(--unnamed-line-spacing-70);
+    letter-spacing: var(--unnamed-character-spacing-1-5);
+    color: var(---12212e-deep-blue);
+}
+
+.h1-neue-haas-grotesk-—-52pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-52);
+    line-height: var(--unnamed-line-spacing-60);
+    letter-spacing: var(--unnamed-character-spacing-1-3);
+    color: var(---12212e-deep-blue);
+}
+
+.h2-neue-haas-grotesk-—-42pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-42);
+    line-height: var(--unnamed-line-spacing-50);
+    letter-spacing: var(--unnamed-character-spacing-1-05);
+    color: var(---12212e-deep-blue);
+}
+
+.h3-neue-haas-grotesk-—-32pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-32);
+    line-height: var(--unnamed-line-spacing-40);
+    letter-spacing: var(--unnamed-character-spacing-0-8);
+    color: var(---12212e-deep-blue);
+}
+
+.h4-neue-haas-grotesk-—-18pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-18);
+    line-height: var(--unnamed-line-spacing-26);
+    letter-spacing: var(--unnamed-character-spacing-1-8);
+    color: var(---12212e-deep-blue);
+    text-transform: var(--unnamed-text-transform-uppercase);
+}
+
+.h5-neue-haas-grotesk-—-22pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-22);
+    line-height: var(--unnamed-line-spacing-30);
+    letter-spacing: var(--unnamed-character-spacing-0-66);
+    color: var(---12212e-deep-blue);
+}
+
+.body-neue-haas-grotesk-—-16pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-24);
+    letter-spacing: var(--unnamed-character-spacing-0-48);
+    color: var(---12212e-deep-blue);
+}
+
+.intro-neue-haas-grotesk-—-19pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-19);
+    line-height: var(--unnamed-line-spacing-28);
+    letter-spacing: var(--unnamed-character-spacing-0-57);
+    color: var(---12212e-deep-blue);
+}
+
+.small-neue-haas-grotesk-—-14pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-14);
+    line-height: var(--unnamed-line-spacing-20);
+    letter-spacing: var(--unnamed-character-spacing-0-42);
+    color: var(---12212e-deep-blue);
+}
+
+.blockquote-neue-haas-grotesk-—-30pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-text-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-29-998600006103516);
+    line-height: var(--unnamed-line-spacing-40);
+    letter-spacing: var(--unnamed-character-spacing-0-15);
+    color: var(---12212e-deep-blue);
+}
+
+.link-neue-haas-grotesk-—-16pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-text-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-24);
+    letter-spacing: var(--unnamed-character-spacing-0-32);
+    color: var(---245b83-action-blue);
+    text-transform: var(--unnamed-text-transform-titlecase);
+}
+
+.in-line-link-neue-haas-grotesk-—-16pt {
+    font-family: var(--unnamed-font-family-neue-haas-grotesk-text-pro);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-medium);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-23);
+    letter-spacing: var(--unnamed-character-spacing-0-8);
+    color: var(---245b83-action-blue);
+    text-decoration: var(--unnamed-decoration-underline);
+}
+
+

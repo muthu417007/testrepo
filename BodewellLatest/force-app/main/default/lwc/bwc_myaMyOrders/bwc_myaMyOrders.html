@@ -1,0 +1,125 @@
+<template>
+  <lightning-layout-item size="6">
+        <lightning-layout-item size="12">
+            <h1 class="subheading">{pageTitleLabel}</h1>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <div class="text-content-main">
+                {assistanceLabel} &nbsp;{phoneLabel}&nbsp;
+            </div>
+        </lightning-layout-item>
+    </lightning-layout-item>
+   <lightning-layout>
+       <lightning-layout-item>
+            <lightning-formatted-text value="Show orders from:"></lightning-formatted-text>
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-small">
+            <lightning-combobox name=”filter”
+                                        label="Show orders from:"
+                                        variant="label-hidden"
+                                        value={selectedValue}
+                                        options={options}
+                                        onchange={handleChange}
+                                        placeholder='The Past 6 months'>
+            </lightning-combobox>
+        </lightning-layout-item>    
+    </lightning-layout>
+<!--    <lightning-layout>
+        <div class="spinner">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-layout> -->
+
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <div>
+                <div if:true={showPrevButtonflag}>
+                    <div if:true={bodewellOrders}>
+                        <button class="product-link-button-p slds-float_left" onclick={handlePrevOrder}>&lt;
+                            Previous</button>
+                    </div>
+                </div>
+                <div if:true={showNextButtonflag}>
+                    <div if:true={bodewellOrders}>
+                        <button class="product-link-button slds-float_right right-btn" onclick={handleNextOrder}>Next
+                            &gt;</button>
+                    </div>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+
+
+   
+    <template iterator:it={bodewellOrders}>
+        <div key={it.value.OrderNumber}>
+            <lightning-layout vertical-align="stretch" multiple-rows="true" class="orderDetail textcenter">
+                <lightning-layout-item flexibility="auto" size="2">
+                    <span class="tesordIdt">{orderNoLabel} <br>
+                        <span>{it.value.BWC_Oracle_Order_Number__c}</span></span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="2">
+                    <span class="test">{orderDateLabel} <br>
+                        <lightning-formatted-date-time
+                        month="numeric"
+                        year="numeric"
+                        day="numeric"
+                        value={it.value.CreatedDate}>
+                      </lightning-formatted-date-time>
+                    </span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="3">
+                    <span class="test">{orderRefNoLabel} <br>
+                        <span>{it.value.BWC_ORIG_SYS_DOCUMENT_REF__c}</span></span>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="2">
+                    <div if:true={it.value.ShipZip}>
+                        <span class="test">{orderTotalLabel} <br>
+                            <span>${it.value.TotalAmount}</span></span>
+                    </div>
+                    <div if:false={it.value.ShipZip}>
+                        <span class="test">{orderTotalLabel} <br>
+                            <span>{it.value.TotalAmount}</span></span>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="3">
+                    <span class="test">{orderStatusLabel} <br>
+                        <span>{it.value.Status}</span></span>
+                </lightning-layout-item>
+       
+       <div class="slds-grid slds-gutters" style="background-color: white;margin-bottom: 2rem;">
+          <div class="slds-col slds-size_2-of-3 style:margin 10px">
+              <span><c-bwc_mya-my-order-items number={it.value.Id}  > </c-bwc_mya-my-order-items> </span>
+          </div>  
+      <div class="slds-col slds-size_1-of-3">
+         <!--  <span> <button onclick={handleOrderDetails} class="view-order-details"
+                value={it.value.OrderNumber}> View Order Details</button></span> -->
+
+                <div class="slds-grid slds-grid_vertical">
+  <div class="slds-col">
+    <span> <button onclick={handleOrderDetails} class="view-order-details"
+                value={it.value.BWC_ORIG_SYS_DOCUMENT_REF__c}> View Order Details</button></span> 
+  </div>
+  <div class="slds-col">
+   <span> <button onclick={handleOrderDetails} class="view-order-details"
+                value={it.value.BWC_ORIG_SYS_DOCUMENT_REF__c}> Track My Order </button></span> 
+  </div>
+  <div class="slds-col">
+   <span> <button onclick={handleOrderDetails} class="view-order-details"
+                value={it.value.BWC_ORIG_SYS_DOCUMENT_REF__c}> Reschedule Delivery </button></span> 
+  </div>
+  <div class="slds-col">
+   <span> <button onclick={handleOrderDetails} class="view-order-details"
+                value={it.value.BWC_ORIG_SYS_DOCUMENT_REF__c}> Delivery Information </button></span> 
+  </div>
+</div>
+      </div>
+      
+      </div>
+        </lightning-layout>
+       </div>
+    </template>
+ 
+</template>

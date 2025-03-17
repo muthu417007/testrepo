@@ -1,0 +1,26 @@
+.searchContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.buttonGroup{
+    gap: 1rem;
+}
+
+.searchInputBox{
+    width: -webkit-fill-available !important;
+}
+
+.container{
+    height: 100%;
+}
+
+.productSearchResults{
+    display: flex !important;
+    gap: 3rem;
+}
+
+.products{
+    display: flex !important;
+    gap: 3rem;
+}

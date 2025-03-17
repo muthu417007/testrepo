@@ -1,0 +1,351 @@
+<!--
+@description       : 
+  @author            : Luis Ramirez (l.ramirez@polsource.com)
+  @group             : 
+  @last modified on  : 07-15-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                                   Modification
+  1.0   06-16-2021   Luis Ramirez (l.ramirez@polsource.com)   Initial Version
+-->
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+    </div>
+
+    <h2 class="">
+        <label class=""> {pageTitleLabel} </label>
+    </h2>
+    
+    <div>
+        <div class="slds-grid  slds-m-bottom_small slds-p-right_large slds-align_absolute-center">
+            <div class="slds-m-right_small" >
+                <!-- <a href="https://geapp--bwcommoob.sandbox.my.site.com/bodewellComercevforcesite/services/auth/sso/Google_GEA">
+                       <img src={googleImage}>
+                   </a>  -->
+                <a href={googleAuthUrl}>
+                    <img src={googleImage}>
+                </a>
+            </div>
+            <div class="slds-icon" style="width: auto;height: auto;">
+                <!-- <a href="https://geapp--bwcommoob.sandbox.my.site.com/bodewellComercevforcesite/services/auth/sso/Facebook_GEA">
+                       <img src={facebookImage}>
+                   </a> -->
+                <a href={fbAuthUrl}>
+                    <img src={facebookImage}>
+                </a>
+            </div>
+        </div>
+<div class={emailContainerClass}>
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <label class="slds-form-element__label" for="email">
+               <b> {emailLabel}  </b>
+            </label>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-form-element">
+            <div class="slds-form-element__control">
+                <input
+                        type="email"
+                        data-id="email"
+                        onchange={onInputChanged}
+                        name="email"
+                        required=""
+                        aria-describedby="email-error"
+                        class="slds-input textField"
+                        aria-invalid="true"
+                        autocapitalize="off"
+                />
+            </div>
+            <template if:true={emailHasError} class="slds-has-error">
+                <div class="slds-form-element__help">{emailValidationError}</div>
+            </template>
+        </div>
+      </div>
+
+
+</div>
+            <div>
+                  <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <label class="slds-form-element__label idp-label" for="firstName">
+                   <b> {firstNameLabel} </b>
+                </label>
+                
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-form-element">
+                <div class="slds-form-element__control">
+                    <input
+                            type="text"
+                            data-id="firstName"
+                            onchange={onInputChanged}
+                            name="firstName"
+                            required=""
+                            class="slds-input textField"
+                            aria-invalid="true"
+                    />
+                </div>
+                
+                <template if:true={firstNameHasError}>
+                    <div class="slds-form-element__help">{firstNameValidationError}</div>
+                </template>
+                <template if:true={firstNameHasErrorr}>
+                    <div class="slds-form-element__help slds-text-color_error">{firstNameValidationErrorr}</div>
+                </template>
+            </div>
+                  </div>
+
+        </div>
+        
+        <div>
+          <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <label class="slds-form-element__label idp-label" for="lastName">
+                    <b> {lastNameLabel}  </b>
+                </label>
+                
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-form-element">
+                <div class="slds-form-element__control">
+                    <input
+                            type="text"
+                            data-id="lastName"
+                            onchange={onInputChanged}
+                            name="lastName"
+                            required=""
+                            class="slds-input textField"
+                            aria-invalid="true"
+                    />
+                </div>
+                <template if:true={lastNameHasError}>
+                    <div class="slds-form-element__help">{lastNameValidationError}</div>
+                </template>
+                <template if:true={lastNameHasErrorr}>
+                    <div class="slds-form-element__help slds-text-color_error">{lastNameValidationErrorr}</div>
+                </template>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <div>
+                    <label class="slds-form-element__label" for="phone">
+                        <b> {phoneLabel} </b> <i class="slds-text-body_small">(Optional)</i>
+                     </label>
+                </div>
+                <div class="slds-text-body_small">
+                    {phoneLabelBodewell}
+                </div>
+                
+               
+                
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+             <!--  <div class="slds-form-element__control">
+                     <input
+                            type="tel"
+                            data-id="phone"
+                            onchange={onInputChangedphone}
+                            name="phone"
+                            pattern={phonePattern}
+                            class="slds-input textField phone-validate"
+                            aria-invalid="true"
+                    /> 
+                </div> -->
+        <lightning-input type="tel" 
+            data-id="phone"
+            class="textField phone-validate"
+            max-length="10" pattern={phonePattern} 
+            message-when-pattern-mismatch={phonePatternValidationMessage} 
+            variant="label-hidden" 
+            name="phone" 
+            label="phone"
+            onchange={onInputChangedphone}>
+            </lightning-input> 
+
+                
+                <template if:true={phoneHasError}>
+                    <div class="slds-form-element__help">{phoneValidationError}</div>
+                </template>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <div>
+                    <label class="slds-form-element__label idp-label" for="password">
+                   <b> {passwordLabel} </b>
+                </label>
+                </div>
+                <div class="slds-text-body_small">
+                   {passwordStrengthLabel}
+                </div>
+                
+                
+            </div>
+        
+            
+           
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-form-element">
+                <div class="slds-form-element__control">
+                    <input
+                            type="password"
+                            data-id="password"
+                            onchange={onPasswordChanged}
+                            name="password"
+                            required=""
+                            class="slds-input textField"
+                            aria-invalid="true"
+                    />
+                </div>
+                <template if:true={passwordHasError}>
+                    <div class="slds-form-element__help slds-text-color_error">{passwordValidationError}</div>
+                </template>
+                <template if:true={passwordStrengthHasError}>
+                    <div class="slds-form-element__help slds-text-color_error">{passwordStrengthValidationError}</div>
+                </template>
+            </div>
+          </div>  
+        </div>
+        <div>
+          <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <label class="slds-form-element__label idp-label" for="passwordConfirmation">
+                   <b> {passwordConfirmationLabel} </b>
+                </label>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12 slds-form-element">
+                <div class="slds-form-element__control">
+                    <input
+                            type="password"
+                            data-id="passwordConfirmation"
+                            onchange={onPasswordConfirmationChanged}
+                            name="passwordConfirmation"
+                            required=""
+                            class="slds-input textField"
+                            aria-invalid="true"
+                    />
+                </div>
+                <template if:true={passwordConfirmationHasError}>
+                    <div class="slds-form-element__help slds-text-color_error">{passwordConfirmationIsRequiredValidationError}</div>
+                </template>
+                <template if:true={passwordsDontMatch}>
+                    <div class="slds-form-element__help slds-text-color_error">{passwordsDontMathValidationError}</div>
+                </template>
+
+            </div>
+          </div>
+        </div>
+        <!--
+          <div class={termsAndConditionsClass}>
+            <label>
+            <span>
+                <input
+                        type="checkbox"
+                        name="termsAndConditions"
+                        required
+                        onchange={onTermAndConditionsChanged}
+                        checked={termsAndConditionsChecked}
+                        class="slds-m-right_x-small"
+                />
+                <span>
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={termsAndConditionsLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={termsAndConditionsURLBodewell} target="_blank"
+                    >{termsAndConditionsURLLabel}.
+                    </a>
+                </span>
+                <p class="slds-m-top_x-small">
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={privacyPolicyLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={privacyPolicyURLBodewell} target="_blank"
+                    >{privacyPolicyURLLabel}.
+                    </a>
+                </p>
+            </span>
+            </label>
+        </div>  -->
+
+        <div class={termsAndConditionsClass}>
+            <label>
+                <p class="slds-m-top_x-small">
+           
+               
+                <input
+                        type="checkbox"
+                        name="termsAndConditions"
+                        required
+                        onchange={onTermAndConditionsChanged}
+                        checked={termsAndConditionsChecked}
+                        class="slds-m-right_x-small"
+                />
+              
+                   
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={termsAndConditionsLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={termsAndConditionsURL} target="_blank"
+                    >{termsAndConditionsURLBodewell}
+                    </a> 
+                  
+                        <lightning-formatted-rich-text
+                                class="idp-page-text"
+                                value={privacyPolicyLabel}
+                        ></lightning-formatted-rich-text>
+                        <a class="idp-link ipd-link-inline" href={privacyPolicyURL} target="_blank"
+                        > {privacyPolicyURLBodewell}.
+                        </a>
+                    </p>
+                
+            
+            </label>
+        </div>
+        <div if:true={termsAndConditionsHasError} class="slds-form-element slds-has-error">
+            <div class="slds-form-element__help" id="error-message-id-49">
+                Please agree with Terms of Use if you want to proceed.</div>
+            </div>
+        </div>
+        <div>
+           <!-- <p class="slds-m-top_x-small">
+                    <lightning-formatted-rich-text
+                            class="idp-page-text"
+                            value={privacyPolicyLabel}
+                    ></lightning-formatted-rich-text>
+                    <a class="idp-link ipd-link-inline" href={privacyPolicyURL} target="_blank"
+                    >{privacyPolicyURLBodewell}.
+                    </a>
+                </p> -->
+        </div>
+
+        <div>
+            <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+        </div>
+        <template if:true={generalError}>
+            <div class="generalErrorClass slds-m-top_medium">{generalErrorMessage}</div>
+        </template>
+        <div class="slds-align_absolute-center slds-m-top_small">
+            <button
+                    class="
+                    slds-button
+                    slds-button_brand"
+                    onclick={registerBodewell}
+            >
+                {submitButtonLabelInternal}
+            </button>
+        </div>
+          
+                            
+
+    
+   
+</template>

@@ -1,0 +1,1 @@
+export const VARIANT_SELECTED_EVT = 'variantselected';

@@ -1,0 +1,72 @@
+<template>
+    <div class="banner-block-card">
+        <div class="desktop-basic-block">
+            <div class="banner-info-block">
+                <div class="cta-link-container">
+                    <div class="p-4 cta-link-block">
+                        <div class="cta-icon-block" if:true={showImg}>
+                            <img class="block-img" src={imgUrl} alt="icon">
+                        </div>
+                        <div class="cta-icon-block" if:true={showHeading}>
+                            <h3>{heading}</h3>
+                        </div>
+                        <div class="cta-text-block">
+                            <p class="inner-content abc block-desc"><lightning-formatted-rich-text
+                                    value={richtext}></lightning-formatted-rich-text></p>
+                            <a href={redirectURL} onclick={handleClick}>
+                                <span class="banner-block-button">{buttontext}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile -->
+        <div class="mobile-basic-block slds-wrap">
+            <div class="">
+                <div style="display:inline-flex; padding:10px;">
+                <div class="slds-col slds-size_2-of-12">
+                    <div class="cta-icon-block" if:true={showImg}>
+                        <img class="block-img" src={imgUrl} alt="icon">
+                    </div>
+                   
+                </div>
+                <div class="slds-col slds-size_10-of-12" style="padding-left: 10px;">
+                     <div class="cta-icon-block-mob" if:true={showHeading}>
+                            <h3>{heading}</h3>
+                    </div>
+                    <div class="cta-text-block-mob">
+                        <p class="inner-content bewvvv">
+                            <lightning-formatted-rich-text value={richtext}></lightning-formatted-rich-text>
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <div class="slds-col slds-size_12-of-12" style="padding:10px;">
+                        <a href={redirectURL} onclick={handleClick}>
+                            <button class="mob-btn">{buttontext}</button>
+                        </a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="mobile-basic-heading-block" if:true={showHeading}>
+            <div class="basic-info-block">
+                <div class="cta-link-container">
+                    <div class="p-4 cta-link-block">
+                        <div class="cta-icon-block heading-block">
+                            <h3>{heading}</h3>
+                        </div>
+                        <div class="cta-text-block">
+                            <p class="inner-content"><lightning-formatted-rich-text
+                                    value={richtext}></lightning-formatted-rich-text></p>
+
+                            <a href={redirectURL} onclick={handleClick}>
+                                <span class="generic-button tertiary-transparent">{buttontext}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</template>

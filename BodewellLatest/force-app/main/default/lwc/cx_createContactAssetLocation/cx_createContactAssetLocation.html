@@ -1,0 +1,60 @@
+<template>    
+    <lightning-card title="Contact Information" icon-name='utility:change_owner' id="cmpCard">
+        
+        <lightning-input type="text" label="First Name" disabled={contactFieldsDisabled} placeholder="First Name ..."
+            required value={firstName} onchange={handleFirstNameChange}></lightning-input>
+        <lightning-input type="text" label="Last Name" disabled={contactFieldsDisabled} placeholder="LastName..."
+            required value={lastName} onchange={handleLastNameChange}></lightning-input>
+        
+        <div if:true={showSpinner} class="slds-m-around_large">
+            <div  class="slds-is-relative">
+                <lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+            </div>
+        </div>
+        <lightning-input type="text" label="Phone" disabled={contactFieldsDisabled} placeholder="Phone" required
+        value={phoneNumber} onchange={handlePhoneNumberChange} pattern="[0-9]{10}" data-id="phone"> </lightning-input>
+        <lightning-input type="email" label="Email" disabled={contactFieldsDisabled} placeholder="example@example.com ..."
+            value={email} onchange={handleEmailChange} data-id="email"></lightning-input>
+        <lightning-input  type="checkbox" label="Unknown Address" placeholder="Unknown Address" unchecked
+            data-id="UnknownAddress" onchange={handleCheckboxChange}></lightning-input>
+        <lightning-input type="text" label="Street" disabled={contactFieldsDisabled} placeholder="Street" required={isUnknonwAddressSelected}
+            value={street} onchange={handleStreetChange}></lightning-input>
+        <template if:true={isUnknonwAddressSelected}>
+            <lightning-combobox
+                    name="country"
+                    label="Country"
+                    value={country}
+                    placeholder="Select a country"
+                    options={inputOptions}
+                    onchange={handleCountryChange} >
+            </lightning-combobox>
+        </template>
+            <template if:true={renderOptionalField}>
+                <lightning-input type="text" label="City" disabled={contactFieldsDisabled} placeholder="City" required={isUnknonwAddressSelected}
+                value={city} onchange={handleCityChange}></lightning-input>
+                <lightning-input type="text" label="State" disabled={contactFieldsDisabled} placeholder="State" required={isUnknonwAddressSelected}
+                value={state} onchange={handleStateChange}></lightning-input>
+            </template>
+            <template if:true={renderOptionalField}>
+                <lightning-input type="text" label="Zip" disabled={contactFieldsDisabled} placeholder="Zip" required={isUnknonwAddressSelected} value={zip}
+                onchange={handleZipChange}></lightning-input> 
+            </template>
+            <template if:false={renderOptionalField}>
+                <lightning-input type="text" label="Zip" disabled={contactFieldsDisabled} placeholder="Zip" required={isUnknonwAddressSelected} value={zip}
+                onchange={handleZipChange} pattern="[0-9]{5}"></lightning-input>
+            </template>
+            
+        <div class="slds-grid slds-gutters" style="padding-top: 10px;">
+            <div class="slds-col slds-size_3-of-7">
+                
+            </div>
+            <div class="slds-col slds-size_4-of-7">
+                <lightning-button variant="brand-outline" label="Create Contact" disabled={contactFieldsDisabled}
+                    onclick={handleCreateContactInformation} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="destructive-text" label="Clear All" disabled={clearButtonsDisabled}
+                    onclick={handleClearAllFields} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

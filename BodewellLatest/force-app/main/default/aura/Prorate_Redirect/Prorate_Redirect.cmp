@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction,lightning:availableForFlowActions,force:hasrecordId,lightning:availableforFlowScreens">
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}"/>
+
+    <aura:attribute name="recId" type="String" />
+    <aura:attribute name="RecordId" type="String" />
+</aura:component>

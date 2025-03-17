@@ -1,0 +1,8 @@
+<template>
+  <template if:true={_shouldDisablePlaceOrder}>
+    <button type="button" disabled class="disabled" onclick={handlePlaceOrderClick}>Place Order</button>
+  </template>
+  <template if:false={_shouldDisablePlaceOrder}>
+    <button type="button" onclick={handlePlaceOrderClick}>Place Order</button>
+  </template>
+</template>

@@ -1,0 +1,55 @@
+<!-- /**
+*@description : Component has been created to Display banner Image with text from CMS created for Bodewell project.
+Name: Kanishtika Gupta
+Copyright: © 2021 GE Appliances
+****************************************************
+
+History
+
+Version    Author    Date    Details
+*********************************************
+1.0      Kanishtika Gupta   Created
+**********************************************
+**********************************************/ -->
+<template>
+    <div class="container background-set" data-id="bgDiv">
+        <template if:true ={lefttext}>
+        <div class="slds-grid slds-wrap text-banner align-text">
+            <div class="slds-col mob-content tab-content slds-size_5-of-12 text-content">
+                <h1 class="container-text">{textoverimage}</h1>
+            </div>
+            <div class="slds-col mob-content2 tab-content slds-size_7-of-12">
+            </div>
+        </div>
+        </template>
+<template if:true={righttext}>
+            <div class="slds-grid slds-wrap text-banner align-text">
+                <div class="slds-col mob-content2 tab-content slds-size_7-of-12"></div>
+                <div class="slds-col mob-content tab-content slds-size_5-of-12 text-content">
+                    <h1 class="container-text">{textoverimage}</h1>
+                </div>
+            </div>
+        </template>
+<template if:true={centertext}>
+        <div class="slds-grid slds-wrap text-banner align-text ">
+            <div class="slds-col mob-content-center tab-content-center slds-size_4-of-12">
+                <span></span>
+            </div>
+            <div class="mob-content-center tab-content-center slds-size_4-of-12 text-content center-text-div">
+                <h1 class="container-text">{textoverimage}</h1>
+            </div>
+            <div class="slds-col mob-content-center tab-content-center slds-size_4-of-12">
+              <span></span>
+            </div>
+          </div>
+          </template>
+<div class="phone-number">
+    <div if:true={showIcon} class="call-icon"><img class="i-concierge" src={conciergesvg} alt="call icon"></div>
+    <!-- <h2>{calltext1} <a if:true={showPhone} class="phone-link" onclick={handleCall}>{phone}</a> {calltext2}</h2> -->
+    <h2>{calltext1} <a if:true={showPhone} class="phone-link" onclick={handleCall}>855-950-6306</a> {calltext2}</h2>
+    <div class="phone-number-background"></div>
+    
+</div>
+</div>
+<!--end of file-->
+</template>

@@ -1,0 +1,30 @@
+<apex:page >
+    <form method="post" name="form1">
+
+    </form>
+    <script>
+        window.addEventListener('message', ({data, origin}) => {
+            // The message.data is an object map of each request field we need to
+            // send to Cybersource via the FORM POST. The code below will create hidden form
+            // fields for each property in the object.
+            const form = document.querySelector('form');
+            let formFields = '';
+            let formAction = '';
+            Object.keys(data).forEach(key => {
+                if (key === 'hosted_payment_page_url') {
+                    formAction = data[key];
+                } else {
+                    formFields += `<input type='hidden' name='${key}' value='${data[key]}'/>`
+                }
+            });
+            form.insertAdjacentHTML('beforeend', formFields);
+            form.action = formAction;
+            form.submit();
+        });
+
+        window.parent.postMessage({
+            event: 'REQUEST_PAGE_LOADED',
+            payload: ''
+        }, '*');
+    </script>
+</apex:page>

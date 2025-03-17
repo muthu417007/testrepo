@@ -1,0 +1,33 @@
+<html>
+  <head>
+
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <!--<form action="?" onsubmit="return validateForm()" method="POST">-->
+      <form action="?"  method="POST"></form>
+      <div  style="justify-content: center;display: flex;" class="g-recaptcha" data-sitekey="6LdPt9gnAAAAAOxyESzs0MeidfaThogdTaC7YTLR" data-callback="validateForm" data-expired-callback="onRecaptchaResponseExpiry"></div>
+      <br/>
+     
+    </form>
+ 
+    <script type="text/javascript">
+        function validateForm(){
+
+            if(grecaptcha.getResponse().length == 0){
+           
+                parent.postMessage("captcha failed", location.origin);
+                return false;
+            }
+            parent.postMessage(grecaptcha.getResponse(), location.origin);
+        
+            return true;
+        }
+        function onRecaptchaResponseExpiry()
+        {
+          parent.postMessage("captcha Expired", location.origin);
+        }
+      
+    </script>
+  </body>
+</html>

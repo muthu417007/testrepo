@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="24px" viewBox="0 0 43 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>9FFCDA4A-B2CE-4B36-AC0F-0E0E0984D0C6</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.070588 0 0 0 0 0.129412 0 0 0 0 0.180392 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Pattern-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="caret-down-solid" transform="translate(-172.000000, -5165.000000)" filter="url(#filter-1)">
+            <g transform="translate(172.000000, 5165.000000)">
+                <path d="M2.89330252,0 L40.1066975,0 C42.6811181,0 43.9683284,3.05959087 42.1459857,4.85265342 L23.5465198,23.1675067 C22.4184029,24.2774978 20.5815971,24.2774978 19.4534802,23.1675067 L0.854014258,4.85265342 C-0.968328442,3.05959087 0.318881878,0 2.89330252,0 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>BWC Comm Login Form</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="Sign in" description="Form Title"/>
+            <property name="userNameLabel" label="Username Label" type="String" default="Email" description="username input Label"/>
+            <property name="usernameValidationError" label="Username Missing Label" type="String" default="Email is missing" description="username missing Label"/>
+            <property name="passWordLabel" label="Password Label" type="String" default="Password" description="password input Label"/>
+            <property name="passwordValidationError" label="Password Missing Label" type="String" default="Password is missing" description="password missing Label"/>
+            <property name="forgotPasswordLabel" label="Forgot Password Label" type="String" default="Forgot Password" description="forgot password Label"/>
+            <property name="passwordlessLabel" label="Passwordless Label" type="String" default="Login without password" description="Passwordless Label"/>
+            <property name="loginButtonLabel" label="Login Button Label" type="String" default="SIGN IN" description="Login Button Label"/>
+            <property name="createAccountLabel" label="Create Account Label" type="String" default="CREATE ACCOUNT" description="Create Account Label"/>
+            <property name="signUpText" label="Sign Up Text" type="String" default="Don't have an account?" description="signup text"/>
+            <property name="signUpLabel" label="Sign Up Label" type="String" default="Sign Up" description="signup label"/>
+            <property name="errorMessage" label="Error Message" type="String" default="Your login attempt has failed. Make sure the username and password are correct or the user may be currently locked out." description="error message"/>
+            <property name="passwordlessLabelBodewell" label="Passwordless Label Bodewell" type="String" default="Login without password" description="Passwordless Label"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

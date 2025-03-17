@@ -1,0 +1,859 @@
+.header {
+    letter-spacing: 0.025em;
+    margin: 1rem 0rem 2rem 0rem;
+}
+.product-info-item{
+    margin-bottom:1rem;
+}
+.product-image{
+    margin: 0px 40px;
+     width: 48rem;
+}
+.field-head {
+    font-size: 16px;
+    letter-spacing: 0.25px;
+}
+.product-confirmation-image img{
+    width:75%
+}
+.privacy-link {
+    color: white;
+}
+
+.radio-group {
+    font-size: 20px;
+    color: #555555;
+    letter-spacing: 1.25px;
+    font-family: system-ui;
+}
+
+.center {
+    margin: 0 auto;
+    width: 775px;
+}
+
+.adobe-garamond-pro {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.title-bar {
+    width: 480px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.title-head {
+    font-size: 1.625rem;
+    letter-spacing: 0.05em;
+    line-height: 1.230769;
+}
+
+.title-sub {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    color: rgba(108, 97, 88, 1);
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-size: 16px;
+    padding: 0px;
+}
+
+.cafe-link {
+    color: rgba(180, 75, 40, 1);
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.input-field-margin {
+    margin: 20px 0px;
+}
+
+.where-is-model-link {
+    font-size: 16px;
+    text-align: left;
+    display: block;
+}
+
+.offer-message-section {
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.offer-message-bottom-margin {
+    margin: 0px 0px 20px 0px;
+}
+
+.offer-message {
+    color: rgba(24, 63, 50, 1) !important;
+    font-size: 1.1875rem;
+    line-height: 1.368421;
+    letter-spacing: 0.050em;
+    font-weight: 500;
+}
+
+.contact-info-header {
+    color: rgba(24, 63, 50, 1);
+    font-size: 28px;
+    font-weight: 100;
+}
+
+.form-validation-message {
+    color: red;
+}
+
+.consent-label {
+    font-size: 16px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.consent-validation {
+    color: red;
+    padding: 15px 0px 0px 0px;
+    margin: 0px auto;
+    height: 20px;
+    width: 175px;
+}
+
+.consent-input {
+    display: flex;
+}
+
+.submitbtn {
+    width: 50%;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 10px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 1rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.submitbtn:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.view-btn{
+    width: 100%;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 10px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 2rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.register-btn {
+    width: 100%;
+    background-color:white;
+    color: black;
+    padding: 10px 10px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 2rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.view-btn:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.register-btn:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.review-info-header {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    color: rgba(24, 63, 50, 1);
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.owner-info-header {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 1.25px;
+    line-height: 1.6;
+    padding: 3rem 0rem 0rem 0rem;
+    color: rgba(108, 97, 88, 1);
+    border-bottom: 1px solid rgba(108, 97, 88, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.050em;
+}
+
+.user-product-info {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: none;
+    color: rgba(108, 97, 88, 1);
+}
+
+.product-info-header {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 3rem 0rem 0rem 0rem;
+    letter-spacing: 1.25px;
+    color: rgba(108, 97, 88, 1);
+    border-bottom: 1px solid rgba(108, 97, 88, 1);
+    text-transform: uppercase;
+}
+
+.product-info {
+    text-align: left;
+    letter-spacing: 0.050em;
+}
+
+.info-item {
+    margin: 10px 0px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.info-detail {
+    margin-bottom: 0.3rem;
+}
+
+.product-info-section {
+    display: flex;
+    margin: 0px auto;
+    width: 75%;
+    justify-content: space-evenly;
+}
+
+.productinfo {
+    height: 100px;
+    width: 40%;
+    margin: 20px;
+    margin-bottom: 150px;
+}
+
+.canadian-residents-ductless {
+    padding: 15px;
+    text-align: center;
+}
+
+.canadian-residents-ductless img {
+    vertical-align: middle;
+    width: 50px;
+}
+
+.rules-link {
+    text-align: center;
+    text-decoration: underline;
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+    display: block;
+}
+
+.rules-link:hover {
+    color: rgba(108, 97, 88, .8);
+}
+
+
+/* .canadian-residents {
+     margin-top: 5px; 
+} */
+
+.canadian-residents-ductless p {
+    display: inline;
+    padding: 10px;
+}
+
+.footer-button-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    border-top: 1px solid #151515;
+}
+
+.confirm-button-invert {
+    width: 300px;
+    background-color: #ffffff;
+    color: #004B3D;
+    padding: 9px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin-top: 20px;
+    border: 1px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.confirm-button-invert:hover {
+    background-color: #004B3D;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+
+/* .appliance-btn {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #004B3D;
+    color: #ffffff;
+} */
+
+.thanks-message {
+    color: rgba(24, 63, 50, 1);
+    font-weight: 500;
+    font-size: 1.625rem;
+    line-height: 1.230769;
+    letter-spacing: 0.005em;
+    text-align: center;
+    display: block;
+}
+
+.sweepstakes-message {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 2rem;
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+    line-height: 1.4375;
+    letter-spacing: 0.050em;
+    text-align: center;
+    display: block;
+    font-style: normal;
+}
+
+
+/* .appliance-btn:hover {
+    background-color: #767676;
+    color: #ffffff;
+    border: 1px solid #004B3D;
+} */
+
+.contact-info h3 {
+    margin: 20px;
+    color: #1a4b3d;
+    font-family: 'AdobeGaramondProRegular';
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-size: 1.625rem;
+}
+
+.contact-info h5 {
+    margin: 20px;
+    font-size: 1.411764705882353rem;
+    font-family: 'proxima-nova';
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    color: #555555;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.411764705882353rem;
+    color: #555555;
+}
+
+h1 {
+    text-align: center;
+    font-size: 46px;
+    color: #1a4b3d;
+    font-weight: 60;
+}
+
+h5 {
+    text-align: center;
+}
+
+.slds-select {
+    width: 100px;
+}
+
+.primary-color {
+    color: #004B3D;
+}
+
+.input-section {
+    max-width: 60%;
+    padding: 15px 15px;
+    background-color: #F4F4F3;
+    margin: 1px auto 20px auto;
+    font-size: 1rem;
+    color: #6C6158;
+    text-align: left;
+}
+
+.action-button-invert {
+    width: 250px;
+    background-color: #ffffff;
+    color: #004B3D;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 8px 0;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.action-button-invert:hover {
+    background-color: #004B3D;
+    color: #ffffff;
+    /* border: 1px solid #ffffff; */
+}
+
+.action-button {
+    width: 250px;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 8px 0;
+    border: none;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.action-button:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.button-section {
+    width: 250px;
+    margin: 25px auto;
+}
+
+.or-text {
+    width: 25px;
+    color: #1a4b32;
+    margin: 0px auto;
+}
+
+.contact-details {
+    background-color: #F4F4F3;
+    padding: 5px 20px;
+    margin: 25px auto;
+    font-size: 0.8rem;
+    font-family: 'ProximaNova-Regular';
+    text-align: left;
+    display: block;
+    color: rgba(108, 97, 88, 1);
+}
+
+.slds-form-element__label {
+    color: rgba(108, 97, 88, 1) !important;
+}
+
+.form-element__label {
+    display: block;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    line-height: 1.8;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    text-align: left;
+}
+
+.modal-form-element__label {
+    display: block;
+    margin: 1.5rem 1rem 0rem 0rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.8;
+    text-align: left;
+    letter-spacing: 0.050em;
+    font-style: normal;
+}
+
+.footer-message-section {
+    margin: 0 auto !important;
+    text-align: center !important;
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+    line-height: 1.4375;
+    letter-spacing: 0.050em;
+    font-style: normal;
+}
+
+.add-new-action {
+    margin: 2rem 0rem 1rem 3rem;
+    font-size: 1rem;
+}
+
+.edit-reg {
+    text-decoration: underline;
+    color: #969393;
+}
+
+.edit-reg:hover {
+    color: #1a4b3d;
+    text-decoration: underline;
+}
+
+.radio-group-section {
+    margin-left: 2rem;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.slds-form-element__label {
+    display: block;
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+a {
+    text-decoration: underline;
+    color: #969393;
+}
+
+a:hover {
+    color: #969393;
+}
+
+
+/* Modal */
+
+.no-border {
+    border-bottom: 0px solid white;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    font-size: 1em !important;
+    color: #1a63a2 !important;
+    right: 0rem;
+    top: 0rem;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal-header {
+    margin-top: 1rem !important;
+    font-size: 22px !important;
+    color: #092c74;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem !important;
+    text-transform: capitalize !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.address-button {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reveal.add-address-modal {
+    top: 40px !important;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+    color: #ffffff;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.canada-img {
+    font-size: 15px;
+    margin: 1rem 0rem;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'ProximaNova-Regular';
+}
+
+.form-section {
+    color: #ffffff;
+    margin: 40px 0px;
+    text-align: left;
+}
+
+.form-title-section {
+    width: 600px;
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-element__control {
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.add-action-button {
+    width: 600px;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 30px 0rem 0rem 0rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid #ffffff;
+}
+
+.add-action-button:hover {
+    background-color: #ffffff;
+    color: #004B3D;
+    border: 1px solid #004B3D;
+}
+
+.slds-input {
+    font-size: 1rem;
+}
+
+.progress-bar {
+    width: 30rem;
+    margin: 50px auto;
+    margin-bottom: 4rem;
+}
+
+.status-image {
+    width: 480px;
+}
+
+.header-font {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.content-font {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.validation-message {
+    color: red;
+    width: 25rem;
+    margin-left: -5rem;
+    font-size: 16px;
+}
+@media only screen and (max-width:481px){
+.footer-button-section{
+    display:inline-block;
+}
+}
+@media only screen and (max-width:639px){
+    .center{
+        width:auto;
+    }
+    .radio-group-section{
+      margin-left: 0.5rem;
+    }
+    .product-image{
+        width:auto;
+    }
+    .product-info-section{
+        display:inline-block;
+    }
+    .submitbtn{
+        width:100%;
+    }
+    .add-new-action{
+        margin: 1rem 0rem 1rem 2rem;
+    }
+    h1{
+        font-size:2rem;
+    }
+    .progress-bar{
+      width:auto;  
+      margin: 20px auto; 
+      margin-bottom: 3rem;   
+    }
+    .title-bar{
+        width:auto;
+        margin-bottom:1rem;
+    }
+    .contact-info{
+     margin:6px;
+    }
+    .input-section{
+        max-width:100%;
+    }
+    .button-section{
+        margin: 10px auto;
+    }
+    .footer-message-section{
+        margin-top:2rem !important;
+        margin-bottom:2rem !important;
+    }
+    .offer-message-section h3{
+        line-height:1;
+    }
+    .offer-message-section{
+        width:50%;
+        margin:0 auto;
+    }
+    .rules-link{
+        margin:15px 0;
+    }
+    .slds-p-around_large{
+        padding:0;
+    }
+    .slds-col--padded{
+        padding-left:0;
+        padding-right:0;
+    }
+    .primary-color{
+        font-size: 1.625rem;
+        line-height: 1.142857;
+        letter-spacing: 0.025em;
+    }
+    h3{
+        font-size:1.2rem;
+    }
+    .footer-message-section{
+        width:100%;
+    }
+    .product-info{
+        text-align:center;
+    }
+    .view-btn{
+      margin:1.5rem 0;
+    }
+    .register-btn{
+      margin:0px 0px;
+    }
+}
+/* iPad */
+@media only screen
+and (min-device-width : 640px)
+and (max-device-width : 1024px){
+    .product-register .center{
+        width: auto;
+    }
+    .header{
+        font-size:2.8rem;
+    }
+    h2{
+        font-size: 1.411764705882353rem;
+    }
+    .appliance-form-info{
+        width:auto;
+    }
+    .context{
+      line-height:1.5;
+    }
+    .center{
+        width:auto;
+    }
+}

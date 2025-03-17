@@ -1,0 +1,743 @@
+.product-register {
+    border-top: 1.2px solid #ddd;
+}
+.mobile-pro-info-section{
+    display:none;
+}
+.appliance-info-form{
+    margin-top: 0.8em;
+    padding-top: 2em;
+    text-align: left;
+    padding-top: 10px;
+}
+.slds-form-element__help{
+    margin-left:0px !important;
+}
+.button-action{
+    margin-bottom:2rem;
+}
+.header {
+    color: #555;
+    font-weight: 100;
+    margin: 2rem 0rem;
+    font-family: 'Gotham-Book';
+    text-transform: uppercase;
+    line-height: 1.18571;
+    font-style: normal;
+    letter-spacing: 1.25px;
+}
+
+.sub-header {
+    line-height: 0.2;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    letter-spacing: 0.25px;
+    padding-bottom: 0.5rem;
+}
+
+.context {
+    font-size: 15px;
+    line-height: 0.3;
+    margin: 0.3rem 0rem;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    color: #555555;
+}
+
+.required-info {
+    line-height: 1.3;
+    margin: 0 0 1em;
+    font-size: 14px;
+    margin: 0px;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    color: #555;
+}
+
+.appliance-info {
+    margin-top: 1em;
+}
+
+.model-number-link {
+    letter-spacing: 0.25px;
+    margin-left: 0rem;
+    text-align: left;
+    display: block;
+    font-family: 'Gotham-Book';
+}
+
+.message-desc {
+    text-align: center;
+    text-transform: initial;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+}
+
+.enter-message {
+    text-align: center;
+    font-family: 'Gotham-Medium';
+    font-size: 0.875rem;
+    display: block;
+}
+
+.rules-message {
+    text-align: center;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    color: #1a63a2;
+    display: block;
+    /* margin: 0rem 0rem 0rem 13rem; */
+}
+
+.head-link:hover {
+    text-decoration: underline;
+    color: #103b62;
+}
+
+.rules-message:hover {
+    text-decoration: underline;
+    color: #103b62;
+}
+
+.address-title {
+    line-height: 0.2;
+    padding-bottom: 10px;
+    font-size: 1.411764705882353rem;
+    /* font-weight: bold; */
+    text-transform: capitalize;
+    letter-spacing: 0.25px;
+    margin: 2rem 0rem;
+    font-family: 'Gotham-Book';
+    color: #555 !important;
+    text-align: center;
+}
+
+.dropdown-title {
+    font-family: 'Gotham-Book';
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    display: block;
+}
+
+.or-below {
+    font-size: 20px;
+    line-height: 0.3;
+    margin: 0.3rem 0rem;
+    text-rendering: optimizeLegibility;
+    text-align: left;
+    color: #555555;
+    font-family: 'Gotham-Book';
+    font-weight: 100;
+    letter-spacing: 0.25px;
+}
+
+.address-select {
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.phone-number-header {
+    line-height: 0.2;
+    padding-bottom: 10px;
+    font-size: 1.411764705882353rem;
+    /* font-weight: bold; */
+    text-transform: capitalize;
+    letter-spacing: 0.25px;
+    margin: 3rem 0rem;
+    font-family: 'Gotham-Book';
+    color: #555 !important;
+    text-align: center;
+}
+
+.phone-select {
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    text-align: left;
+}
+
+.consent-checkbox {
+    padding: 20px 20px;
+}
+
+.update-message {
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+}
+
+.edit-reg {
+    margin: 5px auto;
+    text-align: center;
+}
+
+.header2 {
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+body {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif !important;
+    /* font-style: normal !important;
+    font-size: 18px !important; */
+}
+
+.center {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.del-icon {
+    text-align: right;
+}
+
+.del-icon span {
+    font-size: 11px;
+    padding: 4px;
+    font-weight: bold;
+    color: red;
+}
+
+.appliance-info-form {
+    /* padding: 20px; */
+    margin-top: 0.8em;
+    padding-top: 2em;
+    padding-top: 10px;
+}
+
+.appliance-form-info {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-family: 'Gotham-Book';
+    line-height: 1.3;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: #555;
+    width: max-content;
+    margin-left: 0px;
+}
+
+.appliance-form-info p {
+    text-align: center;
+}
+
+.productinfo {
+    height: 100px;
+    width: 40%;
+    margin: 20px;
+    margin-bottom: 150px;
+}
+
+.canadian-residents-ductless {
+    background-color: #eeeeee !important;
+    padding: 15px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+}
+
+.canadian-residents-ductless img {
+    vertical-align: middle;
+    width: 40px;
+}
+
+.canadian-residents {
+    margin-top: 5px;
+    margin-top: 5px;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    color: #1a63a2;
+}
+
+.canadian-residents-ductless p {
+    display: inline;
+    padding: 10px;
+}
+
+
+/* .canadian-residents a {
+        color: #1a63a2;
+        text-decoration: none;
+        font-family: 'Gotham-Book';
+        font-size: 0.8235294117647059rem;
+    } */
+
+.head-link {
+    color: #1a63a2;
+    text-decoration: none;
+    font-family: 'Gotham-Book';
+    font-size: 0.8235294117647059rem;
+}
+
+.appliance-btn {
+    width: 100%;
+    font-family: 'Gotham-Book';
+}
+
+.contact-info h5,
+.contact-info h3 {
+    margin: 20px;
+    font-family: 'Gotham-Book';
+}
+
+.contact-info h2 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gotham-Book';
+}
+
+.contact-info span {
+    font-family: 'Gotham-Book';
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.411764705882353rem;
+    color: #555555;
+}
+
+h1 {
+    text-align: center;
+    font-size: 46px;
+    color: #555555;
+    font-weight: 100 !important;
+}
+
+h5 {
+    text-align: center;
+}
+
+.slds-select {
+    width: 100px;
+}
+
+
+/*--Add Appliance Page --*/
+
+.submitbtn {
+    width: 50%;
+    background-color: #1A63A2;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1;
+    height: 3rem;
+    font-weight: 600;
+    padding: 0.85em 1em;
+    border: none;
+    font-family: 'Gotham-Book';
+    cursor: pointer;
+    margin: 0px 13rem;
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.info-heading {
+    font-size: 1.411764705882353rem;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: #555;
+    padding-bottom: 0.5rem;
+    font-family: 'Gotham-Book';
+    margin-bottom: 0.5em;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid #151515;
+}
+
+.viewaccount,
+.registermore {
+    width: 75%;
+    background-color: #1A63A2;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1;
+    height: 3rem;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.85em 1em;
+    border: none;
+    font-family: 'Gotham-Book';
+    cursor: pointer;
+    margin: 0px 5rem;
+}
+
+table th,
+table td {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+table th {
+    color: #151515;
+}
+
+table td {
+    color: #555
+}
+
+.productlist-address {
+    margin-bottom: 40px;
+    margin-bottom: 40px;
+    font-family: 'Gotham-Book';
+    line-height: 1.42857;
+    letter-spacing: 0.25px;
+    padding: 8px;
+    border-bottom: 1px solid #151515;
+    padding-bottom: 2rem;
+    vertical-align: top;
+    font-size: 17px;
+}
+
+.owner-info-section {
+    text-align: center;
+    font-family: 'Gotham-Book';
+    text-transform: capitalize;
+    font-size: large;
+    /* border-top: 1px solid #151515; */
+    margin-top: 0.7rem;
+    /* padding-top: 1rem;*/
+    color: #555;
+}
+
+.owner-info-section p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+/*--Add Appliance Page --*/
+
+.continuebtn {
+    width: 90%;
+    background-color: #1A63A2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #1A63A2;
+    /* margin-left: 13px;*/
+    /* padding: 7px; */
+}
+
+.addProduct {
+    color: #1A63A2;
+    border: 1px solid #1A63A2;
+    cursor: pointer;
+    width: 90%;
+    background-color: white;
+    /* padding: 7px; */
+    /* background-color: white;*/
+}
+
+.addProduct:hover {
+    color: white;
+    background-color: #1A63A2;
+}
+
+.button-divider {
+    margin: 2px 1px;
+}
+
+.button-action {
+    display: flex;
+    justify-content: center;
+}
+
+.slds-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.lowercase.first-letter-uppercase.margin-btm-05 {
+    text-align: center;
+    font-weight: 100;
+    color: #555;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.176470588235294rem;
+}
+
+.application-phone-input {
+    margin-top: 1rem;
+}
+
+.canadian-residents-link a {
+    color: blue !important;
+}
+
+.lowercase.first-letter-uppercase.margin-btm-05 span {
+    font-size: 1.176470588235294rem;
+}
+
+i {
+    text-align: left;
+    display: block;
+}
+
+.appliance-phone-info h2 {
+    text-align: center;
+    margin: 30px;
+}
+
+.appliance-phone-input .slds-input {
+    width: 50% !important;
+}
+
+.contactinfo-btn {
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+}
+
+.contactinfo-btn .contact-continuebtn {
+    width: 50%;
+    background-color: #1A63A2;
+    color: white;
+    height: 3rem;
+    padding: 7px;
+    margin: 0px 10rem;
+    border: none;
+}
+.mobile-pro-info-section{
+    display:none;
+}
+.appliance-phone-input input {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.product-register h5 {
+    text-transform: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.product-register h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+label {
+    color: rgba(108, 97, 88, 1);
+    font-size: 0.9411764705882353rem;
+    font-family: 'Gotham-Medium';
+    letter-spacing: 0.25px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    margin: 0 0 0.3em;
+    width: 100%;
+}
+
+.confirm-info {
+    text-transform: capitalize;
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    text-align: center;
+    display: block;
+}
+
+button[disabled] {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.continuebtn,
+.addProduct {
+    font-size: 0.9rem;
+    line-height: 1;
+    height: 3rem;
+    font-weight: 600;
+    padding: 0.85em 1em;
+    font-family: 'Gotham-Book';
+    margin: 0rem 1rem;
+}
+
+a {
+    font-size: 0.8235294117647059rem !important;
+    font-weight: 500;
+    color: #1a63a2;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #103b62;
+}
+
+.writereview {
+    text-align: center;
+    text-transform: Capitalize;
+}
+
+.slds-form-element_horizontal .slds-form-element__help {
+    margin-left: 0px !important;
+}
+
+.help-tip {
+    position: absolute;
+}
+
+.validation-message {
+    color: red;
+}
+
+.consent-validation-message {
+    text-align: center;
+}
+
+.form-validation-message {
+    color: red;
+}
+
+.consent-input {
+    display: flex;
+}
+
+.consent-message {
+    padding: 20px 0px;
+}
+
+.link-pipe {
+    margin: 0px 5px;
+}
+
+/* Type ahead style start*/
+div input[readonly] {
+    padding-left: 1.75rem !important;  
+}
+.slds-input{
+    padding-left: 1.75rem !important;
+}
+
+.slds-input-has-icon .slds-input__icon {
+    top: 56% !important;
+}
+.slds-icon_small, .slds-icon--small {
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 2;
+}
+@media only screen and (max-width:639px){
+    .desktop-pro-info-section{
+        display:none;
+    }
+    .mobile-pro-info-section{
+        display:block;
+    }
+    .mob-pro-image{
+      margin-bottom:2rem;
+    }
+    .mobile-pro-info-section td{
+        text-align:left;
+    }
+    .mobile-pro-info-section th{
+        text-align:center;
+    }
+    .mobile-pro-info-section table{
+        width:80%;
+        text-align:center;
+        margin:0 auto;
+    }
+    .registermore{
+        width:100%;
+        margin:0 auto;
+    }
+    .viewaccount{
+        width:100%;
+        margin:0;
+     }
+}
+/* Type ahead style end*/
+@media only screen and (max-width:767px){
+    .product-register .center{
+        width: auto;
+    }
+    .appliance-form-info{
+        width:auto;
+    }
+    .header,.header2{
+        font-size: 1.5rem;
+    }
+    
+    .sub-header{
+        line-height: 1;
+        font-size: 1rem;
+    }
+    .context{
+        font-size:14px;
+    }
+    .product-register .slds-form{
+        width:100%;
+    }
+    .or-below{
+        font-size:1rem;
+        line-height:1;
+
+    }
+    .button-divider{
+        margin-bottom:2rem;
+    }
+    
+    .button-action{
+      display: block;
+    }
+    .addProduct{
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        margin: 0 0 1rem 0;
+    }
+    .lowercase.first-letter-uppercase.margin-btm-05{
+        font-size: 0.8823529411764706rem !important; 
+    }
+    .color-555.font-weight-100.message-desc{
+        font-size: 0.8823529411764706rem !important; 
+        letter-spacing:0;
+    }
+    .contact-continuebtn.idp-primary-button{
+        width: 100% !important;
+        margin:0px !important;
+    }
+    .consent-message{
+      text-align:left;
+    }
+    .slds-form-element_horizontal .slds-form-element__help, .slds-form_horizontal .slds-form-element .slds-form-element__help, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__help{
+        margin-left:0;
+    }
+    .info-heading{
+     font-size:1rem;
+    }
+    .submitbtn{
+      width:100%;
+      margin:0;
+    }
+}
+/* iPad */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px){
+    .product-register .center{
+        width: auto;
+    }
+    .header{
+        font-size:2.8rem;
+    }
+    h2{
+        font-size: 1.411764705882353rem;
+    }
+    .appliance-form-info{
+        width:auto;
+    }
+    .context{
+      line-height:1.5;
+    }
+
+}

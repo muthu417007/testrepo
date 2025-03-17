@@ -1,0 +1,22 @@
+<apex:page standardController="GEA_Asset__c" extensions="ConnectedAppliance_ext" lightningStylesheets="true">
+  <apex:form >
+      <apex:commandButton value="Get Connection Status" action="{!checkStatus}"/>
+      <!--
+      <table border="1">
+          <th style="width:150px">Appliance Id</th>
+          <th style="width:150px">Brand Name</th>
+          <th style="width:150px">Presence</th>
+          <tr>
+              <td>{!connectedStatus.applianceId}</td>
+              <td>{!connectedStatus.brandName}</td>
+              <td>{!connectedStatus.presence}</td>
+          </tr>
+      </table>
+      -->
+      <br></br>
+     <apex:pageMessages ></apex:pageMessages>
+      <apex:outputText >Appliance Id : {!connectedStatus.applianceId}</apex:outputText>
+		<br></br>
+      <apex:outputText >Presence : {!connectedStatus.presence}</apex:outputText>
+  </apex:form>
+</apex:page>

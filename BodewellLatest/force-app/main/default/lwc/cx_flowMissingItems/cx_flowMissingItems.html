@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Case Data Check" icon-name='utility:edit_form' id="cmpCard">
+        
+        <div class="slds-grid slds-gutters" style="padding-top: 10px; padding-inline-start: 10px;">
+            <div class="slds-col slds-size_4-of-5">
+                <h2>Case Contact</h2>
+            </div>
+            <div if:true={hasContact} class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:success" alternative-text="Success!" variant="success"
+                title="success variant small" size="small"></lightning-icon>
+            </div>
+            <div if:false={hasContact} class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:error" alternative-text="error!" variant="error"
+                title="error variant small" size="small"></lightning-icon>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters" style="padding-top: 10px; padding-inline-start: 10px;">
+            <div class="slds-col slds-size_4-of-5">
+                <h2>Case Location</h2>
+            </div>
+            <div if:true={hasLocation}  class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:success" alternative-text="Success!" variant="success"
+                title="success variant small" size="small"></lightning-icon>
+            </div>
+            <div if:false={hasLocation} class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:error" alternative-text="error!" variant="error"
+                title="error variant small" size="small"></lightning-icon>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters" style="padding-top: 10px; padding-inline-start: 10px;">
+            <div class="slds-col slds-size_4-of-5">
+                <h2>Case Assets</h2>
+            </div>
+            <div if:true={hasCaseAssets} class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:success" alternative-text="Success!" variant="success"
+                title="success variant small" size="small"></lightning-icon>
+            </div>
+            <div if:false={hasCaseAssets} class="slds-col slds-size_1-of-5">
+                <lightning-icon icon-name="utility:error" alternative-text="error!" variant="error"
+                title="error variant small" size="small"></lightning-icon>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters" style="padding-top: 10px;">
+            <div class="slds-col slds-size_5-of-7"></div>
+            <div class="slds-col slds-size_2-of-7">
+                <lightning-button variant="brand" label="Update" onclick={handleNext} class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,97 @@
+<template>
+    <div class="serviceAreaPageHeaderBox">
+        <div class="serviceAreaPageHeader">
+            SERVICE AREA RESULTS
+        </div>
+    </div>
+    <div class="slds-m-top_small slds-m-bottom_small">
+        <c-r-G-_-Breadcrumb></c-r-G-_-Breadcrumb>
+    </div>
+    <div if:false={isLoaded} class="lightningSpinner">
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    <div if:true={isLoaded} >
+        <div if:true={isServiceAvailable} class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-float_left">
+                <div>
+                    <h3 if:false={isLatLong} class="service-area-subTlt">
+                        1 SERVICE AREA NEAR {serviceArea}, {serviceState}, UNITED STATES
+                    </h3>
+                    <h3 if:true={isLatLong} class="service-area-subTlt">
+                        1 SERVICE AREA NEAR {serviceArea}, {serviceState}
+                    </h3>
+                    <div if:false={isExactLocation} class="result-main-header">
+                        <div class="result-main-header_content">
+                            <div class="result-main-header_content-left">
+                                <img class="img-fluid" src={verfifiedIcon} alt="about-repairforce">
+    
+                            </div>
+                            <div class="result-main-header_content-right_text">
+                                <span>We provide services in the {serviceArea}, {serviceState}, United States area.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Select an area to learn more or call for local service.</p>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-1 slds-float_left">
+                                <div class="state-box">
+                                    <div class="state-box__left search-result-map-icn">
+                                        <div class="state-box__left__pin">
+                                            <img src={locationPin} alt="about-repairforce">
+                                        </div>
+                                    </div>
+                                    <div class="state-box__right area-search-result-name">
+                                        <div class="state-box__right__title">
+                                            <a href={serviceCityUrl} data-value={serviceCityUrl} onclick={handleLocalClick} ><span>{serviceCity.Name}, {serviceCity.State_Abbreviation__c}</span></a>
+                                        </div>
+                                        <div class="state-box__right__call_text">
+                                            <span>CALL LOCAL</span>
+                                        </div>
+                                        <div class="state-box__right__call_number">
+                                            <a href={localPhoneLink} onclick={handleLocalCall}>{serviceCity.Local_Phone__c}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div if:false={isServiceAvailable} class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-float_left">
+                <div if:false={isSearchValid}>
+                    <h3 class="service-area-subTlt">
+                        NO SERVICE AREAS FOUND FOR {serviceAddress}
+                    </h3>
+                    <div>Sorry, we couldn’t find an exact match for</div>
+                    <div>{serviceAddress}</div>
+                    <div>Please give us a call and we may be able to assist you.</div>
+                    <div class="state-box__right__call_text">
+                        <span>QUESTIONS?</span>
+                        <div class="slds-m-bottom_xx-large slds-m-top_small">
+                            <a href={tollfreelink} onclick={handleCall} >{tollfreenumber}</a>
+                        </div>
+                    </div>
+                </div>
+                <div if:true={isSearchValid}>
+                    <h3 if:false={isLatLong} class="service-area-subTlt">
+                        NO SERVICE AREAS FOUND FOR {serviceArea}, {serviceState}, UNITED STATES
+                    </h3>
+                    <h3 if:true={isLatLong} class="service-area-subTlt">
+                        NO SERVICE AREAS FOUND FOR {serviceArea}, {serviceState}
+                    </h3>
+                    <div>Sorry, we couldn’t find an exact match for</div>
+                    <div if:false={isLatLong}>{serviceArea}, {serviceState}, UNITED STATES</div>
+                    <div if:true={isLatLong}>{serviceArea}, {serviceState}</div>
+                    <div>Please give us a call and we may be able to assist you.</div>
+                    <div class="state-box__right__call_text">
+                        <span>QUESTIONS?</span>
+                        <div class="slds-m-bottom_xx-large slds-m-top_small">
+                            <a href={tollfreelink} onclick={handleCall} >{tollfreenumber}</a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</template>

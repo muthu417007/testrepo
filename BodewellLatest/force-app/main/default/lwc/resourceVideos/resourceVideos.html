@@ -1,0 +1,32 @@
+<template>
+    <div class="dxp-text-heading-small slds-m-left_small">
+        <h1>
+            Videos
+        </h1>
+    </div>
+    <div class="colorBar slds-m-horizontal_small">&nbsp;</div>
+    <lightning-layout multiple-rows>
+        <template for:each={videos} for:item="video">
+            <lightning-layout-item key={video.key} size="12" small-device-size="6" padding="around-small">
+                <div style={video.styling} class="tile" >
+                    <div class="centered" onclick={openModal} data-id={video.key}>
+                        <img src="/training/sfsites/c/cms/delivery/media/MCECMEHERIONDT5HHTF3XLOO46PU"></img>
+                        <div class="dxp-text-heading-medium slds-m-top_xx-small">
+                            <h1>
+                                {video.title}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+    <template if:true={isModalOpen}>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close" onclick={closeModal}>&times;</span>
+                <video src={videoURL} autoplay="autoplay" class="video" playsinline controls controlslist="nodownload"></video>
+              </div>
+        </div>
+    </template>
+</template>

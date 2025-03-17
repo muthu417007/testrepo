@@ -1,0 +1,44 @@
+<template>
+    <!-- <div class="slds-text-body_regular left-text ">
+        <div class="pathContent">
+            Home / Account / {selectedItemLabel}
+        </div>
+    </div> -->
+    <div data-id="main" class="navbar custom-nav web-nav-bar" if:true={menuReady}>
+        <nav id="main" role="navigation" class="slds-align_absolute-center nav-align">
+           <ul class="ul-flex slds-list_horizontal slds-has-block-links_space">
+               <template for:each={menuItems} for:item="item">
+                <li key={item.id} if:false={item.isSelected} class="slds-item custom-l">
+                    <c-mya_-navigation-menu-item item={item} selected-item={selectedItem}></c-mya_-navigation-menu-item>
+                </li>
+                <li key={item.id} if:true={item.isSelected} class="slds-item custom-li active">
+                    <c-mya_-navigation-menu-item item={item} selected-item={selectedItem}></c-mya_-navigation-menu-item>
+                </li>
+               </template>
+</ul>
+</nav>
+</div>
+<div class="mobile-nav-bar" if:true={menuReady}>
+  <div class="manage left-text">Manage My Account</div>
+    <nav class="navbar-mob">
+        <label for="drop" class="toggle">{selectedItemLabel} <span class="hamb">
+            <i class="gg-chevron-down" ></i>
+        </span></label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu-ul">
+            <template for:each={menuItems} for:item="item">
+                <li key={item.id} if:false={item.isSelected} class="slds-item nav-item custom-l">
+                    <c-mya_-navigation-menu-item item={item} selected-item={selectedItem}>
+                    </c-mya_-navigation-menu-item>
+                </li>
+                <li key={item.id} if:true={item.isSelected} class="slds-item nav-item custom-li active">
+                    <c-mya_-navigation-menu-item item={item} selected-item={selectedItem}>
+                    </c-mya_-navigation-menu-item>
+                </li>
+            </template>
+        </ul>
+    </nav>
+
+</div>
+
+</template>

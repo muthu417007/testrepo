@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brandValue" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe,Bodewell" description="Brand"/>
+            <property name="address" label="Address label" type="String" default="Address details" description="Enter Address"/>
+            <property name="city" label="City label" type="String" default="City details" description="Enter City Name"/>
+            <property name="state" label="State label" type="String" default="State details" description="Enter State Name"/>
+            <property name="postalCode" label="ZipCode label" type="String" default="ZipCode label" description="Enter Zip/Postal code"/>
+            <property name="add_Nickname" label="Address_Nickname  label" type="String" default="Nickname details" description="Enter Nickname for address"/>
+        </targetConfig>
+    </targetConfigs>
+          
+</LightningComponentBundle>

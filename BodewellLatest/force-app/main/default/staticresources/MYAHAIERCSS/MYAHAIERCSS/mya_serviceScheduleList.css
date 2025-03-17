@@ -1,0 +1,141 @@
+body {
+    font-family: inherit;
+    color: inherit;
+}
+
+p {
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-family: inherit;
+    color: inherit;
+    text-align: center;
+    margin-left: 3px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid grey;
+}
+
+.slds-table {
+    margin-top: 25px;
+    background-color: #efefef;
+}
+
+.header {
+    background-color: #efefef;
+}
+
+th {
+    background-color: #efefef;
+}
+
+.tables1 {
+    background-color: #efefef;
+}
+
+.status-image {
+    text-align: center;
+    margin-left: 10%;
+    width: 50%;
+    height: auto;
+}
+.showsall{
+    text-emphasis-color: blue;
+    text-align: left;
+    padding:3px;
+    color:blue;
+    fill:blue;
+    --sds-c-icon-color-foreground-default: blue;
+}
+.icons {
+    color: blue;
+    float: left;
+    text-align: left;
+}
+icons1{
+    color: blue;
+    float: left;
+    text-align: left;  
+}
+.iconsChevron {
+    fill: blue;
+    color: blue;
+}
+
+.slds-icon {
+    fill: blue;
+    color: blue;
+}
+
+a {
+    margin-bottom: 25px;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    width: 90%;
+    padding: 0 1rem;
+    text-align: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    /* margin: 1rem 0; */
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .fielditem h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.fielditem>h3 {
+    color: white;
+    font-weight: 600;
+}

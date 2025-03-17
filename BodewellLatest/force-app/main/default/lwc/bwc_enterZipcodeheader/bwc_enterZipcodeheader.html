@@ -1,0 +1,59 @@
+<template>
+    <template if:true={isCartPage}>
+        <!-- <template if:false={openModal}> -->
+            <c-bwc_cart-zip-code onopenmodal={handleOpenModal}></c-bwc_cart-zip-code>
+        <!-- </template> -->
+    </template>
+
+    <template if:true={isAnotherPage}>
+        <div onclick={openModalHandel}>
+            <span class="dropin-icon icon">
+                <svg viewBox="0 0 27 35.91">
+                    <path d="m11.83,35.1C8.16,30.59,0,19.65,0,13.5,0,6.04,6.04,0,13.5,0s13.5,6.04,13.5,13.5c0,6.15-8.23,17.09-11.83,21.6-.86,1.08-2.47,1.08-3.33,0Zm1.67-17.1c2.48,0,4.5-2.02,4.5-4.5s-2.02-4.5-4.5-4.5-4.5,2.02-4.5,4.5,2.02,4.5,4.5,4.5Z"/>
+                </svg>
+            </span>
+            <template if:false={zipCode}>
+                <span class="text">Enter Zip code</span>
+            </template>
+            <template if:true={zipCode}>
+                <span class="text">Zip Code:{zipCode}</span>
+            </template>
+        </div>
+    </template>
+   <template if:false={hideZipCode}>
+    <template if:true={openModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+
+                <div class="slds-modal__header">
+                    <div class="header-flex">
+                        <h5 id="modal-heading-01" class="dxp-text-heading-xsmall">See Availability in Your Area</h5>
+                        <button onclick={closeModal}
+                            class="slds-button slds-button_icon slds-modal__close">
+                            <svg id="Close" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                            </svg>
+                            <span class="slds-assistive-text">Cancel and close</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="slds-modal__content slds-modal_full-content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="zip-text">
+                        <p>Enter your ZIP Code for the most up-to-date appliance inventory available for delivery in your area.</p>
+                    </div>
+                    <div class="zip-container">
+                        <input name="zipCodeInput" value={zipCode} placeholder="Enter Zip Code"></input>
+                        <button class="slds-button slds-button_brand slds-m-left_small" onclick={changeZipCodeHandler}>Continue</button>
+                    </div>
+                    <p class="error">{error}</p>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+  
+   </template> 
+  
+</template>

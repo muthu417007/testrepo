@@ -1,0 +1,535 @@
+/* Common styles */
+.promo {
+    --slds-c-card-color-background: white;
+  }
+  
+  .promotions .input {
+    font-weight: bold;
+    --slds-c-input-color-background: white;
+    padding-right: 10px;
+  
+  }
+  
+  .promotions {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 25px;
+  }
+  
+  .promotions .message {
+    padding-top: 10px;
+    display: block;
+  }
+  
+  .customLabel {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+  .box{
+     background: #D9EABB 0% 0% no-repeat padding-box;
+     /* c7f7b4 */
+    padding-top: 10px;
+    padding-left:10px;
+    padding-bottom:10px;
+    display: flex;
+    margin-right: 50px;
+    position: relative;
+  }
+  
+  .closeIcon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px;
+    color: white;
+    --sds-c-icon-color-background: #245b83;
+  }
+  
+  .emsg {
+    color: #CB1640;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .smsg {
+    color: #12212E;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right:10px;
+    padding-bottom: 10px;
+    letter-spacing: 0.57px;
+    
+    /* font: normal normal medium 19px/28px Neue Haas Grotesk Display Pro;
+    background: #6ABF4B 0% 0% no-repeat padding-box;
+  opacity: 0.2;
+  top: 695px;
+  left: 343px;
+  width: 355px;
+  height: 48px; */
+  }
+  
+  .successIcon {
+  
+    --slds-c-icon-color-background: #6ABF4B;
+    /* padding-left: 20px; */
+    padding:0.4rem;
+  
+  }
+  
+  .couponButton {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+  
+
+/*Common CSS */
+.member-pr-label {
+    justify-content: space-between;
+}
+
+.cartTitle {
+    white-space: nowrap;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.cartTitle .cartName {
+    font-size: 30px;
+    padding-right: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.cartTitle .cartQuantity {
+    font-size: 20px;
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+
+.cartPrice {
+    justify-content: flex-end;
+    padding-right: 10px;
+    white-space: nowrap;
+    display: flex;
+    margin-top: 15px;
+
+}
+
+.cartPrice .cartTotalTitle {
+    font-size: 20px;
+    padding-right: 7px;
+}
+
+.cartPrice .cartTotalPrice {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.continueShopping {
+    text-decoration: solid;
+    text-decoration-color: #245B83;
+    padding: 5px;
+    font-size: medium;
+}
+
+.card {
+    margin: 15px;
+    --slds-c-card-color-background: white;
+}
+
+.applyCoupons {
+    padding: 15px 15px;
+}
+
+.couponTitle {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.couponIcon {
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+.couponDescription {
+    font-size: small;
+}
+
+.bodewell-member {
+    width: 50px;
+    margin: 10px;
+
+    .d {
+        fill: #ffc01f;
+    }
+}
+
+.member {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.member .content {
+    flex-basis: 60%;
+    padding-left: 30px;
+}
+
+.member .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.member .multiline-text {
+    white-space: pre-line;
+    font-weight: normal;
+
+}
+
+.member .memberPrice {
+    font-weight: bold;
+    font-size: 19px;
+    padding-left: 60px;
+}
+
+.section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.section .section-title {
+    display: flex;
+}
+
+.section .section-title h2 {
+    font-size: small;
+}
+
+.section .section-title h1 {
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.content1 {
+    /* height: 200px; */
+    position: relative;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.content2 {
+    position: relative;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 10px;
+    justify-content: right;
+    flex-direction: column;
+}
+
+.image {
+    padding-top: 10px;
+}
+
+.product {
+    border-top: 0.5px solid black;
+}
+
+.content1 .product-name {
+    color: #245B83;
+    font-weight: bold;
+    text-align: left;
+    /* display: flex; */
+    align-items: center;
+    font-size: medium;
+    text-transform: capitalize;
+    width: 291px;
+    line-height: 24px;
+    padding-bottom: 20px;
+}
+
+.content1 .model {
+    font-size: small;
+    position: absolute;
+    /* bottom: 0; */
+
+    /* margin:-30px;
+    padding-left:30px; */
+}
+
+/* .pricing {
+    padding-left: 30px;
+} */
+
+/* .content2 .counter c-bwc_product-quantity-add::shadow .container .c-bwc_productQuantitySelector_bwc_productQuantitySelector-host {
+    margin-right: 0px;
+} */
+
+
+.price2 {
+    position: relative;
+    float: right;
+    margin-top: 15px;
+}
+
+.price2 .p1 {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price2 .p1 h1 {
+    /* padding-right: 10px; */
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.price2 .p1 h2 {
+    margin-right: 20px;
+}
+
+.price2 .p1 h5 {
+    font-weight: bold;
+}
+
+.price2 .p1 h6 {
+    text-decoration: line-through;
+}
+
+.memberShipPrice {
+    text-decoration: line-through;
+}
+
+/*
+.price2 .p1 h3 {
+    /* margin-left: 100px; 
+    
+}
+
+
+.price2 .p1 h4 {
+    padding-left: 5px;
+}*/
+
+.eop {
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.installation-sop {
+    /* border-top: 1px solid black; */
+    padding-bottom: 10px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.installation-sopInstallation {
+    padding-top: 10px;
+}
+
+.close {
+    padding-top: 10px;
+    padding-left: 15px;
+    --slds-c-icon-color-background: #245b83;
+}
+
+.bodewell-care {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+
+    .d {
+        fill: #febf20;
+    }
+}
+
+.inHome {
+    width: 30px;
+    height: 30px;
+    margin-top: 14px;
+    padding-right: 10px;
+
+    /* .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    } */
+}
+
+.parts {
+    width: 30px;
+    height: 30px;
+    margin-top: 14px;
+    padding-right: 10px;
+
+    /* .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    } */
+}
+
+.border {
+    border-bottom: 1px solid black;
+}
+
+.prodShip {
+    width: 30px;
+    height: 30px;
+    margin-top: 14px;
+    padding-right: 10px;
+
+    /* .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    } */
+}
+
+.pickupProducts {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.a-item-center {
+    align-items: center;
+}
+
+.overSize {
+    width: 30px;
+    height: 30px;
+    margin-top: 13px;
+    padding-right: 8px;
+    /*     
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    } */
+}
+
+.msrp-label {
+    font-size: 16px;
+}
+
+.promo-label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Mobile responsiveness*/
+@media (max-width: 520px) {
+
+    .member {
+        flex-wrap: wrap;
+    }
+
+    .member .content,
+    .member .memberPrice {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .member .title {
+        font-size: 1.2rem;
+    }
+
+    .section .section-title h1 {
+        font-size: 12px;
+    }
+
+    .content1,
+    .content2 {
+        flex-basis: 100%;
+    }
+
+    .product {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* .image,
+    .slds-size_10-of-12 {
+        width: 15%;
+    } */
+
+    .model {
+        margin-top: 10px;
+    }
+
+    .section .section-title h2 {
+        font-size: 10px;
+    }
+
+
+    .close {
+        position: relative;
+        float: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pricing {
+        padding-right: 0;
+    }
+
+    .content2 .counter {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+    .price2 .p1 {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /* 
+    .price2 .p1 h1 {
+        padding-right: 10px;
+    }
+
+    .price2 .p1 h3 {
+        padding-left: 0;
+        padding-right: 10px;
+    } */
+
+    .close {
+        padding-top: 0;
+        padding-left: 0;
+    }
+
+    .image {
+        padding-top: 15px;
+    }
+}

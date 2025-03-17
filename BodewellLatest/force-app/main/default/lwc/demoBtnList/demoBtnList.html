@@ -1,0 +1,108 @@
+<template>
+    <template if:true={dataLoaded}>
+        <div class="slds-m-vertical_x-large">
+            <span class="button slds-p-horizontal_large slds-p-vertical_small" onclick={openPath1}>
+                <lightning-formatted-rich-text value={demoData.Path1_Title.value}></lightning-formatted-rich-text>
+            </span>
+        </div>
+        <template if:true={hasPath2}>
+            <div class="slds-m-vertical_x-large">
+                <span class="button slds-p-horizontal_large slds-p-vertical_small" onclick={openPath2}>
+                    <lightning-formatted-rich-text value={demoData.Path2_Title.value}></lightning-formatted-rich-text>
+                </span>
+            </div>
+        </template>
+        <template if:true={hasPath3}>
+            <div class="slds-m-vertical_x-large">
+                <span class="button slds-p-horizontal_large slds-p-vertical_small" onclick={openPath3}>
+                    <lightning-formatted-rich-text value={demoData.Path3_Title.value}></lightning-formatted-rich-text>
+                </span>
+            </div>
+        </template>
+    </template>
+    <template if:true={isModalOpen}>
+        <div class="modal" style={style}>
+            <div class="modal-content">
+                <div class="slds-p-top_xx-large">
+                    <lightning-layout multiple-rows vertical-align="stretch">
+                        <lightning-layout-item size="12" small-device-size="12" padding="around-small">
+                            <div class="close" onclick={exit}>
+                                CLOSE
+                                <img src="/training/sfsites/c/cms/delivery/media/MC6DAOYI5ILNCBJCEPGNNDMZK5O4" width="40px;"></img>
+                            </div>
+                            <div style="max-width: 70%;">
+                                <div class="demoTitle">{demoData.Title.value}</div>
+                                <div class="demoSubtitle"><lightning-formatted-rich-text value={stepSubTitle}></lightning-formatted-rich-text></div>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="6" padding="horizontal-small">
+                            <lightning-layout>
+                                <lightning-layout-item size="1" >
+                                    <span class="slds-p-right_x-small stepTitle" style="float:right;">
+                                        {stepData.Step_Number.value}.
+                                    </span>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="11" >
+                                    <span class="dxp-text-heading-medium stepTitle"> <lightning-formatted-rich-text value={stepData.Title.value} ></lightning-formatted-rich-text></span>
+                                    <div style="max-width: 70%;">
+                                        <lightning-formatted-rich-text value={stepDescription} ></lightning-formatted-rich-text>
+                                    </div>
+                                    <template if:true={isLastStep}>
+                                        <div class="slds-m-top_xx-large">
+                                            <span class="button slds-p-horizontal_large slds-p-vertical_small slds-m-right_small" onclick={closeModal} >
+                                                START OVER
+                                            </span>
+                                            <span class="button slds-p-horizontal_large slds-p-vertical_small" onclick={exit}>
+                                                EXIT
+                                            </span>
+                                        </div>
+                                    </template>
+                                    <!-- <template if:true={isNotSmallScreen}> -->
+                                        <lightning-layout>
+                                            <lightning-layout-item size="1" small-device-size="4" >
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="11" small-device-size="8" >
+                                                <div class="slds-m-top_xx-large slds-m-bottom_small arrowContainer" onclick={goToNextStep} if:true={displayRightArrow}>
+                                                    <img src={stepArrowImgURL}></img>
+                                                    <span class="dxp-text-heading-small arrowText">
+                                                        <lightning-formatted-rich-text value={stepData.Arrow_Text.value}></lightning-formatted-rich-text>
+                                                    </span>
+                                                </div>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                    <!-- </template> -->
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="6" padding="horizontal-small" alignment-bump="bottom">
+                            <div class="imgSection">
+                                <template if:true={isNotSmallScreen}>
+                                    <template if:true={hasMainImg}>
+                                        <img src={stepMainImgURL} class="pointer" onclick={goToNextStep}></img>
+                                    </template>
+                                </template>
+                                <template if:false={isNotSmallScreen}>
+                                    <template if:true={hasMobileImg}>
+                                        <img src={stepMobileImgURL}  onclick={goToNextStep}></img>
+                                    </template>
+                                </template>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="12" padding="around-small">
+                            <span class="slds-m-bottom_medium" style="float:right;" >
+                                <span class="arrowLeft" onclick={goToPrevStep} if:true={displayLeftArrow}>
+                                    <lightning-icon icon-name="utility:chevronleft" alternative-text="Previous" title="Previous" class="icon"></lightning-icon>
+                                </span>
+                                {stepData.Step_Number.value}/{totalSteps}
+                                <span class="arrowRight" onclick={goToNextStep} if:true={displayRightArrow}>
+                                    <lightning-icon icon-name="utility:chevronright" alternative-text="Next" title="Next" class="icon"></lightning-icon>
+                                </span>
+                            </span>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

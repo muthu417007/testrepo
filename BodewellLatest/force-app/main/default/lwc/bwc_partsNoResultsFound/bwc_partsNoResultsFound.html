@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap slds-p-bottom_x-large noresultContainer">
+        <div class="slds-col slds-size_1-of-12"></div>
+        <div class="slds-col slds-large-size_5-of-12 slds-medium-size_3-of-12 slds-small-size_3-of-12 slds-m-top_large">
+            <h1 class="slds-p-bottom_x-large heading">No Result for: {searchKey}</h1>
+            <h3 class="slds-p-bottom_large highlightedText">No appliance model matches your search</h3>
+            <p>Try entering your appliance model number again to get the most accurate list of parts available for yourspecific appliance model.</p>
+            <div class="searchBar slds-col slds-size_8-of-12 slds-m-bottom_medium paddingAlignner" onkeyup={handleSearch}>
+                <lightning-input name="" type="search" label="" placeholder="An Example is GWE19JSLNFSS"></lightning-input>
+            </div>
+            <div class="slds-col slds-large-size_8-of-12 slds-medium-size_6-of-12 slds-small-size_4-of-12 paddingAlignner">
+                <strong>{label.modelFinderHelpText}</strong>
+                <a href="www.geappliances.com"><h5>{label.modelFinderHyperLinkText}</h5></a>
+            </div>
+        </div>
+        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_2-of-12 slds-small-size_1-of-12 helperImage">
+            <div class="slds-p-around_x-large imageBackground">
+                <h3 class="highlightedText">Example Appliance Model/Serial Tag</h3>
+                <img src={image.MODEL_FINDER}>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,152 @@
+<template>
+    <!--<div style="height: 100px;" class="app slds-p-around_x-large">
+        <lightning-card title="EQUIPMENT INFO" icon-name="standard:product_item">
+            <lightning-button label="Neutral" 
+                title="Preview" class="slds-m-left_x-small" 
+                slot="actions"></lightning-button>
+            <p class="slds-p-horizontal_small">Card Body</p>
+        </lightning-card>
+    </div>-->
+  <div class="ei_gridmargin">
+    <lightning-card title="EQUIPMENT INFO" icon-name="standard:product_item" label="Equipment Info" class="lgc-bg">
+        <!--<lightning-button label="STC" 
+                title="STC" class="slds-m-left_x-small" 
+                slot="actions"></lightning-button>
+                <lightning-button label="SWP" 
+                title="SWP" class="slds-m-left_x-small" 
+                slot="actions" onclick={launchSaveParts}></lightning-button>
+                <lightning-button label="NS" 
+                title="NS" class="slds-m-left_x-small" 
+                slot="actions"></lightning-button>-->
+                  
+                <div class="slds-border_top slds-p-around_medium slds-grid slds-gutters" style="height: 27vh;">
+                  <div class="slds-col slds-p-around_medium">
+                      <img class="cursor" src={imgurl1} alt="Image not available" width="150vh" style="overflow: auto;" onclick={openImgView} />
+                  </div>
+                  <div class="slds-col slds-p-around_small">
+                    <table style="width:100%">
+                      <tr>
+                        <th class="type-header">Type</th>
+                        <td class="features-data">{applianceTypeLabel}</td>
+                      </tr>
+                      <tr class="slds-col slds-p-around_small">
+                        <th class="type-header">Model</th>
+                        <td class="features-data">{model}</td>
+                      </tr>
+                      <tr class="slds-col slds-p-around_small">
+                        <th class="type-header">Mkt. Model</th>
+                        <td class="features-data">{mktmodel}</td>
+                      </tr>
+                      <tr class="slds-col slds-p-around_small">
+                        <th class="type-header">Serial</th>
+                        <td class="features-data">{serial}</td>
+                      </tr>
+                    </table>
+                    
+                  </div>
+                  <div class="slds-col">
+                      <div class="type-header">Features</div>
+                      <div class="slds-scrollable_y">
+                        <template for:each={equipmentFeatures} for:item="featureitem" for:index="index">
+                          <div class="slds-p-around_small" key={featureitem.label}>
+                            <div class="features-data">{featureitem.feature}</div>
+                          </div>
+                        </template>
+      
+                      </div>
+                      
+                  </div>
+                
+              </div>
+               
+              <!--<template if:true={imageview}>
+                <section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                  class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+                  <div class="slds-modal__container popupscreen">
+                    <header class="slds-modal__header">
+                      
+                      <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+                        onclick={closeImgView}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                      </button>
+                      <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Save with Parts</h2>
+                    </header>
+                    
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        
+                     
+                       
+                    </div>
+                    <footer class="slds-modal__footer">
+                      <button class="slds-button slds-button_brand" onclick={checkparts} title="Submit">Submit</button>
+                    
+                      <button class="slds-button slds-button_brand" onclick={closeImgView} title="Close">Close</button>
+                    </footer>
+                  </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+              </template>-->
+              
+              <template if:true={imageview}>
+                <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+                  <div class="slds-modal__container">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+                        onclick={closeImgView}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                      </button>
+                      <div class="slds-modal__header">
+                      <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Images</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_large modelview slds-text-align_center" id="modal-content-id-1">
+                      <!--<div class="slds-size_3-of-4 slds-text-align_center">
+                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+                          <lightning-carousel disable-auto-scroll>
+                            <template for:each={equipmentImages} for:item="imgItem">
+                              <lightning-carousel-image
+                                  key={imgItem.img_url}
+                                  src = {imgItem.img_url}
+                                  header = {imgItem.img_name}
+                                  description = "Second card description."
+                                  alternative-text = "Second card accessible description.">
+                              </lightning-carousel-image>
+                            </template>
+                          </lightning-carousel>
+                        </div>
+                      </div>  -->              
+                      <div class="container">
+                        <template for:each={equipmentImages} for:item="imgItem" for:index="imgvalue">
+                          <div key={imgItem.id} class="mySlides">
+                            <div class="numbertext">{imgItem.id} / {imglength}</div>
+                            <img src={imgItem.img_url} style="width:50%" height="50%">
+                          </div>
+                        </template>
+                        <a class="prev" onclick={movePrevious}>❮</a>
+                        <a class="next" onclick={moveNext}>❯</a>
+                        <!--<div class="caption-container">
+                          <p id="caption"></p>
+                        </div>-->
+                        <div class="row slds-border_top">
+                          <template for:each={equipmentImages} for:item="imgItem">
+                            <div key={imgItem.id} class="column">
+                              <img class="demo cursor" id={imgItem.id} src={imgItem.img_url} style="width:100%" onclick={selectImg} alt="The Woods">
+                            </div>
+                          </template>
+                        </div>
+                      </div>                    
+                      
+                    </div>
+                    <div class="slds-modal__footer">
+                      <!--<button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closeImgView}>Close</button>-->
+                      <button class="slds-button slds-button_brand" onclick={closeImgView}>Close</button>
+                    </div>
+                  </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+              </template>
+   </lightning-card>
+  </div>
+</template>

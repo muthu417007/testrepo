@@ -1,0 +1,221 @@
+<template>
+    <div class="spinner">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+    </div>
+       <!-- <lightning-layout-item size="12">
+            <lightning-layout-item size="12">
+                <h2 class="subheading">My Bodewell</h2>
+            </lightning-layout-item>
+        </lightning-layout-item> -->
+
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-3">
+            <!-- <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small"> Sign In</div>   -->
+              
+              <div class="idp-form slds-m-bottom_xx-large">
+                <div class="slds-m-bottom_medium username_container">
+                    <label class="slds-form-element__label idp-label">
+                        {userNameLabel}
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input
+                                type="text"
+                                data-id="userName_id"
+                                name="email"
+                                class="idp-text-input"
+                                onchange={onInputChanged}
+                                required=""
+                                onkeyup={keyPressed}
+                                autocapitalize="off"
+                        />
+                    </div>
+                    <template if:true={usernameHasError} class="slds-has-error">
+                        <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{usernameValidationError}
+                        </div>
+                    </template>
+                </div>
+        
+                <div class="slds-m-bottom_medium password_container">
+                    <label class="slds-form-element__label idp-label">
+                        {passWordLabel}
+                    </label>
+                    <div class="slds-form-element__control">
+                        <input
+                                type="password"
+                                data-id="password_id"
+                                name="password"
+                                class="idp-text-input"
+                                onchange={onInputChanged}
+                                required=""
+                                onkeyup={keyPressed}
+                        />
+                    </div>
+                    <template if:true={passwordHasError}>
+                        <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{passwordValidationError}
+                        </div>
+                    </template>
+                </div>
+        
+                <div id="forgot_password" class="slds-form-element slds-grid">
+                    <a class="idp-link" href={forgotPasswordLink} target="_self"> {forgotPasswordLabel} </a>
+                </div>
+        
+                <div if:false={airWatersite} id="passwordless_login" class="slds-form-element slds-grid slds-m-top_medium slds-m-bottom_small">
+                    <a class="idp-link" href={passwordlessLoginLinkBodewell} target="_self"> {passwordlessLabelBodewell} </a>
+                </div>
+        
+                <template if:true={generalError}>
+                    <div class="generalErrorClass">{generalErrorMessage}</div>
+                </template>
+        
+                <button
+                        class="
+                    slds-p-around_x-small
+                    slds-m-top_small
+                    slds-m-bottom_small
+                    idp-primary-button
+                    createButton
+                "
+                        onclick={handleLogin}
+                >
+                    {loginButtonLabel}
+                </button>
+            </div>
+              
+             
+            </div>
+            <div class="slds-size_1-of-3">
+            <div class="vl"> </div>
+            </div>
+            <div class="slds-size_1-of-3">
+             <!-- <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Create Account</div>  -->
+            
+              <p> <b> With a Bodewell account, you'll have online access to </b></p>
+              <ul style="list-style-type:disc; padding-left:10px">
+                  <li>Information about your registration appliances</li>
+                  <li>Owner's Manuals (for our partner brands of appliances)</li>
+                  <li>Quick Service Scheduling </li>
+                  <li>Fast Checkout</li>
+                </ul>  
+                
+             <template if:false={airWatersite}>
+              <button
+                      class="
+                  slds-p-around_x-small
+                  slds-m-top_small
+                  slds-m-bottom_small
+                  idp-secondary-button
+                  createButton
+              "
+                      onclick={handleCreateAccount}
+              >
+                  {createAccountLabel}
+              </button>
+              </template> 
+            
+            </div>
+            
+        </div>
+
+  <!--<div class="slds-grid slds-gutters">  
+     <div class="slds-col">
+            <Strong> Sign In </Strong>
+    
+        <div class="idp-form slds-m-bottom_xx-large">
+            <div class="slds-m-bottom_medium username_container">
+                <label class="slds-form-element__label idp-label">
+                    {userNameLabel}
+                </label>
+                <div class="slds-form-element__control">
+                    <input
+                            type="text"
+                            data-id="userName_id"
+                            name="email"
+                            class="idp-text-input"
+                            onchange={onInputChanged}
+                            required=""
+                            onkeyup={keyPressed}
+                            autocapitalize="off"
+                    />
+                </div>
+                <template if:true={usernameHasError} class="slds-has-error">
+                    <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{usernameValidationError}
+                    </div>
+                </template>
+            </div>
+    
+            <div class="slds-m-bottom_medium password_container">
+                <label class="slds-form-element__label idp-label">
+                    {passWordLabel}
+                </label>
+                <div class="slds-form-element__control">
+                    <input
+                            type="password"
+                            data-id="password_id"
+                            name="password"
+                            class="idp-text-input"
+                            onchange={onInputChanged}
+                            required=""
+                            onkeyup={keyPressed}
+                    />
+                </div>
+                <template if:true={passwordHasError}>
+                    <div class="slds-p-around_xx-small slds-text-align_center inputErrorClass">{passwordValidationError}
+                    </div>
+                </template>
+            </div>
+    
+            <div id="forgot_password" class="slds-form-element slds-grid">
+                <a class="idp-link" href={forgotPasswordLink} target="_self"> {forgotPasswordLabel} </a>
+            </div>
+    
+            <div if:false={airWatersite} id="passwordless_login" class="slds-form-element slds-grid slds-m-top_medium slds-m-bottom_small">
+                <a class="idp-link" href={passwordlessLoginLink} target="_self"> {passwordlessLabel} </a>
+            </div>
+    
+            <template if:true={generalError}>
+                <div class="generalErrorClass">{generalErrorMessage}</div>
+            </template>
+    
+            <button
+                    class="
+                slds-p-around_x-small
+                slds-m-top_small
+                slds-m-bottom_small
+                idp-primary-button
+            "
+                    onclick={handleLogin}
+            >
+                {loginButtonLabel}
+            </button>
+        </div>
+       
+        <div class="slds-col">
+            <Strong> Create Account </Strong>
+            <p> <b> With a Bodewell account, you'll have online access to </b></p>
+            <ul style="list-style-type:disc; padding-left:10px">
+                <li>Information about your registration appliances</li>
+                <li>Owner's Manuals (for our partner brands of appliances)</li>
+                <li>Quick Service Scheduling </li>
+                <li>Fast Checkout</li>
+              </ul>  
+              
+            <template if:false={airWatersite}>
+            <button
+                    class="
+                slds-p-around_x-small
+                slds-m-top_small
+                slds-m-bottom_small
+                idp-secondary-button
+            "
+                    onclick={handleCreateAccount}
+            >
+                {createAccountLabel}
+            </button>
+            </template>
+        </div>
+    </div>
+    </div>    -->
+    </template>

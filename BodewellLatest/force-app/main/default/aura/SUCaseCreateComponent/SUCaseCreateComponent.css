@@ -1,0 +1,127 @@
+.THIS{
+}
+.THIS .displaynone{ 
+    display:none;
+}
+.THIS .container_div{
+    padding-bottom:20px;
+}
+.THIS .errorText{
+    color:red;
+    font-size:14px;
+}
+.THIS .padd_left{
+    padding-left:15px;
+}
+.THIS .case_review{
+    padding:5px 0px;
+}
+
+.THIS  .inneronediv {
+    display:block;
+}
+.THIS .content_style{
+   display:flex;
+    padding-bottom:20px;
+}
+.THIS .selectedPage{
+    border-right:2px solid #ccc;
+}
+.THIS .description{
+    padding: 10px;
+    font-size: 25px;
+}
+
+.THIS .ErrorMsgDiv{
+    color : red;
+}
+.THIS .su_disSpiner{
+    display: none;
+}
+
+/* remove the "or drop files" label from the right of the lightning:input type file */
+.THIS .slds-file-selector__dropzone .slds-file-selector__text{
+    display: none;
+}
+/* remove the "Upload Files" text from the button of the lightning:input type file */
+.THIS .slds-file-selector__dropzone .slds-file-selector__button{
+    border: none;
+    color: transparent;
+    background: none !important;
+	padding: 0;
+    min-width: 250px;
+}
+.THIS .slds-file-selector__dropzone {
+    border: none;
+}
+.THIS .padtop{
+        padding-top: 25px !important;
+}
+.THIS .padbotm{
+    font-size:1.125rem;
+    font-weight: 400 !important;
+    padding-bottom: 20px!important;
+}
+.THIS .slds-form-element__label {
+    cursor: pointer;
+    font-size: 14px;
+    max-width: 100%;
+}
+.THIS .slds-button__icon{
+     color: rgb(0, 143, 191);
+    margin-right:9.5rem;
+}
+.THIS .slds-file-selector_files .slds-file-selector__body{
+    cursor: pointer;
+}
+.THIS .lightning-record-form-cancel{
+    display:none;
+}
+.THIS .su-file-upload .slds-form-element .slds-form-element__label {
+    position: absolute;
+    left: 23px;
+}
+.THIS .slds-modal__footer {
+    padding: 5px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+.THIS .resolveIssueText, .THIS .resolveIssueBttns{
+    display: inline-block;
+}
+.THIS .resolveIssueBttns span{
+    padding:0px 5px;
+}
+.THIS .customErrorMessage:before {
+    content: '*';
+    color: #ff1919;
+    margin-right: 5px;
+}
+.THIS .customErrorMessageIn label:before {
+    content: '*';
+    color: #ff1919;
+    margin-right: 5px;
+}
+.THIS #contactSupportModal .slds-button{
+    font-weight: bold;
+}
+.THIS .hidden-field{
+    display: none;
+}
+.THIS .lookupLabel .slds-form-element .slds-form-element__label {
+    display: none;
+}
+
+.THIS .slds-form-element__control{
+    clear: left;
+	padding: 0;    
+}
+.THIS .su_list_searchBtnDIV {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.THIS .su_list_searchBtnDIV .searchBtn{
+        color: #fff !important;
+    padding: 5px 12px;
+    font-size: 14px;
+}

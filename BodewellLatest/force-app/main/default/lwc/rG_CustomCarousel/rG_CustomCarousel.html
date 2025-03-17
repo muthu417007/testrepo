@@ -1,0 +1,97 @@
+<template>
+    <!-- Desktop View Starts  -->
+    <div class="inner-wrapper-steps ">
+        <h3 class="desc-head">HOW GE APPLIANCES FACTORY SERVICE WORKS</h3>
+    
+    <div class="rg_Desktop_Steps_Section slds-grid slds-wrap inner-wrapper-steps-desc">
+        <template for:each={slides} for:item="slide">
+            <div key={slide.Heading1__c} class="slds-col slds-large-size_3-of-12 slds-small-size_12-of-12 slds-medium-size_6-of-12 rg_steps_content">
+                <div class="slds-col slide-section">
+                    <div>
+                        <lightning-layout>
+                            <lightning-layout-item class="slide-icon-image" size="3">
+                                <img src={slide.ImageUrl__c}>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="9">
+                                <div class="carouselHeading1">
+                                    {slide.Heading1__c}
+                                </div>
+                                <div class="carouselHeading2">
+                                    {slide.Heading2__c}
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <div class="carouselDescription">
+                        <lightning-layout>
+                            <lightning-layout-item>
+                                {slide.Description__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <div if:true ={slide.Contact_Number__c} class="slide-contactnumber">
+                         <a href={tollfreenumberlink} onclick={handleCall}>{tollfreenumber}</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+       
+    </div>
+    </div>
+    <div class="fine-print">
+        <span>
+            {RG_Disclaimer_Text}
+        </span>
+    </div>
+    <!-- Desktop View Ends  -->
+    <!-- Crousel Starts -->
+    <!-- <div class="rg_Mobile_Carousal">
+        <div class="carouselMainHeading">
+            <h3>HOW GE APPLIANCES FACTORY SERVICE WORKS</h3>
+        </div>
+        <lightning-layout>
+            <lightning-layout-item size="1" class="slds-text-align_center">
+                <a class="prev" onclick={handlePrev}>
+                     <lightning-icon icon-name="utility:chevronleft" size="small"></lightning-icon>
+                </a>
+            </lightning-layout-item>
+            <lightning-layout-item size="10">
+                <div>
+                    <template for:each={slidesData} for:item="slide">
+                        <div class={slide.cardClasses} key={slide.slideIndex}>
+                            <lightning-layout>
+                                <lightning-layout-item size="3">
+                                    <img src={slide.ImageUrl__c}>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="9">
+                                    <div class="carouselHeading1">
+                                        {slide.Heading1__c}
+                                    </div>
+                                    <div class="carouselHeading2">
+                                        {slide.Heading2__c}
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <div class="carouselDescription">
+                                {slide.Description__c}
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="1" class="slds-text-align_center">
+                <a class="next" onclick={handleNext}>
+                    <lightning-icon icon-name="utility:chevronright" size="small"></lightning-icon>
+                </a>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-text-align_center">
+            <template for:each={slidesData} for:item="slide">
+                <span class={slide.dotClasses} key={slide.slideIndex} onclick={currentSlide}
+                    data-id={slide.slideIndex}></span>
+            </template>
+        </div>
+    </div> -->
+    
+    <!-- Crousel Ends -->
+</template>

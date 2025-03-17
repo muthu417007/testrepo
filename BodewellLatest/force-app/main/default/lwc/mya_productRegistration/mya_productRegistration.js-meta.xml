@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Haier,Cafe,Bodewell" description="Brand"/>
+            <property name="title" type="String" default="REGISTER YOUR APPLIANCE" label="Enter The Title" description="Enter The Title"/>
+            <property name="subtitle" type="String" default="Enter Your Appliance Information" label="Enter The Subtitle" description="Enter The Subtitle"/>
+            <property name="modelno" type="String" default="Model Number" label="Model Number Label" description="Model Number"/>
+            <property name="serialno" type="String" default="Serial Number" label="Serial Number Label" description="Serial Number"/>
+            <property name="installationdate" type="String" default="Installation Date" label="Installation Date Label" description="Installation Date"/>
+            <property name="firstNameLabel" type="String" default="First Name" label="First Name Label" description="First Name"/>
+            <property name="lastNameLabel" type="String" default="Last Name" label="Last Name Label" description="Last Name"/>
+            <property name="primaryPhoneLabel" type="String" default="Primary Phone" label="Primary Phone Label" description="Primary Phone"/>
+            <property name="addressOneLabel" type="String" default="Address" label="Address Label" description="Address"/>
+            <property name="cityLabel" type="String" default="City" label="City Label" description="City"/>
+            <property name="stateLabel" type="String" default="State" label="State Label" description="State"/>
+            <property name="zipcodeLabel" type="String" default="Zipcode" label="Zipcode Label" description="Zipcode"/>
+            <property name="emailAddressLabel" type="String" default="Email Address" label="Email Address Label" description="Email Address"/>
+            <property name="confirmEmailAddressLabel" type="String" default="Confirm Email Address" label="Confirm Email Address Label" description="Confirm Email Address"/>
+            <property name="continueButtonLabel" type="String" default="Continue" label="Continue Button Label" description="Continue Button Label"/>
+            <property name="addAnotherProductButtonLabel" type="String" default="ADD ANOTHER PRODUCT" label="Add Another Product Button Label" description="Add Another Product Button Label"/>
+            <property name="contactverification" type="String" default="VERIFY YOUR CONTACT INFORMATION" label="Contact Verification Info" description="Contact Verification Info"/>
+            <property name="importantMessage" type="String" default="Important: Failure to complete and submit this form does not diminish your warranty rights." label="Important message" description="Important message"/>
+            <property name="offerMessage" type="String" default="When you register your appliance, you're automatically entered for a chance to win " label="Offer message" description="Offer message"/>
+            <property name="offerHighlight" type="String" default="win $2500!" label="Offer highlight" description="Offer highlight"/>
+            <property name="officialRulesLink" type="String" default="See Official Rules for details." label="Official Rules Link Label" description="Official Rules Link Label"/>
+            <property name="selectAddressLabel" type="String" default="Select An Address Where The Appliance Will Be Located." label="Select Address Label" description="Select Address Label"/>
+            <property name="selectPhoneLabel" type="String" default="Select A Phone Number Associated With This Appliance" label="Select Phone Label" description="Select Phone Label"/>
+            <property name="reviewInfoLabel" type="String" default="REVIEW YOUR INFORMATION" label="Review Info Label" description="Review Info Label"/>
+            <property name="ownerInfoLabel" type="String" default="OWNER INFORMATION" label="Owner Info Label" description="Owner Info Label"/>
+            <property name="productLabel" type="String" default="PRODUCT" label="Product Label" description="Product Label"/>
+            <property name="productInfoModelLabel" type="String" default="MODEL #" label="Product Info Model Label" description="Product Info Model Label"/>
+            <property name="productInfoSerialLabel" type="String" default="SERIAL #" label="Product Info Serial Label" description="Product Info Serial Label"/>
+            <property name="productInfoApplianceLabel" type="String" default="APPLIANCE" label="Product Info Appliance Label" description="Product Info Appliance Label"/>
+            <property name="productInfoInstallDateLabel" type="String" default="INSTALLATION DATE" label="Product Info Installation Date Label" description="Product Info Installation Date Label"/>
+            <property name="submitRegistartionButtonLabel" type="String" default="SUBMIT REGISTRATION" label="Submit Button Label" description="Submit Button Label"/>
+            <property name="editRegistrationLinkLabel" type="String" default="EDIT REGISTRATION" label="Edit Registartion Label" description="Edit Registration Label"/>
+            <property name="viewYourAccountButtonLabel" type="String" default="VIEW YOUR ACCOUNT" label="View Your Account Button Label" description="View Your Account Label"/>
+            <property name="registerAnotherProductLabel" type="String" default="REGISTER ANOTHER ACCOUNT" label="Register Another Account Button Label" description="Register Another Account Button Label"/>
+            <property name="thankYouLabel" type="String" default="Thank You For Registering Your Appliance." label="Thank You Label" description="Thank You Label"/>
+            <property name="offerClaimLabel" type="String" default="You have been entered for a chance to win $2500 in our monthly sweepstakes." label="Offer Claim Label" description="Offer Claim Label"/>
+            <property name="whereIsMyModelNumberLink" type="String" default="https://www.geappliances.com/ge/find-model-serial-number/" label="Where is my model number link url" description="Where is my model number link url"/>
+            <property name="overLimitValidationMessage" type="String" default="You have reached the maximum number of products you can register at one time." label="Validation message for add product limit" description="Validation message for add product limit"/>
+            <property name="consentValidationMessage" type="String" default="You must check the box to continue." label="Consent validation message" description="Consent validation message"/>
+            <property name="unknownBrandCode" type="String" default="UNK" label="Unknown Brand Code" description="Unknown Brand Code"/>
+            <property name="unknownProductLineCode" type="String" default="991" label="Unknown Product Line Code" description="Unknown Product Line Code"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

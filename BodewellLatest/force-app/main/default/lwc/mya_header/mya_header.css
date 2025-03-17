@@ -1,0 +1,22 @@
+.images {
+    width: 17%;
+    height: 5%;
+    margin: 2rem 0rem -0.6rem 0.75rem;
+}
+
+.images3 {
+    width: 20%;
+    height: 5%;
+}
+
+.images2 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 39.9375rem) {
+    .images {
+        width: 90%;
+        height: 5%;
+        margin: 2rem 0rem -0.6rem 0.5rem;
+    }
+}

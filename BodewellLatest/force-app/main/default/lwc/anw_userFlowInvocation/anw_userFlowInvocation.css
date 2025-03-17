@@ -1,0 +1,13 @@
+.appliance-btn {
+    font-family: 'Gotham-Book';
+    width: 50%;
+    align-items: center;
+}
+.btn-grp {
+    margin: 0 auto;
+    
+}
+.welcome-msg {
+    margin-top: 25px;
+    margin-left: 0px;
+}

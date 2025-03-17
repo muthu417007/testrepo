@@ -1,0 +1,99 @@
+.custom-button {
+	font-size: 9px;
+    font-weight: bold;
+	height: 28px;
+	width:100%;
+	border-radius: 25px;
+	opacity: 1;
+	text-align: center;
+	letter-spacing: 0.75px;
+	text-transform: uppercase;
+	padding: 15px 0px;
+}
+
+.custom-button-schedule {    
+	background: #245B83 0% 0% no-repeat padding-box;
+    color: #F7F1E7;
+}
+
+.custom-button-offer {    
+	background: #FFC01F 0% 0% no-repeat padding-box;    
+	color: #12212E;
+}
+
+.store-locator-icon {
+	width: 25px;
+    padding: 0px 0px 10px 5px;
+    color: blue;
+}
+
+.store-locator-pin {
+  background-image: url("/bodewellCommerce/assets/icons/utility-sprite/svg/symbols.svg#checkin");
+  color: white;
+}
+
+.spinner{
+	position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    width: 55px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* .desk-map-container  .desk-map {
+    display: block;
+}
+    
+.mob-map-container  .mob-map {
+    display: none;
+} */
+
+.mob-map-buttons {
+    width:100%;
+    font-size: 18px;
+    border-radius: 0px;
+}
+
+.map-max-height {
+    height: 100vh;
+    padding: 0px 0px 30px 0px;
+}
+
+.map-min-height {
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+.desk-hidden {
+    display: none;
+}
+
+@media only screen and (max-device-width: 1023px) {
+    /* For portrait layouts only */
+
+    .mob-hidden {
+        display: none;
+    }
+
+    .desk-hidden {
+        display: block;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    /* For landscape layouts only */
+     .store-offer-modal {
+        width:100%;
+        max-width:490px;
+        min-width: 490px;
+    }   
+
+    .list-view-section {
+        height: 100vh;
+    }
+
+    .map-view-section {
+        height: calc(118vh + 100px);
+    }
+}

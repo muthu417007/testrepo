@@ -1,0 +1,11 @@
+<template>
+    <td class="slds-row-number numCol rowClass"></td>
+    <td if:false={hideAgent} class="rowClass">
+        <div class="agentname slds-truncate" data-target-id={session.Agent__r.Id} onclick={handleClickedRecord}> {session.Agent__r.Name} </div>
+    </td>
+    <td class="rowClass">{session.Status__c}</td>
+    <td class="rowClass">{session.Date__c}</td>
+    <td class="rowClass">
+        <div class="agentname slds-truncate" data-target-id={session.Id} onclick={handleClickedRecord}> {formattedTime}</div>
+    </td>
+</template>

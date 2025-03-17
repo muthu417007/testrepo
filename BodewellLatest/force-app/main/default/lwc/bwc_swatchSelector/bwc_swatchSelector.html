@@ -1,0 +1,52 @@
+<template>
+    <div class={gridCss} onclick={handleOnClick}>
+        <template for:each={items} for:item="item">
+            <template if:true={item.selected}>
+                <div key={item.value} class={numSwatchesCss}>
+                    <input
+                        title={item.value}
+                        type="image"
+                        src={item.url}
+                        data-key={item.value}
+                        class="selected"
+                    />
+                    <div lwc:if={item.hardwareColorName} class="hardwareName">{item.hardwareColorName}</div>
+                    <div lwc:if={item.hardwarePrice} class="hardwarePrice">
+                        <lightning-formatted-number value="0" format-style="currency" currency-code="USD" minimum-fraction-digits="0" maximum-fraction-digits="0"></lightning-formatted-number>
+                    </div>
+                </div>
+            </template>
+            <template if:false={item.selected}>
+                <template if:true={item.disabled}>
+                    <div key={item.value} class={numSwatchesCss}>
+                        <input
+                            title={item.value}
+                            type="image"
+                            src={item.url}
+                            data-key={item.value}
+                            disabled
+                        />
+                        <div lwc:if={item.hardwareColorName} class="hardwareName">{item.hardwareColorName}</div>
+                        <div lwc:if={item.hardwarePrice} class="hardwarePrice">
+                            <lightning-formatted-number value={item.hardwarePrice} format-style="currency" currency-code="USD" minimum-fraction-digits="0" maximum-fraction-digits="0"></lightning-formatted-number>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={item.disabled}>
+                    <div key={item.value} class={numSwatchesCss}>
+                        <input
+                            title={item.value}
+                            type="image"
+                            src={item.url}
+                            data-key={item.value}
+                        />
+                        <div lwc:if={item.hardwareColorName} class="hardwareName">{item.hardwareColorName}</div>
+                        <div lwc:if={item.hardwarePrice} class="hardwarePrice">
+                            <lightning-formatted-number value={item.hardwarePrice} format-style="currency" currency-code="USD" minimum-fraction-digits="0" maximum-fraction-digits="0"></lightning-formatted-number>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </template>
+    </div>
+</template>

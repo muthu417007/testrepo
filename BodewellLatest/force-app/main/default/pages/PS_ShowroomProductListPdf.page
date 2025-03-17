@@ -1,0 +1,104 @@
+<apex:page standardController="RetailStore" extensions="PS_ShowroomPdfGenerator_ctrl" renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+            <style >
+            	@page{size: A4 landscape;}
+                body {font-family:Arial, Helvetica, sans-serif;}
+                .header {text-align:left; font-size:30px;}
+                table {
+                    border-collapse: collapse;
+                    border: .02em solid black;
+                    font-size: 12px;
+                    -fs-table-paginate: paginate;
+                }
+                td, th {border: .02em solid black; padding-left: 3px; padding-right: 3px;}
+                th {font-size:12px;}
+
+                .signatureTable td {border-top:0px; border-left:0px; border-right:0px; padding-top: 7px; border-color: gray;}
+                .signatureTable td {width: 120px;}
+                .signatureTable {width: 500px; position: relative; left: 30px; border: none; font-size:12px;}
+            	.importantNote {color: red; width:65%; font-size:12px;}
+            </style>
+        </head>
+
+        <p class="header">Customer Floor Display Details</p>
+        <table class="signatureTable">
+            <tr>
+                <td>Customer Floor Display Title:</td>
+                <td>{!rs.Name}</td>
+            </tr>
+            <tr>
+                <td>Customer Floor Display Date:</td>
+                <td>
+                	<apex:outputText value="{0, date, MM/dd/yyyy}">
+                    	<apex:param value="{!TODAY()}" />
+                	</apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>Account Name:</td>
+                <td>{!rs.Account__r.Name}</td>
+            </tr>
+            <tr>
+                <td>Created By:</td>
+                <td>{!$User.FirstName} {!$User.LastName}</td>
+            </tr>
+            <tr>
+                <td>Total GE Appliances Models:</td>
+                <td>{!rs.Count_GEA_Products__c}</td>
+            </tr>
+            <tr>
+                <td>Total Competitor Models:</td>
+                <td>{!rs.Count_Competitive_Products__c}</td>
+            </tr>
+            <tr>
+                <td>GE Appliances Floor Penetration:</td>
+                <td>
+                    <apex:outputField value="{!rs.GE_Appliances_Floor_Penetration__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Customer Floor Display Status:</td>
+                <td>Active</td>
+            </tr>
+        </table>
+        <p class="importantNote">
+            Models represent resellers current store offering and store pricing. Reseller has sole discretion to determine which GE Appliances and competitor models are displayed and the resale pricing of those models
+        </p>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!products}" var="p">
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.SKU__c.Label}">{!p.SKU__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Brand__c.Label}">{!p.Brand__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Product_Line__c.Label}">{!p.Product_Line__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Sub_Product_Line__c.Label}">{!p.Sub_Product_Line__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Count__c.Label}">{!p.Count__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Description__c.Label}">{!p.Description__c}</apex:column>
+                    <apex:column headerValue="Status">{!p.GEA_Status__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.ADC_Avail_Date__c.Label}">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!p.ADC_Avail_Date__c}" />
+                        </apex:outputText>
+                    </apex:column>
+                	<apex:column headerValue="{!$ObjectType.StoreProduct.fields.Low_Est_Retail__c.Label}">{!p.Low_Est_Retail__c}</apex:column>
+                   	<apex:column headerValue="{!$ObjectType.StoreProduct.fields.Cust_Floor_Price__c.Label}">
+                    	<apex:outputField value="{!p.Cust_Floor_Price__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Display__c.Label}">
+                    	<apex:outputField value="{!p.Display__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.NPI_Transition__c.Label}">
+                    	<apex:outputField value="{!p.NPI_Transition__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.NPI_ADC_Date__c.Label}">
+                        <apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!p.NPI_ADC_Date__c}" />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.StoreProduct.fields.Notes__c.Label}">{!p.Notes__c}</apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+    </html>
+</apex:page>

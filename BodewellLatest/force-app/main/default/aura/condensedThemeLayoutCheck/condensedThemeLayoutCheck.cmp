@@ -1,0 +1,24 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Bodewell">
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>
+                  <div class="slds-grid slds-grid_vertical">
+                   <div class="slds-col slds-size_12-of-12">
+                        <div class="navigation">
+                              <c:bw_navigationBar></c:bw_navigationBar>
+                        </div>
+                   </div>
+        	  <div class="slds-col slds-size_12-of-12">
+                  <lightning:layoutItem>
+                        <div class="content">
+                            {!v.body}	
+                        </div>
+                  </lightning:layoutItem>
+              </div>
+             
+              <div class="slds-col slds-size_12-of-12">
+                        <div class="footerArea">
+                            <c:bdw_footer></c:bdw_footer>
+                        </div>
+              </div>
+	</div>
+</aura:component>

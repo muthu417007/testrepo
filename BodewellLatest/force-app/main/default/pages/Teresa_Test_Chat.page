@@ -1,0 +1,160 @@
+<apex:page >
+    <style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #005290;
+        font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #005290;
+        }
+    </style>
+    
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true; //Or false
+            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+            
+            //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+            //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+            
+            //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+            //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+            
+            // Settings for Chat
+            //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+            //};
+            //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+            //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+            //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+            
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+            //Added by saidulu
+            /* embedded_svc.settings.extraPrechatFormDetails = [{
+                "label": "RecordTypeId",
+                "value": "0128B000000jgq3QAA",
+                "displayToAgent": false
+            },
+                                                             {
+                                                                 "label": "CaseStatus",
+                                                                 "value": "New",
+                                                                 "displayToAgent": false
+                                                             }];
+            
+            */
+            embedded_svc.settings.extraPrechatInfo = [{
+                "entityName": "Contact",
+                "saveToTranscript": "ContactId",
+                "showOnCreate": true,
+                "entityFieldMaps": [{
+                    "isExactMatch": false,
+                    "fieldName": "FirstName",
+                    "doCreate": false,
+                    "doFind": false,
+                    "label": "First Name"
+                }, {
+                    "isExactMatch": false,
+                    "fieldName": "LastName",
+                    "doCreate": false,
+                    "doFind": false,
+                    "label": "Last Name"
+                }, {
+                    "isExactMatch": true,
+                    "fieldName": "Email_GG__c",
+                    "doCreate": false,
+                    "doFind": true,
+                    "label": "Email"
+                },{
+                    "isExactMatch": false,
+                    "fieldName": "Phone",
+                    "doCreate": false,
+                    "doFind": false,
+                    "label": "Phone Number"
+                }]
+            },
+                                                      {
+                                                          "entityName": "Account",
+                                                          "showOnCreate": true,
+                                                          "linkToEntityName": "Case",
+                                                          "linkToEntityField": "AccountId",
+                                                          "saveToTranscript": "AccountId",
+                                                          "entityFieldMaps": [
+                                                              {
+                                                                  "isExactMatch": false,
+                                                                  "fieldName": "LastName",
+                                                                  "doCreate": true,
+                                                                  "doFind": false,
+                                                                  "label": "Last Name"
+                                                              },
+                                                              {
+                                                                  "isExactMatch": false,
+                                                                  "fieldName": "RecordTypeId",
+                                                                  "doCreate": true,
+                                                                  "doFind": false,
+                                                                  "label": "RecordTypeId"
+                                                              },
+                                                              {
+                                                                  "fieldName": "PersonEmail",
+                                                                  "doCreate": true,
+                                                                  "label": "Email"
+                                                              },
+                                                              {
+                                                                  "doCreate": false,
+                                                                  "doFind": true,
+                                                                  "fieldName": "Email__pc",
+                                                                  "isExactMatch": true,
+                                                                  "label": "Email"
+                                                              },
+                                                          	  {
+                                                                "doCreate": false,
+                                                                  "doFind": true,
+                                                                  "fieldName": "Phone",
+                                                                  "isExactMatch": true,
+                                                                  "label": "Phone"
+                                                               }]
+                                                      },
+                                                      {
+                                                          "entityName": "Case",
+                                                          "showOnCreate": true,
+                                                          "entityFieldMaps": [
+                                                              {
+                                                                  "doCreate": true,
+                                                                  "doFind": false,
+                                                                  "fieldName": "Status",
+                                                                  "isExactMatch": false,
+                                                                  "label": "CaseStatus"
+                                                              }]
+                                                      }];  
+            //Code ended by Saidulu
+            embedded_svc.init(
+                'https://geapp--bwcommoob.sandbox.my.salesforce.com',
+                'https://geapp--bwcommoob.sandbox.my.salesforce-sites.com/liveAgentSetupFlow',
+                gslbBaseURL,
+                '00D8B0000004dYf',
+                'Cafe_DTC_Chat',
+                {
+                    baseLiveAgentContentURL: 'https://c.la5-c1cs-ia4.salesforceliveagent.com/content',
+                    deploymentId: '5724P000000kVba',
+                    buttonId: '5734P000000LhSu',
+                    baseLiveAgentURL: 'https://d.la5-c1cs-ia4.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I4P000000L3xCUAS_1744fd10cf0',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+    
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://geapp--bwcommoob.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+    </script>
+</apex:page>

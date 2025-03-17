@@ -1,0 +1,26 @@
+<template>
+	<div lwc:if={isGreaterSize} class="arrow left" onclick={previousSlide}></div>
+	<div class="carousel">
+
+		<div class="slider-container">
+			<div class="slider" style={sliderStyle}>
+				<template for:each={relatedProductData} for:item="product">
+					<div key={product.id} class="carousel-item" onclick={handleClickProduct}>
+						<div key={product.id} class="slide">
+							<c-bwc_-related-product-structure-component product-id={product.Id}>
+							</c-bwc_-related-product-structure-component>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+
+	</div>
+	<div lwc:if={isGreaterSize} class="arrow right" onclick={nextSlide}></div>
+
+	<div if:false={relatedProductData} class="slds-text-align_center">
+		<lightning-formatted-text value="No related items found" ></lightning-formatted-text>
+		</div>
+
+
+</template>

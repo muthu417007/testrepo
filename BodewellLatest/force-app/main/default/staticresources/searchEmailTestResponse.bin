@@ -1,0 +1,453 @@
+{
+    "data": {
+        "HouseHoldByEmail": [
+            {
+                "Details": [
+                    {
+                        "COPSPersonNumber": "4289708525",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "275412238",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "9398833926",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "63342856",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "63373077",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "5113358178",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "249523509",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": "148477208",
+                        "PersonDetailID": "40032919",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "18323080",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "6351737391",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "68379",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "4466472549",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "68378",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "2955229493",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "68380",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "3164175",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "4466472549",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "3149586",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": null,
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "4987812",
+                        "PersonID": "2440481"
+                    },
+                    {
+                        "COPSPersonNumber": "5363298740",
+                        "GEConsumerNo": null,
+                        "PersonDetailID": "291435658",
+                        "PersonID": "2440481"
+                    }
+                ],
+                "ClientPersonCode": null,
+                "FirstName": "Jose",
+                "Gender": "M",
+                "IsDead": false,
+                "LastName": "Portuondo",
+                "MiddleName": "F",
+                "PersonID": "2440481",
+				
+                "Phone": [
+                    {
+                        "PhoneNumber": "1231234",
+                        "IsPrimaryPhone": "1",
+                        "PhoneTypeName": "UNKNOWN",
+                        "PhoneUseTypeName": "UNKNOWN"
+                    }
+                ],
+                "Orders": [
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-IN",
+                        "DataSourceName": "COPS File – Internet",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "L076984",
+                        "OrderDate": "2013-04-10T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "2435404",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWF3PK",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51199442",
+                                "ManufacturerCost": "18.60",
+                                "NetInvoiceValue": "118.00",
+                                "OrderID": "1330015",
+                                "OriginalModelNumber": "MWF3PK",
+                                "PartNumber": "MWF3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "7.38"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "118.00",
+                        "OrderID": "1330015",
+                        "OrderNetAmount": "118.00",
+                        "OrderNumber": "8832209",
+                        "OrderPaymentMethod": "C",
+                        "OrderPlacedOn": "2013-04-09T00:00:00.000Z",
+                        "OrderPromoCode": null,
+                        "OrderShipmentAmount": "0.00",
+                        "OrderTaxAmount": "7.38",
+                        "OrderUniqueKey": "13099",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-ML",
+                        "DataSourceName": "COPS file – Mail",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "L765931",
+                        "OrderDate": "2016-06-27T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "140289085",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWFP3PK",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51674495",
+                                "ManufacturerCost": "18.60",
+                                "NetInvoiceValue": "134.75",
+                                "OrderID": "5597860",
+                                "OriginalModelNumber": "MWFP3PK",
+                                "PartNumber": "MWFP3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "8.42"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "134.75",
+                        "OrderID": "5597860",
+                        "OrderNetAmount": "134.75",
+                        "OrderNumber": "4976740",
+                        "OrderPaymentMethod": "K",
+                        "OrderPlacedOn": "2016-06-27T00:00:00.000Z",
+                        "OrderPromoCode": "MM74GQ",
+                        "OrderShipmentAmount": "0.00",
+                        "OrderTaxAmount": "8.42",
+                        "OrderUniqueKey": "16179",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-IN",
+                        "DataSourceName": "COPS File – Internet",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "PARTSTOR",
+                        "OrderDate": "2012-02-04T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "2436060",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWF",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51039198",
+                                "ManufacturerCost": "6.27",
+                                "NetInvoiceValue": "81.50",
+                                "OrderID": "1329635",
+                                "OriginalModelNumber": "MWF",
+                                "PartNumber": "MWF",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "5.09"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "81.50",
+                        "OrderID": "1329635",
+                        "OrderNetAmount": "81.50",
+                        "OrderNumber": "8336584",
+                        "OrderPaymentMethod": null,
+                        "OrderPlacedOn": "2012-02-02T00:00:00.000Z",
+                        "OrderPromoCode": null,
+                        "OrderShipmentAmount": "5.95",
+                        "OrderTaxAmount": "5.46",
+                        "OrderUniqueKey": "12033",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-ML",
+                        "DataSourceName": "COPS file – Mail",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "L637176",
+                        "OrderDate": "2013-10-12T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "2435576",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWFP3PK",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51136174",
+                                "ManufacturerCost": "18.60",
+                                "NetInvoiceValue": "134.97",
+                                "OrderID": "1330123",
+                                "OriginalModelNumber": "MWFP3PK",
+                                "PartNumber": "MWFP3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "8.44"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "134.97",
+                        "OrderID": "1330123",
+                        "OrderNetAmount": "134.97",
+                        "OrderNumber": "8968280",
+                        "OrderPaymentMethod": "C",
+                        "OrderPlacedOn": "2013-10-10T00:00:00.000Z",
+                        "OrderPromoCode": "PHARM1",
+                        "OrderShipmentAmount": "0.00",
+                        "OrderTaxAmount": "8.44",
+                        "OrderUniqueKey": "13283",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-IN",
+                        "DataSourceName": "COPS File – Internet",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "PARTSTOR",
+                        "OrderDate": "2010-11-15T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "46601979",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWF3PK",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "44700142",
+                                "ManufacturerCost": "17.54",
+                                "NetInvoiceValue": "105.60",
+                                "OrderID": "4292548",
+                                "OriginalModelNumber": "MWF3PK",
+                                "PartNumber": "MWF3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "6.60"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "105.60",
+                        "OrderID": "4292548",
+                        "OrderNetAmount": "105.60",
+                        "OrderNumber": "6270150",
+                        "OrderPaymentMethod": null,
+                        "OrderPlacedOn": "2010-11-13T00:00:00.000Z",
+                        "OrderPromoCode": null,
+                        "OrderShipmentAmount": "12.95",
+                        "OrderTaxAmount": "7.41",
+                        "OrderUniqueKey": "10317",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-IN",
+                        "DataSourceName": "COPS File – Internet",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "PARTSTOR",
+                        "OrderDate": "2017-11-15T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "148307973",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWFP3PK",
+                                "DiscountPercent": "0.00",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51564575",
+                                "ManufacturerCost": "18.42",
+                                "NetInvoiceValue": "134.75",
+                                "OrderID": "6440501",
+                                "OriginalModelNumber": "MWFP3PK",
+                                "PartNumber": "MWFP3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "8.42"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "134.75",
+                        "OrderID": "6440501",
+                        "OrderNetAmount": "134.75",
+                        "OrderNumber": "0038775",
+                        "OrderPaymentMethod": "C",
+                        "OrderPlacedOn": "2017-11-14T00:00:00.000Z",
+                        "OrderPromoCode": null,
+                        "OrderShipmentAmount": "14.95",
+                        "OrderTaxAmount": "9.35",
+                        "OrderUniqueKey": "17318",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    },
+                    {
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "DataSourceCode": "PTS-CC",
+                        "DataSourceName": "COPS File – Calls",
+                        "FirstName": "Jose",
+                        "LastName": "Portuondo",
+                        "Locality": "Waban",
+                        "OrderCreatedBy": "L776210",
+                        "OrderDate": "2019-08-08T00:00:00.000Z",
+                        "OrderDetails": [
+                            {
+                                "AssetID": "157955054",
+                                "BrandName": "GE",
+                                "CleansedModelNumber": "MWFP3PK",
+                                "DiscountPercent": "0.22",
+                                "InvoiceLine": "1",
+                                "InvoiceNumber": "51441449",
+                                "ManufacturerCost": "17.51",
+                                "NetInvoiceValue": "105.12",
+                                "OrderID": "7504520",
+                                "OriginalModelNumber": "MWFP3PK",
+                                "PartNumber": "MWFP3PK",
+                                "ProductCategoryName": "Water Filtration Systems",
+                                "ProductDescription": "Water Filtration Systems",
+                                "ProductLineName": "Whole Home Systems",
+                                "TaxAmount": "6.57"
+                            }
+                        ],
+                        "OrderDiscountAmount": "0.00",
+                        "OrderGrossAmount": "134.75",
+                        "OrderID": "7504520",
+                        "OrderNetAmount": "105.12",
+                        "OrderNumber": "8456902",
+                        "OrderPaymentMethod": "K",
+                        "OrderPlacedOn": "2019-08-08T00:00:00.000Z",
+                        "OrderPromoCode": null,
+                        "OrderShipmentAmount": "0.00",
+                        "OrderTaxAmount": "6.57",
+                        "OrderUniqueKey": "19220",
+                        "PersonID": "2440481",
+                        "PostalCode": "024681923",
+                        "Region": "MA"
+                    }
+                ],
+                "EmailAddresses": [
+                    {
+                        "EmailAddress": "pportuondo@rcn.com",
+                        "IsPrimaryEmail": "0",
+                        "IsPrimaryPerson": false,
+                        "MYAMyAccountId": null
+                    },
+                    {
+                        "EmailAddress": "pepe.portuondo@gmail.com",
+                        "IsPrimaryEmail": "1",
+                        "IsPrimaryPerson": false,
+                        "MYAMyAccountId": null
+                    }
+                ],
+                "plevel": "First",
+                "Salutation": null,
+                "Assets": [
+                    {
+                        "AssetClassName": "Major Appliances",
+                        "AssetID": "32340600",
+                        "AssetScrappedOn": null,
+                        "AssetShippedOn": null,
+                        "BrandName": "GE Profile",
+                        "CleansedModelNumber": "PFSS6PKWSS",
+                        "IsProductReturned": "0",
+                        "LocationID": "2301181",
+                        "MACAddress": null,
+                        "OriginalEngineeringModelNumber": null,
+                        "OwnershipStartedOn": "2008-09-22T00:00:00.000Z",
+                        "ProductCategoryName": "Refrigerators",
+                        "ProductDescription": "REFRIGERATOR  BOTTOM FRZR",
+                        "ProductLineName": "Refrigeration",
+                        "SerialNumber": "AR078600"
+                    }
+                ],
+                "Locations": [
+                    {
+                        "LocationID": "2301181",
+                        "AddressLine1": "25 Nehoiden Rd",
+                        "AddressLine2": null,
+                        "Locality": "Waban",
+                        "Region": "MA",
+                        "PostalCode": "024681923",
+                        "CountryCode": "USA"
+                    }
+                ]
+            }
+        ]
+    }
+}

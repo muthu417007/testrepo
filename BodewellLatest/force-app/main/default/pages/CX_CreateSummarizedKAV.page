@@ -1,0 +1,69 @@
+<apex:page standardController="Knowledge__kav" extensions="CX_KAVControllerExtension" recordSetVar="kavs" lightningStylesheets="true">
+    <style type="text/css">
+        .input {
+            left: 0;
+            right: 0;
+            width: 50%;
+            max-width: 100%;
+            height: 32px!important
+        }
+        .picklist {
+            padding-left: 8px;
+        }
+        .summary {
+            height: 96px!important
+        }
+        .textarea {
+            resize: none!important;
+            overflow: hidden;
+        }
+    </style>
+
+    <script>
+        function handleTitleChange(titleField) {
+            const urlNameField = document.querySelector('.url');
+
+            let url = titleField.value;
+            
+            url = url.trim()
+                    .replaceAll(/[^a-zA-Z0-9\s\-]/g, '') // Removes everything that is not a letter, a number, a space or a hyphen
+                    .replaceAll(/\s/g, '-') // Changes any spaces for hyphens
+                    .replace(/^\-*/, '') // Removes any hyphens at the start
+                    .replace(/\-*$/, '') // Removes any hyphens at the end
+
+            urlNameField.value = url;
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock title="New Knowledge Article" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" />
+            </apex:pageBlockButtons>
+            <apex:pageMessages id="msgId" />
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Title" />
+                    <apex:inputField styleClass="input" value="{!Knowledge__kav.Title}" onchange="handleTitleChange(this);" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Summary" />
+                    <apex:inputField styleClass="input summary textarea" value="{!Knowledge__kav.Summary}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Keywords" />
+                    <apex:inputField styleClass="input textarea" value="{!Knowledge__kav.Keywords__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Url Name" />
+                    <apex:inputField styleClass="input url" value="{!Knowledge__kav.UrlName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Language" />
+                    <apex:selectList styleClass="input picklist" value="{!selectedLanguage}" size="1"  >
+                        <apex:selectOptions value="{!languages}" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

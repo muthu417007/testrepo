@@ -1,0 +1,16 @@
+<apex:page showHeader="false" standardController="Case" extensions="SMCBridgeCase">
+    <apex:slds />
+    <apex:includeLightning />
+        <!--<apex:iframe src="http://localhost:84/BridgeSMC.aspx" scrolling="true" />-->
+        <apex:form >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:commandButton action="{!redirect}" value="SMC Bridge" styleclass="slds-button slds-button_brand" />
+            <!--<apex:commandLink action="{!redirect}" value="SMC Bridge" target="_self"/>
+            <apex:outputLink value="http://localhost:84/Home.aspx?val1=&quot970217134600000(#||s)10097234(#||s)2725417(#||s)FS - No Charge Srvc(#||s)E140(#||s)185624832(#||s)JVM7195EKES(#||s)LH220494B(#||s)902904010401E14010(#||s)0&val2=&quot&quot&val3=ACTConcession_RN&val4=&quot&quot">SMC</apex:outputLink>
+            -->
+            <!--<apex:commandButton action="{!setUrl}" value="SMC Bridge" />-->
+        </apex:form> 
+        
+        <!--<apex:iframe src="{!smcUrl}" scrolling="true" />-->
+    
+</apex:page>

@@ -1,0 +1,52 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PendingApprovalItemsController">
+    <aura:attribute name="pendingApprovals" type="List"/>
+    <aura:attribute name="noPendingApprovalsAvailable" type="Boolean" default="true"/>
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+	<lightning:card>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-text-heading_medium slds-m-around_x-small">Pending Approvals</div>
+            <aura:if isTrue="{!v.noPendingApprovalsAvailable}">
+				<div class="slds-text-heading_small slds-align_absolute-center slds-m-around_large">There are no Pending Approvals at this moment.</div>
+				<aura:set attribute="else">
+					<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+						<thead style="max-width: 80vw;">
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Onboarding Request">Onboarding Request</div>
+							</th>
+							<th class="responsiveHideLater" scope="col">
+								<div class="slds-truncate" title="Status">Status</div>
+							</th>
+							<th class="responsiveHide" scope="col">
+								<div class="slds-truncate" title="Created Date">Created Date</div>
+							</th>
+						</thead>
+						<tbody style="max-width: 80vw;">
+							<aura:iteration items="{!v.pendingApprovals}" var="item" start="0" indexVar="index">
+                                <tr class="slds-hint-parent">
+                                    <th class="" data-label="Onboarding Request" scope="row">
+                                        <div class="responsiveShrink">
+                                            <div class="">
+                                                <a data-value="{!item.TargetObjectId}" onclick="{!c.navigateToRecord}">{!item.TargetObject.Name}</a>
+                                        	</div>
+                                        </div>
+                                    </th>
+                                    <td class="responsiveHideLater" data-label="Status">
+                                        <div class="">
+                                            <p class="slds-truncate" title="{!item.Status}">{!item.Status}</p>
+                                        </div>
+                                    </td>
+                                    <td class="responsiveHide" data-label="Created Date">
+                                        <div class="">
+                                            <p class="slds-truncate" title="{!item.CreatedDate}">{!item.CreatedDate}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+							</aura:iteration>
+						</tbody>
+					</table>         
+				</aura:set>
+			</aura:if>
+        </div>
+	</lightning:card>
+</aura:component>

@@ -1,0 +1,22 @@
+<template>
+	<div class="slds-grid slds-gutters">
+
+		<div class="slds-m-right_small slds-col slds-align_absolute_center slds-size_1.5-of-2">
+			<div class="slds-align_absolute_center ">
+
+				<template if:true={isMemberPresent}>
+					<div class="slds-box slds-grid slds-gutters image-background">
+						<div class="image-container slds-col slds-size_1-of-3 image-style">
+							<img src={bannerImage} alt="Banner Image" />
+						</div>
+						<div class="text-container slds-col slds-size_2-of-3 slds-p-around_xx-large">
+							<h1 class="header-text">Welcome to Bodewell!</h1>
+							<p class="text-design">As a reminder, members will continue to enjoy exclusive savings on appliances and parts purchases in addition to other great service benefits.
+							</p>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+	</div>
+</template>

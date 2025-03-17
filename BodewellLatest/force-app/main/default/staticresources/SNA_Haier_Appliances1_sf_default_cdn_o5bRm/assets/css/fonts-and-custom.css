@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Helvetica-Neue-Bold';
+    src: url(../resource/haier_resources/haier_resources/Helvetica-Neue-Bold_22498.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'HelveticaNeue-Regular';
+    src: url(../resource/haier_resources/haier_resources/HelveticaNeue-Regular.ttf) format('opentype');
+}
+
+.slds-m-top_x-large, .slds-m-top--x-large {
+    margin-top: -15px;
+}
+ 
+body {
+        border-top: none;
+    }
+
+body .cCenterPanel .siteforceContentArea{
+    background-color:#eff0f0;
+}
+.siteforceContentArea .comm-layout-column:not(:empty) {
+     padding-top : 0rem !important; 
+    }
+.slds-col--padded {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+.slds-p-horizontal--medium {
+     padding-left: 0rem !important; 
+     padding-right: 0rem !important; 
+}
+.siteforceContentArea .comm-layout-column .ui-widget:not(:last-child), .siteforceContentArea .cb-section_column .ui-widget:not(:last-child) {
+  margin-bottom:  0!important; 
+}
+.forceCommunitySection .cb-section_column {
+     padding: 0px !important;
+}
+.siteforceStarterBody .cCenterPanel {
+    outline: none !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+:root { --dxp-c-section-columns-max-width: 1170px; }

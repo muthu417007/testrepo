@@ -1,0 +1,87 @@
+<template>
+    <lightning-card if:false={hideCmp} icon-name='custom:custom25' id="cmpCard">
+        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Session Timer" slot="title">
+            {cmpHeader}
+        </h1>
+        <div class="slds-grid slds-m-horizontal_small">
+            <div class="slds-col">
+                <div if:true={showTotalByStatus}>
+                    <template for:each={totalFormattedTimeByStatus} for:item="status">
+                        <p key={status.name} class="slds-text-body_small mediumWeight slds-line-height_reset slds-m-bottom_xx-small">{status.name}: {status.formattedTime}</p>
+                    </template>
+                </div>
+                <p class="slds-text-body_small mediumWeight slds-line-height_reset">Total: {totalFormattedTime}</p>
+            </div>
+            <div class="slds-col slds-align_absolute-center slds-clearfix">
+                <p if:true={status} class="slds-text-body_small mediumWeight slds-line-height_reset">Current Status: {status}</p>
+            </div>
+        </div>
+        <lightning-button slot="actions" if:true={allowManual} label="New" onclick={toggleModal} disabled={disabled} ></lightning-button>
+        <div class="slds-card">
+            <center if:false={hideClock}>
+                <ul class="buttonAndTimer">
+                    <li>
+                        <template if:true={playing}>
+                            <img data-id="stop" title="Pause" data-manual-allowed={allowManual} src={timerPauseBtn} onclick={toggleTimerManually} />
+                        </template>
+                        <template if:false={playing}>
+                            <img data-id="start" title="Resume" data-manual-allowed={allowManual} src={timerPlayBtn} onclick={toggleTimerManually} />
+                        </template>
+                        <div id="time" class="timerClass">
+                            {stime}
+                        </div>
+                    </li>
+                </ul>
+            </center>   
+            <div class="tableCont slds-scrollable--y">
+                <table class="slds-table slds-table--bordered slds-table--fixed-layout fullWidth">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col" class="numCol"></th>
+                            <th if:false={hideAgent} scope="col">
+                                <div class="slds-truncate headPad" title="Agent">Agent</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate headPad" title="Status">Status</div>
+                            </th>
+                            <th scope="col" class="">
+                                <div class="slds-truncate headPad" title="Date">Date</div>
+                            </th>
+                            <th scope="col" class="phone">
+                                <div class="slds-truncate headPad" title="Duration">Duration</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <template for:each={_sessions} for:item="session">
+                            <c-cx_session-timer-item key={session.Id} session={session} hide-agent={hideAgent} onsendrecordid={handleRecordIdSent}></c-cx_session-timer-item>
+                        </template>
+                        
+                    </tbody>
+                </table>
+            </div>     
+        </div>
+    </lightning-card>
+    
+    <div data-id="myModal" class={modalClass}>
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 id="header43" class="slds-text-heading--medium">New Session</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div>
+                        <lightning-input required name='manualDate' data-id="manualDate" type="date" label="Date" value={manualDate} onchange={handleFormInput}></lightning-input>
+                        <lightning-input required name='manualDuration' data-id="manualDuration" type="string" label="Duration" value={manualDuration} pattern="[0-9][0-9]:[0-5][0-9]:[0-5][0-9]" title="Time" placeholder="00:00:00" onchange={handleFormInput}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning-button variant="brand" label="Cancel" title="Cancel" onclick={toggleModal} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Save" title="Save" onclick={handleSaveSession} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+</template>

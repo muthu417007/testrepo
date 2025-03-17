@@ -1,0 +1,21 @@
+.details{
+   background-color: white;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.8px;
+    padding-left: 20px;
+   
+}
+
+
+
+.itemTitle{
+    padding-left: 20px;
+    background-color: white;
+}
+
+
+
+.bg-color{
+    background-color: white;
+}

@@ -1,0 +1,10 @@
+<apex:page standardController="Account" extensions="PersonAccount_ext" lightningStylesheets="true">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <div class="slds-scope">
+        <apex:form >
+            <apex:commandButton action="{!contactDashboard}" value="Consumer Dashboard" styleclass="slds-button slds-button_brand" />
+        </apex:form>
+    </div>
+</apex:page>

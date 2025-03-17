@@ -1,0 +1,15 @@
+:host {
+  --input-bg-color: #F7F1E7;
+  --border-radius: 0px;
+  --sds-c-input-color-background: #F7F1E7;
+  --sds-c-input-radius-border: 0px;
+  --sds-c-input-color-background-focus: #F7F1E7;
+  --sds-c-checkbox-radius-border: 0px;
+  --sds-c-checkbox-color-background: #F7F1E7;
+ 
+}
+
+.textField{
+    background: #F7F1E7;
+    border-radius: 0px;
+  }

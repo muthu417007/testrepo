@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <div class="container">
+            <h3 class="slds-align_absolute-center"><b>Provide a Delivery Address</b></h3>
+            <lightning-button label="+ Add a New Address" variant="brand-outline" onclick={handleAddProductClick} class="slds-m-top_large"></lightning-button>
+            <div class="slds-m-top_large slds-m-bottom_large tableContainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Postal Code</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <template for:each={addressListToDisplay} for:item="address">
+                        <tbody key={address.Id}>
+                                <tr class="slds-m-top_small tableDetails">
+                                    <td>{address.Name}</td>
+                                    <td>{address.Street}</td>
+                                    <td>{address.City}</td>
+                                    <td>{address.State}</td>
+                                    <td>{address.PostalCode}</td>
+                                    <td>{address.Country}</td>
+                                </tr>
+                        </tbody>
+                    </template>
+                </table>
+            </div>
+            <div class="slds-m-top_x-large navigationButtons">
+                <lightning-button label="Previous" variant="brand-outline" onclick={handlePreviousClick} class="previousButton"></lightning-button>
+                <lightning-button label="Next" variant="brand" onclick={handleNextClick} class="slds-float_right nextButton"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

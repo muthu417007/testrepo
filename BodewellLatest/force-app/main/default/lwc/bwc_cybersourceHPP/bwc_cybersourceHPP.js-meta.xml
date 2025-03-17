@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>BWC Cybersource HPP</masterLabel>
+	<description>Component for integrating with Cybersource HPP</description>
+	<targets>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+			<property name="checkoutDetails" label="Checkout Expression" type="String" default="{!Checkout.Details}" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

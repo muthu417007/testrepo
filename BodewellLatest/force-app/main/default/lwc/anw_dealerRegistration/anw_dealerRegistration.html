@@ -1,0 +1,324 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner style="height: 100%;" alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>
+        </template>
+    </div>
+    <div class="c-container product-register">
+        <div class="center">
+            <!-- Start  Product Register -->
+            <template if:true={showdealerregistration}>
+                <h1 class="header">Dealer Registration Form</h1>
+                <h2 class="sub-header">Air and Water product</h2>
+                <p class="context">* Indicates required information</p>
+                    <h2 class="address-title">Distrubutor Territory Information</h2>
+                <div class="appliance-info-form">
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label"> Manager Name </label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" data-name="managerName" name="managerName" label="managerName"
+                                onchange={handleContactInputChange} disabled required value={managerName} class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Manager Email </label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" name="managerEmail" data-name="managerEmail" required class="email-input validate"
+                                variant="label-hidden" label="managerEmail" pattern={emailPattern}
+                                message-when-pattern-mismatch={emailPatternValidationMessage}
+                                onchange={handleContactInputChange} disabled value={managerEmail}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">
+                             Manager Phone
+                            
+                            <!--<lightning-helptext class="help-tip"
+                                content="We use your phone number to help identify your specific product information if you should need assistance in the future.">
+                            </lightning-helptext>-->
+                        </label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" class="primaryphone-input phone-validate"
+                                pattern={phonePattern} required
+                                message-when-pattern-mismatch={phonePatternValidationMessage} variant="label-hidden"
+                                name="managerPhone" data-name="managerPhone" disabled label="managerPhone" value={managerPhone} onchange={handleContactInputChange}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Distributor Branch Location</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="branchLocation" data-name="branchLocation" label="branchLocation"
+                            maxlength="100" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    
+                    <h2 class="address-title">Dealer Information</h2>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Dealer Name <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="dealerName" data-name="dealerName" label="dealerName"
+                            maxlength="80" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Dealer Contact Name <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="contactName" data-name="contactName" label="contactName"
+                            maxlength="80" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Dealer Contact Title <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="contactTitle" data-name="contactTitle" label="contactTitle"
+                            maxlength="80" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Dealer Contact Email <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" name="contactEmail" data-name="contactEmail" class="email-input validate"
+                                variant="label-hidden" label="contactEmail" pattern={emailPattern}
+                                message-when-pattern-mismatch={emailPatternValidationMessage}
+                                maxlength="100" onchange={handleContactInputChange} value={contactEmail}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">
+                            Dealer Contact Phone
+                            <sup>*</sup>
+                            <!--<lightning-helptext class="help-tip"
+                                content="We use your phone number to help identify your specific product information if you should need assistance in the future.">
+                            </lightning-helptext>-->
+                        </label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" class="primaryphone-input phone-validate"
+                                pattern={phonePattern} required
+                                maxlength="10" message-when-pattern-mismatch={phonePatternValidationMessage} variant="label-hidden"
+                                name="contactPhone" data-name="contactPhone" label="contactPhone" onchange={handleContactInputChange}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Shipping Country<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="shipCountry" data-name="shipCountry" 
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="shipCountry"
+                                onchange={handleContactInputChange} required>
+                            </lightning-input>-->
+                            <lightning-combobox name="shipCountry" data-id="shipCountryId" variant="label-hidden" label="shipCountry" data-name="shipCountry" value={shipCountry}
+                                    options={CountryValues} placeholder="Select Country" onchange={handleContactInputChange} required>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Shipping State<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="shipState" data-name="shipState"
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="shipAddress"
+                                onchange={handleContactInputChange} required>
+                            </lightning-input>-->
+                            <lightning-combobox name="shipState" data-id="shipStateId" variant="label-hidden" label="shipState" data-name="shipState" value={shipState}
+                                    options={shipStateValues} placeholder="Select State" onchange={handleContactInputChange} required>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Shipping City<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="shipCity" data-name="shipCity" 
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="shipAddress"
+                                onchange={handleContactInputChange} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label "> Shipping Street<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="shipAddress" data-name="shipStreet" pattern={addressFieldPattern}
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="shipAddress"
+                                onchange={handleContactInputChange} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Shipping Zipcode<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="shipZipcode" data-name="shipZipcode" 
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="shipZipcode"
+                                onchange={handleContactInputChange} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing Same as Shipping</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="checkbox" variant="label-hidden" class="addres-input"
+                                maxlength="255" name="shipCheckbox" data-name="shipcheckbox" label="shipaddresscheckbox"
+                                onchange={handleContactInputChange}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing Country<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="billCountry" data-name="billCountry"
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="billCountry"
+                                onchange={handleContactInputChange} value={billCountry} required>
+                            </lightning-input>-->
+                            <lightning-combobox name="billCountry" data-id="billCountryId" variant="label-hidden" label="billCountry" data-name="billCountry" value={billCountry}
+                                    options={CountryValues} placeholder="Select Country" onchange={handlebillStatePicklist} required>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing State<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="billState" data-name="billState" 
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="billState"
+                                onchange={handleContactInputChange} value={billState} required>
+                            </lightning-input>-->
+                            <lightning-combobox name="billState" data-id="billStateId" variant="label-hidden" label="billState" data-name="billState" value={billState}
+                                    options={billStateValues} placeholder="Select State" onchange={handleContactInputChange} required>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing City<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="billCity" data-name="billCity"
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="billCity"
+                                onchange={handleContactInputChange} value={billCity} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing Street<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="billAddress" data-name="billStreet" pattern={addressFieldPattern}
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="billAddress"
+                                onchange={handleContactInputChange} value={billStreet} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Billing Zip/Postalcode<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" class="addres-input validate"
+                                maxlength="255" name="billZipcode" data-name="billZipcode"
+                                message-when-pattern-mismatch={addressPatternValidationMessage} label="billZipcode"
+                                onchange={handleContactInputChange} value={billZipcode} required>
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Estimated Annual Volume<sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="annualVolume" data-name="annualVolume" label="annualVolume"
+                            maxlength="10" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Tier Assigned <sup>*</sup></label>
+                        <div if:true={TierAssignedValues.data} class="slds-form-element__control">
+                            <lightning-combobox name="tierAssigned" data-id="TireAssignedID" variant="label-hidden" label="tierAssigned" data-name="tierAssigned" value={tierAssignedValue}
+                                    options={TierAssignedValues.data.values} onchange={handleContactInputChange}>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Products Offered <sup>*</sup></label>
+                        <div if:true={ProductsOffered.data} class="slds-form-element__control">
+                            <lightning-dual-listbox name="productsOffered" data-id="productsOffered" variant="label-hidden" label="productsOffered" data-name="productsOffered"
+                                    options={ProductsOffered.data.values} source-label="Available" selected-label="Selected" 
+                                    field-level-help="Select all that apply" onchange={handleproductsoffered}>
+                            </lightning-dual-listbox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Brands Currently Selling <sup>*</sup></label>
+                        <div if:true={BrandsSelling.data} class="slds-form-element__control">
+                            <lightning-dual-listbox name="brandsSelling" data-id="brandsSelling" variant="label-hidden" label="brandsSelling" data-name="brandsSelling"
+                                    options={BrandsSelling.data.values} source-label="Available" selected-label="Selected" 
+                                    field-level-help="Select all that apply" onchange={handleBrandsSellingChange}>
+                            </lightning-dual-listbox>
+                        </div>
+                    </div>
+                    
+                    <!--<div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Brands Currently Selling <sup>*</sup></label>
+                        <div if:true={BrandsSelling.data} class="slds-form-element__control">
+                            <lightning-combobox name="brandsSelling" data-id="BrandsSellingID" variant="label-hidden" label="brandsSelling" data-name="brandsSelling" value={brandsSellingValue}
+                                    options={BrandsSelling.data.values} onchange={handleBrandsSellingChange}>
+                            </lightning-combobox>
+                        </div>
+                    </div>-->
+                    
+                    <div if:true={otherbrands} class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Other Brands <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="otherBrandsSelling" data-name="otherBrandsSelling" label="otherBrandsSelling"
+                            maxlength="100" class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label ">Will GEA be replacing one of the Brands listed above? If so, which ? <sup>*</sup></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input type="text" variant="label-hidden" name="brandsUpdate" data-name="brandsUpdate" label="brandsUpdate"
+                            maxlength="80" onchange={handleContactInputChange} required class="lastname-input validate">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    
+                    <div class="appliance-btn">
+                        <button class="submitbtn idp-primary-button" onclick={handleSubmit}>
+                            SUBMIT REGISTRATION
+                        </button>
+                    </div>
+
+                </div>
+            </template>
+            <template if:true={showregisteredproduct}>
+                <h2 class="header">{successmsg}</h2>
+                <div class="progress-bar">
+                    <img class="status-image" src={complete}>
+                </div>
+                <p class="slds-m-vertical_small thanks-message"><b>{successdesc}</b>
+                </p>
+            </template>
+        </div>    
+    </div>    
+</template>
+<!--<template>
+    <lightning-record-form
+        object-api-name={accountObject}
+        fields={myFields}
+        onsuccess={handleAccountCreated}>
+    </lightning-record-form>
+</template>-->

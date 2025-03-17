@@ -1,0 +1,582 @@
+<template>
+  <!--<div class="cartTitle">
+      <p class="cartName">My Cart</p>
+      <p class="cartQuantity">{_totalQuantity} Items</p>
+          <div class="cartPrice">
+          <p class="cartTotalTitle">Subtotal:</p>
+          <p class="cartTotalPrice">${_cartTotal}</p>
+          </div>
+  </div>-->
+  <c-bwc_product-ship-type  account-id={_accountId} zip-code={zipCode} cart-items={_cartItems} onsegregateproducts={filterCartItems}></c-bwc_product-ship-type>
+  <template if:true={hdListflag}>
+      <lightning-card class="card">
+          <div class="section slds-section slds-is-open">
+                  <h3 class="slds-section__title">
+                  <span
+                      class="section-title slds-truncate slds-p-horizontal_small"
+                      title="In-Home Delivery"
+                  >
+                      <svg
+                      class="inHome"
+                      id="inhome"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 40.5 36"
+                      >
+                      <g id="inhomec">
+                          <g id="inhomed" class="e">
+                          <g class="e">
+                              <path
+                              class="f"
+                              d="m40.49,17.96c0,1.27-1.05,2.26-2.25,2.26h-2.25l.05,11.26c0,.2-.01.38-.04.57v1.14c0,1.55-1.26,2.81-2.81,2.81h-1.12c-.08,0-.15-.06-.23,0-.1-.06-.2,0-.29,0h-3.97c-1.55,0-2.81-1.26-2.81-2.81v-6.19c0-1.24-1.01-2.25-2.25-2.25h-4.5c-1.24,0-2.25,1.01-2.25,2.25v6.19c0,1.55-1.26,2.81-2.81,2.81h-3.93c-.11,0-.21,0-.32-.01-.08,0-.17.01-.25.01h-1.12c-1.55,0-2.81-1.26-2.81-2.81v-7.88c0-.06,0-.13,0-.2v-4.89h-2.25c-1.27,0-2.25-.99-2.25-2.26,0-.63.21-1.2.7-1.69L18.73.56c.49-.49,1.05-.56,1.55-.56s1.05.14,1.48.49l17.95,15.78c.56.49.85,1.05.77,1.69Z"
+                              />
+                          </g>
+                          </g>
+                      </g>
+                      </svg>
+                      <h1>In-Home Delivery</h1>
+                      <h2>{totalHdItems} items</h2>
+                  </span>
+                  </h3>        
+      
+              <template for:each={_hdList} for:item="cartItem">
+                  <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                      <div class="image slds-size_3-of-12">
+                          <div class="slds-text-align_center slds-m-around_x-small">
+                              <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                  <img
+                                      src={cartItem.ProductDetails.thumbnailImage.url}
+                                      alt={cartItem.ProductDetails.thumbnailImage}
+                                  />
+                              </template>
+</div>
+</div>
+<div class="slds-size_8-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_10-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                  {cartItem.ProductDetails.name}
+                              </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</template>
+<template if:true={sdsListFlag}>
+  <template for:each={_sdsList} for:item="cartItem">
+    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+        <div class="image slds-size_3-of-12">
+            <div class="slds-text-align_center slds-m-around_x-small">
+                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                    <img
+                        src={cartItem.ProductDetails.thumbnailImage.url}
+                        alt={cartItem.ProductDetails.thumbnailImage}
+                    />
+                </template>
+</div>
+</div>
+<div class="slds-size_8-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_10-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                    {cartItem.ProductDetails.name}
+                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</template>
+</template>
+<div class="slds-grid slds-wrap">
+    <div class="image slds-size_1-of-12">
+        <div class="slds-text-align_center slds-m-around_x-small">
+            <svg class="delivery-calender" id="sdcb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 36">
+          <g id="sdcc">
+            <g id="sdcd" class="e"><g class="e">
+            <path class="f" d="m11.25,2.25v2.25h9v-2.25c0-1.24,1.01-2.25,2.25-2.25s2.25,1.01,2.25,2.25v2.25h3.38c1.86,0,3.38,1.51,3.38,3.38v3.38H0v-3.38c0-1.86,1.51-3.38,3.38-3.38h3.38v-2.25c0-1.24,1.01-2.25,2.25-2.25s2.25,1.01,2.25,2.25ZM0,13.5h31.5v19.12c0,1.86-1.51,3.38-3.38,3.38H3.38c-1.86,0-3.38-1.51-3.38-3.38V13.5Zm23.07,7.88c.72-.6.72-1.67,0-2.33-.6-.65-1.67-.65-2.33,0l-6.68,6.69-3.37-3.31c-.6-.65-1.67-.65-2.33,0-.65.66-.65,1.73,0,2.33l4.5,4.5c.66.72,1.73.72,2.33,0l7.88-7.88Z"/>
+          </g></g></g>
+        </svg>
+
+            <!-- </template> -->
+        </div>
+    </div>
+    <div class="slds-size_10-of-12">
+
+        <div class="slds-m-around_x-small">
+            <div class="deliveryDate-title"> Estimated Delivery Date: {expectedDeliveryDate}</div>
+            <div class="deliveryDate-subTitle"> Major appliances ship once all items are available.</div>
+        </div>
+    </div>
+</div>
+
+<div class="slds-grid slds-wrap">
+    <div class="slds-size_6-of-12">
+
+
+        <div class="slds-m-around_x-small">
+
+            <div id="datepicker" data-cid="64f9f700639e9" class="hasDatepicker">
+                <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-datepicker-multi-2 ui-datepicker-multi" style="width: 34em; display: block;">
+                    <div if:true={fDeliveryData} class="slds-grid slds-wrap">
+                        <div if:true={fDeliveryData.hasFirstMonth} class="slds-size_6-of-12">
+                            <div class="dCalender ui-datepicker-group ui-datepicker-group-first">
+                                <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-left slds-p-around_x-small">
+                                    <div class="ui-datepicker-title"><span class="ui-datepicker-month"><b>{fDeliveryData.fMonth}</b></span>&nbsp;<span class="ui-datepicker-year"><b>{fDeliveryData.fYear}</b></span></div>
+                                </div>
+                                <table class="ui-datepicker-calendar">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                            <th scope="col"><span title="Monday">Mo</span></th>
+                                            <th scope="col"><span title="Tuesday">Tu</span></th>
+                                            <th scope="col"><span title="Wednesday">We</span></th>
+                                            <th scope="col"><span title="Thursday">Th</span></th>
+                                            <th scope="col"><span title="Friday">Fr</span></th>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <template for:each={fDeliveryData.fMonBlank} for:item="disableDay">
+                                            <td key={disableDay.id} class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                          </template>
+                                            <template for:each={fDeliveryData.fMonfWeek} for:item="startDay">
+                                            <template if:false={startDay.available}>
+                                              <td key={startDay.id} class=" ui-datepicker-unselectable ui-state-disabled "><!--<span class="ui-state-default">{startDay.id}</span>--><lightning-button name="SDS" label={startDay.id} variant="base" title={startDay.id} value={startDay.date} disabled onclick={getSelectedDeliveryDate}></lightning-button></td>
+                                            </template>
+                                            <template if:true={startDay.available}>
+                                              <td key={startDay.id} class=" " data-handler="selectDay" data-event="click" data-month={fDeliveryData.fMonth} data-year={fDeliveryData.fYear}><lightning-button name="SDS" label={startDay.id} variant="base" title={startDay.id} value={startDay.date} onclick={getSelectedDeliveryDate}></lightning-button></td>
+                                            </template>
+                                            </template>
+                                        </tr>
+
+                                        <template for:each={fDeliveryData.fMonAllWeeks} for:item="currentWeek">
+                                          <tr key={currentWeek}>
+                                            <template for:each={currentWeek} for:item="currentDay">
+                                              <template if:false={currentDay.available}>
+                                                <td key={currentDay.id} class=" ui-datepicker-unselectable ui-state-disabled "><!--<span class="ui-state-default">{currentDay.id}</span>--><lightning-button name="SDS" label={currentDay.id} variant="base" title={currentDay.id} value={currentDay.date} disabled onclick={getSelectedDeliveryDate}></lightning-button></td>
+                                              </template>
+                                        <template if:true={currentDay.available}>
+                                                <td key={currentDay.id} class=" " data-handler="selectDay" data-event="click" data-month={fDeliveryData.fMonth} data-year={fDeliveryData.fYear}><lightning-button name="SDS" label={currentDay.id} variant="base" title={currentDay.id} value={currentDay.date} onclick={getSelectedDeliveryDate}></lightning-button></td>
+                                              </template>
+                                        </template>
+
+                                        </tr>
+
+                                        </template>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div if:true={fDeliveryData.hasSecondMonth} class="slds-size_6-of-12">
+                            <div class="dCalender ui-datepicker-group ui-datepicker-group-first">
+                                <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-left slds-p-around_x-small">
+                                    <div class="ui-datepicker-title"><span class="ui-datepicker-month"><b>{fDeliveryData.sMonth}</b></span>&nbsp;<span class="ui-datepicker-year"><b>{fDeliveryData.sYear}</b></span></div>
+                                </div>
+                                <table class="ui-datepicker-calendar">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                            <th scope="col"><span title="Monday">Mo</span></th>
+                                            <th scope="col"><span title="Tuesday">Tu</span></th>
+                                            <th scope="col"><span title="Wednesday">We</span></th>
+                                            <th scope="col"><span title="Thursday">Th</span></th>
+                                            <th scope="col"><span title="Friday">Fr</span></th>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <template for:each={fDeliveryData.sMonBlank} for:item="disableDay">
+                                        <td key={disableDay.id} class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                      </template>
+                                            <template for:each={fDeliveryData.sMonfWeek} for:item="startDay">
+                                        <template if:false={startDay.available}>
+                                          <td key={startDay.id} class=" ui-datepicker-unselectable ui-state-disabled "><lightning-button name="SDS" label={startDay.id} disabled title={startDay.id} value={startDay.date} variant="base" onclick={getSelectedDeliveryDate}></lightning-button><!--<span class="ui-state-default">{startDay.id}</span>--></td>
+                                        </template>
+                                            <template if:true={startDay.available}>
+                                          <td key={startDay.id} class=" " data-handler="selectDay" data-event="click" data-month={fDeliveryData.sMonth} data-year={fDeliveryData.sYear}><lightning-button name="SDS" variant="base" value={startDay.date} label={startDay.id} title={startDay.id} onclick={getSelectedDeliveryDate}></lightning-button>
+                                            <!--<a class="ui-state-default" href="#">{startDay.id}</a>--></td>
+                                        </template>
+                                            </template>
+                                        </tr>
+
+                                        <template for:each={fDeliveryData.sMonAllWeeks} for:item="currentWeek">
+                                      <tr key={currentWeek}>
+                                        <template for:each={currentWeek} for:item="currentDay">
+                                          <template if:false={currentDay.available}>
+                                            <td key={currentDay.id} class=" ui-datepicker-unselectable ui-state-disabled "><lightning-button name="SDS" disabled label={currentDay.id} title={currentDay.id} value={currentDay.date} variant="base" onclick={getSelectedDeliveryDate}></lightning-button><!--<span class="ui-state-default">{currentDay.id}</span>--></td>
+                                          </template>
+                                        <template if:true={currentDay.available}>
+                                            <td key={currentDay.id} class=" " data-handler="selectDay" data-event="click" data-month={fDeliveryData.sMonth} data-year={fDeliveryData.sYear}><lightning-button name="SDS" label={currentDay.id} value={currentDay.date} variant="base" title={currentDay.id} onclick={getSelectedDeliveryDate}></lightning-button>
+                                              <!--<a class="ui-state-default" href="#">{startDay.id}</a>--></td>
+                                          </template>
+                                        </template>
+
+                                        </tr>
+
+                                        </template>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--<div class="ui-datepicker-group ui-datepicker-group-last dCalender">
+                                <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-right">
+                                    <div class="ui-datepicker-title"><span class="ui-datepicker-month">October</span>&nbsp;<span class="ui-datepicker-year">2023</span></div>
+                                </div>
+                                <table class="ui-datepicker-calendar">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                            <th scope="col"><span title="Monday">Mo</span></th>
+                                            <th scope="col"><span title="Tuesday">Tu</span></th>
+                                            <th scope="col"><span title="Wednesday">We</span></th>
+                                            <th scope="col"><span title="Thursday">Th</span></th>
+                                            <th scope="col"><span title="Friday">Fr</span></th>
+                                            <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">2</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">3</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">4</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">5</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">6</a></td>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">9</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">10</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">11</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">12</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">13</a></td>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">16</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">17</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">18</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">19</a></td>
+                                            <td class=" " data-handler="selectDay" data-event="click" data-month="9" data-year="2023"><a class="ui-state-default" href="#">20</a></td>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">21</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">22</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">23</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">24</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">25</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">26</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">27</span></td>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">28</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">29</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">30</span></td>
+                                            <td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">31</span></td>
+                                            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                            <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                            <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>-->
+                            <div class="ui-datepicker-row-break"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+</lightning-card>
+</template>
+
+<template if:true={pickupListflag}>
+  <lightning-card class="card">
+      <div class="section slds-section slds-is-open">
+              <h3 class="slds-section__title">
+                  <span
+                      class="section-title slds-truncate slds-p-horizontal_small"
+                      title="Pickup Products "
+                  >
+                  <svg class="pickupProducts" id="pickupb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 35.83">
+ 
+                    <g id="pickupc"><g id="pickupd" class="e"><g class="e"><path class="f" d="m0,34.14V11.87c0-1.84,1.12-3.5,2.83-4.18L21.66.16c.54-.21,1.14-.21,1.67,0l18.84,7.53c1.71.68,2.83,2.34,2.83,4.18v22.27c0,.94-.75,1.69-1.69,1.69h-3.38c-.94,0-1.69-.75-1.69-1.69V15.51c0-1.18-1.01-2.25-2.25-2.25H9c-1.25,0-2.25,1.07-2.25,2.25v18.63c0,.94-.76,1.69-1.69,1.69H1.69c-.93,0-1.69-.75-1.69-1.69ZM9,15.58h27v5.62H9v-5.62Zm0,7.88h27v4.5H9v-4.5Zm1.69,12.38c-.94,0-1.69-.75-1.69-1.69v-3.94h27v3.94c0,.94-.75,1.69-1.69,1.69H10.69Z"/>
+                    </g></g></g>
+                  </svg>
+                    
+                      <h1>Order Pickup</h1>
+                      <h2>Delivery not available in your area. Pick-up ONLY.</h2>
+                  </span>
+              </h3>        
+  
+              <template for:each={_pickupList} for:item="cartItem">
+                <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                    <div class="image slds-size_3-of-12">
+                        <div class="slds-text-align_center slds-m-around_x-small">
+                            <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                <img
+                                    src={cartItem.ProductDetails.thumbnailImage.url}
+                                    alt={cartItem.ProductDetails.thumbnailImage}
+                                />
+                            </template>
+</div>
+</div>
+<div class="slds-size_8-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_10-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                {cartItem.ProductDetails.name}
+                            </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</template>
+
+<div class="delivery-box slds-grid slds-wrap">
+    <div class="image slds-size_1-of-12">
+        <div class="slds-text-align_center slds-m-around_x-small">
+            <svg class="delivery-calender" id="pdcb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 36">
+        <g id="pdcc">
+          <g id="pdcd" class="e"><g class="e">
+          <path class="f" d="m11.25,2.25v2.25h9v-2.25c0-1.24,1.01-2.25,2.25-2.25s2.25,1.01,2.25,2.25v2.25h3.38c1.86,0,3.38,1.51,3.38,3.38v3.38H0v-3.38c0-1.86,1.51-3.38,3.38-3.38h3.38v-2.25c0-1.24,1.01-2.25,2.25-2.25s2.25,1.01,2.25,2.25ZM0,13.5h31.5v19.12c0,1.86-1.51,3.38-3.38,3.38H3.38c-1.86,0-3.38-1.51-3.38-3.38V13.5Zm23.07,7.88c.72-.6.72-1.67,0-2.33-.6-.65-1.67-.65-2.33,0l-6.68,6.69-3.37-3.31c-.6-.65-1.67-.65-2.33,0-.65.66-.65,1.73,0,2.33l4.5,4.5c.66.72,1.73.72,2.33,0l7.88-7.88Z"/>
+        </g></g></g>
+      </svg>
+
+            <!-- </template> -->
+        </div>
+    </div>
+    <div class="slds-size_10-of-12">
+
+        <div class="slds-m-around_x-small">
+            <div class="deliveryDate-title"> Delivery not available in your area. Pick-up ONLY. </div>
+            <div class="deliveryDate-title"> Estimated Pick-up Date: {expectedpickupDeliveryDate}</div>
+        </div>
+    </div>
+
+    <div class="slds-size_1-of-12">
+        <div class="deliveryDate-title"> $0.00</div>
+
+    </div>
+</div>
+
+
+</div>
+</lightning-card>
+</template>
+<template if:true={prodShippingListflag}>
+  <lightning-card class="card">
+      <div class="section slds-section slds-is-open">
+              <h3 class="slds-section__title">
+                  <span
+                      class="section-title slds-truncate slds-p-horizontal_small"
+                      title="Products Shipping To Your Home"
+                  >
+                      <svg
+                      class="prodShip"
+                      id="prodShipb"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 31.5 31.5"
+                      >
+                      <g id="prodShipc">
+                          <g id="prodShipd" class="e">
+                          <g class="e">
+                              <path
+                              class="f"
+                              d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z"
+                              />
+                          </g>
+                          </g>
+                      </g>
+                      </svg>
+          
+                      <h1>Products Shipping To Your Home</h1>
+                  </span>
+              </h3>        
+  
+              <template for:each={_prodShippingList} for:item="cartItem">
+                <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                    <div class="image slds-size_3-of-12">
+                        <div class="slds-text-align_center slds-m-around_x-small">
+                            <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                <img
+                                    src={cartItem.ProductDetails.thumbnailImage.url}
+                                    alt={cartItem.ProductDetails.thumbnailImage}
+                                />
+                            </template>
+</div>
+</div>
+<div class="slds-size_9-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_10-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                {cartItem.ProductDetails.name}
+                            </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="delivery-box slds-grid slds-wrap">
+    <div class="image slds-size_1-of-12">
+        <div class="slds-text-align_center slds-m-around_x-small">
+            <svg class="fedex-shipping" id="fedexb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 36"><g id="fedexc">
+                <g id="fedexd" class="e"><g class="e">
+                    <path class="f" d="m25.88,0c1.86,0,3.38,1.51,3.38,3.38v3.38h3.57c1.2,0,2.28.47,3.18,1.31l5.43,5.44c.84.84,1.32,1.99,1.32,3.19v8.06c1.25,0,2.25,1.01,2.25,2.25s-1,2.25-2.25,2.25h-2.25c0,3.73-3.02,6.75-6.75,6.75s-6.75-3.02-6.75-6.75h-9c0,3.73-3.02,6.75-6.75,6.75s-6.75-3.02-6.75-6.75h-1.12c-1.86,0-3.38-1.51-3.38-3.38V3.38C0,1.51,1.51,0,3.38,0h22.5Zm-14.62,25.88c-1.86,0-3.38,1.51-3.38,3.38s1.51,3.38,3.38,3.38,3.38-1.51,3.38-3.38-1.51-3.38-3.38-3.38Zm18-14.62v6.75h9v-1.31l-5.43-5.44h-3.57Zm4.5,21.38c1.86,0,3.38-1.51,3.38-3.38s-1.51-3.38-3.38-3.38-3.38,1.51-3.38,3.38,1.51,3.38,3.38,3.38Z"/>
+            </g></g></g></svg>
+
+            <!-- </template> -->
+        </div>
+    </div>
+    <div class="slds-size_10-of-12">
+
+        <div class="slds-m-around_x-small">
+            <div class="deliveryDate-title"> Fedex Ground: Ships in 2-5 Business Days </div>
+        </div>
+    </div>
+
+    <div class="slds-size_1-of-12">
+        <div class="deliveryDate-title"> FREE</div>
+
+    </div>
+</div>
+</div>
+</template>
+
+</div>
+</lightning-card>
+</template>
+
+<template if:true={partsListflag}>
+  <lightning-card class="card">
+      <div class="section slds-section slds-is-open">
+              <h3 class="slds-section__title">
+                  <span
+                      class="section-title slds-truncate slds-p-horizontal_small"
+                      title="Parts Shipping To Your Home "
+                  >
+                      <svg
+                      class="parts"
+                      id="partsb"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 33.93 36"
+                      >
+                      <g id="partsc">
+                          <g id="partsd" class="e">
+                          <g class="e">
+                              <path
+                              class="f"
+                              d="m33.83,11.71c.23.6.04,1.29-.44,1.73l-3.04,2.77c.08.58.12,1.18.12,1.79s-.04,1.2-.12,1.79l3.04,2.77c.48.44.67,1.12.44,1.73-.31.84-.68,1.65-1.1,2.41l-.33.57c-.46.77-.98,1.5-1.55,2.2-.42.5-1.1.67-1.72.48l-3.92-1.25c-.94.72-2.05,1.33-3.09,1.79l-.88,4.01c-.14.63-.63,1.08-1.28,1.25-.97.16-1.97.25-3.05.25-.96,0-1.95-.08-2.92-.25-.65-.17-1.14-.62-1.28-1.25l-.88-4.01c-1.11-.46-2.15-1.07-3.09-1.79l-3.91,1.25c-.62.2-1.31.02-1.72-.48-.57-.7-1.09-1.43-1.55-2.2l-.33-.57c-.43-.77-.8-1.57-1.11-2.41-.23-.6-.04-1.29.45-1.73l3.04-2.77c-.08-.58-.12-1.18-.12-1.79s.04-1.2.12-1.79l-3.04-2.77c-.48-.44-.67-1.12-.45-1.73.31-.84.68-1.65,1.11-2.41l.33-.57c.46-.77.99-1.5,1.56-2.2.42-.5,1.1-.68,1.72-.48l3.91,1.25c.94-.73,1.98-1.33,3.09-1.79l.88-4.01c.14-.64.63-1.15,1.28-1.25.97-.16,1.97-.25,2.99-.25s2.02.08,2.99.25c.65.11,1.14.61,1.28,1.25l.88,4.01c1.05.46,2.15,1.06,3.09,1.79l3.92-1.25c.62-.2,1.3-.02,1.72.48.57.69,1.09,1.42,1.55,2.2l.33.57c.42.77.79,1.57,1.1,2.41Zm-16.87,11.91c3.11,0,5.62-2.52,5.62-5.69s-2.52-5.62-5.62-5.62-5.62,2.58-5.62,5.62,2.52,5.69,5.62,5.69Z"
+                              />
+                          </g>
+                          </g>
+                      </g>
+                      </svg>
+                      <h1>Parts Shipping To Your Home</h1>
+                  </span>
+              </h3>        
+  
+              <div class="slds-grid slds-wrap">
+                <div class="deliveryDate-title"> Shipping options available for the following items: </div>
+                <div class="slds-size_9-of-12">
+                    <div class="slds-text-align_left slds-m-around_x-small">
+                        <lightning-combobox
+                            name="Select Shipping type"
+                            label="Select Shipping type"
+                            variant="label-hidden"
+                            value={selectedPartsShip}
+                            options={partsShipOptions}
+                            onchange={handlePartsShipType} >
+                        </lightning-combobox>
+                    </div>
+                </div>
+                <div class="slds-size_3-of-12">
+            
+                    <div class="slds-m-around_x-small">
+                        <div if:true={partsShipFee} class="deliveryDate-title"> ${partsShipFee} </div>
+                    </div>
+                </div>
+            
+                
+            </div>
+              <template for:each={_partsList} for:item="cartItem">
+                <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                    <div class="image slds-size_3-of-12">
+                        <div class="slds-text-align_center slds-m-around_x-small">
+                            <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                <img
+                                    src={cartItem.ProductDetails.thumbnailImage.url}
+                                    alt={cartItem.ProductDetails.thumbnailImage}
+                                />
+                            </template>
+</div>
+</div>
+<div class="slds-size_8-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_10-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                {cartItem.ProductDetails.name}
+                            </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</template>
+</div>
+</lightning-card>
+</template>
+
+
+</template>

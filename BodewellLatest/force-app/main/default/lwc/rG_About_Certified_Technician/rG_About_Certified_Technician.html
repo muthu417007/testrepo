@@ -1,0 +1,55 @@
+<template>
+  <div class="desk-about-section slds-grid slds-wrap slds-m-top_medium">
+    <div class="wrapper  slds-large-size_6-of-12">
+      <span class="about-head-section">
+          <h2 class="main-content-head-text resource-title">{contentHeading}</h2>
+      </span>
+      <lightning-formatted-rich-text value={content}></lightning-formatted-rich-text>
+   </div>
+   <div class="wrapper  slds-large-size_5-of-12">
+    <img src={technicianimg} alt="about us technician image">
+  </div>
+    <div class="slds-m-top_medium wrapper desk-about-servicearea-button slds-large-size_12-of-12">
+      <c-r-G-_-About-Us-Schedule-Service-Card content={content2} buttonlabel={buttonlabel} navigationtype={navigationtype} redirectionlink ={redirectionLink}></c-r-G-_-About-Us-Schedule-Service-Card>
+    </div>
+   </div>
+
+<!-- Mobile view of about us -->
+<div class="mob-about-section">
+    <template if:true={isExpand}>
+      <div class="slds-grid slds-wrap icon-section">
+        <div class="slds-col slds-small-size_8-of-12 about-head-section">
+            <h2 class="main-content-head-text">{contentHeading}</h2>
+        </div>
+        <div class="about-accordian-icon slds-col slds-small-size_4-of-12 slds-text-align_right">
+          <lightning-icon class="down-icon" icon-name="utility:down" onclick={showAll} alternative-text="Down"
+            title="Down"></lightning-icon>
+        </div>
+      </div>
+    </template>
+</div>
+<div class="accordian ">
+    <template if:false={isExpand}>
+      <div class="serviceAreaFooterHeading slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_8-of-12 about-head-section">
+            <h2 class="main-content-head-text">{contentHeading}</h2>
+        </div>
+        <div class="about-accordian-icon slds-col slds-small-size_4-of-12 slds-text-align_right">
+          <lightning-icon class="up-icon" icon-name="utility:up" onclick={showAll} alternative-text="Up"
+            title="Up"></lightning-icon>
+        </div>
+      </div>
+      <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-small-size_12-of-12 slds-medium-size_12-of-12">
+            <lightning-formatted-rich-text value={content}></lightning-formatted-rich-text>
+          </div>
+          <div class="wrapper desk-about-servicearea-button slds-small-size_12-of-12">
+            <img src={technicianimg} alt="about us technician image">
+          </div>
+          <div class="slds-m-top_medium  wrapper desk-about-servicearea-button slds-small-size_12-of-12">
+            <c-r-G-_-About-Us-Schedule-Service-Card content={content2} buttonlabel={buttonlabel} navigationtype={navigationtype} redirection-link ={redirectURL} button-area={componentArea}></c-r-G-_-About-Us-Schedule-Service-Card>
+          </div>
+       </div>
+</template>
+</div>
+</template>

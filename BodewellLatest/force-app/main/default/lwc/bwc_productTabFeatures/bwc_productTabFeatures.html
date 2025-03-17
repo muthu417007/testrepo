@@ -1,0 +1,222 @@
+<template>
+    <template if:true={firstFourItemsFeature}>
+            <h2 data-id="pdpTabs" class="pdpTabs-tabHeader">About this product</h2>
+            <template for:each={firstFourItemsFeature.BenefitCopy} for:item="feature" for:index="index">
+
+                <div  class="row-horizontal" key={feature.Feature}>
+                    <div class="column-first-horizontal">
+                        <template if:true={feature.Image}>
+                            <template if:false={feature.Video}>
+
+                                <img src={feature.Image} alt={feature.Feature}>
+                            </template>
+                        </template>
+                        <template if:true={feature.Image}>
+                            <template if:true={feature.Video}>
+                                <div class="iframe-container">
+
+                                    <span onclick={videoClickHandler} data-id={feature.Video} id={feature.Video}
+                                        class="icon-ideo-play"><svg style="color: white" viewBox="0 0 1024 1024"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="white"
+                                                d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm-48-247.616L668.608 512 464 375.616v272.768zm10.624-342.656 249.472 166.336a48 48 0 0 1 0 79.872L474.624 718.272A48 48 0 0 1 400 678.336V345.6a48 48 0 0 1 74.624-39.936z">
+                                            </path>
+                                        </svg></span>
+                                    <img class="thumbnail-image" src={feature.Image} alt={feature.Image}>
+                                    <iframe class="video-iframe" src={feature.Video} frameborder="0">
+
+                                    </iframe>
+                                </div>
+
+                            </template>
+                        </template>
+                    </div>
+                    <div class="column-second-horizontal">
+                        <h3>{feature.Feature}</h3>
+                        <p>
+                            {feature.Copy}
+                        </p>
+                        <template if:true={feature.Image}>
+                            <template if:true={feature.Video}>
+                                <a class="productTabs-playLink-horizontal" onclick={videoClickHandler}
+                                    data-id={feature.Video}>
+                                    <span class="icon"><svg style="enable-background:new 0 0 32 32;"
+                                            version="1.1" viewBox="0 0 32 32" width="10px" xml:space="preserve"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g  />
+                                            <g >
+                                                <path
+                                                    d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   "
+                                                    style="fill: #245B83;" />
+                                            </g>
+                                        </svg></span>
+                                    <span>Play Video</span>
+                                </a>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={remainingItemsFeature}>
+            <div class="row">
+                <template for:each={remainingItemsFeature.BenefitCopy} for:item="feature" for:index="index">
+                    <div class="column" key={feature.Feature}>
+                        <template if:true={feature.Image}>
+                            <template if:false={feature.Video}>
+                                <img src={feature.Image} alt={feature.Feature} style="width:100%">
+                            </template>
+                        </template>
+                        <template if:true={feature.Image}>
+                            <template if:true={feature.Video}>
+                                <div class="iframe-container">
+                                    <span onclick={videoClickHandler} data-id={feature.Video}
+                                        class="icon-ideo-play"><svg style="color: white" viewBox="0 0 1024 1024"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="white"
+                                                d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm-48-247.616L668.608 512 464 375.616v272.768zm10.624-342.656 249.472 166.336a48 48 0 0 1 0 79.872L474.624 718.272A48 48 0 0 1 400 678.336V345.6a48 48 0 0 1 74.624-39.936z">
+                                            </path>
+                                        </svg></span>
+
+                                    <img class="thumbnail-image" src={feature.Image} alt={feature.Image}
+                                        style="width:100%">
+                                    <iframe class="video-iframe" src={feature.Video} frameborder="0">
+
+                                    </iframe>
+                                </div>
+
+                            </template>
+                        </template>
+                        <template if:true={feature.Video}>
+                            <template if:false={feature.Image}>
+                                <div class="iframe-container">
+                                    <img class="thumbnail-image"
+                                        src="https://products-salsify.geappliances.com/image/upload/s--dkooBLA---/5d65eb75ba250fb2a77f65efc5ce63a1cf93c56e.jpg"
+                                        alt={feature.Image} style="width:100%">
+                                    <iframe class="video-iframe" src={feature.Video} frameborder="0"></iframe>
+                                </div>
+
+                            </template>
+                        </template>
+
+
+                        <div class="text-section">
+                            <h5 class="header-tile">{feature.Feature}</h5>
+                            <template if:true={feature.Copy}>
+                                <div class="para-text">
+                                    {feature.Copy}
+                                </div>
+
+                            </template>
+                            <template if:true={feature.Image}>
+                                <template if:true={feature.Video}>
+                                    <a class="productTabs-playLink" onclick={videoClickHandler}
+                                        data-id={feature.Video}>
+                                        <span class="icon"><svg style="enable-background:new 0 0 14 14;"
+                                                version="1.1" viewBox="0 0 32 32" width="10px"
+                                                xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <g />
+                                                <g >
+                                                    <path
+                                                        d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   "
+                                                        style="fill: #245B83;" />
+                                                </g>
+                                            </svg></span>
+                                        <span>Play Video</span>
+                                    </a>
+                                </template>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={featureCopyItemsFeature}>
+            <!-- Photo Grid -->
+            <div class="row">
+                <template for:each={featureCopyItemsFeature.BenefitCopy} for:item="feature" for:index="index">
+                    <div class="column" key={feature.Feature}>
+                        <div class="text-section">
+                            <h5 class="header-tile">{feature.Feature}</h5>
+                            <template if:true={feature.Copy}>
+                                <div class="para-text">
+                                    {feature.Copy}
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={_claims_and_certificationsflag}>
+        <h2 class="pdpTabs-tabHeader">Claims & Certifications</h2>
+        <ul class="claims-flex productTabs-claims--list">
+            <template if:true={_claims_and_certifications}>
+                <template for:each={_claims_and_certifications} for:item="certs">
+                    <template if:true={certs.key}>
+                        <template if:true={certs.value}>
+                            <li class="flex-item" key={certs.key}>
+                                <div class="productTabs-claims--img"><img src={certs.value} alt={certs.key}
+                                        title={certs.key}></div>
+                                <div class="productTabs-claims--info">
+                                    <p>{certs.key}</p>
+                                </div>
+                            </li>
+                        </template>
+                    </template>
+                    <template if:true={certs.key}>
+                        <template if:false={certs.value}>
+                            <li class="flex-item" key={certs.key}>
+
+                                <div class="productTabs-claims--info">
+                                    <p>{certs.key}</p>
+                                </div>
+                            </li>
+                        </template>
+                    </template>
+                    
+                        <template if:true={certs.tag}>
+                            <li class="flex-item" key={certs.tag}>
+                             
+                                <div class="productTabs-claims--info">
+                                    <p> <lightning-formatted-rich-text value={certs.tag}></lightning-formatted-rich-text></p>
+                                </div>
+                            </li>
+                        </template>
+                  
+                </template>
+            </template>
+
+        </ul>
+    </template>
+
+    <template if:true={isPlayVideo}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    onclick={closeModel}>
+
+                    <svg id="Close" style="color: white" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                            fill="white"></path>
+                    </svg>
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__content slds-modal__content_headless" id="modal-content-id-1">
+
+                    <div class="iframe-container-modal">
+                        <iframe class="responsive-iframe" src={videoLink}></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>

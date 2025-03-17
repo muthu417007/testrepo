@@ -1,0 +1,25 @@
+<aura:component implements="lightning:appHomeTemplate" description="Divide the page into 3 regions 
+                       of in the ratio of 3:3:6">
+    <aura:attribute name="left" type="Aura.Component[]" />
+    <aura:attribute name="middle" type="Aura.Component[]" />
+    <aura:attribute name="right" type="Aura.Component[]" />
+
+    <div>
+        <lightning:layout>
+            <lightning:layoutItem size ="3" flexibility="grow"
+                                  class="slds-m-right_small">
+                {!v.left}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="3" flexibility="grow"
+                                  class="slds-m-right_small">
+                {!v.middle}
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem size="6"
+                                  class="slds-m-left_small">
+                {!v.right}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>

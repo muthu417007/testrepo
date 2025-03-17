@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-m-top_x-large">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item size="1">
+                <lightning-icon icon-name="utility:chevronleft" alternative-text="Previous" title="Previous" class="icon slds-float_right" onclick={prev}></lightning-icon>
+            </lightning-layout-item>
+            <template for:each={displaySlides} for:item="slide">
+                <template if:true={slide.isMain}>
+                    <lightning-layout-item key={slide.key} size={mainSize} padding="horizontal-small">
+                        <c-feature-slide slide={slide} onflip={flipSlide} is-front={isFront}></c-feature-slide>
+                    </lightning-layout-item> 
+                </template>
+                <template if:false={slide.isMain}>
+                    <template if:true={showSideSlides}>
+                        <lightning-layout-item key={slide.key} size={sideSize} padding="horizontal-small">
+                            <c-feature-slide slide={slide} is-front="true"></c-feature-slide>
+                        </lightning-layout-item> 
+                    </template>
+                </template>
+            </template>
+            <lightning-layout-item size="1">
+                <lightning-icon icon-name="utility:chevronright" alternative-text="Next" title="Next" class="icon" onclick={next}></lightning-icon>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+    <div style="display:none;">
+        <!--load images for smooth slides-->
+        <template for:each={slides} for:item="slide" >
+            <div key={slide.key}>
+                <img src={slide.primaryImageUrl}></img>
+                <img src={slide.secondaryImageUrl} ></img>
+            </div>
+        </template>
+    </div>
+</template>

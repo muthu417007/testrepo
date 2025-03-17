@@ -1,0 +1,95 @@
+<template>
+    <template if:true={isDisplayOrderDetail}>
+
+        <lightning-card title="Consumer Details" icon-name="standard:user">
+            <div class="slds-m-around_medium">
+                <table border="0.2" style="border-collapse:collapse; font-weight:bold;">
+                    <tbody>
+
+                        <tr>
+                            <td style="background:#eee;border:1px;">Name</td>
+                            <td style="color:#1a1510;border:1px;">{customerName}</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" style="background:#eee;">Address</td>
+                            <td style="color:#1a1510;padding-bottom:3px;">{customerAddress}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#1a1510;padding-bottom:3px;padding-top:3px;">{city},{state}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#1a1510;border:1px;padding-top:3px;">{zipcode},{country}</td>
+                        </tr>
+                        <tr>
+                            <td style="background:#eee;">Phone</td>
+                            <td style="color:#1a1510;"> {customerPhone}</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <!--
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" width="100%" border="0" bordercolor="#ddd" cellpadding="5" cellspacing="0" style="border-collapse:collapse; font-weight:bold;">
+            <tbody> 
+            
+            <tr>
+            <td style="background:#eee;">Consumer Name</td>
+            <td style="color:#1a1510;">{customerName}</td>
+            </tr>
+            <tr>
+            <td rowspan="3" style="background:#eee;">Consumer Address</td>
+            <td style="color:#1a1510;">{customerAddress}</td>
+            </tr>
+            <tr>
+                <td style="color:#1a1510;">{city},{state}</td>
+            </tr>
+            <tr>
+                <td style="color:#1a1510;">{zipcode},{country}</td>
+            </tr>
+            <tr>
+                <td style="background:#eee;">Consumer Phone</td>
+                <td style="color:#1a1510;"> {customerPhone}</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    
+    -->
+            </div>
+        </lightning-card>
+    </template>
+</template>
+<!--<template>
+<template if:true={isDisplayOrderDetail}>
+    
+    <lightning-card title="Consumer Summary" 
+        icon-name="custom:custom14">
+        <div style="height: 100px;">
+        <template if:true={isDisplayOrderDetail}>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p title="Name">Consumer Name</p>
+                        <p title="Address">Consumer Address</p>
+                        <p title="Phone">Consumer Phone</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p title="Name">{customerName}</p>
+                        <p title="Address">{customerAddress}</p>
+                        <p title="Phone">{customerPhone}</p>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>-->
+<!--<div class="slds-text-heading_small">Order number     : </div>
+            <div class="slds-var-p-horizontal_small">Consumer Name    : {customerName}</div>
+            <div class="slds-var-p-horizontal_small">Consumer Address : {customerAddress}</div>
+            <div class="slds-var-p-horizontal_small">Consumer Phone   : {customerPhone}</div>                         
+            -->
+<!--  </template>    
+    </div>    
+    </lightning-card>
+    
+    </template>
+</template>-->

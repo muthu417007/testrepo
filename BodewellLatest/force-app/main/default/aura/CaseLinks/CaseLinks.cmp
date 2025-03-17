@@ -1,0 +1,12 @@
+<aura:component controller="CaseLinksController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="case" type="Case"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:button variant="brand" label="Track and Trace" title="Track and Trace" onclick="{!c.handleTrackAndTrace}"/>
+    <lightning:button variant="brand" label="Cybersource" title="Cybersource" onclick="{!c.handleCybersource}"/>
+    <lightning:button variant="brand" label="Convey" title="Convey" onclick="{!c.handleConvey}"/>
+    <br/> <br/>
+    <lightning:button variant="brand" label="Service/Order History" title="Convey" onclick="{!c.handleHistory}"/>
+</aura:component>

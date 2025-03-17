@@ -1,0 +1,6 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <!-- <div class="button" title="button" > -->
+    	<lightning:button class="slds-button_stretch slds-size_12-of-12" variant="brand" label="CREATE AN ACCOUNT" title="New User" onclick="{! c.newUser }" />
+    <!--</div> -->
+    <lightning:flow aura:id="flowId" />
+</aura:component>

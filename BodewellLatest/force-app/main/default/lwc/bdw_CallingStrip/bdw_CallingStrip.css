@@ -1,0 +1,41 @@
+.support-block-phone {
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.support-block-phone {
+    padding-top: 20px;
+    margin-left: 1.7rem;
+}
+
+.support-block-phone .concierge-container {
+    margin-right: 17px;
+}
+
+.concierge-container .i-concierge {
+    width: 36px;
+}
+
+.concierge-container .concierge {
+    width: 36px;
+}
+
+.support-info span * {
+    line-height: 28px;
+    letter-spacing: .75px;
+}
+
+.support-info span {
+    line-height: 28px;
+    letter-spacing: .75px;
+    font-weight: 300;
+}
+
+.i-concierge {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+span .semiBold {
+    font-weight: 600;
+}

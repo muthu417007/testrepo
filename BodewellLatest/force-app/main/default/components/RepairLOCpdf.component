@@ -1,0 +1,140 @@
+<apex:component layout="none" access="global">
+
+    <apex:attribute name="contact" description="The contact." type="Contact" />
+    <apex:attribute name="case" description="The case." type="Case" />
+    <head>
+        <style type="text/css" media="print">
+            @page :first {
+                @top-center {
+                    content: element(header);
+                }
+            }
+
+            @page {
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+
+            mainDiv {
+                font-family: arial;
+                font-size: 16pt;
+                font-weight: 400;
+                padding-top: 16px;
+            }
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            div.header {
+                background: url("{!$Resource.ge_appliances_logo}") no-repeat left top;
+                height: 130px;
+                width: 715px;
+                text-align: left;
+            }
+
+            div.right {
+                float: right;
+            }
+
+            .centered {
+                text-align: center;
+            }
+
+            .right {
+                text-align: right;
+            }
+
+            .label {
+                font-weight: bold;
+            }
+
+            .verticalLine {
+                background-color: rgb(0, 59, 113);
+                border-collapse: separate;
+                color: rgb(0, 0, 0);
+                display: table-cell;
+                font-style: normal;
+                font-variant-caps: normal;
+                font-variant-east-asian: normal;
+                font-variant-ligatures: normal;
+                font-variant-numeric: normal;
+                font-weight: 400;
+                height: 3px;
+                line-height: normal;
+                text-align: start;
+                vertical-align: top;
+                white-space: normal;
+                width: 1024px;
+                -webkit-border-horizontal-spacing: 0px;
+                -webkit-border-vertical-spacing: 0px;
+            }
+
+            .marginBlockLarge {
+                margin-top: 110px;
+            }
+            .marginBlockXSmall {
+                margin-top: 16px;
+            }
+        </style>
+    </head>
+    <div class="header"></div>
+    <div class="verticalLine"></div>
+    <div class="marginBlockXSmall"></div>
+    <div class="mainDiv">
+        {!Today()}
+        <br />
+        <br />
+        <br />
+
+        {!contact.Name}
+        <br />
+        {!case.Consumer_Full_Address__c}
+        <br />
+        <br />
+        <br />
+        <br />
+
+        Re: Letter of commitment begins {!case.LOC_Start_Date__c} and ends {!case.LOC_End_Date_f__c} Case: {!case.CaseNumber}, Model:{!case.Model_Number__c}, Serial No: {!case.Serial_Number__c}
+        <br />
+        <br />
+
+        Dear {!contact.Name},
+        <br />
+        <br />
+
+        Thank you for allowing us the opportunity to restore your trust in GE Appliances. We understand how frustrating it can be when your appliance is not operating as intended and we want to help you with this situation. It is extremely important to us that our appliances give many years of service and satisfaction to their owners.
+        <br />
+        <br />
+
+        Based on the recent situation that has occurred with your {!case.ps_CX_Case_Asset_Product_Type__c}, I am offering this letter as our commitment that if this appliance develops any operational problem within the following {!case.LOC_Duration__c} months, we will cover the cost of service required to repair it (including parts, labor, and diagnostic fees). All other conditions contained in the manufacturer's warranty will still apply.
+        <br />
+        <br />
+
+        Please keep this letter for your records and if you should need to schedule service within the above time frames, please call us at 1-800-386-1215. At that time, we will arrange for service to come to your home and repair your appliance per the terms above. As an added assurance this information has been entered into the GE Appliances database under case # {!case.CaseNumber}.
+        <br />
+        <br />
+
+        Please do not hesitate to call us if we can be of further assistance or if you have questions regarding this letter. Thank you for allowing me the opportunity to assist with this situation.
+        <br />
+        <br />
+
+        Sincerely,
+        <br />
+        <br />
+        <br />
+
+        {!$User.FirstName}
+        <br />
+
+        Consumer Relations
+        <br />
+
+        GE Appliances, a Haier Company
+        <br />
+        <br />
+        <br />
+    </div>
+</apex:component>

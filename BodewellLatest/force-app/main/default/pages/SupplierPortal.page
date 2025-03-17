@@ -1,0 +1,6 @@
+<apex:page controller="SupplierPortalController" action="{!login}" >
+   <apex:form >
+   <apex:pageMessages ></apex:pageMessages>
+       <apex:commandButton value="Login" action="{!login}"/>
+   </apex:form> 
+</apex:page>

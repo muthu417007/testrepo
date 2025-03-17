@@ -1,0 +1,15 @@
+<template>
+    <div class="banner slds-align_absolute-center">
+        <p class="title-join">
+            <span class="bold-text">Save an additional &nbsp;
+                <lightning-formatted-number                   
+                    value={memberProdSavings}
+                    maximum-fraction-digits="2"
+                    currency-code={currencyCode}
+                    format-style="currency">
+                </lightning-formatted-number> </span>  as a Bodewell Member.     
+        <a onclick={handleJoinNow} class="slds-p-left_xx-small slds-text-link join">Join Now</a>
+        </p>
+    </div>
+
+</template>

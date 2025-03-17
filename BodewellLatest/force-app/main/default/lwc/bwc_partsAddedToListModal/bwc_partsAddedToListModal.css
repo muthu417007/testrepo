@@ -1,0 +1,20 @@
+.dummy{
+	color : black;
+}
+
+.productDetail{
+	display: flex;
+	overflow: auto;
+}
+
+.deleteBUtton:hover{
+	cursor: pointer;
+}
+
+.imageCss{
+	height: -webkit-fill-available;
+}
+
+.image{
+	height: 300px;
+}

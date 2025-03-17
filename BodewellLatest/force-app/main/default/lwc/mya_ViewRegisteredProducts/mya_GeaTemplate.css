@@ -1,0 +1,717 @@
+.body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+    font-family: 'sans-serif';
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+.add {
+    line-height: inherit;
+    transition: color .15s ease;
+    background-color: transparent;
+    color: #1a63a2;
+    text-decoration: none;
+    font-size: 0.8235294117647059rem;
+    font-weight: 500;
+}
+
+.noborder {
+    border: none
+}
+
+.noborder:focus {
+    box-shadow: none
+}
+
+.container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.appliance-list>.cell {
+    margin-bottom: 2rem;
+}
+
+.medium-up-2>.cell {
+    width: 50%;
+}
+
+.appliance-item {
+    text-align: center;
+    position: relative;
+    display: block;
+    border: 1px solid #ccc;
+    height: 400px;
+    margin: 1em;
+    width: 345px;
+}
+
+.payment-title {
+    margin: 0px 0px 0.2rem 0px;
+    letter-spacing: 0.25px;
+    font-size: 28px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+    padding-bottom: 5px;
+    color: #555;
+    line-height: 1.18751;
+    text-transform: capitalize;
+}
+
+.medium-offset-3 {
+    margin-left: 25%;
+}
+
+.product-title,
+p.details-link {
+    color: #555;
+    padding: 0 1rem;
+    font-family: 'Gotham-Medium';
+    font-weight: 500;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+}
+
+.product-desc {
+    color: #555;
+}
+
+.appliance-item-myProducts:hover {
+    border: 1px solid #1a63a2;
+    color: #1a63a2;
+    border-bottom-width: 4px;
+}
+
+.appliance-item-myProducts:hover input {
+    color: #1a63a2;
+}
+
+.appliance-item-myProducts:hover .close-icon {
+    color: #1a63a2;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    
+}
+
+.container:not(.full)>.grid-padding-x {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+}
+
+.appliance-item p {
+    text-align: center;
+    background-color: #fff;
+    color: #1a63a2;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+.grid-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 22px;
+    padding-bottom: 0em;
+    margin-top: 0rem;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+.appliance-list {
+    font-family: 'Gotham-Medium';
+    color: #555;
+    font-weight: 600;
+    line-height: 1.18751em;
+    font-size: 22px;
+    margin-bottom: 15px;
+    word-spacing: 0px;
+    font-style: normal;
+    letter-spacing: 0.25px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #092c74;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.text-center {
+    text-align: center;
+}
+
+div {
+    display: block;
+}
+
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 95%;
+}
+
+.main-Content {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.address-list-section {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 28px;
+    text-rendering: optimizeLegibility;
+}
+
+.infoheader {
+    color: #555;
+    line-height: 1.18571em;
+    text-transform: capitalize;
+    font-weight: 200;
+    margin-bottom: 0.2em;
+    margin-top: 0rem;
+}
+
+ :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+}
+
+.account-greeting-section {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.add-an-appliance-section {
+    margin-bottom: 8rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+
+.add-an-appliance>.grid-container {
+    background-color: #dde8f1;
+    padding: 2rem;
+    max-width: 71.5rem;
+}
+
+.add-an-appliance-inner {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.padding-top-3 {
+    padding-top: 3rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.addAppliancesTitle {
+    padding-bottom: 2%;
+}
+
+.fontstyle {
+    font-style: 'Gotham SSm A';
+}
+
+.infoHeader {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    font-size: 24px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #555;
+}
+
+h2 {
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    margin-bottom: 0rem;
+    line-height: 1.3;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.add-an-appliance-links p {
+    margin-bottom: 0.5rem;
+}
+
+.close-icon {
+    color: #e3dfda;
+    text-align: right;
+}
+
+.close-icon2 {
+    color: #1a63a2;
+    text-align: right;
+}
+
+.close-icon:hover {
+    color: #092c74;
+}
+
+.appliance-item {
+    text-align: right;
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-size: 24px;
+    font-family: 'Gotham-Book';
+    text-rendering: auto;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #1a63a2;
+    right: -1.5rem;
+    top: -1rem;
+    line-height: 1;
+    font-weight: 600;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal-header {
+    margin-top: 1rem;
+    font-size: 22px;
+    color: #092c74;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.reveal.add-address-modal {
+    top: 40%;
+    margin-bottom: 20px;
+}
+
+.reveal.add-address-modal {
+    top: 40%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 3px solid #1a63a2;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 500px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(10, 10, 10, 0.45);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.button-action {
+    display: inline-block;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.okButton {
+    width: 100%;
+    background-color: #1A63A2;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    font-family: 'Gotham-Medium';
+    border: solid 1px #1A63A2;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.okButton:hover {
+    text-decoration: none;
+    background-color: #092c74;
+    color: #fff;
+    border: 1.5px solid #1A63A2;
+}
+
+.cancelButton {
+    background-color: white;
+    color: #1A63A2;
+    border: 1px solid #1A63A2;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Gotham-Medium';
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.cancelButton:hover {
+    background-color: #1A63A2;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.reveal-overlay .modal-header {
+    padding-bottom: 0;
+    margin: 0px;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.delete-message {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Gotham-Book';
+}
+
+.removeproduct {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-action {
+    width: 100%;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.linkbutton {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: transparent;
+    text-decoration: none;
+    font-family: 'Gotham-Book';
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding-bottom: 1rem;
+}
+
+.linkbutton:hover {
+    text-decoration: underline;
+    color: #092c74;
+}
+
+.height1 {
+    height: 50%;
+}
+
+.height2 {
+    height: 30%;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 425px) {
+    .main-Content {
+        position: relative;
+        margin: 0 auto;
+        padding-bottom: 2em;
+        max-width: 100%;
+    }
+    .appliance-list {
+        font-family: 'Gotham-Medium';
+        color: #555;
+        font-weight: 600;
+        line-height: 1.18751em;
+        font-size: 22px;
+        margin-bottom: 15px;
+        word-spacing: 0px;
+        width: 100%;
+        font-style: normal;
+        letter-spacing: 0.25px;
+    }
+    .appliance-item {
+        text-align: right;
+        position: relative;
+        display: block;
+        border: 1px solid #ccc;
+        height: max-content;
+        margin: 5px 0px;
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+    .reveal.add-address-modal {
+        top: 15%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 3px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 2rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        font-family: inherit;
+        color: #1a63a2;
+        text-decoration: none;
+        font-family: 'Gotham-Book';
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    .modal-header {
+        margin-top: 1rem;
+        font-size: 22px;
+        color: #092c74;
+        font-weight: 800;
+        margin-bottom: 1em;
+        margin-top: 0rem;
+        text-transform: capitalize;
+        border-bottom: none;
+        background: none;
+    }
+    .close-icon {
+        color: #1a63a2
+    }
+}
+
+@media only screen and (min-width:200px) and (max-width: 320px) {
+    .reveal.add-address-modal {
+        top: 15%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 3px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        font-family: inherit;
+        color: #1a63a2;
+        text-decoration: none;
+        font-family: 'Gotham-Book';
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    .close-icon {
+        color: #1a63a2
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width: 768px) {
+    .reveal.add-address-modal {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .reveal {
+        overflow: visible;
+        border: 3px solid #1a63a2;
+        margin-bottom: 1em;
+        padding: 1rem 2rem;
+        width: 85%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .grid-x {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-flow: row wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .linkbutton {
+        background: none;
+        border: none;
+        font-family: inherit;
+        color: #1a63a2;
+        text-decoration: none;
+        font-family: 'Gotham-Book';
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    .close-icon {
+        color: #1a63a2
+    }
+}

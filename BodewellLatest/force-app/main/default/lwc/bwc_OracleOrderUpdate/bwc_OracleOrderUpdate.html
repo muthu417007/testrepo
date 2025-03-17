@@ -1,0 +1,28 @@
+<template>
+	<div class="slds-box">
+		<template for:each={orderSummaryDetailArray} for:item="orderSummaryInstance">
+			<!-- <p key={orderSummaryInstance.Id}>{orderSummaryInstance.Id}</p> -->
+			<div key={orderSummaryInstance.Id} class="slds-grid slds-gutters">
+				<div key={orderSummaryInstance.Id} class="slds-col slds-size_1-of-8">
+					<img key={orderSummaryInstance.Id} src = {orderSummaryInstance.media}>
+                </div>
+					<div key={orderSummaryInstance.Id} class="slds-col">
+						Product name: <p key={orderSummaryInstance.productName}>{orderSummaryInstance.productName}</p>
+					</div>
+					<div key={orderSummaryInstance.Id} class="slds-col">
+						Quantity
+						: <p key={orderSummaryInstance.quantity}>{orderSummaryInstance.quantity}</p>
+					</div>
+					<div key={orderSummaryInstance.Id} class="slds-col">
+						Product SKU: <p key={orderSummaryInstance.skuInstance}>{orderSummaryInstance.skuInstance}</p>
+					</div>
+					<div key={orderSummaryInstance.Id} class="slds-col">
+						Subtotal: <p key={orderSummaryInstance.subtotal}>{orderSummaryInstance.subtotal}</p>
+					</div>
+				</div>
+				<lightning-button key={orderSummaryInstance.Id} variant="brand" label="cancel product"
+					title="cancel product" onclick={handleClick} value={orderSummaryInstance.Id}>
+				</lightning-button>
+		</template>
+	</div>
+</template>

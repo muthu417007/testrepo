@@ -1,0 +1,444 @@
+body {
+    font-family: inherit;
+    color: inherit;
+}
+
+.service_Box {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    background-color: #fff;
+    width: 1161px;
+    margin: 10px auto;
+}
+
+.p1 {
+    font-weight: 100;
+    font-size: 22px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.p3 {
+    margin-top: 16px;
+}
+
+.p2 {
+    margin: 16px auto;
+}
+
+.track-link-gea {
+    font-size: 1rem;
+    color: #1a63a2;
+}
+
+.track-link-gea:hover {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #003B71;
+}
+
+.track-link-cafe {
+    font-size: 1rem;
+    color: #6c6158;
+}
+
+.track-link-cafe:hover {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #1a4b3d;
+}
+
+.track-link-haier {
+    font-size: 1rem;
+    color: #005AAA;
+}
+
+.track-link-haier:hover {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #32beff;
+}
+
+p {
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-left: 0px;
+    font-family: inherit;
+    color: inherit;
+    margin-bottom: 0px;
+}
+
+.item-desc {
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.slds-table {
+    margin-top: 10px;
+    background-color: #efefef;
+}
+
+.header {
+    background-color: #efefef;
+}
+
+th {
+    background-color: #efefef;
+    font-weight: bold;
+}
+
+.test {
+    display: block;
+    line-height: 1rem;
+}
+
+.test1 {
+    display: block;
+    position: absolute;
+    line-height: 1rem;
+}
+
+.tables1 {
+    background-color: #efefef;
+}
+
+.status-image {
+    text-align: center;
+    margin-left: 10%;
+    width: 50%;
+    height: auto;
+}
+
+.past-table {
+    width: 80%;
+}
+
+.showsall-cafe {
+    cursor: pointer;
+    text-align: left;
+    padding: 3px;
+    color: #1a4b3d;
+    font-size: 1rem;
+    display: block;
+    --sds-c-icon-color-foreground-default: #1a4b3d;
+}
+
+.showsall-cafe:hover {
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #1a4b3d;
+}
+
+.showsall-gea {
+    cursor: pointer;
+    text-align: left;
+    padding: 3px;
+    color: #1a63a2;
+    font-size: 1rem;
+    display: block;
+    --sds-c-icon-color-foreground-default: #1a63a2;
+}
+
+.showsall-gea:hover {
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #003B71;
+}
+
+.showsall-haier {
+    cursor: pointer;
+    text-align: left;
+    padding: 3px;
+    color: #005AAA;
+    font-size: 1rem;
+    display: block;
+    --sds-c-icon-color-foreground-default: #005aaa;
+}
+
+.showsall-haier:hover {
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #32beff;
+}
+
+.icons-gea {
+    color: #1a63a2;
+    float: left;
+    text-align: left;
+    margin: 0.5rem 0rem;
+    font-size: 1rem;
+}
+
+.icons-cafe {
+    color: #004b3d;
+    float: left;
+    text-align: left;
+    margin: 0.5rem 0rem;
+    font-size: 1rem;
+}
+
+.icons-haier {
+    color: #005AAA;
+    float: left;
+    text-align: left;
+    margin: 0.5rem 0rem;
+    font-size: 1rem;
+}
+
+.icons-gea:hover {
+    color: #003B71;
+    text-align: left;
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0rem;
+}
+
+.icons-cafe:hover {
+    color: #1a4b3d;
+    text-align: left;
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0rem;
+}
+
+.icons-haier:hover {
+    color: #32beff;
+    text-align: left;
+    display: block;
+    font-size: 1rem;
+    margin: 0.5rem 0rem;
+}
+
+.iconsChevron {
+    fill: blue;
+    color: blue;
+}
+
+.slds-icon {
+    fill: blue;
+    color: blue;
+}
+
+a {
+    margin-bottom: 25px;
+    color: inherit;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left,
+.field-wrapper.callout-title-container .title-bar-circles-right {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: solid 1px #fff;
+    flex: 1 1 auto;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container {
+    background-color: #005AAA;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    width: 1161px;
+    padding: 5px 1rem;
+    text-align: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.field-wrapper.callout-title-container .title-bar-circles-left {
+    background-position: left;
+    background-size: auto;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    margin: 1rem 0;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container {
+    flex: 0 0 auto;
+    /* margin: 1rem 0; */
+    max-width: 100%;
+}
+
+.field-wrapper.callout-title-container .callout-title-inner-container .fielditem h3 {
+    margin: 0;
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.fielditem>h3 {
+    color: white;
+    font-weight: 600;
+}
+
+.header-ge {
+    font-size: 26px;
+    margin-top: 3rem;
+    color: #555;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    text-align: center;
+    margin-left: 3px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    font-weight: 300;
+}
+
+.secDiv {
+    padding-bottom: 4rem;
+}
+
+.width-set {
+    background-color: #fff;
+    width: 1161px;
+    margin: 0px auto;
+    padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.header-cafe {
+    border-bottom: 1px solid rgba(24, 63, 50, 1);
+    text-align: center;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    color: #004b3d;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+div,
+p,
+a {
+    font-family: inherit;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.mob-table {
+    display: none;
+}
+
+.mob-table2 {
+    display: none;
+}
+
+@media only screen and (max-width:39.9375rem) {
+    .field-wrapper.callout-title-container {
+        background-color: #005AAA;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+        width: 90%;
+        padding: 0 1rem;
+        text-align: center;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    .service_Box {
+        width: 95%;
+    }
+    .tables1 {
+        width: 100%;
+        padding: 1rem 0rem;
+        background-color: transparent;
+    }
+    .width-set {
+        background-color: #fff;
+        width: 90%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem 0.5rem;
+    }
+    .image-set {
+        width: 90%;
+        padding: 0.3rem;
+        margin: 0.1rem;
+    }
+    .status-image {
+        text-align: center;
+        width: 80%;
+        height: auto;
+    }
+    .secDiv {
+        width: 100%;
+        padding-top: 1rem;
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+    .web-table {
+        display: none;
+    }
+    .left-float {
+        float: left;
+        font-weight: 600;
+    }
+    .right-float {
+        float: right;
+        font-weight: 200;
+    }
+    .mob-table {
+        display: block;
+        background-color: #efefef;
+        width: 100%;
+        padding: 1rem 0.5rem;
+    }
+    .mob-table2 {
+        display: block;
+        background-color: #efefef;
+        width: 100%;
+    }
+    .table-data {
+        margin-left: 5px;
+    }
+    .table-head {
+        margin-right: 5px;
+    }
+    .aligni {
+        margin: 10px 0px 10px 0px;
+        line-height: 2rem;
+        width: 95%;
+        display: table-header-group;
+    }
+    .pad {
+        padding-left: 1rem !important;
+    }
+    .new-line-set {
+        white-space: normal;
+        white-space: normal;
+        word-break: break-word;
+    }
+    table {
+        border-collapse: initial;
+        border-spacing: 0;
+    }
+}

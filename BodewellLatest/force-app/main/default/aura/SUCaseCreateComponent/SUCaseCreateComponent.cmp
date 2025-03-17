@@ -1,0 +1,191 @@
+<aura:component
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,flexipage:availableForRecordHome"
+                access="global" controller="SUCaseCreateController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="GlobalAction" access="global" type="string" />
+    <aura:attribute name="Title" access="global" type="string" />
+    <aura:attribute name="Subtitle" access="global" type="string" />
+    <aura:attribute name="AttachFiles" access="global" type="boolean" default="true" />
+    <aura:attribute name="AttachFilesLabel" type="string" default="Upload Files" />
+    <aura:attribute name="ConfirmationTitle" access="global" type="string" />
+    <aura:attribute name="ConfirmationSubtitle" access="global" type="string" />
+    <aura:attribute name="showMessage" type="Boolean" default="false" access="global" />
+    <aura:attribute name="fieldsArray" type="List" />
+    <aura:attribute name="newProduct" type="List"/>
+    <aura:attribute name="getFileNames" type="List" />
+    <aura:attribute name="getFileIds" type="List" />
+    <aura:attribute name="caseNumber" type="String" />
+    <aura:attribute name="confirmationArray" type="List" />
+    <aura:attribute name="searchString" type="String" default="" />
+    <aura:attribute name="caseRedirectUrl" type="String" />
+    <aura:attribute name="CaseUid" type="String" />
+    <aura:attribute type="boolean" name="resultModal" default="false" />
+    <aura:attribute type="boolean" name="showSpinner" default="false" />
+    <aura:attribute name="DefaultAggregation" type="String"/>
+    <aura:attribute name="aggregationFilter" type="String"/>
+    <aura:attribute name="searchResultId" type="String" access="global" />
+    <aura:attribute name="searchResultTitle" type="String" access="global" />
+    <aura:attribute name="searchResultUrl" type="String" access="global" />
+    <aura:attribute name="ModalOpen" type="Boolean" default="false" />
+    <aura:attribute name="resolvedResult" type="Boolean" default="false" />
+    <aura:attribute name="isLoaded" type="Boolean" default="false" />
+    <aura:attribute name="timer" type="Integer" default="0" />
+    <aura:attribute name="Subject" type="string" default=""/>
+    <aura:attribute name="Description" type="string" default=""/>
+    <aura:attribute name="conversionFilter" type="String" default=""/>
+    <aura:attribute name="conversionString" type="String" default=""/>
+    <aura:attribute name="conversion" type="Boolean" default="false"/>
+    <aura:attribute name="conversionData" type="Object"/>
+    <aura:handler event="SU_Ltng:ComponentListDisplay" action="{!c.handleOpenResults}" />
+    <c:SUSearchUnifyHeaderDynamic aura:id="SuAnalytics" />
+    <aura:if isTrue="{!v.showSpinner}">
+        <div aura:id="spinnerHd" id="spinner" class=" forceModalSpinner">
+            <div class="modal-glass">&nbsp;</div>
+            <div class="indicatorContainer forceInlineSpinner" aria-hidden="false" role="alert">
+                <div class="forceDotsSpinner">
+                    <div class="slds-spinner_medium slds-spinner slds-spinner_brand " role="status">
+                        <span class="slds-assistive-text">Loading...</span>
+                        <div class="slds-spinner__dot-a">
+                        </div>
+                        <div class="slds-spinner__dot-b">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!!v.showMessage}">
+        <div class="slds-grid slds-wrap slds-gutters padtop">
+            <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-max-small-size_12-of-12 slds-wrap submit-case-div">
+                <aura:if isTrue="{!v.isLoaded}">
+                    <div class="slds-col slds_size_1-of-1 container_div" style="display:block;text-align:center;">
+                        <h1 style="font-size:1.125rem;font-weight: 400 !important;">{!v.Title}</h1>
+                        <span> {!v.Subtitle} </span>
+                    </div>
+                </aura:if>
+                
+                <lightning:recordEditForm aura:id="recorded" recordId="{!v.recordId}" objectApiName="Case"
+                                          onsuccess="{!c.handleSaveSuccess}" onsubmit="{!c.handleOnSubmit}" onload="{!c.handleOnLoad}" onerror="{!c.handleOnError}">
+                    
+                    <lightning:messages />
+                    <aura:iteration items="{!v.fieldsArray}" var="field" indexVar="indexVar">
+                        <aura:if isTrue="{!field.type == 'reference'}">
+                            <aura:if isTrue="{!v.isLoaded}">
+                                <label for="{!field.value}" class="{!if(field.required, 'customErrorMessage slds-form-element__label','slds-form-element__label')}">{!field.label}</label>
+                            </aura:if>
+                            <lightning:inputField fieldName="{!field.value}" value="{!field.defaultValue}" variant="label-hidden" class="lookupLabel"/>
+                            
+                            <aura:set attribute="else">
+                                <lightning:inputField fieldName="{!field.value}" value="{!field.value=='SU_Ltng__SearchUnifySessionId__c' ? v.CaseUid : field.defaultValue}" class="{!field.value=='SU_Ltng__SearchUnifySessionId__c' ? 'hidden-field' : if(field.required, 'customErrorMessageIn','')}" onchange="{!c.getResults}"/> 
+                            </aura:set>
+                        </aura:if>
+                    </aura:iteration>
+                    <aura:if isTrue="{!v.isLoaded}">
+                        <aura:if isTrue="{!and(v.AttachFiles,$SObjectType.CurrentUser.Id)}">
+                            <div style="margin: 10px 0;">
+                                <aura:iteration items="{!v.getFileNames}" var="files" indexVar="indexVar">
+                                    <div style="width: 50%; display: inline-block;">{!files}</div>
+                                </aura:iteration>
+                            </div>
+                            <lightning:fileUpload class="su-file-upload"
+                                                  label="{!v.AttachFilesLabel}" name="fileUploader" multiple="true"
+                                                  recordId="{!$SObjectType.CurrentUser.Id?$SObjectType.CurrentUser.Id:'123344'}" onuploadfinished="{!c.handleUploadFinished}" />
+                            
+                        </aura:if>
+                        <div class="slds-m-top_medium slds-text-align_center">
+                            <lightning:button variant="brand" label="Submit" type="submit" />
+                        </div>
+                    </aura:if>
+                </lightning:recordEditForm>
+                
+            </div>
+            <aura:if isTrue="{!v.isLoaded}">
+                <aura:if isTrue="{!if((v.searchString || v.aggregationFilter),true,false)}">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-max-small-size_12-of-12 slds-wrap submit-case-div">
+                        
+                        <div class="slds-col slds-size_1-of-1 list-component-case">
+                            
+                            <c:SUAuthList searchString="{!v.searchString}" aura:id="listResults" pagesize="10" openNewTab="true" modalOpen="{!v.resultModal}" showResultbody="true" aggregation="{!v.aggregationFilter}" /> 
+                            <aura:if isTrue="{!v.ModalOpen}">
+                                <div id="contactSupportModal" role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open ">
+                                    <div class="slds-modal__container ">
+                                        <div class="slds-modal__header">
+                                            <button class="slds-button slds-modal__close slds-button--icon-inverse"
+                                                    title="Close" onclick="{!c.closeModal}">
+                                                X
+                                                <span class="slds-assistive-text">Close</span>
+                                            </button>
+                                        </div> 
+                                        <div class="slds-modal__content slds-p-around--medium">
+                                            <div>
+                                                <div class="articleSelected" style="text-align : center;">
+                                                    <span class="modHeading">
+                                                        <a class="modalTitleLink" target="_blank"
+                                                           href="{!v.searchResultUrl}">{!v.searchResultTitle}</a>
+                                                    </span>
+                                                </div>
+                                                <div aura:id="containrec" class="recordview" id="container">
+                                                    <div aura:id="feedContainer" class="feed-container">
+                                                        <force:recordView recordId="{!v.searchResultId}"/> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-modal__footer">
+                                            <aura:if isTrue="{!!v.resolvedResult}">
+                                                <div class="resolveIssueText">Did this content solve your issue?</div>
+                                                <div class="resolveIssueBttns">
+                                                    <span class="Resolvedbtn"><button class="slds-button"
+                                                                                      onclick="{!c.handleResolved}">Yes</button></span>
+                                                    <span>.</span>
+                                                    <span class="Closepage"><button class="slds-button button_neutral"
+                                                                                    title="Close" onclick="{!c.handleUnResolved}">No</button></span>
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <div class="resolveIssueText">Got it!!</div>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="slds-backdrop slds-backdrop--open"></div>
+                            </aura:if>
+                        </div>
+                        
+                    </div>
+                </aura:if>
+            </aura:if>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.showMessage}">
+        <div class="slds-col slds-size_1-of-2" style="margin: 40px 0;">
+            <div class="slds-col slds_size_1-of-1 container_div"
+                 style="display:block;border-bottom: 1px solid #d3d3d3;">
+                <h1 style="font-size:1.125rem;font-weight: 400 !important;margin:5px 0;">{!v.ConfirmationTitle}</h1>
+                <h1 style="font-size:1.125rem;font-weight: 400 !important;margin:5px 0;">{!v.ConfirmationSubtitle}</h1>
+            </div>
+            <aura:if isTrue="{!v.showerrorMsg}">
+                <p class="case-created-p"><b class="padd_left">{!v.casecreationError}</b></p>
+                <aura:set attribute="else">
+                    <div class="case-summary-div">
+                        <p style="font-size: 16px; margin: 10px 0;">Case Summary</p>
+                        <aura:iteration items="{!v.confirmationArray}" var="record">
+                            <p class="case-created-p"><b>Issue/Question/Request:</b><span class="padd_left">{!record.Issue_Question_Request__c}</span>
+                            </p>
+                            <p class="case-created-p"><b>Description:</b><span class="padd_left">
+                                <aura:unescapedHtml value="{!record.Description}"></aura:unescapedHtml>
+                                </span></p>
+                            <p class="case-created-p"><b>Case Number:</b><span class="padd_left">
+                                <a title="Click here to go to case detail" onclick="{!c.redirectCase}">
+                                    <aura:unescapedHtml value="{!v.caseNumber}">
+                                    </aura:unescapedHtml>
+                                </a>
+                                </span></p>
+                        </aura:iteration>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+    </aura:if>
+</aura:component>

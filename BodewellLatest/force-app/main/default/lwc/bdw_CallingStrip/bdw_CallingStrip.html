@@ -1,0 +1,15 @@
+<template>
+    <div class="support-block-phone support-expert">
+        <div if:false={isIconBlack} class="concierge-container">
+            <img class="i-concierge" src={conciergesvg} alt="call icon">
+        </div>
+        <div if:true={isIconBlack} class="concierge-container">
+            <img class="concierge" src={conciergesvg} alt="call icon">
+        </div>
+        <div class="support-info">
+            <span class="phone-number" style={fontSize}>
+                {calltext1}&nbsp;<a onclick={handleClick} class="semiBold">{contactNumber}</a>&nbsp;{calltext2}               
+            </span>   
+        </div>
+    </div>
+</template>

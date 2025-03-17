@@ -1,0 +1,77 @@
+<template>
+  <template if:true={cases}>
+      <div class="cr-case-details">
+          <div class="mya-case-icon">
+          <lightning-icon
+              icon-name="standard:case"
+              size="medium"
+              alternative-text="case"
+          >
+          </lightning-icon>
+          </div>
+      <div class="mya-case-number">
+          <div>Case Details</div>
+      </div>
+      </div>
+          <div class="crcases-details-section">
+                  <lightning-layout vertical-align="stretch" multiple-rows="true" class="case-data textcenter">
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Case Number : </label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span>{cases.CaseNumber}</span>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Subject : </label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span>{cases.Subject}</span>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Reason :</label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span>{cases.Reason}</span>
+                  </lightning-layout-item>
+              </lightning-layout>
+              <lightning-layout vertical-align="stretch" multiple-rows="true" class="case-data textcenter">
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Status :</label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span>{cases.Status}</span>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Created Date : </label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span><lightning-formatted-date-time
+                          value={cases.CreatedDate}
+                          year="numeric"
+                          day="2-digit"
+                          month="long"
+                          hour="2-digit"
+                          minute="2-digit"
+                          time-zone="America/New_York"
+                      >
+                   </lightning-formatted-date-time></span>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="1" flexibility="auto" class="case-detail-label">
+                      <label class="case-label">Closed Date : </label>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="3" flexibility="auto" class="case-detail-data">
+                      <span><lightning-formatted-date-time
+                          value={cases.ClosedDate}
+                          year="numeric"
+                          day="2-digit"
+                          month="long"
+                          hour="2-digit"
+                          minute="2-digit"
+                          time-zone="America/New_York"
+                      >
+                   </lightning-formatted-date-time></span>
+                  </lightning-layout-item>
+              </lightning-layout>
+         </div>
+      </template>
+</template>

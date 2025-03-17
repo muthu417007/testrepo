@@ -1,0 +1,133 @@
+<apex:page Controller="ZonelinePDF_Controller" renderAs="pdf" applyBodyTag="false">
+  <head>
+    <style>
+      body {font-family:'Arial Unicode MS';}
+      .pageTitle {font-size:33px;}
+      .disclaimer {font-size:14px;}
+      .fieldLabel {font-size:17px;}
+      .outputValue {font-size:20px;}
+      .fieldValue {font-size:15px;}
+      .colStyle {text-align:center;}
+    </style>
+  </head>
+  <body>
+  
+    <!-- Title Section -->
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem >
+          <apex:image url="{!$Resource.ge_appliances_logo}" width="175" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="pageTitle" value="Zoneline Energy Cost Savings Analysis" />
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <!-- Project Name and Date -->
+    <apex:pageBlock >
+      <apex:panelGrid columns="2" width="100%" border="1">
+        <apex:panelGrid columns="2" cellpadding="5">
+          <apex:outputText styleClass="fieldLabel" value="Project Name:" />
+          <apex:outputText styleClass="fieldValue" value="{!zoneline.Project_Name__c}" />
+        </apex:panelGrid>
+        <apex:panelGrid columns="2" cellpadding="5">
+          <apex:outputText styleClass="fieldLabel" value="Analysis Date:" />
+          <apex:outputText styleClass="fieldValue" value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!zoneline.Analysis_Date__c}" />
+          </apex:outputText>
+        </apex:panelGrid>
+      </apex:panelGrid>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <!-- Input Values -->
+    <apex:pageBlock >
+      <apex:panelGrid border="1" columns="4" columnClasses="colStyle" width="100%">
+        <apex:outputText styleClass="fieldLabel" value="Number of Rooms" />
+        <apex:outputText styleClass="fieldLabel" value="Energy Cost per Month ($)" />
+        <apex:outputText styleClass="fieldLabel" value="PTAC Energy Contribution" />
+        <apex:outputText styleClass="fieldLabel" value="BTU Size (K)" />
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.Number_of_Rooms__c}" />
+        <apex:outputText styleClass="fieldValue" value="{0,number,$#,###}">
+          <apex:param value="{!zoneline.Energy_COST_per_month__c}" />
+        </apex:outputText>
+        <apex:outputText styleClass="fieldValue" value="{0,number,##%}">
+          <apex:param value="{!zoneline.PTAC_Energy_Contribution__c/100}" />
+        </apex:outputText>
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.BTU_Size_K__c}" />
+      </apex:panelGrid>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <!-- Comparison -->
+    <apex:pageBlock >
+      <apex:panelGrid border="1" columns="6" columnClasses="colStyle" width="100%">
+        <apex:outputText styleClass="fieldLabel" value="New EER" />
+        <apex:outputText styleClass="fieldLabel" value="Current EER" />
+        <apex:outputText styleClass="fieldLabel" value="% Better" />
+        <apex:outputText styleClass="fieldLabel" value="New COP" />
+        <apex:outputText styleClass="fieldLabel" value="Current COP" />
+        <apex:outputText styleClass="fieldLabel" value="% Better" />
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.GE_EER__c}" />
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.Current_EER__c}" />
+        <apex:outputText styleClass="fieldValue" value="{0,number,##.#%}">
+          <apex:param value="{!zoneline.Better_EER__c/100}" />
+        </apex:outputText>
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.GE_COP__c}" />
+        <apex:outputText styleClass="fieldValue" value="{!zoneline.Current_COP__c}" />
+        <apex:outputText styleClass="fieldValue" value="{0,number,##.#%}">
+          <apex:param value="{!zoneline.Better_COP__c/100}" />
+        </apex:outputText>
+      </apex:panelGrid>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <!-- Savings -->
+    <apex:pageBlock >
+      <apex:panelGrid border="1" columns="2" bgcolor="#99CC33" columnClasses="colStyle" width="100%">
+          <apex:outputText styleClass="outputValue" value="Estimated Hotel Savings Per Year" />
+          <apex:outputText styleClass="outputValue" value="Estimated Savings Per Room Per Year" />
+        <apex:outputText styleClass="outputValue" value="{0,number,$###,###}">
+          <apex:param value="{!zoneline.Estimated_Savings_per_Year__c}" />
+        </apex:outputText>
+        <apex:outputText styleClass="outputValue" value="{0,number,$###,###.00}">
+          <apex:param value="{!zoneline.Estimated_Savings_per_Room_per_Year__c}" />
+        </apex:outputText>
+      </apex:panelGrid>
+    </apex:pageBlock>
+    
+    <br /><br />
+    
+    <!-- Disclaimers -->
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer1}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer2}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer3}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer4}" />
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </body>
+</apex:page>

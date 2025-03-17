@@ -1,0 +1,175 @@
+.payment-details-section {
+    max-width: 45%;
+    width: calc(50% - 1.875rem);
+    margin: 60px auto;
+    font-family: 'ProximaNova-Regular';
+}
+
+.payment-details {
+    border-bottom: 1px Solid #004b3d;
+    border-top: 1px Solid #004b3d;
+    padding: 15px 0px;
+}
+
+.payment-card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-card-info-details {
+    display: flex;
+    font-size: 1.175rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.payment-card-number {
+    padding: 0px 25px 0px 0px;
+}
+
+.payment-title {
+    margin: 1px 0px 0 0px;
+    letter-spacing: 0.005em;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 300;
+    color: #004b3d;
+    text-transform: capitalize;
+    /* font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif; */
+    font-family: 'AdobeGaramondProRegular';
+    padding-bottom: 5px;
+}
+
+.payment-remove-link {
+    padding: 0px 25px 0px 0px;
+    color: #004b3d;
+    font-weight: 500;
+    font-size: 1.175rem;
+    font-family: 'ProximaNova-Regular';
+}
+
+.payment-edit-link {
+    color: #004b3d;
+    font-weight: 500;
+    font-size: 1.175rem;
+    margin: 0px 5px 0px 0px;
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.payment-address-details {
+    margin: 15px 0px 0px 0px;
+}
+
+.payment-address-info {
+    display: grid;
+    line-height: 25px;
+    text-align: left;
+    font-family: 'ProximaNova-Regular';
+}
+
+.delete-descr {
+    font-family: 'ProximaNova-Regular';
+    letter-spacing: 0.25px;
+    text-align: center;
+}
+
+.payment-remove-link,
+.payment-edit-link:hover {
+    text-decoration: none;
+    font-size: 1.175rem;
+}
+
+.button-text {
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .payment-details-section {
+        max-width: 100%;
+        margin: 60px auto;
+        width: 100%;
+        color: #555;
+        background-color: #fff;
+        border: 3px solid whitesmoke;
+        padding: 1rem;
+        font-family: 'ProximaNova-Regular';
+    }
+    .payment-details {
+        border-bottom: 0px Solid #555;
+        border-top: 0px Solid #555;
+        padding: 15px 0px;
+    }
+    .payment-card-info {
+        display: block;
+        width: 100%;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .payment-card-info-details {
+        display: block;
+        padding: 2px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .payment-card-info-action {
+        margin: 1rem auto;
+        width: 100%;
+    }
+    .payment-card-number {
+        padding: 0px 25px 0px 0px;
+        text-align: center;
+        line-height: 1.3;
+    }
+    .payment-title {
+        margin: 1px 0px 0 0px;
+        letter-spacing: 1.5px;
+        font-size: 24px;
+        font-family: 'AdobeGaramondProRegular';
+        text-align: center;
+        padding-bottom: 5px;
+        color: #004b3d;
+    }
+    .payment-remove-link {
+        padding: 0px 25px 0px 0px;
+        color: #004b3d;
+        font-weight: 500;
+        font-family: 'ProximaNova-Regular';
+        font-size: 1.175rem;
+    }
+    .payment-edit-link {
+        color: #004b3d;
+        font-weight: 500;
+        font-size: 1.175rem;
+        font-family: 'ProximaNova-Regular';
+        margin: 0px 5px 0px 0px;
+    }
+    .payment-address-details {
+        margin: 15px 0px 0px 0px;
+        text-align: center;
+        padding: 2px;
+    }
+    .payment-address-info {
+        display: grid;
+        line-height: 25px;
+        text-align: center;
+        font-family: 'ProximaNova-Regular';
+    }
+    .delete-descr {
+        font-family: 'ProximaNova-Regular';
+        letter-spacing: 0.25px;
+        text-align: left;
+        color: inherit;
+    }
+    .button-text {
+        font-family: 'ProximaNova-Regular';
+    }
+}
+
+@media only screen and (min-width:39.9375em) and ( max-width:768px) {
+    .payment-details-section {
+        max-width: 45%;
+        width: calc(50% - 1.875rem);
+        margin: 60px auto;
+        font-family: 'ProximaNova-Regular';
+    }
+}

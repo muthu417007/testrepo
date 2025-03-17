@@ -1,0 +1,62 @@
+.banner {
+    background-color: rgb(210, 212, 212);
+    font-family: inherit;
+    padding: 10px;
+    margin-top: 3rem;
+}
+
+.see-my-price {
+    color: inherit;
+    font-family: inherit;
+}
+
+.tick-mark {
+    width: 25px;
+    margin: 0px 10px;
+}
+
+.text-center {
+    text-align: center;
+    font-family: inherit;
+}
+
+li {
+    font-family: inherit;
+}
+
+h4 {
+    font-family: inherit;
+}
+
+@media only screen and (max-width:425px) {
+    .media {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .lst-hr {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .list {
+        font-family: inherit;
+        text-align: left;
+        padding: 5px;
+    }
+    .tick-mark {
+        width: 20px;
+        margin: 5px 10px;
+    }
+    .mob-flex {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .banner {
+        width: 100%;
+    }
+}

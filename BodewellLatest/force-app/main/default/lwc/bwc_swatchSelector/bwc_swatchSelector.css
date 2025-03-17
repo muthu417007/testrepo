@@ -1,0 +1,29 @@
+input[type=image] {
+    height: 33px;
+    width: 33px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    border-radius: 12%
+}
+input[type="image"]:hover {
+    border: 3px solid #F5C24A;
+}
+
+input[type=image]:disabled
+{
+    opacity:0.3;
+    cursor: not-allowed;
+}
+
+input.selected {
+    border: 3px solid #F5C24A;
+}
+
+.hardwareName {
+    font-size: 11px;
+    font-weight: var(--font-weight-bold);
+}
+
+.hardwarePrice {
+    font-size: 11px;
+}

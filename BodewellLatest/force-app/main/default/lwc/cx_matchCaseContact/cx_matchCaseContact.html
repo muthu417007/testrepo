@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Contact Match" icon-name='utility:adduser' id="cmpCard">
+        <hr class="solid">
+        <template for:each={contacts} for:item="contact">
+            <c-cx_match-case-contact-item key={contact.index} contact={contact} oncontactclick={handleContactClick} onmatchclick={handleMatchClick}></c-cx_match-case-contact-item>
+        </template>
+
+        <lightning-spinner if:true={loading}></lightning-spinner>
+    </lightning-card>
+</template>

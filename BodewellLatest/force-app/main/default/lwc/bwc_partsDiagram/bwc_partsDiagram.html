@@ -1,0 +1,61 @@
+<template>
+    <div class="slds-text-align_left slds-grid slds-gutters slds-wrap containter" onclick={handleClick}>
+        <div class="slds-col slds-size_12-of-12 slds-m-top_x-large slds-m-bottom_large slds-p-left_xx-large" if:true={showProductDetails}>
+            <h5 class="highLightedText">Replacement Parts</h5>
+            <div class="slds-col slds-size_8-of-12 slds-m-top_x-large details">
+                <div class="slds-col slds-size_8-of-12 slds-large-size_2-of-12 slds-medium-size_3-of-12 image">
+                    <img if:true={product.image} src={product.BWC_Main_Image__c}></img>
+                    <img if:false={product.image} src={imageNotAvailable}></img>
+                </div>
+                <div class="slds-col slds-size_10-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                    <p class="productName">{product.BWC_Product_Marketing_Description__c}</p>
+                    <p class="slds-p-top_medium boldFont">MODEL NUMBER: {product.StockKeepingUnit}</p>
+                </div>
+            </div>
+        </div>
+        <div if:false={showCarousel}>
+            We're sorry, but there are no assembly diagram that exist for your model. Scroll to see more information pertaining to your specific model.
+        </div>
+        <div class="slds-col slds-size_12-of-12 slds-m-top_xx-large slds-p-top_large carosolImages" if:true={showCarousel}>
+            <p class="slds-align_absolute-center carosolText">Replacement Parts By Section/Assembly Diagrams ({totalParts} Total)</p>
+            <div class="slds-m-top_large slds-p-bottom_xx-large imageContainer">
+                <lightning-icon class="slds-align_absolute-center icon hoverPointer" icon-name="utility:left" alternative-text="" onclick={handleLeftClick} style="--sds-c-icon-color-foreground-default: white;"></lightning-icon>
+                <template for:each={imagesToDisplay} for:item="image">
+                    <div class="slds-col slds-large-size_2-of-12 slds-medium-size_4-of-12 experiment" key={image.headerName}>
+                        <div class={image.css} style={image.style} key={image.headerName}>
+                            <img src={image.url} data-item={image.imageName} data-id={image.headerName} onclick={handleImageSelected}></img>
+                        </div>
+                        <div class={image.imageText} key={image.headerName}>
+                            <p>{image.headerName}</p>
+                        </div>
+                        <template if:true={isMobilePreview}>
+                            <div class="slds-align_absolute-center imageLargerPreview" onclick={openLargerImage} key={image.headerName}>
+                                <lightning-icon icon-name="utility:zoomin" alternative-text="view larger" class="hoverPointer icon slds-m-top_medium"></lightning-icon>
+                                <h4 class="hoverPointer flexEnd bold">View Larger</h4>
+                            </div>
+                        </template>
+                    </div>
+                   
+                </template>
+                <lightning-icon class="slds-align_absolute-center hoverPointer" icon-name="utility:right" alternative-text="" onclick={handleRightClick} style="--sds-c-icon-color-foreground-default: white;"></lightning-icon>
+            </div>
+        </div>
+    </div>
+    <template if:true={renderChild} onclick={handleClick}>
+        <c-bwc_parts-explorer
+            part-selected={imageSelected}
+            product={product}
+            current-user={currentUser}
+            is-launched-via-manage-parts={isLaunchedViaManageParts}
+            effective-account-id={effectiveAccountId}
+            is-mobile-preview={isMobilePreview}
+            drop-down-open={dropDownOpen}
+            onoutsidedropdown={handleOutsideDropDown}>
+        </c-bwc_parts-explorer>
+        <div if:true={showProductDetails}>
+        <c-bwc_product-tab-owner-support
+            product={productForImageAndManuals}
+        ></c-bwc_product-tab-owner-support>
+        </div>
+    </template>
+</template>

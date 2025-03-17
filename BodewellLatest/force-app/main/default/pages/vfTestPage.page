@@ -1,0 +1,11 @@
+<apex:page >
+    <apex:form >
+     <script type="text/javascript" src="https://cdn.cookielaw.org/consent/f05d0584-2024-431e-8497-17bad2606d82/OtAutoBlock.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+    type="text/javascript" charset="UTF-8" data-domain-script="f05d0584-2024-431e-8497-17bad2606d82" ></script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script></apex:form>
+   
+</apex:page>

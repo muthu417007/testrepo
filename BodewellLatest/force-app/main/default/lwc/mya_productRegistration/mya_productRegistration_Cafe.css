@@ -1,0 +1,1067 @@
+.header {
+    margin: 1rem 0rem 2rem 0rem;
+    letter-spacing: 0.025em;
+}
+
+.product-info-item {
+    margin-bottom: 1rem;
+}
+
+.date-validation-message {
+    margin-left: 33% !important;
+}
+
+.product-image {
+    margin: 10px 30px;
+    padding: 1rem 0rem;
+    width: 50rem;
+}
+
+.field-head {
+    letter-spacing: 0.25px;
+    font-size: 16px;
+}
+
+.product-confirmation-image img {
+    width: 75%
+}
+
+.privacy-link {
+    color: white;
+}
+
+.radio-group {
+    color: #555555;
+    letter-spacing: 1.25px;
+    font-family: system-ui;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.center {
+    width: 775px;
+    margin: 0 auto;
+}
+
+.adobe-garamond-pro {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.title-bar {
+    width: 480px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.title-head {
+    font-size: 1.625rem;
+    line-height: 1.230769;
+    letter-spacing: 0.05em;
+}
+
+.privacy-links {
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+}
+
+.privacy-links:hover {
+    color: rgba(108, 97, 88, .8);
+}
+
+.title-sub {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: rgba(108, 97, 88, 1);
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-size: 16px;
+    padding: 0px;
+    text-rendering: optimizeLegibility;
+}
+
+.email-label {
+    text-transform: lowercase;
+}
+
+.cafe-link {
+    color: rgba(180, 75, 40, 1);
+    cursor: pointer;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.input-field-margin {
+    margin: 20px 0px;
+}
+
+.where-is-model-link {
+    font-size: 16px;
+    display: block;
+    padding-top: 0.5rem;
+    text-transform: none;
+    text-align: left;
+}
+
+.offer-message-section {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+}
+
+.offer-message-bottom-margin {
+    margin: 0px 0px 20px 0px;
+}
+
+.offer-message {
+    color: rgba(24, 63, 50, 1);
+    font-size: 1.1875rem;
+    line-height: 1.368421;
+    letter-spacing: 0.050em;
+    font-weight: 500;
+}
+
+.contact-info-header {
+    color: rgba(24, 63, 50, 1);
+    font-weight: 100;
+    font-size: 28px;
+}
+
+.form-validation-message {
+    color: red;
+}
+
+.consent-label {
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+}
+.Termslabel2{
+    margin-left: 20px !important;
+}
+.consent-check{
+    transform: scale(2);
+    margin-left: 15px;
+    line-height: 2rem;
+}
+.consent-checkbox2{
+    margin-left: 21px;
+}
+.consent-validation {
+    color: red;
+    margin: 0px auto;
+    height: 20px;
+    width: 175px;
+    padding: 15px 0px 0px 0px;
+}
+.consent-validation-message{
+    white-space: nowrap;
+}
+.consent-section{
+    background-color: #F4F4F3;
+    height: 80px;
+}
+.consent-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+   
+}
+.slds-modal__header{
+    border:none !important;
+    border-radius: 0px;
+   
+}
+.slds-p-around_medium{
+    background-color: white;
+}
+.slds-modal__footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none !important;
+    border-radius: 0px;
+}
+.signup-button{
+    width: 23rem;
+    height: 3rem;
+    margin-bottom: 12px;
+    background-color: #004b3d;
+    color: #ffffff;
+    border: none;
+    font-size: 15px !important;
+    outline:2px solid #004b3d;
+
+}
+.signup-button:hover{
+    background-color: transparent;
+    color:  #004b3d;
+    outline:2px solid #004b3d;
+    font-weight: bold;
+
+}
+.cancel-button{
+    width: 23rem;
+    height: 3rem;
+    font-size: 16px !important;
+    background-color: transparent;
+    color:  #004b3d;
+    outline: 2px solid  #004b3d;
+    border-color: transparent;
+}
+.cancel-button:hover{
+    color: #ffffff;
+    background-color: #004b3d;
+    border-color: transparent;
+}
+.slds-modal__container{
+    width: 29rem !important;
+}
+.modal-heading{
+    font-size: 22px !important;
+    white-space: nowrap;
+    font-family: adobe-garamond-pro;
+    color: #004b3d;
+    letter-spacing: .5px;
+    margin-left: 17px !important;
+}
+
+.modal-icon{
+    float: right;
+    transform: translate(0px, -13px);
+}
+.promo-text-1{
+    margin-left: 0.5rem;
+    text-align: left;
+    display: block;
+    margin-right: 27px;
+    letter-spacing: .8px;
+    font-family: proxima-nova,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+.promo-text-2{
+    margin-left: 0.5rem;
+    text-align: left;
+    display: block;
+    margin-top: 1rem;
+    margin-right: 10%;
+    letter-spacing: .8px;
+    font-family: proxima-nova,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+
+.slds-checkbox{
+    line-height: 2rem;
+}
+.primaryphone{
+    margin-top: 5px;
+}
+.Termslabel{
+    white-space: nowrap;
+    
+}
+.consent-checkbox{  
+    display: inline-flex !important;
+    margin-top: 10px;
+}
+
+.consent-message{
+    text-align: initial;
+    margin-left: 10px;
+}
+.submitbtn {
+    width: 50%;
+    background-color: #004B3D;
+    color: #ffffff;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 1rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 10px;
+}
+
+.submitbtn:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+    color: #ffffff;
+}
+
+.view-btn {
+    width: 100%;
+    background-color: #004B3D;
+    color: #ffffff;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 2rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 10px;
+}
+
+.register-btn {
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 2rem 0;
+    height: 3rem;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 10px;
+}
+
+.view-btn:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.register-btn:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.review-info-header {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    color: rgba(24, 63, 50, 1);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.owner-info-header {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 1.25px;
+    line-height: 1.6;
+    color: rgba(108, 97, 88, 1);
+    border-bottom: 1px solid rgba(108, 97, 88, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.050em;
+    padding: 3rem 0rem 0rem 0rem;
+}
+
+.user-product-info {
+    text-align: center;
+    font-size: 16px;
+    text-transform: none;
+    color: rgba(108, 97, 88, 1);
+    letter-spacing: 1px;
+}
+
+.product-info-header {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    padding: 4rem 0rem 0rem 0rem;
+    letter-spacing: 1.25px;
+    color: rgba(108, 97, 88, 1);
+    border-bottom: 1px solid rgba(108, 97, 88, 1);
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.product-info {
+    letter-spacing: 0.050em;
+    text-align: left;
+}
+
+.info-item {
+    margin: 10px 0px;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.info-detail {
+    margin-bottom: 0.3rem;
+}
+
+.product-info-section {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: 0px auto;
+    align-items: stretch;
+}
+
+.productinfo {
+    height: 100px;
+    width: 40%;
+    margin: 20px;
+    margin-bottom: 150px;
+}
+
+.canadian-residents-ductless {
+    padding: 15px;
+    text-align: center;
+}
+
+.canadian-residents-ductless img {
+    vertical-align: middle;
+    width: 50px;
+}
+
+.rules-link {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 16px;
+    color: rgba(108, 97, 88, 1);
+    display: block;
+}
+
+.rules-link:hover {
+    color: rgba(108, 97, 88, .8);
+}
+
+.canadian-residents-ductless p {
+    display: inline;
+    padding: 10px;
+}
+
+.footer-button-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    border-top: 1px solid #151515;
+}
+
+.confirm-button-invert {
+    width: 300px;
+    background-color: #ffffff;
+    color: #004B3D;
+    padding: 9px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin-top: 20px;
+    border: 1px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.confirm-button-invert:hover {
+    background-color: #004B3D;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.thanks-message {
+    color: rgba(24, 63, 50, 1);
+    font-weight: 500;
+    font-size: 1.625rem;
+    line-height: 1.230769;
+    text-align: center;
+    display: block;
+    letter-spacing: 0.005em;
+}
+
+.sweepstakes-message {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 2rem;
+    text-rendering: optimizeLegibility;
+    font-weight: normal;
+    color: rgba(108, 97, 88, 1);
+    font-size: 16px;
+    line-height: 1.4375;
+    letter-spacing: 0.050em;
+    display: block;
+    font-style: normal;
+    text-align: center;
+}
+
+.contact-info h3 {
+    margin: 20px;
+    color: #1a4b3d;
+    font-family: 'AdobeGaramondProRegular';
+    font-weight: 100;
+    text-align: center;
+    font-size: 1.625rem;
+    letter-spacing: 0.05rem;
+}
+
+.contact-info h5 {
+    margin: 20px;
+    font-size: 1.411764705882353rem;
+    font-family: 'proxima-nova';
+    font-weight: 100;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    color: #555555;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.411764705882353rem;
+    color: #555555;
+}
+
+h1 {
+    text-align: center;
+    font-size: 46px;
+    color: #1a4b3d;
+    font-weight: 60;
+}
+
+h5 {
+    text-align: center;
+}
+
+.slds-select {
+    width: 200px;
+    display: block;
+}
+
+.update-message {
+    color: red;
+    color: red;
+    margin-left: 1rem;
+    line-height: 2.3;
+}
+
+.close-button {
+    float: right;
+    cursor: pointer;
+}
+
+.primary-color {
+    color: #004B3D;
+}
+
+.input-section {
+    max-width: 60%;
+    padding: 15px 15px;
+    background-color: #F4F4F3;
+    font-size: 1rem;
+    color: #6C6158;
+    margin: 1px auto -1px auto;
+    text-align: left;
+}
+
+.action-button-invert {
+    width: 250px;
+    background-color: #ffffff;
+    color: #004B3D;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    margin: 8px 0;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2.1px;
+}
+
+.action-button-invert:hover {
+    background-color: #004B3D;
+    color: #ffffff;
+}
+
+.action-button {
+    width: 250px;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    border: none;
+    border: 2.5px solid #004B3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 8px 0;
+}
+
+.action-button:hover {
+    color: #ffffff;
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.button-section {
+    margin: 25px auto;
+    width: 250px;
+}
+
+.or-text {
+    width: 25px;
+    color: #1a4b32;
+    margin: 0px auto;
+}
+
+.contact-details {
+    background-color: #F4F4F3;
+    padding: 5px 20px;
+    /* margin: 25px auto; */
+    font-size: 0.8rem;
+    font-family: 'ProximaNova-Regular';
+    text-align: left;
+    display: block;
+    /* color: rgba(108, 97, 88, 1); */
+}
+
+.slds-form-element__label {
+    color: rgba(108, 97, 88, 1);
+}
+
+.form-element__label {
+    display: block;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    letter-spacing: 0.050em;
+    font-style: normal;
+    text-align: left;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+}
+
+.modal-form-element__label {
+    display: block;
+    margin: 1.5rem 1rem 0rem 0rem;
+    font-size: 0.875rem;
+    color: #ffffff;
+    line-height: 1.8;
+    text-align: left;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.footer-message-section {
+    margin: 60px auto;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: rgba(108, 97, 88, 1);
+    line-height: 1.4375;
+    letter-spacing: 0.050em;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.add-new-action {
+    margin: 2rem 0rem 1rem 3rem;
+    color: rgba(108, 97, 88, 1);
+    font-size: 1rem;
+}
+
+.add-new-action:hover {
+    color: rgba(108, 97, 88, .8);
+}
+
+.edit-reg {
+    text-decoration: underline;
+    color: #969393;
+}
+
+.edit-reg:hover {
+    color: #1a4b3d;
+    text-decoration: underline;
+}
+
+.radio-group-section {
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-left: 2rem;
+}
+
+.slds-form-element__label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 0;
+}
+
+.policy-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.policy-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: underline;
+    color: rgba(108, 97, 88, 1);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgba(108, 97, 88, .8);
+}
+
+.no-border {
+    border-bottom: 0px solid white;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.address-button {
+    width: 100%;
+    background-color: #1a4b3d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reveal.add-address-modal {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #ffffff;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1005;
+    background-color: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+    left: 0;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a4b3d;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.canada-img {
+    font-size: 15px;
+    margin: 1rem 0rem;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.footer-message {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'ProximaNova-Regular';
+}
+
+.form-section {
+    color: #ffffff;
+    margin: 25px 0px;
+    text-align: left;
+}
+
+.form-title-section {
+    width: 600px;
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-element__control {
+    color: black;
+    margin-bottom: 25px;
+}
+
+.add-action-button {
+    width: 600px;
+    background-color: #004B3D;
+    color: #ffffff;
+    padding: 10px 5px;
+    font-size: 0.875rem;
+    letter-spacing: 2.1px;
+    margin: 20px 0rem 0rem 0rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid #ffffff;
+}
+
+.add-action-button:hover {
+    background-color: #ffffff;
+    color: #004B3D;
+    border: 1px solid #004B3D;
+}
+
+.slds-input {
+    font-size: 1rem;
+}
+
+.progress-bar {
+    width: 30rem;
+    margin: 50px auto;
+    margin-bottom: 4rem;
+}
+
+.status-image {
+    width: 480px;
+}
+
+.test-check {
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-font {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+}
+
+.content-font {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.validation-message {
+    width: 25rem;
+    margin-left: 5px;
+    font-size: 16px;
+    color: red;
+}
+
+
+@media only screen and (max-width:481px) {
+    .footer-button-section {
+        display: inline-block;
+    }
+    .slds-select {
+        width: 100px;
+        display: block;
+    }
+}
+
+@media only screen and (max-width:639px) {
+    .center {
+        width: auto;
+    }
+    .radio-group-section {
+        margin-left: 0.5rem;
+    }
+    .Termslabel3{
+        margin-left: 0px !important;       
+    }
+    .Termlabel4{
+        margin-left: 0px !important;
+    }
+    .consent-check2{
+        margin-left: 0px !important;
+    }
+
+    .consent-label2{
+        font-size: 14px !important;
+    }
+    
+    .product-image {
+        width: auto;
+    }
+    .product-info-section {
+        display: inline-block;
+    }
+    .consent-check{
+        margin-right: 20px;
+        margin-left: 15px;
+        line-height: 44px;
+    }
+    .consent-checkbox3{
+        margin-left: 8px !important;
+    }
+    .consent-message{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .consent-checkbox{
+        margin-left: 13px;
+        margin-top: 0px;
+    }
+    
+    .submitbtn {
+        width: 100%;
+    }
+    .add-new-action {
+        margin: 1rem 0rem 1rem 2rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .progress-bar {
+        width: auto;
+        margin: 20px auto;
+        margin-bottom: 3rem;
+    }
+    .title-bar {
+        width: auto;
+        margin-bottom: 1rem;
+    }
+    .consent-input{
+        flex-direction: column !important;  
+    }
+    .contact-info {
+        margin: 6px;
+    }
+    .input-section {
+        max-width: 100%;
+    }
+    .button-section {
+        margin: 10px auto;
+    }
+    .footer-message-section {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    .offer-message-section h3 {
+        line-height: 1;
+    }
+    .offer-message-section {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .rules-link {
+        margin: 15px 0;
+    }
+    .slds-p-around_large {
+        padding: 0;
+    }
+    .slds-col--padded {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .primary-color {
+        font-size: 1.625rem;
+        line-height: 1.142857;
+        letter-spacing: 0.025em;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    .footer-message-section {
+        width: 100%;
+    }
+    .product-info {
+        text-align: center;
+    }
+    .view-btn {
+        margin: 1.5rem 0;
+    }
+    .register-btn {
+        margin: 0px 0px;
+    }
+    .slds-select {
+        width: 95px;
+        display: block;
+    }
+    .slds-modal__container{
+        width: 21.5rem !important;
+
+    }
+    .modal-heading{
+        font-size: 15px !important;
+        margin-left: 4px;
+        letter-spacing: .9px;
+    }
+    .modal-icon{
+        float: right;
+        transform: translate(0px, -13px) !important;
+    }
+    .signup-button{
+        width: 18rem;
+    }
+    .cancel-button{
+        width: 18rem;
+        font-size: 14px;
+    }
+    .promo-text-1{
+        margin-right: 20px !important;
+    }
+}
+
+
+/* iPad */
+
+@media only screen and (min-device-width: 640px) and (max-device-width: 1024px) {
+    .product-register .center {
+        width: auto;
+    }
+    .header {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 1.411764705882353rem;
+    }
+    .appliance-form-info {
+        width: auto;
+    }
+    .context {
+        line-height: 1.5;
+    }
+    .center {
+        width: auto;
+    }
+}

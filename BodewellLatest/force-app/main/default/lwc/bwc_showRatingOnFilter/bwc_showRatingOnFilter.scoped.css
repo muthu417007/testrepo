@@ -1,0 +1,13 @@
+.show-more {
+    text-decoration: underline;
+    text-decoration-color: var(--dxp-g-brand);
+}
+
+/* .facet-header {
+    display: flex;
+    flex-direction: row;    
+} */
+
+.d-flex-inline{
+  display: inline-flex !important; 
+}

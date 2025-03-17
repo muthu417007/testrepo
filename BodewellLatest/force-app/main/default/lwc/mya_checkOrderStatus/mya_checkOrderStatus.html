@@ -1,0 +1,49 @@
+<template>
+    <div class="mainContent">
+        <div class="header">{pageTitleLabel}</div>
+        <div class="linkparts medium-11 large-7">
+            <img src={OSL} />
+            &nbsp;
+            <span class="text">Need help with parts order</span>
+            &nbsp;
+            <lightning-formatted-url label="Visit the GE Appliances parts store" value={PageLinks.PartsStoreURL__c}
+                class="OSL"></lightning-formatted-url>
+        </div>
+        <div>
+            <h2 class="text1 margin-b-10">HAVE A GE APPLIANCE ACCOUNT?</h2>
+            <p class="text2">
+                <button class="loggin" onclick={HandleLogin}>Log in</button>
+                &nbsp;
+                To view the status of your order
+            </p>
+        </div>
+        <div>
+            <h2 class="text1 margin-b-10">DONT HAVE AN ACCOUNT?</h2>
+            <p class="text2">
+                If you <b>purchased an appliance on this website,</b> enter your reference number
+                (found in your confirmation email from GE Appliances) and email address below.
+                If you don't have your reference number please call 1-800-430-1757.
+            </p>
+        </div>
+        <div class="large-5 medium-6 small-8">
+            <div class="align">
+                <h5 class="input-field">{referenceNoLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text slds-text-align_left" type="text"
+                    onchange={RefNo} required>
+                </lightning-input>
+            </div>
+            <div>
+                <h5 class="input-field">{emailAddressLabel}</h5>
+                <lightning-input variant="label-hidden" class="input-text slds-text-align_left" type="email"
+                    onchange={EmailAdd} required>
+                </lightning-input>
+            </div>
+            <div class="captcha">
+                <c-recaptcha-v2 onverified={onVerified}></c-recaptcha-v2>
+            </div>
+            <div class="orderButton">
+                <button type="submit" onclick={handleFindOrder}>{findOrderButtonLabel}</button>
+            </div>
+        </div>
+    </div>
+</template>

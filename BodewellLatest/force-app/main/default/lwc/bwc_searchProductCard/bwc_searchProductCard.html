@@ -1,0 +1,137 @@
+<template lwc:render-mode="light">
+    <c-bwc_tag
+    is-on-sale={isOnSale}
+    is-on-clearance={isOnClearance}
+    sale-banner-color={saleBannerColor}
+    clearance-banner-color={clearanceBannerColor}
+    ></c-bwc_tag>
+    <template lwc:if={shouldDisplayProductCompareClose}>
+        <span class="closeProductCompare">&times;</span>
+    </template>
+    <section class={cardContainerClass}>
+        <div class="imageArea" style="position: relative;">
+            <figure
+                class="productImage"
+                if:true={showProductImage}
+                onkeydown={handleKeydown}
+                onclick={handleProductDetailPageNavigation}>
+                <experience-picture
+                    alternative-text={image.alternateText}
+                    url={image.url}
+                    images={image.images}
+                    loading="lazy"></experience-picture>
+            </figure>
+        </div>
+
+        <div class="fieldsArea">
+            <!--Note: All fields are navigable to PDP, but only one field will have
+                the tab stop in the keyboard navigation to keep the accessibility
+                smooth. The logic of which field will have the tab stop is defined
+                and explained in the resultsTiles/fieldNormalizer utility's
+                generateContentMappedFields() -->
+                <template
+                    for:each={fields}
+                    for:item="field">
+                    <div key={field.name}>
+                        <template lwc:if={field.hasSwatchColorConfig}>
+                            <c-bwc_swatch-selector
+                                items={field.swatchItems}
+                                onchange={handleOnChanged}
+                                is-centered={isCentered}
+                                num-swatches={numSwatches}
+                            >
+                            </c-bwc_swatch-selector>
+                        </template>
+                        <template lwc:else>
+                            <a
+                            class="slds-var-p-top_x-small slds-text-link_reset"
+                            onkeydown={handleKeydown}
+                            onclick={handleProductDetailPageNavigation}>
+                            <c-bwc_search-product-field
+                                configuration={field.configuration}
+                                display-data={field.displayData}></c-bwc_search-product-field>
+                            </a>
+                        </template>
+                    </div>
+                   <!-- v-= {field.displayData.Id} -->
+                </template>
+                <c-bwc_plp-bazaarvoice-rating-summary product-id={_originalSku} product-idid={displayData.id} product-url={_productUrl}></c-bwc_plp-bazaarvoice-rating-summary>
+                <c-bwc_get-date skew-data-list={_originalSku} product-id={displayData.id} is-on-clearance={isOnClearance}></c-bwc_get-date>
+        </div>
+
+        <div
+            class="subscriptionArea"
+            if:true={isSubscriptionProduct}>
+            <lightning-formatted-text value={subscriptionOptionsLabelText}></lightning-formatted-text>
+        </div>
+
+        <template if:false={isSubscriptionProduct}>
+            <div
+                class="priceArea"
+                if:true={showPrice}>
+                <c-bwc_product-pricing
+                    negotiated-price={pricingInfo.negotiatedPrice}
+                    original-price={pricingInfo.listingPrice}
+                    show-negotiated-price={showNegotiatedPrice}
+                    show-original-price={showOriginalPrice}
+                    currency-code={pricingInfo.currencyIsoCode}
+                    plp-product-id={displayData.id}
+                    layout="horizontal"></c-bwc_product-pricing>
+            </div>
+
+            <div
+                class="quantityRuleArea"
+                if:true={showInlineQuantitySelectorText}>
+                <lightning-formatted-text value={quantityRuleCombinedText}></lightning-formatted-text>
+            </div>
+        </template>
+
+        <div
+            if:true={showCallToActionButton}
+            class="callToActionArea">
+            <template if:false={isCTAButtonViewOptions}>
+                <div class={quantitySelectorClassList}>
+                    <c-bwc_product-quantity-selector
+                        if:true={showInlineQuantitySelector}
+                        onvaluechanged={handleValueChanged}
+                        disabled={disabled}
+                        minimum={quantityRuleMinimum}
+                        maximum={quantityRuleMaximum}
+                        step={quantityRuleIncrement}
+                        label={quantitySelectorLabelText}
+                        step-value-guide-text={incrementText}
+                        minimum-value-guide-text={minimumText}
+                        maximum-value-guide-text={maximumText}></c-bwc_product-quantity-selector>
+                    <c-bwc_common-button
+                        if:true={isCTAButtonAddToCart}
+                        assistive-text={addToCartButtonAriaLabel}
+                        disabled={addToCartButtonDisabled}
+                        data-product-id={displayData.id}
+                        class="callToActionButton"
+                        variant={actionButtonVariant}
+                        onclick={handleAddToCart}>
+                        {addToCartButtonText}
+                    </c-bwc_common-button>
+                    <c-bwc_product-compare-selector
+                        if:true={shouldDisplayProductCompare}
+                        sku={productCompareSku}
+                        is-compared={isCompared}
+                    >
+                    </c-bwc_product-compare-selector>
+                    <c-bwc_display-product-button onavailableevent={handleAvailableEvent} product-id={displayData.id}></c-bwc_display-product-button>
+                </div>
+            </template>
+            <!-- View Options for a Product -->
+            <c-bwc_common-link
+                if:true={isCTAButtonViewOptions}
+                href={_productUrl}
+                assistive-text={viewOptionsButtonAriaLabel}
+                data-product-id={displayData.id}
+                class="callToActionButton"
+                variant={actionButtonVariant}
+                onclick={handleProductDetailPageNavigation}>
+                {configuration.viewOptionsButtonText}
+            </c-bwc_common-link>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,280 @@
+<apex:page controller="CaseDashboardController" lightningStylesheets="true" title="{!caseRec.caseNumber} - Dashboard"  sidebar="true" showHeader="true" docType="html-5.0">
+    <apex:slds />
+    <apex:includeLightning />
+    <div class="slds-scope">
+        <apex:actionstatus id="spinnerStatus">
+            <apex:facet name="start">
+                <div class="slds-spinner_container" style="position:fixed">
+                    <div id="mySpinner" role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+  <apex:pageBlock title="Case"  >
+          <apex:pageBlockTable value="{!caseRec}" var="c">
+              <apex:column headerValue="Case Number">
+                 <apex:outputLink value="/{!c.Id}">{!c.caseNumber}</apex:outputLink>
+             </apex:column>
+             <apex:column headerValue="Subject">
+                <apex:outputText value="{!c.subject}"/>
+             </apex:column>
+              <apex:column headerValue="Contact">
+                <apex:outputText value="{!c.contact.name}"/>
+             </apex:column>
+             <apex:column headerValue="Location">
+                <apex:outputText value="{!c.account.name}"/>
+             </apex:column>
+            
+             
+               
+            
+          </apex:pageBlockTable>
+      </apex:pageBlock>
+      
+      <apex:form id="apexForm" >
+        <apex:pageBlock title="Search Contacts" >
+        <table>
+            <!--<tr>
+                <td style="width:75px">First Name</td>
+                <td style="width:275px"><apex:inputText value="{!firstName}" /></td>
+                <td>Last Name </td>
+                <td><apex:inputText value="{!lastName}" onkeypress="return noenter(event);" /></td>
+            </tr>-->
+            <tr>
+                <td style="width:55px">Phone </td>
+                <td><apex:inputText value="{!phone}" onkeypress="return noenter(event);" /></td>
+                <td style="width:50px">&nbsp; &nbsp;Email </td>
+                <td><apex:inputText value="{!email}" onkeypress="return noenter(event);" style="width:375px"/></td>
+            </tr>
+           <!-- <tr>
+                <td>Street </td>
+                <td><apex:inputText value="{!street}" onkeypress="return noenter(event);" /></td>
+                <td>Zip </td>
+                <td><apex:inputText value="{!zip}" onkeypress="return noenter(event);" /></td>
+            </tr>-->
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </table>
+        <apex:actionFunction name="doSearch" action="{!search}"  />
+          
+        <apex:commandButton action="{!search}" value="Search" status="spinnerStatus" reRender="apexForm" styleclass="slds-button slds-button_brand"/>
+        
+        
+         <apex:commandButton action="{!clearSearch}" value="Clear Search" status="spinnerStatus" reRender="apexForm" styleclass="slds-button slds-button_brand"/>
+        <br/>
+             
+        </apex:pageBlock>
+          <div style="overflow: auto;  height: 150px;">
+            <apex:pageBlock title="Contacts"  >
+                <apex:pageBlockTable value="{!contacts}" var="c">
+                     <apex:column headerValue="Name" style="width:75px" html-class="closelink">
+                         <apex:outputLink value="/{!c.Id}" target="_blank" >{!c.name}</apex:outputLink> 
+                         <!--<a data-href="/{!c.Id}" class="closelink" style="cursor: pointer;">{!c.name}</a>-->
+                        <!--<apex:outputText value="{!c.CaseNumber}"/>-->
+                     </apex:column>
+                     <apex:column headerValue="Phone" style="width:75px">
+                        <apex:outputField value="{!c.phone}" />  
+                     </apex:column>
+                     <apex:column headerValue="Email" style="width:75px">
+                        <apex:outputField value="{!c.email}" />  
+                     </apex:column>
+                    <apex:column headerValue="" style="width:75px">
+                        <apex:commandLink value="Link Contact to Case" action="{!linkContact}"    >
+                            <apex:param name="index1" value="{!c.Id}" assignTo="{!selectedContactId}"/>
+                        </apex:commandLink>  
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+          <apex:outputPanel rendered="{!showArchived}">
+        <div style="overflow: auto;  height: 150px;">
+            <apex:pageBlock title="Archived Contacts" id="ac2" >
+                    <apex:pageMessages ></apex:pageMessages>
+                    <apex:pageBlockTable value="{!searchResults.Data.HouseHoldByPhone}" var="c">
+                        <apex:column headerValue="First Name" style="width:75px">
+                            <apex:outputText value="{!c.FirstName}" />  
+                        </apex:column>
+                        <apex:column headerValue="Last Name" style="width:75px">
+                            <apex:outputText value="{!c.LastName}" />  
+                        </apex:column>
+                        <apex:column headerValue="P Level" style="width:75px">
+                            <apex:outputText value="{!c.plevel}" />  
+                        </apex:column>
+                        <apex:column headerValue="Person ID" style="width:75px">
+                            <apex:outputText value="{!c.PersonID}" />  
+                        </apex:column>
+                        <apex:column headerValue="" style="width:175px" html-class="closelink2">
+
+
+                        <!--
+                            todo jamie
+                            normalize link below
+                            handle onclick
+                                run apex
+                                use result, build link
+                            go to link (/one/one.app#/alohaRedirect/apex/contactDashboard?id=ID_FROM_APEX)
+                            run closeTab
+
+
+
+                         -->
+                         <apex:commandLink value="Restore And Link To Case" action="{!restoreContact}"    >
+                              <apex:param name="index1" value="{!c.PersonID}" assignTo="{!index1}"/>
+                              <!--<apex:param name="index2" value="{!c.S_Phone_Indexed__c}" assignTo="{!index2}"/>
+                              <apex:param name="index3" value="{!c.S_Id_Indexed__c}" assignTo="{!index3}"/>-->
+                              
+                          </apex:commandLink>  
+                     </apex:column>
+                        
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+        </apex:outputPanel>
+          <apex:outputPanel rendered="{!showArchivedEmail}">
+        <div style="overflow: auto;  height: 200px;">
+            <apex:pageBlock title="Archived Contacts Email" id="ac3" >
+                    <apex:pageMessages ></apex:pageMessages>
+                    <apex:pageBlockTable value="{!searchResultsEmail.Data.HouseHoldByEmail}" var="c">
+                        <apex:column headerValue="First Name" style="width:75px">
+                            <apex:outputText value="{!c.FirstName}" />  
+                        </apex:column>
+                        <apex:column headerValue="Last Name" style="width:75px">
+                            <apex:outputText value="{!c.LastName}" />  
+                        </apex:column>
+                        <apex:column headerValue="P Level" style="width:75px">
+                            <apex:outputText value="{!c.plevel}" />  
+                        </apex:column>
+                        <apex:column headerValue="Person ID" style="width:75px">
+                            <apex:outputText value="{!c.PersonID}" />  
+                        </apex:column>
+                        <apex:column headerValue="" style="width:175px" html-class="closelink2">
+                         <apex:commandLink value="Restore" action="{!restoreContactEmail}" reRender="ac2"  >
+                              <apex:param name="index1" value="{!c.PersonID}" assignTo="{!index1}"/>
+                              <!--<apex:param name="index2" value="{!c.S_Phone_Indexed__c}" assignTo="{!index2}"/>
+                              <apex:param name="index3" value="{!c.S_Id_Indexed__c}" assignTo="{!index3}"/>-->
+                              
+                          </apex:commandLink>  
+                     </apex:column>
+                        
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </div>
+        </apex:outputPanel>
+        <apex:pageMessages />
+        <apex:pageBlock title="Create Contact" id="createContentBlock" >
+        <table>
+            <tr>
+                <td style="width:75px" colSpan="2">Unknown Address &nbsp;
+                    <!--<apex:inputCheckBox value="{!createUnknownAddress}" label="Unknown Address"/></td>-->
+                    <apex:inputCheckbox value="{!createUnknownAddress}" label="Unknown Address">
+                        <apex:actionSupport event="onchange" reRender="createContentBlock" action="{!setUnknown}"/>
+                    </apex:inputCheckbox></td>
+            </tr>
+            <tr>
+                <td style="width:75px">First Name</td>
+                <td style="width:275px"><apex:inputText value="{!firstName}" /></td>
+                <td>Last Name </td>
+                <td><apex:inputText value="{!lastName}" onkeypress="return noenter(event);" /></td>
+            </tr>
+            <!--<tr>
+                <td>Phone </td>
+                <td><apex:inputText value="{!phone}" onkeypress="return noenter(event);" /></td>
+                <td>Email </td>
+                <td><apex:inputText value="{!email}" onkeypress="return noenter(event);"/></td>
+            </tr>-->
+            <tr>
+                <td>Street </td>
+                <td><apex:inputText value="{!street}" onkeypress="return noenter(event);" /></td>
+                <td>Zip </td>
+                <td><apex:inputText value="{!zip}" onkeypress="return noenter(event);" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </table>
+        
+        <apex:commandButton action="{!createContact}" value="Create Contact" status="spinnerStatus" reRender="apexForm" styleclass="slds-button slds-button_brand"/>
+        </apex:pageBlock>
+        <apex:pageMessages ></apex:pageMessages>
+          <apex:pageBlock title="Assets"  >
+              <apex:pageBlockTable value="{!additionalAssetsWrapper}" var="aa">
+                  <apex:column style="width:25px" >
+                     <apex:inputCheckbox value="{!aa.isSelected}"/>
+                  </apex:column>
+                  <apex:column headerValue="Model" style="width:150px">
+                      <apex:outputField value="{!aa.asset.Model_Number__c}"/>
+                  </apex:column> 
+                  <apex:column headerValue="Serial Number" style="width:200px">
+                      <apex:outputField value="{!aa.asset.SerialNumber}"/>
+                  </apex:column>
+                  <apex:column headerValue="Install Date" style="width:100px">
+                      <apex:outputField value="{!aa.asset.InstallDate}"/>
+                  </apex:column>
+                  <apex:column headerValue="Brand" style="width:150px">
+                      <apex:outputField value="{!aa.asset.BrandName__c}"/> 
+                  </apex:column>
+                  <apex:column headerValue="Product Brand" style="width:150px">
+                      <apex:outputField value="{!aa.asset.Product_Brand__c}"/> 
+                  </apex:column>
+                  <apex:column headerValue="Type" style="width:150px">
+                      <apex:outputField value="{!aa.asset.Product_Type__c}"/>
+                  </apex:column>
+                  <apex:column headerValue="Line" style="width:150px">
+                      <apex:outputField value="{!aa.asset.Product_Line__c}"/>
+                  </apex:column>
+                  
+                  
+                  
+              </apex:pageBlockTable>
+              <apex:commandButton action="{!attachAsset}" value="Attach Asset to Case"  styleclass="slds-button slds-button_brand"/>
+          </apex:pageBlock>
+        
+          <apex:pageBlock title="Case Assets"  >
+                <apex:pageBlockTable value="{!caseAssets}" var="ca">
+                    <apex:column style="width:25px" >
+                        <apex:inputCheckbox value="{!ca.isSelected}"/>
+                    </apex:column>
+                    <apex:column headerValue="Model" style="width:150px">
+                        <apex:outputField value="{!ca.caseAsset.Asset__r.Model_Number__c}"/>
+                    </apex:column> 
+                    <apex:column headerValue="Serial Number" style="width:200px">
+                        <apex:outputField value="{!ca.caseAsset.Asset__r.SerialNumber}"/>
+                    </apex:column> 
+                    <apex:column headerValue="Install Date" style="width:100px">
+                        <apex:outputField value="{!ca.caseAsset.Asset__r.InstallDate}"/>
+                    </apex:column>
+                    <apex:column headerValue="Brand" style="width:150px">
+                       <apex:outputField value="{!ca.caseAsset.Asset__r.BrandName__c}"/>
+                   </apex:column>
+                    <apex:column headerValue="Product Brand" style="width:150px">
+                      <apex:outputField value="{!ca.caseAsset.Asset__r.Product_Brand__c}"/> 
+                  </apex:column>
+                    <apex:column headerValue="Type" style="width:150px">
+                        <apex:outputField value="{!ca.caseAsset.Asset__r.Product_Type__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Line" style="width:150px">
+                        <apex:outputField value="{!ca.caseAsset.Asset__r.Product_Line__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+          <apex:commandButton action="{!removeCaseAsset}" value="Remove Asset from Case"  styleclass="slds-button slds-button_brand"/>
+          <apex:pageBlock title="Create Asset"  >
+              Model Number:<apex:inputText value="{!modelNumber}"/> 
+              Serial Number:<apex:inputText value="{!serialNumber}"/>
+              Install Date:<apex:input value="{!installDate}" 
+                    html-placeholder="Install Date" 
+                    type="date" />
+              <apex:commandButton action="{!verifyAsset}" value="Verify Asset" status="spinnerStatus" reRender="apexForm" styleclass="slds-button slds-button_brand"/>
+          </apex:pageBlock> 
+        </apex:form>
+    </div>
+</apex:page>

@@ -1,0 +1,100 @@
+<template>
+    <lightning-card>
+        <div class="container">
+            <h3 class="slds-align_absolute-center"><b>Add Products to the Order</b></h3>
+            <lightning-button label="+ Add a Product" variant="brand-outline" onclick={handleAddProductClick} class="slds-m-top_large"></lightning-button>
+            <div class="slds-m-top_large slds-m-bottom_large tableContainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>SKU</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Line Subtotal</th>
+                        </tr>
+                    </thead>
+                    <template for:each={productListToDisplay} for:item="product">
+                        <tbody key={product.Id} class="slds-m-top_large">
+                            <!-- <div class="slds-m-top_small tableDetails"> -->
+                                <tr class="slds-m-top_small tableDetails">
+                                    <td>{product.productName}</td>
+                                    <td>{product.productSku}</td>
+                                    <td>{product.unitPrice}</td>
+                                    <td>{product.orderQty}</td>
+                                    <td>{product.lineSubtotal}</td>
+                                </tr>
+                            <!-- </div> -->
+                        </tbody>
+                    </template>
+                </table>
+            </div>
+            <div class="slds-m-top_x-large navigationButtons">
+                <lightning-button label="Previous" variant="brand-outline" onclick={handlePreviousClick} class="previousButton"></lightning-button>
+                <lightning-button label="Next" variant="brand" onclick={handleNextClick} class="slds-float_right nextButton"></lightning-button>
+            </div>
+            <div if:true={showAddProductModal}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                           <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                              <lightning-icon icon-name="utility:close"
+                                 alternative-text="close"
+                                 variant="inverse"
+                                 size="small" ></lightning-icon>
+                              <span class="slds-assistive-text">Close</span>
+                           </button>
+                           <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add a Product</h2>
+                        </header>
+            
+                        <div class="slds-modal__content slds-p-around_medium slds-p-left_large slds-p-right_large" id="modal-content-id-1">
+                            <div class="slds-grid">
+                                <div class="slds-col">
+                                    <h3>Search for a SKU</h3>
+                                    <div class="searchContainer">
+                                        <lightning-input placeholder="Search for a Product... " class="searchInputBox" onchange={handleSearchInput}></lightning-input>
+                                        <lightning-button label="Search" variant="brand" class="slds-m-top_small" onclick={handleSearchClick}></lightning-button>
+                                    </div>
+                                    <p if:true={minimunLengthError}>Enter at least 3 charcters</p>
+                                    <div if:true={productInfoAvailable} class="productInfo">
+                                        <div if:true={showProductList} class="slds-m-top_small productSearchResults">
+                                            <template for:each={productList} for:item="pdt">
+                                                <div key={pdt.Id} class="slds-m-top_large products">
+                                                    <h3 class="slds-m-top_small"><b>{pdt.productName}</b></h3>
+                                                    <h3 class="slds-m-top_small">SKU: {pdt.productSku}</h3>
+                                                    <h3 class="slds-m-top_small">UnitPrice: {pdt.unitPrice}</h3>
+                                                    <lightning-button variant="brand" label="+ Add Product" data-id={pdt.Id} onclick={handeClickFromList}></lightning-button>
+                                                </div>
+                                            </template>
+                                        </div>
+                                        <div if:true={isProductSelected}>
+                                            <h3 class="slds-m-top_small"><b>{productInfo.productName}</b></h3>
+                                            <!-- <h2>Quantity</h2> -->
+                                            <div class="productSubInfo slds-size_2-of-12">
+                                                <lightning-input placeholder="Order Quantity" value={orderQty} onchange={handleQuantityChange} label="Quantity" class="slds-m-top_small"></lightning-input>
+                                                <h3 class="slds-m-top_small">SKU: {productInfo.productSku}</h3>
+                                                <h3 class="slds-m-top_small">UnitPrice: {productInfo.unitPrice}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-m-top_large slds-float_right buttonGroup">
+                                        <lightning-button label="Cancel" variant="brand-outline" onclick={handleCancelClick} class="cancelButton"></lightning-button>
+                                        <lightning-button label="Add" variant="brand" onclick={handleAddClick} class="slds-m-left_small AddButton"></lightning-button>
+                                    </div>
+                                <!-- <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-2">
+                                   <button class="lwc-76nnmqsstjk slds-button slds-button_brand slds-button_stretch slds-m-left_x-small" onclick={handleGotoCart}>Go to Cart</button>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+            
+                        <footer class="slds-modal__footer">
+                           <!-- <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button> -->
+                        </footer>
+                    </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

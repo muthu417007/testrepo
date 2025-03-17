@@ -1,0 +1,66 @@
+.textField {
+  background: #F7F1E7;
+  border: 1px solid #707070 !important;
+  border-radius: 0px !important;
+}
+
+.idp-link {
+  font-weight: 600 !important;
+}
+
+.labelField {
+  font-size: 19px;
+  color: #12212e;
+  text-align: left;
+  font-weight: bold;
+}
+
+socialSign {
+  padding-left: 900px;
+}
+
+.signinbtn {
+  width: 387px;
+  background-color: #1A63A2;
+  border-radius: 25px;
+  height: 44px;
+}
+
+label {
+  color: #12212E !important;
+  font-weight: 600 !important;
+}
+
+.createbtn {
+  width: 387px;
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 30px;
+  height: 44px;
+
+}
+
+.createAccountText {
+  font-size: 22px;
+  color: #12212E;
+}
+
+.listTest {
+  list-style-type: disc;
+  color: #12212E !important;
+  font-size: 19px;
+}
+
+.border1 {
+  border-right: 2px solid #707070;
+}
+
+.crtdiv {
+  padding-left: 30px;
+}
+
+.ptext {
+  font-size: 22px;
+  font-weight: 600;
+  color: #12212E !important;
+}

@@ -1,0 +1,95 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PausedFlowsController">
+	<aura:attribute name="pausedInterviews" type="List"/>
+    <aura:attribute name="noPausedInterviewsAvailable" type="Boolean" default="true"/>
+    <aura:attribute name="flowModalOpened" type="Boolean" default="false"/>
+    <aura:attribute name="flowType" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+	
+	
+	<div aura:id="container" class="container">
+                 
+    <lightning:card>
+    <div class="slds-p-top_xx-large"></div>
+        <div class="slds-card__body slds-card__body_inner">
+			<div class="slds-text-heading_medium slds-align_absolute-center slds-m-around_large">
+				<lightning:button label="Create New Oracle Account" variant="Brand" value="NewCustomer" onclick="{!c.startNewOnboardingProcess}"/>
+			</div>
+			<div class="slds-text-heading_medium slds-align_absolute-center slds-m-around_large">
+				<lightning:button label="Maintain an Existing Customer" variant="Brand" value="ExistingCustomer" onclick="{!c.startNewOnboardingProcess}"/>	
+			</div>
+			<div class="slds-text-heading_medium slds-align_absolute-center slds-m-around_large">
+				<lightning:button label="Inactivate/Cancel an Account" variant="Brand" value="ExistingCustomer_InactiveAccount" onclick="{!c.startNewOnboardingProcess}"/>	
+			</div>
+            <div class="slds-text-heading_medium slds-align_absolute-center slds-m-around_large">
+                <lightning:button label="Inactivate/Cancel a Sales Agreement" variant="Brand" value="ExistingCustomer_InactiveSalesAgreement" onclick="{!c.startNewOnboardingProcess}"/>    
+            </div>
+            <div class="slds-text-heading_medium slds-align_absolute-center slds-m-around_large">
+                <lightning:button label="Inactivate/Cancel a Site" variant="Brand" value="ExistingCustomer_InactiveSite" onclick="{!c.startNewOnboardingProcess}"/>    
+            </div>
+        </div>
+        <div class="slds-p-bottom_x-large"></div>
+	</lightning:card>
+	<lightning:card>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-text-heading_medium slds-m-around_x-small">Paused Requests</div>
+            <aura:if isTrue="{!v.noPausedInterviewsAvailable}">
+				<div class="slds-text-heading_small slds-align_absolute-center slds-m-around_large">There are no paused Requests at this moment.</div>
+				<aura:set attribute="else">
+					<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+						<thead style="max-width: 80vw;">
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Paused Request">Paused Request</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Pause Reason">Pause Reason</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Current Stage">Current Stage</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Resume Flow"></div>
+							</th>
+						</thead>
+						<tbody style="max-width: 80vw;">
+							<aura:iteration items="{!v.pausedInterviews}" var="item" start="0" indexVar="index">
+							<tr class="slds-hint-parent">
+								<th class="" data-label="Paused Request" scope="row">
+									<div class="responsiveShrink">
+										<p class="" title="{!item.InterviewLabel}">{!item.InterviewLabel}</p>
+									</div>
+								</th>
+								<td data-label="Pause Reason">
+									<div class="">
+										<p class="slds-truncate" title="{!item.PauseLabel}">{!item.PauseLabel}</p>
+									</div>
+								</td>
+								<td data-label="Current Stage">
+									<div class="">
+										<p class="slds-truncate" title="{!item.CurrentElement}">{!item.CurrentElement}</p>
+									</div>
+								</td>
+								<td data-label="" class="" style="text-align: right;">
+									<lightning:button label="Resume" value="{!item.Id}" variant="Brand" onclick="{!c.resumeFlow}"/>
+								</td>
+							</tr>
+							</aura:iteration>
+						</tbody>
+					</table>         
+				</aura:set>
+			</aura:if>
+        </div>
+	</lightning:card>
+       
+	<aura:if isTrue="{!v.flowModalOpened}">
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-describedby="modal-content-id" class="slds-modal slds-fade-in-open slds-modal_small" >
+			<div class="slds-modal__container">
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id">
+					<lightning:flow aura:id="flowData" onstatuschange="{!c.onFlowStatusChange}"
+					/>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</aura:if>
+	</div>
+</aura:component>

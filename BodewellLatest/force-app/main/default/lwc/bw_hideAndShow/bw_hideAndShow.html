@@ -1,0 +1,37 @@
+<template>
+    <img src={check} class="imagecheck">
+    <div class="content-box">    
+        <template if:true={isExpand}>
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <a onclick={showAll} class="showsall">
+                        {Heading1}
+                    </a>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <a onclick={showAll} class="showsall">
+                        +
+                    </a>
+                </lightning-layout-item>
+            </lightning-layout>            
+        </template>
+<template if:false={isExpand}>
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <a onclick={showAll} class="showsall">
+                        {Heading2}
+                    </a>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <a onclick={showAll} class="showsall">
+                        -
+                    </a>
+                </lightning-layout-item>
+            </lightning-layout> 
+            <div>
+                {Content}
+            </div>
+        </template>
+
+</div>
+</template>

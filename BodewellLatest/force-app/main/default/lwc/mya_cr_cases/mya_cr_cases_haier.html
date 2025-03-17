@@ -1,0 +1,150 @@
+<template>
+    <div class="c-container">
+        <div class="spinner">
+            <template if:true={isLoading}>
+                 <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+                 </lightning-spinner>
+            </template>
+        </div>
+        <div class="desktop-cr-cases">
+        <template if:true={lengthofCase}>
+        <lightning-layout vertical-align="stretch" multiple-rows="true" class="caseDetailheading textcenter">
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Case Number</span>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Reason</span>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Status</span>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Subject</span>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Created Date</span>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" size="2">
+                <span class="case-label">Closed Date</span>
+            </lightning-layout-item>
+        </lightning-layout>
+        <hr class="cr-label-line">
+      
+      <template iterator:it={caseList}>
+            <div key={it.value.CaseNumber}>
+                <lightning-layout vertical-align="stretch" multiple-rows="true" class="caseDetail textcenter">
+                    <lightning-layout-item flexibility="auto" size="2">
+                        <button onclick={handleCaseDetails} class="view-case-details" value={it.value.Id}>{it.value.CaseNumber}</button>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2">
+                        <span class="case-data">{it.value.Reason}</span>
+                      </lightning-layout-item>
+                      <lightning-layout-item flexibility="auto" size="2">
+                        <span class="case-data">{it.value.Status}</span>
+                      </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2">
+                      <span class="case-data">{it.value.Subject}</span>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2">
+                      <lightning-formatted-date-time
+                                value={it.value.CreatedDate}
+                                year="numeric"
+                                day="2-digit"
+                                month="long"
+                                hour="2-digit"
+                                minute="2-digit"
+                                time-zone="America/New_York"
+                                class="formatted-date"
+                            >
+                        </lightning-formatted-date-time>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2">
+                        <lightning-formatted-date-time
+                        value={it.value.ClosedDate}
+                        year="numeric"
+                        day="2-digit"
+                        month="long"
+                        hour="2-digit"
+                        minute="2-digit"
+                        time-zone="America/New_York"
+                        class="formatted-date"
+                    >
+                </lightning-formatted-date-time>
+                    </lightning-layout-item>
+                </lightning-layout>
+           <hr class="cr-details">
+            </div>
+        </template>
+        </template>
+        </div>
+        <template if:false={isLoading}>
+        <template if:false={lengthofCase}>
+            <p class="no-casedata">{msg}</p>
+        </template>
+        </template>
+    
+        <!-- Mobile View -->
+    <div class="mobile-cr-cases">
+        <template if:true={lengthofCase}>
+            <template iterator:it={caseList}>
+                <div class="cell-cases-list" key={it.value.CaseNumber}>
+                    <table 
+                    >
+                        <tr class="case-data">
+                            <th>Case Number:</th>
+                            <td> 
+                                <button onclick={handleCaseDetails} class="view-case-details" value={it.value.Id}>{it.value.CaseNumber}</button>
+                            </td>
+                        </tr>
+                        <tr class="case-data">
+                            <th>Reason:</th>
+                            <td>{it.value.Reason}</td>
+                        </tr>
+                        <tr class="case-data">
+                            <th>Status:</th>
+                            <td>{it.value.Status}</td>
+                        </tr>
+                        <tr class="case-data">
+                            <th>Subject:</th>
+                            <td>{it.value.Subject}</td>
+                        </tr>
+                        <tr class="case-data">
+                            <th>Created Date:</th>
+                            <td>
+                                <lightning-formatted-date-time
+                                value={it.value.CreatedDate}
+                                year="numeric"
+                                day="2-digit"
+                                month="long"
+                                hour="2-digit"
+                                minute="2-digit"
+                                time-zone="America/New_York"
+                                class="formatted-date"
+                            >
+                        </lightning-formatted-date-time> 
+                            </td>
+                        </tr>
+                        <tr class="case-data">
+                            <th>Closed Date:</th>
+                            <td>
+                                <lightning-formatted-date-time
+                                value={it.value.ClosedDate}
+                                year="numeric"
+                                day="2-digit"
+                                month="long"
+                                hour="2-digit"
+                                minute="2-digit"
+                                time-zone="America/New_York"
+                                class="formatted-date"
+                            >
+                        </lightning-formatted-date-time>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </template>
+        </template>
+    </div>
+    <!-- ENd -->
+    </div>
+    </template>

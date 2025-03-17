@@ -1,0 +1,9 @@
+<template>
+    <a if:false={isServiceArea} href={redirectLink} onclick={navClick}>{label}</a>
+    <a if:true={isServiceArea} href={redirectLink} onclick={navClick}>
+        <lightning-icon icon-name="utility:checkin" alternative-text="Service!" title="Service" size="x-small"
+            variant="inverse" class="nav-icn-clr">
+        </lightning-icon>
+        &nbsp;{label}
+    </a>
+</template>

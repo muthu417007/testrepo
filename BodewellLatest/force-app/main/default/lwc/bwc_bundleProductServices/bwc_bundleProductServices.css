@@ -1,0 +1,116 @@
+.productView-services {
+
+    padding-top: 16px;
+    font-size: 16px;
+    border-top: 1px solid #B7B7B7;
+    text-align: left;
+    color: #12212E;
+
+}
+
+.justify-content-spaceBetween {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.align-items-top {
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.d-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+.productView-services-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: none;
+    line-height: unset;
+    letter-spacing: unset;
+}
+
+.productView-services-title .icon {
+    margin-right: 8px;
+}
+
+.productView-services-title span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.productView-services-text {
+    margin-bottom: 24px;
+    margin-left: 29px;
+    letter-spacing: 1.0px;
+}
+
+.productView-services-price {
+    margin-left: 5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.productView-services-price-member {
+    margin-left: 5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: line-through;
+    padding-right: 15px;
+}
+
+.icon svg {
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+}
+
+.iconInstallation svg {
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    }
+}
+
+.iconDelivery svg {
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+
+    .f {
+        fill: #12212e;
+    }
+}
+
+.exampleHolder {
+    position: relative;
+    display: flex;
+    backdrop-filter: blur(1px);
+    height: 80px;
+}

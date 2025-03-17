@@ -1,0 +1,43 @@
+<template>
+    <template if:false={suResultsLoader}>
+        <div class="su__position-relative su__w-100 su__h-100vh">
+            <div class="su__spinner-main su__w-100 su__h-100 su__position-absolute">
+                <img class="su__load-img" src={suResultsLoaderImg} />
+            </div>
+        </div>
+    </template>
+    <template if:true={suResultsLoader}>
+        <div data-id="searchUnifyContainer">
+            <div class="su__d-none">{caseSubject_inUtilityBar}{searchString}</div>
+            <div class={loading}>
+                <div class={showViewedResults}>
+                    <div class="main-container searchUnifyContainer" style={componentStyle}>
+                        <template if:true={activeCaseNumber}>
+                            <div class="number_case">
+                                <span class="su__active-case">Active Case# {currentCaseNumber}</span>
+                            </div>
+                        </template>
+                        <c-s-u_-header-section event-code={eventCode} show-clear-filters-button={showClearFiltersButton} search-string={searchString} langlist={currentLanguageSelected} advanced-search-selected={advancedSearchSelected}
+                            selected-type-filter={selectedTypeFilter} record-id={recordId} aggregations-data={aggregationsData} selected-sticky-filter={selectedStickyFilter} show-filter={showFilter} tabs-filter={tabsFilter} 
+                            uid={uid} end-point={endPoint} bearer={bearer} query={query} all-content-hide-facet={allContentHideFacet} bookmark-list={bookmarkSearches} language-enabled={languageEnabled}></c-s-u_-header-section>
+                
+                        <c-s-u_-bookmark event-code={eventCode} bookmark-searches={bookmarkSearches}></c-s-u_-bookmark>
+
+                        <template if:false={hideDataSection}>
+                            <c-s-u_-search-data-section class="su__position-relative" event-code={eventCode} show-article = {showArticle} record-id ={recordId} tabsfilter={tabsFilter} responselistdata={responseListData}
+                                selected-sticky-filter = {selectedStickyFilter} aggregationsdata={aggregationsData} pagenum={pageNum} totalpages={totalPages} totalresults={totalResults} urlopensinnewtab={urlOpensInNewTab}
+                                searchresultime={resultTime} resultlabel={result}  correctspell={correctspell} loading={loading} summary-collapsible={summaryCollapsible}></c-s-u_-search-data-section>
+                        </template>
+                        <c-s-u_-saved-bookmark event-code={eventCode}></c-s-u_-saved-bookmark>
+                    
+                        <div class="body-section">
+                            <div class="div footerSection">
+                                <c-s-u_-pagination event-code={eventCode} record-id ={recordId} pagenum={pageNum} finallang={finalLang} pagesize={pageSize} totalresults={totalResults} totalpages={totalPages} counter={counter} endpointpagination={endPointPagination} paginationlist={paginationList}  responselistdata={responseListData}></c-s-u_-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

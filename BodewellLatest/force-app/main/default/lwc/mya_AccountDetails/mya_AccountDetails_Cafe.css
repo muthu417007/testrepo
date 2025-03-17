@@ -1,0 +1,775 @@
+.account-profile {
+    max-width: 45%;
+    width: calc(50% - 1.875rem);
+    margin: 0 auto;
+}
+
+.mainContent {
+    position: relative;
+    border-radius: 1px;
+}
+
+.middleSection {
+    padding-top: 1rem;
+}
+
+.cont-body {
+    border-top: 1px solid rgba(24, 63, 50, 1);
+}
+
+.container {
+    text-align: center;
+    margin: 0px 0 0px 0px;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+.title {
+    color: #004b3d;
+    font-weight: 300;
+    font-family: 'AdobeGaramondProRegular';
+    text-transform: capitalize;
+    letter-spacing: 0.005em;
+    padding-bottom: 16px;
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    font-size: 2rem;
+}
+
+body h2,
+body .h2 {
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cont-head {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+.button-label {
+    text-transform: uppercase;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.test-email {
+    padding-left: 2rem;
+}
+
+.email-verify {
+    color: rgba(180, 75, 40, 1);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.email-verify:hover {
+    color: #1a4b3d;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.update-message-email {
+    color: #6c6158;
+    font-size: 1rem;
+    line-height: 1.3;
+    text-align: left;
+    display: block;
+    padding-top: 5px;
+}
+
+.resend-link {
+    font-size: 1rem;
+    color: #6c6158;
+    text-decoration: underline;
+}
+
+.resend-link:hover {
+    color: #1a4b3d;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.field-item {
+    border-bottom: 1px Solid #555;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.item-details {
+    display: flex;
+    /* margin-bottom: 0.5rem;
+    margin-top: 0.5rem; */
+    letter-spacing: 1.25px;
+}
+
+.label-padding {
+    padding: 20px 0px 0px 0px;
+}
+
+.field-label {
+    padding: 3px;
+    margin: 0 1em 0 0;
+    /* font-weight: 800; */
+    /* font-size: 1.35rem; */
+    color: #004b3d;
+    /* font-family: 'Garamond', 'Baskerville', 'Times New Roman', serif !important; */
+    /* text-transform: uppercase; */
+    font-family: 'ProximaNova-Regular';
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1.175rem;
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 0.050em;
+}
+
+.field-value {
+    padding: 5px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 1rem;
+    max-width: 60%;
+    word-break: break-word;
+    font-family: 'ProximaNova-Regular';
+    color: #555;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+.pointer {
+    cursor: pointer;
+    margin: 0px 0px;
+    padding: 5px 0px;
+    line-height: 1.3;
+}
+
+.edit-header {
+    text-align: center;
+    font-family: 'AdobeGaramondProRegular';
+    font-size: 1.125rem;
+    margin: 2rem auto;
+}
+
+.spinner-div {
+    position: relative;
+    display: inline-block;
+    margin: 4px 18px;
+}
+
+.slds-button_icon-border {
+    border: 0px solid white;
+}
+
+svg {
+    fill: blue;
+}
+
+.modal-title {
+    font-size: 22px;
+    color: #092c74;
+    font-weight: 800;
+}
+
+.edit-link {
+    color: #004b3d;
+    font-weight: normal;
+    font-family: 'proxima-nova', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 1.175rem;
+    margin: 0px 5px 0px 0px;
+}
+
+.update-button {
+    width: 100%;
+    color: #fff;
+    background-color: rgba(24, 63, 50, 1);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.update-button:hover {
+    /* font-size: 0.9375rem; */
+    color: #fff;
+    /* background-color: rgba(24, 63, 50, 1); */
+    cursor: pointer;
+    background-color: rgba(24, 63, 50, 0.8);
+    text-transform: uppercase;
+}
+
+.edit-div {
+    width: 20rem;
+    margin: 1.5rem 8rem;
+}
+
+.custom-label {
+    color: #555;
+    /* font-weight: 100; */
+    margin: 0px 0px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.update-message {
+    color: rgb(3, 65, 22);
+    font-size: 01rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #004b3d;
+    font-size: 1.175rem;
+}
+
+.remove-link {
+    color: #004b3d;
+    font-weight: normal;
+    font-size: 1.175rem;
+    font-family: 'ProximaNova-Regular';
+    margin: 0px 25px 0px 0px;
+}
+
+.add-div {
+    width: 20rem;
+    margin: 1.5rem 8rem;
+}
+
+.modal_header {
+    background-color: rgba(24, 63, 50, 0.95);
+}
+
+.add-icon {
+    font-weight: 200;
+    border: 1px solid #555;
+    font-size: 15px;
+    padding: 0px 3px 0px 3px;
+    border-radius: 28px;
+}
+
+.already-exist-message {
+    color: red;
+}
+
+.add-label {
+    margin: 4px 3px;
+    color: #555;
+    font-family: 'ProximaNova-Regular';
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 100;
+    text-decoration: underline;
+}
+
+b.add-label:hover {
+    text-decoration: underline;
+    color: #004b3d;
+}
+
+.add-text {
+    /* color: #1A63A2; */
+    color: #555;
+    display: flex;
+    font-weight: 800;
+    margin: 5px 0px 0px 0px;
+    align-items: center;
+    /* font-size: 0.875rem;*/
+}
+
+.close-icon {
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: #004b3d;
+    font-family: 'ProximaNova-Regular';
+}
+
+.no-border {
+    border-bottom: 0px Solid white;
+}
+
+.fa {
+    display: inline-block;
+    font-family: 'ProximaNova-Regular';
+    font-size: 1.5rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.closeButton {
+    font-size: 1em;
+    color: #004b3d;
+    font-family: 'Gotham-Book';
+    right: 28rem;
+    margin-top: 0px;
+    line-height: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-Button {
+    font-size: 1em;
+    color: #004b3d;
+    font-family: 'Gotham-Book';
+    right: 5rem;
+    margin-top: 0px;
+    line-height: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-Button:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+.close-button {
+    font-size: 1em;
+    color: #004b3d;
+    font-family: 'Gotham-Book';
+    right: 0rem;
+    margin-top: 0px;
+    line-height: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+.closeButton:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+.delete-link {
+    color: #004b3d;
+    font-weight: normal;
+    font-size: 1.175rem;
+    text-align: center;
+    display: inline-flex;
+    margin: 0px 10px 0px 0px;
+}
+
+.margin-15 {
+    margin: 15px 0px 0px 0px;
+}
+
+
+/*.closeButton {
+    font-size: 1em ;
+    color: #004b3d ;
+    font-family: 'Gotham-Book';
+    right: 23rem;
+    margin-top: 0px;
+    line-height: 0;
+    position: absolute;
+    cursor: pointer;
+}*/
+
+.close-button:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+.closeButton:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+.modal-header {
+    font-size: 1.625rem;
+    color: #004b3d;
+    background-color: #fff;
+    border-bottom: 0px solid #fff;
+    font-weight: 200;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    text-transform: capitalize;
+    padding-top: 9px;
+    padding-left: 24px;
+    font-family: 'AdobeGaramondProRegular';
+    padding-right: 2.75rem;
+    padding-bottom: 9px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.popup-button {
+    width: 16rem;
+    background-color: #004b3d;
+    padding: 8px 20px;
+    margin: 8px 0;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 2px Solid #004b3d;
+}
+
+.popup-button:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+    color: #fff;
+    border: 2px Solid #004b3d;
+}
+
+.popup-button-ok {
+    width: 16rem;
+    background-color: #fff;
+    padding: 8px 20px;
+    margin: 8px 0;
+    color: #004b3d;
+    text-transform: uppercase;
+    border: none;
+    height: 2.5rem;
+    cursor: pointer;
+    border: 2px Solid #004b3d;
+}
+
+.popup-button-ok:hover {
+    background-color: #004b3d;
+    color: #fff;
+    border: 2px Solid #004b3d;
+}
+
+
+/* .cancel-delete {
+width: 180px;
+background-color: #f3f4f4;
+color: #1A63A2;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+border: 1px Solid #1A63A2;
+} */
+
+.reveal.add-address-modal {
+    top: 30px;
+    margin-bottom: 20px;
+}
+
+.reveal.add-address-modal {
+    top: 40%;
+    margin-bottom: 20px;
+}
+
+.reveal {
+    overflow: visible;
+    border: 4px solid #004b3d;
+    margin-bottom: 1em;
+    padding: 0.5rem 1rem 1.5rem 1rem;
+    width: 600px;
+    max-width: 75rem;
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background-color: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.delete-message {
+    text-align: center;
+    padding: 0px 50px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-action {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+}
+
+.in-field {
+    text-align: left;
+    margin: 14px 0px;
+}
+
+.payment-section {
+    max-width: 75%;
+    margin: 25px auto;
+    color: #555;
+}
+
+.payment-title {
+    margin: 35px 0px 15px 0px;
+    letter-spacing: 3px;
+    font-size: 29px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+}
+
+.payment-address {
+    display: grid;
+    text-align: center;
+    line-height: 25px;
+    font-family: 'Gotham-Book';
+}
+
+.payment-edit-link {
+    letter-spacing: 1px;
+    margin: 20px 0px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.account-details-action-link {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+
+/*        Mobile view cafe */
+
+@media only screen and (max-width: 480px) {
+    .pointer {
+        text-align: right;
+    }
+    .delete-link {
+        margin: -15px 0px 0px 0px;
+        text-align: right;
+    }
+    .button-action {
+        display: block;
+    }
+    .reveal-overlay {
+        top: 80px;
+    }
+    .test-email {
+        padding-left: 0.2rem;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .account-profile {
+        max-width: 100%;
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .item-details {
+        display: flex;
+        flex-direction: column;
+    }
+    .field-label {
+        text-align: left;
+        padding: 0px;
+    }
+    .field-value {
+        max-width: 100%;
+        text-align: left;
+    }
+    .add-phone-details {
+        display: flex;
+        margin: 1rem 0;
+    }
+    .add-div {
+        width: unset;
+        margin: 0px;
+    }
+    .closeButton {
+        right: 1em;
+    }
+    .title {
+        margin: 0;
+    }
+    .reveal-overlay {
+        top: 50px;
+    }
+    .reveal {
+        width: unset;
+    }
+    .edit-div {
+        margin: 0px auto;
+        width: 20rem;
+    }
+    .edit-header {
+        text-align: center;
+        font-size: 1.125rem;
+    }
+    .closeButton {
+        right: 0.5rem;
+    }
+    .close-Button {
+        right: -0.5rem;
+    }
+    .close-icon {
+        font-weight: 900;
+        font-size: 1rem;
+        color: #004b3d;
+        font-family: 'ProximaNova-Regular';
+    }
+    .add-text {
+        margin: 0;
+    }
+    .add-icon {
+        margin-right: 0.333333em;
+    }
+    .add-label {
+        margin: 0 3px;
+    }
+    .slds-col--padded {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .test-email {
+        padding-left: 0.2rem;
+    }
+    .reveal.add-address-modal {
+        top: 15%;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-device-width: 640px) and (max-device-width: 1023px) {
+    .account-profile {
+        max-width: 90%;
+        width: auto;
+    }
+    .add-div {
+        width: 20rem;
+    }
+    .closeButton {
+        right: 8rem;
+    }
+    .edit-div {
+        width: 20rem;
+    }
+    .field-label {
+        text-align: left;
+    }
+    .field-value {
+        text-align: left;
+        max-width: 100%;
+    }
+    .delete-link {
+        display: inline-flex;
+        margin: 0px 12px;
+    }
+    .close-Button {
+        right: 4rem;
+    }
+    .reveal-overlay {
+        top: 60px;
+    }
+    .test-email {
+        padding-left: 0.2rem;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width:1281px) {
+    .account-profile {
+        max-width: 60%;
+        width: auto;
+        margin: 0 auto;
+    }
+    .reveal-overlay {
+        top: 70px;
+    }
+    .edit-div {
+        position: relative;
+    }
+    .closeButton {
+        right: -2rem;
+    }
+    .test-email {
+        padding-left: 0.2rem;
+    }
+}

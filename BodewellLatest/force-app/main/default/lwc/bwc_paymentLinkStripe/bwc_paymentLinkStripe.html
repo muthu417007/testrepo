@@ -1,0 +1,29 @@
+<template>
+    <template if:true={checkoutFlag}>
+        <fieldset class="slds-form-element slds-form-element_compound slds-p-around_x-large">
+     
+            <div class="header-container-clone">
+                <span class="icon slds-icon slds-icon_x-small">
+                   <img src={Step_4}/>
+                </span>
+                <h2 class="headerAddress">
+                    Payment</h2>
+            </div>
+          
+        <template if:true={isPayment}>
+            <template if:true={isPaymentIntent}>
+          <c-bwc_stripe-one-form amount={amountArray} cart-id={cartId} customer-id={customerId} onamountchange={amountChangeHandler} session-data={_sessionContext} cart-summary={_cartSummaryJSON}
+                ></c-bwc_stripe-one-form>
+            </template>
+        </template>
+        </fieldset>
+    </template>
+   
+
+<template if:true={linkFlag}>
+    <template if:true={isPayment}>
+        <c-bwc_stripe-one-form amount={amountArray} cart-id={cartId} customer-id={customerId} onamountchange={amountChangeHandler} session-data={_sessionContext} cart-summary={_cartSummaryJSON}
+              ></c-bwc_stripe-one-form>
+          </template>
+</template>
+</template>

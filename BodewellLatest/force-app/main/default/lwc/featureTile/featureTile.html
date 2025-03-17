@@ -1,0 +1,42 @@
+<template>
+  <div style={styling} class="tile">
+    <div class="dxp-text-heading-medium header slds-m-left_x-large">
+      <h1>{title}</h1>
+    </div>
+    <div class="slds-m-left_x-large slds-m-top_medium">
+      <lightning-formatted-rich-text
+        value={description}
+      ></lightning-formatted-rich-text>
+    </div>
+    <div class="button-container slds-m-left_x-large">
+      <span
+        class="button slds-p-horizontal_large slds-p-vertical_small"
+        onclick={goToFeatureDetail}
+      >
+        {btnLabel}
+      </span>
+    </div>
+  </div>
+  <template if:true={isModalOpen}>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close" onclick={closeModal}>&times;</span>
+        <video
+          src={URL}
+          autoplay="autoplay"
+          class="video"
+          controls
+          controlslist="nodownload"
+          if:false={isPDF}
+        ></video>
+        <iframe
+          src={URL}
+          height="100%"
+          width="100%"
+          class="frame"
+          if:true={isPDF}
+        ></iframe>
+      </div>
+    </div>
+  </template>
+</template>

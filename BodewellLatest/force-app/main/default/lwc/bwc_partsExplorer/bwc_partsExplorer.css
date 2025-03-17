@@ -1,0 +1,135 @@
+.tileImage{
+	margin-left: 5rem;
+}
+
+.large{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.medium{
+	font-size: 1rem;
+	font-weight: bold;
+	color: #12212E;
+	align-self: flex-end;
+}
+
+.innerText{
+	display: flex;
+	gap: 1rem;
+	color: #12212E;
+}
+
+.alignment{
+	display: flex;
+}
+
+.container{
+	gap: 3rem;
+}
+
+.color{
+	font-color: #12212E;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.subPartImage{
+	border: 1px solid #DED1B1;
+	background-color: white;
+}
+
+.imageLargerPreview{
+	display: flex;
+	gap: 0.5rem;
+}
+
+
+.flexEnd{
+	align-self: flex-end;
+}
+
+.hoverPointer:hover{
+	cursor: pointer;
+}
+
+.dottedLines{
+	border-left: 1px dotted #DED1B1;
+	padding-left: 1rem;
+}
+
+@media (max-width: 767px){
+	.dottedLines{
+		border-left: 0px dotted #DED1B1;
+		padding-left: 1rem;
+	}
+	.btn-size{
+		width: 132%;
+		margin-left: -16px;
+	}
+	}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .dottedLines{
+		border-left: 1px dotted #DED1B1;
+		width: 25rem;
+		padding-left: 2rem;
+	}
+	
+} 
+
+@media (max-width: 480px){
+	.cart{
+		gap: 1.2rem;
+		display: flex;
+		background-color: #DED1B1;
+	}
+}
+
+@media (min-width: 769px){
+	.cart{
+		gap: 2.5rem;
+		display: flex;
+		background-color: #DED1B1;
+		height: 3rem;
+	}
+	.btn-size{
+		width: 132%;
+		margin-left: 10px;
+	}
+}
+
+.buyNow{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+	text-align: right;
+}
+
+.supersededParts{
+	float: right;
+	margin-left: 7rem;
+}
+
+.servicePartsList{
+	text-decoration: underline;
+    color: blue;
+}
+
+.servicePartsList:hover{
+	cursor: pointer;
+}
+
+.partToPdp:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.xyz .slds-combobox_container{
+	width: -webkit-fill-available;
+}
+
+.nonMemberPrice{
+	display: flex;
+}

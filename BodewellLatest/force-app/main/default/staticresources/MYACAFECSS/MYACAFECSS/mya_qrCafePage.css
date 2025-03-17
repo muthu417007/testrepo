@@ -1,0 +1,302 @@
+body {
+    font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    border: 1px black dotted;
+    /* font-style: normal !important;
+    font-size: 18px !important; */
+}
+
+.center {
+    text-align: center;
+    margin-top: 0 auto;
+    width: 100%;
+}
+
+.a2 {
+    color: #004B3D;
+}
+
+.btn {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+
+.a1 {
+    color: white;
+    background-color: #004B3D;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #004B3D;
+    margin-bottom: 5px;
+}
+
+.wifiSec {
+    margin-top: 70px;
+    padding: 15px;
+    height: auto;
+    border-left: 0.5px solid grey;
+    border-right: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+    border-top: 0.5px solid grey;
+}
+
+.wifiSection {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.im {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h6 {
+    margin-bottom: 10px;
+}
+
+.status-image3 {
+    text-align: center;
+    margin-bottom: 8px;
+    /* margin-left: 37%; */
+}
+
+.secDiv {
+    margin-top: 8px;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.status-image {
+    width: 344px;
+    /* height: 358px; */
+    height: auto;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 24px;
+    color: #004B3D;
+    font-family: 'AdobeGaramondProRegular';
+    font-style: normal
+}
+
+p {
+    margin-bottom: 45px;
+    margin-top: 30px;
+    /* font-weight: bolder; */
+    font-size: 30px;
+    font-family: 'AdobeGaramondProRegular';
+    color: #004B3D;
+}
+
+.url {
+    margin-top: 45px;
+    padding: 12px 0px 12px 0px;
+    font-size: 18px;
+    color: #004B3D;
+    /* text-transform: capitalize; */
+}
+
+.url a {
+    font-weight: normal;
+    color: #004B3D;
+}
+
+.url1 {
+    padding: 12px 0px 12px 0px;
+    font-size: 18px;
+    color: #004B3D;
+    /* text-transform: capitalize; */
+}
+
+.url1 a {
+    color: #004B3D;
+    font-weight: normal;
+    padding: 2px;
+}
+
+.review-content {
+    width: 40%;
+}
+
+.review-image {
+    width: 150px;
+    margin-top: 15px;
+}
+
+.write-a-review {
+    margin-left: 5px;
+    /* text-transform: capitalize; */
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .class1 {
+        display: grid;
+    }
+    .class2 {
+        width: 100%;
+        height: auto;
+    }
+    p {
+        margin-bottom: 45px;
+        margin-top: 30px;
+        /* font-weight: bolder; */
+        font-size: 20px;
+        width: 100%;
+        font-family: 'AdobeGaramondProRegular';
+        text-align: left;
+        color: #004B3D;
+    }
+    body {
+        font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        border: 1px black dotted;
+        /* font-style: normal !important;
+        font-size: 18px !important; */
+    }
+    .product-register {
+        border-top: 1px black dotted;
+    }
+    .center {
+        text-align: center;
+        margin-top: 0 auto;
+        width: 100%;
+    }
+    .a2 {
+        color: #004B3D;
+    }
+    .btn {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .a1 {
+        color: white;
+        background-color: #004B3D;
+        padding: 8px;
+        margin-top: 16px;
+    }
+    h5 {
+        font-size: 18px;
+        color: #004B3D;
+        margin-bottom: 5px;
+    }
+    .wifiSec {
+        margin-top: 0rem;
+        padding: 1rem;
+        height: auto;
+        width: 100%;
+        border: 0.5px solid grey;
+    }
+    .wifiSection {
+        width: 30px;
+        height: 38px;
+        margin-right: 4px;
+    }
+    .im {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .GEASec {
+        color: #004B3D;
+        font-size: 16px;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .spam {
+        border-top: 1px solid black;
+        margin-top: 4px;
+        width: 100%;
+    }
+    h6 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .status-image1 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 8px;
+    }
+    .status-image3 {
+        text-align: center;
+        margin-bottom: 8px;
+        width: 90%;
+    }
+    .secDiv {
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+        padding: 20px;
+    }
+    .status-image {
+        width: 100%;
+        height: auto;
+    }
+    h3 {
+        font-weight: normal;
+        font-size: 1.4rem;
+        color: #004B3D;
+        text-align: center;
+        width: 100%;
+        font-family: 'AdobeGaramondProRegular';
+        font-style: normal;
+    }
+    .url {
+        margin-top: 0.5rem;
+        padding: 12px 0px 12px 0px;
+        font-size: 16px;
+        display: flex;
+    }
+    .url a {
+        color: #004B3D;
+        font-weight: normal;
+    }
+    .url1 {
+        padding: 12px 0px 12px 0px;
+        font-size: 16px;
+        display: flex;
+    }
+    .url1 a {
+        color: #004B3D;
+        font-weight: normal;
+    }
+    .review-content {
+        width: 100%;
+        height: 7rem;
+        margin: 0.5rem auto;
+        text-align: center;
+    }
+    .review-image {
+        width: 50%;
+        margin-top: 15px;
+        text-align: center;
+        margin: 0px auto;
+        display: block;
+    }
+    .write-a-review {
+        margin-left: 5px;
+        font-size: 1rem;
+        /* text-transform: capitalize; */
+        /* text-decoration: underline; */
+        line-height: 2rem;
+        padding-top: 1rem;
+    }
+    .write-a-review:hover {
+        text-decoration: underline;
+    }
+    .size26 {
+        flex: 1;
+        width: 50%;
+        height: auto;
+    }
+    .size46 {
+        flex: 1;
+        width: 50%;
+        height: auto;
+    }
+}

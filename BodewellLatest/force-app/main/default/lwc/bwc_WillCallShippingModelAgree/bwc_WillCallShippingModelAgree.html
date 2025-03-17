@@ -1,0 +1,107 @@
+<template>
+	<template lwc:if={isPickupModal}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+</svg>
+<span class="slds-assistive-text">Cancel and close</span>
+</button>
+				<div class="slds-modal__header">
+					<h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Delivery Not Available In Your
+						Area</h1>
+				</div>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+					<Strong>Pickup Location</Strong><br>
+					<p>
+						MID,INC<br>
+                    5414 SHEPHERDSVILLIE RD, LOUISVELLE, KY 40228-10105029669577
+                </p><br>
+						<Strong>Pickup Time</Strong><br>
+						<p>Your order is estimated to be available for pickup by Mon,Sep 11 between the hours of 10am
+							and 3pm.</p><br>
+						<Strong>Email Notification</Strong><br>
+						<p>We will email you when your order has arrived at your pickup location.</p>
+						<Strong>What to Bring</Strong><br>
+						<p>You must bring the CSO Number and proper ID with you when you pick up your order. You must be
+							over the age of 18.</p>
+				</div>
+				<div class="slds-modal__footer">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<div class="slds-checkbox">
+								<input type="checkbox" name="options" id="checkbox-unique-id-81" value="checkbox-unique-id-81" checked="" />
+								<label class="slds-checkbox__label" for="checkbox-unique-id-81">
+        <span class="slds-checkbox_faux"></span>
+        <span class="slds-form-element__label">I agree to 
+            <div onclick={openTNC}>
+                Product Pick Up Terms & Conditions
+            </div>
+        </span>
+      </label>
+							</div>
+						</div>
+					</div>
+					<button class="slds-button slds-button_neutral" aria-label="Cancel and close">No Thanks</button>
+					<button class="slds-button slds-button_brand">ACCEPT & CONTINUE</button>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+	<template lwc:if={isTNC}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+</svg>
+<span class="slds-assistive-text">Cancel and close</span>
+</button>
+				<div class="slds-modal__header">
+					<h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">
+						<div onclick={openPickUpModel}>Back</div><br>Product Pickup Terms & Conditions
+					</h1>
+				</div>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+					<Strong>Pickup Up Your Appliance</Strong><br>
+					<p>
+						You have 10 business days to pick up your products once they arrive at the warehouse location.
+						If you don't pick up your products within 10 days, your order will be cancelled and you may
+						incur a restocking fee.
+					</p><br><br>
+					<p>
+						Products are normally available for pickup 48 hours after the order is placed. Products are
+						available for pickup between the hours of 10 a.m. and 3 p.m. You must be over the age of 18 and
+						have proper ID to pick up your order.
+					</p><br>
+					<Strong>Email Notification</Strong><br>
+					<p>You will receive an email, that includes your CSO number, advising you when your order has
+						arrived at your pickup location. You must bring this number with you when you pick up your
+						order.</p><br>
+					<Strong>Vechile & Moving Requirements</Strong><br>
+					<p>All orders must be picked up in their entirety; no partial order pickups are allowed. We
+						recommend that you use a vehicle no smaller than a pickup truck to pick up your appliance(s).
+						At least two people are required to lift and move most major appliances. Employees at the pickup
+						location are unable to assist in moving your appliances.
+						GE Appliances and/or the distributor (pickup location) are not responsible for any personal
+						injury and/or damages incurred during handling of the product.
+						Once you have signed for a unit, you accept full responsibility for the product. If the product
+						is dropped or damaged during pickup, we charge a 25% of the purchase price to return the product
+						and process a replacement order.</p><br>
+					<Strong>Returing Your Order</Strong><br>
+					<p>If you decide to return a product for any reason, including concealed damage, you are responsible
+						for bringing it back to the original pickup location. You must request any return within 30 days
+						of the date you picked up the appliance. All returns will incur a 25% restocking fee, which will
+						be deducted from the refund amount of the returned appliance. To begin this process, contact
+						customer service at 1-800-430-1757, and you'll be issued a return authorization number. You'll
+						need this return authorization number before we can accept products for return.</p>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+</template>

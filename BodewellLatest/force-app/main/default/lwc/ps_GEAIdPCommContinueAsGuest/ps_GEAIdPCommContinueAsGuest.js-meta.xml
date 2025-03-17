@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Customer IdP - Continue as Guest Button</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="continueAsGuestButtonLabelInternal" label="Action Button Label" type="String" default="Continue As Guest"/>
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Bodewell" description="Brand"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

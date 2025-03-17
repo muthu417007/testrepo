@@ -1,0 +1,43 @@
+<template>
+    <template if:true={waitingForOrder}>
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand" class="slds-m-top_large"></lightning-spinner>
+    </template>
+    <template for:each={amountArray} for:item="item">
+        
+    <form id="payment-form" key={item.id} class="slds-m-top_small">
+     
+       
+          
+            <div data-id={item.id} class="payment-element" id={item.index}>
+                <!--Stripe.js injects the Payment Element-->
+            </div>
+
+            <div id="affirm-message" data-id={item.affirmId}></div>
+
+            <span>Charge the total amount of ${item.amount} to this card?</span>
+            <div class="radio-group" >
+                <template for:each={options} for:item="option">
+                    <label key={option.value}>
+                        <input id={item.index} type="radio" name="option" value={option.value} onchange={handleChange}
+                            data-name="split">
+                        {option.label}
+                    </label>
+                </template>
+                <input id={item.index} name="amountSplit" placeholder="Enter amount" onchange={handleAmountChange} data-index={item.index}></input>
+            </div>
+         
+      
+  
+       
+
+    </form>
+
+</template>
+
+    <button id="submit" onclick={handleSubmit} data-id="submit">
+        <div class="spinner hidden" id="spinner" data-id="spinner"></div>
+        <span id="button-text" data-id="button-text">Place Order</span>
+    </button>
+    <div id="payment-message" class="hidden payment-message"></div>
+  
+</template>

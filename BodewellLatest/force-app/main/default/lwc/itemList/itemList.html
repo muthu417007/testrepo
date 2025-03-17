@@ -1,0 +1,50 @@
+<template>
+  <div class="slds-m-bottom_large">
+    <div class="dxp-text-heading-small header slds-m-left_small">
+      <h1>{label}</h1>
+    </div>
+    <div class="colorBar slds-m-horizontal_small slds-m-bottom_medium">
+      &nbsp;
+    </div>
+    <lightning-layout multiple-rows>
+      <template for:each={links} for:item="link">
+        <lightning-layout-item
+          key={link.key}
+          size="12"
+          padding="horizontal-small"
+        >
+          <span
+            class="slds-m-vertical_small resourceLink"
+            onclick={openModal}
+            data-id={link.key}
+            if:false={openInWindow}
+            >{link.title}&nbsp;&gt;</span
+          >
+        </lightning-layout-item>
+      </template>
+      <div class="slds-m-left_small footnote">{footnote}</div>
+    </lightning-layout>
+  </div>
+  <template if:true={modalOpen}>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close" onclick={closeModal}>&times;</span>
+        <iframe
+          src={URL}
+          height="100%"
+          width="100%"
+          class="frame"
+          if:true={isPDF}
+        ></iframe>
+        <video
+          src={URL}
+          if:false={isPDF}
+          autoplay="autoplay"
+          class="video"
+          controls
+          controlslist="nodownload"
+        ></video>
+      </div>
+    </div>
+  </template>
+</template>

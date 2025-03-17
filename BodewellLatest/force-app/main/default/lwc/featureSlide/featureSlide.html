@@ -1,0 +1,46 @@
+<template>
+    <div>
+        <template if:true={isFront}>
+            <div>
+                <div class="slds-align_absolute-center container" onclick={flipSlide}>
+                    <div class="dxp-text-heading-medium centered">
+                        <h1>
+                            <lightning-formatted-rich-text value={slide.title}></lightning-formatted-rich-text>
+                        </h1>
+                    </div>
+                    <img src={slide.primaryImageUrl} if:true={slide.isMain}></img>
+                    <img src={slide.secondaryImageUrl} if:false={slide.isMain}></img>
+                </div>
+            </div>
+        </template>
+        <template if:false={isFront}>
+            <div class="container">
+                <div class="close" onclick={flipSlide}>
+                    <img src="/training/sfsites/c/cms/delivery/media/MC6DAOYI5ILNCBJCEPGNNDMZK5O4" width="40px;"></img>
+                </div>
+                <div>
+                    <template if:true={isVideo}>
+                        <div class="videoTile">
+                            <video src={slide.videoURL} autoplay="autoplay" class="video" controls controlslist="nodownload"></video>
+                        </div>
+                    </template>
+                    <template if:false={isVideo}>
+                            <div class="slds-p-top_large slds-p-left_large slds-p-right_large backsideTile">
+                                <div class="dxp-text-heading-medium slds-p-bottom_medium">
+                                    <h1>
+                                        <lightning-formatted-rich-text value={slide.title}></lightning-formatted-rich-text>
+                                    </h1>
+                                </div>
+                                <div class="slds-m-right_x-large slds-p-right_xx-large" if:false={isSmallScreen}>
+                                    <lightning-formatted-rich-text  value={slide.description}></lightning-formatted-rich-text>
+                                </div>
+                                <div if:true={isSmallScreen}>
+                                    <lightning-formatted-rich-text  value={slide.description}></lightning-formatted-rich-text>
+                                </div>
+                            </div>                   
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,18 @@
+.jumpTo{
+    color:rgb(236,14,226);
+    font-weight: bold;
+}
+
+.downBtn{
+    cursor:pointer;
+    position: relative;
+    left: -20px;
+}
+
+.chevRight{
+    --sds-c-icon-color-foreground-default: rgb(236,14,226);
+}
+
+.chevRight svg{
+    margin-top:-3px;
+}

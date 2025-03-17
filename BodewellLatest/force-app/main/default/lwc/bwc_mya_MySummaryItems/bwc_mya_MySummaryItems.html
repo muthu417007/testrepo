@@ -1,0 +1,454 @@
+<template>
+    <template if:true={hdFlag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open slds-p-around_small">
+                <div class="slds-section__title flex">
+                    <img class="inHome" src={HOME_DELIVERY} />
+                    <h5 class="text">In-Home Delivery</h5>
+                </div>
+                <div>
+                    <p class="content1 text">{deliveredDate}</p> <br>
+                <div>
+                        <template iterator:it={orderBillingDetails}>
+                            <div key={it.value.Id} class="p-l-42 slds-m-bottom_small border">
+                                <p><strong>Delivers to:</strong> <br>
+                                </p><strong>{it.value.DeliverToName}</strong> {it.value.DeliverToStreet}
+                                {it.value.DeliverToCity},{DeliverToState} {it.value.DeliverToPostalCode}
+                            </div>
+
+                        </template>
+                        <!--  <hr class="border" /> -->
+                </div>
+                </div>
+                <template for:each={hdList} for:item="Item">
+                <div key={Item.id}>
+                    <hr class="border" />
+                    <div class="slds-grid slds-gutters content">
+                        <div class="slds-col slds-size_1-of-3 image ">
+                            <template if:true={Item.BWC_Main_Image__c}>
+                                    <img src={Item.BWC_Main_Image__c} alt={Item.BWC_Main_Image__c} />
+                            </template>
+                        </div>
+                        <div class="slds-col slds-size_2-of-3">
+                            <template if:true={Item.BWC_Product_Marketing_Description__c}>
+                                <span
+                                        class="description">{Item.BWC_Product_Marketing_Description__c}</span>
+                                <div class="model">
+                                        Model#: {Item.Base_Model__c}
+                                </div>
+                             </template>   
+                             
+
+                        </div>
+                        <div class="slds-col slds-size_3-of-3">
+                                <span class="product-model-number">${Item.TotalPrice}</span>
+                                 
+                        </div>
+                    </div>
+
+                    <!--to check installation Flag -->
+                    <div class="slds-grid slds-gutters content">
+                        <div class="slds-col slds-size_1-of-3 image "> </div>
+                        <div class="slds-col slds-size_2-of-3 ">
+                            <template if:true={installationFlag}>
+                                <div  class="productView-services">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                       
+                                        <span>{productServiceName}</span>
+                                    </div>
+                                </div>
+                        </template>
+                        <template if:false={installationFlag}>
+                            <div class="productView-services">
+                                <div class="d-flex align-items-top justify-content-spaceBetween">
+                                    <div>
+                                        <span>Installation Not Available</span>
+                                        <div class="productView-services-text">
+                                            <p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </div>
+                        <div class="slds-col slds-size_3-of-3">
+                            <template if:true={installationFlag}>
+                                   
+                                <div class="product-model-number">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                        <span>${productServicePrice}</span>
+                                    </div>
+                                </div>
+                            
+                         </template>
+                         <template if:false={installationFlag}>
+                            <div class="productView-services-price">$0.00</div>
+                         </template>
+                        </div>
+                    </div>
+                </div>
+             </template>   
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={orderpickUpFlag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                <div class="slds-section__title flex">
+                    <img class="pickupProducts" src={ORDER_PICKUP} />
+                    <h5 class="text">Order Pickup</h5>
+                </div>
+                <div>
+                    <p class="content1 text"> {estimatedDate}</p> <br>
+                    <div>
+                        <template iterator:it={orderBillingDetails}>
+                            <div key={it.value.Id} class="p-l-42 slds-m-bottom_small border">
+                                <p><strong>Pick-Up Location</strong> <br>
+                                </p><strong>{it.value.DeliverToName}</strong> {it.value.DeliverToStreet}
+                                {it.value.DeliverToCity},{DeliverToState} {it.value.DeliverToPostalCode}
+                            </div>
+
+                        </template>
+
+                    </div>
+                </div>
+                <template for:each={orderPickUpList} for:item="Item">
+                    <div key={Item.id}>
+                        <hr class="border" />
+                        <div class="slds-grid slds-gutters content">
+                            <div class="slds-col slds-size_1-of-3 image ">
+                                <template if:true={Item.BWC_Main_Image__c}>
+                                    <img src={Item.BWC_Main_Image__c} alt={Item.BWC_Main_Image__c} />
+                                </template>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <template if:true={Item.BWC_Product_Marketing_Description__c}>
+                                    <span
+                                        class="description">{Item.BWC_Product_Marketing_Description__c}</span>
+                                    <div class="model">
+                                        Model#: {Item.Base_Model__c}
+                                    </div>
+                                   
+                                </template>
+                                        
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span class="product-model-number">${Item.TotalPrice}</span>
+                            </div>
+                        </div>
+                         <!--to check installation Flag -->
+                    <div class="slds-grid slds-gutters content">
+                        <div class="slds-col slds-size_1-of-3 image "> </div>
+                        <div class="slds-col slds-size_2-of-3 ">
+                            <template if:true={installationFlag}>
+                                <div  class="productView-services">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                       
+                                        <span>{productServiceName}</span>
+                                    </div>
+                                </div>
+                        </template>
+                        <template if:false={installationFlag}>
+                            <div class="productView-services">
+                                <div class="d-flex align-items-top justify-content-spaceBetween">
+                                    <div>
+                                        <span>Installation Not Available</span>
+                                        <div class="productView-services-text">
+                                            <p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </div>
+                        <div class="slds-col slds-size_3-of-3">
+                            <template if:true={installationFlag}>
+                                   
+                                <div class="product-model-number">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                        <span>${productServicePrice}</span>
+                                    </div>
+                                </div>
+                            
+                         </template>
+                         <template if:false={installationFlag}>
+                            <div class="productView-services-price">$0.00</div>
+                         </template>
+                        </div>
+                    </div>
+               </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={shipToHomeFlag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                <div class="slds-section__title flex">
+                    <img class="prodShip" src={PRODUCT_SHIPPED}>
+                    <h5 class="text"> Shipping To Home </h5>
+                </div>
+                <div>
+                    <template iterator:it={orderBillingDetails}>
+                        <div key={it.value.Id} class="p-l-42 slds-m-bottom_small border">
+                            <p><strong>Ship To</strong> <br>
+                            </p><strong>{it.value.DeliverToName}</strong> {it.value.DeliverToStreet}
+                            {it.value.DeliverToCity},{DeliverToState} {it.value.DeliverToPostalCode}
+                        </div>
+                    </template>
+                </div>
+                <template for:each={shipToHome} for:item="Item">
+                    <div key={Item.id}>
+                        <hr class="border" />
+                        <div class="slds-grid slds-gutters content">
+                            <div class="slds-col slds-size_1-of-3 image ">
+                                <template if:true={Item.BWC_Main_Image__c}>
+                                    <img src={Item.BWC_Main_Image__c} alt={Item.BWC_Main_Image__c} />
+                                </template>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <template if:true={Item.BWC_Product_Marketing_Description__c}>
+                                    <span
+                                        class="description">{Item.BWC_Product_Marketing_Description__c}</span>
+                                    <div class="model">
+                                        Model#: {Item.Base_Model__c}
+                                    </div>
+                                </template>
+                                
+                            
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-3">
+                                <span class="product-model-number">${Item.TotalPrice}</span>
+                            </div>
+                        </div>
+
+                         <!--to check installation Flag -->
+                    <div class="slds-grid slds-gutters content">
+                        <div class="slds-col slds-size_1-of-3 image "> </div>
+                        <div class="slds-col slds-size_2-of-3 ">
+                            <template if:true={installationFlag}>
+                                <div  class="productView-services">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                       
+                                        <span>{productServiceName}</span>
+                                    </div>
+                                </div>
+                        </template>
+                        <template if:false={installationFlag}>
+                            <div class="productView-services">
+                                <div class="d-flex align-items-top justify-content-spaceBetween">
+                                    <div>
+                                        <span>Installation Not Available</span>
+                                        <div class="productView-services-text">
+                                            <p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </div>
+                        <div class="slds-col slds-size_3-of-3">
+                            <template if:true={installationFlag}>
+                                   
+                                <div class="product-model-number">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                        <span>${productServicePrice}</span>
+                                    </div>
+                                </div>
+                            
+                         </template>
+                         <template if:false={installationFlag}>
+                            <div class="productView-services-price">$0.00</div>
+                         </template>
+                        </div>
+                    </div>
+
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+
+   <!-- <template if:true={pickUpStoreFlag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                <div class="slds-section__title flex">
+                    <img class="overSize" src={PART_SHIPPED}>
+                    <h5 class="shipToText">Pick-Up in Store</h5>
+                </div>
+
+                <div>
+                    <p><strong> Store Location</strong></p> <br>
+                    <p> {pickupLocation} </p><br>
+                    <p> {pickupPhone} </p>
+
+                </div>
+
+                <template for:each={pickUpStore} for:item="Item">
+                    <div key={Item.id}>
+                        <hr class="border" />
+                        <div class="slds-grid slds-gutters content ">
+                            <div class="slds-col slds-size_1-of-3 image ">
+                                <template if:true={Item.Product2.BWC_Main_Image__c}>
+                                    <img src={Item.BWC_Main_Image__c} alt={Item.BWC_Main_Image__c} />
+                                </template>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <template if:true={Item.Product2.BWC_Product_Marketing_Description__c}>
+                                    <span
+                                        class="description">{Item.BWC_Product_Marketing_Description__c}</span>
+                                    <div class="model">
+                                        Model#: {Item.Base_Model__c}
+                                    </div>
+                                </template>
+                                <template if:true={installationFlag}>
+                               
+                                    <div  class="productView-services">
+                                        <div class="d-flex align-items-top justify-content-spaceBetween">
+                                           
+                                            <span>{productServiceName}</span>
+                                        </div>
+                                    </div>
+                                
+                            </template>
+                            <template if:false={installationFlag}>
+                                <div class="productView-services">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                        <div>
+                                            <span>Installation Not Available</span>
+                                            <div class="productView-services-text">
+                                                <p>
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-3">
+                                <span class="product-model-number">${Item.TotalPrice}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+                <div class="productView-services-text">
+                    <p style="font-weight : bold;" class="slds-text-body_medium">
+                        Special shipping is required. The estimated shipping time is 10-14 business days.
+                    </p>
+                </div>
+            </div>
+        </lightning-card>
+    </template>  -->
+
+    <template if:true={oversizedFlag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                <div class="slds-section__title flex">
+                    <img class="overSize" src={FREIGHT_SHIPPED}>
+                    <h5 class="text">Oversized Freight</h5>
+                </div>
+                <div>
+
+                    <div>
+                        <template iterator:it={orderBillingDetails}>
+                            <div key={it.value.Id} class="p-l-42 slds-m-bottom_small border">
+                                <p><strong>Ship To</strong> <br>
+                                </p><strong>{it.value.DeliverToName}</strong> {it.value.DeliverToStreet}
+                                {it.value.DeliverToCity},{DeliverToState} {it.value.DeliverToPostalCode}
+                            </div>
+                        </template>
+                    </div>
+
+                </div>
+
+
+                <template for:each={sdsList} for:item="Item">
+                    <div key={Item.id}>
+                        <hr class="border" />
+                        <div class="slds-grid slds-gutters content ">
+                            <div class="slds-col slds-size_1-of-3 image ">
+                                <template if:true={Item.BWC_Main_Image__c}>
+                                    <img src={Item.BWC_Main_Image__c} alt={Item.BWC_Main_Image__c} />
+                                </template>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <template if:true={Item.BWC_Product_Marketing_Description__c}>
+                                    <span
+                                        class="description">{Item.BWC_Product_Marketing_Description__c}</span><br>
+                                    <div class="model">
+                                        Model#: {Item.Base_Model__c}
+                                    </div>
+                                    
+                                </template>
+
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-3">
+                                <span class="product-model-number">${Item.TotalPrice}</span>
+                            </div>
+                        </div>
+
+                         <!--to check installation Flag -->
+                    <div class="slds-grid slds-gutters content">
+                        <div class="slds-col slds-size_1-of-3 image "> </div>
+                        <div class="slds-col slds-size_2-of-3 ">
+                            <template if:true={installationFlag}>
+                                <div  class="productView-services">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                       
+                                        <span>{productServiceName}</span>
+                                    </div>
+                                </div>
+                        </template>
+                        <template if:false={installationFlag}>
+                            <div class="productView-services">
+                                <div class="d-flex align-items-top justify-content-spaceBetween">
+                                    <div>
+                                        <span>Installation Not Available</span>
+                                        <div class="productView-services-text">
+                                            <p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        </div>
+                        <div class="slds-col slds-size_3-of-3">
+                            <template if:true={installationFlag}>
+                                   
+                                <div class="product-model-number">
+                                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                                        <span>${productServicePrice}</span>
+                                    </div>
+                                </div>
+                            
+                         </template>
+                         <template if:false={installationFlag}>
+                            <div class="productView-services-price">$0.00</div>
+                         </template>
+                        </div>
+                    </div>
+
+                    </div>
+                </template>
+                <div class="productView-services-text">
+                    <p style="font-weight : bold;" class="slds-text-body_medium">
+                        Special shipping is required. The estimated shipping time is 10-14 business days.
+                    </p>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+
+</template>

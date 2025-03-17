@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'AdobeGaramondProRegular';
+    src: url(../resource/cafe_resources/cafe_resources/AdobeGaramondProRegular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica-Neue-Bold';
+    src: url(../resource/cafe_resources/cafe_resources/Helvetica-Neue-Bold_22498.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'HelveticaNeue-Regular';
+    src: url(../resource/cafe_resources/cafe_resources/HelveticaNeue-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url(../resource/cafe_resources/cafe_resources/ProximaNova-Bold_0.otf) format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova-Light';
+    src: url(../resource/cafe_resources/cafe_resources/ProximaNova-Light_1.otf) format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url(../resource/cafe_resources/cafe_resources/ProximaNova-Regular_0.otf) format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova-RegularItalic';
+    src: url(../resource/cafe_resources/cafe_resources/ProximaNova-RegularItalic_0.otf) format('opentype');
+}
+
+.slds-m-top_x-large, .slds-m-top--x-large {
+    margin-top: -15px;
+    padding-right: 0rem !important;
+    padding-left:0rem !important;
+}
+
+.cb-section_column {
+    margin-bottom: -2rem !important;
+    margin-top: -0.2rem !important;
+    width: 100% !important;
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+    padding: 0rem !important;
+}
+.siteforceStarterBody .cCenterPanel {
+    outline: none !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.slds-col_padded, .slds-col--padded {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+}
+:root { --dxp-c-section-columns-max-width: 1170px; }

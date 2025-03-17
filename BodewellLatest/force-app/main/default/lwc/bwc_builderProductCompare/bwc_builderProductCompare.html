@@ -1,0 +1,113 @@
+<template>
+    <template lwc:if={sessionContext.isPreview}>
+        <div class="slds-grid slds-grid_align-center">
+            <div class="slds-col">
+                <h1>This is the Product Compare component</h1>
+            </div>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_3-of-12">
+                <h2>Comparing {productCompareCount} Products</h2>
+            </div>
+            <div class="slds-col slds-size_9-of-12">
+                <c-bwc_search-results search-results={processedSearchResults} results-layout={resultsLayout}
+                    grid-column-spacing={gridColumnSpacing} grid-row-spacing={gridRowSpacing}
+                    grid-max-columns-displayed={gridMaxColumnsDisplayed} list-row-spacing={listRowSpacing}
+                    show-product-image={showProductImage} show-negotiated-price={showNegotiatedPrice}
+                    show-original-price={showOriginalPrice} show-call-to-action-button={showCallToActionButton}
+                    negotiated-price-text-size={negotiatedPriceTextSize}
+                    negotiated-price-text-color={negotiatedPriceTextColor}
+                    original-price-text-size={originalPriceTextSize} original-price-text-color={originalPriceTextColor}
+                    add-to-cart-button-text={addToCartButtonText} add-to-cart-button-style={addToCartButtonStyle}
+                    add-to-cart-button-processing-text={addToCartButtonProcessingText}
+                    view-options-button-text={viewOptionsButtonText} card-content-mapping={normalizedCardContentMapping}
+                    card-background-color={cardBackgroundColor} card-alignment={cardAlignment}
+                    card-border-color={cardBorderColor} card-border-radius={cardBorderRadius}
+                    card-divider-color={cardDividerColor} sale-banner-color={saleBannerColor}
+                    clearance-banner-color={clearanceBannerColor} current-page={currentPage}
+                    onaddproducttocart={handleAddToCart} onshowproduct={handleNavigateToProductPage}
+                    oncloseproductcompare={handleCloseProductCompare}></c-bwc_search-results>
+            </div>
+            <template for:each={specAndDetails} for:item="spec">
+                <div key={spec.key} class="slds-grid slds-nowrap slds-col slds-size_12-of-12">
+                    <div class="slds-col slds-size_3-of-12 spec-category ">                   
+                        <h5>{spec.key}</h5>                             
+                    </div>
+
+                    <div class="slds-col slds-size_9-of-12">
+                        <div class={rowClass}>
+
+                        </div>
+                    </div>
+                </div>
+              
+
+        <!-- <template for:each={spec.value} for:item="specvalue">
+                    <div key={specvalue.key} class="slds-grid slds-wrap slds-col slds-size_12-of-12">
+                        <div class="slds-col slds-size_3-of-12">
+                            <p>{specvalue.key}</p>
+                        </div>
+                        <div class="slds-grid slds-wrap slds-col slds-size_9-of-12">
+                            <div class="slds-col slds-size_3-of-12">
+                                {specvalue.col0}
+                            </div>
+                            <div class="slds-col slds-size_3-of-12">
+                                {specvalue.col1}
+                            </div>
+                            <div class="slds-col slds-size_3-of-12">
+                                {specvalue.col2}
+                            </div>
+                            <div class="slds-col slds-size_3-of-12">
+                                {specvalue.col3}
+                            </div>
+                        </div>
+                    </div>
+                </template> -->
+
+        <template for:each={spec.value} for:item="specvalue">
+            <div key={specvalue.key} class="slds-grid slds-nowrap slds-col slds-size_12-of-12">
+                <div class="slds-col slds-size_3-of-12 slds-border_bottom slds-border_left feature-heading">
+                    <p><strong>{specvalue.key}</strong></p>
+                </div>
+
+                <!-- <template if:true={productPresent}> -->
+
+                <div class="slds-grid slds-nowrap slds-col slds-size_9-of-12 compare-table-grid">
+                    <div
+                        class="slds-col slds-size_3-of-12 slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                        {specvalue.col0}
+                    </div>
+
+                    <template if:true={specvalue.col1}>
+                        <div
+                            class="slds-col slds-size_3-of-12 slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                            {specvalue.col1}
+                        </div>
+                    </template>
+
+                    <template if:true={specvalue.col2}>
+                        <div
+                            class="slds-col slds-size_3-of-12 slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                            {specvalue.col2}
+
+                        </div>
+                    </template>
+
+                    <template if:true={specvalue.col3}>
+                        <div
+                            class="slds-col slds-size_3-of-12 slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                            {specvalue.col3}
+                        </div>
+                    </template>
+
+                </div>
+                <!-- </template> -->
+            </div>
+        </template>
+        <div key={spec.key}>&nbsp;</div>
+    </template>
+    </div>
+</template>
+</template>

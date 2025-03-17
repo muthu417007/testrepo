@@ -1,0 +1,93 @@
+<template>
+    <!-- Desktop Template Starts -->
+    <div class="desktop">
+    <div class="background-width-set">
+        <div class="content-width-set">
+            <lightning-layout>
+                <span class="title">
+                    <h3 style="font-size: 60px; font-weight: 600;">{content.Title}</h3>
+                </span>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="3">
+                    <template if:true={overview}>
+                        <div class="main-anchor-sections">
+                            <h3 style="font-size: 32px;margin-bottom:15px;font-weight:600;">Overview</h3>
+                            <div class="anchor-sections">
+                                <template iterator:it={overview}>
+                                    <div key={it.value.Id}>
+                                        <p><a class="anchor-page-link" onclick={handleScroll} data-value={it.index}
+                                                href={sectionId}>{it.value}</a></p>
+                                    </div>
+                                </template>
+</div>
+</div>
+</template>
+</lightning-layout-item>
+<lightning-layout-item size="9" class="knowledge-article">
+    <lightning-formatted-rich-text value={content.Solution__c}></lightning-formatted-rich-text>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</div>
+</div>
+<!-- Desktop Template Ends -->
+<!-- Mobile Template Starts -->
+<div class="desktop-below">
+    <lightning-layout>
+        <span class="title">
+                <h3 style="font-size: 32px; font-weight: 600;">{content.Title}</h3>
+            </span>
+    </lightning-layout>
+    <lightning-layout>
+        <div>
+            <span>
+                    <lightning-formatted-rich-text value={mobileArticles.heading}></lightning-formatted-rich-text>
+                </span>
+        </div>
+    </lightning-layout>
+    <lightning-layout style="display: block !important;">
+        <span>
+                <template for:each={mobileArticles.subItemList} for:item="item" for:index="index">
+                    <div key={item.subItemHeading}>
+                        <div class="content-box">
+                            <template if:false={item.isOpen}>
+                                <lightning-layout class="accordian-set" >
+                                    <lightning-layout-item size="11">
+                                        <a onclick={showAll} class="showsall" data-id={index}>
+                                            {item.subItemHeading}
+                                        </a>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1">
+                                        <a onclick={showAll} class="showsall showall-icons" data-id={index}>
+                                            +
+                                        </a>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                            <template if:true={item.isOpen}>
+                                <lightning-layout>
+                                    <lightning-layout-item size="11">
+                                        <a onclick={hideAll} class="showsall" data-id={index}>
+                                            {item.subItemHeading}
+                                        </a>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1">
+                                        <a onclick={hideAll} class="showsall showall-icons" data-id={index}>
+                                            x
+                                        </a>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <div>
+                                    <lightning-formatted-rich-text value={item.subItemContent}>
+                                    </lightning-formatted-rich-text>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </span>
+    </lightning-layout>
+</div>
+<!-- Mobile Template Ends -->
+</template>

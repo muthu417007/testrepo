@@ -1,0 +1,376 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="DisplayCaseController">
+    
+    
+    <div class="slds-text-heading_medium">FS/CC Call Details</div>
+    <aura:attribute name="loaded" type="Boolean" default="false" />
+    <aura:attribute name="loadedcc" type="Boolean" default="false" />
+    <aura:attribute name="typefs" type="Boolean" default="false" />
+    <aura:attribute name="typecc" type="Boolean" default="false" />
+    <aura:attribute name="mydata" type="Object"/>
+    <aura:attribute name="mydata2" type="Object"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>    
+    <aura:if isTrue="{! v.typefs }">
+        <aura:if isTrue="{! v.loaded }">
+            <div class="white">
+                <aura:iteration items="{!v.mydata}" var="item">
+                    <br />
+                    <div class="slds-box">
+                        <p> <b>CALL Details:</b></p>
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ConsumerName" style="color:CornflowerBlue;">ConsumerName</p>
+                                    <p>{!item.ConsumerName}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ProductLine" style="color:CornflowerBlue;">ProductLine</p>
+                                    <p>{!item.ProductLine}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ServiceDate" style="color:CornflowerBlue;">ServiceDate</p>
+                                    <p>{!item.ServiceDate}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="CallStatus" style="color:CornflowerBlue;">CallStatus</p>
+                                    <p>{!item.CallStatus}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Person No">Person No</p>
+                                    <p style="color:CornflowerBlue;">{!item.PersonNo}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Region" style="color:CornflowerBlue;">Region</p>
+                                    <p>{!item.Region}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <br />
+                        </lightning:layout>
+                        
+                        
+                        <lightning:layout multipleRows="true">
+                            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Zone" style="color:CornflowerBlue;">Zone</p>
+                                    <p>{!item.Zone}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="TechNumber" style="color:CornflowerBlue;">TechNumber</p>
+                                    <p>{!item.TechNumber}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="InvoiceNumber" style="color:CornflowerBlue;">InvoiceNumber</p>
+                                    <p>{!item.InvoiceNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="CallNumber"  style="color:CornflowerBlue;">CallNumber</p>
+                                    <p>{!item.CallNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ContractNumber" style="color:CornflowerBlue;">ContractNumber</p>
+                                    <p>{!item.ContractNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="CallClass"  style="color:CornflowerBlue;">CallClass</p>
+                                    <p>{!item.CallClass}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                        </lightning:layout>
+                        
+                        
+                        <p> <b>CUSTOMER COMLAINT:</b></p>
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Problem Description"  style="color:CornflowerBlue;">Problem Description</p>
+                                    <p>{!item.CustComplaint}</p>
+                                </div>
+                            </lightning:layoutItem>            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">ModelNumber</p>
+                                    <p>{!item.ModelNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">SerialNumber</p>
+                                    <p>{!item.SerialNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">InstDate</p>
+                                    <p>{!item.InstDate}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                        </lightning:layout>
+                        
+                        
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">PartsUsed</p>
+                                    <p>{!item.PartsUsed}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">Problem</p>
+                                    <p>{!item.Problem}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">WorkPerformed</p>
+                                    <p>{!item.WorkPerformed}</p>
+                                </div>
+                            </lightning:layoutItem>            
+                        </lightning:layout>
+                        <br />
+                        <p> <b>CHARGES:</b></p>
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Labor $" style="color:CornflowerBlue;">Labor $</p>
+                                    <p >{!item.LaborDollar}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Parts $" style="color:CornflowerBlue;">Parts $</p>
+                                    <p >{!item.PartsDollar}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Home Call" style="color:CornflowerBlue;">Home Call</p>
+                                    <p >{!item.HomeCall}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Tax TPTP" style="color:CornflowerBlue;">Tax TPTP</p>
+                                    <p >{!item.TaxTPTP}</p>
+                                </div>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Invoice Tot" style="color:CornflowerBlue;">Invoice Tot	</p>
+                                    <p >{!item.InvoiceTotal}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Terms " style="color:CornflowerBlue;">Terms </p>
+                                    <p >{!item.Terms}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="PPA " style="color:CornflowerBlue;">PPA </p>
+                                    <p >{!item.ppa}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Job Code" style="color:CornflowerBlue;">Job Code</p>
+                                    <p >{!item.JobCode}</p>
+                                </div>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        
+                    </div> 
+                    
+                </aura:iteration>
+                <aura:set attribute="else">
+                    <lightning:spinner alternativeText="Loading" />
+                </aura:set>
+            </div>
+        </aura:if>
+    </aura:if>
+    
+    
+    <aura:if isTrue="{! v.typecc }">
+        <aura:if isTrue="{! v.loadedcc }">
+            <div class="white">
+                <aura:iteration items="{!v.mydata2}" var="item">
+                    <div class="slds-box">
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ConsumerName" style="color:CornflowerBlue;">Name</p>
+                                    <p>{!item.ConsumerFirstName}</p><p>{!item.ConsumerLastName}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ProductLine" style="color:CornflowerBlue;">PL</p>
+                                    <p>{!item.ProductLineDesc}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="ServiceDate" style="color:CornflowerBlue;">ServiceName</p>
+                                    <p>{!item.ServiceName}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="CallStatus" style="color:CornflowerBlue;">ServiceAcct#</p>
+                                    <p>{!item.ServicerAccount}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <br />
+                        </lightning:layout>
+                        
+                        
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Person No">Service Date</p>
+                                    <p style="color:CornflowerBlue;">{!item.ServiceDate}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Region" style="color:CornflowerBlue;">CallStatus</p>
+                                    <p>{!item.CallStatus}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Zone" style="color:CornflowerBlue;">Invoice /claim#</p>
+                                    <p>{!item.InvoiceNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="TechNumber" style="color:CornflowerBlue;">Contract#</p>
+                                    <p>{!item.ContractNumber}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                        </lightning:layout>
+                        
+                        
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="InvoiceNumber" style="color:CornflowerBlue;">Consumer#</p>
+                                    <p>{!item.ConsumerNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            
+                            <br />
+                        </lightning:layout>
+                        
+                        <p> <b>CUSTOMER COMLAINT:</b></p>
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Problem Description"  style="color:CornflowerBlue;">Problem Description</p>
+                                    <p>{!item.CustComplaint}</p>
+                                </div>
+                            </lightning:layoutItem>            
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">ModelNumber</p>
+                                    <p>{!item.ModelNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">SerialNumber</p>
+                                    <p>{!item.SerialNumber}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">InstDate</p>
+                                    <p>{!item.InstDate}</p>
+                                </div>
+                            </lightning:layoutItem><br />
+                        </lightning:layout>
+                        
+                        
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">PartsUsed</p>
+                                    <p>{!item.PartsUsed}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Field 1"  style="color:CornflowerBlue;">WorkPerformed</p>
+                                    <p>{!item.WorkPerformed}</p>
+                                </div>
+                            </lightning:layoutItem>            
+                        </lightning:layout>
+                        <br />
+                        <p> <b>CHARGES:</b></p>
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Labor $" style="color:CornflowerBlue;">Labor $</p>
+                                    <p >{!item.LaborDollar}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Parts $" style="color:CornflowerBlue;">Parts $</p>
+                                    <p >{!item.PartsDollar}</p>
+                                </div>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="2" padding="around-small">
+                                <div class="header-column">
+                                    <p class="field-title" title="Home Call" style="color:CornflowerBlue;">Invoice Tot</p>
+                                    <p >{!item.InvoiceTotal}</p>
+                                </div>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        
+                        
+                        
+                    </div> 
+                    
+                </aura:iteration>
+                <aura:set attribute="else">
+                    <lightning:spinner alternativeText="Loading" />
+                </aura:set>
+            </div>
+        </aura:if>
+    </aura:if>
+    
+    
+    <br /> <br />
+</aura:component>

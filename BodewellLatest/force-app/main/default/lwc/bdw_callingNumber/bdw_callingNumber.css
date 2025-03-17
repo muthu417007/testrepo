@@ -1,0 +1,72 @@
+.call-to-shedule {
+    padding-left: 5rem;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.call-to-shedule .phone {
+    font-size: 22px;
+    color: #12212e;
+    font-weight: 600;
+}
+
+a.anchor-page-link:hover *,
+a.anchor-page-link :active * {
+    text-decoration: underline;
+    color: #3e5769;
+}
+
+a:focus {
+    outline-offset: 4px;
+    outline-color: #0073a8;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.desktop-below {
+    display: none;
+}
+
+@media screen and (max-width:1000px) {
+    .desktop-only {
+        display: none;
+    }
+    .desktop-below {
+        display: block;
+    }
+    .call-to-shedule {
+        padding-left: 0rem;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 20px 0px 0px 0px;
+    }
+    .phone-below-desktop {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .anchor-page-link-for-mobile span {
+        color: #0E2D44;
+    }
+    .anchor-page-link-for-mobile {
+        border: 2px solid #0E2D44;
+        border-radius: 25px;
+        padding: 10px 0px;
+    }
+    .anchor-page-link-for-mobile :hover {
+        border: 2px solid #0E2D44;
+        background-color: #0E2D44;
+        color: #fff;
+    }
+    .margintop21 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}

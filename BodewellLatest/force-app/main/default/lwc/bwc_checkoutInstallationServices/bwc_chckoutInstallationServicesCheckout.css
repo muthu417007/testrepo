@@ -1,0 +1,90 @@
+/*installation css*/
+
+.productView-services {
+    margin-bottom: 16px;
+    padding-top: 16px;
+    font-size: .875rem;
+
+    text-align: left;
+/* font: normal normal normal 16px/23px Neue Haas Grotesk Display Pro; */
+letter-spacing: 0.20px;
+color: #12212E;
+opacity: 1;
+/* border-bottom: 1px solid;  */
+padding-right:20px;
+   
+}
+.justify-content-spaceBetween {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.align-items-top {
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.d-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+   
+}
+.productView-services-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: .875rem;
+    /* font-weight: 700; */
+    text-transform: none;
+    padding-left: 20px;
+}
+.productView-services-title .icon {
+    margin-right: 8px;
+}
+.productView-services-title span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.productView-services-text {
+    margin-bottom: 24px;
+    margin-left: 29px;
+}
+
+p {
+    font-size: .875rem;
+}
+.productView-services-price {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.productView-services-price-member{
+    text-decoration: line-through;
+    margin-right:40px;
+    font-size: medium;
+    margin-left:10px;
+}
+.itemTitleFree{
+    display: flex;
+    
+  }
+
+  .memberValue{
+    font-weight:bold
+  }
+
+  .memberTotalvalue{
+     text-decoration: line-through;
+     margin-left:5px;
+     font-weight: bold;
+  }
+.icon svg {
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+  .e{fill:none;isolation:isolate;}.f{fill:#12212e;}
+
+}

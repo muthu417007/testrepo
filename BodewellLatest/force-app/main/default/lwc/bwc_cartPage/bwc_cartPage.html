@@ -1,0 +1,627 @@
+<template>
+    <div class="cartTitle">
+        <p class="cartName">My Cart</p>
+        <p class="cartQuantity">{_totalQuantity} Items</p>
+            <div class="cartPrice">
+            <p class="cartTotalTitle">Subtotal:</p>
+            <p class="cartTotalPrice">${_cartTotal}</p>
+            </div>
+    </div>
+
+    <template if:true={_memberSKU}>
+        <lightning-card class="card">   
+            <template for:each={_memberList} for:item="cartItem">
+              <div class="member slds-grid slds-wrap" key={cartItem.id}>
+                <div class="slds-size_1-of-12">
+                  <div class="slds-text-align_center slds-m-around_x-small">
+                  <svg
+                    class="bodewell-member"
+                    
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 421.11 327.53"
+                  >
+                    <g >
+                      <path
+                        class="d"
+                        d="m421.11,35.09v11.7H0v-11.7C0,15.71,15.71,0,35.09,0h350.92c19.37,0,35.09,15.71,35.09,35.09ZM0,70.18h421.11v222.25c0,19.38-15.71,35.09-35.09,35.09H35.09c-19.38,0-35.09-15.72-35.09-35.09V70.18Zm46.79,198.86c0,6.43,5.23,11.7,11.7,11.7h140.37c6.46,0,11.7-5.24,11.7-11.7,0-19.38-15.71-35.09-35.09-35.09h-93.58c-19.38,0-35.09,15.72-35.09,35.09Zm35.09-105.28c0,25.84,20.95,46.79,46.79,46.79s46.79-20.95,46.79-46.79-20.95-46.79-46.79-46.79-46.79,20.95-46.79,46.79Zm175.46-35.09c0,6.43,5.26,11.7,11.7,11.7h93.58c6.43,0,11.7-5.26,11.7-11.7s-5.26-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.26-11.7,11.7Zm0,46.79c0,6.43,5.26,11.7,11.7,11.7h93.58c6.43,0,11.7-5.26,11.7-11.7s-5.26-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.26-11.7,11.7Zm0,46.79c0,6.46,5.24,11.7,11.7,11.7h93.58c6.43,0,11.7-5.24,11.7-11.7s-5.24-11.7-11.7-11.7h-93.58c-6.43,0-11.7,5.24-11.7,11.7Z"
+                      />
+                    </g>
+                  </svg>
+                  </div>
+                </div>
+                <div class="slds-size_10-of-12">
+                  <div class="slds-grid slds-wrap">
+                    <div class="content slds-size_6-of-12">
+                      <div class="title slds-m-around_x-small">
+                          {cartItem.ProductDetails.name}
+               
+                        <!-- <div class="model"> -->
+                          <div class="multiline-text">
+                            One Year Bodewell Membership Includes
+                            discounts on products,parts, 
+                            service and delivery
+                          </div>
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                    <div class="slds-size_6-of-12">
+                      <div class="memberPrice slds-m-around_x-small">                                      
+                        <h3> <strong> {cartItem.price} </strong> </h3>                                  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="close slds-size_1-of-12">
+                  <lightning-icon
+                    icon-name="action:close"
+                    alternative-text="Close"
+                    title="Close"
+                    size="xx-small"
+                    data-id={cartItem.id}
+                    onclick={clearCartItem}
+                  ></lightning-icon>
+                </div>          
+              </div>
+            </template>
+
+</lightning-card>
+</template>
+
+<c-bwc_product-ship-type account-id={_accountId} zip-code={zipCode} cart-items={_cartItems} onsegregateproducts={filterCartItems}></c-bwc_product-ship-type>
+<template if:true={hdListflag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                    <h3 class="slds-section__title">
+                    <span
+                        class="section-title slds-truncate slds-p-horizontal_small"
+                        title="In-Home Delivery"
+                    >
+                        <svg
+                        class="inHome"
+                        id="inhome"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 40.5 36"
+                        >
+                        <g id="inhomec">
+                            <g id="inhomed" class="e">
+                            <g class="e">
+                                <path
+                                class="f"
+                                d="m40.49,17.96c0,1.27-1.05,2.26-2.25,2.26h-2.25l.05,11.26c0,.2-.01.38-.04.57v1.14c0,1.55-1.26,2.81-2.81,2.81h-1.12c-.08,0-.15-.06-.23,0-.1-.06-.2,0-.29,0h-3.97c-1.55,0-2.81-1.26-2.81-2.81v-6.19c0-1.24-1.01-2.25-2.25-2.25h-4.5c-1.24,0-2.25,1.01-2.25,2.25v6.19c0,1.55-1.26,2.81-2.81,2.81h-3.93c-.11,0-.21,0-.32-.01-.08,0-.17.01-.25.01h-1.12c-1.55,0-2.81-1.26-2.81-2.81v-7.88c0-.06,0-.13,0-.2v-4.89h-2.25c-1.27,0-2.25-.99-2.25-2.26,0-.63.21-1.2.7-1.69L18.73.56c.49-.49,1.05-.56,1.55-.56s1.05.14,1.48.49l17.95,15.78c.56.49.85,1.05.77,1.69Z"
+                                />
+                            </g>
+                            </g>
+                        </g>
+                        </svg>
+                        <h1>In-Home Delivery</h1>
+                        <h2>
+                        You will have a chance to choose a delivery date in checkout
+                        </h2>
+                    </span>
+                    </h3>        
+        
+                <template for:each={_hdList} for:item="cartItem">
+                    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                        <div class="image slds-size_1-of-12">
+                            <div class="slds-text-align_center slds-m-around_x-small">
+                                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                    <img
+                                        src={cartItem.ProductDetails.thumbnailImage.url}
+                                        alt={cartItem.ProductDetails.thumbnailImage}
+                                    />
+                                </template>
+</div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="eop slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                    {cartItem.ProductDetails.name}
+                                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="content2 slds-m-around_x-small">
+                <c-bwc_product-quantity-add quantity-rule={cartItem.ProductDetails.purchaseQuantityRule} available-quantity={availableQuantityDummy} current-quantity-in-cart={cartItem.quantity} onvaluechanged={handleValueChange} cart-item-id={cartItem.id}></c-bwc_product-quantity-add>
+                <div class="price2">
+                    <div class="p1">
+                        <h1>MSRP</h1>
+                        <h3>{cartItem.salesPrice}</h3>
+                        <!-- <h1> Saved Amount </h1>
+                        <h3>{cartItem.adjustmentAmount}</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Installation Related Info    -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">Installation Info</div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>Respective Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="close slds-size_1-of-12">
+    <lightning-icon icon-name="action:close" alternative-text="Close" title="Close" size="xx-small" data-id={cartItem.id} onclick={clearCartItem}></lightning-icon>
+</div>
+
+<!-- Protection Plans related data  -->
+<div class="image slds-size_1-of-12">
+    <div class="slds-text-align_center slds-m-around_x-small">
+        <svg class="bodewell-care" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.26 40.94">
+                                <path
+                                class="d"
+                                d="m18.53,40.94c-.96,0-1.92-.23-2.72-.71l-1.66-1.02C-.62,30.17-.08,13.58.03,11.72c.18-3.06.83-3.97,1.75-4.39L16.98.36c1.05-.48,2.25-.48,3.3-.01l14.1,6.31h0c1.09.49,1.58,1.65,1.8,4.28.16,1.9,1.13,18.85-12.99,28.23-.05.04-.11.07-.16.1l-1.69.9c-.81.51-1.81.77-2.82.77ZM4.16,10.64c-.52,3-.62,17.39,12.08,25.16l1.63,1c.34.2,1.07.16,1.35-.03.05-.03.11-.07.16-.1l1.67-.9c11.53-7.72,11.75-22.36,10.99-25.78l-13.41-6-14.49,6.64Zm28.59-.33s0,0,0,0h0Z"
+                                />
+                                <polygon
+                                class="d"
+                                points="18.61 3.67 18.61 37.59 9.53 32.83 3.06 20.63 2.49 9.95 12.59 5.5 18.61 3.67"
+                                />
+                            </svg>
+        <!-- </template> -->
+    </div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <span> 4 year Bodewell care Protection Plan </span>
+
+                <button class="product-name slds-button" onclick={onclickChangeRemoveProtectionPlan}>
+                                        Change Or Remove
+                                    </button>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>$Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+<template if:true={sdsListFlag}>
+<template for:each={_sdsList} for:item="cartItem">
+                    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                        <div class="image slds-size_1-of-12">
+                            <div class="slds-text-align_center slds-m-around_x-small">
+                                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                    <img
+                                        src={cartItem.ProductDetails.thumbnailImage.url}
+                                        alt={cartItem.ProductDetails.thumbnailImage}
+                                    />
+</template>
+</div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="eop slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                    {cartItem.ProductDetails.name}
+                                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="content2 slds-m-around_x-small">
+                <c-bwc_product-quantity-add quantity-rule={cartItem.ProductDetails.purchaseQuantityRule} available-quantity={availableQuantityDummy} current-quantity-in-cart={cartItem.quantity} onvaluechanged={handleValueChange} cart-item-id={cartItem.id}></c-bwc_product-quantity-add>
+                <div class="price2">
+                    <div class="p1">
+                        <h1>MSRP</h1>
+                        <h3>{cartItem.salesPrice}</h3>
+                        <!-- <h1> Saved Amount </h1>
+                        <h3>{cartItem.adjustmentAmount}</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Installation Related Info    -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">Installation Info</div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>Respective Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="close slds-size_1-of-12">
+    <lightning-icon icon-name="action:close" alternative-text="Close" title="Close" size="xx-small" data-id={cartItem.id} onclick={clearCartItem}></lightning-icon>
+</div>
+
+<!-- Protection Plans related data  -->
+<div class="image slds-size_1-of-12">
+    <div class="slds-text-align_center slds-m-around_x-small">
+        <svg class="bodewell-care" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.26 40.94">
+                                <path
+                                class="d"
+                                d="m18.53,40.94c-.96,0-1.92-.23-2.72-.71l-1.66-1.02C-.62,30.17-.08,13.58.03,11.72c.18-3.06.83-3.97,1.75-4.39L16.98.36c1.05-.48,2.25-.48,3.3-.01l14.1,6.31h0c1.09.49,1.58,1.65,1.8,4.28.16,1.9,1.13,18.85-12.99,28.23-.05.04-.11.07-.16.1l-1.69.9c-.81.51-1.81.77-2.82.77ZM4.16,10.64c-.52,3-.62,17.39,12.08,25.16l1.63,1c.34.2,1.07.16,1.35-.03.05-.03.11-.07.16-.1l1.67-.9c11.53-7.72,11.75-22.36,10.99-25.78l-13.41-6-14.49,6.64Zm28.59-.33s0,0,0,0h0Z"
+                                />
+                                <polygon
+                                class="d"
+                                points="18.61 3.67 18.61 37.59 9.53 32.83 3.06 20.63 2.49 9.95 12.59 5.5 18.61 3.67"
+                                />
+                            </svg>
+        <!-- </template> -->
+    </div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <span> 4 year Bodewell care Protection Plan </span>
+
+                <button class="product-name slds-button" onclick={onclickChangeRemoveProtectionPlan}>
+                                        Change Or Remove
+                                    </button>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>$Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</template>
+</div>
+</lightning-card>
+</template>
+
+<template if:true={prodShippingListflag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                    <h3 class="slds-section__title">
+                        <span
+                            class="section-title slds-truncate slds-p-horizontal_small"
+                            title="Products Shipping To Your Home"
+                        >
+                            <svg
+                            class="prodShip"
+                            id="prodShipb"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 31.5 31.5"
+                            >
+                            <g id="prodShipc">
+                                <g id="prodShipd" class="e">
+                                <g class="e">
+                                    <path
+                                    class="f"
+                                    d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z"
+                                    />
+                                </g>
+                                </g>
+                            </g>
+                            </svg>
+                
+                            <h1>Products Shipping To Your Home</h1>
+                        </span>
+                    </h3>        
+        
+                <template for:each={_prodShippingList} for:item="cartItem">
+                    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                        <div class="image slds-size_1-of-12">
+                            <div class="slds-text-align_center slds-m-around_x-small">
+                                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                    <img
+                                        src={cartItem.ProductDetails.thumbnailImage.url}
+                                        alt={cartItem.ProductDetails.thumbnailImage}
+                                    />
+                                </template>
+</div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="eop slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                    {cartItem.ProductDetails.name}
+                                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="content2 slds-m-around_x-small">
+                <c-bwc_product-quantity-add quantity-rule={cartItem.ProductDetails.purchaseQuantityRule} available-quantity={availableQuantityDummy} current-quantity-in-cart={cartItem.quantity} onvaluechanged={handleValueChange} cart-item-id={cartItem.id}></c-bwc_product-quantity-add>
+                <div class="price2">
+                    <div class="p1">
+                        <h1>MSRP</h1>
+                        <h3>{cartItem.salesPrice}</h3>
+                        <!-- <h1> Saved Amount </h1>
+                        <h3>{cartItem.adjustmentAmount}</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Installation Related Info    -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">Installation Info</div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>Respective Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="close slds-size_1-of-12">
+    <lightning-icon icon-name="action:close" alternative-text="Close" title="Close" size="xx-small" data-id={cartItem.id} onclick={clearCartItem}></lightning-icon>
+</div>
+
+<!-- Protection Plans related data  -->
+<div class="image slds-size_1-of-12">
+    <div class="slds-text-align_center slds-m-around_x-small">
+        <svg class="bodewell-care" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.26 40.94">
+                                <path
+                                class="d"
+                                d="m18.53,40.94c-.96,0-1.92-.23-2.72-.71l-1.66-1.02C-.62,30.17-.08,13.58.03,11.72c.18-3.06.83-3.97,1.75-4.39L16.98.36c1.05-.48,2.25-.48,3.3-.01l14.1,6.31h0c1.09.49,1.58,1.65,1.8,4.28.16,1.9,1.13,18.85-12.99,28.23-.05.04-.11.07-.16.1l-1.69.9c-.81.51-1.81.77-2.82.77ZM4.16,10.64c-.52,3-.62,17.39,12.08,25.16l1.63,1c.34.2,1.07.16,1.35-.03.05-.03.11-.07.16-.1l1.67-.9c11.53-7.72,11.75-22.36,10.99-25.78l-13.41-6-14.49,6.64Zm28.59-.33s0,0,0,0h0Z"
+                                />
+                                <polygon
+                                class="d"
+                                points="18.61 3.67 18.61 37.59 9.53 32.83 3.06 20.63 2.49 9.95 12.59 5.5 18.61 3.67"
+                                />
+                            </svg>
+        <!-- </template> -->
+    </div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <span> 4 year Bodewell care Protection Plan </span>
+
+                <button class="product-name slds-button" onclick={onclickChangeRemoveProtectionPlan}>
+                                        Change Or Remove
+                                    </button>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>$Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</div>
+</lightning-card>
+</template>
+
+<template if:true={partsListflag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                    <h3 class="slds-section__title">
+                        <span
+                            class="section-title slds-truncate slds-p-horizontal_small"
+                            title="Parts Shipping To Your Home "
+                        >
+                            <svg
+                            class="parts"
+                            id="partsb"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 33.93 36"
+                            >
+                            <g id="partsc">
+                                <g id="partsd" class="e">
+                                <g class="e">
+                                    <path
+                                    class="f"
+                                    d="m33.83,11.71c.23.6.04,1.29-.44,1.73l-3.04,2.77c.08.58.12,1.18.12,1.79s-.04,1.2-.12,1.79l3.04,2.77c.48.44.67,1.12.44,1.73-.31.84-.68,1.65-1.1,2.41l-.33.57c-.46.77-.98,1.5-1.55,2.2-.42.5-1.1.67-1.72.48l-3.92-1.25c-.94.72-2.05,1.33-3.09,1.79l-.88,4.01c-.14.63-.63,1.08-1.28,1.25-.97.16-1.97.25-3.05.25-.96,0-1.95-.08-2.92-.25-.65-.17-1.14-.62-1.28-1.25l-.88-4.01c-1.11-.46-2.15-1.07-3.09-1.79l-3.91,1.25c-.62.2-1.31.02-1.72-.48-.57-.7-1.09-1.43-1.55-2.2l-.33-.57c-.43-.77-.8-1.57-1.11-2.41-.23-.6-.04-1.29.45-1.73l3.04-2.77c-.08-.58-.12-1.18-.12-1.79s.04-1.2.12-1.79l-3.04-2.77c-.48-.44-.67-1.12-.45-1.73.31-.84.68-1.65,1.11-2.41l.33-.57c.46-.77.99-1.5,1.56-2.2.42-.5,1.1-.68,1.72-.48l3.91,1.25c.94-.73,1.98-1.33,3.09-1.79l.88-4.01c.14-.64.63-1.15,1.28-1.25.97-.16,1.97-.25,2.99-.25s2.02.08,2.99.25c.65.11,1.14.61,1.28,1.25l.88,4.01c1.05.46,2.15,1.06,3.09,1.79l3.92-1.25c.62-.2,1.3-.02,1.72.48.57.69,1.09,1.42,1.55,2.2l.33.57c.42.77.79,1.57,1.1,2.41Zm-16.87,11.91c3.11,0,5.62-2.52,5.62-5.69s-2.52-5.62-5.62-5.62-5.62,2.58-5.62,5.62,2.52,5.69,5.62,5.69Z"
+                                    />
+                                </g>
+                                </g>
+                            </g>
+                            </svg>
+                            <h1>Parts Shipping To Your Home</h1>
+                        </span>
+                    </h3>        
+        
+                <template for:each={_partsList} for:item="cartItem">
+                    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                        <div class="image slds-size_1-of-12">
+                            <div class="slds-text-align_center slds-m-around_x-small">
+                                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                    <img
+                                        src={cartItem.ProductDetails.thumbnailImage.url}
+                                        alt={cartItem.ProductDetails.thumbnailImage}
+                                    />
+                                </template>
+</div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="eop slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                    {cartItem.ProductDetails.name}
+                                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="content2 slds-m-around_x-small">
+                <c-bwc_product-quantity-add quantity-rule={cartItem.ProductDetails.purchaseQuantityRule} available-quantity={availableQuantityDummy} current-quantity-in-cart={cartItem.quantity} onvaluechanged={handleValueChange} cart-item-id={cartItem.id} cart-item-price={cartItem.price}></c-bwc_product-quantity-add>
+                <div class="price2">
+                    <div class="p1">
+                        <h1>MSRP</h1>
+                        <h3>{cartItem.salesPrice} </h3>
+                        <!-- <h1> Saved Amount </h1>
+                        <h3>{cartItem.adjustmentAmount}</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Installation Related Info    -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">Installation Info</div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>Respective Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="close slds-size_1-of-12">
+    <lightning-icon icon-name="action:close" alternative-text="Close" title="Close" size="xx-small" data-id={cartItem.id} onclick={clearCartItem}></lightning-icon>
+</div>
+
+<!-- Protection Plans related data  -->
+<div class="image slds-size_1-of-12">
+
+</div>
+<div class="slds-size_10-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <span> Choose Delivery Frequency </span>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small"></div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</div>
+</lightning-card>
+</template>
+
+<template if:true={pickupListflag}>
+        <lightning-card class="card">
+            <div class="section slds-section slds-is-open">
+                    <h3 class="slds-section__title">
+                        <span
+                            class="section-title slds-truncate slds-p-horizontal_small"
+                            title="Pickup Products "
+                        >
+                            <svg
+                            class="pickups"
+                            id="pickupsb"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 33.93 36"
+                            >
+                            <g id="pickupsc">
+                                <g id="pickupsd" class="e">
+                                <g class="e">
+                                    <path
+                                    class="f"
+                                    d="m33.83,11.71c.23.6.04,1.29-.44,1.73l-3.04,2.77c.08.58.12,1.18.12,1.79s-.04,1.2-.12,1.79l3.04,2.77c.48.44.67,1.12.44,1.73-.31.84-.68,1.65-1.1,2.41l-.33.57c-.46.77-.98,1.5-1.55,2.2-.42.5-1.1.67-1.72.48l-3.92-1.25c-.94.72-2.05,1.33-3.09,1.79l-.88,4.01c-.14.63-.63,1.08-1.28,1.25-.97.16-1.97.25-3.05.25-.96,0-1.95-.08-2.92-.25-.65-.17-1.14-.62-1.28-1.25l-.88-4.01c-1.11-.46-2.15-1.07-3.09-1.79l-3.91,1.25c-.62.2-1.31.02-1.72-.48-.57-.7-1.09-1.43-1.55-2.2l-.33-.57c-.43-.77-.8-1.57-1.11-2.41-.23-.6-.04-1.29.45-1.73l3.04-2.77c-.08-.58-.12-1.18-.12-1.79s.04-1.2.12-1.79l-3.04-2.77c-.48-.44-.67-1.12-.45-1.73.31-.84.68-1.65,1.11-2.41l.33-.57c.46-.77.99-1.5,1.56-2.2.42-.5,1.1-.68,1.72-.48l3.91,1.25c.94-.73,1.98-1.33,3.09-1.79l.88-4.01c.14-.64.63-1.15,1.28-1.25.97-.16,1.97-.25,2.99-.25s2.02.08,2.99.25c.65.11,1.14.61,1.28,1.25l.88,4.01c1.05.46,2.15,1.06,3.09,1.79l3.92-1.25c.62-.2,1.3-.02,1.72.48.57.69,1.09,1.42,1.55,2.2l.33.57c.42.77.79,1.57,1.1,2.41Zm-16.87,11.91c3.11,0,5.62-2.52,5.62-5.69s-2.52-5.62-5.62-5.62-5.62,2.58-5.62,5.62,2.52,5.69,5.62,5.69Z"
+                                    />
+                                </g>
+                                </g>
+                            </g>
+                            </svg>
+                            <h1>Pickup Products</h1>
+                        </span>
+                    </h3>        
+        
+                <template for:each={_pickupList} for:item="cartItem">
+                    <div class="product slds-grid slds-wrap" key={cartItem.id}>
+                        <div class="image slds-size_1-of-12">
+                            <div class="slds-text-align_center slds-m-around_x-small">
+                                <template if:true={cartItem.ProductDetails.thumbnailImage}>
+                                    <img
+                                        src={cartItem.ProductDetails.thumbnailImage.url}
+                                        alt={cartItem.ProductDetails.thumbnailImage}
+                                    />
+                                </template>
+</div>
+</div>
+<div class="slds-size_10-of-12">
+    <div class="eop slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="content1 slds-m-around_x-small">
+                <button class="product-name slds-button" data-id={cartItem.ProductDetails.productId} onclick={onclickProductName}>
+                                    {cartItem.ProductDetails.name}
+                                </button>
+
+                <div class="model">
+                    Model#: {cartItem.ProductDetails.sku}
+                </div>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="content2 slds-m-around_x-small">
+                <c-bwc_product-quantity-add quantity-rule={cartItem.ProductDetails.purchaseQuantityRule} available-quantity={availableQuantityDummy} current-quantity-in-cart={cartItem.quantity} onvaluechanged={handleValueChange} cart-item-id={cartItem.id} cart-item-price={cartItem.price}></c-bwc_product-quantity-add>
+                <div class="price2">
+                    <div class="p1">
+                        <h1>MSRP</h1>
+                        <h3>{cartItem.salesPrice} </h3>
+                        <!-- <h1> Saved Amount </h1>
+                        <h3>{cartItem.adjustmentAmount}</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Installation Related Info    -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">Installation Info</div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <h3>Respective Price</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="close slds-size_1-of-12">
+    <lightning-icon icon-name="action:close" alternative-text="Close" title="Close" size="xx-small" data-id={cartItem.id} onclick={clearCartItem}></lightning-icon>
+</div>
+
+<!-- Protection Plans related data  -->
+<div class="image slds-size_1-of-12">
+
+</div>
+<div class="slds-size_10-of-12">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small">
+                <span> Choose Delivery Frequency </span>
+            </div>
+        </div>
+        <div class="slds-size_6-of-12">
+            <div class="slds-m-around_x-small"></div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</div>
+</lightning-card>
+</template>
+</template>

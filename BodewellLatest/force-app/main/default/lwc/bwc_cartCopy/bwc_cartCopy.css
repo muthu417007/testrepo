@@ -1,0 +1,304 @@
+.cartTitle {
+    white-space: nowrap;
+    display: flex;
+    padding: 10px;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.cartTitle .cartName {
+    font-size: 30px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+.cartTitle .cartQuantity {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 400px;
+}
+
+.cartTitle .cartPrice {
+    justify-content: right;
+    padding-right: 10px;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-left: 210px;
+}
+
+.cartTitle .cartPrice .cartTotalTitle {
+    font-size: 20px;
+}
+
+.cartTitle .cartPrice .cartTotalPrice {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card {
+    margin: 15px;
+    --slds-c-card-color-background: white;
+}
+
+.bodewell-member {
+    width: 50px;
+    margin: 10px;
+    .d {
+        fill: #ffc01f;
+    }
+}
+
+.member {
+    padding: 10px;
+    display: flex;
+}
+
+.member content {
+    padding-left: 10px;
+}
+
+.member .title {
+    padding-left: 10px;
+    font-weight: bold;
+    float: left;
+}
+
+.member .multiline-text {
+    white-space: pre-line;
+}
+
+.member .memberPrice {
+    font-weight: bold;
+    padding-right: 10px;
+    float: right;
+}
+
+.section {
+    padding-left: 20px;
+    padding-right: 20px;
+    /* display: block; */
+}
+
+.section .section-title {
+    display: flex;
+}
+
+.section .section-title h2 {
+    font-size: small;
+}
+
+.section .section-title h1 {
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.content1 {
+    height: 200px;
+    position: relative;
+    float: left;
+}
+
+.content2 {
+    height: 200px;
+    position: relative;
+    float: right;
+   
+}
+
+.product {
+    border-top: 0.5px solid black;
+}
+
+.content .product-name {
+    color: #245B83;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+}
+
+.content .model {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+}
+
+.pricing{
+    padding-right: 85px;
+}
+
+.content2 .counter{
+ padding-left: 100px;
+ padding-top: 10px;
+}
+/* .content .counter{
+     width: 110px;
+    float:right;
+}
+
+
+.content .counter .button{
+        width:15px;
+        height:15px;
+        fill:#000000; 
+        padding-right: 15px;
+    }
+
+    .content .counter .button .decrement[disabled=disabled], button:disabled {
+        fill:grey; 
+    } */
+
+
+/*.content .counter lightning-button-icon{
+  display:inline-block;
+  color: black;
+ } 
+
+.THIS .lgc-bg{
+    text-align: center;
+    display:inline-block;
+    height: 40px;
+    width: 100px;
+    --slds-button_icon-current-color: black;
+} */
+
+.price {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    float: right;
+    padding-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.price .price-labels h1 {
+    font-weight: bold;
+}
+
+.price .price-labels {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    float: right;
+    /* padding-left: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.price .price-values {
+    text-align: right;
+    bottom: 0;
+    position: absolute;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 200px;
+}
+
+.price2 {
+    float: right;
+    position: absolute;
+    bottom: 0;
+    /* padding-left: 100px; */
+}
+
+.price2 .p1 {
+    display: flex;
+    /* padding-inline: 50px;    */
+    padding-left: 2px;
+    white-space: nowrap;
+}
+
+.price2 .p1 h1 {
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+
+.price2 .p1 h3 {
+    /* float: right; */
+    padding-left: 110px;
+}
+
+.price2 .p1 h4{
+    /* float: right; */
+    padding-left: 0px;
+}
+
+.eop {
+    border-bottom: 1px solid black;
+}
+
+.close {
+    padding-top: 15px;
+    padding-left: 15px;
+    --slds-c-icon-color-background: black;
+}
+
+.bodewell-care {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    .d {
+        fill: #febf20;
+    }
+}
+
+.inHome {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+    .f {
+        fill: #12212e;
+    }
+}
+
+.parts {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+    .f {
+        fill: #12212e;
+    }
+}
+
+.prodShip {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+    .f {
+        fill: #12212e;
+    }
+}
+
+.pickupProducts {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-bottom: 10px;
+    .e {
+        fill: none;
+        isolation: isolate;
+    }
+    .f {
+        fill: #12212e;
+    }
+}

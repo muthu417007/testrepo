@@ -1,0 +1,72 @@
+<apex:page standardController="Account" extensions="PS_MeetCompPdfGenerator_ctrl" renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+            <style >
+                body {font-family:Arial, Helvetica, sans-serif; font-size:11px;}
+                table {border-collapse:collapse;
+                      border: .02em solid black;}
+                td, th {border: .02em solid black; padding-left: 3px; padding-right: 3px; font-size:10px;}
+                .signatureTable td {width:100%; border-style: hidden;font-size:12px; padding-left: 0px; padding-right: 0px; padding-top: 10px;} 
+            </style>
+        </head>
+		<apex:image url="{!$Resource.PS_GeaPdfLogo}" style="width:25%; height:25%" />
+        <div style="font-size:12px;">
+            <p style="text-align:right;">Account Number: {!ac.Oracle_Account_Number__c}</p>
+            <p style="text-align:left;">
+                {!ac.Doing_Business_As_DBA__c}<br/>
+                {!ac.BillingStreet}<br/>
+                {!ac.BillingCity}, {!ac.BillingState} {!ac.BillingPostalCode}<br/>
+                Customer Phone: {!ac.Phone}<br/>
+                Customer Fax: {!ac.Fax}
+            </p>
+            <p style="text-align:right;">Date: 
+                <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                    <apex:param value="{!TODAY()}" /> 
+                </apex:outputText>
+            </p><br/>
+            <p style="text-align:center;font-size:16px; font-weight:bold;">Competitive Document</p>
+            <hr style="width:100%;height:1px;text-align:left;margin-left:0;background-color:black;border-width:0;"/>
+        </div>
+
+        <p><b>GE Appliances (&#34;GEA&#34;) is offering special prices to the customer to respond in good faith to the prices from GEA's competitor(s) shown below. 
+            GEA is offering these special prices based on the customer's representation that it will purchase the expected volumes shown. GEA reserves the right to increase its prices at any time without notice and for any reason including, 
+            but not limited to, increase in the pricing of its competitor(s) or customer's failure to purchase the expected volumes.</b></p>
+        <p style="text-align:center;font-size:14px;">----------------------------------Competitive Price Allowance----------------------------------</p>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!meetComps}" var="mc" id="Mc">
+                    <apex:column headerValue="Competitive Product">{!mc.Competitive_Model__r.Name}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Competitive_Invoice_Price__c.Label}">{!mc.Competitive_Invoice_Price__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Total_Discounts__c.Label}">{!mc.Total_Discounts__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Competitive_Net_Price__c.Label}">{!mc.Competitive_Net_Price__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Termination_Date_of_Competitive_Data__c.Label}">
+                    	<apex:outputText value="{0, date, MMMM d','  yyyy}">
+                			<apex:param value="{!mc.Termination_Date_of_Competitive_Data__c}" /> 
+            			</apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="GEA Product">{!mc.SKU__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.Quantity__c.Label}">{!mc.Quantity__c}</apex:column>
+                    <apex:column headerValue="{!$ObjectType.Meet_Comp__c.fields.MC_Type__c.Label}">{!mc.MC_Type__c}</apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:form>
+        <br/>
+        <p style="font-size:12px;">I affirm that the above pricing is a true and accurate representation of pricing currently available to me from GEA competitor(s).</p>
+
+        <table class="signatureTable">
+            <tr>
+                <td>Name(Print):_______________________________</td>
+                <td>Title:___________________________________</td>
+            </tr>
+            <tr>
+                <td>Signature:_________________________________</td>
+                <td>Date:___________________________________</td>
+            </tr>
+            <tr>
+                <td>ASM Signature:____________________________</td>
+                <td>Date:___________________________________</td>
+            </tr>
+        </table>
+    </html>
+</apex:page>

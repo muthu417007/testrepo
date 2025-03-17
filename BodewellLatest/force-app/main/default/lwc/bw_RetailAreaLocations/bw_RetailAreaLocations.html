@@ -1,0 +1,129 @@
+<template>
+    <div class="retailarealocations">
+            <div class="retailarealocations-container">
+                <div class="retail-area-header header-flex">
+                    <div class="retailcoloumwdt1"></div>
+                    <div class="retailcoloumwdt11">
+                        <h1 class="main-header">Bodewell In-Store Service in {retailAreaName}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="service-location">
+                <div class="address-flex">
+                    <div class="retailcoloumwdt5">
+                        <div class="details-address top-border">
+                            <div class="retailcoloumwdt3"></div>
+                            <div class="retailcoloumwdt9">
+                                <div class="d-flex">
+                                    <div class="marginset15">
+                                        <img class="location-icon-yellow" src={locationpinyellowsvg} alt="location-pin-yellow-svg">
+                                    </div>
+                                    <div>
+                                        <p class="address-details">{retailAreaAddressLine1}, <br> {retailAreaAddressLine2} <br> {retailAreaAddressLine3} </p>
+                                        <div>
+                                            <a class="direction" href={gMapURL}>
+                                                <span class="blue-button">GET DIRECTIONS
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-address top-border">
+                            <div class="retailcoloumwdt3"></div>
+                            <div class="retailcoloumwdt9">
+                                <div class="d-flex">
+                                    <div class="marginset15">
+                                        <img class="location-icon-yellow" src={calliconyellowsvg} alt="call-icon-yellow-svg">
+                                    </div>
+                                    <div>
+                                        <p class="call-local-text">Call local</p>
+                                        <div class="deskOnly">
+                                            <a onclick={mobileNumber} class="anchor-page-link phone">
+                                                    {retailAreaNumber}
+                                            </a>
+                                        </div>
+                                        <div class="mobOnly">
+                                            <div>
+                                                <a onclick={mobileNumber} class="button-outline blue-button">
+                                                   {retailAreaNumber}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                    <div class="retailcoloumwdt7 top-left-border">
+                        <div class="row-flex">
+                            <div class="retailcoloumwdt6 retail-mob-set store-hours">
+                                <div class="m-xl-4set m-lg-2set m-4set">
+                                    <h3 class="store-hours-header">Store hours</h3>
+                                    <div class="mob-font-18">
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Monday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 6:30 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Tuesday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 6:30 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Wednesday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 6:30 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Thursday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 6:30 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Friday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 6:30 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Saturday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">9:00 AM - 1:00 PM</div>
+                                        </div>
+                                        <div class="row-flex business-hours">
+                                            <div class="retailcoloumwdt6">Sunday</div>
+                                            <div class="retailcoloumwdt6 text-sm-start text-end">Closed</div>
+                                        </div>
+                                    </div>
+                                    <div class="tick-icon-section">
+                                            <div class="d-flex">
+                                                <div>
+                                                    <img class="marginset15" src={iconchecksvg} alt="icon-check-svg">
+                                                </div>
+                                                <p class="marginset1">IN-STORE APPLIANCE CONSULTATION</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <img class="marginset15" src={iconchecksvg} alt="icon-check-svg">
+                                                </div>
+                                                <p class="marginset1">APPLIANCE PART PICK UP</p>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <img class="marginset15" src={iconchecksvg} alt="icon-check-svg">
+                                                </div>
+                                                <p class="marginset1">SHOP SMALL APPLIANCES</p>
+                                            </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="retailcoloumwdt6  retailcoloumwdt6mob">
+                                <lightning-map class="map-outline" 
+                                map-markers={mapMarkers} 
+                                zoom-level={zoomLevel} > 
+                                </lightning-map>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>    
+</template>

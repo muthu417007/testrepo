@@ -1,0 +1,35 @@
+<template>
+    <lightning-modal-body>
+        <div class="slds-grid slds-grid_vertical-align-center">
+            <div class="slds-col slds-size_1-of-12">
+                <c-bwc_carousel
+                    if:true={showCarouselDesktop}
+                    class="slds-p-around_small desktop-featured-image-carousel"
+                    images={thumbnailImages}
+                    orientation={carouselOrientation}
+                    page-size={carouselPageSize}
+                    paginate
+                    selected-index={selectedImageIndex}
+                    onselectionchanged={handleThumbnailImageSelected}
+                ></c-bwc_carousel>
+            </div>
+            <div class="slds-col slds-size_11-of-12">
+                <c-bwc_gallery-image
+                    class="slds-p-around_xx-small slds-border_top slds-border_right slds-border_bottom slds-border_left"
+                    url={url}
+                    alternative-text={imageResolvedAlternativeText}
+                ></c-bwc_gallery-image>
+                <c-bwc_carousel
+                    if:true={showCarouselMobile}
+                    class="slds-p-vertical_medium"
+                    style={mobileLightboxCarouselStyles}
+                    images={thumbnailImages}
+                    orientation="horizontal"
+                    page-size={carouselPageSize}
+                    selected-index={selectedImageIndex}
+                    onselectionchanged={handleThumbnailImageSelected}
+                ></c-bwc_carousel>
+            </div>
+        </div>
+    </lightning-modal-body>
+</template>

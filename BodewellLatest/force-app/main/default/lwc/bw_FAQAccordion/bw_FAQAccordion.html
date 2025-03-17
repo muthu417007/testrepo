@@ -1,0 +1,43 @@
+<template>
+    <div class="faq-accordian-section">
+    <div class="content-box">
+        <template if:true={isExpand}>
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <a onclick={showAll} class="showsall">
+                        {ResourceName}
+                    </a>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <a onclick={showAll} class="showsall showsall-symbol">
+                        +
+                    </a>
+                </lightning-layout-item>
+            </lightning-layout>            
+        </template>
+<template if:false={isExpand}>
+            <lightning-layout>
+                <lightning-layout-item size="11">
+                    <a onclick={showAll} class="showsall">
+                        {ResourceName}
+                    </a>
+                </lightning-layout-item>
+                <lightning-layout-item size="1">
+                    <a onclick={showAll} class="showsall showsall-symbol">
+                        x
+                    </a>
+                </lightning-layout-item>
+            </lightning-layout> 
+            <div>
+                <template for:each={URLs} for:item="item" for:index="index">
+                    <div key={item.UrlName} class="faq-questions">
+                        <a href={redirectURL} data-value={item.UrlName} onclick={handleNavigation} class="faq-link">
+                            <span class="faq-focus">{item.Title}</span>
+                        </a>
+                    </div>
+                </template>
+</div>
+</template>
+</div>
+</div>
+</template>

@@ -1,0 +1,688 @@
+.mainContent {
+    position: relative;
+    padding-bottom: 2em;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.OSL {
+    display: block;
+    text-align: center;
+    line-height: inherit;
+    font-size: 1rem;
+    font-style: normal;
+    font-family: 'ProximaNova-Regular';
+    background-color: #fff;
+    text-decoration: underline;
+    color: rgba(108, 97, 88, 1);
+}
+
+.header {
+    text-align: center;
+    color: #004b3d;
+    font-weight: 300;
+    letter-spacing: 0.25px;
+    background: transparent;
+    border-bottom: none;
+    font-family: 'AdobeGaramondProRegular';
+    padding: 3rem 0px 0px 0px;
+    font-size: 36px;
+    text-transform: capitalize;
+}
+
+.linkparts {
+    float: right;
+    clear: left;
+    background-color: white;
+    text-align: center;
+    height: 18rem;
+    width: 13rem;
+    line-height: 1.8;
+    font-family: 'ProximaNova-Regular';
+    margin-top: 45px;
+    margin-right: 2rem;
+    margin-bottom: 5px;
+    padding: 28px;
+}
+
+.loggin {
+    text-decoration: underline;
+    color: rgba(108, 97, 88, 1);
+    padding: 0rem;
+    border: none;
+    background: transparent;
+}
+
+.loggin:hover {
+    text-decoration: underline;
+    color: rgba(180, 75, 40, 1);
+    padding: 0rem;
+}
+
+.inputFields {
+    margin: 0px 0px 0px 335px;
+}
+
+@media only print,
+only screen and (min-width: 960px) {
+    .large-7 {
+        width: 58.33333%;
+    }
+    .large-5 {
+        width: 41.66667%;
+    }
+}
+
+@media only print,
+only screen and (min-width: 600px) {
+    /*.medium-11 {
+        width: 91.66667%;
+    }*/
+    .medium-6 {
+        width: 50%;
+    }
+}
+
+.account {
+    text-align: left;
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #6c6158;
+    line-height: 1.6;
+    letter-spacing: 1.8px;
+    font-family: 'ProximaNova-Regular';
+}
+
+.container {
+    margin: 10px 0px 0 0;
+    display: inline-flex;
+}
+
+.leftAlign {
+    float: left;
+    clear: left;
+    width: 43%;
+    margin: 45px -60px 0px 18rem;
+    max-width: max-content;
+    text-align: justify;
+}
+
+.text {
+    font-family: 'ProximaNova-Regular';
+    font-weight: 600;
+    color: #103b62;
+    font-size: 12px;
+}
+
+.text1 {
+    font-size: 26px;
+    color: #004b3d;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'AdobeGaramondProRegular';
+    text-transform: capitalize;
+    letter-spacing: 0.25px;
+    line-height: 1.18571em;
+}
+
+.text2 {
+    font-size: 1rem;
+    font-family: 'ProximaNova-Regular';
+    line-height: 1.6rem;
+    padding-bottom: 10px;
+    width: 70%;
+    text-align: left;
+    margin: 1rem 0rem;
+}
+
+.captcha {
+    margin: 35px 0px 25px 0px;
+    height: 74px;
+    width: 70px;
+}
+
+.orderButton {
+    margin: 0px 0px 0rem 0px;
+    width: 30%;
+    height: 50px;
+    font-family: 'ProximaNova-Regular';
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: capitalize;
+    line-height: 3rem;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(24, 63, 50, 1);
+    border: 2px solid rgba(24, 63, 50, 1);
+    display: block;
+}
+
+.orderButton:hover {
+    color: rgba(24, 63, 50, 1);
+    background-color: #fff;
+    border: 2px solid rgba(24, 63, 50, 1);
+}
+
+.margin-b-10 {
+    margin-bottom: 10px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.font-weight-100 {
+    font-weight: 100;
+}
+
+p {
+    margin-bottom: 2.5rem;
+}
+
+lightning-formatted-url {
+    color: rgba(108, 97, 88, 1);
+    line-height: inherit;
+    text-decoration: underline;
+}
+
+lightning-formatted-url :hover {
+    color: rgba(180, 75, 40, .8);
+    line-height: inherit;
+    text-decoration: underline;
+}
+
+span {
+    text-align: center;
+}
+
+.small-8 {
+    width: 66.66667%;
+}
+
+.siteforceStarterBody .cCenterPanel {
+    outline: none;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+}
+
+.mainContent {
+    background-color: whitesmoke;
+}
+
+.input-field {
+    font-size: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-align: left;
+    line-height: 1.35;
+    font-family: 'ProximaNova-Regular';
+    color: rgba(108, 97, 88, 1);
+}
+
+.input-text {
+    width: 30%;
+    border-radius: 4px;
+    /* height: 55px; */
+    position: relative;
+    /* border: 1px solid #bdb9b2 !important; */
+    padding: 0rem;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width:240px) and (max-width: 320px) {
+    .mainContent {
+        position: relative;
+        padding-bottom: 2em;
+        margin-bottom: 2rem;
+        max-width: none;
+    }
+    .OSL {
+        display: block;
+        text-align: center;
+        line-height: inherit;
+        font-size: 1rem;
+        font-style: normal;
+        font-family: 'ProximaNova-Regular';
+        background-color: #fff;
+        text-decoration: underline;
+        color: rgba(108, 97, 88, 1);
+    }
+    .header {
+        text-align: center;
+        color: #004b3d;
+        font-weight: 300;
+        letter-spacing: 0.25px;
+        background: transparent;
+        border-bottom: none;
+        font-family: 'AdobeGaramondProRegular';
+        padding: 5px 0px 0px 0px;
+        display: block;
+        font-size: 28px;
+        position: relative;
+    }
+    img {
+        display: flex;
+        height: auto;
+        margin: 1px auto;
+        max-width: 20%;
+        vertical-align: middle;
+    }
+    .linkparts {
+        background-color: white;
+        text-align: center;
+        height: max-content;
+        width: 100%;
+        font-size: 13px;
+        line-height: 1;
+        font-family: 'ProximaNova-Regular';
+        margin-top: 3px;
+        margin-right: 1rem;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+    .inputFields {
+        margin: 0px 0px 0px 2px
+    }
+    .account {
+        text-align: left;
+        display: block;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #6c6158;
+        margin-top: 0.5rem;
+        line-height: 1.3;
+        letter-spacing: 1.8px;
+        font-family: 'ProximaNova-Regular';
+        font-family: 'ProximaNova-Regular';
+    }
+    .container {
+        margin: 10px 0px 0 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .leftAlign {
+        margin: 5px;
+        max-width: max-content;
+        text-align: justify;
+        width: 100%;
+    }
+    .text {
+        font-family: 'ProximaNova-Regular';
+        font-weight: 600;
+        color: #103b62;
+        font-size: 12px;
+    }
+    .text1 {
+        font-size: 18px;
+        color: #004b3d;
+        font-weight: 300;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem;
+        font-family: 'AdobeGaramondProRegular';
+        text-transform: capitalize;
+        letter-spacing: 0.25px;
+        line-height: 1.18571em;
+    }
+    .text2 {
+        font-size: 1rem;
+        font-family: 'ProximaNova-Regular';
+        line-height: 1.3rem;
+        padding-bottom: 10px;
+        width: 100%;
+        text-align: left;
+        margin: 1rem 0rem;
+    }
+    .captcha {
+        margin: 2rem 2px;
+        height: 3rem;
+        width: 100%;
+        transform: scale(0.84);
+        transform-origin: 0px 0px;
+    }
+    .orderButton {
+        margin: 4px;
+        width: 95%;
+        height: 50px;
+        font-family: 'ProximaNova-Regular';
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: capitalize;
+        line-height: 3rem;
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(24, 63, 50, 1);
+        border: 2px solid rgba(24, 63, 50, 1);
+        display: block;
+    }
+    .orderButton:hover {
+        color: rgba(24, 63, 50, 1);
+        background-color: #fff;
+        border: 2px solid rgba(24, 63, 50, 1);
+    }
+    .margin-b-10 {
+        margin-bottom: 10px;
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .font-weight-100 {
+        font-weight: 100;
+    }
+    p {
+        margin-bottom: 2.5rem;
+    }
+    lightning-formatted-url {
+        color: rgba(108, 97, 88, 1);
+        line-height: inherit;
+        text-decoration: underline;
+    }
+    lightning-formatted-url :hover {
+        color: rgba(180, 75, 40, .8);
+        line-height: inherit;
+        text-decoration: underline;
+    }
+    span {
+        text-align: center;
+    }
+    .small-8 {
+        width: 100%;
+    }
+    .siteforceStarterBody .cCenterPanel {
+        outline: none;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+    }
+    .mainContent {
+        background-color: whitesmoke;
+    }
+    .input-field {
+        font-size: 16px;
+        /* vertical-align: middle; */
+        display: block;
+        position: relative;
+        margin: 1rem 0px 0px 0rem;
+        width: 100%;
+        padding: 5px;
+        text-transform: none;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-align: left;
+        line-height: 1.35;
+        font-family: 'ProximaNova-Regular';
+        color: rgba(108, 97, 88, 1);
+    }
+    .input-text {
+        width: 100%;
+        border-radius: 4px;
+        position: relative;
+        padding: 5px;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width: 768px) {
+    .small-8 {
+        width: 83.66667%;
+    }
+    .orderButton {
+        margin: 0px 0px 0rem 0px;
+        width: 50%;
+        height: 50px;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: uppercase;
+        line-height: 3rem;
+        background-color: rgba(24, 63, 50, 1);
+        border: 2px solid rgba(24, 63, 50, 1);
+        color: #ffff;
+        display: block;
+        cursor: pointer;
+    }
+    .leftAlign {
+        float: left;
+        clear: left;
+        width: 50%;
+        margin: 40px 0px 0px 4rem;
+        max-width: max-content;
+        text-align: justify;
+    }
+    .inputFields {
+        margin: 0px 5rem;
+    }
+    .input-field {
+        font-size: 16px;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 1rem 0rem 0rem 0rem;
+        width: 100%;
+        text-transform: none;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-align: left;
+        line-height: 1.35;
+        font-family: 'ProximaNova-Regular';
+        color: rgba(108, 97, 88, 1);
+    }
+    .input-text {
+        width: 50%;
+        border-radius: 4px;
+        position: relative;
+        padding: 0rem;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width: 425px) {
+    .mainContent {
+        position: relative;
+        padding-bottom: 2em;
+        margin-bottom: 2rem;
+        max-width: none;
+    }
+    .OSL {
+        display: block;
+        text-align: center;
+        line-height: inherit;
+        font-size: 1rem;
+        font-style: normal;
+        font-family: 'ProximaNova-Regular';
+        background-color: #fff;
+        text-decoration: underline;
+        color: rgba(108, 97, 88, 1);
+    }
+    .header {
+        text-align: center;
+        color: #004b3d;
+        font-weight: 300;
+        letter-spacing: 0.25px;
+        background: transparent;
+        border-bottom: none;
+        font-family: 'AdobeGaramondProRegular';
+        padding: 5px 0px 0px 0px;
+        display: block;
+        font-size: 28px;
+        position: relative;
+    }
+    img {
+        display: flex;
+        height: auto;
+        margin: 1px auto;
+        max-width: 20%;
+        vertical-align: middle;
+    }
+    .linkparts {
+        background-color: white;
+        text-align: center;
+        height: max-content;
+        width: 100%;
+        font-size: 13px;
+        line-height: 1;
+        font-family: 'ProximaNova-Regular';
+        margin-top: 3px;
+        margin-right: 1rem;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+    .inputFields {
+        margin: 0px 0px 0px 2px
+    }
+    .account {
+        text-align: left;
+        display: block;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #6c6158;
+        margin-top: 0.5rem;
+        line-height: 1.3;
+        letter-spacing: 1.8px;
+        font-family: 'ProximaNova-Regular';
+        font-family: 'ProximaNova-Regular';
+    }
+    .container {
+        margin: 10px 0px 0 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .leftAlign {
+        margin: 5px;
+        max-width: max-content;
+        text-align: justify;
+        width: 100%;
+    }
+    .text {
+        font-family: 'ProximaNova-Regular';
+        font-weight: 600;
+        color: #103b62;
+        font-size: 12px;
+    }
+    .text1 {
+        font-size: 18px;
+        color: #004b3d;
+        font-weight: 300;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem;
+        font-family: 'AdobeGaramondProRegular';
+        text-transform: capitalize;
+        letter-spacing: 0.25px;
+        line-height: 1.18571em;
+    }
+    .text2 {
+        font-size: 1rem;
+        font-family: 'ProximaNova-Regular';
+        line-height: 1.3rem;
+        padding-bottom: 10px;
+        width: 100%;
+        text-align: left;
+        margin: 1rem 0rem;
+    }
+    .captcha {
+        margin: 2rem 5px;
+        height: 4rem;
+        width: 100%;
+        /* transform: scale(0.84); */
+        transform-origin: 0px 0px;
+    }
+    .orderButton {
+        margin: 4px;
+        width: 95%;
+        height: 50px;
+        font-family: 'ProximaNova-Regular';
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: capitalize;
+        line-height: 3rem;
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(24, 63, 50, 1);
+        border: 2px solid rgba(24, 63, 50, 1);
+        display: block;
+    }
+    .orderButton:hover {
+        color: rgba(24, 63, 50, 1);
+        background-color: #fff;
+        border: 2px solid rgba(24, 63, 50, 1);
+    }
+    .margin-b-10 {
+        margin-bottom: 10px;
+    }
+    .uppercase {
+        text-transform: uppercase;
+    }
+    .font-weight-100 {
+        font-weight: 100;
+    }
+    p {
+        margin-bottom: 2.5rem;
+    }
+    lightning-formatted-url {
+        color: rgba(108, 97, 88, 1);
+        line-height: inherit;
+        text-decoration: underline;
+    }
+    lightning-formatted-url :hover {
+        color: rgba(180, 75, 40, .8);
+        line-height: inherit;
+        text-decoration: underline;
+    }
+    span {
+        text-align: center;
+    }
+    .small-8 {
+        width: 100%;
+    }
+    .siteforceStarterBody .cCenterPanel {
+        outline: none;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+    }
+    .mainContent {
+        background-color: whitesmoke;
+    }
+    .input-field {
+        font-size: 16px;
+        /* vertical-align: middle; */
+        display: block;
+        position: relative;
+        margin: 1rem 0px 0px 0rem;
+        width: 100%;
+        padding: 5px;
+        text-transform: none;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-align: left;
+        line-height: 1.35;
+        font-family: 'ProximaNova-Regular';
+        color: rgba(108, 97, 88, 1);
+    }
+    .input-text {
+        width: 100%;
+        border-radius: 4px;
+        position: relative;
+        padding: 5px;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}

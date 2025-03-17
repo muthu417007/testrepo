@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-grid slds-grid slds-gutters_direct">
+        <div class="slds-col slds-grid">
+            <div class="slds-col">
+                <template for:each={skus} for:item="sku">
+                    <div key={sku}>
+                        <c-bwc_product-compare-selector
+                            sku={sku}
+                            oncompare={handleCompare}
+                            onuncompare={handleUnCompare}
+                            oncomparenow={handleCompareNow}
+                        >
+                        </c-bwc_product-compare-selector>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="slds-col">
+            Selected SKUs: ({skuCount})
+            <ul>
+                <template for:each={selectedSkus} for:item="sku">
+                    <li key={sku}>{sku}</li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

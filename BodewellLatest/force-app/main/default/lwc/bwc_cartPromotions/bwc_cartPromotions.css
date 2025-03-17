@@ -1,0 +1,265 @@
+/* Common styles */
+.promo {
+  --slds-c-card-color-background: white;
+}
+
+.promotions .input {
+  font-weight: bold;
+  --slds-c-input-color-background: white;
+  padding-right: 10px;
+
+}
+
+.promotions {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 25px;
+}
+
+.promotions .message {
+  padding-top: 10px;
+  display: block;
+}
+
+.box{
+   background: #D9EABB 0% 0% no-repeat padding-box;
+   /* c7f7b4 */
+  padding-top: 10px;
+  padding-left:10px;
+  padding-bottom:10px;
+  display: flex;
+  margin-right: 50px;
+  position: relative;
+}
+
+.closeIcon {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px;
+  color: white;
+  --sds-c-icon-color-background: #245b83;
+}
+
+.emsg {
+  color: #CB1640;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.smsg {
+  color: #12212E;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right:10px;
+  padding-bottom: 10px;
+  letter-spacing: 0.57px;
+  
+  /* font: normal normal medium 19px/28px Neue Haas Grotesk Display Pro;
+  background: #6ABF4B 0% 0% no-repeat padding-box;
+opacity: 0.2;
+top: 695px;
+left: 343px;
+width: 355px;
+height: 48px; */
+}
+
+.successIcon {
+
+  --slds-c-icon-color-background: #6ABF4B;
+  /* padding-left: 20px; */
+  padding:0.4rem;
+
+}
+
+.couponButton {
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 767px) {
+  /* .promo {
+    padding: 20px;
+  } */
+  
+  .promotions {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .input {
+    width: 100%;
+    /* margin-bottom: 10px; */
+  }
+  
+  .message {
+    padding-left: 20px;
+  }
+  
+  .emsg,
+  .smsg {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .couponButton {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .applyCoupon {
+    width: 100%;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* .promo {
+    padding: 50px;
+  } */
+  
+  .promotions {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .input {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    padding-left: 20px;
+  }
+  
+  /* .emsg,
+  .smsg {
+    padding-left: 40px;
+  }
+   */
+  .couponButton {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .applyCoupon {
+    width: 150px;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+  /* .promo {
+    padding: 20px;
+  }
+   */
+  .promotions {
+    justify-content: space-between;
+  }
+  
+  .input {
+    width: 80%;
+  }
+  
+  .message {
+    padding-left: 20px;
+  }
+  
+  .box{
+    padding-top: 3px;
+    height:48px;
+    width:315px;
+  }
+  .successIcon{
+    height:30px;
+    width: 30px;
+    margin-top: 5px;
+  }
+  .smsg {
+    padding-left: 5px;
+    margin-top: 7px;
+  }
+
+  .emsg {
+    padding-left: 10px;
+  }
+  
+  .couponButton {
+    justify-content: flex-start;
+    /* margin-top: 5px; */
+  }
+
+  .applyCoupon {
+    width: 120px;
+    
+  }
+}
+
+/*.promo{
+    --slds-c-card-color-background:white;
+   }
+.promotions .input {
+  font-weight: bold;
+  --slds-c-input-color-background:white;
+  padding-right: 10px;
+}
+
+.promotions{
+
+     display: flex;
+     padding-left:40px;
+     padding-right:25px;
+}
+
+.promotions .message{
+
+  padding-top: 10px;
+  display: block;
+}
+
+.emsg{
+    color: #CB1640;
+    font-weight: bold;
+    padding-left: 40px;
+    padding-bottom: 10px;
+
+}
+
+.smsg{
+ 
+  color: #245B83;
+  font-weight: bold;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+
+.couponButton{
+   padding-left: 10px;
+   padding-top: 20px;
+   padding-right:20px;
+}
+.applyCoupon {
+  background: #245b83 0% 0% no-repeat padding-box;
+  border-radius: 25px;
+  opacity: 1;
+  width: 125px;
+  height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-medium) 15px/15.97px
+    var(--unnamed-font-family-neue-haas-grotesk-display-pro);
+   text-align: center;
+  letter-spacing: 0.75px;
+  color: #f7f1e7;
+  text-transform: uppercase;
+  opacity: 1;
+} */

@@ -1,0 +1,54 @@
+.location-tile-area .location{
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #dfd0b0;
+    width: 120%;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #145b95;
+}
+.location-tile-area .call-local {
+    padding-top: 1rem;
+    margin-left: 10px;
+}
+.location-tile-area .test-call-local{
+    font-size: 16px;
+    font-weight: 500;
+}
+.call-page-link.phone{
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.5rem 0rem;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    margin-top: 2px;
+    color: #000 !important;
+}
+.location-tile-area .icon-section{
+   width:30px;
+}
+.location-tile-area .details-loc{
+   display:flex;
+   flex-direction: row;
+}
+.location-flex-adjust{
+    flex: 0 0 360px;
+    margin-bottom:10px;
+}
+@media (max-width: 992px){
+    .call-page-link.phone{
+        background-color: #12212E;
+        border: 2px solid #12212E;
+        color: #fff !important;
+        border-radius: 25px;
+        font-size: 15px !important;
+        font-weight: 600;
+        letter-spacing: 1.25px;
+        line-height: 16px;
+        padding: 14px 25px 14px 25px;                     
+    }
+    .location-phone-number {
+        margin: 30px 0;
+     }
+
+}

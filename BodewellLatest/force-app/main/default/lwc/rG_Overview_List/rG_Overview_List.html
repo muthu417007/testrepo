@@ -1,0 +1,10 @@
+<template>
+   <div class="about-vertical-menu list-group fixed-left-content">
+      <span class="menu-sub-header">{heading}</span>
+         <template iterator:it={overviewheadingslist}>
+            <span key={it.value.id} class="side-panel">
+               <a href={it.value.url}>{it.value.value}</a>
+            </span>
+         </template>
+   </div>
+</template>

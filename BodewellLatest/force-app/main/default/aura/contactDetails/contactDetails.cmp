@@ -1,0 +1,11 @@
+<aura:component controller="SearchController" implements="flexipage:availableForAllPageTypes" access="global">
+    <ltng:require styles="{!$Resource.multilineToastCSS}" />
+    <aura:attribute name="contactId" type="String" />
+    Contact <br/>
+    Service locations<br/>
+    Assets<br/>
+    Cases<br/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:button label="Create Case" onclick="{!c.createCase}"/>
+{!v.contactId}
+</aura:component>

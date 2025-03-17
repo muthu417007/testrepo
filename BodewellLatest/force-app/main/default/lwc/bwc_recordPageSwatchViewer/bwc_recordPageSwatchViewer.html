@@ -1,0 +1,29 @@
+<template>
+    <template lwc:if={hasSwatchConfig}>
+        <div class="swatch-selector">
+            <h1>Colors: {selectedColorValue}</h1>
+            <c-bwc_swatch-selector
+                items={colorOptions}
+                onchange={handleChange}
+                num-swatches={numSwatches}
+                value={selectedColorValue}
+            >
+            </c-bwc_swatch-selector>
+        </div>
+    </template>
+    <template lwc:if={hasCustomHardwareConfig}>
+        <div class="hardware-selector">
+            <h1>Custom Hardware: {selectedHardwareValue}</h1>
+            <c-bwc_swatch-selector
+                items={customHardwareOptions}
+                onchange={handleHardwareChange}
+                num-swatches={numSwatches}
+                value={selectedHardware}
+            >
+            </c-bwc_swatch-selector>
+        </div>
+    </template>
+    <template lwc:if={hasNeitherSwatchConfigNorCustomHardware}>
+        <h1>No "Swatch Configuration" or "Custom Hardware Config" found on this product.</h1>
+    </template>
+</template>

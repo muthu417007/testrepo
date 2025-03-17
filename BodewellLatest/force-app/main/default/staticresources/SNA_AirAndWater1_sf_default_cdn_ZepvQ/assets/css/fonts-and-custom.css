@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url(../resource/gea_resources/gea_resources/Gotham-Medium.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url(../resource/gea_resources/gea_resources/Gotham-Book.otf) format('opentype');
+}
+
+.slds-m-top_x-large, .slds-m-top--x-large {
+    margin-top: -15px;
+}
+
+.cCenterPanel {
+   padding: 0; 
+}
+.comm-layout-column {
+    padding: 0;
+}
+.siteforceStarterBody .cCenterPanel {
+    outline: none !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+:root { --dxp-c-section-columns-max-width: 1170px; }

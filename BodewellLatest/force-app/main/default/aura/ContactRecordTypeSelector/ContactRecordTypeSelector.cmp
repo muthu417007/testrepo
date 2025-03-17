@@ -1,0 +1,23 @@
+<aura:component controller="RecordTtypeSelector" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,lightning:actionOverride,lightning:hasPageReference" access="global">
+     
+    <!--Declare Attributes-->
+    <aura:attribute name="recordTypeMap" type="Map"/>
+    <aura:attribute name="selectedRecordTypeId" type="String"/>
+    <aura:attribute name="OpprecordId" type="Id" />
+    <!--Declare Handler-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+     
+    <!--Component Start-->
+    <div class="slds-m-around--xx-large">
+        <div class="container-fluid">
+            <lightning:radioGroup name="radioGroup"
+                                  label="Select Record Type"
+                                  required="true"
+                                  options="{!v.recordTypeMap}"
+                                  value="{!v.selectedRecordTypeId}"
+                                  type="radio"/>
+        </div>
+        <br/>
+        <lightning:button variant="brand" label="Submit" onclick="{!c.handleCreateRecord}" />  
+    </div>
+</aura:component>

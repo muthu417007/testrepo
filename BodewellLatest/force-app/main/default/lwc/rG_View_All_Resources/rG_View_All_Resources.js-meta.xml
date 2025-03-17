@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>RG View All Resources</masterLabel>
+    <description>View All Resources</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="String" name="sectionheading" label="Section Heading"/>
+            <property type="String" name="subheading" label="Sub Heading"/>
+        </targetConfig>
+   </targetConfigs>
+</LightningComponentBundle>

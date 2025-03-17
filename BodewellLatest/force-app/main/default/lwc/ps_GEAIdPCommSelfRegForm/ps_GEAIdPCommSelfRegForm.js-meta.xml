@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Customer IdP - Registration Form</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="brand" label="Brand" type="String" default="GEA" datasource="GEA,Bodewell" description="Brand"/>
+            <property name="pageTitleLabel" label="Page Title Label" type="String" default="Create Account" description="Form Title"/>
+            <property name="emailLabel" label="Email Label" type="String" default="Email" description="email field Label"/>
+            <property name="emailValidationError" label="Email Validation Error" type="String" default="Enter a valid email address ex: user@domain.com." description="Error that appears when an invalid email is provided"/>
+            <property name="firstNameLabel" label="First Name Label" type="String" description="firstName field Label"/>
+            <property name="firstNameValidationError" label="First Name Validation Error" type="String" description="Error that appears when the first name field is not provided"/>
+            <property name="lastNameLabel" label="Last Name Label" type="String" description="lastName Label"/>
+            <property name="lastNameValidationError" label="Last Name Validation Error" type="String" description="Error that appears when the last name field is not provided"/>
+            <property name="phoneLabel" label="Phone Label" type="String" description="phone Label"/>
+            <property name="phoneValidationError" label="Phone Validation Error" type="String" description="Error that appears when the phone field is not valid"/>
+            <property name="passwordLabel" label="Password Label" type="String" description="password Label"/>
+            <property name="passwordValidationError" label="Password Validation Error" type="String" description="Error that appears when the password field is not provided"/>
+            <property name="passwordStrengthLabel" label="Password Strength Label" type="String" description="This label shows the password strength requirements" default="Your Password must include at least: 8 characters, 1 letter, and 1 number"/>
+            <property name="passwordConfirmationLabel" label="Password Confirmation Label" type="String" description="passwordConfirmation Label"/>
+            <property name="passwordConfirmationIsRequiredValidationError" label="Password Confirmation Validation Error" type="String" description="Error that appears when the password confirmation field is not provided"/>
+            <property name="passwordsDontMathValidationError" label="Password Don't Match Validation Error" type="String" description="Error that appears when the password and the password confirmation do not match"/>
+            <property name="privacyPolicyLabel" label="Privacy Policy Text" type="String" description="privacy policy Label"/>
+            <property name="privacyPolicyURL" label="Privacy Policy Link" type="String" description="privacy policy URL"/>
+            <property name="privacyPolicyURLBodewell" label="Privacy Policy Link Bodewell" type="String" description="privacy policy URL"/>
+            <property name="termsAndConditionsLabel" label="Terms And Conditions Text" type="String" description="terms and conditions Label"/>
+            <property name="termsAndConditionsURL" label="Terms And Conditions Link" type="String" description="terms and conditions URL"/>
+            <property name="termsAndConditionsURLBodewell" label="Terms And Conditions Link Bodewell" type="String" description="terms and conditions URL"/>
+            <property name="submitButtonLabel" label="Submit Button Label" type="String" description="submit button Label"/>
+            <property name="submitButtonLabelOnLoading" label="Submit Button Loading" type="String" description="submit button Label when creating account"/>
+            <property name="signInLabel" default="Sign in here" type="String" description="sign in Label"/>
+            <property name="signInText" default="Have an account already?" type="String" description="sign in text"/>
+            <property name="generalErrorMessage" label="General Error Message" default="Your request cannot be processed at this time. The site administrator has been alerted." type="String" description="General Error Message"/>
+            <property name="phoneLabelBodewell" label="Phone Label Bodewell" type="String" description="Use this in the future to login with a passcode"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,352 @@
+<apex:page controller="SearchControllerVF" lightningStylesheets="true"  showHeader="true" action="{!redirectSearch}" docType="html-5.0">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <div class="slds-scope">
+        <apex:actionstatus id="spinnerStatus">
+            <apex:facet name="start">
+                <div class="slds-spinner_container">
+                    <div id="mySpinner" role="status" class="slds-spinner slds-spinner_medium">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus> 
+        
+        <apex:form >
+            <apex:pageBlock id="Search" >
+                <table>
+                    <!--<tr>
+<td style="width:75px">First Name</td>
+<td style="width:275px"><apex:inputText value="{!firstName}" /></td>
+<td>Last Name </td>
+<td><apex:inputText value="{!lastName}" onkeypress="return noenter(event);" /></td>
+</tr>-->
+                    <tr>
+                        <td style="width:55px">Phone </td>
+                        <td><apex:inputText value="{!phone}" onkeypress="return noenter(event);" /></td>
+                        <td style="width:50px">&nbsp; &nbsp;Email </td>
+                        <td><apex:inputText value="{!email}" onkeypress="return noenter(event);" style="width:375px"/></td>
+                    </tr>
+                    <!-- <tr>
+<td>Street </td>
+<td><apex:inputText value="{!street}" onkeypress="return noenter(event);" /></td>
+<td>Zip </td>
+<td><apex:inputText value="{!zip}" onkeypress="return noenter(event);" /></td>
+</tr>-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                </table>
+                <apex:actionFunction name="doSearch" action="{!search}" status="spinnerStatus" reRender="con,ac2,createContentBlock,Search"  oncomplete="registerListeners()" />
+                
+                
+                <table>
+                    <tr>
+                        <td style="width:150px"><apex:commandButton action="{!search}" value="Search" status="spinnerStatus" reRender="con,ac2,createContentBlock,Search,ac3,ace" styleclass="slds-button slds-button_brand" oncomplete="registerListeners()" />
+                            <!--<apex:actionSupport event="onclick" reRender="ace,ac3"/>
+</apex:commandButton>-->
+                        </td>
+                        <td><apex:commandButton action="{!clearSearch}" value="Clear Search" status="spinnerStatus" styleclass="slds-button slds-button_brand clearSearch" /></td>
+                    </tr>
+                    
+                </table>    
+                
+                
+                
+                
+                <br/>
+            </apex:pageBlock>
+            
+            <div style="overflow: auto;  height: 150px;">
+                <apex:pageBlock title="Contacts" id="con" >
+                    <apex:pageBlockTable value="{!contacts}" var="c">
+                        <apex:column headerValue="Name" style="width:75px" html-class="closelink">
+                            <a data-uid="{!c.Id}" class="closelink" style="cursor: pointer;">{!c.name}</a>
+                            <!--<apex:outputText value="{!c.CaseNumber}"/>-->
+                        </apex:column>
+                        <apex:column headerValue="Phone" style="width:75px">
+                            <apex:outputField value="{!c.phone}" />  
+                        </apex:column>
+                        <apex:column headerValue="Email" style="width:75px">
+                            <apex:outputField value="{!c.email}" />  
+                        </apex:column>
+                        <apex:column headerValue="" style="width:175px">
+                            <!--<apex:outputLink value="/apex/contactDashboard?id={!c.Id}" >Contact Dashboard</apex:outputLink>-->
+                            <a data-href="/one/one.app#/alohaRedirect/apex/contactDashboard?id={!c.Id}" class="closelink" style="cursor: pointer;">Contact Dashboard</a>
+                            <!-- <apex:outputLink value="/apex/contactDashboard?id={!c.Id}" onclick="closeTab();">Contact Dashboard</apex:outputLink>-->
+                            <!--<apex:outputText value="{!c.CaseNumber}"/>-->
+                        </apex:column>
+                        
+                        
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </div>
+            <br/>
+            <!--Archived Contacts
+<div style="overflow: auto;  height: 250px;">
+<apex:pageMessages />
+<apex:pageBlock title="Archived Contacts" id="ac" >
+<apex:pageMessages ></apex:pageMessages>
+<apex:pageBlockTable value="{!archivedContacts}" var="c">
+<apex:column headerValue="Name" style="width:75px">
+<apex:outputField value="{!c.S_Name_Indexed__c}" />  
+</apex:column>
+<apex:column headerValue="Phone" style="width:75px">
+<apex:outputField value="{!c.S_Phone_Indexed__c}" />  
+</apex:column>
+<apex:column headerValue="Email" style="width:75px">
+<apex:outputField value="{!c.S_Email__c}" />  
+</apex:column>
+<apex:column headerValue="" style="width:175px">
+<apex:commandLink value="Restore" action="{!restoreContact}" reRender="ac">
+<apex:param name="index1" value="{!c.S_Name_Indexed__c}" assignTo="{!index1}"/>
+<apex:param name="index2" value="{!c.S_Phone_Indexed__c}" assignTo="{!index2}"/>
+<apex:param name="index3" value="{!c.S_Id_Indexed__c}" assignTo="{!index3}"/>
+
+</apex:commandLink>
+-->          
+            <!-- <apex:outputLink value="/apex/contactDashboard?id={!c.Id}" onclick="closeTab();">Contact Dashboard</apex:outputLink>-->
+            <!--<apex:outputText value="{!c.CaseNumber}"/>--><!--
+</apex:column>
+
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+</div>
+-->
+            <!--<apex:outputPanel rendered="{!showArchived}">-->
+            <div style="overflow: auto;  height: 150px;">
+                <apex:pageBlock title="Archived Contacts" id="ac2" >
+                    <apex:pageMessages ></apex:pageMessages>
+                    <apex:pageBlockTable value="{!searchResults.Data.HouseHoldByPhone}" var="c">
+                        <apex:column headerValue="First Name" style="width:75px">
+                            <apex:outputText value="{!c.FirstName}" />  
+                        </apex:column>
+                        <apex:column headerValue="Last Name" style="width:75px">
+                            <apex:outputText value="{!c.LastName}" />  
+                        </apex:column>
+                        <apex:column headerValue="P Level" style="width:75px">
+                            <apex:outputText value="{!c.plevel}" />  
+                        </apex:column>
+                        <apex:column headerValue="Person ID" style="width:75px">
+                            <apex:outputText value="{!c.PersonID}" />  
+                        </apex:column>
+                        <apex:column headerValue="" style="width:175px" html-class="closelink2">
+                            
+                            
+                            <apex:commandLink value="Restore" action="{!restoreContact}" reRender="ac2"   onclick="closeTab()">
+                                <apex:param name="index1" value="{!c.PersonID}" assignTo="{!index1}"/>
+                                <!--<apex:param name="index2" value="{!c.S_Phone_Indexed__c}" assignTo="{!index2}"/>
+<apex:param name="index3" value="{!c.S_Id_Indexed__c}" assignTo="{!index3}"/>-->
+                                
+                            </apex:commandLink>  
+                        </apex:column>
+                        
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </div>
+            <!--</apex:outputPanel>-->
+            <apex:outputPanel id="ace">
+                <!--<div style="overflow: auto;  height: 150px;">-->
+                <apex:pageBlock title="Archived Contacts Email" id="ac3" rendered="{!showArchivedEmail}">
+                    <div style="overflow: auto;  height: 150px;">
+                        <apex:pageMessages ></apex:pageMessages>
+                        <apex:pageBlockTable value="{!searchResultsEmail.Data.HouseHoldByEmail}" var="c" >
+                            <apex:column headerValue="First Name" style="width:75px">
+                                <apex:outputText value="{!c.FirstName}" />  
+                            </apex:column>
+                            <apex:column headerValue="Last Name" style="width:75px">
+                                <apex:outputText value="{!c.LastName}" />  
+                            </apex:column>
+                            <apex:column headerValue="P Level" style="width:75px">
+                                <apex:outputText value="{!c.plevel}" />  
+                            </apex:column>
+                            <apex:column headerValue="Person ID" style="width:75px">
+                                <apex:outputText value="{!c.PersonID}" />  
+                            </apex:column>
+                            <apex:column headerValue="" style="width:175px" html-class="closelink2">
+                                <apex:commandLink value="Restore" action="{!restoreContactEmail}" reRender="ac2"   onclick="closeTab()">
+                                    <apex:param name="index1" value="{!c.PersonID}" assignTo="{!index1}"/>
+                                    <!--<apex:param name="index2" value="{!c.S_Phone_Indexed__c}" assignTo="{!index2}"/>
+<apex:param name="index3" value="{!c.S_Id_Indexed__c}" assignTo="{!index3}"/>-->
+                                    
+                                </apex:commandLink>  
+                            </apex:column>
+                            
+                        </apex:pageBlockTable>
+                    </div>
+                </apex:pageBlock>
+                <!--</div>-->
+            </apex:outputPanel>
+            <apex:pageMessages />
+            
+            
+            <!--<apex:pageBlock title="Create Contact"  id="createContentBlock" rendered="{!showCreateContact}">-->
+            <apex:pageBlock title="Create Contact"  id="createContentBlock" > 
+                <table>
+                    <tr>
+                        <td style="width:75px" colSpan="2">Unknown Address &nbsp;
+                            <!-- <apex:inputCheckBox value="{!createUnknownAddress}" label="Unknown Address"/></td>-->
+                            <apex:inputCheckbox value="{!createUnknownAddress}" label="Unknown Address">
+                                <apex:actionSupport event="onchange" reRender="createContentBlock" action="{!setUnknown}"/>
+                            </apex:inputCheckbox></td>
+                    </tr>
+                    <tr>
+                        <td style="width:75px">First Name</td>
+                        <td style="width:275px"><apex:inputText value="{!firstName}" /></td>
+                        <td>Last Name </td>
+                        <td><apex:inputText value="{!lastName}" onkeypress="return noenter(event);" /></td>
+                    </tr>
+                    <tr>
+                        <td>Phone </td>
+                        <td><apex:outputText value="{!phone}"  /></td>
+                        <td>Email </td>
+                        <td><apex:outputText value="{!email}"  /></td>
+                    </tr>
+                    <tr>
+                        <td>Street </td>
+                        <td><apex:inputText value="{!street}" onkeypress="return noenter(event);" /></td>
+                        <td>Country</td>
+                        <td><apex:selectList value="{!selectedCountry}" multiselect="false" size="1">
+                            <apex:selectOption itemValue="United States" itemLabel="United States"/>
+                            <apex:selectOption itemValue="Canada" itemLabel="Canada"/>
+                            <apex:actionSupport event="onchange" reRender="createContentBlock" action="{!setCountry}"/>
+                            </apex:selectList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><apex:outputText value="City" rendered="{!selectCountry}" /></td>  
+                        <td><apex:inputtext value="{!city}" id="city" rendered="{!selectCountry}"/></td>
+                        <td><apex:outputText value="State" rendered="{!selectCountry}" /></td>
+                        <td><apex:inputtext value="{!state}" id="state" rendered="{!selectCountry}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Zip </td>
+                        <td><apex:inputText value="{!zip}" onkeypress="return noenter(event); " /></td>
+                    </tr>
+                    <br></br>
+                <tr>
+                    <td colSpan="2">Contact Type &nbsp;
+                        <apex:inputField value="{!newContact.Contact_Type__c}" onkeypress="return noenter(event);" /></td>
+                </tr>
+                
+            </table>
+            
+            <br />
+            
+            <!-- 
+<apex commandLink 
+value="Create Contact" 
+action="{ createContact}" 
+reRender="ac2"
+onclick="closeTab()"
+styleclass="slds-button slds-button_brand" >
+</apex commandLink>
+-->
+            
+            <!-- apex commandLink action="{ createContact}"  value="Create Contact" styleclass="slds-button slds-button_brand" reRender="ac2" -->
+            
+            
+            <apex:commandLink action="{!createContact}" value="Create Contact" 
+                              styleclass="slds-button slds-button_brand" reRender="ac2"   onclick="closeTab()" />			
+            <!--
+<button
+type="button"
+class="slds-button slds-button_neutral"
+onclick="closeClear()">
+Clear and Close
+</button>
+-->
+        </apex:pageBlock>
+    </apex:form>
+</div>
+
+<apex:includeScript value="/support/console/46.0/integration.js"/>
+
+<script type="text/javascript">
+
+const clearSearch = () => document.querySelector('.clearSearch').click()
+
+function closeClear(event){
+    
+    if(event){
+        event.stopPropagation()
+    }
+    
+    closeTab()
+    document.location.reload( true )
+}
+
+function registerListeners(){
+    
+    const links = document.querySelectorAll('.closelink')
+    
+    console.dir( links )
+    links.forEach(link => {
+        link.onclick = () => {
+        
+        const { uid, href } = link.dataset
+        
+        closeTab()
+        
+        if(uid){
+        console.log('try going to '+uid)
+        top.location.href = `${location.protocol}//${location.host}/${uid}`
+    }
+        else if(href){
+        top.location.href = href
+    }
+        
+    }
+    })
+    } 
+        
+        function closeTab() {
+        
+        if (sforce.console.isInConsole()) { // in console
+        sforce.console.setCustomConsoleComponentVisible(false)
+        
+    }
+        // not in console
+        sforce.console.getEnclosingTabId(closeSubtab);
+    }
+        
+        function closeSubtab(result) { //Now that we have the tab ID, we can close it
+        sforce.console.closeTab( result.id );   
+    }
+        
+        function noenter(ev)  {
+        if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+        doSearch();
+        return false;
+    } else {
+        return true;
+    }
+    }
+        </script>
+
+
+</apex:page>
+<!-- 
+
+function closeTab2() {    
+//alert('close');
+const links2 = document.querySelectorAll('.closelink2')
+
+links2.forEach(link2 => {
+link2.onclick = () => {
+closeTab()
+top.location.href = link2.dataset.href
+}
+})
+}
+
+
+<apex commandButton action="{ clearSearch}"  value="Clear Search" status="spinnerStatus" styleclass="slds-button slds-button_brand clearSearch" />
+
+-->

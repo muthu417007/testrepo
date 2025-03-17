@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>MYA_GuestConsentVerification_test</testClassName>
+    <testClassName>Mya_updateEmailApiHelper_Test</testClassName>
+    <testClassName>PS_BigCommerceJWTGeneratorCtrlTest</testClassName>
+    <testClassName>PS_BigCommerceUpdateUserInvocableTest</testClassName>
+    <testClassName>PS_RemoteAdminProfileWebServiceAPITest</testClassName>
+    <testClassName>PS_RemoteAdminRegisterWebServiceTest</testClassName>
+    <testClassName>PS_SSOInitiationControllerTest</testClassName>
+    <testClassName>PS_UserProfileWebServiceAPITest</testClassName>
+    <testClassName>PS_WebServiceUserInfoHelper_test</testClassName>
+</ApexTestSuite>

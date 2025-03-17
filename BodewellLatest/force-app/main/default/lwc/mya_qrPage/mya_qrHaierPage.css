@@ -1,0 +1,366 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.product-register {
+    background-color: #eff0f0;
+}
+
+.center {
+    text-align: center;
+    margin: 0rem auto;
+    width: 1170px;
+    border-top: 20px solid #eff0f0;
+    padding: 2rem 4rem 3rem 4rem;
+    background-color: white;
+}
+
+.size46 {
+    margin-left: -1rem;
+}
+
+.header {
+    margin-top: 10px;
+    margin-bottom: 45px;
+    margin-left: 2%;
+    width: 90%;
+    font-weight: bold;
+    font-family: "Gotham SSm A", "Gotham SSm B", "Gotham Bold", Helvetica, Arial, sans-serif;
+    line-height: 1.3;
+    text-align: left;
+    font-size: 1.875rem;
+    color: #151515;
+}
+
+.a2 {
+    color: #092c74;
+}
+
+.btn {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.value-test {
+    font-weight: 100;
+    font-size: inherit;
+    color: #151515;
+}
+
+.a1 {
+    color: white;
+    background-color: #005aaa;
+    padding: 15px 30px;
+    font-family: "Gotham SSm A", "Gotham SSm B", "Gotham Bold", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 16px;
+    border-radius: 25px;
+}
+
+.a1:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+h5 {
+    font-size: 18px;
+    color: #092c74;
+    margin-bottom: 5px;
+}
+
+.wifiSec {
+    padding: 20px;
+    width: 1170px;
+    background-color: #fff;
+    margin: 10px auto;
+    height: auto;
+}
+
+.wifiSection {
+    width: 3%;
+    height: 30px;
+    display: block;
+    margin: 10px auto;
+    position: relative;
+}
+
+.a2:hover {
+    text-decoration: underline;
+    color: #32beff;
+}
+
+.im {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+.GEASec {
+    color: #151515;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    line-height: 1.5em;
+}
+
+.icons {
+    fill: #092c74;
+    color: #092c74;
+    margin-right: 8px;
+    --lwc-colorTextIconDefault: #092c74;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #092c74;
+    height: 40px;
+    width: 40px;
+}
+
+h6 {
+    letter-spacing: 0.5px;
+    padding-left: 5%;
+    line-height: 1.5em;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    margin: 11px 0 11px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.status-image2 {
+    width: 18%;
+    height: 2%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: block;
+    margin-left: 5rem;
+}
+
+.secDiv {
+    margin-top: 8px;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.status-image {
+    width: 344px;
+    height: 358px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5em;
+    color: #151515;
+    letter-spacing: 1.0px;
+    font-family: helvetica neue, helvetica, arial, sans-serif;
+    /* font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; */
+    font-style: normal;
+}
+
+p {
+    margin-bottom: 45px;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #092c74;
+}
+
+.url {
+    margin-top: 45px;
+    padding: 2rem 0rem 0rem 0rem;
+    font-size: 18px;
+}
+
+.url a {
+    color: #151515;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+.url a:hover {
+    color: #32beff;
+    text-decoration: underline;
+}
+
+.url1 a:hover {
+    color: #32beff;
+    text-decoration: underline;
+}
+
+.url1 {
+    padding: 3rem 0rem 0rem 0rem;
+    font-size: 18px;
+}
+
+.url1 a {
+    color: #151515;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+.review-content {
+    width: 70%;
+}
+
+.review-image {
+    width: 170px;
+    margin-top: 24px;
+}
+
+.write-a-review {
+    margin-left: 2rem;
+    cursor: pointer;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #565c62;
+    text-decoration: underline;
+}
+
+.write-a-review :hover {
+    color: #32beff;
+    text-decoration: underline;
+}
+
+a>img {
+    padding-right: 0.8rem;
+}
+
+a img {
+    padding-right: 0.8rem;
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .class1 {
+        display: grid;
+    }
+    .status-image2 {
+        width: 50%;
+        height: 2%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: block;
+        margin-left: 0rem;
+    }
+    .wifiSection {
+        width: 16%;
+        height: 38px;
+        display: block;
+        margin: 10px auto;
+        position: relative;
+    }
+    .class2 {
+        width: 100%;
+        height: auto;
+    }
+    .header {
+        margin-top: 18px;
+        margin-bottom: 45px;
+        margin-left: 2%;
+        width: 90%;
+        font-weight: bold;
+        font-family: "Gotham SSm A", "Gotham SSm B", "Gotham Bold", Helvetica, Arial, sans-serif;
+        line-height: 1.3;
+        text-align: left;
+        font-size: 1.875rem;
+        color: #151515;
+    }
+    .center {
+        text-align: center;
+        margin: 0 auto;
+        padding: 1rem;
+        width: 90%;
+    }
+    .wifiSec {
+        padding: 10px;
+        width: 85%;
+        background-color: #fff;
+        margin: 30px auto;
+        height: auto;
+    }
+    .write-a-review {
+        margin-left: 5px;
+    }
+    p {
+        margin-bottom: 45px;
+        margin-top: 30px;
+        font-weight: bolder;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+        color: #151515;
+    }
+    .size26 {
+        flex: 1;
+        width: 50%;
+        height: auto;
+    }
+    .size46 {
+        flex: 1;
+        width: 50%;
+        height: auto;
+        margin-left: 0rem;
+    }
+    .status-image1 {
+        width: 90%;
+        height: 2%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: block;
+        margin-left: 1rem;
+    }
+    .status-image {
+        width: 60%;
+        height: auto;
+    }
+    .secDiv {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: left;
+        padding-left: 0rem;
+    }
+    .review-content {
+        width: 60%;
+    }
+    .a1 {
+        color: white;
+        background-color: #005aaa;
+        padding: 10px 5px;
+        margin-top: 16px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .size26 a {
+        display: flex;
+        align-items: center;
+    }
+    .size46 a {
+        display: flex;
+        align-items: center;
+    }
+    a>img {
+        padding-right: 0.5rem;
+    }
+    a img {
+        padding-right: 0.5rem;
+    }
+    .review-image {
+        width: 150px;
+        margin-top: 15px;
+        margin-bottom: 1rem;
+    }
+}

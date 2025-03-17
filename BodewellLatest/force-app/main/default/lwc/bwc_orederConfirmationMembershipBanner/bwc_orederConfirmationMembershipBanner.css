@@ -1,0 +1,18 @@
+.text-design {
+    /* font-size: 22px; */
+}
+
+.header-text {
+    /* padding-top: 1rem; font-size: 2.3rem; font-weight: 900; */
+    color: #ffffff;
+}
+
+.image-style {
+    padding-left: 0;
+}
+
+.image-background {
+    background-color: #12212e;
+    color: #ffffff;
+    padding: 0;
+}

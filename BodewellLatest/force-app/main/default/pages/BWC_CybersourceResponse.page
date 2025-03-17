@@ -1,0 +1,9 @@
+<apex:page controller="BWC_CybersourceResponseController" action="{!init}" standardstylesheets="false" showHeader="false">
+<script>
+    // To test Cybersource sending an error uncomment the code below
+    // let test = {!paramsJson};
+    // test.reason_code = '481';
+    // window.parent.postMessage({event: 'CYBERSOURCE_RESPONSE', payload: test}, '*');
+    window.parent.postMessage({event: 'CYBERSOURCE_RESPONSE', payload: {!paramsJson}}, '*');
+</script>
+</apex:page>

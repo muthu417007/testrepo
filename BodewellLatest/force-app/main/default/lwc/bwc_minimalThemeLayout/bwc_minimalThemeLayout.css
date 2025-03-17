@@ -1,0 +1,27 @@
+.bwc-minimal-header-container {
+    background-color: #0E2D44;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.global-header__logo {
+    width: 12rem;
+}
+.bwc-footer-container {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    padding: 0 15px;
+    border-top: 2px solid #DED1B1;
+    border-bottom: 2px solid #DED1B1;
+}
+@media (max-width: 768px){
+    .bwc-minimal-header-container  {
+        height: 65px;
+        margin-bottom: 1rem;
+    }
+    .global-header__logo {
+        width: 10rem;
+    }
+}

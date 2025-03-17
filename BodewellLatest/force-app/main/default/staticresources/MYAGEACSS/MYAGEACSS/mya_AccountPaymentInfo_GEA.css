@@ -1,0 +1,157 @@
+.payment-details-section {
+    max-width: 50%;
+    margin: 60px auto;
+    color: #555;
+    font-family: 'Gotham-Medium';
+}
+
+.payment-details {
+    border-bottom: 1px Solid #555;
+    border-top: 1px Solid #555;
+    padding: 15px 0px;
+}
+
+.payment-card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-card-info-details {
+    display: flex;
+    text-align: left;
+}
+
+.payment-card-number {
+    padding: 0px 25px 0px 0px;
+}
+
+.payment-title {
+    margin: 1px 0px 0 0px;
+    letter-spacing: 1.5px;
+    font-size: 24px;
+    font-family: 'Gotham-Book';
+    text-align: center;
+    padding-bottom: 5px;
+    color: #555;
+}
+
+.payment-remove-link {
+    padding: 0px 25px 0px 0px;
+    color: #1A63A2;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.payment-edit-link {
+    color: #1A63A2;
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin: 0px 5px 0px 0px;
+}
+
+.payment-address-details {
+    margin: 15px 0px 0px 0px;
+}
+
+.payment-address-info {
+    display: grid;
+    line-height: 25px;
+    text-align: left;
+    font-family: 'Gotham-Book';
+}
+
+.delete-descr {
+    font-family: 'Gotham-Book';
+    letter-spacing: 0.25px;
+    text-align: left;
+    color: inherit;
+}
+
+.button-text {
+    font-family: 'Gotham-Medium';
+}
+
+@media only screen and (max-width: 39.9375em) {
+    .payment-details-section {
+        max-width: 100%;
+        margin: 60px auto;
+        color: #555;
+        font-family: 'Gotham-Medium';
+    }
+    .payment-details {
+        border-bottom: 1px Solid #555;
+        border-top: 1px Solid #555;
+        padding: 15px 0px;
+    }
+    .payment-card-info {
+        display: block;
+        width: 100%;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .payment-card-info-details {
+        display: block;
+        padding: 2px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .payment-card-info-action {
+        margin: 1rem auto;
+        width: 100%;
+    }
+    .payment-card-number {
+        padding: 0px 25px 0px 0px;
+        text-align: center;
+        /* white-space: nowrap; */
+        line-height: 1.3;
+    }
+    .payment-title {
+        margin: 1px 0px 0 0px;
+        letter-spacing: 1.5px;
+        font-size: 24px;
+        font-family: 'Gotham-Book';
+        text-align: center;
+        padding-bottom: 5px;
+        color: #555;
+    }
+    .payment-remove-link {
+        padding: 0px 25px 0px 0px;
+        color: #1A63A2;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+    .payment-edit-link {
+        color: #1A63A2;
+        font-weight: 500;
+        font-size: 0.875rem;
+        margin: 0px 5px 0px 0px;
+    }
+    .payment-address-details {
+        margin: 15px 0px 0px 0px;
+        text-align: center;
+        padding: 2px;
+    }
+    .payment-address-info {
+        display: grid;
+        line-height: 25px;
+        text-align: center;
+        font-family: 'Gotham-Book';
+    }
+    .delete-descr {
+        font-family: 'Gotham-Book';
+        letter-spacing: 0.25px;
+        text-align: center;
+    }
+    .button-text {
+        font-family: 'Gotham-Medium';
+    }
+}
+
+@media only screen and (min-width:39.9375em) and ( max-width:768px) {
+    .payment-details-section {
+        max-width: 70%;
+        margin: 60px auto;
+        color: #555;
+        font-family: 'Gotham-Medium';
+    }
+}

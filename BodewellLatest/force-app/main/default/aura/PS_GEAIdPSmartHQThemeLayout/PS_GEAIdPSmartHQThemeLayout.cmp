@@ -1,0 +1,51 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout">
+    <!-- <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>--> 
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-p-around--small slds-size--1-of-1">
+            <div class="header" style="text-align: center; margin-bottom: 15px;">
+                <img src="{!$Resource.smarthq_textlogo}" />
+            </div>
+        
+            <div class="mainContentArea" style="width: auto;
+            max-width: 1200px;
+            padding: 0 15px;
+            margin: 0 auto;
+            height: auto;
+            border-radius:20px;
+            background-color: #202020;">
+        
+                <div style="text-align: center; width: 100%;
+                padding-bottom: 25px;
+                padding-top: 25px;">
+                    <img style="width: 35%;" src="{!$Resource.smarthq_mobilelogo}" />
+                </div>
+                
+                <div class="line-divider" style="background-color:#5a5a5a;
+                height: 2px;
+                margin-left:40px;
+                margin-right:40px;
+                margin-bottom:30px;"></div>
+        
+                <div style="margin-top: 25px; margin-bottom: 25px;">
+                    {!v.body}
+                </div>
+        
+                <div class="line-divider" style="background-color:#5a5a5a;
+                height: 2px;
+                margin-left:40px;
+                margin-right:40px;
+                margin-bottom:30px;"></div>
+        
+                <div class="sub-footer" style="color: #b4b4b4; text-align: center; padding-bottom: 15px; font-family: Poppins;">
+                    <p style="font-weight: 50; font-size: 12px; letter-spacing: 0.02em;">
+                        <ui:outputRichText  value="{!$Label.c.IdP_Copyright_Text}" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,456 @@
+.mainContent {
+    position: relative;
+    padding-bottom: 2em;
+    margin-bottom: 2rem;
+    max-width: none;
+    margin-left: 2rem;
+}
+
+.OSL {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    display: inline;
+    text-align: center;
+    font-size: x-small;
+    background-color: transparent;
+    color: #1a63a2;
+    text-decoration: none;
+    width: 25px;
+    font-weight: 500;
+}
+
+.header {
+    text-align: left;
+    /* font-size: 37px; */
+    font-family: 'Gotham-Book';
+    color: #555;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+    border-bottom: none;
+    position: relative;
+    padding: 5px 0px 0px 0px;
+    font-size: xx-large;
+}
+
+.linkparts {
+    background-color: #dee8f1;
+    text-align: left;
+    height: auto;
+    width: max-content;
+    margin-top: 25px;
+    padding: 5px;
+}
+
+@media only print,
+only screen and (min-width: 960px) {
+    .large-7 {
+        width: 58.33333%;
+    }
+    .large-5 {
+        width: 41.66667%;
+    }
+}
+
+.slds-form-element__label {
+    font-size: 1.75rem !important;
+}
+
+.align {
+    display: block;
+}
+
+.text {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-weight: 600;
+    color: #103b62;
+    font-size: 12px;
+}
+
+.text1 {
+    font-size: 25px;
+    color: #555;
+    font-weight: 100;
+    margin-top: 2rem;
+    font-family: 'Gotham-Book';
+    text-transform: uppercase !important;
+    letter-spacing: 1.25px;
+    line-height: 1.18571em;
+    text-align: left;
+}
+
+.text2 {
+    font-size: 14px;
+    font-family: 'Gotham-Book';
+    line-height: 1.3rem;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 57%;
+}
+
+.captcha {
+    margin: 35px 0px 25px 0px;
+    height: 74px;
+    width: 70px;
+    display: block;
+}
+
+.loggin {
+    color: #1a63a2;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-size: 0.8235294117647059rem;
+    padding: 0rem;
+    border: none;
+    background: transparent;
+}
+
+.loggin:hover {
+    color: #003B71;
+    text-decoration: underline;
+}
+
+.orderButton {
+    margin: 0px 0px 0rem 0px;
+    width: 35%;
+    height: 50px;
+    font-family: 'Gotham-Medium';
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 3rem;
+    background-color: #1779ba;
+    color: #fefefe;
+    cursor: pointer;
+}
+
+.orderButton:hover {
+    background-color: #0c5383;
+}
+
+.margin-b-10 {
+    margin-bottom: 10px !important;
+}
+
+p {
+    margin-bottom: 2.5rem;
+}
+
+a {
+    background-color: transparent;
+    color: #1a63a2;
+    font-size: x-small;
+    text-decoration: none;
+}
+
+.small-8 {
+    width: 66.66667%;
+}
+
+.input-field {
+    font-size: 0.95rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 25px 0px 0px 0px;
+    width: 100%;
+    text-transform: none;
+    font-weight: bold;
+    line-height: 1.35;
+    text-align: left;
+    color: rgba(108, 97, 88, 1);
+}
+
+.input-text {
+    width: 50%;
+    border-radius: 4px;
+    /* height: 55px; */
+    position: relative;
+    /* border: 1px solid #bdb9b2 !important; */
+    padding: 0rem 0rem 0rem 0rem;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+@media only screen and (min-width:240px) and (max-width: 320px) {
+    .captcha {
+        margin: 2rem 0rem;
+        height: 3rem;
+        width: 100%;
+        transform: scale(0.77);
+        transform-origin: 0px 0px;
+    }
+    .header {
+        text-align: center;
+        font-family: 'Gotham-Book';
+        color: #555;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #555;
+        font-weight: bold;
+        letter-spacing: 0.25px;
+        position: relative;
+        padding: 5px;
+        font-size: 1.3rem;
+    }
+    .mainContent {
+        position: relative;
+        padding-bottom: 2em;
+        margin-bottom: 2rem;
+        max-width: none;
+        margin: 0.5rem;
+    }
+    .OSL {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        display: inline;
+        text-align: center;
+        font-size: x-small;
+        background-color: transparent;
+        color: #1a63a2;
+        text-decoration: none;
+        width: 25px;
+    }
+    .linkparts {
+        background-color: #dee8f1;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+    }
+    .align {
+        display: block;
+    }
+    .text {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        font-weight: 600;
+        color: #103b62;
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+    .text1 {
+        font-size: 16px;
+        color: #555;
+        font-weight: 100;
+        margin-top: 1rem;
+        font-family: 'Gotham-Book';
+        text-transform: uppercase !important;
+        letter-spacing: 1.25px;
+        line-height: 1.18571em;
+        text-align: left;
+    }
+    .text2 {
+        font-size: 14px;
+        font-family: 'Gotham-Book';
+        line-height: 1.3rem;
+        padding-bottom: 10px;
+        text-align: left;
+        width: 100%;
+    }
+    .orderButton {
+        margin: 0px 0px 0rem 0px;
+        width: 100%;
+        height: 50px;
+        font-family: 'Gotham-Medium';
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: uppercase;
+        line-height: 3rem;
+        background-color: #1779ba;
+        color: #fefefe;
+        cursor: pointer;
+    }
+    .orderButton:hover {
+        background-color: #0c5383;
+    }
+    .margin-b-10 {
+        margin-bottom: 10px !important;
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+    a {
+        background-color: transparent;
+        color: #1a63a2;
+        font-size: x-small;
+        text-decoration: none;
+    }
+    .small-8 {
+        width: 100%;
+    }
+    .input-field {
+        font-size: 0.95rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 25px 0px 0px 0px;
+        width: 100%;
+        text-transform: none;
+        font-weight: bold;
+        line-height: 1.35;
+        text-align: left;
+        color: rgba(108, 97, 88, 1);
+    }
+    .input-text {
+        width: 100%;
+        border-radius: 4px;
+        /* height: 55px; */
+        position: relative;
+        /* border: 1px solid #bdb9b2 !important; */
+        padding: 0rem 0rem 0rem 0rem !important;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width: 768px) {
+    .small-8 {
+        width: 83.66667%;
+    }
+    .orderButton {
+        margin: 0px 0px 0rem 0px;
+        width: 50%;
+        height: 50px;
+        font-family: 'Gotham-Medium';
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: uppercase;
+        line-height: 3rem;
+        background-color: #1779ba;
+        color: #fefefe;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width: 425px) {
+    .mainContent {
+        position: relative;
+        padding-bottom: 2em;
+        margin-bottom: 2rem;
+        max-width: none;
+        margin: 0.5rem;
+    }
+    .OSL {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        display: inline;
+        text-align: center;
+        font-size: x-small;
+        background-color: transparent;
+        color: #1a63a2;
+        text-decoration: none;
+        width: 25px;
+    }
+    .header {
+        text-align: center;
+        font-family: 'Gotham-Book';
+        color: #555;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #555;
+        font-weight: bold;
+        letter-spacing: 0.25px;
+        position: relative;
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+    .linkparts {
+        background-color: #dee8f1;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+    }
+    .align {
+        display: block;
+    }
+    .text {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+        font-weight: 600;
+        color: #103b62;
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+    .text1 {
+        font-size: 16px;
+        color: #555;
+        font-weight: 100;
+        margin-top: 1rem;
+        font-family: 'Gotham-Book';
+        text-transform: uppercase !important;
+        letter-spacing: 1.25px;
+        line-height: 1.18571em;
+        text-align: left;
+    }
+    .text2 {
+        font-size: 14px;
+        font-family: 'Gotham-Book';
+        line-height: 1.3rem;
+        padding-bottom: 10px;
+        text-align: left;
+        width: 100%;
+    }
+    .captcha {
+        margin: 3rem 0rem;
+        height: 3rem;
+        width: 100%;
+        transform: scale(1);
+        transform-origin: 0px 0px;
+    }
+    .orderButton {
+        margin: 0px 0px 0rem 0px;
+        width: 100%;
+        height: 50px;
+        font-family: 'Gotham-Medium';
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+        text-transform: uppercase;
+        line-height: 3rem;
+        background-color: #1779ba;
+        color: #fefefe;
+        cursor: pointer;
+    }
+    .orderButton:hover {
+        background-color: #0c5383;
+    }
+    .margin-b-10 {
+        margin-bottom: 10px !important;
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+    a {
+        background-color: transparent;
+        color: #1a63a2;
+        font-size: x-small;
+        text-decoration: none;
+    }
+    .small-8 {
+        width: 100%;
+    }
+    .input-field {
+        font-size: 0.95rem;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        margin: 25px 0px 0px 0px;
+        width: 100%;
+        text-transform: none;
+        font-weight: bold;
+        line-height: 1.35;
+        text-align: left;
+        color: rgba(108, 97, 88, 1);
+    }
+    .input-text {
+        width: 100%;
+        border-radius: 4px;
+        /* height: 55px; */
+        position: relative;
+        /* border: 1px solid #bdb9b2 !important; */
+        padding: 0rem 0rem 0rem 0rem !important;
+        font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    }
+}

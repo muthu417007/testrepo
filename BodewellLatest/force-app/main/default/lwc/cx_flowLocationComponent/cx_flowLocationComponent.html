@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title="Locations" icon-name='utility:location' id="cmpCard">
+        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+            <div class="slds-col slds-size_8-of-8">
+                <lightning-input type="text" label="Street" disabled={disableCreationButtonsAndInput} placeholder="Street" required
+                    value={street} onchange={handleStreetChange}></lightning-input>
+            </div>
+        </div>
+        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+            <div class="slds-col slds-size_8-of-8">
+                <lightning-input type="text" label="Zip" disabled={disableCreationButtonsAndInput} placeholder="Zip" required value={zip} 
+                    onchange={handleZipChange} pattern="[0-9]{5}"></lightning-input>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters" style="padding-top: 10px;">
+            <div class="slds-col slds-size_1-of-5">
+            </div>
+            <div class="slds-col slds-size_4-of-5">
+                <lightning-button variant="brand-outline" label="Create and Set New Location" disabled={disableCreationButtonsAndInput}
+                    onclick={createNewLocation} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="destructive-text" label="Clear All" disabled={disableCreationButtonsAndInput}
+                    onclick={handleClearAllFields} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        <hr class="solid">
+        <div if:true={showSpinner} class="slds-m-around_large">
+            <div  class="slds-is-relative">
+                <lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+            </div>
+        </div>
+        <div class="slds-m-horizontal_medium">
+            <template for:each={locationInformation} for:item="iLocation" if:true={renderLines}>
+            <article class="slds-tile slds-hint-parent" key={iLocation.Id}>
+                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                    <div class="slds-col slds-size_8-of-10">
+                        <div class="slds-tile__detail">
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak slds-wrap" title="Name">Name:</dt>
+                                <dd class="slds-item_detail slds-wrap">{iLocation.Name}</dd>
+                            </dl>
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak slds-wrap" title="BillingStreet">Street:</dt>
+                                <dd class="slds-item_detail slds-wrap">{iLocation.BillingStreet}</dd>
+                            </dl>
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak slds-wrap" title="BillingCity">City:</dt>
+                                <dd class="slds-item_detail slds-truncate">{iLocation.BillingCity}</dd>
+                            </dl>
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak slds-wrap" title="BillingPostalCode">State:</dt>
+                                <dd class="slds-item_detail slds-truncate">{iLocation.BillingState}</dd>
+                            </dl>
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak slds-wrap" title="BillingPostalCode">Zip:</dt>
+                                <dd class="slds-item_detail slds-truncate">{iLocation.BillingPostalCode}</dd>
+                            </dl>
+                            <dl class="slds-list_horizontal slds-wrap" style="padding-top: 10px;">
+                                <div class="slds-col slds-size_10-of-10 slds-text-align_left">
+                                    <button class="slds-button slds-button_neutral" data-item={iLocation.Id} onclick={updateCaseLocationWithSelected} disabled={addButtonDisabled}>Set Location</button>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr class="solid">
+            </article>
+            </template>
+        </div>
+    </lightning-card>
+</template>

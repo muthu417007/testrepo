@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Potential Duplicates" icon-name='utility:search' id="cmpCard">
+        
+        <div if:false={loading}>
+            <div if:true={hasDuplicatedCases}>
+                <hr class="solid">
+                <template for:each={cases} for:item="caseRecord">
+                    <c-cx_check-duplicated-cases-item key={caseRecord.Id} case-record={caseRecord} oncaseclick={handleCaseClick}></c-cx_check-duplicated-cases-item>
+                </template>
+            </div>
+            
+            <div if:false={hasDuplicatedCases}>
+                <lightning-icon icon-name="utility:check" class="slds-m-left_medium slds-m-right_small"></lightning-icon>
+                No duplicate found!!
+            </div>
+        </div>
+        <lightning-spinner if:true={loading}></lightning-spinner>
+    </lightning-card>
+</template>

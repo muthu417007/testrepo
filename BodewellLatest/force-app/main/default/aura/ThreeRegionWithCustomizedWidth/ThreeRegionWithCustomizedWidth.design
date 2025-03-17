@@ -1,0 +1,20 @@
+<design:component label="Three Column Custom App Page Template">
+ <!-- above label will be available in the App Builder -->
+    <flexipage:template >
+        <!-- The default width for the "left" region is "MEDIUM". 
+        In tablets, the width is "SMALL"
+        -->
+		
+        <flexipage:region name="right" defaultWidth="SMALL">
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+         </flexipage:region>
+       <!--   <flexipage:region name="right" defaultWidth="SMALL" />
+       <flexipage:region name="middle" defaultWidth="SMALL" />--> 
+      <flexipage:region name="middle" defaultWidth="SMALL">
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+         </flexipage:region>
+         <flexipage:region name="left" defaultWidth="SMALL">
+                <flexipage:formfactor type="MEDIUM" width="SMALL" />
+         </flexipage:region>
+       </flexipage:template>
+</design:component>

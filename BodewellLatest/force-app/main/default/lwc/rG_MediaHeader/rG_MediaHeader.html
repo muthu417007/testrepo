@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-grid slds-wrap media-why-container">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12">
+            <img class="media-HOB-img" src={logo} />
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_4-of-12 media-header-right-sec">
+            <div class="slds-col slds-size_1-of-1 media-header-call-sec">
+                <lightning-icon icon-name="utility:call" alternative-text="call!" title="call" size="x-small"
+                    class="media-header-right-icon"></lightning-icon>&nbsp;
+                <a class="media-header-right-txt" href={tollfreelink} onclick={handleCall}>Call Toll-free: {tollfreenumber}</a>
+            </div>
+            <div class="slds-col slds-size_1-of-1 txt-a-R">
+                <a href={redirectionLink} target="_blank" onclick={handleSchedule}>
+                    <button class="media-sch-service-btn">Schedule Service Online</button>
+                </a>
+            </div>
+        </div>
+        <div class="slds-col slds-grid media-header-right-sec-mob">
+            <div class="slds-col slds-size_6-of-12 media-sch-btn-mob">
+                <a href={redirectionLink} target="_blank" onclick={handleSchedule}>
+                    <button class="sch-service-btn-mob-media">Schedule Service</button>
+                </a>
+            </div>
+            <div class="slds-col slds-size_6-of-12 txt-a-R">
+                <div class="media-nav-call-mob">
+                    <lightning-icon icon-name="utility:call" alternative-text="call!" title="call" size="xx-small"
+                        class="call-icn-white"></lightning-icon>&nbsp;<a class="calling-num-mob" href={tollfreelink} onclick={handleCall}>{tollfreenumber}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

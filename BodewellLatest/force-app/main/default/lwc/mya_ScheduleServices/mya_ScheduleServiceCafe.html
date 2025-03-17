@@ -1,0 +1,193 @@
+<template>
+  <template if:true={showSchedule}>
+    <div class="c-container">
+      <div class="center">
+        <div class="slds-form-element slds-form-element_horizontal">
+          <div class="slds-form-element__control padd" style="margin-top:6px;">
+            <div class="slds-form-element__control padd" style="margin-top:14px;">
+              <h1 class="header">Repair Services</h1>
+              <p class="sub-text">Cafe is part of GE Appliances, a Haier company, and our goal is to ensure your
+                satisfaction,while<br />offering the highest levels of professional service at affordable and
+                competitive rates.</p>
+
+            </div>
+            <div class="btn">
+              <lightning-button variant="brand" icon-name="utility:event_ext" class="button-sch slds-text-title_bold"
+                label="SCHEDULE SERVICE" onclick={handleClick}>
+
+              </lightning-button>
+            </div>
+            <br />
+            <h3 class="sub-head">GE APPLIANCE SERVICE</h3>
+            <div class="para">
+              <p class="head-text">1-800-GE Cares (1-800-432-2737)</p>
+              <p class="head-text">Monday – Friday: 8 a.m. – 9 p.m. ET</p>
+              <p class="head-text">Saturday – Sunday: 8 a.m. – 6 p.m. ET</p>
+            </div>
+            <br />
+            <p class="footer">Only appointments scheduled online while logged into your account will be shown here. If
+              <br /> you scheduled service by phone, call 1-800-432-2737 for assistance.
+            </p>
+          </div>
+
+
+          
+          <div class="twoComponent">
+            <c-mya_service-schedule-list brand={BrandValue}></c-mya_service-schedule-list>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </template>
+  <template if:false={showSchedule}>
+    <div class="c-container">
+      <div class="center">
+        <div class="slds-form-element slds-form-element_horizontal">
+          <div class="slds-form-element__control padd" style="margin-top:6px;">
+            <div class="slds-form-element__control padd" style="margin-top:14px;">
+              <h1 class="header2">Schedule Services</h1>
+              <div class="para">
+                <p>Select the appliance below that needs service or</p>
+                <a if:false={isLoading} target="_blank" href={scheduleUrl}>schedule service on a different appliance.</a>
+              </div>
+            </div>
+            <div class="body">
+              <div class="mainContent">
+                <div class="middleSection">
+                  <div class="grid-x grid-margin-x">
+                    <div class="cell">
+                      <!-- name section -->
+                      <section class="account-greeting-section">
+                        <template if:true={name.data}>
+                          <template for:each={name.data} for:item="na">
+                            <div key={na.Id}>
+                              <div class="payment-title">
+                                <span>Hello, {na.Contact.FirstName}</span>
+                              </div>
+                            </div>
+                          </template>
+                        </template>
+                      </section>
+                      <!-- end of name section -->
+
+                      <!-- products section -->
+                      <section class="address-list-section">
+                        <div class="spinner">
+                          <template if:true={isLoading}>
+                              <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+                          </template>
+                        </div>
+                        <div class="address-list">
+                          <template if:true={AccDetails}>
+                            <template for:each={AccDetails} for:item="add">
+                              <div key={add.AccId}>
+                                <template if:false={add.UserName}>
+                                  <template if:true={add.Street}>
+                                    <h3 class="appliance-list text-center capitalize">
+                                      {add.Street}, {add.City}, {add.State} {add.Zipcode}
+                                    </h3>
+                                  </template>
+                                </template>
+                                <template if:true={add.UserName}>
+                                  <h3 class="appliance-list text-center capitalize ">
+                                    {add.UserName}, {add.Street}, {add.City}, {add.State} {add.Zipcode}
+                                  </h3>
+                                </template>
+                                <div class="container">
+                                  <div class="grid-x grid-padding-x medium-up-2">
+                                    <template for:each={add.Product} for:item="prod">
+                                      <div key={prod.AssetId}>
+
+                                        <div class="cell">
+                                          <div class="appliance-item appliance-item-myProducts">
+
+                                            <button value={prod.AssetId} data-value={prod.AssetId} class="close-icon"
+                                              onclick={openModal}>
+                                              <span class="fa">x</span>
+                                            </button>
+                                            <div class="height1" onclick={produrl} data-value={prod.AssetId}>
+                                              <a target="_blank" href={url}>
+                                                <p class="product-photo">
+                                                  <img src={prod.ProductImage} alt="Canada" data-value={prod.AssetId}
+                                                    onclick={produrl} />
+
+                                                </p>
+                                              </a>
+                                            </div>
+
+                                            <div class="height2" onclick={produrl} data-value={prod.AssetId}>
+                                              <a target="_blank" href={url}>
+                                                <p class="product-title">
+                                                  {prod.ProductDesc}
+
+                                                </p>
+                                              </a>
+                                            </div>
+                                            <div class="text-center">
+                                              <input type="button" class="linkbutton" data-value={prod.AssetId}
+                                                value="View Product Details" onclick={prodDescHandler}
+                                                title="View Product Details" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </template>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </template>
+                          </template>
+                        </div>
+                      </section>
+                      <!-- end of products section -->
+                      <!--     Model Popup -->
+                      <template if:true={showModal}>
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-01" aria-modal="true"
+                          aria-describedby="modal-content-id-1">
+                          <div class="reveal-overlay">
+                            <div class="reveal add-address-modal" id="modal-01">
+                              <header class="slds-modal__header no-border">
+                                <div class="closeButton">
+                                  <button class="closeIcon" aria-modal="false" title='close' onclick={closeModal}>
+                                    <span class="fa">x</span>
+                                  </button>
+                                </div>
+                                <h3 class="text-center modal-header">Remove Product</h3>
+                              </header>
+                              <div class="delete-message">
+                                <div class="removeproduct">
+                                  <p>
+                                    Remove Product will delete them permanently from your account
+                                  </p>
+                                </div>
+                              </div>
+                              <footer>
+                                <div class="button-action">
+                                  <div class="modalbtndiv">
+                                    <button class="cancelButton" name="Cancel" onclick={closeModal}>Cancel</button>
+                                  </div>
+                                  <div class="modalbtndiv">
+                                    <button class="okButton" value={recordId} name="OK"
+                                      onclick={handledelete}>OK</button>
+                                  </div>
+                                </div>
+                              </footer>
+                            </div>
+                          </div>
+                        </section>
+                      </template>
+                      <!--     END Popup -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</template>

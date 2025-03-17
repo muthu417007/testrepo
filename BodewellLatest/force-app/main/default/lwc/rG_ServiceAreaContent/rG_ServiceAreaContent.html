@@ -1,0 +1,151 @@
+<template>
+    <div>
+        <div if:false={hasState}>
+            <div class="serviceAreaPageHeaderBox">
+                <h1 class="serviceAreaPageHeader">
+                    GE APPLIANCES FACTORY SERVICE IN {serviceArea}
+                </h1>
+            </div>
+            <div class="slds-m-top_small slds-m-bottom_small">
+                <lightning-breadcrumbs class="slds-m-bottom_large slds-m-top_medium">
+                    <template for:each={breadcrumbs} for:item="crumbs">
+                        <lightning-breadcrumb if:true={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                            onclick={disableLink}>
+                        </lightning-breadcrumb>
+                        <lightning-breadcrumb if:false={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                            href={crumbs.url}>
+                        </lightning-breadcrumb>
+                    </template>
+                </lightning-breadcrumbs>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_7-of-12 slds-float_left">
+                    <div class="state-main_big_content_left_content">
+                        <div class="state-box">
+                            <div class="state-box__left">
+                                <div class="state-box__left__pin">
+                                    <img class="img-fluid" src={contactLogo} alt="about-repairforce">
+                                </div>
+                            </div>
+                            <div class="state-box__right">
+                                <div class="state-box__right__title">
+                                    <span> Contact your local GE Appliances Technician</span>
+                                </div>
+                                <div class="state-box__right__call_text">
+                                    <span> Call Toll-Free to schedule</span>
+                                </div>
+                                <div class="state-box__right__call_number">
+                                    <span class="state-service-phone-text"><a href={localServiceAreaPhoneLink}
+                                            onclick={handleCall}>{localServiceAreaPhone}</a></span>
+                                </div>
+                                <a href={scheduleServiceLink}>
+                                    <button class="sch-service-btn slds-m-top_small"
+                                        onclick={handleScheduleOnline}>SCHEDULE SERVICE ONLINE
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="state-box_title_service_avail">
+                            SERVICES AVAILABLE
+                        </h3>
+                        <div class="state-service_name_inner_main">
+                            <template iterator:it={pageLinkList}>
+                                <div class="state_service_name" key={it.value.pageLabel}>
+                                    <a href={it.value.pageUrl} onclick={handleResourceNavigation}
+                                        data-value={it.value.pageUrl}>{it.value.pageLabel}</a>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_5-of-12 slds-float_right state-right-content">
+                    <h3 class="slds-m-top_small slds-m-bottom_small">
+                        {stateContentHeading}
+                    </h3>
+                    <p>
+                        {contentBody}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div if:true={hasState}>
+            <div class="serviceAreaPageHeaderBox">
+                <h1 class="serviceAreaPageHeader">
+                    GE APPLIANCES FACTORY SERVICE IN {serviceArea}, {stateAbbreviation}
+                </h1>
+            </div>
+            <div class="slds-m-top_small slds-m-bottom_small">
+                <lightning-breadcrumbs class="slds-m-bottom_large slds-m-top_medium">
+                    <template for:each={breadcrumbs} for:item="crumbs">
+                        <lightning-breadcrumb if:true={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                            onclick={disableLink}>
+                        </lightning-breadcrumb>
+                        <lightning-breadcrumb if:false={crumbs.isActive} key={crumbs.id} label={crumbs.label}
+                            href={crumbs.url}>
+                        </lightning-breadcrumb>
+                    </template>
+                </lightning-breadcrumbs>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_7-of-12 slds-float_left">
+                    <div class="state-main_big_content_left_content">
+                        <div class="state-box">
+                            <div class="state-box__left">
+                                <div class="state-box__left__pin">
+                                    <img class="img-fluid" src={contactLogo} alt="about-repairforce">
+                                </div>
+                            </div>
+                            <div class="state-box__right">
+                                <div class="state-box__right__title">
+                                    <span> Contact your local GE Appliances Technician</span>
+                                </div>
+                                <div class="state-box__right__call_text">
+                                    <span> Call Toll-Free to schedule</span>
+                                </div>
+                                <div class="state-box__right__call_number">
+                                    <span class="state-service-phone-text"><a onclick={handleLocalCall}
+                                            href={localServiceAreaPhoneLink}>{localServiceAreaPhone}</a></span>
+                                </div>
+                                <a href={scheduleServiceLink}>
+                                    <button class="sch-service-btn slds-m-top_small"
+                                        onclick={handleScheduleOnline}>SCHEDULE SERVICE ONLINE
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="state-box_title_service_avail">
+                            SERVICES AVAILABLE
+                        </h3>
+
+                        <div class="state-service_name_inner_main">
+                            <template iterator:it={pageLinkList}>
+                                <div class="state_service_name" key={it.value.pageLabel}>
+                                    <a href={it.value.pageUrl} onclick={handleResourceNavigation}
+                                        data-value={it.value.pageUrl}>{it.value.pageLabel}</a>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_5-of-12 slds-float_right state-right-content">
+                    <h3 class="slds-m-top_small slds-m-bottom_small">
+                        {cityContentHeading}
+                    </h3>
+                    <p>
+                        {contentBody}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div if:true={hasLocalArea}>
+        <c-r-g-_-local-service-area-list service-area-name={serviceState}
+            service-area-list={localList}></c-r-G-_-local-service-area-list>
+    </div>
+</template>

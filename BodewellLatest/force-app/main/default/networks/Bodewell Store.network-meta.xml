@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInternalUserLogin>false</allowInternalUserLogin>
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <changePasswordTemplate>Customer_IdP/Customer_IDP_Change_Pass_Email_Bodewell</changePasswordTemplate>
+    <chgEmailVerNewTemplate>Customer_IdP/Customer_IDP_One_Time_Pass_Email_BW</chgEmailVerNewTemplate>
+    <chgEmailVerOldTemplate>Customer_IdP/Customer_IDP_One_Time_Pass_Email_BW</chgEmailVerOldTemplate>
+    <communityRoles/>
+    <disableReputationRecordConversations>false</disableReputationRecordConversations>
+    <emailSenderAddress>no-reply.bodewell@geappliances.com</emailSenderAddress>
+    <emailSenderName>Bodewell Store</emailSenderName>
+    <enableApexCDNCaching>true</enableApexCDNCaching>
+    <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
+    <enableDirectMessages>false</enableDirectMessages>
+    <enableExpFriendlyUrlsAsDefault>false</enableExpFriendlyUrlsAsDefault>
+    <enableExperienceBundleBasedSnaOverrideEnabled>true</enableExperienceBundleBasedSnaOverrideEnabled>
+    <enableGuestChatter>true</enableGuestChatter>
+    <enableGuestFileAccess>true</enableGuestFileAccess>
+    <enableGuestMemberVisibility>false</enableGuestMemberVisibility>
+    <enableImageOptimizationCDN>true</enableImageOptimizationCDN>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableLWRExperienceConnectedApp>false</enableLWRExperienceConnectedApp>
+    <enableMemberVisibility>false</enableMemberVisibility>
+    <enableNicknameDisplay>true</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <enableShowAllNetworkSettings>false</enableShowAllNetworkSettings>
+    <enableSiteAsContainer>true</enableSiteAsContainer>
+    <enableTalkingAboutStats>false</enableTalkingAboutStats>
+    <enableTopicAssignmentRules>true</enableTopicAssignmentRules>
+    <enableTopicSuggestions>false</enableTopicSuggestions>
+    <enableUpDownVote>false</enableUpDownVote>
+    <forgotPasswordTemplate>Customer_IdP/Customer_IDP_Change_Pass_Email_Bodewell</forgotPasswordTemplate>
+    <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
+    <headlessForgotPasswordTemplate>Customer_IdP/Customer_IDP_One_Time_Pass_Email_BW</headlessForgotPasswordTemplate>
+    <headlessRegistrationTemplate>Customer_IdP/Customer_IDP_One_Time_Pass_Email_BW</headlessRegistrationTemplate>
+    <networkMemberGroups>
+        <profile>admin</profile>
+        <profile>customer community login user</profile>
+        <profile>default customer login user</profile>
+        <profile>bodewell commerce d2c login user</profile>
+        <profile>bodewell business product manager</profile>
+        <profile>consumer relations</profile>
+        <profile>consumer relations ebs</profile>
+    </networkMemberGroups>
+    <networkPageOverrides>
+        <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Designer</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Designer</homePageOverrideSetting>
+        <loginPageOverrideSetting>Designer</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
+    </networkPageOverrides>
+    <picassoSite>Bodewell_Store1</picassoSite>
+    <selfRegistration>true</selfRegistration>
+    <sendWelcomeEmail>false</sendWelcomeEmail>
+    <site>Bodewell_Store</site>
+    <siteArchiveStatus>NotArchived</siteArchiveStatus>
+    <status>Live</status>
+    <tabs>
+        <defaultTab>home</defaultTab>
+        <standardTab>Chatter</standardTab>
+    </tabs>
+    <urlPathPrefix>bodewellCommerce</urlPathPrefix>
+    <verificationTemplate>Customer_IdP/Customer_IDP_One_Time_Pass_Email_BW</verificationTemplate>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

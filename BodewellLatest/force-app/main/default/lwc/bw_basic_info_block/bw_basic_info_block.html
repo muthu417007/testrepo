@@ -1,0 +1,73 @@
+<!-- /**
+*@description : Component has been created to Display icon/heading along with text and button using on three column section for home page and resource Pagecreated for Bodewell project.
+Name: Kanishtika Gupta
+Copyright: © 2021 GE Appliances
+**********************************************
+
+History
+
+Version    Author    Date    Details
+*********************************************
+1.0      Kanishtika Gupta   Created
+**********************************************
+**********************************************/ -->
+<template>
+    <div class="desktop-basic-block">
+    <div class="basic-info-block">
+      <div class="cta-link-container">
+          <div class="p-4 cta-link-block">
+            <div class="cta-icon-block" if:true={showImg}>
+                <img class="basic-img" src={banner} alt="icon">
+            </div>
+            <!-- <div class="cta-icon-block" if:true={showHeading}> -->
+                <h3>{heading}</h3>
+            <!-- </div> -->
+            <div class="cta-text-block">
+               <p class="inner-content"><lightning-formatted-rich-text value={richtext}></lightning-formatted-rich-text></p>
+            
+                <a href={redirectURL} onclick={handleClick}>
+                    <span style={buttonwidth} class="generic-button tertiary-transparent">{buttontext}</span>
+                </a>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+<!-- mobile -->
+<div class="mobile-basic-block slds-wrap" if:true={showImg}>
+    <div class="cta-link-container">
+        <div class="slds-col slds-size_3-of-12">
+            <div class="cta-icon-block">
+                <img class="basic-img" src={banner} alt="icon">
+            </div>
+        </div>
+        <div class="slds-col slds-size_9-of-12">
+            <div class="cta-text-block">
+                <p class="inner-content"><lightning-formatted-rich-text value={richtext}></lightning-formatted-rich-text></p>
+             
+                 <a href={redirectURL} onclick={handleClick}>
+                     <button class="mob-btn">{buttontext}</button>
+                 </a>
+             </div>
+        </div>
+        </div>
+</div>
+<div class="mobile-basic-heading-block" if:true={showHeading}>
+    <div class="basic-info-block">
+        <div class="cta-link-container">
+            <div class="p-4 cta-link-block">
+              <div class="cta-icon-block" if:true={showHeading}>
+                  <h3>{Heading}</h3>
+              </div>
+              <div class="cta-text-block">
+                 <p class="inner-content"><lightning-formatted-rich-text value={richtext}></lightning-formatted-rich-text></p>
+              
+                  <a href={redirectURL} onclick={handleClick}>
+                      <span  class="generic-button tertiary-transparent">{buttontext}</span>
+                  </a>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>
+</template>

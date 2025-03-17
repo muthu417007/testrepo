@@ -1,0 +1,279 @@
+<template>
+    <lightning-card  title="Virtual Assistant">
+
+      <div>
+        <c-asset-chat-search onsubmit={handleAuditCreation}></c-asset-chat-search>
+      </div>
+         <lightning-button if:true={displayCase} slot="actions" title="CaseNumber" label={SWPcaseNumber} class="slds-m-left_x-small" onclick={openCaseRecord}></lightning-button>
+        <lightning-button disabled={STCDisabled} slot="actions" label="STC" title="STC" icon-name="utility:save" class="slds-m-left_x-small" onclick={handleSaveCall}></lightning-button>
+        <lightning-button disabled={SWPDisabled} slot="actions" label="SWP" title="SWP" icon-name="action:update_status" class="slds-m-left_x-small" onclick={saveParts}></lightning-button>
+        <lightning-button disabled={NSDisabled} variant="destructive-text" slot="actions" label="NS" title="NS" icon-name="action:remove" class="slds-m-left_x-small" onclick={addComments}></lightning-button>
+        
+        <!--
+            <a href="javascript:void(0)" slot="actions" onclick={handleOpenCart} class="slds-m-left_x-small">
+            <lightning-icon icon-name="standard:webcart"   alternative-text="webcart" title="webcart"></lightning-icon>
+            <lightning-badge label={totalInCart}></lightning-badge>
+            </a>
+        -->
+        <template if:true={commentMsgFlag}>
+          <section aria-describedby="modal-content-id-2" aria-labelledby="modal-heading-02" aria-modal="true"
+            class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+            <!--<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+            <div class="slds-modal__container popupscreen">
+              <!-- Modal/Popup Box LWC header here -->
+              
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+  
+                
+                  <div class="slds-form slds-p-around_large">
+                    <b><h3 class="sub-header">Would you like to provide additional feedback on this interaction? (max. 200 chars)
+                      <abbr title="required"
+                                class="slds-required">*</abbr>
+                    </h3></b>
+                      
+                    <lightning-textarea class="inputbox" type="text" data-id="reset" data-name="comments"
+                     variant="scoped"
+                   placeholder="e.g : Solutions provided by the Virtual Assistant were relevant and helpful OR Solutions provided for this problem did not help and need improvement."></lightning-textarea>
+                  </div>
+                
+               </div>
+              <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_brand" onclick={closeComments} title="Close">No</button>
+              
+                <button class="slds-button slds-button_brand" onclick={handleCommentsAdded} title="Submit">Yes</button>
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        
+        <template if:true={partsConfirmFlag}>
+          <section aria-describedby="modal-content-id-3" aria-labelledby="modal-heading-03" aria-modal="true"
+            class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+            <!--<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+            <div class="slds-modal__container popupscreen">
+              <!-- Modal/Popup Box LWC header here -->
+              
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+  
+                
+                  <div class="slds-form slds-p-around_large">
+                    <b><h3 class="sub-header">Are you sure you want to submit parts ?
+                      
+                    </h3></b>
+                      
+                  </div>
+                
+               </div>
+              <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_brand" onclick={closePartsConfirm} title="Close">No</button>
+              
+                <button class="slds-button slds-button_brand" onclick={checkparts} title="Submit">Yes</button>
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+  
+
+        <template if:true={issaveparts}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true"
+              class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+              <!--<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+              <div class="slds-modal__container popupscreen">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                  <!--<template if:true={OrdersLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                  </template>-->
+    
+                  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+                    onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small">
+                    </lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                  </button>
+                  <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Save with Parts</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <template if:true={caseCreating}>
+                  <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+              
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+    
+                  <template if:true={issaveparts}>
+                    <div class="slds-form slds-p-around_large">
+                      <b><h3 class="sub-header">CONSUMER DETAILS</h3></b>
+                        
+                        <div class="progress-bar">
+                            <img class="status-image" src={contactInfo}>
+                        </div>
+                        <div class="slds-form-element slds-form-element_horizontal">
+                          <label class="slds-form-element__label">Consumer Name <abbr title="required"
+                                  class="slds-required">*</abbr></label>
+                          <div class="slds-form-element__control">
+                              <lightning-input placeholder="Consumer Name(required)" label="Consumer Name" required class="validate" variant="label-hidden"
+                                   name="consumerName" data-name="consumername" value={consumerName} type="text">
+                              </lightning-input>
+                          </div>
+                        </div>
+                        <div class="slds-form-element slds-form-element_horizontal">
+                          <label class="slds-form-element__label">Phone Number <abbr title="required"
+                                  class="slds-required">*</abbr></label>
+                          <div class="slds-form-element__control">
+                              <lightning-input label="Phone" placeholder="Phone Number" required class="validate" variant="label-hidden"
+                                  value={userPhone} type="text" name="phoneNumber" data-name="userphone" >
+                              </lightning-input>
+                          </div>
+                      </div>
+                      <b><h3 class="sub-header">CONSUMER DELIVERY ADDRESS</h3></b>
+                      <div class="progress-bar">
+                        <img class="status-image" src={contactInfo}>
+                      </div>
+                    
+                      <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Street Address 1 <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input placeholder="Building, Street..." label="Street Address1" required class="validate" variant="label-hidden"
+                                 data-name="address1" name="streetAddress1" value={streetAddress1} type="text">
+                            </lightning-input>
+                        </div>
+                      </div>
+                      <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Street Address 2 </label>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="Address2" placeholder="Locality, Area..." class="validate" variant="label-hidden"
+                                value={streetAddress2} type="text" name="address2" data-name="address2">
+                            </lightning-input>
+                        </div>
+                      </div>
+                      
+                      <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">City <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="City" placeholder="City(required)" required class="validate" variant="label-hidden"
+                                value={city} data-name="city" type="text" name="city" >
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">State <abbr title="required"
+                                class="slds-required">*</abbr></label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input label="State" placeholder="State(required)" required class="validate" variant="label-hidden"
+                                value={state} type="text" data-name="state" name="state" >
+                            </lightning-input>-->
+
+                            <lightning-combobox name="state" data-id="ConsumerState" required class="validate" variant="label-hidden" label="State" data-name="state" value={state}
+                                    options={ConsumerState.data.values}>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                      <label class="slds-form-element__label">Zipcode <abbr title="required"
+                              class="slds-required">*</abbr></label>
+                      <div class="slds-form-element__control">
+                          <lightning-input placeholder="Zipcode(required)" label="Zipcode" required class="validate" variant="label-hidden"
+                               name="zipCode" value={zipCode} type="text" data-name="zipcode">
+                          </lightning-input>
+                      </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label">Agent Notes </label>
+                        <div class="slds-form-element__control">
+                            <!--<lightning-input label="State" placeholder="State(required)" required class="validate" variant="label-hidden"
+                                value={state} type="text" name="state" onchange={handleContactInputChange}>
+                            </lightning-input>-->
+                            <lightning-textarea value={notes} name="notes" data-name="notes" label="notes" variant="label-hidden" placeholder="type here..."></lightning-textarea>
+    
+                        </div>
+                    </div>
+                    <b><h3 class="sub-header">Parts<abbr title="required"
+                      class="slds-required">*</abbr></h3></b>
+                      
+                    <template for:each={itemList} for:item="item" for:index="index">
+
+                      <!--<div key={item.id} class="slds-form-element slds-form-element_horizontal">
+                        <lightning-input label="Parts" placeholder="parts1" required class="validate" variant="label-hidden"
+                                  value={parts1} type="text" name="parts1" onchange={handleContactInputChange}>
+                        </lightning-input>
+                        <div class="slds-form-element__control">
+                            <lightning-input label="Quantity" placeholder="quantity1" required class="validate" variant="label-hidden"
+                            value={quantity1} type="text" name="quantity1" onchange={handleContactInputChange}>
+                            </lightning-input>
+
+                            <lightning-icon icon-name="action:new" access-key={item.id} id={index}
+                                      alternative-text="Add Row" size="small" title="Add Row" onclick={addRow}>
+                            </lightning-icon>
+                            <lightning-icon icon-name="action:delete" access-key={item.id} id={index}
+                                      alternative-text="Delete Row" size="small" title="Delete Row" onclick={removeRow}>
+                            </lightning-icon>
+                        </div>
+                      </div>-->
+                    
+                        <lightning-layout key={item.id} multiple-rows>
+                          
+                              <lightning-layout-item size="5"
+                                  padding="around-small">
+                                  <div class="slds-p-top_small">
+                                  <lightning-input label="Parts" placeholder="Part Description" required class="validate partsdesc" variant="label-hidden"
+                                  value={parts1} type="text" name="partsdesc">
+                              </lightning-input>
+                              </div>
+                              </lightning-layout-item>
+                                  <lightning-layout-item size="3"
+                                      padding="around-small">
+                                      <div class="slds-p-top_small">
+                                      <lightning-input label="Quantity" placeholder="Qty" required class="validate partsqtys" variant="label-hidden"
+                                       type="number" name="quantity1">
+                                  </lightning-input>
+                                  </div>
+                                  </lightning-layout-item>
+
+                                  <!--<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                                    padding="around-small">-->
+                                    <lightning-layout-item size="4"
+                                    padding="around-small">
+                                  
+                                    <div class="slds-p-top_small">
+                                        <lightning-icon icon-name="action:new" access-key={item.id} id={index}
+                                            alternative-text="Add Row" size="small" title="Add Row" onclick={addRow}>
+                                        </lightning-icon>
+                                        <lightning-icon icon-name="action:delete" access-key={item.id} id={index}
+                                            alternative-text="Delete Row" size="small" title="Delete Row" onclick={removeRow}>
+                                        </lightning-icon>
+                                    </div>
+                                  </lightning-layout-item>
+                          
+                        </lightning-layout>
+
+                    </template>
+                    <h3 class="sub-header">({totalparts} of {partslimit})</h3>
+                    
+                      
+                    </div>
+                  </template>
+                  <!--<div style="height: 360px;">
+    
+                    
+                  </div>-->
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                  <button class="slds-button slds-button_brand" onclick={checkparts} title="Submit">Submit</button>
+                
+                  <button class="slds-button slds-button_brand" onclick={closeModal} title="Close">Cancel</button>
+                </footer>
+              </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+          </template>
+    
+    </lightning-card>
+    
+</template>

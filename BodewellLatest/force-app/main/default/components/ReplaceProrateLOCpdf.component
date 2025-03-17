@@ -1,0 +1,137 @@
+<apex:component layout="none" access="global">
+
+    <apex:attribute name="contact" description="The contact." type="Contact" />
+    <apex:attribute name="case" description="The case." type="Case" />
+    <head>
+        <style type="text/css" media="print">
+            @page :first {
+                @top-center {
+                    content: element(header);
+                }
+            }
+
+            @page {
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+
+            mainDiv {
+                font-family: arial;
+                font-size: 16pt;
+                font-weight: 400;
+                padding-top: 16px;
+            }
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            div.header {
+                background: url("{!$Resource.ge_appliances_logo}") no-repeat left top;
+                height: 130px;
+                width: 715px;
+                text-align: left;
+            }
+
+            div.right {
+                float: right;
+            }
+
+            .centered {
+                text-align: center;
+            }
+
+            .right {
+                text-align: right;
+            }
+
+            .label {
+                font-weight: bold;
+            }
+
+            .verticalLine {
+                background-color: rgb(0, 59, 113);
+                border-collapse: separate;
+                color: rgb(0, 0, 0);
+                display: table-cell;
+                font-style: normal;
+                font-variant-caps: normal;
+                font-variant-east-asian: normal;
+                font-variant-ligatures: normal;
+                font-variant-numeric: normal;
+                font-weight: 400;
+                height: 3px;
+                line-height: normal;
+                text-align: start;
+                vertical-align: top;
+                white-space: normal;
+                width: 1024px;
+                -webkit-border-horizontal-spacing: 0px;
+                -webkit-border-vertical-spacing: 0px;
+            }
+
+            .marginBlockLarge {
+                margin-top: 110px;
+            }
+            .marginBlockXSmall {
+                margin-top: 16px;
+            }
+        </style>
+    </head>
+    <div class="header"></div>
+    <div class="verticalLine"></div>
+    <div class="marginBlockXSmall"></div>
+    <div class="mainDiv">
+        {!Today()}
+        <br />
+        <br />
+        <br />
+
+        {!contact.Name}
+        <br />
+        {!case.Consumer_Full_Address__c}
+        <br />
+        <br />
+        <br />
+        <br />
+
+        Re: Letter of commitment begins {!Case.LOC_Start_Date__c} and ends {!Case.LOC_End_Date_f__c} Case: {!Case.CaseNumber}, Model:{!Case.Model_Number__c}, Serial No: {!Case.Serial_Number__c}
+        <br />
+        <br />
+
+        Dear {!contact.Name},
+        <br />
+        <br />
+
+        Thank you for allowing us the opportunity to restore your trust in GE Appliances. We understand how frustrating it can be when your appliance is not operating as intended and we want to help you with this situation. It is extremely important to us that our appliances give many years of service and satisfaction to their owners.
+        <br />
+        <br />
+
+        Our commitment to you is to provide you with a discounted replacement {!Case.ps_CX_Case_Asset_Product_Type__c}, comparable to your current model, should you experience another operational product failure within the next {!Case.LOC_Duration__c} months. Please keep this letter in the event you experience any further difficulties. As an added assurance this information has been entered into the GE Appliances database under case # {!Case.CaseNumber}. Please contact us at 1-800-386-1215 if you have any questions or need further assistance. 
+        <br />
+        <br />
+
+
+        I appreciate the opportunity to assist you with this situation.
+        <br />
+        <br />
+
+        Sincerely,
+        <br />
+        <br />
+        <br />
+
+        {!$User.FirstName}
+        <br />
+
+        Consumer Relations
+        <br />
+
+        GE Appliances, a Haier Company
+        <br />
+        <br />
+        <br />
+    </div>
+</apex:component>

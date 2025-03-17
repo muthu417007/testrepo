@@ -1,0 +1,34 @@
+<template>
+    <div class="sitemap-heading">
+        SERVICE:
+    </div>
+    <div>
+        <template iterator:it={menuListItems}>
+            <div key={it.value.id}>
+                <span>
+                    <a class="sitemap-service-area-url" href={it.value.menuItemTarget} data-value={it.value.menuItemTarget} onclick={handleNavigation}>
+                        {it.value.menuItemName}
+                    </a>
+                </span>
+            </div>
+        </template>
+    </div>
+    <div class="sitemap-heading">
+        SERVICE AREAS
+    </div>
+    <div>
+        <template iterator:it={serviceAreaItemList}>
+            <div key={it.value.id}>
+                <a class="sitemap-service-area-url" href={it.value.itemTarget} data-value={it.value.itemTarget} onclick={handleNavigation}>{it.value.itemName}</a>
+                <div class="area-list-section slds-grid slds-wrap">
+                    <template for:each={it.value.subItems} for:item="item">
+                        <div class="slds-col--padded slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4"
+                            key={item.id}>
+                            <a class="sitemap-local-area-url" href={item.subItemTarget} data-value={item.subItemTarget} onclick={handleNavigation}>{item.subItemName}</a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

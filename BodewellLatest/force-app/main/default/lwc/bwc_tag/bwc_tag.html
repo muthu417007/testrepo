@@ -1,0 +1,6 @@
+<template>
+  <div class="clearancetag" lwc:if={isOnClearance} style={clearanceBannerStyle}>{clearanceLabel}</div>
+  <template lwc:else>
+    <div class="saletag" if:true={isOnSale} style={saleBannerStyle}>{saleLabel}</div>
+  </template>
+</template>

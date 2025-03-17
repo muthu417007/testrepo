@@ -1,0 +1,11 @@
+.filledStar{    
+    --slds-c-icon-color-foreground-default : #FFC01F;
+ }
+
+ .emptyStar{    
+    --slds-c-icon-color-foreground-default : #EEEEEE;
+ }
+
+ .showStarsWrapper{
+    padding:10px;
+ }

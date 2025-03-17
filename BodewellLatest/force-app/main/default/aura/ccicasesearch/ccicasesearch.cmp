@@ -1,0 +1,59 @@
+<aura:component implements="forceCommunity:themeLayout,flexipage:availableForAllPageTypes,force:appHostable,forceCommunity:availableForAllPageTypes,force:hasRecordId,lightning:availableForFlowScreens" access="global" controller="DisplayCaseController"> 
+	
+       <lightning:navigation aura:id="navService"/>
+    	<aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navServicephone"/>
+    	<aura:attribute name="pageReferencephone" type="Object"/>
+                <aura:attribute name="record" type="Case"/>
+                <aura:attribute name="caseId" type="String" />         
+                <label class="slds-form-element__label" for="form-element-01" style="font-size: small;">Search By Case Number :</label>
+                <div class="slds-size_1-of-4">
+                    <ui:inputText value="{!v.caseId}" placeholder="Case#" class="slds-size_1-of-4" />
+                </div>	
+                <lightning:button variant="brand" label="Submit" onclick="{! c.getCaseRecord }" /><br/>
+                
+             
+                <aura:attribute name="phoneNumber" type="string" />
+                <label class="slds-form-element__label" for="form-element-01" style="font-size: small;">Search By PhoneNumber :</label>
+                <div class="slds-size_1-of-4">
+                    <ui:inputText value="{!v.phoneNumber}" placeholder="Phone#" class="slds-size_1-of-4" />
+                </div>  
+                <p>(E.g 5024527023)</p>
+                <lightning:button variant="brand" label="Submit" onclick="{! c.getCaseRecordphone }" /><br/>
+                
+                
+                <aura:attribute name="firstname" type="String" />
+                <aura:attribute name="lastname" type="String" />
+                <aura:attribute name="zipcode" type="String" />
+                <aura:attribute name="street" type="String" />
+                <label class="slds-form-element__label" for="form-element-01" style="font-size: small;">Search By:</label>
+                <lightning:layout horizontalAlign="left">
+                    <lightning:layoutItem size="2">
+                            <ui:inputText value="{!v.firstname}" placeholder="FirstName" class="slds-size_1-of-5" />     
+                    </lightning:layoutItem>
+                        <lightning:layoutItem size="2">
+                            <ui:inputText value="{!v.lastname}" placeholder="LastName" class="slds-size_1-of-5" />     
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="2">
+                       <ui:inputText value="{!v.zipcode}" placeholder="Zipcode" class="slds-size_1-of-5" />
+                    </lightning:layoutItem>    
+                </lightning:layout> 
+                <lightning:button variant="brand" label="Submit" onclick="{! c.getCaseRecordsearch1 }" /> 
+                
+                <br/><br/>
+                
+                <label class="slds-form-element__label" for="form-element-01" style="font-size: small;">Search By:</label>
+                <lightning:layout horizontalAlign="left">
+                    <lightning:layoutItem size="2">
+                            <ui:inputText value="{!v.street}" placeholder="Street" class="slds-size_1-of-5" />     
+                    </lightning:layoutItem>
+                        <lightning:layoutItem size="2">
+                            <ui:inputText value="{!v.lastname}" placeholder="LastName" class="slds-size_1-of-5" />     
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="2">
+                       <ui:inputText value="{!v.zipcode}" placeholder="Zipcode" class="slds-size_1-of-5" />
+                    </lightning:layoutItem>    
+                </lightning:layout> 
+                <lightning:button variant="brand" label="Submit" onclick="{! c.getCaseRecordsearch2 }" class="slds-button--x-small"/> 
+
+    </aura:component>

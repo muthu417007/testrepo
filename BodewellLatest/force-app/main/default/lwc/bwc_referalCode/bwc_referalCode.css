@@ -1,0 +1,51 @@
+.referralCodeBase{
+    --slds-c-card-color-background: white;
+}
+.referralCodeSection{
+    display: flex;
+    padding-left: 20px;
+    padding-right: 25px;
+}
+
+.container{
+    //display: flex;
+        display: grid;
+    gap: 2rem;
+    background-color: white;
+    //align-items: center;
+}
+.inputName{
+    font-weight: bold;
+}
+.couponButton{
+    justify-content: flex-start;
+}
+.referalbutton{
+    width: 120px;
+}
+.spinnerClass{
+    position: relative;
+    display: inline-block;
+    padding: 40px;
+}
+.box{
+   background: #D9EABB 0% 0% no-repeat padding-box;
+   /* c7f7b4 */
+  padding-top: 10px;
+  padding-left:10px;
+  padding-bottom:10px;
+  display: inline-flex;
+  margin-right: 50px;
+  position: relative;
+}
+.smsg {
+  color: #12212E;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right:10px;
+  padding-bottom: 10px;
+  letter-spacing: 0.57px;
+}
+.message {
+    padding-left: 20px;
+  }

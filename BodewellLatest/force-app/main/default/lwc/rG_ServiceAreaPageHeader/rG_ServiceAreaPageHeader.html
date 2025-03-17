@@ -1,0 +1,138 @@
+<template>
+    <div if:false={isOnlyServiceArea}>
+        <div if:false={isLocalArea}>
+            <div class="serviceAreaPageHeaderBox">
+                <div class="serviceAreaPageHeader">
+                    GE APPLIANCES FACTORY SERVICE IN {serviceAreaName}
+                </div>
+            </div>
+            <div class="slds-m-top_small slds-m-bottom_small">
+                <c-r-G-_-Breadcrumb></c-r-G-_-Breadcrumb>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_7-of-12 slds-float_left">
+                    <div class="state-main_big_content_left_content">
+                        <div class="state-box">
+                            <div class="state-box__left">
+                                <div class="state-box__left__pin">
+                                    <img class="img-fluid" src={communityData.contactlogo} alt="about-repairforce">
+                                </div>
+                            </div>
+                            <div class="state-box__right">
+                                <div class="state-box__right__title">
+                                    <span> Contact your local GE Appliances Technician</span>
+                                </div>
+                                <div class="state-box__right__call_text">
+                                    <span> Call Toll-Free to schedule</span>
+                                </div>
+                                <div class="state-box__right__call_number">
+                                    <span class="state-service-phone-text"><a
+                                            href={schedulePhoneLink} onclick={handleCall}>{schedulePhone}</a></span>
+                                </div>
+                                <a href={scheduleServiceLink}>
+                                    <button class="sch-service-btn slds-m-top_small" onclick={handleScheduleOnline}>SCHEDULE SERVICE ONLINE
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="state-box_title_service_avail">
+                            SERVICES AVAILABLE
+                        </h3>
+                        <div class="state-service_name_inner_main">
+                            <template iterator:it={pageLinkList}>
+                                <div class="state_service_name" key={it.value.pageLabel}>
+                                    <a href={it.value.pageUrl}
+                                        onclick={handleResourceNavigation}
+                                        data-value={it.value.pageUrl}>{it.value.pageLabel}</a>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_5-of-12 slds-float_right state-right-content">
+                    <h3 class="slds-m-top_small slds-m-bottom_small">
+                        {stateContentHeading}
+                    </h3>
+                    <p>
+                        {stateContentBody}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div if:true={isLocalArea}>
+            <div class="serviceAreaPageHeaderBox">
+                <div class="serviceAreaPageHeader">
+                    GE APPLIANCES FACTORY SERVICE IN {localServiceAreaName}, {stateAbbreviation}
+                </div>
+            </div>
+            <div class="slds-m-top_small slds-m-bottom_small">
+                <c-r-G-_-Breadcrumb></c-r-G-_-Breadcrumb>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_7-of-12 slds-float_left">
+                    <div class="state-main_big_content_left_content">
+                        <div class="state-box">
+                            <div class="state-box__left">
+                                <div class="state-box__left__pin">
+                                    <img class="img-fluid" src={communityData.contactlogo} alt="about-repairforce">
+                                </div>
+                            </div>
+                            <div class="state-box__right">
+                                <div class="state-box__right__title">
+                                    <span> Contact your local GE Appliances Technician</span>
+                                </div>
+                                <div class="state-box__right__call_text">
+                                    <span> Call Toll-Free to schedule</span>
+                                </div>
+                                <div class="state-box__right__call_number">
+                                    <span class="state-service-phone-text"><a onclick={handleLocalCall}
+                                            href={localServiceAreaPhoneLink}>{localServiceAreaPhone}</a></span>
+                                </div>
+                                <a href={scheduleServiceLink}>
+                                    <button class="sch-service-btn slds-m-top_small" onclick={handleScheduleOnline} >SCHEDULE SERVICE ONLINE
+                                    </button>
+                                </a>                                
+                                <!-- <lightning-button variant="destructive" data-value="SCHEDULE SERVICE ONLINE"
+                                    label="SCHEDULE SERVICE ONLINE" title="Destructive action"
+                                    class="trouble-shoot-btn slds-m-top_small">
+                                </lightning-button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="state-box_title_service_avail">
+                            SERVICES AVAILABLE
+                        </h3>
+
+                        <div class="state-service_name_inner_main">
+                            <template iterator:it={pageLinkList}>
+                                <div class="state_service_name" key={it.value.pageLabel}>
+                                    <a href={it.value.pageUrl} 
+                                        onclick={handleResourceNavigation}
+                                        data-value={it.value.pageUrl}>{it.value.pageLabel}</a>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_5-of-12 slds-float_right state-right-content">
+                    <h3 class="slds-m-top_small slds-m-bottom_small">
+                        {cityContentHeading}
+                    </h3>
+                    <p>
+                        {localServiceAreaSideText}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div if:true={isOnlyServiceArea}>
+        <div class="slds-m-top_small slds-m-bottom_small">
+            <c-r-G-_-Breadcrumb></c-r-G-_-Breadcrumb>
+        </div>
+    </div>
+</template>

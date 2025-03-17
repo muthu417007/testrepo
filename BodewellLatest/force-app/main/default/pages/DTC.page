@@ -1,0 +1,32 @@
+<apex:page standardController="DTC_Chat__c" extensions="DTC_ext" lightningStylesheets="true">
+    
+    <apex:sectionHeader title="DTC Web Form" />
+    <apex:outputPanel rendered="{!showForm}">
+        <apex:form >
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td><apex:inputField value="{!DTC_Chat__c.First_Name__c}" required="true"/></td>
+                    <td>Last Name</td>
+                    <td><apex:inputField value="{!DTC_Chat__c.Last_Name__c}" required="true"/></td>
+                </tr>
+                <tr>
+                    <td>Phone </td>
+                    <td><apex:inputField value="{!DTC_Chat__c.Phone__c}"/></td>
+                    <td>Email </td>
+                    <td><apex:inputField value="{!DTC_Chat__c.Email__c}"/></td>
+                </tr>
+            </table>
+    
+        <br/>
+        Comments <apex:inputField value="{!DTC_Chat__c.Comments__c}" style="width:500px" required="true"/>
+        
+        <apex:commandButton action="{!submitRecord}" value="Submit" />
+        
+        </apex:form>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!!showForm}">
+        <h2>Thank you for your submission.</h2>
+    </apex:outputPanel>
+    
+</apex:page>

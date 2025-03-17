@@ -1,0 +1,36 @@
+<template>
+    <!-- <div if:false={hideContent}>
+        <div>
+            <c-r-g_-schedule-service></c-r-g_-schedule-service>
+        </div>
+        <div>
+            <c-rg_custom_button></c-rg_custom_button>
+        </div>
+        <div>
+            <c-r-g_-service-area-footer-block></c-r-g_-service-area-footer-block>
+        </div>
+    </div> -->
+    <div class="bg-light-grey">
+    <div if:false={hideContent}  class="slds-grid slds-grid_vertical container">
+        <div class="slds-col">
+            <div class="slds-grid slds-wrap bg-light-grey">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                    <c-r-g_-schedule-service></c-r-g_-schedule-service>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                    <div class="slds-p-top_medium">
+                    <c-rg_custom_button></c-rg_custom_button>
+                </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark-grey">
+      <div if:false={hideContent}  class="slds-grid slds-grid_vertical container">
+        <div class="slds-col">
+            <c-r-g_-service-area-footer-block></c-r-g_-service-area-footer-block>
+        </div>
+      </div>
+    </div>
+</template>

@@ -1,0 +1,80 @@
+<template>
+    <template if:true={initialSearch}>
+        <div class="slds-text-align_left slds-grid slds-gutters slds-p-top_xx-large slds-p-bottom_xx-large slds-p-left_x-large container" style={serviceUserBg}>
+            <div class="slds-col slds-size_12-of-12">
+                <div>
+                    <h1 class="heading">{label.searchHeading}</h1>
+                </div>
+                <div class="logoBranding">
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 slds-m-top_small paddingAlignner logoBrand">
+                        <img class="iconImage monogram" src={image.MONOGRAM_LOGO}/>
+                    </div>
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 slds-m-top_small cafe-logo logoBrand">
+                        <img class="iconImage" src={image.CAFE_LOGO}/>
+                    </div>
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 geLogoDiv slds-m-top_small logoBrand ge-logo">
+                        <img class="iconImage geLogo" src={image.GE_LOGO}/>
+                    </div>
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 slds-m-top_small logoBrand">
+                        <img class="iconImage profile" src={image.PROFILE_LOGO}/>
+                    </div>
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 slds-m-top_small logoBrand">
+                        <img class="iconImage" src={image.HAIER_LOGO}/>
+                    </div>
+                    <div class="slds-col slds-grid_align-center slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12 slds-m-top_small hotpoint-logo logoBrand">
+                        <img class="iconImage hotpointLogo" src={image.HOTPOINT_LOGO}/>
+                    </div>
+                </div>
+                <div class="slds-col slds-wrap slds-size_12-of-12 paddingAlignner">
+                    <div class="slds-col slds-wrap testClass">
+                        <div class="searchBar slds-col slds-wrap slds-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_6-of-12 paddingAlignner">
+                            <p class="slds-m-top_large description">{label.searchDescription}</p>
+                                <div class="slds-col slds-size_9-of-12 slds-medium-size_8-of-12 slds-large-size_6-of-12 paddingAlignner searchWithHelper">
+                                    <div class="input">
+                                        <lightning-input name="" type="search" label="" placeholder="An Example is GWE19JSLNFSS" onkeyup={handleKeyEnter}></lightning-input>
+                                        <p class="ui-danger" if:true={isError}>Enter at least {minSearchKeyLen} characters</p>
+                                    </div>
+                                    <button class="slds-button slds-button_brand slds-m-right_small slds-m-top_large btn-size" style={buttonPadding} title="titleName" onclick={handleSearch}> Search </button>
+                                </div>
+                                <a class="ge-link" href="https://www.geappliances.com/ge/parts/search/">Get Help Finding Your Model Number</a>   
+                        </div>
+                        <div class="slds-col slds-size_12-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12 slds-m-top_small innerDiv paddingAlignner color">
+                            <div class="slds-p-top_small paddingAlignner imageAligner">
+                                <h4 class="slds-p-bottom_small bold">{label.searchHelperText}</h4>
+                                <img class="helperImg" src={image.MODEL_FINDER}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:false={initialSearch}>
+        <div class="slds-grid slds-gutters slds-wrap slds-p-bottom_x-large noresultContainer" style={serviceUserBg}>
+            <div class="slds-col slds-size_1-of-12"></div>
+            <div class="slds-col slds-large-size_5-of-12 slds-medium-size_3-of-12 slds-small-size_3-of-12 slds-m-top_large">
+                <h1 class="slds-p-bottom_x-large heading">No Result for: {noResultKey}</h1>
+                <h3 class="slds-p-bottom_large highlightedText">No appliance model matches your search</h3>
+                <p>Try entering your appliance model number again to get the most accurate list of parts available for yourspecific appliance model.</p>
+                <div class="slds-col slds-size_9-of-12 slds-medium-size_8-of-12 slds-large-size_6-of-12 paddingAlignner searchWithHelper">
+                    <div class="input-no-result">
+                        <lightning-input name="" type="search" label="" placeholder="An Example is GWE19JSLNFSS" onkeyup={handleKeyEnter}></lightning-input>
+                        <p class="ui-danger" if:true={isError}>Enter at least {minSearchKeyLen} characters</p>
+                    </div>
+                    <button class="slds-button slds-button_brand slds-m-right_small btn-size-no-result" style={buttonPadding} title="titleName" onclick={handleSearch}> Search </button>
+                </div>
+                <div class="slds-col slds-large-size_8-of-12 slds-medium-size_6-of-12 slds-small-size_4-of-12 paddingAlignner">
+                    <strong>{label.modelFinderHelpText}</strong>
+                    <a href="www.geappliances.com"><h5>{label.modelFinderHyperLinkText}</h5></a>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_2-of-12 slds-small-size_1-of-12 helperImage">
+                <div class="slds-p-around_x-large imageBackground">
+                    <p class="highlightedText">Example Appliance Model/Serial Tag</p>
+                    <img src={image.MODEL_FINDER}>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

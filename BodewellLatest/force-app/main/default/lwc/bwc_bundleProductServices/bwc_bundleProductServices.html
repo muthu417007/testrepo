@@ -1,0 +1,267 @@
+<template>
+
+
+
+
+    <template if:true={isLoading}>
+        <div class="demo-only" style="height:6rem;position:relative">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:false={isLoading}>
+        <template if:true={deliveryFlag}>
+            <template if:true={deliveryFlag}>
+                <div class="productView-services">
+                    <template for:each={_deliveryServices} for:item="service">
+                        <div key={service.Id} class="d-flex align-items-top justify-content-spaceBetween">
+
+                            <h2 class="productView-services-title">
+                                <span class="iconDelivery slds-icon slds-icon_xx-small">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 31.5">
+                                        <g>
+                                            <g class="e">
+                                                <g class="e">
+                                                    <path class="f"
+                                                        d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+
+                                <span>{service.label}</span>
+                            </h2>
+                            <div class="d-flex align-items-top ">
+
+                                <template if:false={isMember}>
+                                    <div class="productView-services-price">${service.price}</div>
+                                </template>
+                                <template if:true={isMember}>
+                                    <!-- <template if:true={service.free}>
+                            <div class="productView-services-price">FREE</div>
+                        </template>
+                        <template if:false={service.free}>
+                            <div class="productView-services-price">${service.memberPrice}</div>
+                        </template> -->
+                                    <div class="productView-services-price-member">${service.price}</div>
+
+                                    <div class="productView-services-price">${service.memberPrice}</div>
+
+                                </template>
+                            </div>
+                        </div>
+                        <div key={service.Id} class="productView-services-text">
+                            <p>{service.description}
+
+                            </p>
+                        </div>
+
+
+
+                    </template>
+                </div>
+            </template>
+            <template if:false={deliveryFlag}>
+                <div class="productView-services">
+
+                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                        <div>
+                            <h2 class="productView-services-title">
+                                <span class="iconDelivery slds-icon slds-icon_xx-small">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 31.5">
+                                        <g>
+                                            <g class="e">
+                                                <g class="e">
+                                                    <path class="f"
+                                                        d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span>Product Pick-Up</span>
+                            </h2>
+                            <div class="productView-services-text">
+                                <p>One flat rate covers your entire order.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productView-services-price">$0.00</div>
+                    </div>
+
+
+
+                </div>
+            </template>
+        </template>
+        <template if:true={installationFlag}>
+            <template if:true={installationFlag}>
+                <div class="productView-services">
+                    <template for:each={_installationServices} for:item="service">
+                        <!--    <div key={service.Id} class="d-flex align-items-top justify-content-spaceBetween">
+                    <div>
+                        <h2 class="productView-services-title">
+                            <span class="iconInstallation slds-icon slds-icon_xx-small"><svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                        <g>
+                                            <g class="e">
+                                                <g class="e">
+                                                    <path class="f"
+                                                        d="m35.23,27.69c1.02,1.03,1.02,2.69,0,3.71l-3.71,3.71c-1.02,1.02-2.68,1.02-3.71,0l-8.23-8.23c-1.63-1.63-1.94-4.05-.98-6l-7.5-7.5h-4.36S0,4.44,0,4.44L4.5,0l8.94,6.75v4.36l7.56,7.5c1.96-.96,4.38-.65,6,.98l8.23,8.1Zm-18.76-1.46l-8.37,8.37c-.93.93-2.14,1.39-3.36,1.39s-2.43-.46-3.35-1.39c-1.85-1.85-1.85-4.86,0-6.71l10.47-10.47,4.16,4.16c-.37,1.58-.17,3.19.45,4.65Zm-10.29,5.26c0-.94-.76-1.69-1.69-1.69s-1.69.75-1.69,1.69.76,1.69,1.69,1.69,1.69-.75,1.69-1.69Zm15.4-15.48l-5.82-5.83c0-.56.01-1.13.12-1.72.62-3.95,3.65-7.25,7.54-8.18,1.68-.4,3.31-.38,4.81-.02.76.18,1.02,1.16.46,1.71l-4.84,4.84v5.25h5.32l4.84-4.84c.56-.56,1.53-.3,1.71.46.36,1.5.39,3.13-.02,4.81-.73,3.05-2.93,5.55-5.74,6.8l-1.38-1.38c-1.4-1.41-3.27-2.18-5.26-2.18-.58,0-1.17.07-1.74.26Z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </span>
+                            <span>{service.MasterLabel}</span>
+                        </h2>
+                        <div class="productView-services-text">
+                            <p>{service.Description__c}
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="productView-services-price">${service.Price__c}</div>
+                </div>
+
+
+
+
+
+
+              New -->
+
+                        <div key={service.Id} class="d-flex align-items-top justify-content-spaceBetween">
+
+                            <h2 class="productView-services-title">
+                                <span class="iconDelivery slds-icon slds-icon_xx-small">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 31.5">
+                                        <g>
+                                            <g class="e">
+                                                <g class="e">
+                                                    <path class="f"
+                                                        d="m3.57,1.87c.57-1.14,1.74-1.87,3.02-1.87h8.04v9H0L3.57,1.87Zm27.93,25.13c0,2.48-2.02,4.5-4.5,4.5H4.5c-2.49,0-4.5-2.02-4.5-4.5v-15.75h31.5v15.75Zm-14.62-18V0h8.04c1.28,0,2.45.72,3.02,1.87l3.57,7.13h-14.62Z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+
+                                <span>{service.MasterLabel}</span>
+                            </h2>
+                            <div class="d-flex align-items-top ">
+
+                                <template if:false={isMember}>
+                                    <div class="productView-services-price">${service.Price__c}</div>
+                                </template>
+                                <template if:true={isMember}>
+
+                                    <div class="productView-services-price-member">${service.Price__c}</div>
+
+                                    <div class="productView-services-price">${service.BWC_Member_Price__c}</div>
+
+                                </template>
+                            </div>
+                        </div>
+                        <div key={service.Id} class="productView-services-text">
+                            <p>{service.Description__c}
+
+                            </p>
+                        </div>
+
+
+                    </template>
+                </div>
+            </template>
+            <template if:false={installationFlag}>
+                <div class="productView-services">
+
+                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                        <div>
+                            <h2 class="productView-services-title">
+                                <span class="iconInstallation slds-icon slds-icon_xx-small"><svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                            <g>
+                                                <g class="e">
+                                                    <g class="e">
+                                                        <path class="f"
+                                                            d="m35.23,27.69c1.02,1.03,1.02,2.69,0,3.71l-3.71,3.71c-1.02,1.02-2.68,1.02-3.71,0l-8.23-8.23c-1.63-1.63-1.94-4.05-.98-6l-7.5-7.5h-4.36S0,4.44,0,4.44L4.5,0l8.94,6.75v4.36l7.56,7.5c1.96-.96,4.38-.65,6,.98l8.23,8.1Zm-18.76-1.46l-8.37,8.37c-.93.93-2.14,1.39-3.36,1.39s-2.43-.46-3.35-1.39c-1.85-1.85-1.85-4.86,0-6.71l10.47-10.47,4.16,4.16c-.37,1.58-.17,3.19.45,4.65Zm-10.29,5.26c0-.94-.76-1.69-1.69-1.69s-1.69.75-1.69,1.69.76,1.69,1.69,1.69,1.69-.75,1.69-1.69Zm15.4-15.48l-5.82-5.83c0-.56.01-1.13.12-1.72.62-3.95,3.65-7.25,7.54-8.18,1.68-.4,3.31-.38,4.81-.02.76.18,1.02,1.16.46,1.71l-4.84,4.84v5.25h5.32l4.84-4.84c.56-.56,1.53-.3,1.71.46.36,1.5.39,3.13-.02,4.81-.73,3.05-2.93,5.55-5.74,6.8l-1.38-1.38c-1.4-1.41-3.27-2.18-5.26-2.18-.58,0-1.17.07-1.74.26Z" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                </span>
+                                <span>Installation Not Available</span>
+                            </h2>
+                            <div class="productView-services-text">
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="productView-services-price">$0.00</div>
+                    </div>
+
+
+
+                </div>
+            </template>
+        </template>
+        <template if:true={deliveryFlag}>
+            <template if:true={installationFlag}>
+                <div class="productView-services">
+                    <div class="d-flex align-items-top justify-content-spaceBetween">
+                        <div>
+                            <template if:false={isMember}>
+                                <h2 class="productView-services-title">
+
+                                    FREE Delivery & Freestanding Installation for<a href="#"> Bodewell members.</a>
+                                    <!-- FREE Delivery & Freestanding Installation for Bodewell members. -->
+
+                                </h2>
+                            </template>
+                            <div class="">
+                                <p>For personalized shopping help, call us @<strong>1-833-426-3393</strong></p>
+                            </div>
+                        </div>
+                        <div class="productView-services-price"></div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <!-- <div class="d-flex align-items-top justify-content-spaceBetween" id="productServices" data-service-id="137364"
+            data-service-attr="21298">
+            <div>
+                <h2 class="productView-services-title">
+                    <span class="icon slds-icon slds-icon_xx-small"><svg>
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#announcement"></use>
+
+                        </svg></span>
+                    <span id="productServicesTitle">Freestanding product installation</span>
+                </h2>
+                <div class="productView-services-text" id="productServicesText">
+                <p>
+                    <font color="#000000">Covers all services for this appliance. We'll even haul away your old
+                        appliances! <span class="services-tooltip">Exclusions apply<span
+                                class="services-tooltip-text">Installation not available for cooktops, disposers,
+                                compactors, vent hoods, room air conditioners, dehumidifiers, water heaters, water
+                                softeners, water filtration, countertop microwaves, small appliances or
+                                accessories.</span></span></font>
+                </p>
+                <p><a href="../../../../appliance-delivery-installation/">More about delivery and installation</a></p>
+                </div>
+            </div>
+            <div class="productView-services-price" id="productServicesPrice">$25</div>
+        </div>-->
+
+
+    </template>
+</template>

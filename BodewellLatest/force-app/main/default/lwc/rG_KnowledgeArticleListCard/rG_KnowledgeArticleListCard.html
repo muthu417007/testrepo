@@ -1,0 +1,32 @@
+<template>
+    <div class="faq-questions">
+        <h2 class="slds-m-bottom_medium">
+            FREQUENTLY ASKED QUESTIONS <a href={redirectFaqUrl} onclick={handleFAQ} class="view-txt">View All
+                Questions</a>
+        </h2>
+        <div class="slds-grid slds-wrap slds-gutters align-stretch">
+            <template iterator:it={faqList}>
+                <div key={it.value.id}
+                    class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12 flx-grow-0 m-b-20">
+                    <lightning-card>
+                        <div class="faq-cards">
+                            <h3>
+                                <a href={it.value.url} onclick={handleArticle}
+                                    data-value={it.value.url}>{it.value.title}
+                                </a>
+                            </h3>
+                            <div class="faq-ans-text">
+                                {it.value.summary}
+                            </div>
+                            <div>
+                                <a href={it.value.url} onclick={handleArticle} data-value={it.value.url}
+                                    class="read-more-txt">Read More
+                                </a>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

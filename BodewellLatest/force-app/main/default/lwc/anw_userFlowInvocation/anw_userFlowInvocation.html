@@ -1,0 +1,57 @@
+<template>
+    <!-- Invoke a Screen flow in LWC -->
+    
+       <!-- <lightning-flow if:true={isFlowLaunched}
+            flow-api-name={flowApiName}
+            flow-input-variables={inputVariables}
+            onstatuschange={handleFlowStatusChange}
+        >
+        </lightning-flow>
+       
+    <div class="appliance-btn">
+        <button class="submitbtn idp-primary-button" onclick={handleAddUser}>
+            ADD USER
+        </button>
+    </div>
+    <div class="appliance-btn">
+        <button class="submitbtn idp-primary-button" onclick={handleResetPassword}>
+            RESET PASSWORD
+        </button>
+    </div>-->
+    <div>
+        <div class="welcome-msg">
+            <p style="font-weight: bold; font-size:20px;"> Welcome, {firstName} {lastName}!!!</p>
+        
+        </div>
+        <center>
+            <div if:true={adminprofile} class="appliance-btn">
+            <a class="
+            slds-m-top_small
+            slds-m-bottom_small
+            idp-primary-button slds-button slds-button_brand" href={adduserurl} target="_blank">ADD USER</a>
+
+        </div>
+    </center>
+    <center>
+        <div class="appliance-btn">
+            <a class="
+            slds-m-top_small
+            slds-m-bottom_small
+            idp-primary-button slds-button slds-button_brand" href={resetpasswordurl} target="_blank">RESET PASSWORD</a>
+
+        </div>
+    </center>
+    <center>
+        <div if:true={distributor} class="appliance-btn">
+            <a class="
+            slds-m-top_small
+            slds-m-bottom_small
+            idp-primary-button slds-button slds-button_brand" href={dealerregpageurl} target="_blank">DEALER REGISTRATION</a>
+
+        </div>
+    </center>
+    </div>
+
+    <!---->
+    
+</template>

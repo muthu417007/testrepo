@@ -1,0 +1,163 @@
+.THIS {
+}
+    .THIS.scrollerSize {
+    height: 100%;
+    width: 500px;
+}
+   
+    .THIS.body {
+        font-size: .75em;
+        line-height: 1.250em;
+        text-align: left;
+        display: block;
+        margin: 8px;
+        margin: 0px auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .THIS .html {
+        background: #FFF;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+   .THIS button {
+        background: #c54b25;
+        -moz-border-radius: 4px;
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        border: 0px solid #304764;
+        color: #FFF;
+        cursor: pointer;
+        font: bold 14px Helvetica,'Gotham Black','Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+        line-height: normal;
+        margin-right: 6px;
+        padding: 6px 8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+        overflow: visible;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .THIS .rn_ChatStatus.rn_ChatHours {
+        font-size: 1.333em;
+        font-weight: bold;
+        line-height: 1.4em;
+    }
+    .THIS .questionTextArea {
+    }
+    .THIS .rn_Container {
+        height: auto;
+        margin: 0px auto;
+        overflow: visible;
+        text-align: left;
+        width: 942px;
+    }
+
+    .THIS.a {
+        color: #c54b25;
+    }
+    .THIS .input {
+        width: 180px;
+    }
+
+    .THIS .rn_TextInput {
+        clear: both;
+        margin-bottom: 8px;
+    }
+
+   .THIS #rn_PageTitle {
+        border-bottom: 1px solid #e2e2e0;
+        color: #25383c;
+        overflow: hidden;
+        padding: 20px 0 20px 0;
+    }
+
+    .THIS #rn_ChatLaunchButton_16_Button {
+        background: #c54b25;
+        -moz-border-radius: 4px;
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        border: 0px solid #304764;
+        color: #FFF;
+        cursor: pointer;
+        font: bold 14px Helvetica,'Gotham Black','Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+        line-height: normal;
+        margin-right: 6px;
+        padding: 6px 8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+        overflow: visible;
+        width: auto;
+    }
+
+   .THIS #rn_PageTitle h1 {
+    font-family: 'Gotham Black','Gotham SSm A', 'Gotham SSm B', Arial, Helvetica, sans-serif;
+    color: #092c74;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 0;
+    padding-bottom: 20px;
+    line-height: 1.18571em;
+    /* text-rendering: optimizeLegibility; */
+    font-size: 24px;
+}
+    .THIS .rn_LiveHelp {
+
+    }
+    .THIS .rn_ChatLaunchFormOpen .rn_ChatLaunchFormHeader {
+        font-size: 1.333em;
+        font-weight: bold;
+        line-height: 1.4em;
+    }
+
+   .THIS .rn_Required, .THIS.rn_ErrorLabel {
+    color: #C10000;
+    }
+    .THIS .rn_Label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 2px;
+        font-size: 12px;
+    }
+
+    .THIS.embeddedServiceLiveAgentSidebarFeature {
+    font-size: 12px;
+    }
+
+    .THIS #rn_Body {
+        margin-right: 100px;
+        padding-right: 21%;
+        overflow: auto;
+        font-size:12px;
+        color: #000000;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .THIS .rn_Padding {
+    padding: 8px 10px 2px 10px;
+    }
+
+    .THIS .rn_ChatLaunchFormOpen .rn_ChatLaunchFormHeader {
+        font-size: 1.333em;
+        font-weight: bold;
+        line-height: 1.4em;
+    }
+
+    .THIS #rn_Container {
+        width: 110% !important;
+    }
+    
+    .THIS #rn_Container{height:100%;margin:0px auto;overflow:visible;text-align:left;width:942px;}
+    .THIS #rn_Header{color:#FFF;height:72px;min-height:72px;overflow:visible;padding:0 10px;}
+    .THIS #rn_Logo{cursor:pointer;float:left;font-family:"Lucida Sans Unicode","Lucida Grande",Garuda,sans-serif;height:70px;letter-spacing:-0.8px;margin-top:4px;position:relative;width:32%;}
+    .THIS #rn_Logo a{bottom:0;color:#FFF;cursor:pointer;font-size:2.083em;font-weight:normal;left:0;line-height:1em;text-decoration:none;}
+    .THIS #rn_LoginStatus{font-size:0.917em;text-align:right;}
+    .THIS #rn_LoginStatus a{font-weight:bold;text-decoration:none;}
+    .THIS #rn_Navigation{background:transparent none repeat scroll center top;height:31px;_height:28px;margin-left:1px;padding:3px 10px 0 0;}
+    .THIS #rn_NavigationBar{float:left;height:14px;}
+    .THIS #rn_Body{background:#FFF;border-right:1px solid #DDD;border-left:1px solid #DDD;overflow:hidden;padding:0 0px 20px 10px;text-align:left;width:99%;-moz-box-shadow:3px 3px 3px #888;-webkit-box-shadow:3px 3px 3px #888;box-shadow:3px 3px 3px #888;}
+    .THIS #rn_MainColumn{background:#FFF;float:left;margin-right:8px;min-height:650px;height:auto !important;height:650px;overflow:visible;padding:0px 0px 10px 6px;width:74%;}
+    .THIS #rn_SideBar{float:right;margin-right:12px;width:23%;}
+    .THIS #rn_Footer{border-bottom:1px solid #E2E2E2;}
+    .THIS #rn_RightNowCredit{border-top:1px solid #DDD;clear:both;padding:10px 0px 10px 0px;text-align:right;margin:auto 20px;}

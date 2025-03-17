@@ -1,0 +1,191 @@
+<template>
+    <header data-f6-region class="bw-header" ref="header">
+        <div class="header-content">
+            <!-- desktop layout -->
+            <div lwc:if={isDesktop}
+                 class="commerce-header-desktop slds-grid slds-wrap slds-gutters slds-gutters_direct-small slds-grid_vertical-align-center">
+                <div class="slds-col slds-size_4-of-12 slds-grid slds-grid_align-center">
+                    <div class="header-customerServicePhone slds-col slds-size_1-of-2 slds-p-horizontal_medium">
+                        <slot name="Customer_Service_Phone"></slot>
+                    </div>
+                    <div class="header-serviceAreas slds-col slds-size_1-of-2 slds-p-horizontal_medium">
+                        <slot name="Service_Areas"></slot>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_8-of-12 slds-grid slds-grid_align-end">
+                    <div class="header-enterZipCode slds-col slds-p-horizontal_medium">
+                        <slot name="Enter_ZipCode"></slot>
+                    </div>
+                    <div class="header-signIn slds-col slds-p-horizontal_medium">
+                        <slot name="Profile_Menu"></slot>
+                    </div>
+                    <div class="header-cart slds-col slds-p-horizontal_medium">
+                        <slot name="Cart_Badge"></slot>
+                    </div>
+                </div>
+                <div class="header-title slds-col slds-size_1-of-1">
+                    <slot name="Title"></slot>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-grid slds-grid_align-center">
+                    <div class="slds-col">
+                        <slot name="Navigation_List_Menu"></slot>
+                    </div>
+                    <div class="slds-col">
+                        <slot name="Search_Bar"></slot>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile layout -->
+            <div lwc:if={isMobile}
+                 class="commerce-header-mobile slds-grid slds-wrap">
+                <div class="slds-col slds-grid">
+                    <div class="slds-col slds-size_2-of-12 slds-align-top">
+                        <slot name="Navigation_List_Menu"></slot>
+                    </div>
+                    <div class="slds-col slds-size_10-of-12 slds-grid slds-align-top slds-grid_align-end">
+                        <div class="slds-col slds-size_10-of-12">
+                            <slot name="Search_Bar"></slot>
+                        </div>
+                        <div class="header-cart slds-col slds-size_2-of-12">
+                            <slot name="Cart_Badge"></slot>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-customerServicePhone slds-col">
+                    <slot name="Customer_Service_Phone"></slot>
+                </div>
+                <div class="header-serviceAreas slds-col">
+                    <slot name="Service_Areas"></slot>
+                </div>
+                <div class="header-enterZipCode slds-col">
+                    <slot name="Enter_ZipCode"></slot>
+                </div>
+                <div class="header-signIn slds-col">
+                    <slot name="Profile_Menu"></slot>
+                </div>
+                <div class="header-title slds-col slds-size_1-of-1">
+                    <slot name="Title"></slot>
+                </div>
+            </div>
+            <!-- tablet layout -->
+            <div lwc:if={isTablet}
+                 class="commerce-header-tablet slds-grid slds-wrap">
+                <div class="header-customerServicePhone slds-col slds-size_3-of-12">
+                    <slot name="Customer_Service_Phone"></slot>
+                </div>
+                <div class="header-serviceAreas slds-col slds-size_2-of-12">
+                    <slot name="Service_Areas"></slot>
+                </div>
+                <div class="header-enterZipCode slds-col slds-size_3-of-12">
+                    <slot name="Enter_ZipCode"></slot>
+                </div>
+                <div class="header-signIn slds-col slds-size_2-of-12">
+                    <slot name="Profile_Menu"></slot>
+                </div>
+                <div class="header-cart slds-col slds-size_2-of-12">
+                    <slot name="Cart_Badge"></slot>
+                </div>
+                <div class="header-title slds-col slds-size_1-of-1">
+                    <slot name="Title"></slot>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-grid slds-grid_align-center">
+                    <div class="slds-col">
+                        <slot name="Navigation_List_Menu"></slot>
+                    </div>
+                    <div class="slds-col">
+                        <slot name="Search_Bar"></slot>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main data-f6-region class="bw-content">
+        <slot></slot>
+    </main>
+    <template lwc:if={showFooter}>
+        <footer data-f6-region class="bw-footer">
+            <div class="footer-content">
+                <div lwc:if={isDesktop}
+                    class="commerce-footer-desktop slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-grid slds-grid_align-center">
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_Customer_Care"></slot>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_My_Bodewell"></slot>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_Our_Company"></slot>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <slot name="Footer_Logo"></slot>
+                        </div>
+                        <div class="slds-col">
+                            <slot name="Footer_Social"></slot>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="slds-col slds-size_1-of-1">
+                        <slot name="Footer_Copyright"></slot>
+                    </div>
+                </div>
+                <div lwc:if={isMobile}
+                    class="commerce-footer-mobile slds-grid slds-wrap">
+                    <div class="slds-col slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <lightning-accordion allow-multiple-sections-open>
+                                <lightning-accordion-section name="Customer Care" label="Customer Care">
+                                    <slot name="Footer_Customer_Care"></slot>
+                                </lightning-accordion-section>
+                                <lightning-accordion-section name="My Bodewell" label="My Bodewell">
+                                    <slot name="Footer_My_Bodewell"></slot>
+                                </lightning-accordion-section>
+                                <lightning-accordion-section name="Our Company" label="Our Company">
+                                    <slot name="Footer_Our_Company"></slot>
+                                </lightning-accordion-section>
+                            </lightning-accordion>
+                        </div>
+                        <div class="slds-col">
+                            <slot name="Footer_Logo"></slot>
+                        </div>
+                        <div class="slds-col">
+                            <slot name="Footer_Social"></slot>
+                        </div>
+                        <hr>
+                        <div class="slds-col">
+                            <slot name="Footer_Copyright"></slot>
+                        </div>
+                    </div>
+                </div>
+                <div lwc:if={isTablet}
+                    class="commerce-footer-tablet slds-grid slds-wrap">
+                    <div class="slds-col slds-size_2-of-3 slds-grid slds-grid_align-center">
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_Customer_Care"></slot>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_My_Bodewell"></slot>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <slot name="Footer_Our_Company"></slot>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <slot name="Footer_Logo"></slot>
+                        </div>
+                        <div class="slds-col">
+                            <slot name="Footer_Social"></slot>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="slds-col slds-size_1-of-1">
+                        <slot name="Footer_Copyright"></slot>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </template>
+</template>

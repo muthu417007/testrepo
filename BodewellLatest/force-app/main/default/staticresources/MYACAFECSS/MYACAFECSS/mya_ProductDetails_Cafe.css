@@ -1,0 +1,1590 @@
+.body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: .8px;
+    color: #6c6158;
+    cursor: auto;
+    -webkit-text-size-adjust: 100%;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, "Arial", sans-serif;
+    background-color: white;
+}
+
+.mainContent {
+    position: relative;
+    padding-bottom: 2em;
+    margin: 0 auto;
+    max-width: none;
+}
+
+.middleSection {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+lightning-icon {
+    cursor: pointer;
+}
+
+div {
+    display: block;
+}
+
+.grid-container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.grid-margin-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+
+/* .grid1-x{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: -webkit-flex;
+} */
+
+.grid1-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: -webkit-flex;
+    text-align: left;
+}
+
+.grid-padding-x1 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-x1 {
+    /* display: -webkit-box; */
+    display: -webkit-flex;
+}
+
+.grid-padding-x2 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-padding-x1 .grid-padding-x2 {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid-margin-x>.cell {
+    width: calc(100% - 1.875rem);
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.product-spec-page .your-appliance-section {
+    text-align: left;
+}
+
+.product-photo {
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.product-sku {
+    margin-bottom: 1rem;
+    font-size: 1.04rem;
+    line-height: 1.6;
+    letter-spacing: .8px;
+    color: #6c6158;
+    text-rendering: optimizeLegibility;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-family: 'ProximaNova-Regular';
+}
+
+section {
+    margin-bottom: 0rem;
+    display: block;
+}
+
+h1 {
+    /* font-size: 28px; */
+    text-rendering: optimizeLegibility;
+    font-family: 'adobe-garamond-regular';
+}
+
+.infoheader {
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 42px;
+    font-family: 'AdobeGaramondProRegular';
+    letter-spacing: 0.25px;
+    color: #004B3D;
+}
+
+h1 {
+    font-family: "adobe-garamond-pro", Baskerville, "Times New Roman", serif;
+    color: #004b3d;
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: .25px;
+}
+
+.your-appliance-section h1 {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cell1 {
+    height: 43rem;
+    min-height: 43rem;
+    max-height: 45rem;
+}
+
+
+/* .your-appliance-heading{
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: xx-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+} */
+
+.grid-margin-x>.medium-offset-0 {
+    margin-left: calc(0% + 0.9375rem);
+}
+
+.grid-margin-x>.medium-6 {
+    width: calc(50% - 1.875rem);
+}
+
+.grid-margin-x>.cell1 {
+    margin-right: 0.9375rem;
+    padding-left: 7rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-family: 'ProximaNova-Regular';
+}
+
+.paddingbottom {
+    padding-bottom: 1rem;
+}
+
+.margin-top-2 {
+    margin-top: 2rem;
+}
+
+.margin-top {
+    padding-left: 8rem;
+    margin-top: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.border-top {
+    border-top: solid 1px;
+}
+
+.remove-link {
+    padding-left: 5px;
+    margin-left: 1px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
+/* p{
+    font-family: 'Helvetica Neue Regular';
+} */
+
+a {
+    text-transform: lowercase;
+    text-decoration: underline;
+    font-size: 1rem;
+    color: rgba(108, 97, 88, 1);
+    transition: color .15s ease;
+    line-height: inherit;
+    cursor: pointer;
+    font-family: 'ProximaNova-Regular';
+}
+
+a:hover {
+    color: #46645a;
+    cursor: pointer;
+}
+
+.mainContent>h2 {
+    margin: 0 0 1em;
+    color: #555;
+}
+
+.large-text-left-custom>h2 {
+    padding-left: 15px;
+}
+
+.other-h2 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    font-weight: 700;
+    font-size: unset;
+}
+
+h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    letter-spacing: .25px;
+    line-height: 1.18571em;
+    text-rendering: optimizeLegibility;
+}
+
+.more-about-your-appliance {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+p.product-name {
+    /* font-family: "Proxima Nova W05 Bold", "Helvetica Neue", "Arial", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #555;
+    letter-spacing: 0.03rem;
+    margin-bottom: 0; */
+    font-weight: normal;
+}
+
+.large-text-left-custom>p {
+    padding-left: 15px;
+}
+
+ul.support-links {
+    text-align: left;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20em;
+    margin: 0 -0.71429em;
+    height: 25rem;
+}
+
+ul {
+    list-style-position: outside;
+    line-height: 1.2;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.medium-block-grid-1>li {
+    clear: both;
+}
+
+.support-links>li {
+    display: inline;
+    height: auto;
+    float: left;
+    padding: initial;
+}
+
+.medium-block-grid-1>li {
+    width: 100%;
+}
+
+li {
+    font-size: inherit;
+    color: #004B3D;
+}
+
+ul.support-links a {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-left: 10px;
+    font-family: 'ProximaNova-Regular';
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.link {
+    color: #004B3D;
+    font-weight: 400;
+    letter-spacing: .8px;
+}
+
+ul {
+    line-height: 1.6;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+ul.support-links a.icon-help {
+    background-image: url(../images/GEA-icons/icon-owner-support.png);
+}
+
+.more-about-your-appliance-section-container {
+    /* background-color: aliceblue; */
+    max-width: inherit;
+    padding-top: 20px;
+    height: 50rem;
+    border-bottom: 2px solid #e3dfda;
+}
+
+.grid-container:not(.full)>.grid-padding-x {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+
+.grid1-x>.medium-10 {
+    width: 83.33333%;
+}
+
+.medium-offset-1 {
+    margin-left: 8.33333%;
+}
+
+.grid-padding-x>.cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+
+
+/* h2{
+    color: #555;
+} */
+
+h2.your-appliance-subheading {
+    margin-bottom: 1em;
+    padding-bottom: 1rem;
+}
+
+h2.your-appliance-subheading {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small-9 {
+    width: 75%;
+}
+
+.your-appliance-subheading {
+    font-weight: 100;
+    font-size: x-large;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+}
+
+body.product-spec-page .more-about-your-appliance-section .grid1-x {
+    margin-bottom: 3rem;
+}
+
+.product-spec-page .cell.more-about-subsection {
+    border-right: 1px solid #092c74;
+    margin-top: 15px;
+}
+
+.product-spec-page .more-about-subsection .appliance-model-serial,
+.more-about-subsection.appliance-nickname {
+    padding: 1rem 6rem 0rem 1rem;
+}
+
+.appliance-model-serial {
+    padding: 1rem 6rem 0rem 1rem;
+    border-right: solid 1px;
+}
+
+.product-spec-page .more-about-subsection {
+    color: #555;
+    line-height: 4.18571em;
+    text-align: left;
+}
+
+.grid1-x>.medium-6 {
+    width: 50%;
+}
+
+h3 {
+    color: #004b3d;
+    text-transform: capitalize;
+    /* padding-bottom: 5px;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;   */
+}
+
+.other-h3-c {
+    font-weight: 400;
+    font-size: 1.1875rem;
+    line-height: 1.368421;
+    letter-spacing: 0.050em;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+
+/* .model-number{
+    margin-bottom: 3rem;
+} */
+
+.small-offset-3 {
+    margin-left: 25%;
+}
+
+.small-6 {
+    width: 50%;
+    padding-left: 5em;
+}
+
+hr {
+    box-sizing: content-box;
+    border: solid #cfcfcf;
+    border-width: 1px 0 0;
+    height: 0;
+    margin: 2rem 0 1.9375rem;
+    clear: both;
+    max-width: 75rem;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+h3 a {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+.show-for-small-only {
+    display: none;
+}
+
+.margin-top-half {
+    margin-top: 0.5rem;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+
+/* .medium-offset-0 {
+    margin-left: 0%;
+} */
+
+input[type="text"] {
+    border: 1px solid #bdb9b2;
+    padding: 0rem 1.5rem 0rem 0.5rem;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 0;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #0a0a0a;
+    transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
+    appearance: none;
+}
+
+input {
+    vertical-align: baseline;
+    overflow: visible;
+    writing-mode: horizontal-tb;
+    text-rendering: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+.button-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    text-align: center;
+}
+
+.button,
+.button:hover {
+    padding: 0.85em 1em;
+}
+
+button .button.secondary.save-button.uppercase,
+button.button.secondary.save-button {
+    border: 2px solid #004b3d;
+    color: #004b3d;
+    background-color: transparent;
+}
+
+button .button.secondary.save-button.uppercase,
+button.button.secondary.save-button:hover {
+    background-color: rgba(24, 63, 50, 1);
+    color: #fff;
+}
+
+button .button.primary.cancel-button.uppercase,
+button.button.primary.cancel-button {
+    background-color: #004b3d;
+    color: #fff;
+    margin-right: 1rem;
+}
+
+button .button.primary.cancel-button.uppercase,
+button.button.primary.cancel-button:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.edit-serial-number-form>.button-group.expanded>.button {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.button-group.expanded .button {
+    -webkit-box-flex: 1;
+    flex: 1 1 0px;
+}
+
+.button-group .button {
+    /* margin-right: 1rem; */
+    margin-bottom: 1px;
+    font-size: 0.9rem;
+}
+
+.button {
+    line-height: 1rem;
+    transition: all .15s ease;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.button.primary {
+    background-color: #004B3D;
+    color: white;
+}
+
+.button.primary1 {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+button[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    line-height: 1rem;
+    transition: all .15s ease
+}
+
+.more-about-subsection.location-installation {
+    padding: 1rem 1rem 0rem 7rem;
+}
+
+.more-about-subsection {
+    color: #555;
+    /* line-height: 4.18571em; */
+}
+
+.product-spec-page .more-about-subsection p {
+    margin-bottom: 3rem;
+}
+
+.margin-btm-0 {
+    margin-bottom: 0;
+}
+
+.medium-offset-0 {
+    margin-left: 10%;
+}
+
+.button.expanded {
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.button {
+    border-style: solid;
+    border-width: 2px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-color: #004B3D;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    border-radius: 0;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.button.primary:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+    color: #fefefe;
+}
+
+.button1 {
+    border-style: solid white;
+    border-width: 2px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-color: transparent;
+    color: white;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    border-radius: 0;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.button.primary1:hover {
+    background-color: #fefefe;
+    color: #004B3D;
+}
+
+.related-parts-and-accessories-section {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+h2.your-appliance-subheading {
+    margin-bottom: 1em;
+    margin: auto;
+}
+
+.your-appliance-subheading {
+    font-weight: 100;
+    font-size: x-large;
+    text-transform: capitalize;
+    font-family: 'AdobeGaramondProRegular';
+}
+
+h2 {
+    font-family: 'AdobeGaramondProRegular';
+    font-size: 1.625rem;
+    line-height: 2rem;
+    letter-spacing: 0.005em;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: #004b3d;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h2.your-appliance-subheading1 {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small-91 {
+    width: 75%;
+}
+
+.your-appliance-subheading1 {
+    font-weight: 100;
+    font-size: 1.625rem;
+    font-family: 'AdobeGaramondProRegular';
+}
+
+.infoHeader1 {
+    padding-bottom: 5%;
+    text-transform: uppercase;
+}
+
+.more-about-your-appliance1 {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', 'Arial', 'Helvetica', sans-serif;
+    padding-bottom: 4rem;
+}
+
+.reveal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+}
+
+.add-address-form {
+    font-family: sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    color: #333;
+    cursor: auto;
+}
+
+.reveal.add-address-modal {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+label,
+.mock-label {
+    font-size: 0.9411764705882353rem;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin: 0em 0 1em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    line-height: 2.1;
+}
+
+.reveal {
+    overflow: visible;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    /* max-width: 75rem; */
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: transparent;
+    position: relative;
+    top: 15%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+
+/* .modal-header {
+    margin-top: 1rem !important;
+    font-size: 22px !important;
+    color: #092c74;
+    font-weight: 800;
+    margin-bottom: 1em;
+    margin-top: 1rem !important;
+    text-transform: capitalize !important;
+} */
+
+.close-button {
+    font-size: 1em;
+    color: white;
+    right: 1rem;
+    top: 0rem;
+    font-family: 'ProximaNova-Regular';
+    line-height: 1;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.close-button1 {
+    font-size: 1em;
+    color: #004b3d;
+    right: 0rem;
+    top: 0rem;
+    font-family: 'ProximaNova-Regular';
+    line-height: 1;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.fa {
+    display: inline-block;
+    font-size: x-large;
+    text-rendering: auto;
+    font-family: 'ProximaNova-Regular';
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.input-field-class {
+    border: 1px solid #bdb9b2;
+    padding: 0.2rem 1.5rem 0rem 0.5rem;
+    height: 2.7375rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 1rem;
+    border-radius: 0;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+    font-size: 1rem;
+    font-weight: normal;
+    vertical-align: baseline;
+    line-height: 1.5;
+    color: #0a0a0a;
+    overflow: visible;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+    writing-mode: horizontal-tb;
+    cursor: text;
+}
+
+.disclaimer-block {
+    margin-top: 2rem;
+}
+
+.disclaimer {
+    font-size: 0.875rem;
+    line-height: calc(19/ 14);
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    text-rendering: optimizeLegibility;
+}
+
+
+/*modal*/
+
+.delete-message .removeproduct {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-action {
+    width: 100%;
+    display: inline-block;
+}
+
+.modalbtndiv {
+    width: 50%;
+    float: left;
+}
+
+.slds-modal__header h3 {
+    padding: 0;
+    margin: 0;
+    border-bottom: 0rem;
+}
+
+.cancelButton1 {
+    background-color: #004B3D;
+    color: #fafafa;
+    border: 2px solid #004B3D;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'ProximaNova-Regular';
+    padding: 10px 20px;
+}
+
+.cancelButton1:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+}
+
+.okButton:hover {
+    background-color: #004B3D;
+    color: #fafafa;
+    border: 2px solid #004B3D;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.okButton {
+    width: 100%;
+    background-color: #fafafa;
+    color: #004B3D;
+    padding: 10px 20px;
+    font-weight: 600;
+    height: 40px;
+    border: 2px solid #004B3D;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.cancel-delete {
+    width: 100%;
+    padding: 20px;
+}
+
+.footer-message {
+    text-align: center;
+}
+
+.main-sub {
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.in-field {
+    margin: 10px 0px;
+}
+
+.main-label {
+    font-weight: bold;
+    color: rgba(108, 97, 88, 1);
+    padding: 0px 3px;
+}
+
+.main-opt {
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 3px;
+    color: rgba(108, 97, 88, 1);
+}
+
+.or-div {
+    text-transform: uppercase;
+    color: #1a63a2;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.no-border {
+    border-bottom: 0px Solid rgba(24, 63, 50, 0.95);
+    background: transparent;
+}
+
+.reveal1 {
+    overflow: visible;
+    margin-bottom: 1em;
+    padding: 1rem 2rem;
+    width: 600px;
+    /* max-width: 75rem; */
+    z-index: 1006;
+    backface-visibility: hidden;
+    border-radius: 0;
+    background-color: #fefefe;
+    position: relative;
+    top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+}
+
+.reveal-overlay1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1005;
+    background: rgba(24, 63, 50, 0.95);
+    overflow-y: auto;
+}
+
+.reveal1 {
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+}
+
+.reveal1.add-address-modal1 {
+    top: 40px;
+    margin-bottom: 20px;
+}
+
+.modal-header1 {
+    margin-top: 1rem;
+    font-size: 26px;
+    color: #004B3D;
+    font-weight: 500;
+    margin-bottom: 1em;
+    font-family: 'AdobeGaramondProRegular';
+    margin-top: 1rem;
+    text-transform: capitalize;
+    border-bottom: none;
+    background: none;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.write-a-review {
+    margin-top: 1em;
+    margin-left: 1rem;
+}
+
+a.write-a-review-link {
+    color: #1a63a2;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'gotham-Medium';
+}
+
+h4 {
+    margin-top: 0rem;
+    font-family: 'ProximaNova-Regular';
+    color: #004b3d;
+    font-size: 19px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .25px;
+    line-height: 1.428571;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
+}
+
+.padding-top {
+    padding-top: 1rem;
+}
+
+h3.font-primary,
+.h3.font-primary {
+    font-family: 'ProximaNova-Regular';
+    font-size: 26px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.050em;
+    margin: 2rem 0px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.white-font {
+    color: white;
+    text-transform: capitalize;
+}
+
+.white-font:hover {
+    color: white
+}
+
+
+/* rellated parts css */
+
+.grid-x {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.grid-x.grid-margin-x {
+    margin-left: 0rem;
+}
+
+.grid-margin-x {
+    margin-right: -0.9375rem;
+}
+
+.product1-photo {
+    margin-right: 2rem;
+    /* border: #555 solid 1px; */
+}
+
+.imagetext img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 100%;
+    height: 100%;
+}
+
+.imagetext img:hover {
+    opacity: 0.2;
+}
+
+.imagetext a {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: block;
+}
+
+.RelPartButton {
+    width: 150px;
+    height: 40px;
+    background-color: #004b3d;
+    color: white;
+    padding: 5px 5px;
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: initial;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+
+.text {
+    margin: 5px 5px 5px 5px;
+    height: -webkit-fill-available;
+    padding: 40px 0px;
+}
+
+.go-to-part {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    height: auto;
+    overflow: auto;
+    margin-bottom: 10px;
+    font-family: 'ProximaNova-Regular';
+    text-transform: capitalize;
+    text-align: center;
+    color: #004b3d;
+    line-height: 1.3;
+    font-size: .875rem;
+    letter-spacing: 0.25px;
+}
+
+button.RelPartButton:hover {
+    background-color: rgba(24, 63, 50, 0.8);
+    color: #fefefe;
+    border: 2px solid black;
+}
+
+.model-number {
+    height: 40px;
+    font-weight: bold;
+}
+
+.serial-number {
+    font-weight: bold;
+}
+
+.locdetails {
+    height: auto;
+    text-transform: capitalize;
+}
+
+.modal__header {
+    font-family: 'ProximaNova-Regular';
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.comments-icn {
+    --sds-c-icon-color-foreground-default: #rgba(108, 97, 88, 1);
+    border: solid 1px;
+    border-radius: 8px;
+}
+
+.select-add-text {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-family: 'ProximaNova-Regular';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: .8px;
+    cursor: auto;
+    -webkit-text-size-adjust: 100%;
+}
+
+.validate {
+    text-align: left;
+    font-weight: 100;
+    font-family: 'proxima-nova';
+}
+
+.select-box {
+    text-align: left;
+    font-weight: 100;
+    font-family: 'proxima-nova';
+}
+
+a.product1-photo {
+    text-decoration: none;
+}
+
+.remove-link-small {
+    display: none;
+}
+
+@media only screen and (max-width:425px) {
+    .grid1-x>.medium-6 {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+    .grid1-x {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        display: -webkit-flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .write-a-review {
+        margin-top: 0em;
+    }
+    ul.support-links {
+        text-align: left;
+        list-style-type: none;
+        max-width: 20em;
+        display: list-item;
+        max-height: 25rem;
+        height: 25rem;
+        margin: 0 -1.71429em;
+        align-items: flex-start;
+    }
+    li {
+        font-size: inherit;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .cell1 {
+        height: auto;
+        min-height: 35rem;
+    }
+    .margin-top-2 {
+        margin-top: 1rem;
+        padding-left: 0rem;
+        text-align: center;
+    }
+    .product-photo {
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+        height: auto;
+    }
+    .model-number {
+        margin-bottom: 1rem;
+        letter-spacing: 0.25px;
+    }
+    .serial-number {
+        text-align: center;
+    }
+    .locdetails {
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+        text-align: center;
+        height: auto;
+        width: auto;
+        word-break: break-word;
+        text-align: center;
+    }
+    .show-for-small-only {
+        display: block;
+    }
+    .small-6 {
+        width: 100%;
+        padding-left: 0em;
+    }
+    .small-offset-3 {
+        margin-left: auto;
+    }
+    hr {
+        box-sizing: content-box;
+        border: solid rgba(24, 63, 50, 0.8);
+        border-width: 1px 0 0;
+        height: 0;
+        margin: 2rem 0 1.9375rem;
+        clear: both;
+        max-width: 75rem;
+        unicode-bidi: isolate;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
+    }
+    .appliance-model-serial {
+        border: none;
+    }
+    h3.other-h3-c {
+        text-align: center;
+        display: grid;
+    }
+    .border-bottom-header {
+        border-bottom: 1px solid #004B3D;
+    }
+    .model-number-warr {
+        margin-bottom: 1rem;
+        text-align: center;
+        letter-spacing: 0.25px;
+    }
+    .border-top {
+        border: none;
+    }
+    .small-9 {
+        width: 100%;
+    }
+    .serial-number-viewing {
+        display: block;
+        margin-top: 5px;
+    }
+    .install-date {
+        text-align: center;
+    }
+    .nick-name-text {
+        text-align: center;
+    }
+    .medium-offset-0 {
+        margin-left: 1%;
+    }
+    .medium-offset-1 {
+        margin-left: 0.33333%;
+    }
+    .more-about-your-appliance-section {
+        height: max-content;
+    }
+    .grid-container {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+    .more-about-your-appliance-section-container {
+        max-width: inherit;
+        margin-top: 10px;
+        height: max-content;
+        padding-top: 20px;
+        border: none;
+    }
+    .warrenty-head {
+        text-align: center;
+    }
+    .reveal1.add-address-modal1 {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .select-box {
+        text-align: left;
+        display: block;
+        margin-top: -1rem;
+    }
+    .grid-x {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        flex-wrap: nowrap;
+    }
+    .slick-slider {
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-right;
+        -webkit-tap-highlight-color: transparent;
+        overflow: auto;
+    }
+    .related-parts-and-accessories-item {
+        opacity: 1;
+        width: 10rem;
+        margin-right: 0rem;
+        margin-left: 4rem;
+        transform: translate3d(0px, 0px, 0px);
+    }
+    .imagetext img:hover {
+        opacity: 1;
+    }
+    .imagetext img {
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 100%;
+        height: 100%;
+    }
+    .imagetext a {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+    }
+    .text {
+        margin: 5px 5px 5px 5px;
+        height: -webkit-fill-available;
+        padding: 5px 0px;
+        display: block;
+    }
+    .product1-photo {
+        margin-right: 1rem;
+    }
+    .imagetext {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    .remove-link-large {
+        display: none;
+    }
+    .remove-link-small {
+        display: block;
+    }
+    .margin-top {
+        padding-left: 1rem;
+        margin-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+    .your-appliance-subheading {
+        font-weight: 100;
+        font-size: 1.625rem;
+        text-transform: capitalize;
+        font-family: 'AdobeGaramondProRegular';
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: transparent;
+        position: relative;
+        top: 1%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .reveal1 {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 1rem;
+        width: 100%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: #fefefe;
+        position: relative;
+        top: 1%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .reveal-overlay1 {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1005;
+        background: white;
+        overflow-y: auto;
+    }
+    h2 {
+        font-family: 'AdobeGaramondProRegular';
+        font-size: 1.625rem;
+        line-height: 2rem;
+        text-align: center;
+        letter-spacing: 0.005em;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        color: #004b3d;
+        display: block;
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .reveal1.add-address-modal1 {
+        top: 20%;
+        margin-bottom: 20px;
+    }
+    .nick-name-text {
+        height: auto;
+    }
+    .margin-top {
+        padding-left: 1rem;
+        margin-top: 2rem;
+        text-align: center;
+        padding-bottom: 2.5rem;
+    }
+    .product-photo {
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+    .grid-margin-x>.cell1 {
+        margin-right: 0.9375rem;
+        padding-left: 2rem;
+    }
+    .reveal {
+        overflow: visible;
+        margin-bottom: 1em;
+        padding: 1rem 2rem;
+        width: 85%;
+        z-index: 1006;
+        backface-visibility: hidden;
+        border-radius: 0;
+        background-color: transparent;
+        position: relative;
+        top: 3px;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-y: auto;
+    }
+    .remove-link-large {
+        display: none;
+    }
+    .remove-link-small {
+        display: block;
+    }
+}

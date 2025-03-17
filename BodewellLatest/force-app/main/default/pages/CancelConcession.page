@@ -1,0 +1,12 @@
+<apex:page showHeader="false"  standardController="Concession__c" extensions="CancelConcessionController">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <div class="slds-scope">
+        <apex:form >
+            <apex:pageMessages />
+            <apex:commandButton action="{!cancel}" value="Are you sure you want to Cancel Concession?" styleclass="slds-button slds-button_brand"/>
+        </apex:form>
+    </div>
+
+</apex:page>

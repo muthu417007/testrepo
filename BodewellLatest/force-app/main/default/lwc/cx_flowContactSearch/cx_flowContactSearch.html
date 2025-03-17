@@ -1,0 +1,47 @@
+<template>
+    <div> 
+        <lightning-card title="Contact Selection" icon-name='utility:adduser' id="cmpCard">
+            <div slot="actions" if:true={showNewContactButton}>
+                <lightning-button label="New Contact" onclick={handleNewContactClick}></lightning-button>
+            </div>
+            <div class="slds-grid slds-wrap slds-gutters slds-p-horizontal_medium">
+                
+                <div class={selectClasses} data-id="select">
+                    <lightning-combobox
+                        name="inputType"
+                        label="Select an option"
+                        value={inputType}
+                        placeholder="Select an option"
+                        options={inputOptions}
+                        onchange={handleChange} ></lightning-combobox>
+                </div>
+                
+                <div if:true={isInputTypePhone} class={inputClasses}>
+                    <lightning-input type="tel" label="Telephone" pattern="[0-9]{10}" data-id="phone" required
+                        message-when-bad-input="Please, enter a valid phone number (number only)"
+                        message-when-pattern-mismatch="Please, enter a valid phone number (number only)"
+                        message-when-value-missing="Please, enter a valid phone number (number only)"></lightning-input>
+                </div>
+
+                <div if:true={isInputTypeEmail} class={inputClasses}>
+                    <lightning-input type="email" label="Email" data-id="email" required
+                        message-when-bad-input="Please, enter a valid email address"
+                        message-when-pattern-mismatch="Please, enter a valid email address"
+                        message-when-type-mismatch="Please, enter a valid email address"
+                        message-when-value-missing="Please, enter a valid email address"></lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-6 slds-m-top_large">
+                    <lightning-button-icon variant="brand" icon-name="utility:search" alternative-text="Search" title="Search" onclick={handleSearchClick}></lightning-button-icon>
+                </div>
+                
+            </div>
+
+            <hr class="solid">
+            <template if:false={loading} for:each={contacts} for:item="contact">
+                <c-cx_match-case-contact-item key={contact.index} contact={contact} disable-link={disableLinkClick} oncontactclick={handleContactClick} onmatchclick={handleSelectClick}></c-cx_match-case-contact-item>
+            </template>
+            <lightning-spinner if:true={loading}></lightning-spinner>
+        </lightning-card>
+    </div>
+</template>

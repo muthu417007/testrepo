@@ -1,0 +1,480 @@
+<apex:page renderas="pdf" Controller="SPFPDF_Controller" showHeader="false" applyBodyTag="false" applyHtmlTag="true">
+ <head>
+    <style>
+           body {font-family:'Arial Unicode MS';font-size:60%;font-weight:bold;}
+          .headerRow .Title {background-color: #660033;color:#FFFAF0;}
+          .bgcolor. clr {background-color: #660033;}
+    </style>
+    
+     <style>
+           hd {font-family:'Arial Unicode MS';font-size:90%;font-weight:bold;}
+          .headerRow .Title {background-color: #660033;color:#FFFAF0;}
+    </style>
+ </head>
+
+<!-- Title Section -->
+<!--<apex:pageBlock >
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:image url="{!$Resource.GE_Appliances_Logo}" width="110" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection> 
+    </apex:pageBlock> -->
+    <hd>  
+        <center><div style="color:#660033;font-weight:bold;font-family:'Arial Unicode MS';" > GE Appliances - Seasonal Performance Factor</div> </center>
+        <center><div style="color:#660033;font-weight:bold;font-family:'Arial Unicode MS';" > Heating and Air Conditioning Seasonal Performance Factor</div> </center>
+    </hd>
+    <br/>
+<!-- SPF Detail Page -->
+    <body> 
+    <apex:pageBlock >
+        <apex:panelGrid columns="2" width="46%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="2"  columnClasses="colStyle" width="100%">
+                <!--<apex:outputText value="JobName :" />  -->    
+                <apex:outputText value="JobName :" />  
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="100%">       
+                <apex:outputText value="{!spf.Job_Name__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2"  columnClasses="colStyle" width="100%">
+                <apex:outputText value=" Model :" />          
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="100%">
+                <apex:outputText value="{!spf.Model_Number__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2"  columnClasses="colStyle" width="100%">
+              <apex:outputText value="City & State :" />        
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="100%">
+                <apex:outputText value="{!spf.City_and_state__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock> 
+    <br/>
+    <apex:pageBlock >
+        <apex:panelGrid columns="3" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="3"  bgcolor="#660033" columnClasses="colStyle" width="100%" headerClass="Title">
+                <div style="color:#FFFAF0;font-weight:bold;" > Heating Data </div>
+            </apex:panelGrid>     
+            <apex:panelGrid columns="3" bgcolor="#660033"  columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Cooling Data</div>
+            </apex:panelGrid>
+            <apex:panelGrid columns="3" bgcolor="#660033"  columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Payback Information</div>
+            </apex:panelGrid>
+            <apex:panelGrid columns="3" width="100%">
+                Indoor Temp.(F):&nbsp;&nbsp;&nbsp;&nbsp;{!spf.Indoor_Design_Temperature__c}
+            </apex:panelGrid>    
+            <apex:panelGrid columns="3">              
+                Cooling Cost per KWH (in cents): <apex:outputText value="{!spf.Cooling_Cost_per_KWH_in_cents__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Heat Pump initial cost over resist.heat unit($)" />
+            <apex:outputText value="{!spf.Heat_Pump_initial_cost_over_resist_heat__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Outdoor Temp.(F):" />
+            <apex:outputText value="{!spf.Out_Door_design_Temperature__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Hours Above (75,70,or 80):" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:outputText value="{!spf.Hours_Above_75_70_or_80__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Electricity cost per KWH(in cents):" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:outputText value="{!spf.Electricity_cost_per_KWH_in_cents__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Heat Loss (Watts):" />
+            <apex:outputText value="{!spf.Heat_Loss__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Heat gain (BTUH):" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:outputText value="{!spf.Heat_gain_BTUH__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="3">
+                <apex:outputText styleClass="fieldLabel" value="Drain line Installation Cost:" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:outputText value="{!spf.Drain_line_Installation_Cost__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock>   
+    <br/> 
+<!-- Calculations based on Indoor Temperature(F) -->  
+    <apex:pageBlock > 
+        <hd> 
+                <b>Calculations based on {!spf.Indoor_Design_Temperature__c}&#176;F Indoor Temperature</b>
+        </hd> 
+    <br/>
+        <apex:pageblocktable value="{!spfCalclst }" var="fgh" width="100%" border="1">
+               <apex:column headerValue="Outdoor Temp" value="{!fgh.Outdoor_Temp__c}" headerClass="Title"/>
+               <apex:column headerValue="Heat Loss(Watts)" value="{!fgh.Heat_Loss_Watts_Formula__c}" headerClass="Title" />
+               <apex:column headerValue="Heating Hours" value="{!fgh.Heating_Hours__c}" headerClass="Title" />
+               <apex:column headerValue="PTAC Resistance Heating (KWH)" value="{!fgh.PTAC_Resistance_Heating_KWH__c}" headerClass="Title" />
+               <apex:column headerValue="Additional Heat Required Heat/Hr (Watts)" value="{!fgh.Additional_Heat_Required_Heat_Hr_Watts__c}" headerClass="Title" />
+               <apex:column headerValue="Coefficient of Performance" value="{!fgh.Coefficient_of_Performance__c}" headerClass="Title" />
+               <apex:column headerValue="Heat Pump (Kwh)" value="{!fgh.Heat_Pump_Kwh__c}" headerClass="Title" />
+        </apex:pageblocktable>   
+        </apex:pageBlock> 
+    <apex:pageBlock >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hd><b>Totals</b></hd> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{!spf.Total_PTAC_Resistance_Heating_Kwh__c}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hd><b>Totals</b></hd>:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{!spf.Total_Heat_Pump_Kwh__c}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/> 
+    <br/> 
+     <br/> 
+      <br/> 
+      <br/> 
+     <br/> 
+      <br/> 
+       <br/> 
+      <br/> 
+      <br/> 
+     <br/> 
+      <br/> 
+       <br/> 
+     <br/> 
+      <br/> 
+    </apex:pageBlock>
+    </body>
+ <!--Heating and Air Conditioning Seasonal Performance Factor--->
+    <hd>     
+               <center><div style="color:#660033;font-weight:bold;font-family:'Arial Unicode MS';" > Heating and Air Conditioning Seasonal Performance Factor</div> </center>
+    </hd>    
+    <br/>
+    <br/>
+    <br/>
+    <body>  
+    <apex:pageBlock > 
+    
+    <br/>
+        <apex:panelGrid columns="4" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Indoor Temperature</div> 
+            </apex:panelGrid> 
+            <apex:panelGrid columns="1">
+                <hd> <b>65&#176;F</b></hd>            
+            </apex:panelGrid>      
+            <apex:panelGrid columns="1">
+                <hd> <b>75&#176;F</b> </hd> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+               <hd>  <b> {!spf.X3rd_Temparature_HDN__c }&#176;F </b> </hd> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Required For Resistance Heat(KWH)</div>        
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">         
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Resistance_Ht65F__c }" />
+            </apex:panelGrid>     
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Resistance_Ht75F__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Resistance_Ht70F__c}" />
+            </apex:panelGrid>
+             <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Required For Heat Pump System</div>                 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">                   
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Heat_Pump_Sys65F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Heat_Pump_Sys75F__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Heat_Pump_Sys70F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Saved With Heat Pump System</div>      
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">                
+                <apex:outputText value="{!spf.Annual_KWH_Saved_With_Heat_Pump_Sys65F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Annual_KWH_Saved_With_Heat_Pump_Sys75F__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1"> 
+                <apex:outputText value="{!spf.Annual_KWH_Saved_With_Heat_Pump_Sys70F__c}" />
+            </apex:panelGrid>
+           
+            <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > SPF of Heat Pump</div>             
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">                   
+                <apex:outputText value="{!spf.SPF_of_Heat_Pump_65F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.SPF_of_Heat_Pump_75F__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.SPF_of_Heat_Pump_70F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="4" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > % Energy Savings</div>         
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">       
+                {!spf.Energy_Savings_65F__c}%
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                {!spf.Energy_Savings_75F__c}%
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                {!spf.Energy_Savings_70F__c}%
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock> 
+    <apex:pageBlock >
+          <br/>
+          <br/>
+          <br/>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:panelGrid columns="2" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Heat Gain in BTUH</div>   
+            </apex:panelGrid> 
+            <apex:panelGrid columns="1" width="95px">
+                <apex:outputText value="{!spf.Heat_Gain_in_BTUH__c}" />
+            </apex:panelGrid>      
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Estimated Cooling KWHR Per Year (Hrs Above {!spf.Hours_Above_75_70_or_80__c}&#176;F)</div>    
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="95px">
+                <apex:outputText value="{!spf.Estimated_Cooling_KWHR_Per_Year__c}" />
+            </apex:panelGrid> 
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Estimated Cooling Costs at {!spf.Cooling_Cost_per_KWH_in_cents__c} Per KWHR</div> 
+            </apex:panelGrid>      
+            <apex:panelGrid columns="1" width="95px">
+                <apex:outputText value="{!spf.Estimated_Cooling_Costs__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+    <apex:pageBlock >
+        <apex:panelGrid columns="5" width="100%" border="1"  cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="1" bgcolor="#660033" width="100%" cellspacing="25" cellpadding="25">                          
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <hd> <b>KiloWatt Hours</b> </hd>     
+            </apex:panelGrid>
+            <apex:panelGrid columns="1"> 
+                <hd> <b>PTAC</b> </hd>           
+            </apex:panelGrid>     
+            <apex:panelGrid columns="1">
+                <hd> <b>KiloWatt Hours</b> </hd>  
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <hd> <b>PTHP</b> </hd>  
+            </apex:panelGrid>
+            <apex:panelGrid columns="5" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Total KWHR Per Year</div> 
+            </apex:panelGrid> 
+            <apex:panelGrid columns="1">       
+                <apex:outputText value="{!spf.Total_KWHR_Per_Year__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Total_KWHR_Per_YearPTAC__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Total_KWHR_Per_YearKilowattHr__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Total_KWHR_Per_YearPTHP__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="5" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > % of Energy For Cooling</div>       
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">                   
+                <apex:outputText value="{!spf.Energy_For_Cooling__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                {!spf.Energy_For_Cooling_PTAC__c}%
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Energy_For_Cooling_KiloWatt_Hrs__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                {!spf.Energy_For_Cooling_PTHP__c}%
+            </apex:panelGrid>
+            <apex:panelGrid columns="5" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > % of Energy For Heating</div>             
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputText value="{!spf.Energy_For_Heating__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">
+                <apex:outputField value="{!spf.Energy_For_Heating_PTAC__c}" /> 
+            </apex:panelGrid>
+            <apex:panelGrid columns="1">       
+                <apex:outputText value="{!spf.Energy_For_Heating_KiloWatt_Hrs__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="1"> 
+                <apex:outputField value="{!spf.Energy_For_Heating_PTHP__c} " /> 
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+Heat loss and KiloWatt Hours are estimates only and should be verified by the consulting engineer for the project. 
+    <apex:pageBlock >
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+       <br/>
+      <br/>
+       <br/> 
+      <br/> 
+      <br/> 
+     <br/> 
+      <br/> 
+       <br/> 
+      <br/> 
+      <br/> 
+     <br/> 
+      <br/> 
+    </apex:pageBlock>
+    </body> <!--Heat Pump Payback Analysis --->
+        <hd><center><div style="color:#660033;font-weight:bold;" > Heat Pump Payback Analysis</div> </center></hd> 
+    <body>
+    <br/>
+        <hd><b>Cooling Data</b></hd>
+    <br/>
+    <apex:pageBlock >
+        <apex:panelGrid columns="2" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Hours Above (70'F,75'F,80'F)</div>          
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="130px">       
+                <apex:outputText value="{!spf.Hours_Above_70F_75F_80F__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Heat Gain in BTUH</div>         
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="130px">
+                <apex:outputText value="{!spf.Heat_Gain_in_BTUH_HeatPump__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock> 
+    <br/>
+        <hd> <b>Heating KWH Savings Per Unit Per Year</b>  <br/></hd>
+    <apex:pageBlock >
+        <apex:panelGrid columns="2" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Required For Resistance Heat</div>        
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="205px">       
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Resistance_Ht_HP__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Required For Heat Pump System</div>      
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="205px">
+                <apex:outputText value="{!spf.Annual_KWH_Required_For_Heat_Pump_Sys_HP__c }" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Annual KWH Savings</div>         
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="205px">
+                <apex:outputText value="{!spf.Annual_KWH_Savings__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock>
+    <br/> 
+        <hd><b>Incremental Costs</b>  <br/></hd>
+    <apex:pageBlock >
+        <apex:panelGrid columns="2" width="100%" border="1" cellspacing="0" cellpadding="0">
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Heat Pump Cost Over Comparable System</div>      
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="185px">       
+                <apex:outputText value="{!spf.Heat_Pump_Cost_Over_Comparable_System__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Drain Line Cost Per Unit</div>      
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="185px">
+                <apex:outputText value="{!spf.Drain_Line_Cost_Per_Unit__c}" />
+            </apex:panelGrid>
+            <apex:panelGrid columns="2" bgcolor="#660033" columnClasses="colStyle" width="100%">
+                <div style="color:#FFFAF0;font-weight:bold;" > Total Incremental Cost Per Unit</div>        
+            </apex:panelGrid>
+            <apex:panelGrid columns="1" width="185px">
+                <apex:outputText value="{!spf.Total_Incremental_Cost_Per_Unit__c}" />
+            </apex:panelGrid>
+        </apex:panelGrid>
+    </apex:pageBlock>  
+     <br/>
+     <br/>      
+    <apex:pageBlock > 
+        <apex:pageblocktable value="{!spfHeatPA}" var="cop" width="100%" border="1">
+               <apex:column headerValue="Utility Cost Per KWHR" value="{!cop.Utility_Cost_Per_KWHR__c}" headerClass="Title"/>
+               <apex:column headerValue="Total Annual Cost Resistance Heat" value="{!cop.Total_Annual_Cost_Resistance_Heat__c}" headerClass="Title"/>
+               <apex:column headerValue="Total Annual Cost Heat Pump" value="{!cop.Total_Annual_Cost_Heat_Pump__c}" headerClass="Title"/>
+               <apex:column headerValue="Annual Savings With Heat Pump" value="{!cop.Annual_Savings_With_Heat_Pump__c}" headerClass="Title"/>
+               <apex:column headerValue="Years for Payback" value="{!cop.Years_for_Payback__c}" headerClass="Title"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>  
+    <apex:pageBlock >
+     <br/>      
+    </apex:pageBlock>    
+ 
+  <!-- Disclaimers -->
+    <apex:pageBlock >
+      <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer1}" />
+        </apex:pageBlockSectionItem>       
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer2}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+          <apex:outputText styleClass="disclaimer" value="{!disclaimer3}" />
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+    </apex:pageBlock> 
+    </body>
+</apex:page>

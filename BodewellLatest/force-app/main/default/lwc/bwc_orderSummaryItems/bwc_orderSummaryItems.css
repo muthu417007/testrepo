@@ -1,0 +1,161 @@
+.card{
+    margin: 10px;
+    --slds-c-card-color-background: white;
+
+}
+
+.title{
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.edit{
+    text-decoration: underline;
+    font-weight: bold;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.image{
+   padding-left: 10px;
+}
+.eop{
+    /* border-bottom: 1px solid black; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.borderservices
+{
+    border-bottom: 1px solid grey;
+}
+.price{
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.content1{
+    /* height: 150px; */
+    position: relative;
+    float: left;
+    padding-left: 10px;
+}
+
+.model{
+    font-size: small;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+/* .itemTitle{
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+} */
+
+.value{
+    /* padding-top: 10px;
+    padding-right: 20px;
+    text-align: right;
+    float: right; */
+    font-weight: bold;
+}
+
+.item{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    padding: 10px 20px 0px;
+  }
+
+.priceCss{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px;
+  }
+
+/*installation css*/
+
+.productView-services {
+    margin-bottom: 16px;
+    padding-top: 16px;
+    font-size: .875rem;
+
+    text-align: left;
+/* font: normal normal normal 16px/23px Neue Haas Grotesk Display Pro; */
+letter-spacing: 0.20px;
+color: #12212E;
+opacity: 1;
+border-bottom: 1px solid;
+padding-right:20px;
+   
+}
+.justify-content-spaceBetween {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.align-items-top {
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.d-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+   
+}
+.productView-services-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: .875rem;
+    /* font-weight: 700; */
+    text-transform: none;
+    padding-left: 20px;
+}
+.productView-services-title .icon {
+    margin-right: 8px;
+}
+.productView-services-title span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.productView-services-text {
+    margin-bottom: 24px;
+    margin-left: 29px;
+}
+
+p {
+    font-size: .875rem;
+}
+.productView-services-price {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.itemTitleFree{
+    display: flex;
+    
+  }
+
+  .memberValue{
+    font-weight:bold
+  }
+
+  .memberTotalvalue{
+     text-decoration: line-through;
+     margin-left:5px;
+     font-weight: bold;
+  }
+.icon svg {
+    display: inline-block;
+    fill: #757575;
+    height: 100%;
+    vertical-align: top;
+    width: 100%;
+  .e{fill:none;isolation:isolate;}.f{fill:#12212e;}
+
+}

@@ -1,0 +1,11 @@
+<template>
+	<div if:true={isGuest}>
+		<c-mya_product-registration brand={brand}></c-mya_product-registration>
+	</div>
+	<div if:false={isGuest}>
+		<div class="spinner">
+			<lightning-spinner style="height: 100%;" alternative-text="Loading" variant="brand" size="large">
+			</lightning-spinner>
+		</div>
+	</div>
+</template>

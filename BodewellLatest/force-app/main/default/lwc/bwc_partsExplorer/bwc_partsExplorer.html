@@ -1,0 +1,106 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap container slds-p-left_small slds-p-right_small" onclick={handleChildClick}>
+        <template if:true={isLaunchedViaManageParts}>
+            <template if:true={isServiceView}>
+                <div class="slds-col slds-wrap slds-size-_9-of-12 slds-medium-size-_4-of-12 slds-large-size-_7-of-12 slds-m-top_x-large slds-p_small slds-align_absolute-center cart">
+                    <h3 class="bold">Parts added to pick list for model # {product.StockKeepingUnit}: {partsAddedToListCount}</h3>
+                    <p class="servicePartsList" onclick={openPicklistModal} aria-haspopup="dialog">View/Edit Pick List For This Model</p>
+                    <lightning-button variant="brand" label="Return to Manage Parts" title="titleName" onclick={handleBackToOrdersClick}></lightning-button>
+                </div>
+            </template>
+        </template>
+        <div class="slds-col slds-size_6-of-12 slds-medium-size_3-of-12 slds-large-size_4-of-12 slds-p-top_x-large tileImage"  if:true={showDottedLines}>
+                <img src={partSelected.url}></img>
+                <div class="slds-align_absolute-center imageLargerPreview" onclick={openLargerImage}>
+                    <lightning-icon icon-name="utility:zoomin" alternative-text="view larger" class="hoverPointer slds-m-top_large"></lightning-icon>
+                    <h4 class="hoverPointer flexEnd bold">View Larger</h4>
+                </div>
+        </div>
+
+        <div class="slds-text-align_left slds-col slds-grid slds-wrap slds-size_12-of-12 slds-medium-size_3-of-12 slds-large-size_5-of-12 productGrid dottedLines">
+            <h3 class="color bold">Use the diagram to find the number of the part you need</h3>
+            <div class="comboBox slds-size_12-of-12" if:true={passPicklistOptions}>
+                 <c-bwc_searchable-picklist
+                    dropdown-open={dropDownOpen}
+                    picklist-options={options}   
+                    onshowchange={handleShowChange}
+                    onselection={handleChange}            
+                ></c-bwc_searchable-picklist> 
+            </div>
+            <template for:each={partsToDisplay} for:item="subPart">
+                <div class="slds-grid slds-col slds-gutter slds-wrap slds-m-top_large alignment" key={subPart}>
+                    <div class="slds-col slds-size_4-of-12 slds-medium-size_2-of-12 slds-large-size_3-of-12 subPartImage">
+                        <img if:true={subPart.image} src={subPart.BWC_Main_Image__c}></img>
+                        <img if:false={subPart.image} src={imageNotAvailable}></img>
+                    </div>
+                    <div class="slds-col slds-size_7-of-12 slds-medium-size_3-of-12 slds-large-size_4-of-12 productDetails">
+                        <p class="color bold">{subPart.DiagramNumber}</p>
+                        <p class="slds-m-top_small color partToPdp" data-id={subPart.Id} onclick={handlePartToPdpClick}>{subPart.BWC_Product_Marketing_Description__c}</p>
+                        <p class="slds-m-top_small color">{subPart.StockKeepingUnit}</p>
+                    </div>
+                    <div class="slds-col slds-size_10-of-12 slds-medium-size_3-of-12 slds-large-size_4-of-12 buyNow">
+                        <template if:false={isServiceView}>
+                            <div if:true={subPart.isMember}>
+                                <p class="slds-p-bottom_small slds-p-left_xx-large color"><s>${subPart.strikeThroughPrice}</s></p>
+                                <div class="nonMemberPrice">
+                                    <div class="slds-p-bottom_small slds-p-left_xx-large color memberTitle">
+                                        Member Price&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <div class="slds-p-bottom_small slds-p-left_xx-large bold color effectivePrice">
+                                        ${subPart.unitPrice}
+                                    </div>
+                                </div>
+                            </div>
+                            <div if:false={subPart.isMember}>
+                                <p class="slds-p-bottom_small slds-p-left_xx-large bold color">${subPart.unitPrice}</p>
+                            </div>
+                        </template>
+                        <template if:true={mobileView}>
+                            <div class="slds-m-bottom_small"></div>
+                        </template>
+                        <template if:true={isLaunchedViaManageParts}>
+                            <button class="slds-button slds-button_brand slds-m-right_small btn-size" data-id={subPart.StockKeepingUnit} data-recordid={subPart.Id} disabled={subPart.isAvailable} data-item={subPart.BWC_Product_Marketing_Description__c} data-demo={subPart} key={subPart.BWC_Product_Marketing_Description__c} title="" onclick={handleClick}>{buttonLabel}</button>
+                        </template>
+                    </div>
+                    <div class="slds-col slds-size_9-of-12 slds-m-top_large supersededParts">
+                        <p class="servicePartsList" data-id={subPart.supersededSKU} onclick={handleSupersededClick}>{subPart.supersededMesaage}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <template if:true={isShowModal} onclick={handleChildClick}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+               <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                  <lightning-icon icon-name="utility:close"
+                     alternative-text="close"
+                     variant="inverse"
+                     size="small" 
+                     ></lightning-icon>
+                  <span class="slds-assistive-text">Close</span>
+               </button>
+               <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Item was added to cart!</h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-2">
+                     <button class="lwc-76nnmqsstjk slds-button slds-button_outline-brand slds-button_stretch" onclick={hideModalBox}>Continue Shopping</button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3 slds-medium-size_1-of-2">
+                       <button class="lwc-76nnmqsstjk slds-button slds-button_brand slds-button_stretch slds-m-left_x-small" onclick={handleGotoCart}>Go to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="slds-modal__footer">
+               <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+            </footer>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

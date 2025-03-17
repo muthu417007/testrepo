@@ -1,0 +1,52 @@
+<template>
+
+    <lightning-input type="text" label="ContactId"  
+             value={contactId} ></lightning-input>
+
+            <lightning-input type="text" label="ContactId2"  
+             value={CX_contactId} ></lightning-input>
+
+    <p style="margin-left: 10px">
+        <lightning-datatable
+            key-field="Id"
+            data={locations}
+            columns={locationColumns}
+            onrowselection={handleLocationSelect}
+            maxrowselection=1
+        ></lightning-datatable>
+
+        Create Location
+        <lightning-record-edit-form object-api-name="Account" >
+            <lightning-input-field field-name="BillingStreet" value={newLocation.BillingStreet} onchange={handleBillingStreetChange} ></lightning-input-field>
+            <lightning-input-field field-name="BillingCity" value={newLocation.BillingCity} onchange={handleBillingCityChange} ></lightning-input-field>
+            <lightning-input-field field-name="BillingState" value={newLocation.BillingState} onchange={handleBillingStateChange} ></lightning-input-field>
+            <lightning-input-field field-name="BillingPostalCode" value={newLocation.BillingPostalCode} onchange={handleBillingPostalCodeChange} ></lightning-input-field>
+            <lightning-button variant="brand" onclick={handleCreateLocationClick} label="Create Location"></lightning-button>
+        </lightning-record-edit-form> 
+    </p>
+
+    <p style="margin-top: 10px; margin-left: 10px">
+        <lightning-datatable
+            key-field="Id"
+            data={assets}
+            columns={assetColumns}
+            onrowselection={handleAssetSelect}
+        ></lightning-datatable>
+        Create Assets
+        <lightning-record-edit-form object-api-name="Asset" onsubmit={handleSubmitAsset}>
+            <lightning-input-field field-name="Model_Number__c" onchange={handleModelNumerChange} ></lightning-input-field>
+            <lightning-input-field field-name="SerialNumber" onchange={handleSerialNumberChange} ></lightning-input-field>
+            <lightning-input-field field-name="InstallDate" onchange={handleInstallDataChange} ></lightning-input-field>
+            <lightning-input-field field-name="BrandName__c" onchange={handleBrandNameChange} ></lightning-input-field>
+            <lightning-input-field field-name="Product_Type__c" onchange={handleProductTypeChange} ></lightning-input-field>
+            <lightning-input-field field-name="Product_Line__c" onchange={handleProductLineChange} ></lightning-input-field>
+            <lightning-input-field field-name="AccountId" onchange={handleAccountLocationChange} ></lightning-input-field>
+            <lightning-button variant="brand" onclick={handleCreateAssetClick} label="Create Asset"></lightning-button>
+        </lightning-record-edit-form>
+    </p>
+
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+    </template>
+    
+</template>

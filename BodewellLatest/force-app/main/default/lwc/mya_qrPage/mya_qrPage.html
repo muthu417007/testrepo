@@ -1,0 +1,144 @@
+<template>
+  <div class="spinner">
+      <template if:true={isLoading}>
+          <lightning-spinner style="height: 100%;" alternative-text="Loading" variant="brand" size="large">
+          </lightning-spinner>
+      </template>
+</div>
+<template if:true={brandedUrl}>
+  <img class="status-image1" src={logoImg1} alt="logoImg">
+    <div class="c-container product-register" if:false={isLoading}>
+      <div class="center">
+       <p class="header">{description}</p>
+        <div class="slds-grid slds-gutters class1">
+          <div class="slds-col slds-size_1-of-3 class2">
+            <img class="status-image" src={images}>
+          </div>
+          <div class="slds-col slds-size_2-of-3 secDiv">
+            <template if:true={modelNo}>
+              <h3>Model : {modelNo} </h3>
+            </template>
+<template if:false={modelNo}>
+              <h3>Model : {marketingModelNo} </h3>
+            </template>
+<h3>Serial : {serial}</h3>
+
+<div class="review-content">
+    <img src={rateReview} class="review-image" />
+    <span class="write-a-review"><a href={reviewUrl}>Write a review</a></span>
+</div>
+<template if:true={showInvalidView}>
+              <div class="slds-grid slds-gutters url">
+                <div class="slds-col slds-size_3-of-6 size26">
+                  <a target="_blank" href={prodReghref} onclick={handleProductRegistration}> <img src={regappliance} alt="Canada"> Register Appliance</a>
+                </div>
+                <template if:true={showScheduleUrl}>
+                  <div class="slds-col slds-size_3-of-6 size46">
+                    <a target="_blank" href={ScheduleServiceLink}> <img src={schServices} alt="Canada"> Schedule
+                      Service</a>
+                  </div>
+                </template>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_3-of-6 size26">
+        <a if:true={showOwnerUrl} target="_blank" href={ownerUrl}> <img src={owSupport} alt="Canada"> Owner Support</a>
+    </div>
+</div>
+</template>
+<template if:false={showInvalidView}>
+              <div class="slds-grid slds-gutters url">
+                <div class="slds-col slds-size_3-of-6 size26">
+                  <a target="_blank" href={prodReghref} onclick={handleProductRegistration}><img src={regappliance} alt="Canada"> Register Appliance</a>
+                </div>
+                <template if:true={showScheduleUrl}>
+                  <div class="slds-col slds-size_3-of-6 size46" >
+                    <a target="_blank" href={ScheduleServiceLink}> <img src={schServices} alt="Canada"> Schedule
+                      Service</a>
+                  </div>
+                </template>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_3-of-6 size26">
+        <a if:true={showOwnerUrl} target="_blank" href={ownerUrl}><img src={owSupport} alt="Canada"> Owner Support</a>
+    </div>
+    <div class="slds-col slds-size_3-of-6 size46">
+        <a target="_blank" href={ProdSpecs}> <img src={proSpecs} alt="Canada"> Product Specs</a>
+    </div>
+</div>
+<div class="slds-grid slds-gutters url1">
+    <div class="slds-col slds-size_3-of-6 size26">
+        <a target="_blank" href={Partslink}><img src={partsAcc} alt="Canada"> Parts and Accessories</a>
+    </div>
+    <div class="slds-col slds-size_3-of-6 size46">
+        <a target="_blank" href={ownerManualUrl}> <img src={ownermanual} alt="Canada"> Owner's Manual</a>
+    </div>
+</div>
+
+</template>
+</div>
+</div>
+
+<template if:true={kInvalidWifi}>
+          <div class="wifiSec">
+            <div class="GEASec ">
+              <img src={wifiLogo} alt="wifi" class="wifiSection">
+              THIS PRODUCT CAN CONNECT TO WIFI
+            </div>
+
+            <h6>Unlock features that give you real time feedback,optimized performance, alerts and more.</h6>
+            <div class="btn"><a class="a1" target="_blank"
+                href="https://www.geappliances.com/ge/connected-appliances/ranges-ovens-cooking.htm">Learn more & get
+                the App</a></div>
+          </div>
+        </template>
+<div class="im"><img src={flagcanada} alt="Canada"> Canadian Residents? <a class="a2" target="_blank" href="https://service.geappliances.ca/">Visit GE Appliance Canada</a></div>
+</div>
+
+<div class="grid-container">
+    <div class="grid1-x grid-margin-x">
+        <div class="cell">
+            <section class="related-parts-and-accessories-section">
+                <h2 class="infoHeader text-center your-appliance-subheading">
+                    <!-- RELATED PARTS &amp; ACCESSORIES -->
+                    {RelatedParts}
+                </h2>
+                <div if:true={allParts}>
+                    <a target="_blank" class="subinfoheader" href={allParts}>Shop All Parts &amp; Accessories</a>
+                    <!-- GE -->
+                </div>
+                <!-- Related parts and accessories section start -->
+                <div class="related-parts-and-accessories-list slick-slider grid-x grid-margin-x small-up-1 medium-up-2 large-up-4 related-parts-and-accessories-slider no-slick-left-right">
+                    <template if:true={RelatedPartsAvailable}>
+            <template for:each={RelAcc} for:item="part">
+              <div key={part.PModel}>
+                <div class="related-parts-and-accessories-item">
+                  <div class="imagetext">
+                    <a class="product1-photo" target="_blank" href={part.Plink}>
+                      <img src={part.iLink}  width="185" height="193">
+                      <div class="text">
+                        <p class="product-title">
+                          {part.PDes}
+                        </p>
+                        <p class="go-to-part">
+                          <button value={part.Plink} onclick={redirectlink} class="RelPartButton">Go To
+                            Part</button>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!--Changed Here-->
+              </div>
+            </template>
+                    </template>
+                    <!--end of cell -->
+                </div>
+                <!-- ends .cell.related-parts-and-accessories-item -->
+                <!-- related parts and accessories section end -->
+            </section>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+</template>

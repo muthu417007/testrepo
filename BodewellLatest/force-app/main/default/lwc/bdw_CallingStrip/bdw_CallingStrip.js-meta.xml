@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property type="String" name="calltext1" label="Call Strip Text 1" default="Call"/>
+            <property type="String" name="calltext2" label="Call Strip Text 2" default ="to schedule a virtual support call"/>
+
+            <property name="IconColor" type="String" datasource="Black,White" label="IconColor" />
+
+            <property name="FontSize" label="Font-size in px" type="Integer" description="font-size"/>
+            <property name="FontColor" label="Font-Color (#000-Black or #fff-White" type="Color" description="font-Color"/>
+            <property name="FontColorPhone" label="Font-Color-Phone NO (#000-Black or #fff-White" type="Color" description="font-Color-Phone"/>
+        </targetConfig>
+
+   </targetConfigs>
+    
+</LightningComponentBundle>

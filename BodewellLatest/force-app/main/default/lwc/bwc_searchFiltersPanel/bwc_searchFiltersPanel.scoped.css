@@ -1,0 +1,29 @@
+.category-tree-section,
+.facets-section {
+    padding: 0 1rem;
+    background: #fff
+}
+.category-tree-section > *, 
+.facets-section > * {
+    border-top: 1px solid #707070;
+    padding: 0.5rem 0;
+    display: block;
+}
+.filters-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #fff;
+    padding: 1rem;
+}
+.filters-title {
+    font-weight: var(--font-weight-bold);
+}
+.clear-all {
+    align-self: flex-end;
+}
+@media only screen and (max-width: 47.9375em) {
+    .filters-header {
+        display: none;
+    }
+}

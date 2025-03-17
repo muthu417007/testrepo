@@ -1,0 +1,14 @@
+<template>
+    <div class="container slds-card slds-p-around_small">
+        <lightning-progress-indicator current-step={currentStep} type="path" variant="base" class="progressBar">
+            <template for:each={steps} for:item="step">
+                <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+            </template>
+        </lightning-progress-indicator>
+        <lightning-button variant="base" label="View Order Details" onclick={handleGetOrderStatus}></lightning-button>
+        <!-- <div if:true={buttonClicked}>
+            <c-bwc_order-search-quick-action>
+            </c-bwc_order-search-quick-action>
+        </div> -->
+    </div>
+</template>

@@ -1,0 +1,18 @@
+.selected-category {
+    font-weight: var(--dxp-c-strong-text-weight, 700);
+    margin-left: 1.1rem;
+}
+.category-item {
+    display: inline-block;
+    white-space: break-spaces;
+    letter-spacing: 1px !important;
+}
+.slds-truncate {
+    letter-spacing: 1px !important;
+}
+@media only screen and (max-width: 48em) {
+    .categories,
+    h2 {
+        padding: 0 1.5rem;
+    }
+}

@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<img src="{!$Resource.SkullandCrossbones}" width="355" Height="100" />
+</aura:component>
